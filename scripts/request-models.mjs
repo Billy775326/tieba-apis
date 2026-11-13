@@ -11,6 +11,7 @@ if (!directory || !output || !provenance)
 const source = JSON.parse(
   fs.readFileSync(provenance, "utf8").replace(/^\uFEFF/, ""),
 );
+const includeAll = process.argv.includes("--all-models");
 const models = [];
 for (const file of fs
   .readdirSync(directory)
@@ -56,6 +57,11 @@ for (const file of fs
       field_index: i,
     };
   });
+  const fieldsByOwner = new Map();
+  for (const field of fields) {
+    if (!fieldsByOwner.has(field.owner)) fieldsByOwner.set(field.owner, []);
+    fieldsByOwner.get(field.owner).push(field);
+  }
   function value(s) {
     const header = b.readUInt8(s.p++),
       kind = header & 31,
@@ -96,12 +102,14 @@ for (const file of fs
     const p = u32(100) + i * 32,
       name = types[u32(p)];
     if (
+      !includeAll &&
       !/^Ltbclient\/(?:FrsPage|PbPage|PbFloor|SearchPostForum|Profile|UserProfile)\/(?:DataReq|[A-Za-z]+ReqIdl);$/.test(
         name,
       ) &&
       name !== "Ltbclient/CommonReq;"
     )
       continue;
+    if (includeAll && !/^Ltbclient\//.test(name)) continue;
     const directoryOffset = u32(p + 20),
       byIndex = new Map();
     if (directoryOffset) {
@@ -115,9 +123,10 @@ for (const file of fs
       dex: file,
       class_def_index: i,
       descriptor: name,
-      fields: fields
-        .filter((f) => f.owner === name)
-        .map((f) => ({ ...f, annotations: byIndex.get(f.field_index) ?? [] })),
+      fields: (fieldsByOwner.get(name) ?? []).map((f) => ({
+        ...f,
+        annotations: byIndex.get(f.field_index) ?? [],
+      })),
     });
   }
 }

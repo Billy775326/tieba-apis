@@ -8,10 +8,14 @@
 
 - APK：`baidutieba_AndroidPhone_1015363f.apk`，87,847,605 字节，13 个 DEX。
 - SHA-256：`06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3`。
-- 423 条静态路径候选，包含客户端路径和 H5 页面；路径存在不代表当前可调用。
+- 603 条静态路径候选（568 个不同路径），包含客户端路径和 H5 页面；路径存在不代表当前可调用。
 - 11 个请求类、345 个带 Wire 注解的字段，保留字段编号、类型及位置。
 
 [路径证据](evidence/endpoint-candidates.json) · [模型证据](evidence/request-models.json) · [请求字段表](docs/request-fields.md) · [分析进展](docs/investigation.md)
+
+## 全量候选覆盖
+
+已为全部 603 条候选建立逐项清单，累计请求 195 个路径，105 个路径至少一次返回非空数据；这不代表全部接口已通过功能验收。见 [扩展验证范围与未完成项](docs/full-coverage.md) 和 [完整 CSV](docs/api-coverage.csv)。
 
 ## 线上验证
 

@@ -1,0 +1,53 @@
+{
+  "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3",
+  "observations": [
+    "NetWork.addSign concatenates transmitted name=value pairs followed by tiebaclient!!!.",
+    "xa.c encodes UTF-8; xa.d invokes MessageDigest MD5.",
+    "The helper submits sorted pairs in the same order it signs; lowercase hex was accepted in the live forumdir comparison."
+  ],
+  "limitations": [
+    "The App pair order is an input to signing, not a proven global alphabetical-sort rule.",
+    "The optional sig branch and all write-operation signature requirements remain unverified."
+  ],
+  "methods": [
+    {
+      "parent_evidence_id": "ev_186511443eb891ecccb01251b978169c09d136d08aef8688d5ec2f1be09da05b",
+      "class_name": "com.baidu.tbadk.core.util.NetWork",
+      "method": {
+        "name": "addSign",
+        "reported_signature": "addSign(): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "source_sha256": "015195e9629093f56ceaef70d74df4837c3f1537bcd5ff7ffaf1b5c474ce8b75"
+    },
+    {
+      "parent_evidence_id": "ev_b04fc6ce2029121c4088c73de52f962583dcac6265de1bc3e8a2863e64b461af",
+      "class_name": "com.baidu.tieba.xa",
+      "method": {
+        "name": "c",
+        "reported_signature": "c(java.lang.String): java.lang.String",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "source_sha256": "4444e222bcaf0c04cc3b3c850b790f3a5c0f7e7d9f8b617dcf7c3476bb426d91"
+    },
+    {
+      "parent_evidence_id": "ev_fd11caf37d2443243f3f20b847ca360a532f943c21cc482bbb16d1d682b54f02",
+      "class_name": "com.baidu.tieba.xa",
+      "method": {
+        "name": "d",
+        "reported_signature": "d(byte[]): java.lang.String",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "source_sha256": "837c7c96744ac572059b19719bc93182f4505e09da686c57530b0b0e1349c290"
+    }
+  ]
+}

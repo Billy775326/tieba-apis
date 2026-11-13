@@ -66,3 +66,16 @@ test("reports unknown DEX versions as unsupported", (t) => {
   fs.writeFileSync(f.dex, b);
   assert.match(f.run().stderr, /Unsupported DEX magic/);
 });
+test("covers mutation, commerce and other previously omitted path families without executing them", (t) => {
+  const f = fixture(t, [
+    "c/c/user/unfollow",
+    "c/e/consume/placeOrder",
+    "c/b/commit/pushThread",
+    "c/r/friend/listFriend",
+    "c/i/msgcenter/uploadPic",
+    "c/x/sprite/getGuideInfo",
+  ]);
+  const result = f.run();
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(f.report().candidates.length, 6);
+});

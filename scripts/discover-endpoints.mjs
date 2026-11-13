@@ -41,7 +41,7 @@ for (const file of fs
     if (end < 0) throw new Error(`Unterminated string: ${file}:${index}`);
     const value = bytes.subarray(offset, end).toString("utf8");
     if (
-      !/^(?:https?:\/\/[A-Za-z0-9.:-]+\/)?\/?(?:c\/[fsu]\/|c\/p\/|mo\/q\/|mo\/m\/)/.test(
+      !/^(?:https?:\/\/[A-Za-z0-9.:-]+\/)?\/?(?:c\/[a-z]\/|mo\/[a-z]\/)/.test(
         value,
       ) ||
       /[^\x20-\x7e]/.test(value)
@@ -71,7 +71,7 @@ const report = {
     "DEX string_ids table, ASCII URL/path candidates; no bytecode call-site or runtime verification",
   limitations: [
     "String presence does not establish an active endpoint, HTTP verb, parameters, authentication or response schema.",
-    "Dynamically constructed paths, native code, assets and other URL prefixes are outside coverage.",
+    "Dynamically constructed paths, native code, assets and URL prefixes outside c/<letter>/ and mo/<letter>/ remain outside coverage.",
   ],
   dex_files: dexFiles,
   candidates: [...endpoints]
