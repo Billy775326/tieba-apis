@@ -1,1 +1,24 @@
-﻿{"rea":{"version":"6.4.0","source_repository":"https://github.com/Billy775326/rea","source_snapshot_commit":"c7105d9723c835b5e0122f5fc6cfbea86265c349","source_archive_sha256":"559e2831b8988a057228b8fca1e6e857d7f2962c9881093b463f07ec99e3e5cb","delivery":"GitHub source archive; not a Git clone"},"host":{"os":"Windows x64","node":"24.16.0","npm":"11.13.0","java":"25.0.1"}}
+{
+  "rea": {
+    "version": "6.4.0",
+    "source_repository": "https://github.com/Billy775326/rea",
+    "source_snapshot_commit": "c7105d9723c835b5e0122f5fc6cfbea86265c349",
+    "source_archive_sha256": "559e2831b8988a057228b8fca1e6e857d7f2962c9881093b463f07ec99e3e5cb",
+    "delivery": "GitHub source archive; not a Git clone"
+  },
+  "host": {
+    "os": "Windows x64",
+    "node": "24.16.0",
+    "npm": "11.13.0",
+    "java": "25.0.1"
+  },
+  "jadx": {
+    "version": "0.7.1",
+    "sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+    "verified_operations": [
+      "inspect_android_package",
+      "inspect_android_class",
+      "inspect_android_method"
+    ]
+  }
+}

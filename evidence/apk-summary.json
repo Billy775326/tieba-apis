@@ -1,0 +1,36 @@
+{
+  "kind": "selected-fields-summary",
+  "parent_evidence_id": "ev_13eaf56710f1b031ff221bcd0431cb1cf0056857abbe9c925be81db2e6eff7b3",
+  "local_complete_evidence_sha256": "6c49b28dd0ac42094f2e9a57d25757ea322d9530ab526d0a2a73e94fe8ed8f84",
+  "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3",
+  "provider": {
+    "id": "jadx",
+    "name": "JADX headless",
+    "version": "0.7.1"
+  },
+  "operation": "inspect_android_package",
+  "result": {
+    "engine": {
+      "name": "jadx-headless-mcp",
+      "version": "0.7.1",
+      "artifact_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+      "source_revision": "5844800a486d2248fa949b74c9896285f5b54de2",
+      "worker_count": 1,
+      "heap_limit_mib": 3548
+    },
+    "package_name": "com.baidu.tieba",
+    "version_name": "22.13.1.1",
+    "version_code": "369950981",
+    "min_sdk": "26",
+    "target_sdk": "30",
+    "class_count": 52181,
+    "resource_count": 10941,
+    "signature_verification": "not_performed"
+  },
+  "limitations": [
+    "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+    "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+    "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+    "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+  ]
+}

@@ -1,10 +1,10 @@
-﻿# 贴吧 APK 分析进展
+# 贴吧 APK 分析进展
 
 ## 已观察事实
 
 分析对象及哈希见 [路径证据](../evidence/endpoint-candidates.json)。13 个 DEX 中找到 423 条匹配指定前缀的路径字符串。它们包含读取、写入、遥测和 H5 页面，数量不等于可调用接口数量。
 
-`classes5.dex` 定义了本次提取的 11 个请求模型。345 个字段带 `com.squareup.wire.ProtoField` 注解。原始字段索引、类索引、tag、显式类型和 label 见 [模型证据](../evidence/request-models.json)。这是直接读取 DEX 元数据的结果，尚未使用 JADX 验证。
+`classes5.dex` 定义了本次提取的 11 个请求模型。345 个字段带 `com.squareup.wire.ProtoField` 注解。原始字段索引、类索引、tag、显式类型和 label 见 [模型证据](../evidence/request-models.json)。字段表是直接读取 DEX 元数据的结果；REA/JADX 已独立确认包信息和请求构造类，字段表整体尚未交叉验证。
 
 ## 首批调查目标
 
@@ -26,9 +26,9 @@
 
 Windows 本机 Node.js 24.16.0、npm 11.13.0、完整 JDK 25.0.1 可用。REA 6.4.0 已安装在忽略目录 `.local/rea-runtime`，`--version` 和 Android 命令帮助已成功执行。REA 源码归档位于同级 `../rea`；Git 智能传输失败，因此该目录是源码快照，不包含克隆历史。
 
-JADX 0.7.1 正在准备。必须以 SHA-256 `6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75` 校验完整 JAR 后才可使用。下载不完整时不要把临时文件设为 `REA_JADX_MCP_JAR`。
+JADX 0.7.1 已完成下载并校验，SHA-256 为 `6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75` ，完整文件为 `.local/jadx-complete.jar`。
 
-完成下载后的首个检查命令（仓库根目录，文件名按实际验证结果选择）：
+本机已成功执行 APK 检查；复查入口（仓库根目录，替换示例路径）：
 
 ```powershell
 $env:REA_JADX_MCP_JAR = (Resolve-Path '.local/jadx-complete.jar').Path
@@ -41,7 +41,7 @@ APK 路径为示例。后续依次追踪 `FrsPageRequestMessage`、`PbPageReques
 
 已对真实 APK 完成路径和字段提取。提取器通过重复源位置、路径误匹配、截断 DEX 和未知 DEX 版本测试。
 
-尚未完成 JADX 反编译、APK 签名验证、线上接口请求、登录或设备测试。没有运行目标 App，也没有发送发帖、回复、关注或私信操作。
+REA/JADX 已成功检查包名 `com.baidu.tieba`、版本 `22.13.1.1`、52,181 个类和 10,941 个资源，摘要及父 Evidence ID 见 [APK 摘要](../evidence/apk-summary.json)。已成功读取 `FrsPageRequestMessage` 的成员及构造函数；构造函数引用 cmd `301001`，包含 Titan 热修复拦截分支，不能将静态逻辑等同于当前运行路径。尚未完成完整调用链、APK 签名验证、线上接口请求、登录或设备测试。没有运行目标 App，也没有发送发帖、回复、关注或私信操作。
 
 ## 实际参考资料
 

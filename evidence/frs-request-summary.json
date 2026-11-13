@@ -1,0 +1,41 @@
+{
+  "kind": "decompiled-source-observations",
+  "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3",
+  "provider": {
+    "id": "jadx",
+    "name": "JADX headless",
+    "version": "0.7.1"
+  },
+  "class_name": "com.baidu.tieba.forum.model.FrsPageRequestMessage",
+  "constructor": {
+    "parent_evidence_id": "ev_419c67b2badba9c5536dadbe2f871be1083ca98baa671175512a4b13b1e3dd1a",
+    "method": "<init>",
+    "overload_index": 0,
+    "command_constant": "CmdConfigHttp.FRS_HTTP_CMD",
+    "command_argument": 301001,
+    "titan_interception_present": true
+  },
+  "encode": {
+    "parent_evidence_id": "ev_87d8320aad90f09714cd292724b1785636298b236dba10d7240e5865cea2c63d",
+    "method": "encode",
+    "overload_index": 0,
+    "reported_signature": "encode(boolean): java.lang.Object",
+    "source_status": "complete",
+    "source_sha256": "01f4fb649b64bbbf54fc98278d1eeba5d278a4720e7baefc3e4a2fcd750e7062",
+    "direct_assignments": [
+      "builder.kw = this.kw",
+      "builder.pn = Integer.valueOf(this.pn)",
+      "builder.rn = Integer.valueOf(this.rn)",
+      "builder.sort_type = Integer.valueOf(this.sortType)"
+    ],
+    "common_binding": "NetMessageHelper.bindCommonParamsToProtobufData(builder, true, false, true)",
+    "envelope": "FrsPageReqIdl.Builder.data = DataReq.Builder.build(false)",
+    "returns": "FrsPageReqIdl",
+    "titan_interception_present": true
+  },
+  "limitations": [
+    "Decompiler output is a derived representation, not observed execution.",
+    "Titan interception can replace the static constructor or encode path.",
+    "HTTP URL resolution, method, headers, signature, body serialization and live response remain unverified."
+  ]
+}

@@ -1,8 +1,8 @@
-﻿# Tieba APIs
+# Tieba APIs
 
 基于指定百度贴吧 Android APK 的接口研究仓库，目标是实现有证据支持、可验证的接口客户端。
 
-当前已完成静态路径和请求模型的提取，尚未实现可线上使用的接口 SDK。接口签名、HTTP 请求构造、登录状态、响应结构和分页行为仍需继续验证。
+当前已完成静态路径和请求模型提取，并通过 REA/JADX 检查 APK 和定位请求构造类，尚未实现可线上使用的接口 SDK。接口签名、HTTP 请求构造、登录状态、响应结构和分页行为仍需继续验证。
 
 ## 当前结果
 
@@ -34,8 +34,24 @@ APK 路径为示例。PowerShell 若禁止执行脚本，可检查 `scripts/disc
 
 提取过程只读取原 APK；DEX 临时文件保存在忽略目录 `.local/dex`。不要将 APK、反编译全文、登录 Cookie、Token、账号数据提交到仓库。不同 APK 的提取应使用新的 `.local/dex` 目录，避免混入上一版本的 DEX。
 
+## REA 分析入口
+
+本机已准备 REA 6.4.0 和通过固定 SHA-256 校验的 JADX 0.7.1。入口仅向子进程传入引擎路径，不修改全局 Agent 配置：
+
+```powershell
+node scripts/rea.mjs inspect-android-package 'D:/targets/example.apk' --format json
+```
+
+在其他机器使用前，安装固定运行包并按 [REA 官方指南](https://github.com/Billy775326/rea/blob/main/docs/android-analysis.md) 准备同一 JAR，保存为 `.local/jadx-complete.jar`：
+
+```powershell
+npm.cmd install --prefix .local/rea-runtime --omit=optional --ignore-scripts rea-agents@6.4.0
+```
+
+APK 路径为示例；启动入口会核对 JAR 哈希，不接受不完整或不匹配的下载。
+
 ## 参考
 
 参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的接口、认证、参数构造和使用示例分层方式；贴吧协议结论来自本仓库记录的 APK，不从其他平台接口类推。
 
-分析工具使用 [REA](https://github.com/Billy775326/rea)。当前静态证据由本仓库脚本提取；不能视为已完成 REA/JADX 反编译或线上验证。
+分析工具使用 [REA](https://github.com/Billy775326/rea)。路径和字段证据由本仓库脚本提取；REA/JADX 的实际检查摘要见 [APK 摘要](evidence/apk-summary.json)。这些结果不代表已完成线上验证。
