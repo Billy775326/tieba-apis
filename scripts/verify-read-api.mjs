@@ -14,6 +14,7 @@ export function probe(
     headers = {},
     onBody,
     profile = "empty-post-diagnostic",
+    authenticated = false,
   } = {},
 ) {
   return new Promise((resolve) => {
@@ -28,7 +29,7 @@ export function probe(
       url,
       method: "POST",
       request_body_bytes: body.length,
-      authenticated: false,
+      authenticated,
       request_profile: profile,
       dns_resolved: null,
       tcp_connected: false,

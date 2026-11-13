@@ -1,0 +1,1755 @@
+{
+  "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3",
+  "method": "Direct JADX decoded-instruction indexing; no target code execution or REA Evidence claims",
+  "coverage": "Only direct NetMessage subclasses; literals are not propagated through branches; mapping URL paths remains a separate step",
+  "examined_classes": 121,
+  "classes": [
+    {
+      "model_builder_types": [
+        "tbclient.DecryptCode.DataReq$Builder",
+        "tbclient.DecryptCode.DecryptCodeReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.BdToken.DecryptCodeReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.BdToken.DecryptCodeReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003421,
+          "socket_command_literal": 309626
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetToken.DataReq$Builder",
+        "tbclient.GetToken.GetTokenReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.BdToken.GetTokenRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.BdToken.GetTokenRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003404,
+          "socket_command_literal": 309608
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetUserByTiebaUid.DataReq$Builder",
+        "tbclient.GetUserByTiebaUid.GetUserByTiebaUidReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.BdToken.TiebaUidCheckReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.BdToken.TiebaUidCheckReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003493,
+          "socket_command_literal": 309702
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.ActiveConfig.ActiveConfigReqIdl$Builder",
+        "tbclient.ActiveConfig.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.BdToken.activeConfig.ActiveConfigReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.BdToken.activeConfig.ActiveConfigReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003432,
+          "socket_command_literal": 309637
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.BackUser.BackUserReqIdl$Builder",
+        "tbclient.BackUser.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.BdToken.backUser.BackUserReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.BdToken.backUser.BackUserReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003479,
+          "socket_command_literal": 309689
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.CompleteTask.CompleteTaskReqIdl$Builder",
+        "tbclient.CompleteTask.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.BdToken.completeTask.CompleteTaskReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.BdToken.completeTask.CompleteTaskReqMsg.\u003cinit\u003e(int):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003430,
+          "socket_command_literal": 309627
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.AdNewLog.AdNewLogReqIdl$Builder",
+        "tbclient.AdNewLog.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.adBillingLog.AdBillingLogReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.adBillingLog.AdBillingLogReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003505,
+          "socket_command_literal": 309711
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetClientConfig.DataReq$Builder",
+        "tbclient.GetClientConfig.GetClientConfigReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.clientConfig.ClientConfigNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.clientConfig.ClientConfigNetMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003024,
+          "socket_command_literal": 303039
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.DelAllUserData.DataReq$Builder",
+        "tbclient.DelAllUserData.DelAllUserDataReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.core.account.data.DelAllUerDataReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.core.account.data.DelAllUerDataReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003557,
+          "socket_command_literal": 309736
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetBigday.DataReq$Builder",
+        "tbclient.GetBigday.GetBigdayReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.core.bigday.GetBigdayInfoReqMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.core.bigday.GetBigdayInfoReqMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003408,
+          "socket_command_literal": 309609
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Loop.DataReq$Builder",
+        "tbclient.Loop.LoopReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.core.leveiconlivepolling.PollingReqMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.core.leveiconlivepolling.PollingReqMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003540,
+          "socket_command_literal": 309732
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.UrlParser.DataReq$Builder",
+        "tbclient.UrlParser.UrlParserReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.core.view.spanGroup.RequestUrlParserNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.core.view.spanGroup.RequestUrlParserNetMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003476,
+          "socket_command_literal": 309686
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.LogTogether.DataReq$Builder",
+        "tbclient.LogTogether.LogTogetherReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.distribute.DistributeRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.distribute.DistributeRequest.\u003cinit\u003e(java.util.List\u003ctbclient.LogTogether.AdReq\u003e):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003000,
+          "socket_command_literal": 303101
+        },
+        {
+          "method": "com.baidu.tbadk.distribute.DistributeRequest.\u003cinit\u003e(tbclient.LogTogether.AdReq):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003000,
+          "socket_command_literal": 303101
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetUserInfo.DataReq$Builder",
+        "tbclient.GetUserInfo.GetUserInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.getUserInfo.GetUserInfoRequstData",
+      "constructor_literals": []
+    },
+    {
+      "model_builder_types": [
+        "tbclient.VideoRedIcon.DataReq$Builder",
+        "tbclient.VideoRedIcon.VideoRedIconReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tbadk.mainTab.videoRedIcon.VideoRedIconRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tbadk.mainTab.videoRedIcon.VideoRedIconRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003499,
+          "socket_command_literal": 309708
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.CommitCardInfo.CommitCardInfoReqIdl$Builder",
+        "tbclient.CommitCardInfo.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tieba.barselect.data.CommitCardInfoReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.barselect.data.CommitCardInfoReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003441,
+          "socket_command_literal": 309643
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.ElectionInfo.DataReq$Builder",
+        "tbclient.ElectionInfo.ElectionInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.barselect.data.VoteElectionRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.barselect.data.VoteElectionRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003436,
+          "socket_command_literal": 309642
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Search.DataReq$Builder",
+        "tbclient.Search.SearchReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.barselect.model.CandidateSearchReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.barselect.model.CandidateSearchReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003435,
+          "socket_command_literal": 309641
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetWebviewCacheInfo.DataReq$Builder",
+        "tbclient.GetWebviewCacheInfo.GetWebviewCacheInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.browser.core.webview.offline.message.OfflineResourceReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.browser.core.webview.offline.message.OfflineResourceReqMsg.\u003cinit\u003e(java.lang.String):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003365,
+          "socket_command_literal": 309485
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetHistoryForum.DataReq$Builder",
+        "tbclient.GetHistoryForum.GetHistoryForumReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.enterForum.home.RecentlyVisitedForumRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.enterForum.home.RecentlyVisitedForumRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003394,
+          "socket_command_literal": 309601
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetInfluenceRank.DataReq$Builder",
+        "tbclient.GetInfluenceRank.GetInfluenceRankReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.p000enterforum.hotuserrank.model.HotUserRankReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.enterforum.hotuserrank.model.HotUserRankReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003455,
+          "socket_command_literal": 309652
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GeneralTabList.DataReq$Builder",
+        "tbclient.GeneralTabList.GeneralTabListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.forum.model.FrsGeneralTabListReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.forum.model.FrsGeneralTabListReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003418,
+          "socket_command_literal": 309622
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.FrsPage.DataReq$Builder",
+        "tbclient.FrsPage.FrsPageReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.forum.model.FrsPageRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.forum.model.FrsPageRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001703,
+          "socket_command_literal": 301001
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.ThreadList.DataReq$Builder",
+        "tbclient.ThreadList.ThreadListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.forum.model.FrsThreadListRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.forum.model.FrsThreadListRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001704,
+          "socket_command_literal": 301002
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetBawuInfo.DataReq$Builder",
+        "tbclient.GetBawuInfo.GetBawuInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.forumMember.bawu.BawuTeamRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.forumMember.bawu.BawuTeamRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001705,
+          "socket_command_literal": 301007
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetMemberInfo.DataReq$Builder",
+        "tbclient.GetMemberInfo.GetMemberInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.forumMember.member.ForumMemberRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.forumMember.member.ForumMemberRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001706,
+          "socket_command_literal": 301004
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetLevelInfo.DataReq$Builder",
+        "tbclient.GetLevelInfo.GetLevelInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.forumMember.tbtitle.model.req.GetLevelInfoRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.forumMember.tbtitle.model.req.GetLevelInfoRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001710,
+          "socket_command_literal": 301005
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.SearchPostForum.DataReq$Builder",
+        "tbclient.SearchPostForum.SearchPostForumReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.forumsearch.message.SearchPostForumRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.forumsearch.message.SearchPostForumRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003335,
+          "socket_command_literal": 309466
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.ForumRuleDetail.DataReq$Builder",
+        "tbclient.ForumRuleDetail.ForumRuleDetailReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.frs.forumRule.message.ForumRuleDetailReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.frs.forumRule.message.ForumRuleDetailReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003481,
+          "socket_command_literal": 309690
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetGiftListByCategoryId.DataReq$Builder",
+        "tbclient.GetGiftListByCategoryId.GetGiftListByCategoryIdReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.gift.giftTab.CategoryGiftListRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.gift.giftTab.CategoryGiftListRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003046,
+          "socket_command_literal": 309055
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetGiftList.DataReq$Builder",
+        "tbclient.GetGiftList.GetGiftListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.gift.giftTab.DefaultGiftListRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.gift.giftTab.DefaultGiftListRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003045,
+          "socket_command_literal": 309054
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetUserFreeChance.DataReq$Builder",
+        "tbclient.GetUserFreeChance.GetUserFreeChanceReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.gift.giftTab.FreeGiftChanceRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.gift.giftTab.FreeGiftChanceRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003047,
+          "socket_command_literal": 309060
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetMyGift.DataReq$Builder",
+        "tbclient.GetMyGift.GetMyGiftReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.gift.myGiftList.GetPersonalGiftListRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.gift.myGiftList.GetPersonalGiftListRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003051,
+          "socket_command_literal": 309052
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.PlaceOrder.DataReq$Builder",
+        "tbclient.PlaceOrder.PlaceOrderReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.gift.send.PlaceOrderRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.gift.send.PlaceOrderRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003053,
+          "socket_command_literal": 309051
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.SendFreeGift.DataReq$Builder",
+        "tbclient.SendFreeGift.SendFreeGiftReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.gift.send.SendFreeGiftRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.gift.send.SendFreeGiftRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003052,
+          "socket_command_literal": 309050
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetUserBfbInfo.DataReq$Builder",
+        "tbclient.GetUserBfbInfo.GetUserBfbInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.home.BfbInfoRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.home.BfbInfoRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003100,
+          "socket_command_literal": 309366
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetMyPost.DataReq$Builder",
+        "tbclient.GetMyPost.GetMyPostReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.homepage.RequestGetMyPostNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.homepage.RequestGetMyPostNetMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003010,
+          "socket_command_literal": 303111
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Userlike.DataReq$Builder",
+        "tbclient.Userlike.UserlikeReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.homepage.concern.message.ConcernPageRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.homepage.concern.message.ConcernPageRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003343,
+          "socket_command_literal": 309474
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.RecomVertical.DataReq$Builder",
+        "tbclient.RecomVertical.RecomVerticalReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.homepage.gamevideo.message.GameVideoRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.homepage.gamevideo.message.GameVideoRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003443,
+          "socket_command_literal": 309646
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.MoreTreasureTrove.DataReq$Builder",
+        "tbclient.MoreTreasureTrove.MoreTreasureTroveReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.homepage.lowFlows.message.MoreTreasureTroveReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.homepage.lowFlows.message.MoreTreasureTroveReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003486,
+          "socket_command_literal": 309691
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Realtime.DataReq$Builder",
+        "tbclient.Realtime.RealtimeReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.homepage.personalize.data.RealTimeRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.homepage.personalize.data.RealTimeRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003072,
+          "socket_command_literal": 309277
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Personalized.DataReq$Builder",
+        "tbclient.Personalized.PersonalizedReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.homepage.personalize.data.RecPersonalizeRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.homepage.personalize.data.RecPersonalizeRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003070,
+          "socket_command_literal": 309264
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.ActivityPage.ActivityPageReqIdl$Builder",
+        "tbclient.ActivityPage.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tieba.homepage.tabfeed.message.TabFeedListRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.homepage.tabfeed.message.TabFeedListRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003461,
+          "socket_command_literal": 309655
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.NewTopicList.DataReq$Builder",
+        "tbclient.NewTopicList.NewTopicListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.homepage.topic.topictab.message.RequestGetTopicListMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.homepage.topic.topictab.message.RequestGetTopicListMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003423,
+          "socket_command_literal": 309628
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.RecomVideo.DataReq$Builder",
+        "tbclient.RecomVideo.RecomVideoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.homepage.video.message.VideoTabRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.homepage.video.message.VideoTabRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003450,
+          "socket_command_literal": 309648
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetTopicRelateThread.DataReq$Builder",
+        "tbclient.GetTopicRelateThread.GetTopicRelateThreadReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.hottopic.message.RequestGetTopicRelateThreadMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.hottopic.message.RequestGetTopicRelateThreadMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003042,
+          "socket_command_literal": 309005
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.TopicList.DataReq$Builder",
+        "tbclient.TopicList.TopicListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.hottopic.message.RequestHotRanklistMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.hottopic.message.RequestHotRanklistMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003078,
+          "socket_command_literal": 309289
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Hottopic.DataReq$Builder",
+        "tbclient.Hottopic.HottopicReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.hottopic.message.RequestHotTopicMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.hottopic.message.RequestHotTopicMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003041,
+          "socket_command_literal": 303050
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetSugTopic.DataReq$Builder",
+        "tbclient.GetSugTopic.GetSugTopicReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.hottopicselect.HotTopicSelectNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.hottopicselect.HotTopicSelectNetMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003186,
+          "socket_command_literal": 309416
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetForumBroadcastList.DataReq$Builder",
+        "tbclient.GetForumBroadcastList.GetForumBroadcastListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.im.forum.broadcast.data.BroadcastMajorHistoryRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.im.forum.broadcast.data.BroadcastMajorHistoryRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003471,
+          "socket_command_literal": 309669
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetForumDetail.DataReq$Builder",
+        "tbclient.GetForumDetail.GetForumDetailReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.im.forum.detail.ForumDetailRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.im.forum.detail.ForumDetailRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1002509,
+          "socket_command_literal": 303021
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.AddMsgRecord.AddMsgRecordReqIdl$Builder",
+        "tbclient.AddMsgRecord.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tieba.im.message.RequestAddMsgRecordMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.im.message.RequestAddMsgRecordMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003071,
+          "socket_command_literal": 309265
+        },
+        {
+          "method": "com.baidu.tieba.im.message.RequestAddMsgRecordMessage.\u003cinit\u003e(java.util.List\u003ctbclient.AddMsgRecord.MsgRecord\u003e):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003071,
+          "socket_command_literal": 309265
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Bigvip.BigvipReqIdl$Builder",
+        "tbclient.Bigvip.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tieba.im.recommend.detail.RecommendDetailRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.im.recommend.detail.RecommendDetailRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001535,
+          "socket_command_literal": 303025
+        }
+      ]
+    },
+    {
+      "model_builder_types": ["tbclient.CheckPost.CheckPostReqIdl$Builder"],
+      "class_name": "com.baidu.tieba.immessagecenter.mention.CheckPostRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.immessagecenter.mention.CheckPostRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003451,
+          "socket_command_literal": 303010
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.AgreeMe.AgreeMeReqIdl$Builder",
+        "tbclient.AgreeMe.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tieba.immessagecenter.mention.agree.message.AgreeMeRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.immessagecenter.mention.agree.message.AgreeMeRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1002211,
+          "socket_command_literal": 309593
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetTagList.DataReq$Builder",
+        "tbclient.GetTagList.GetTagListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.interestlabel.message.RequestGetLabelMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.interestlabel.message.RequestGetLabelMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003333,
+          "socket_command_literal": 309467
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.SubTagList.DataReq$Builder",
+        "tbclient.SubTagList.SubTagListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.interestlabel.message.RequestSubLabelMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.interestlabel.message.RequestSubLabelMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003334,
+          "socket_command_literal": 309468
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Lego.DataReq$Builder",
+        "tbclient.Lego.LegoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.lego.model.LegoPageRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.lego.model.LegoPageRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003079,
+          "socket_command_literal": 309312
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetSuggestionByAddrName.DataReq$Builder",
+        "tbclient.GetSuggestionByAddrName.GetSuggestionByAddrNameReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.location.data.LocationSearchNetRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.location.data.LocationSearchNetRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003002,
+          "socket_command_literal": 303018
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetVipInfo.DataReq$Builder",
+        "tbclient.GetVipInfo.GetVipInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.memberCenter.index.MembercenterRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.memberCenter.index.MembercenterRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003048,
+          "socket_command_literal": 309062
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.FinishMemberTask.DataReq$Builder",
+        "tbclient.FinishMemberTask.FinishMemberTaskReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.memberCenter.memberTask.FinishMemberTaskReqMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.memberCenter.memberTask.FinishMemberTaskReqMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003188,
+          "socket_command_literal": 309429
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetMemberTaskList.DataReq$Builder",
+        "tbclient.GetMemberTaskList.GetMemberTaskListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.memberCenter.memberTask.MemberTaskCenterRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.memberCenter.memberTask.MemberTaskCenterRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003187,
+          "socket_command_literal": 309427
+        }
+      ]
+    },
+    {
+      "model_builder_types": ["tbclient.AddTail.AddTailReqIdl$Builder"],
+      "class_name": "com.baidu.tieba.memberCenter.tail.message.AddTailNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.memberCenter.tail.message.AddTailNetMessage.\u003cinit\u003e(java.lang.String, java.lang.String, java.lang.String):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003019,
+          "socket_command_literal": 305101
+        }
+      ]
+    },
+    {
+      "model_builder_types": ["tbclient.DeleteTail.DeleteTailReqIdl$Builder"],
+      "class_name": "com.baidu.tieba.memberCenter.tail.message.DeleteTailNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.memberCenter.tail.message.DeleteTailNetMessage.\u003cinit\u003e(int):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003020,
+          "socket_command_literal": 305103
+        }
+      ]
+    },
+    {
+      "model_builder_types": ["tbclient.GetTails.GetTailsReqIdl$Builder"],
+      "class_name": "com.baidu.tieba.memberCenter.tail.message.GetTailsNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.memberCenter.tail.message.GetTailsNetMessage.\u003cinit\u003e(java.lang.String):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003021,
+          "socket_command_literal": 305001
+        }
+      ]
+    },
+    {
+      "model_builder_types": ["tbclient.SetTail.SetTailReqIdl$Builder"],
+      "class_name": "com.baidu.tieba.memberCenter.tail.message.SetTailNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.memberCenter.tail.message.SetTailNetMessage.\u003cinit\u003e(int, int):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003022,
+          "socket_command_literal": 305104
+        }
+      ]
+    },
+    {
+      "model_builder_types": ["tbclient.UpdateTail.UpdateTailReqIdl$Builder"],
+      "class_name": "com.baidu.tieba.memberCenter.tail.message.UpdateTailNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.memberCenter.tail.message.UpdateTailNetMessage.\u003cinit\u003e(int, java.lang.String, java.lang.String, java.lang.String):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003023,
+          "socket_command_literal": 305102
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.UserPk.DataReq$Builder",
+        "tbclient.UserPk.UserPkReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.message.RequestBlessMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.message.RequestBlessMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003065,
+          "socket_command_literal": 309085
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.AddPollPost.AddPollPostReqIdl$Builder",
+        "tbclient.AddPollPost.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tieba.model.message.AddPollPostRequestNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.model.message.AddPollPostRequestNetMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003468,
+          "socket_command_literal": 309006
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.CheckRealName.CheckRealNameReqIdl$Builder",
+        "tbclient.CheckRealName.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tieba.model.message.CheckRealNameRequestNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.model.message.CheckRealNameRequestNetMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003325,
+          "socket_command_literal": 309456
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Share.DataReq$Builder",
+        "tbclient.Share.ShareReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.model.message.ShareReportNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.model.message.ShareReportNetMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003363,
+          "socket_command_literal": 309480
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetStoreRemindTime.DataReq$Builder",
+        "tbclient.GetStoreRemindTime.GetStoreRemindTimeReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.myCollection.message.GetStoreRemindTimeRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.myCollection.message.GetStoreRemindTimeRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003067,
+          "socket_command_literal": 309117
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetVerticalForumList.DataReq$Builder",
+        "tbclient.GetVerticalForumList.GetVerticalForumListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.newinterest.data.InterestedForumReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.newinterest.data.InterestedForumReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003457,
+          "socket_command_literal": 309654
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.PbPage.DataReq$Builder",
+        "tbclient.PbPage.PbPageReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.pb.PbPageRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pb.PbPageRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001801,
+          "socket_command_literal": 302001
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.ExcPbPage.DataReq$Builder",
+        "tbclient.ExcPbPage.ExcPbPageReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.pb.chosen.net.ChosenPbNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pb.chosen.net.ChosenPbNetMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003006,
+          "socket_command_literal": 309093
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.ExcZan.DataReq$Builder",
+        "tbclient.ExcZan.ExcZanReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.pb.chosen.net.zan.ChosenZanNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pb.chosen.net.zan.ChosenZanNetMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003007,
+          "socket_command_literal": 309095
+        }
+      ]
+    },
+    {
+      "model_builder_types": [],
+      "class_name": "com.baidu.tieba.pb.pagebrowser.lowqualityfold.LowQualityFoldRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pb.pagebrowser.lowqualityfold.LowQualityFoldRequestMessage.\u003cinit\u003e(com.baidu.tieba.ued, int, java.lang.String, int, boolean):void",
+          "instruction_code_unit_offset": 20,
+          "http_command_literal": 1001801,
+          "socket_command_literal": 302001
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.NestMore.DataReq$Builder",
+        "tbclient.NestMore.NestMoreReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.pb.pagebrowser.net.NestMoreRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pb.pagebrowser.net.NestMoreRequestMessage.\u003cinit\u003e(long, long, int, int, java.util.List\u003cjava.lang.Long\u003e, int):void",
+          "instruction_code_unit_offset": 15,
+          "http_command_literal": 1001801,
+          "socket_command_literal": 302001
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.PbList.DataReq$Builder",
+        "tbclient.PbList.PbListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.pb.pagebrowser.net.PageBrowserRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pb.pagebrowser.net.PageBrowserRequestMessage.\u003cinit\u003e(int, java.lang.String, com.baidu.tieba.ued, int, java.lang.String, long, java.lang.String, boolean, int, int):void",
+          "instruction_code_unit_offset": 32,
+          "http_command_literal": 1001801,
+          "socket_command_literal": 302001
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetPostList.DataReq$Builder",
+        "tbclient.GetPostList.GetPostListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.pb.pb.godreply.LookMoreReqMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pb.pb.godreply.LookMoreReqMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001603,
+          "socket_command_literal": 309446
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.RelateRecThread.DataReq$Builder",
+        "tbclient.RelateRecThread.RelateRecThreadReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.pb.pb.main.relatelist.RelateRecThreadRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pb.pb.main.relatelist.RelateRecThreadRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003490,
+          "socket_command_literal": 309701
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.PbFloor.DataReq$Builder",
+        "tbclient.PbFloor.PbFloorReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.pb.pb.sub.SubPbRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pb.pb.sub.SubPbRequestMessage.\u003cinit\u003e(android.content.Context, long, long, long, int, int, int, double, java.lang.String, int, java.lang.Integer, java.lang.String):void",
+          "instruction_code_unit_offset": 11,
+          "http_command_literal": 1002100,
+          "socket_command_literal": 302002
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.ThreadPublish.DataReq$Builder",
+        "tbclient.ThreadPublish.ThreadPublishReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.pb.threadpublish.ThreadPublishReqMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pb.threadpublish.ThreadPublishReqMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003440,
+          "socket_command_literal": 309644
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.PushThread.DataReq$Builder",
+        "tbclient.PushThread.PushThreadReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.pbextra.PbPushRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.pbextra.PbPushRequestMessage.\u003cinit\u003e(long, long, int, long):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001806,
+          "socket_command_literal": 309325
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Profile.DataReq$Builder",
+        "tbclient.Profile.ProfileReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.person.ProfileRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.person.ProfileRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1002700,
+          "socket_command_literal": 303012
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetRecommendGodList.DataReq$Builder",
+        "tbclient.GetRecommendGodList.GetRecommendGodListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.personExtra.RecommendGodReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.personExtra.RecommendGodReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003475,
+          "socket_command_literal": 309684
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.HistorySwan.DataReq$Builder",
+        "tbclient.HistorySwan.HistorySwanReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.personExtra.SmartAppBrowseHistoryRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.personExtra.SmartAppBrowseHistoryRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003434,
+          "socket_command_literal": 309638
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.Personal.DataReq$Builder",
+        "tbclient.Personal.PersonalReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.personPolymeric.mode.message.PersonPolymericReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.personPolymeric.mode.message.PersonPolymericReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003181,
+          "socket_command_literal": 309408
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.UserPost.DataReq$Builder",
+        "tbclient.UserPost.UserPostReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.personPolymeric.mode.message.UserPostPageRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.personPolymeric.mode.message.UserPostPageRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001503,
+          "socket_command_literal": 303002
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetShoubaiThreadList.DataReq$Builder",
+        "tbclient.GetShoubaiThreadList.GetShoubaiThreadListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.personPolymeric.tab.data.PersonCenterDynamicTabRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.personPolymeric.tab.data.PersonCenterDynamicTabRequestMessage.\u003cinit\u003e(long, long, int):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003446,
+          "socket_command_literal": 309647
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetMoreMsg.DataReq$Builder",
+        "tbclient.GetMoreMsg.GetMoreMsgReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.screenlocknotify.loadmore.ScreenLockLoadMoreMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.screenlocknotify.loadmore.ScreenLockLoadMoreMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003194,
+          "socket_command_literal": 309420
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.CloseAd.CloseAdReqIdl$Builder",
+        "tbclient.CloseAd.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tieba.setting.MemberCloseAdRequestMessage",
+      "constructor_literals": []
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetDislikeList.DataReq$Builder",
+        "tbclient.GetDislikeList.GetDislikeListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.setting.forbiddenforum.ForbiddenForumReqMsg",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.setting.forbiddenforum.ForbiddenForumReqMsg.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003485,
+          "socket_command_literal": 309692
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetPrivateInfo.GetPrivateInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.setting.im.more.PrivateInfoNetMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.setting.im.more.PrivateInfoNetMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1002501,
+          "socket_command_literal": 303016
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetOfficialSwitch.DataReq$Builder",
+        "tbclient.GetOfficialSwitch.GetOfficialSwitchReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.setting.officialAccountPush.OfficialAccountPushRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.setting.officialAccountPush.OfficialAccountPushRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003419,
+          "socket_command_literal": 309620
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.UserMuteQuery.DataReq$Builder",
+        "tbclient.UserMuteQuery.UserMuteQueryReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.setting.usermutelist.UserMuteQueryRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.setting.usermutelist.UserMuteQueryRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003026,
+          "socket_command_literal": 303028
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetForumsFromForumClass.DataReq$Builder",
+        "tbclient.GetForumsFromForumClass.GetForumsFromForumClassReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.square.forumlist.SquareForumListReq",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.square.forumlist.SquareForumListReq.\u003cinit\u003e(int, int, int):void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003060,
+          "socket_command_literal": 309097
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.FrsPage.DataReq$Builder",
+        "tbclient.FrsPage.FrsPageReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.tbadkcore.FRSPageRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.tbadkcore.FRSPageRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1001703,
+          "socket_command_literal": 301001
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetPendantByCategory.DataReq$Builder",
+        "tbclient.GetPendantByCategory.GetPendantByCategoryReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.avatarPendant.AvatarPendantListRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.avatarPendant.AvatarPendantListRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003178,
+          "socket_command_literal": 309371
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.SetPendant.DataReq$Builder",
+        "tbclient.SetPendant.SetPendantReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.avatarPendant.SetPendantRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.avatarPendant.SetPendantRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003179,
+          "socket_command_literal": 309412
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetBackground.DataReq$Builder",
+        "tbclient.GetBackground.GetBackgroundReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.background.BackgroundGetRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.background.BackgroundGetRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003035,
+          "socket_command_literal": 309023
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetBgByCategory.DataReq$Builder",
+        "tbclient.GetBgByCategory.GetBgByCategoryReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.background.BackgroundGroupRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.background.BackgroundGroupRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003033,
+          "socket_command_literal": 309020
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetBgList.DataReq$Builder",
+        "tbclient.GetBgList.GetBgListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.background.BackgroundListRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.background.BackgroundListRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003034,
+          "socket_command_literal": 309021
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.SetBackground.DataReq$Builder",
+        "tbclient.SetBackground.SetBackgroundReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.background.BackgroundSetRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.background.BackgroundSetRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003036,
+          "socket_command_literal": 309022
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetBubbleByCategory.DataReq$Builder",
+        "tbclient.GetBubbleByCategory.GetBubbleByCategoryReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.bubble.group.BubbleGroupRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.bubble.group.BubbleGroupRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003039,
+          "socket_command_literal": 309030
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetBubbleList.DataReq$Builder",
+        "tbclient.GetBubbleList.GetBubbleListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.bubble.list.BubbleListRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.bubble.list.BubbleListRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003055,
+          "socket_command_literal": 309031
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetCardByCategory.DataReq$Builder",
+        "tbclient.GetCardByCategory.GetCardByCategoryReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.card.category.PersonalCardCategoryRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.card.category.PersonalCardCategoryRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003093,
+          "socket_command_literal": 309331
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetCard.DataReq$Builder",
+        "tbclient.GetCard.GetCardReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.card.detail.PersonalCardDetailRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.card.detail.PersonalCardDetailRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003094,
+          "socket_command_literal": 309333
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.SetCard.DataReq$Builder",
+        "tbclient.SetCard.SetCardReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.card.setCard.SetPersonalCardRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.card.setCard.SetPersonalCardRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003095,
+          "socket_command_literal": 309345
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetThemeList.DataReq$Builder",
+        "tbclient.GetThemeList.GetThemeListReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.themeCenter.dressCenter.DressupCenterRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.themeCenter.dressCenter.DressupCenterRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003030,
+          "socket_command_literal": 309001
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.QueryBlockAndAppealInfo.DataReq$Builder",
+        "tbclient.QueryBlockAndAppealInfo.QueryBlockAndAppealInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.ueg.UEGCancelRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.ueg.UEGCancelRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003414,
+          "socket_command_literal": 309615
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetUserBlackInfo.DataReq$Builder",
+        "tbclient.GetUserBlackInfo.GetUserBlackInfoReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.userblock.message.UserBlockInfoRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.userblock.message.UserBlockInfoRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003488,
+          "socket_command_literal": 309698
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.SetUserBlack.DataReq$Builder",
+        "tbclient.SetUserBlack.SetUserBlackReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.userblock.message.UserBlockSetRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.userblock.message.UserBlockSetRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003489,
+          "socket_command_literal": 309697
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.UserMuteCheck.DataReq$Builder",
+        "tbclient.UserMuteCheck.UserMuteCheckReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.usermute.UserMuteCheckRequestMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.usermute.UserMuteCheckRequestMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003025,
+          "socket_command_literal": 303040
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.AddPost.AddPostReqIdl$Builder",
+        "tbclient.AddPost.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tieba.write.message.AddPostRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.write.message.AddPostRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003537,
+          "socket_command_literal": 309731
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.AddThread.AddThreadReqIdl$Builder",
+        "tbclient.AddThread.DataReq$Builder"
+      ],
+      "class_name": "com.baidu.tieba.write.message.AddThreadRequest",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.write.message.AddThreadRequest.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003536,
+          "socket_command_literal": 309730
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetRepostRecommendForum.DataReq$Builder",
+        "tbclient.GetRepostRecommendForum.GetRepostRecommendForumReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.write.transmit.model.GetRepostForumReqMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.write.transmit.model.GetRepostForumReqMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003323,
+          "socket_command_literal": 309450
+        }
+      ]
+    },
+    {
+      "model_builder_types": [
+        "tbclient.GetSticker.DataReq$Builder",
+        "tbclient.GetSticker.GetStickerReqIdl$Builder"
+      ],
+      "class_name": "com.baidu.tieba.write.write.message.RequestGetStickerMessage",
+      "constructor_literals": [
+        {
+          "method": "com.baidu.tieba.write.write.message.RequestGetStickerMessage.\u003cinit\u003e():void",
+          "instruction_code_unit_offset": 10,
+          "http_command_literal": 1003341,
+          "socket_command_literal": 309475
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

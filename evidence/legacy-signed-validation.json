@@ -1,0 +1,945 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "started_at_utc": "2026-11-13T15:30:52.677Z",
+  "scope": "Explicit legacy JSON read hypotheses; no signature assumed or business-success promotion from HTTP 200",
+  "credentials_supplied": true,
+  "signature_mode": "APK-legacy-MD5",
+  "results": [
+    {
+      "path": "/c/f/forum/forumdir",
+      "http_status": 200,
+      "response_sha256": "e7cb657ea203daf1839ca718fee4b67e7d02dee5656087e11616d779c01e926a",
+      "response_bytes": 102,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["forum_dir"]
+    },
+    {
+      "path": "/c/f/forum/forumrank",
+      "http_status": 200,
+      "response_sha256": "3f35155dcd26ee1b1d36f7376ce4a2f6f8890c6befe1e22574da22912486881f",
+      "response_bytes": 119,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["editor_recommend", "forum_class", "forum_dir"]
+    },
+    {
+      "path": "/c/f/forum/forumsquare",
+      "http_status": 200,
+      "response_sha256": "faf0dc14de1575304e34f846aa77298a7583bb8a456a9fab02f8af0d401f7954",
+      "response_bytes": 43619,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "banner",
+        "forum_list_recommend",
+        "recommend_forum",
+        "forum_browse",
+        "forum_browse_title",
+        "thread_list",
+        "prevtime",
+        "new_recommend_topic"
+      ]
+    },
+    {
+      "path": "/c/f/forum/forumsquarelist",
+      "http_status": 200,
+      "response_sha256": "dd6ed9da83a209103cd660b2b8256673a7a94e5ccfb928c413ab9e5ce2cc1c33",
+      "response_bytes": 229,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/getforumlist",
+      "http_status": 200,
+      "response_sha256": "58d8f76309b1bd5ccacdc7d7c1b5e6aabf0cba98a16633c7cda000c57f14d045",
+      "response_bytes": 23256,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "forum_info",
+        "user",
+        "can_use",
+        "button_content",
+        "content",
+        "show_dialog",
+        "sign_notice",
+        "title",
+        "text_pre",
+        "text_color",
+        "text_mid",
+        "text_suf",
+        "num_notice",
+        "level",
+        "sign_max_num",
+        "valid",
+        "msign_step_num",
+        "svip_is_sign",
+        "sign_new",
+        "today_exp",
+        "sign_max_num_new",
+        "banner",
+        "anti_info",
+        "member_guide"
+      ]
+    },
+    {
+      "path": "/c/f/forum/getForumRecomTagList",
+      "http_status": 200,
+      "response_sha256": "db1fac9b7140786dd911eef985d1fe8f0a2cf3a3ab7c7c92110bd74f2d335945",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "210009",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/getForumSquare",
+      "http_status": 200,
+      "response_sha256": "fa1f5494ea6233f46de543c09cf9d9de6885f17d7daaf395c0824f496adb52f1",
+      "response_bytes": 617,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "tbs",
+        "page_structure",
+        "class_name",
+        "second_class_list",
+        "page",
+        "forum_info"
+      ]
+    },
+    {
+      "path": "/c/f/forum/getHorseRaceLampList",
+      "http_status": 200,
+      "response_sha256": "a61fc3a97d8dea58e6520ef65f70c9468241ddfebd183815a30fa4363b253ed6",
+      "response_bytes": 102,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["live_list"]
+    },
+    {
+      "path": "/c/f/forum/getInterestClassList",
+      "http_status": 200,
+      "response_sha256": "165a663bbaeed1bcbd380db76b16392ff3034e33c8e658bd1d3b09b3e5419445",
+      "response_bytes": 5664,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["class_list", "min_choose_num"]
+    },
+    {
+      "path": "/c/f/forum/getRecreationForum",
+      "http_status": 302,
+      "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "non-json-response"
+    },
+    {
+      "path": "/c/f/forum/getShareInfo",
+      "http_status": 200,
+      "response_sha256": "7b5fb7f7750d4e17791223d1568179e7526cc9dad698fc42912b7f0ae2c0b474",
+      "response_bytes": 126,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110003",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/forum/getTailRecommend",
+      "http_status": 200,
+      "response_sha256": "bfee6a8c62673f51d6fe5a04c729b0e7a803062000133bfa3ac6aee045a05031",
+      "response_bytes": 407791,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/forum/getUserSign",
+      "http_status": 200,
+      "response_sha256": "b01a2605952554ad6b3ef45177ebbd5984912028e850276c23681961ccece6eb",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "210009",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/forum/hotThreadList",
+      "http_status": 200,
+      "response_sha256": "318f26586a4968f73525a2fd59c21fca5d9f240bd437409b4351d4872198c225",
+      "response_bytes": 16629,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "topic_list",
+        "thread_info",
+        "hot_thread_tab_info",
+        "inner_tabs",
+        "has_more"
+      ]
+    },
+    {
+      "path": "/c/f/forum/hotforum",
+      "http_status": 200,
+      "response_sha256": "446100557a8a8c25f0b59ac68b5091d913493e01d944808efd21a1b1a12718d6",
+      "response_bytes": 1525,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["forum_info", "hot_search", "hot_topic"]
+    },
+    {
+      "path": "/c/f/forum/itemPage",
+      "http_status": 200,
+      "response_sha256": "2376513dd115d5d1d4e17b87758350edfc2d15274d3e6a0f5e34d230b9245ff3",
+      "response_bytes": 100,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/f/forum/itemSearchList",
+      "http_status": 200,
+      "response_sha256": "0c1a5263d5e771894456c54b3304a682852d63a578d5eba6b61d625e08899548",
+      "response_bytes": 168,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["tab_option", "item_list"]
+    },
+    {
+      "path": "/c/f/forum/seconddir",
+      "http_status": 200,
+      "response_sha256": "461c9dab7f864fccb29c605fe50251536f2d159a4ed66e916f891acb74961dbd",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/frs/asyncData",
+      "http_status": 200,
+      "response_sha256": "c24b747d42bb91a48361b9bec7962268b269255426f7a959d375fe4a88ed6f23",
+      "response_bytes": 1974,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["chat_room_info"]
+    },
+    {
+      "path": "/c/f/frs/frsBottom",
+      "http_status": 200,
+      "response_sha256": "9857c08e1a0a158a145a82c1ac92d8b0923ecdb199cb2f3e2bd0dbd485559391",
+      "response_bytes": 5791,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "card_activity",
+        "tbs",
+        "user",
+        "activityhead",
+        "is_exclusive",
+        "area_data",
+        "is_member_broadcast_forum",
+        "pos_limit_y",
+        "area_data_config",
+        "forum",
+        "frs_bottom"
+      ]
+    },
+    {
+      "path": "/c/f/frs/getFrsLiveThreads",
+      "http_status": 200,
+      "response_sha256": "01ce77001fe0bdae4e9e0dbb77057167baf0e114a895d58ce7682f6fb44f2065",
+      "response_bytes": 10192,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "page",
+        "ala_live_count",
+        "thread_list",
+        "alt_list"
+      ]
+    },
+    {
+      "path": "/c/f/frs/starTrends",
+      "http_status": 200,
+      "response_sha256": "2faae18a10df2b7f81340c878458ca7811c03454dead1bf962d067ea110ab46f",
+      "response_bytes": 162,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["has_more"]
+    },
+    {
+      "path": "/c/f/pb/picpage",
+      "http_status": 200,
+      "response_sha256": "c6d185a821a4ef22cde951bb7b8cda5a0ac6b924bddabe35cce167dc50aafead",
+      "response_bytes": 4485,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "is_new_url",
+        "show_adsense",
+        "pic_amount",
+        "pic_list",
+        "log_param",
+        "thread",
+        "forum",
+        "comment_publisher_config",
+        "anti"
+      ]
+    },
+    {
+      "path": "/c/f/post/threadstore",
+      "http_status": 200,
+      "response_sha256": "d11a35f55413a48326788917c68afc83bea2239a003419bf91fb7b0d10783d1f",
+      "response_bytes": 2916,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["store_thread"]
+    },
+    {
+      "path": "/c/f/publisher/conf",
+      "http_status": 200,
+      "response_sha256": "113aa3ad48a616c93857f9042b84fc519f8d16ce4655b08e461e31ccb8dc7d1c",
+      "response_bytes": 252,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/recommend/getRecommendTopic",
+      "http_status": 200,
+      "response_sha256": "8907df535eddc1df47fe63dd461f381dcefc7112da0e7874596dbda6ea664115",
+      "response_bytes": 4622,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["recommend_topic"]
+    },
+    {
+      "path": "/c/f/recommend/getTopicRelateThread",
+      "http_status": 200,
+      "response_sha256": "d9e034f37ff7550ef9d45c90bb3ce9824dd7f0088d0d5ed6efd80a2cbe519728",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/recommend/newRecommendCard",
+      "http_status": 200,
+      "response_sha256": "327655bea0dd7cac3a8c94c0e1cf27420475e09f76fcc6de5383e6599999fe43",
+      "response_bytes": 93,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/recommend/newhottopic",
+      "http_status": 200,
+      "response_sha256": "120e24477761cd2ca2c1ef7a416525d0c7f56d840e8aad6fe07d6c00e9ead724",
+      "response_bytes": 141,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/recommend/newtopicthread",
+      "http_status": 302,
+      "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "non-json-response"
+    },
+    {
+      "path": "/c/f/search/discover",
+      "http_status": 200,
+      "response_sha256": "710e3ddee0e52729864293ffac7afc3dfe619dba42a3978c10c0d280b1d49f4c",
+      "response_bytes": 5071,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/sidebar/home",
+      "http_status": 200,
+      "response_sha256": "274da571a09cbbc04e06475f13bf7d20483359e1c78f5b786e3cf54b54e27863",
+      "response_bytes": 38183,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "vip_banner",
+        "user_info",
+        "like_forum_list",
+        "tools",
+        "game_center",
+        "like_forum_scheme",
+        "aiapps"
+      ]
+    },
+    {
+      "path": "/c/f/score/getThreadScoreItemList",
+      "http_status": 200,
+      "response_sha256": "fae0e00af90ccb934bcd6e399d7acd2c0ef290d042cdcd3d5b38eefa03b3dffb",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "210009",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/video/cardInfo",
+      "http_status": 200,
+      "response_sha256": "b7fac304689556115a10da0a653af86ad2ff5bd5235496a0dcdb46618c500f2f",
+      "response_bytes": 138,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/video/concernTab",
+      "http_status": 200,
+      "response_sha256": "1ff6aed187134cbda10909555e995e9e2169abd3f081bf0c1e182f6aa4362ee7",
+      "response_bytes": 74299,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["forum_friends", "log_param", "concern_list"]
+    },
+    {
+      "path": "/c/f/video/feed",
+      "http_status": 200,
+      "response_sha256": "5dd94c1a9506491435944b3d1daddf5f00dead743582fc0e29eff7ddf7870f81",
+      "response_bytes": 36462,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["thread_list"]
+    },
+    {
+      "path": "/c/f/video/frstab",
+      "http_status": 302,
+      "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "non-json-response"
+    },
+    {
+      "path": "/c/f/video/getActList",
+      "http_status": 200,
+      "response_sha256": "6a6d21efd8def3445183067b1eaa46ec52a3a03011ccf77149ac55c9f22012c2",
+      "response_bytes": 35820,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["status", "usermsg", "data"]
+    },
+    {
+      "path": "/c/f/video/getLiveTab",
+      "http_status": 200,
+      "response_sha256": "466d804d06fd88901d3af8a99460713d19ec6fc663af80c0f4c9ab93a11376da",
+      "response_bytes": 141,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110003",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/getMusicList",
+      "http_status": 200,
+      "response_sha256": "afbea6f54c792123b205a337e9d59aa2557ec1ad9f32718ad570c0eca267efde",
+      "response_bytes": 16371,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["info", "data"]
+    },
+    {
+      "path": "/c/f/video/getMusicTagList",
+      "http_status": 200,
+      "response_sha256": "00b3bc08bd862e8e3d45e7ed789f0842f365cb72a1d68f9ab531cf9b7871245f",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/getRecentWatchRecord",
+      "http_status": 302,
+      "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "non-json-response"
+    },
+    {
+      "path": "/c/f/video/getVideoInfoByVLogId",
+      "http_status": 200,
+      "response_sha256": "d0e5c2f8b4a3fc96b03ccdf62912a3fa7a5b28cdd4a48d33a8633fd9a1297f76",
+      "response_bytes": 127,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "210009",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/getVideoMidPage",
+      "http_status": 200,
+      "response_sha256": "02a27500c5acd06228af8ca850acfb62ae61ef21b5519210541854d7b9982c11",
+      "response_bytes": 6917,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "ad_show_select",
+        "list",
+        "page",
+        "live_config",
+        "log_param",
+        "has_more",
+        "info"
+      ]
+    },
+    {
+      "path": "/c/f/video/getVideoPageBaseInfo",
+      "http_status": 200,
+      "response_sha256": "2091165ea48e51fcd8d9f827e87c3cc1d3df736e260d45333efeefb10f5f38ef",
+      "response_bytes": 1142,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/video/getWorksTags",
+      "http_status": 200,
+      "response_sha256": "6873102ddeec5eb0408f07c098f4385da74f39f070b3aeb68b5c4548ad58b7d1",
+      "response_bytes": 6307,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["category", "tags"]
+    },
+    {
+      "path": "/c/f/video/liveBarSpecialTab",
+      "http_status": 200,
+      "response_sha256": "c2bfcb729fe7fc5fa1ce2474cccead6b0df194b68f852870f7d2a6af46acbfeb",
+      "response_bytes": 52598,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "live_info",
+        "activity_info",
+        "activity_info_detail",
+        "has_more"
+      ]
+    },
+    {
+      "path": "/c/f/video/liveBarSpecialUserlike",
+      "http_status": 200,
+      "response_sha256": "11640ae15bbcacd456bcb0dc3208c330c672b1559a4377600e2bcaf1647bd5cd",
+      "response_bytes": 172,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": [
+        "has_more",
+        "total_follow_num",
+        "follow_list",
+        "recommend_list",
+        "pn"
+      ]
+    },
+    {
+      "path": "/c/f/video/liveTabliveSubTab",
+      "http_status": 200,
+      "response_sha256": "5b3c4e8f94408cd7f29e118c49b6bf7d2b059781b27f6fb542f94bdc1a50368e",
+      "response_bytes": 10419,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["live", "has_more", "count"]
+    },
+    {
+      "path": "/c/f/video/music",
+      "http_status": 200,
+      "response_sha256": "33147ca95b17c2eb827da7cebfa114ac17f738d2a886b5123fddb33a18c7d408",
+      "response_bytes": 989,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["info", "data"]
+    },
+    {
+      "path": "/c/f/video/next",
+      "http_status": 302,
+      "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "non-json-response"
+    },
+    {
+      "path": "/c/f/video/pendant",
+      "http_status": 200,
+      "response_sha256": "acdcf16006c4c90bf72d76e333f54669fcdb27b8398be89512f79d2d186a8d09",
+      "response_bytes": 1522,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["info", "data"]
+    },
+    {
+      "path": "/c/f/video/qmFilters",
+      "http_status": 200,
+      "response_sha256": "b83590bf09edcf22ec35a470408155e847bf12849682799dcd27dbb912877960",
+      "response_bytes": 86,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/f/video/qmStickers",
+      "http_status": 200,
+      "response_sha256": "fbab7e8613859a9fe11154c89cc73731b075300cead1a4317ac1cf9253257755",
+      "response_bytes": 86,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/f/video/redIcon",
+      "http_status": 200,
+      "response_sha256": "12401b9a5678425a91354c05e2c78e9158e9d74104e8d56846fe1af7146202e7",
+      "response_bytes": 6980,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["red_icon_list"]
+    },
+    {
+      "path": "/c/f/video/sticker",
+      "http_status": 200,
+      "response_sha256": "c226aa83f5511f88033344b7ca4ac5cd3013ead1f12f357ce58454eef437d7f1",
+      "response_bytes": 25319,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["info", "data"]
+    },
+    {
+      "path": "/c/f/video/tbLiveTabUserLike",
+      "http_status": 200,
+      "response_sha256": "115c8a937ebd0d45e72e5468d949d3a72ba860729a2f9d9a82f634b8c965ae54",
+      "response_bytes": 33655,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/chat/getChatroomResource",
+      "http_status": 200,
+      "response_sha256": "b9c4a39c71cf278498273af0cac04b32b162405c2dff9ca1719b1d8764098250",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/chat/getRoomListByFid",
+      "http_status": 200,
+      "response_sha256": "477c7a2a8621b247136ea6e683675743af1e1d2227559c78f6260c8d7fdebcc8",
+      "response_bytes": 1336,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/chat/queryMeme",
+      "http_status": 200,
+      "response_sha256": "bbbe87847613f9de63b7c934d030a98ab7b3553755d651e8bb29538aabaf88db",
+      "response_bytes": 141,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/chat/getRelativeMemeList",
+      "http_status": 200,
+      "response_sha256": "860085748f1fc5809718d63cca4cccc7a7ac6bf0b6449baba510b4f2b58cd22f",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/chat/getSkillSugList",
+      "http_status": 200,
+      "response_sha256": "c50fe7ea6e0382485ac7861f1a0aa56738178743032f0da4315502a9cef21e0f",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/recommtag/getTagList",
+      "http_status": 200,
+      "response_sha256": "96109ca32847edb54853f8060cafbfb42721647818a1dccef2902ab7634f4cca",
+      "response_bytes": 2746,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["sex_taglist", "taglist"]
+    },
+    {
+      "path": "/c/f/voiceroom/newstab",
+      "http_status": 200,
+      "response_sha256": "15d28a0298cb6787d6ab1e8d4869d5561618d9d67094583967e0c33aa278ba70",
+      "response_bytes": 95,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/widget/getForumInfo",
+      "http_status": 200,
+      "response_sha256": "73a6f5433e8180a0a772ec82123c1aa9b4ce04329884eeb9e0b81be5502c8430",
+      "response_bytes": 1102,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/s/channelIconConfig",
+      "http_status": 200,
+      "response_sha256": "855b9c7ca626830cb6776315f651139126114667bf74e6758db4b88b0c09e9fb",
+      "response_bytes": 469,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["common", "special"]
+    },
+    {
+      "path": "/c/s/getCommercialPackage",
+      "http_status": 200,
+      "response_sha256": "f1607aa690982144d34b4089c6fb234b6b514b5103429b275e89a1ef702dacb6",
+      "response_bytes": 126,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110003",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/s/getDeeplinkScheme",
+      "http_status": 200,
+      "response_sha256": "0ca39129af75b6ef8da061dc0ec6e1aec311ef62cc7a1eb8687d9d4dc45034f3",
+      "response_bytes": 141,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/s/getThemeInfo",
+      "http_status": 200,
+      "response_sha256": "84c736acd9e3c72f03c7e1411472c59eb5743f9bcb967c16666930435b4461b5",
+      "response_bytes": 108,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/s/getipinfo",
+      "http_status": 200,
+      "response_sha256": "1de1ee15c62e076af54a93a1de501f3987ceb8b0a399eee55645cba995ba208a",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["urls"]
+    },
+    {
+      "path": "/c/s/getIconToast",
+      "http_status": 200,
+      "response_sha256": "2cdb7a543e5bcb38df86ee9635e0c4943633d123defe4bae1c2e6dadcd8457dc",
+      "response_bytes": 97,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["icon"]
+    },
+    {
+      "path": "/c/u/fans/page",
+      "http_status": 200,
+      "response_sha256": "98b963f2509ddcefb84600dd3a0dec3ce73b554eed2b06d0d56c538ace44f517",
+      "response_bytes": 2866,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "page",
+        "user_list",
+        "tips_text",
+        "follow_list_switch"
+      ]
+    },
+    {
+      "path": "/c/u/follow/list",
+      "http_status": 200,
+      "response_sha256": "40a11225618817ce487142cd495938022302b360a01437c23042034c8d99d130",
+      "response_bytes": 31409,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["user_list"]
+    },
+    {
+      "path": "/c/u/follow/followList",
+      "http_status": 200,
+      "response_sha256": "ec5a0991323313ad14fe9bf1f423c66d31e725f4a3fc1f78c843ccbc833f3b31",
+      "response_bytes": 1168,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "pn",
+        "has_more",
+        "total_follow_num",
+        "tips_text",
+        "follow_list",
+        "follow_list_switch"
+      ]
+    },
+    {
+      "path": "/c/u/follow/atSearchUserList",
+      "http_status": 200,
+      "response_sha256": "edcc744da49d50531877df138888bda01002328c176cba1fb661ebff1ce26dfe",
+      "response_bytes": 844,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["can_search_agent", "user_list"]
+    },
+    {
+      "path": "/c/u/user/getuserinfo",
+      "http_status": 200,
+      "response_sha256": "380cd72c21255e5ab3f954775bc80c04c3c62bda2eef294e3a3c34cdc08f3aae",
+      "response_bytes": 1329,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["user"]
+    },
+    {
+      "path": "/c/u/user/get_double_follows",
+      "http_status": 200,
+      "response_sha256": "27cb091e4f47286104af6d6e763753df5e689629a469dc22751beff8b4327ab3",
+      "response_bytes": 9760,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["total_count", "res_user_infos"]
+    },
+    {
+      "path": "/c/u/user/search_double_follows",
+      "http_status": 200,
+      "response_sha256": "f1eb5047d13ddf82888239f3081f82e47c4f02b9ce048c69135c780dc4f90aed",
+      "response_bytes": 134,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/u/user/getWatermark",
+      "http_status": 200,
+      "response_sha256": "c93266fcff2a6e181f68d490ab473b0879f13f23647ee1023fc65258936c2a21",
+      "response_bytes": 120,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/u/zan/getuserlist",
+      "http_status": 200,
+      "response_sha256": "db80b796a9f247939285f38e816bac00c7c9ba31c1a8fcde31a7f3d35a30fae9",
+      "response_bytes": 87,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/r/friend/listFriend",
+      "http_status": 200,
+      "response_sha256": "12434c451e68013b63a73327ca41b0751d6646bf0fcc208effe85bad28c16011",
+      "response_bytes": 3332,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["user_list", "page"]
+    },
+    {
+      "path": "/c/r/friend/searchFriend",
+      "http_status": 200,
+      "response_sha256": "66e75e3be4dab215f4f716d6a693c8242ec3120d7a59fcb7b584f9d24b9b4fe5",
+      "response_bytes": 198,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["errorno", "errmsg", "usermsg"]
+    }
+  ],
+  "finished_at_utc": "2026-11-13T15:31:37.716Z",
+  "summary": {
+    "accepted-empty-response": 16,
+    "json-data-returned": 43,
+    "business-error": 18,
+    "non-json-response": 5
+  },
+  "authentication_note": "Credentials supplied is not proof of App account authentication; only the official web login flag was independently confirmed."
+}

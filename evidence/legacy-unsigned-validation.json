@@ -1,0 +1,856 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "started_at_utc": "2026-11-13T15:18:04.615Z",
+  "scope": "Explicit legacy JSON read hypotheses; no signature assumed or business-success promotion from HTTP 200",
+  "credentials_supplied": true,
+  "results": [
+    {
+      "path": "/c/f/forum/forumdir",
+      "http_status": 200,
+      "response_sha256": "42365a6d6f1bd61a9b986944a6f4fd436d4a5f2e576158af05a18c6bb3868358",
+      "response_bytes": 139,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/forumrank",
+      "http_status": 200,
+      "response_sha256": "eb1945210e5ab4c8017c3a4a0e34a647a16f61e26c77fe0a834bc8a6a5d7eb29",
+      "response_bytes": 106,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "102",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/f/forum/forumsquare",
+      "http_status": 200,
+      "response_sha256": "411a7de1dda99fb0548ae510c4d825cc0f4c7bc25d7f8f0f8c284df066693fc9",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/forumsquarelist",
+      "http_status": 200,
+      "response_sha256": "90aa31ea84bf7b7158f8e6cb6bf2f04ebfb49167a77482b25dad77071092f606",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/getforumlist",
+      "http_status": 200,
+      "response_sha256": "7affad85471724f566a0d9b76e41fb2befb8f04dd2ef88cb130d4079a6082fb8",
+      "response_bytes": 23256,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": [
+        "forum_info",
+        "user",
+        "can_use",
+        "button_content",
+        "content",
+        "show_dialog",
+        "sign_notice",
+        "title",
+        "text_pre",
+        "text_color",
+        "text_mid",
+        "text_suf",
+        "num_notice",
+        "level",
+        "sign_max_num",
+        "valid",
+        "msign_step_num",
+        "svip_is_sign",
+        "sign_new",
+        "today_exp",
+        "sign_max_num_new",
+        "banner",
+        "anti_info",
+        "member_guide"
+      ]
+    },
+    {
+      "path": "/c/f/forum/getForumRecomTagList",
+      "http_status": 200,
+      "response_sha256": "48e6da29bd1e5d70e3b76466088f859e4573f0a09e0483eede956639f644454b",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/getForumSquare",
+      "http_status": 200,
+      "response_sha256": "e2c80fc8e300b078850cc36aa5c5a016dda65d1a942937dfb219d714ce51436a",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/getHorseRaceLampList",
+      "http_status": 200,
+      "response_sha256": "eeadc88e870cd3cd942a7e9f7b0cbb78420efd1240e00077ab6823bda0426774",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/getInterestClassList",
+      "http_status": 200,
+      "response_sha256": "837bcc7293f123220ace2e340e68af6b0725998c91ea0e115e8650cbbe0df8f1",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/getRecreationForum",
+      "http_status": 302,
+      "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "non-json-response"
+    },
+    {
+      "path": "/c/f/forum/getShareInfo",
+      "http_status": 200,
+      "response_sha256": "7d34dc4874a890f92a86c9e66d34bec457ddd7cf7a7899bb097266ff8f551425",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/forum/getTailRecommend",
+      "http_status": 200,
+      "response_sha256": "3c812d320d83af7f8fa1ab4b0e7e96bd8f8c5e2b4ed54e3ae4026abbb03a25d3",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/forum/getUserSign",
+      "http_status": 200,
+      "response_sha256": "9d0c37722959ac78e8085430f59e346eea1d6e69bbbb9997bd7aa3fbf6645308",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "210009",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/forum/hotThreadList",
+      "http_status": 200,
+      "response_sha256": "8384fcf49ba6a2a920c7e08f1329ba1bb485ef31f74369db94a41dd2d69db11d",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/hotforum",
+      "http_status": 200,
+      "response_sha256": "93f0e110cd660d671cae9bed33ef3ac72058cc849ed60dd26c1ea53aec9a6f2c",
+      "response_bytes": 141,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/itemPage",
+      "http_status": 200,
+      "response_sha256": "c3f05d9c0b335b5e63cc1663ad1b0a28f36eb7281504ad6bd6b29fa8c71ef481",
+      "response_bytes": 99,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/f/forum/itemSearchList",
+      "http_status": 200,
+      "response_sha256": "ee1ddecd2693968651093b052afd4ee4c0ab8dcad109dfbed2317a1cc7c6421f",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/forum/seconddir",
+      "http_status": 200,
+      "response_sha256": "91608a4c5ca394e1d27236be5829f968053c02bd0c29baeea0e3ad644f6937a2",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/frs/asyncData",
+      "http_status": 200,
+      "response_sha256": "16a12a825bbe6f37fd8e706ce79f998f0ce9d0489f209a53f8d82a289665de92",
+      "response_bytes": 116,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/f/frs/frsBottom",
+      "http_status": 200,
+      "response_sha256": "c42bca2fe975190c5b034e38e034a69f69c57fa510c11201fac45ebb3cd65a02",
+      "response_bytes": 115,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/f/frs/getFrsLiveThreads",
+      "http_status": 200,
+      "response_sha256": "7f8d453f88d35d1a8069eb48ba7516bee81cbcc8b3ccdfd2d3ed7405409d9b8e",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/frs/starTrends",
+      "http_status": 200,
+      "response_sha256": "13a8b67e7285b9b66f139b269b945b87d8cf6d8c278baae95d960529a0025ae9",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/pb/picpage",
+      "http_status": 200,
+      "response_sha256": "876be4626561490a345ac16dc129bbff049bf8edf39671eb1ff9798b438d6b50",
+      "response_bytes": 103,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/f/post/threadstore",
+      "http_status": 200,
+      "response_sha256": "543d0ca42ca5df4e93e76581937864ced20d8bc6b1694c23d6a2c0a5ab2df501",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/publisher/conf",
+      "http_status": 200,
+      "response_sha256": "0902efb19e51ac3e51bc2704923f60d909abbb0bf8b2546fadbc70fb42fa2656",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/recommend/getRecommendTopic",
+      "http_status": 200,
+      "response_sha256": "0465a1a2b4c2f7ee966d0e26ac68d35f4c7ec45acdd5724c51945e7087841cdb",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/recommend/getTopicRelateThread",
+      "http_status": 200,
+      "response_sha256": "6b6fa97b397620e5d09036b3b95f1431a672e0584e7b89832d9ed17426a4d4fa",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/recommend/newRecommendCard",
+      "http_status": 200,
+      "response_sha256": "17e8ba73453bb65e75b748481082f41d4dd49c630a508fd181db5eb1539da32a",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/recommend/newhottopic",
+      "http_status": 200,
+      "response_sha256": "47ede8ae40ae39bc973ab52556623db79aedfc784a1a9dd8113ab868856d1fb3",
+      "response_bytes": 139,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/recommend/newtopicthread",
+      "http_status": 302,
+      "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "non-json-response"
+    },
+    {
+      "path": "/c/f/search/discover",
+      "http_status": 200,
+      "response_sha256": "f1beb07bad0c234055adefe2c35140f5c3d2646922c981be488e4350593226f9",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/sidebar/home",
+      "http_status": 200,
+      "response_sha256": "4a50f08fb26c6db90f541cedaa77458f59e37c6487509533d015a42160e3d9e3",
+      "response_bytes": 115,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/f/score/getThreadScoreItemList",
+      "http_status": 200,
+      "response_sha256": "7b8c3286f70679800951d8b4e6b354a5bfe67b0370517606e8c0dcd4c415bdbb",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/video/cardInfo",
+      "http_status": 200,
+      "response_sha256": "2b24824c4cb525c7e81b86ec9e2f75856547993adc74ed7808c6ab1e51537a66",
+      "response_bytes": 171,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/video/concernTab",
+      "http_status": 200,
+      "response_sha256": "7e7904191b9233d7c20e6efe1d5bdb8ef250015d4be69faaeee7b084b1c3fd4a",
+      "response_bytes": 429,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["log_param", "concern_list", "forum_friends"]
+    },
+    {
+      "path": "/c/f/video/feed",
+      "http_status": 200,
+      "response_sha256": "7d01363cef0bf23828629bf48248986799864c981b77d24eaedff0af1db83534",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/frstab",
+      "http_status": 302,
+      "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "non-json-response"
+    },
+    {
+      "path": "/c/f/video/getActList",
+      "http_status": 200,
+      "response_sha256": "22d500bc62ca530fbce74265e0775573a4080302e558a6f766442595fe8cbb1c",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/getLiveTab",
+      "http_status": 200,
+      "response_sha256": "cec07f184090a1056d696eed99d60ce96faab0f637feab08878ddbae6c7fc47d",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/getMusicList",
+      "http_status": 200,
+      "response_sha256": "dfb9f11eb6104c57113ed11d306d6ca00a0ee63f26c98943022afcbaa9c454b7",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/getMusicTagList",
+      "http_status": 200,
+      "response_sha256": "ff75645a6ff78ee9fe1d9073abc85cf14b42d8fdc0b79d82b594fb7ab46e6150",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/getRecentWatchRecord",
+      "http_status": 302,
+      "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "non-json-response"
+    },
+    {
+      "path": "/c/f/video/getVideoInfoByVLogId",
+      "http_status": 200,
+      "response_sha256": "6e36d03c9aa0101db51a0acc003681e2b1da13be54071b62788b31e9ed3b75b8",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/getVideoMidPage",
+      "http_status": 200,
+      "response_sha256": "0f44b97da673e99ff35f4b946daf66499e21d3099f5f5b7049c486a342071008",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/getVideoPageBaseInfo",
+      "http_status": 200,
+      "response_sha256": "f6629d350c02464d0b7c3ca44dcf9d7661b452994ff10d689b865c2c7617311f",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/video/getWorksTags",
+      "http_status": 200,
+      "response_sha256": "c0a1bcaebcdfe287cc83e6a5a3fff3a36e76453d841df354c480f85edba1cd88",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/liveBarSpecialTab",
+      "http_status": 200,
+      "response_sha256": "86e4da733bbc7b07d48e65c4084da5c0a4364bd82a785360e3fdde7bb8ed3a71",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/liveBarSpecialUserlike",
+      "http_status": 200,
+      "response_sha256": "aaf84c68927d979857739f1bd3839e8eea081106bdcab7a15b4ff5bad55d6190",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/liveTabliveSubTab",
+      "http_status": 200,
+      "response_sha256": "5ad46d5df8f0503a699f426515ba1fa0876f17e691c2206bd814dbedfde6598b",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/music",
+      "http_status": 200,
+      "response_sha256": "a5fb79e55f344ea6cdb3762aec9eff3f0f5c9c3b6b56aa3b6003cdba67cd0492",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/next",
+      "http_status": 302,
+      "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "non-json-response"
+    },
+    {
+      "path": "/c/f/video/pendant",
+      "http_status": 200,
+      "response_sha256": "cbd144b1b20392aa197a05b48553030e38615096636b804d1a5ef099eeb41140",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/qmFilters",
+      "http_status": 200,
+      "response_sha256": "93a63e18a7496fdb18a41668ae58a85f63e7b4d859f9037ad9f16ebae7a5ea52",
+      "response_bytes": 141,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/qmStickers",
+      "http_status": 200,
+      "response_sha256": "9bfec071eb9a0b0c41b4e79c0d02bf0a13acd9aad84eade87274c3873822875a",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/redIcon",
+      "http_status": 200,
+      "response_sha256": "c82db7441e58236684c17680361804393e6151e4b6dfa9efa7036dbe6104d755",
+      "response_bytes": 115,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/f/video/sticker",
+      "http_status": 200,
+      "response_sha256": "fe3824aad0d5a99d91ccef8f5289e5d18f8f6cd632e78bc7d683d3c0fb5dcc0f",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/video/tbLiveTabUserLike",
+      "http_status": 200,
+      "response_sha256": "0c4f9836bd7813ae442f030378af03121f144914aacdf72b2a718acc2dff2f0b",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/chat/getChatroomResource",
+      "http_status": 200,
+      "response_sha256": "96f8375cfdfef0cd850f79debe9bef991a0fbc6311327617b722d2b4d5a8d773",
+      "response_bytes": 141,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/chat/getRoomListByFid",
+      "http_status": 200,
+      "response_sha256": "2d351247cbc79c03b68a749f782f36590823d000239a4b72e51439bd333e0cef",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/chat/queryMeme",
+      "http_status": 200,
+      "response_sha256": "b25b3f84b0dfc340c4026c191dc04470afb68d84a104c0726f5cfd80ea1caeca",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/chat/getRelativeMemeList",
+      "http_status": 200,
+      "response_sha256": "e22acb10df2b3b20ee11aa88c0ae7141aa14b4f894bb2030956c9d4ede3ab31f",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/chat/getSkillSugList",
+      "http_status": 200,
+      "response_sha256": "9361da9b6e64207d6fe27499a5157161bdc09e03b1f5e220f4ca8c3cf5fa876e",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/recommtag/getTagList",
+      "http_status": 200,
+      "response_sha256": "1564651d135e5267fbbb454b2b6cd85454af00c3a07d306df0d142202d11fb94",
+      "response_bytes": 139,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/f/voiceroom/newstab",
+      "http_status": 200,
+      "response_sha256": "c64de4989ab046af994bde354bfb55b72cd1f1f6096491dbef001384cfb03f14",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/f/widget/getForumInfo",
+      "http_status": 200,
+      "response_sha256": "dcc4a526592e80b1d0b346baa5ee0423c29226ce9421298b653fded1f88e1d26",
+      "response_bytes": 1102,
+      "credentials_supplied": true,
+      "status": "json-data-returned",
+      "error_code": "0",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/s/channelIconConfig",
+      "http_status": 200,
+      "response_sha256": "bfc974994d04aa0141b94e6796d9022f08a67f35bf7ee449814e350d3810bd62",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/s/getCommercialPackage",
+      "http_status": 200,
+      "response_sha256": "a3651aee5b3373928d05bd78a3f41613322a2941ae3658a669777c332ed0fa7d",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/s/getDeeplinkScheme",
+      "http_status": 200,
+      "response_sha256": "2fcf0534d53a15149096a39d62eb2209ab8490999aaaac3d9b73ea691c3ae199",
+      "response_bytes": 141,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/s/getThemeInfo",
+      "http_status": 200,
+      "response_sha256": "c8dd77385af06395a9867a2653a2d130a4c32dce9e10b7bab542d137806bd979",
+      "response_bytes": 125,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["data"]
+    },
+    {
+      "path": "/c/s/getipinfo",
+      "http_status": 200,
+      "response_sha256": "2da2afa40ee26cf64c213acfa8e235359dbd6391096eb1910fb2a4048c2beb8f",
+      "response_bytes": 154,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["urls"]
+    },
+    {
+      "path": "/c/s/getIconToast",
+      "http_status": 200,
+      "response_sha256": "e7eb51469c83c77d0bc088504deac7ecf6784d5f91ae1f6e1d98c33edf70d7ef",
+      "response_bytes": 96,
+      "credentials_supplied": true,
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "business_field_names": ["icon"]
+    },
+    {
+      "path": "/c/u/fans/page",
+      "http_status": 200,
+      "response_sha256": "e844edb16659607310c754da7fe93946c164ff5ce1dbc3369942b4fbb49c6151",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/u/follow/list",
+      "http_status": 200,
+      "response_sha256": "16a9b3cf162d2ec7fefe89fd7a763b7e105d550b22e574bd23b6ad2879d4a90f",
+      "response_bytes": 115,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/u/follow/followList",
+      "http_status": 200,
+      "response_sha256": "bcb4dc0fbd427a1821cefefbab590fe63618cde0cdc1bcac2c6e317b84681a34",
+      "response_bytes": 115,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": []
+    },
+    {
+      "path": "/c/u/follow/atSearchUserList",
+      "http_status": 200,
+      "response_sha256": "6f7b5e0821692aaf3bfb2257b84c047d7d73408e1b1eca9061df3018dfee283e",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/u/user/getuserinfo",
+      "http_status": 200,
+      "response_sha256": "4efb896f5c6d0aee91ad1460198e22af9555a809e438fcd77331d0592ce034aa",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/u/user/get_double_follows",
+      "http_status": 200,
+      "response_sha256": "55872124e116fafec4ff66a8074df96d23b01ad5b0384a2b4c6fa77b0f6e6a38",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/u/user/search_double_follows",
+      "http_status": 200,
+      "response_sha256": "c0ed871e11a94e2b03f0d8dd4f14c8c8ab2e58b5a5115e3e29bdb1cff85e3abf",
+      "response_bytes": 141,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/u/user/getWatermark",
+      "http_status": 200,
+      "response_sha256": "00a7ee143aaf5f23b750a5ed02b2e99344dda97f3ef4dc42ab5879bc50f95840",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/u/zan/getuserlist",
+      "http_status": 200,
+      "response_sha256": "cab9c40d8fbe4d2d08dacd69452ea546f169b979424b19bf7dca1050903d13b8",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/r/friend/listFriend",
+      "http_status": 200,
+      "response_sha256": "d8a53009ec37136fa4c61cf41257f2a338070dea25c2012666d789f4d5fc2d02",
+      "response_bytes": 140,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "110001",
+      "business_field_names": ["info"]
+    },
+    {
+      "path": "/c/r/friend/searchFriend",
+      "http_status": 200,
+      "response_sha256": "c5f9a65cb679b457fa90f1ff04d6d18de3d79d97efc570648d46e3394acecd2f",
+      "response_bytes": 199,
+      "credentials_supplied": true,
+      "status": "business-error",
+      "error_code": "300000",
+      "business_field_names": ["errorno", "errmsg", "usermsg"]
+    }
+  ],
+  "finished_at_utc": "2026-11-13T15:18:45.637Z",
+  "summary": {
+    "business-error": 71,
+    "json-data-returned": 2,
+    "non-json-response": 5,
+    "accepted-empty-response": 4
+  },
+  "authentication_note": "Credentials supplied is not proof of App account authentication; only the official web login flag was independently confirmed."
+}

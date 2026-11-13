@@ -8,7 +8,7 @@
   "method": "DEX string_ids table, ASCII URL/path candidates; no bytecode call-site or runtime verification",
   "limitations": [
     "String presence does not establish an active endpoint, HTTP verb, parameters, authentication or response schema.",
-    "Dynamically constructed paths, native code, assets and other URL prefixes are outside coverage."
+    "Dynamically constructed paths, native code, assets and URL prefixes outside c/<letter>/ and mo/<letter>/ remain outside coverage."
   ],
   "dex_files": [
     {
@@ -78,6 +78,38 @@
     }
   ],
   "candidates": [
+    {
+      "value": "/c/c/video/share",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 5030,
+          "string_data_offset": 6662495
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 2833,
+          "string_data_offset": 7648116
+        }
+      ]
+    },
+    {
+      "value": "/c/e/meme/detail",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 5031,
+          "string_data_offset": 6662513
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 3057,
+          "string_data_offset": 7213209
+        }
+      ]
+    },
     {
       "value": "/c/f/pb/getPostList",
       "status": "static-string",
@@ -233,6 +265,2564 @@
           "dex": "classes10.dex",
           "string_index": 3008,
           "string_data_offset": 7436353
+        }
+      ]
+    },
+    {
+      "value": "c/b/ad/adBid?cmd=309757&format=protobuf",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31279,
+          "string_data_offset": 8087752
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33892,
+          "string_data_offset": 8589701
+        }
+      ]
+    },
+    {
+      "value": "c/b/commit/addMsgRecord",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43215,
+          "string_data_offset": 7935943
+        }
+      ]
+    },
+    {
+      "value": "c/b/commit/pushThread",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29684,
+          "string_data_offset": 8330769
+        }
+      ]
+    },
+    {
+      "value": "c/c/agree/agreeVirtualImage",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes8.dex",
+          "string_index": 33893,
+          "string_data_offset": 8589742
+        }
+      ]
+    },
+    {
+      "value": "c/c/agree/delAgreeMeRecord",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31665,
+          "string_data_offset": 7763837
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43216,
+          "string_data_offset": 7935968
+        }
+      ]
+    },
+    {
+      "value": "c/c/agree/opAgree",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29685,
+          "string_data_offset": 8330792
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43217,
+          "string_data_offset": 7935996
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31311,
+          "string_data_offset": 8126110
+        }
+      ]
+    },
+    {
+      "value": "c/c/aiapps/opAgree",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29686,
+          "string_data_offset": 8330811
+        }
+      ]
+    },
+    {
+      "value": "c/c/aigc/applyWhitelist",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30734,
+          "string_data_offset": 8314554
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43218,
+          "string_data_offset": 7936015
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/addBawuScore",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31666,
+          "string_data_offset": 7763865
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/agreeBazhuAssistantSummary",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes9.dex",
+          "string_index": 31312,
+          "string_data_offset": 8126129
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/commitCardInfo",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29687,
+          "string_data_offset": 8330831
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43219,
+          "string_data_offset": 7936040
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/commitgood",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31280,
+          "string_data_offset": 8087793
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43220,
+          "string_data_offset": 7936065
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/commitprison",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43221,
+          "string_data_offset": 7936086
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/committop",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31281,
+          "string_data_offset": 8087814
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43222,
+          "string_data_offset": 7936109
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/commitVote",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes8.dex",
+          "string_index": 33894,
+          "string_data_offset": 8589771
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/delpost",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31282,
+          "string_data_offset": 8087834
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43223,
+          "string_data_offset": 7936129
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/delthread",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31283,
+          "string_data_offset": 8087852
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43224,
+          "string_data_offset": 7936147
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/editForumRule",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43225,
+          "string_data_offset": 7936167
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31313,
+          "string_data_offset": 8126166
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/goodlist",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31284,
+          "string_data_offset": 8087872
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43226,
+          "string_data_offset": 7936191
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/moveTabThread",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43227,
+          "string_data_offset": 7936210
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31314,
+          "string_data_offset": 8126190
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/multiDelPost",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43228,
+          "string_data_offset": 7936234
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33895,
+          "string_data_offset": 8589792
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/multiDelThread",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30735,
+          "string_data_offset": 8314579
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43229,
+          "string_data_offset": 7936257
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/pushRecomToPersonalized",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43230,
+          "string_data_offset": 7936282
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31315,
+          "string_data_offset": 8126214
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/setBawuNoticeRead",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43231,
+          "string_data_offset": 7936316
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/threadPublish",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30736,
+          "string_data_offset": 8314604
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43232,
+          "string_data_offset": 7936344
+        }
+      ]
+    },
+    {
+      "value": "c/c/bawu/verifyIdentityInfo",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29688,
+          "string_data_offset": 8330856
+        }
+      ]
+    },
+    {
+      "value": "c/c/chatroom/callRobotRouter",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30737,
+          "string_data_offset": 8314628
+        },
+        {
+          "dex": "classes11.dex",
+          "string_index": 29689,
+          "string_data_offset": 8330885
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43233,
+          "string_data_offset": 7936368
+        }
+      ]
+    },
+    {
+      "value": "c/c/chatroom/controlSpeak",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31285,
+          "string_data_offset": 8087891
+        }
+      ]
+    },
+    {
+      "value": "c/c/chatroom/createMeme",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31667,
+          "string_data_offset": 7763888
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43234,
+          "string_data_offset": 7936398
+        }
+      ]
+    },
+    {
+      "value": "c/c/chatroom/opExcellentMsg",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31286,
+          "string_data_offset": 8087918
+        }
+      ]
+    },
+    {
+      "value": "c/c/chatroom/opSubscribeChatroom",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30738,
+          "string_data_offset": 8314658
+        }
+      ]
+    },
+    {
+      "value": "c/c/chatroom/shareCard",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30739,
+          "string_data_offset": 8314692
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43235,
+          "string_data_offset": 7936423
+        }
+      ]
+    },
+    {
+      "value": "c/c/chatroom/withdrawMsg",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31287,
+          "string_data_offset": 8087947
+        }
+      ]
+    },
+    {
+      "value": "c/c/encourage/consume/getVcode",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29690,
+          "string_data_offset": 8330915
+        }
+      ]
+    },
+    {
+      "value": "c/c/encourage/consume/payOpenGoods",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29691,
+          "string_data_offset": 8330947
+        }
+      ]
+    },
+    {
+      "value": "c/c/encourage/member/closeAd",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29692,
+          "string_data_offset": 8330983
+        },
+        {
+          "dex": "classes12.dex",
+          "string_index": 31288,
+          "string_data_offset": 8087973
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43236,
+          "string_data_offset": 7936447
+        }
+      ]
+    },
+    {
+      "value": "c/c/encourage/member/doDailyTask",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43237,
+          "string_data_offset": 7936477
+        }
+      ]
+    },
+    {
+      "value": "c/c/encourage/point/finishmembertask",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43238,
+          "string_data_offset": 7936511
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31316,
+          "string_data_offset": 8126248
+        }
+      ]
+    },
+    {
+      "value": "c/c/encourage/present/placeOrder",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43239,
+          "string_data_offset": 7936549
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31317,
+          "string_data_offset": 8126286
+        }
+      ]
+    },
+    {
+      "value": "c/c/encourage/present/sendFreeGift",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43240,
+          "string_data_offset": 7936583
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31318,
+          "string_data_offset": 8126320
+        }
+      ]
+    },
+    {
+      "value": "c/c/encourage/theme/setCard",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31289,
+          "string_data_offset": 8088003
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43241,
+          "string_data_offset": 7936619
+        }
+      ]
+    },
+    {
+      "value": "c/c/encourage/theme/setPendant",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31290,
+          "string_data_offset": 8088032
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43242,
+          "string_data_offset": 7936648
+        }
+      ]
+    },
+    {
+      "value": "c/c/excellent/submitCancelDislike",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30740,
+          "string_data_offset": 8314716
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43243,
+          "string_data_offset": 7936680
+        }
+      ]
+    },
+    {
+      "value": "c/c/excellent/submitConcernDislike",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29693,
+          "string_data_offset": 8331013
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43244,
+          "string_data_offset": 7936715
+        }
+      ]
+    },
+    {
+      "value": "c/c/excellent/submitDislike",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30741,
+          "string_data_offset": 8314751
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43245,
+          "string_data_offset": 7936751
+        }
+      ]
+    },
+    {
+      "value": "c/c/forum/create",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes9.dex",
+          "string_index": 31319,
+          "string_data_offset": 8126356
+        }
+      ]
+    },
+    {
+      "value": "c/c/forum/delMyForum",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes8.dex",
+          "string_index": 33896,
+          "string_data_offset": 8589815
+        }
+      ]
+    },
+    {
+      "value": "c/c/forum/incrForumAccessCount",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43246,
+          "string_data_offset": 7936780
+        }
+      ]
+    },
+    {
+      "value": "c/c/forum/like",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31291,
+          "string_data_offset": 8088064
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43247,
+          "string_data_offset": 7936812
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33897,
+          "string_data_offset": 8589837
+        }
+      ]
+    },
+    {
+      "value": "c/c/forum/msign",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30742,
+          "string_data_offset": 8314780
+        }
+      ]
+    },
+    {
+      "value": "c/c/forum/setCommonForumState",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43248,
+          "string_data_offset": 7936828
+        }
+      ]
+    },
+    {
+      "value": "c/c/forum/share",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31292,
+          "string_data_offset": 8088080
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43249,
+          "string_data_offset": 7936859
+        }
+      ]
+    },
+    {
+      "value": "c/c/forum/sign",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31293,
+          "string_data_offset": 8088097
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43250,
+          "string_data_offset": 7936876
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33898,
+          "string_data_offset": 8589853
+        }
+      ]
+    },
+    {
+      "value": "c/c/forum/statClientStartTimes",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31294,
+          "string_data_offset": 8088113
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43251,
+          "string_data_offset": 7936892
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33899,
+          "string_data_offset": 8589869
+        }
+      ]
+    },
+    {
+      "value": "c/c/forum/unfavolike",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29694,
+          "string_data_offset": 8331049
+        },
+        {
+          "dex": "classes12.dex",
+          "string_index": 31295,
+          "string_data_offset": 8088145
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43252,
+          "string_data_offset": 7936924
+        }
+      ]
+    },
+    {
+      "value": "c/c/friend/setMsgMask",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31296,
+          "string_data_offset": 8088167
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43253,
+          "string_data_offset": 7936946
+        }
+      ]
+    },
+    {
+      "value": "c/c/friend/setprivate",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29695,
+          "string_data_offset": 8331071
+        },
+        {
+          "dex": "classes12.dex",
+          "string_index": 31297,
+          "string_data_offset": 8088190
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43254,
+          "string_data_offset": 7936969
+        }
+      ]
+    },
+    {
+      "value": "c/c/img/changeportrait",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43255,
+          "string_data_offset": 7936992
+        }
+      ]
+    },
+    {
+      "value": "c/c/img/getShareImg",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31668,
+          "string_data_offset": 7763913
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43256,
+          "string_data_offset": 7937016
+        }
+      ]
+    },
+    {
+      "value": "c/c/img/portrait",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29696,
+          "string_data_offset": 8331094
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43257,
+          "string_data_offset": 7937037
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33900,
+          "string_data_offset": 8589901
+        }
+      ]
+    },
+    {
+      "value": "c/c/img/setuserpic",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43258,
+          "string_data_offset": 7937055
+        }
+      ]
+    },
+    {
+      "value": "c/c/item/cancelSubscribeItem",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes9.dex",
+          "string_index": 31320,
+          "string_data_offset": 8126374
+        }
+      ]
+    },
+    {
+      "value": "c/c/item/giveOutGameCode",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43259,
+          "string_data_offset": 7937075
+        }
+      ]
+    },
+    {
+      "value": "c/c/item/subscribeitem",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes8.dex",
+          "string_index": 33901,
+          "string_data_offset": 8589919
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31321,
+          "string_data_offset": 8126404
+        }
+      ]
+    },
+    {
+      "value": "c/c/livegroup/applycopythread",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29697,
+          "string_data_offset": 8331112
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43260,
+          "string_data_offset": 7937101
+        }
+      ]
+    },
+    {
+      "value": "c/c/matchActivity/applyMatchGuessing",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31298,
+          "string_data_offset": 8088213
+        }
+      ]
+    },
+    {
+      "value": "c/c/post/add",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30743,
+          "string_data_offset": 8314797
+        },
+        {
+          "dex": "classes11.dex",
+          "string_index": 29698,
+          "string_data_offset": 8331143
+        },
+        {
+          "dex": "classes12.dex",
+          "string_index": 31299,
+          "string_data_offset": 8088251
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43261,
+          "string_data_offset": 7937132
+        }
+      ]
+    },
+    {
+      "value": "c/c/post/addPollPost",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43262,
+          "string_data_offset": 7937146
+        }
+      ]
+    },
+    {
+      "value": "c/c/post/addScore",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31669,
+          "string_data_offset": 7763934
+        }
+      ]
+    },
+    {
+      "value": "c/c/post/addstore",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29699,
+          "string_data_offset": 8331157
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43263,
+          "string_data_offset": 7937168
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31322,
+          "string_data_offset": 8126428
+        }
+      ]
+    },
+    {
+      "value": "c/c/post/delmsg",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31670,
+          "string_data_offset": 7763953
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43264,
+          "string_data_offset": 7937187
+        }
+      ]
+    },
+    {
+      "value": "c/c/post/rmstore",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29700,
+          "string_data_offset": 8331176
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43265,
+          "string_data_offset": 7937204
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31323,
+          "string_data_offset": 8126447
+        }
+      ]
+    },
+    {
+      "value": "c/c/question/adoptAnswer",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29701,
+          "string_data_offset": 8331194
+        }
+      ]
+    },
+    {
+      "value": "c/c/smartapp/delView",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29702,
+          "string_data_offset": 8331220
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43266,
+          "string_data_offset": 7937222
+        }
+      ]
+    },
+    {
+      "value": "c/c/smartapp/view",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43267,
+          "string_data_offset": 7937244
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33902,
+          "string_data_offset": 8589943
+        }
+      ]
+    },
+    {
+      "value": "c/c/swap/complete",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31300,
+          "string_data_offset": 8088265
+        }
+      ]
+    },
+    {
+      "value": "c/c/tag/addContentTag",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30744,
+          "string_data_offset": 8314811
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43268,
+          "string_data_offset": 7937263
+        }
+      ]
+    },
+    {
+      "value": "c/c/thread/add",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30745,
+          "string_data_offset": 8314834
+        },
+        {
+          "dex": "classes11.dex",
+          "string_index": 29703,
+          "string_data_offset": 8331242
+        },
+        {
+          "dex": "classes12.dex",
+          "string_index": 31301,
+          "string_data_offset": 8088284
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43269,
+          "string_data_offset": 7937286
+        }
+      ]
+    },
+    {
+      "value": "c/c/thread/commitPushFeedBack",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29704,
+          "string_data_offset": 8331258
+        }
+      ]
+    },
+    {
+      "value": "c/c/thread/sdkshare",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29705,
+          "string_data_offset": 8331289
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43270,
+          "string_data_offset": 7937302
+        }
+      ]
+    },
+    {
+      "value": "c/c/thread/setPrivacy",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29706,
+          "string_data_offset": 8331310
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43271,
+          "string_data_offset": 7937323
+        }
+      ]
+    },
+    {
+      "value": "c/c/thread/share",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29707,
+          "string_data_offset": 8331333
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43272,
+          "string_data_offset": 7937346
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/backUser",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43273,
+          "string_data_offset": 7937364
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31324,
+          "string_data_offset": 8126465
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/commitUGTaskInfo",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29708,
+          "string_data_offset": 8331351
+        },
+        {
+          "dex": "classes12.dex",
+          "string_index": 31302,
+          "string_data_offset": 8088300
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43274,
+          "string_data_offset": 7937383
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31325,
+          "string_data_offset": 8126484
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/complaint",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29709,
+          "string_data_offset": 8331378
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43275,
+          "string_data_offset": 7937410
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/correctFollowError",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29710,
+          "string_data_offset": 8331398
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43276,
+          "string_data_offset": 7937430
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/delAllUserData",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31303,
+          "string_data_offset": 8088327
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43277,
+          "string_data_offset": 7937459
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/follow",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes.dex",
+          "string_index": 35185,
+          "string_data_offset": 8541000
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43278,
+          "string_data_offset": 7937484
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33903,
+          "string_data_offset": 8589962
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/multiRemoveFans",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31304,
+          "string_data_offset": 8088352
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43279,
+          "string_data_offset": 7937501
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/passAuthidVerify",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31305,
+          "string_data_offset": 8088378
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43280,
+          "string_data_offset": 7937527
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/removeFans",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43281,
+          "string_data_offset": 7937554
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33904,
+          "string_data_offset": 8589979
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/report",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29711,
+          "string_data_offset": 8331427
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/setCommercialPushUser",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes9.dex",
+          "string_index": 31326,
+          "string_data_offset": 8126511
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/setFollowListSwitch",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29712,
+          "string_data_offset": 8331444
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/setSignMask",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31306,
+          "string_data_offset": 8088405
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43282,
+          "string_data_offset": 7937575
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/setUserBlack",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31307,
+          "string_data_offset": 8088427
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43283,
+          "string_data_offset": 7937597
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/setWatermark",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31308,
+          "string_data_offset": 8088450
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43284,
+          "string_data_offset": 7937620
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/unfollow",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes.dex",
+          "string_index": 35186,
+          "string_data_offset": 8541017
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43285,
+          "string_data_offset": 7937643
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33905,
+          "string_data_offset": 8590000
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/updateOfflinePackTask",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31309,
+          "string_data_offset": 8088473
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43286,
+          "string_data_offset": 7937662
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/uploadOfflinePack",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31310,
+          "string_data_offset": 8088505
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43287,
+          "string_data_offset": 7937694
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/userMuteAdd",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31311,
+          "string_data_offset": 8088533
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43288,
+          "string_data_offset": 7937722
+        }
+      ]
+    },
+    {
+      "value": "c/c/user/userMuteDel",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31312,
+          "string_data_offset": 8088555
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43289,
+          "string_data_offset": 7937744
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/markRedIcon",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31313,
+          "string_data_offset": 8088577
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/playDura",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31671,
+          "string_data_offset": 7763970
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43290,
+          "string_data_offset": 7937766
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33906,
+          "string_data_offset": 8590019
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/playStat",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31672,
+          "string_data_offset": 7763990
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43291,
+          "string_data_offset": 7937786
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33907,
+          "string_data_offset": 8590039
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/reportSlowStart",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43292,
+          "string_data_offset": 7937806
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33908,
+          "string_data_offset": 8590059
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/upGradeVideoUp",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31673,
+          "string_data_offset": 7764010
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43293,
+          "string_data_offset": 7937833
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/uploadBlock",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43294,
+          "string_data_offset": 7937859
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/uploadChunk",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43295,
+          "string_data_offset": 7937882
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/uploadFile",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43296,
+          "string_data_offset": 7937905
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/uploadVideoData",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43297,
+          "string_data_offset": 7937927
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31327,
+          "string_data_offset": 8126543
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/uploadVideoStatus",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43298,
+          "string_data_offset": 7937954
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31328,
+          "string_data_offset": 8126570
+        }
+      ]
+    },
+    {
+      "value": "c/c/video/vlog",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30746,
+          "string_data_offset": 8314850
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43299,
+          "string_data_offset": 7937983
+        }
+      ]
+    },
+    {
+      "value": "c/c/voice/chunkupload",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29713,
+          "string_data_offset": 8331474
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43300,
+          "string_data_offset": 7937999
+        }
+      ]
+    },
+    {
+      "value": "c/c/voice/voice_fin_chunk_upload",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29714,
+          "string_data_offset": 8331497
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43301,
+          "string_data_offset": 7938022
+        }
+      ]
+    },
+    {
+      "value": "c/c/voiceroom/delUserTab",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43302,
+          "string_data_offset": 7938056
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31329,
+          "string_data_offset": 8126599
+        }
+      ]
+    },
+    {
+      "value": "c/c/zan/like",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31314,
+          "string_data_offset": 8088600
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43303,
+          "string_data_offset": 7938082
+        }
+      ]
+    },
+    {
+      "value": "c/e/alipay/alipayApplyUserInfo",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43304,
+          "string_data_offset": 7938096
+        }
+      ]
+    },
+    {
+      "value": "c/e/alipay/alipayGetUserInfo",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43305,
+          "string_data_offset": 7938128
+        }
+      ]
+    },
+    {
+      "value": "c/e/brand/markBookPopup",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31674,
+          "string_data_offset": 7764036
+        }
+      ]
+    },
+    {
+      "value": "c/e/bu/getbubblelist",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29715,
+          "string_data_offset": 8331531
+        }
+      ]
+    },
+    {
+      "value": "c/e/bu/setbubble",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29716,
+          "string_data_offset": 8331553
+        },
+        {
+          "dex": "classes12.dex",
+          "string_index": 31315,
+          "string_data_offset": 8088614
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43306,
+          "string_data_offset": 7938158
+        }
+      ]
+    },
+    {
+      "value": "c/e/businessPromot/counter",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43307,
+          "string_data_offset": 7938176
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31330,
+          "string_data_offset": 8126625
+        }
+      ]
+    },
+    {
+      "value": "c/e/consume/getBuyForm",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29717,
+          "string_data_offset": 8331571
+        }
+      ]
+    },
+    {
+      "value": "c/e/consume/getUserOrder",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43308,
+          "string_data_offset": 7938204
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33909,
+          "string_data_offset": 8590086
+        }
+      ]
+    },
+    {
+      "value": "c/e/faces/buyfacepack",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43309,
+          "string_data_offset": 7938230
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31331,
+          "string_data_offset": 8126653
+        }
+      ]
+    },
+    {
+      "value": "c/e/faces/dpack",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43310,
+          "string_data_offset": 7938253
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31332,
+          "string_data_offset": 8126676
+        }
+      ]
+    },
+    {
+      "value": "c/e/faces/getfacelist",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43311,
+          "string_data_offset": 7938270
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31333,
+          "string_data_offset": 8126693
+        }
+      ]
+    },
+    {
+      "value": "c/e/faces/querybuyresult",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43312,
+          "string_data_offset": 7938293
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31334,
+          "string_data_offset": 8126716
+        }
+      ]
+    },
+    {
+      "value": "c/e/mema/buyLiveProps",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes.dex",
+          "string_index": 35187,
+          "string_data_offset": 8541036
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33910,
+          "string_data_offset": 8590112
+        }
+      ]
+    },
+    {
+      "value": "c/e/mema/getOrder",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes13.dex",
+          "string_index": 31675,
+          "string_data_offset": 7764061
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43313,
+          "string_data_offset": 7938319
+        }
+      ]
+    },
+    {
+      "value": "c/e/mema/getpayinfo",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43314,
+          "string_data_offset": 7938338
+        }
+      ]
+    },
+    {
+      "value": "c/e/member/getVipInfo",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43315,
+          "string_data_offset": 7938359
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/addPackage",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29718,
+          "string_data_offset": 8331595
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/checkForumPkg",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30747,
+          "string_data_offset": 8314866
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/collect",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes9.dex",
+          "string_index": 31335,
+          "string_data_offset": 8126742
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/commitVote",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43316,
+          "string_data_offset": 7938382
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31336,
+          "string_data_offset": 8126760
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/delPackage",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43317,
+          "string_data_offset": 7938403
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31337,
+          "string_data_offset": 8126781
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/dice",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes9.dex",
+          "string_index": 31338,
+          "string_data_offset": 8126802
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/download",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29719,
+          "string_data_offset": 8331616
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31339,
+          "string_data_offset": 8126817
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/forumPackage",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes9.dex",
+          "string_index": 31340,
+          "string_data_offset": 8126836
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/getAllMeme",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29720,
+          "string_data_offset": 8331635
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/getBazhuInfo",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29721,
+          "string_data_offset": 8331656
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/getHotWords",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29722,
+          "string_data_offset": 8331679
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/getMyForumPackage",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29723,
+          "string_data_offset": 8331701
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/getNewFriendMemes",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes10.dex",
+          "string_index": 30748,
+          "string_data_offset": 8314890
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/getSugKeyWords",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29724,
+          "string_data_offset": 8331729
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/meme",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43318,
+          "string_data_offset": 7938424
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31341,
+          "string_data_offset": 8126859
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/mgetmeme",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29725,
+          "string_data_offset": 8331754
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/pic2id",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes8.dex",
+          "string_index": 33911,
+          "string_data_offset": 8590135
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/pic2idJson",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes8.dex",
+          "string_index": 33912,
+          "string_data_offset": 8590152
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/search",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes9.dex",
+          "string_index": 31342,
+          "string_data_offset": 8126874
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/share",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29726,
+          "string_data_offset": 8331773
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/shop",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes9.dex",
+          "string_index": 31343,
+          "string_data_offset": 8126891
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/suggest",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29728,
+          "string_data_offset": 8331808
+        },
+        {
+          "dex": "classes8.dex",
+          "string_index": 33913,
+          "string_data_offset": 8590173
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/sugQuery",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29727,
+          "string_data_offset": 8331789
+        }
+      ]
+    },
+    {
+      "value": "c/e/meme/uploadPackage",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29729,
+          "string_data_offset": 8331826
+        }
+      ]
+    },
+    {
+      "value": "c/e/pay/andmember",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29730,
+          "string_data_offset": 8331850
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43319,
+          "string_data_offset": 7938439
+        }
+      ]
+    },
+    {
+      "value": "c/e/point/getmembertasklist",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43320,
+          "string_data_offset": 7938458
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31344,
+          "string_data_offset": 8126906
+        }
+      ]
+    },
+    {
+      "value": "c/e/present/getGiftList",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43321,
+          "string_data_offset": 7938487
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31345,
+          "string_data_offset": 8126935
+        }
+      ]
+    },
+    {
+      "value": "c/e/present/getGiftListByCategoryId",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43322,
+          "string_data_offset": 7938512
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31346,
+          "string_data_offset": 8126960
+        }
+      ]
+    },
+    {
+      "value": "c/e/present/getMyGift",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43323,
+          "string_data_offset": 7938549
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31347,
+          "string_data_offset": 8126997
+        }
+      ]
+    },
+    {
+      "value": "c/e/present/getUserFreeChance",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43324,
+          "string_data_offset": 7938572
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31348,
+          "string_data_offset": 8127020
+        }
+      ]
+    },
+    {
+      "value": "c/e/theme/getBackground",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31316,
+          "string_data_offset": 8088632
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43325,
+          "string_data_offset": 7938603
+        }
+      ]
+    },
+    {
+      "value": "c/e/theme/getBgByCategory",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31317,
+          "string_data_offset": 8088657
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43326,
+          "string_data_offset": 7938628
+        }
+      ]
+    },
+    {
+      "value": "c/e/theme/getBgList",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31318,
+          "string_data_offset": 8088684
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43327,
+          "string_data_offset": 7938655
+        }
+      ]
+    },
+    {
+      "value": "c/e/theme/getBubbleByCategory",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31319,
+          "string_data_offset": 8088705
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43328,
+          "string_data_offset": 7938676
+        }
+      ]
+    },
+    {
+      "value": "c/e/theme/getBubbleList",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31320,
+          "string_data_offset": 8088736
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43329,
+          "string_data_offset": 7938707
+        }
+      ]
+    },
+    {
+      "value": "c/e/theme/getCard",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31321,
+          "string_data_offset": 8088761
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43330,
+          "string_data_offset": 7938732
+        }
+      ]
+    },
+    {
+      "value": "c/e/theme/getCardByCategory",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31322,
+          "string_data_offset": 8088780
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43331,
+          "string_data_offset": 7938751
+        }
+      ]
+    },
+    {
+      "value": "c/e/theme/getPendantByCategory",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31323,
+          "string_data_offset": 8088809
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43332,
+          "string_data_offset": 7938780
+        }
+      ]
+    },
+    {
+      "value": "c/e/theme/getThemeList",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31324,
+          "string_data_offset": 8088841
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43333,
+          "string_data_offset": 7938812
+        }
+      ]
+    },
+    {
+      "value": "c/e/theme/setBackground",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes12.dex",
+          "string_index": 31325,
+          "string_data_offset": 8088865
+        },
+        {
+          "dex": "classes13.dex",
+          "string_index": 31676,
+          "string_data_offset": 7764080
+        },
+        {
+          "dex": "classes7.dex",
+          "string_index": 43334,
+          "string_data_offset": 7938836
         }
       ]
     },
@@ -2343,6 +4933,17 @@
       ]
     },
     {
+      "value": "c/i/msgcenter/uploadPic",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43417,
+          "string_data_offset": 7940946
+        }
+      ]
+    },
+    {
       "value": "c/p/img?",
       "status": "static-string",
       "locations": [
@@ -2366,6 +4967,28 @@
           "dex": "classes7.dex",
           "string_index": 43419,
           "string_data_offset": 7940981
+        }
+      ]
+    },
+    {
+      "value": "c/r/friend/listFriend",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes11.dex",
+          "string_index": 29746,
+          "string_data_offset": 8332271
+        }
+      ]
+    },
+    {
+      "value": "c/r/friend/searchFriend",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43420,
+          "string_data_offset": 7940992
         }
       ]
     },
@@ -3903,6 +6526,33 @@
           "dex": "classes10.dex",
           "string_index": 30802,
           "string_data_offset": 8316190
+        }
+      ]
+    },
+    {
+      "value": "c/x/aigc/getBdtAigcAnswerStatus",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes8.dex",
+          "string_index": 33956,
+          "string_data_offset": 8591140
+        }
+      ]
+    },
+    {
+      "value": "c/x/sprite/getGuideInfo",
+      "status": "static-string",
+      "locations": [
+        {
+          "dex": "classes7.dex",
+          "string_index": 43487,
+          "string_data_offset": 7942340
+        },
+        {
+          "dex": "classes9.dex",
+          "string_index": 31397,
+          "string_data_offset": 8128231
         }
       ]
     },
