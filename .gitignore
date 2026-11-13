@@ -1,0 +1,7 @@
+﻿.local/
+node_modules/
+*.apk
+*.dex
+*.jar
+*.log
+.env
