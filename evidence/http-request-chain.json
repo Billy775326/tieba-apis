@@ -1,0 +1,178 @@
+{
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "observations": {
+    "default_http_method": "POST",
+    "protobuf_parameter_name": "data",
+    "automatic_query_format": "protobuf when cmd present and format absent",
+    "anonymous_common_values": {
+      "_client_type": 2,
+      "_client_version": "22.13.1.1",
+      "pversion": "1.0.3"
+    },
+    "confirmed_constructor_arguments": {
+      "searchPostForum": 309466,
+      "pbFloor": 302002
+    }
+  },
+  "methods": [
+    {
+      "parent_evidence_id": "ev_68ae145f9e1c765510aca9eecc2bdc57d68f3a2ba724da9931ed1ec29b774434",
+      "class_name": "com.baidu.adp.framework.message.NetMessage",
+      "method": {
+        "name": "getHttpMessage",
+        "reported_signature": "getHttpMessage(): com.baidu.adp.framework.message.HttpMessage",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "body_status": "available",
+      "representation": "java",
+      "source_sha256": "4bed1c7c2c813b7407340600a8e20de3df8f871385a996a2e86e896b8f15d72d"
+    },
+    {
+      "parent_evidence_id": "ev_b9314caac77fc4233c69b9e96ca903ff5d5360e06ca05c72ac7b3d58ac6ddfac",
+      "class_name": "com.baidu.tbadk.util.NetMessageHelper",
+      "method": {
+        "name": "bindCommonParamsToProtobufData",
+        "reported_signature": "bindCommonParamsToProtobufData(java.lang.Object, boolean, boolean, boolean): void",
+        "overload_index": 2,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "body_status": "available",
+      "representation": "java",
+      "source_sha256": "b9196bba1166eb718f1e042f86f0be77518a20c6c8c1c932e4a0bb498c2826f9"
+    },
+    {
+      "parent_evidence_id": "ev_99c288306633c812ae37c84c7da9f918d2a2cd413364f186b4ea45cbbba7949b",
+      "class_name": "com.baidu.adp.framework.task.HttpMessageTask",
+      "method": {
+        "name": "<init>",
+        "reported_signature": "<init>(int, java.lang.String): void",
+        "overload_index": 0,
+        "is_constructor": true,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "body_status": "available",
+      "representation": "java",
+      "source_sha256": "c895417cf3d9e64074433bb4f170d9859b4c8517180e1eb1534f2aaa4830578e"
+    },
+    {
+      "parent_evidence_id": "ev_644aa63a70ed47182c8b841d8c0a3e4ec9f4422a87b2f9e26eda305395749e73",
+      "class_name": "com.baidu.adp.framework.task.HttpMessageTask",
+      "method": {
+        "name": "addProtobufSuffix",
+        "reported_signature": "addProtobufSuffix(): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "body_status": "available",
+      "representation": "java",
+      "source_sha256": "c4c3193c121030599a8dbe869a737975a2517ac6ee8faf6ccc66fff5cfc18284"
+    },
+    {
+      "parent_evidence_id": "ev_f23a9fdf93d502e5b95f013fe2200902702ad3a8ad28723f185fbcd4cd629062",
+      "class_name": "com.baidu.adp.framework.message.HttpMessage",
+      "method": {
+        "name": "encodeInBackGround",
+        "reported_signature": "encodeInBackGround(): java.util.List<java.util.Map$Entry<java.lang.String, java.lang.Object>>",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "body_status": "available",
+      "representation": "java",
+      "source_sha256": "bb86cacce213ee6de9452ed112a9c932ea8ced3396bc5460b30b1ca4bd576a74"
+    },
+    {
+      "parent_evidence_id": "ev_37312347a9254cfe4bbf284ceebcd890978ca771f5f87d7567d9d2a4150c7480",
+      "class_name": "com.baidu.adp.framework.client.HttpClient",
+      "method": {
+        "name": "k",
+        "reported_signature": "k(com.baidu.adp.framework.message.HttpMessage, com.baidu.adp.framework.task.HttpMessageTask): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "body_status": "not_available",
+      "representation": "java",
+      "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+    },
+    {
+      "parent_evidence_id": "ev_54c06902cccb5b0452959eea27912efa169e63ddcf564ed3b9edc4ab6fb4ff3b",
+      "class_name": "com.baidu.tieba.forumsearch.message.SearchPostForumRequestMessage",
+      "method": {
+        "name": "<init>",
+        "reported_signature": "<init>(): void",
+        "overload_index": 0,
+        "is_constructor": true,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "body_status": "available",
+      "representation": "java",
+      "source_sha256": "16400c1ad45103b7e7f295d8838b63c9cb44d52d64a63ea2c61416e10a049155"
+    },
+    {
+      "parent_evidence_id": "ev_f2eef3cdb5a46bb7e72f9b5b2794abf0922fc973e60471dde5580d6a140d4775",
+      "class_name": "com.baidu.tieba.forumsearch.message.SearchPostForumRequestMessage",
+      "method": {
+        "name": "encode",
+        "reported_signature": "encode(boolean): java.lang.Object",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "body_status": "available",
+      "representation": "java",
+      "source_sha256": "3a970ac412ec8ba10ee5a04528318fdbbaf8e493905b35fed7247f25b17a7cfd"
+    },
+    {
+      "parent_evidence_id": "ev_6f465defe64ca49df40a8a1ae5a9f81054ffc3fcb04baca0cda187f542c0f7f0",
+      "class_name": "com.baidu.tieba.pb.pb.sub.SubPbRequestMessage",
+      "method": {
+        "name": "<init>",
+        "reported_signature": "<init>(android.content.Context, long, long, long, int, int, int, double, java.lang.String, int, java.lang.Integer, java.lang.String): void",
+        "overload_index": 0,
+        "is_constructor": true,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "body_status": "available",
+      "representation": "java",
+      "source_sha256": "eab653f51a55e4acc9382808ce492a701e5d13db84fa26b0870e17b00a9b5869"
+    },
+    {
+      "parent_evidence_id": "ev_be709a67b64682e84466df3b13ff436663a3f3da5a7c7cbf5d3a817551d09e9d",
+      "class_name": "com.baidu.tieba.pb.pb.sub.SubPbRequestMessage",
+      "method": {
+        "name": "encode",
+        "reported_signature": "encode(boolean): java.lang.Object",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "body_status": "available",
+      "representation": "java",
+      "source_sha256": "22f919e861a0375e972ee61736aaac1af013fef7366dd0dbceed09a5a89dbf72"
+    }
+  ],
+  "limitations": [
+    "HttpClient.k did not expose a decompiled body. The exact App multipart transport was not fully recovered.",
+    "Minimal multipart requests are supported by live observations, not a byte-identical App request comparison.",
+    "Titan hotfix interception can replace static behavior."
+  ]
+}

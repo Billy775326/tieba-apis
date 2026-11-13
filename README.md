@@ -1,8 +1,8 @@
-# Tieba APIs
+﻿# Tieba APIs
 
 基于指定百度贴吧 Android APK 的接口研究仓库，目标是实现有证据支持、可验证的接口客户端。
 
-当前已完成静态路径和请求模型提取，并通过 REA/JADX 检查 APK 和定位请求构造类，尚未实现可线上使用的接口 SDK。接口签名、HTTP 请求构造、登录状态、响应结构和分页行为仍需继续验证。
+已完成 APK 静态分析，并实际验证帖子列表及分页、帖子详情、楼中楼、公开用户资料和发帖选吧搜索这 5 类匿名读取接口。仓库提供可复现的线上验证脚本，尚未提供完整接口 SDK；登录和写入接口仍未验证。
 
 ## 当前结果
 
@@ -12,6 +12,16 @@
 - 11 个请求类、345 个带 Wire 注解的字段，保留字段编号、类型及位置。
 
 [路径证据](evidence/endpoint-candidates.json) · [模型证据](evidence/request-models.json) · [请求字段表](docs/request-fields.md) · [分析进展](docs/investigation.md)
+
+## 线上验证
+
+参见 [验证范围、结果与复现步骤](docs/validation.md) 和 [脱敏结果](evidence/live-read-validation.json)。在仓库根目录运行：
+
+```powershell
+node scripts/verify-app-reads.mjs --live
+```
+
+该命令发送 7 次匿名读取或负对照请求，结果写入忽略目录 .local/。业务码和返回对象检查均通过才判为成功。
 
 ## 本地使用
 
@@ -54,4 +64,4 @@ APK 路径为示例；启动入口会核对 JAR 哈希，不接受不完整或�
 
 参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的接口、认证、参数构造和使用示例分层方式；贴吧协议结论来自本仓库记录的 APK，不从其他平台接口类推。
 
-分析工具使用 [REA](https://github.com/Billy775326/rea)。路径和字段证据由本仓库脚本提取；REA/JADX 的实际检查摘要见 [APK 摘要](evidence/apk-summary.json)。这些结果不代表已完成线上验证。
+分析工具使用 [REA](https://github.com/Billy775326/rea)。路径和字段证据由本仓库脚本提取；REA/JADX 的实际检查摘要见 [APK 摘要](evidence/apk-summary.json)。线上验证独立记录在 [验证报告](docs/validation.md)；仅覆盖其中列明的 5 类读取能力。

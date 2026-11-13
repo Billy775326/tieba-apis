@@ -8,7 +8,7 @@
 
 ## 首批调查目标
 
-下表列出首批调查方向。FrsPage 模型已通过编码方法建立静态关联；其他关联主要依据命名，所有条目均尚未通过网络行为验证。
+下表列出首批调查方向。FrsPage 模型已通过编码方法建立静态关联；其他关联主要依据命名，下列 5 类读取能力现已完成一次匿名线上验证，详情见 [验证报告](validation.md)。
 
 | 功能方向       | APK 中存在的路径            | 待追踪模型                         | 已观察的部分字段 tag                 |
 | -------------- | --------------------------- | ---------------------------------- | ------------------------------------ |
@@ -41,13 +41,13 @@ $env:REA_JADX_MCP_JAR = (Resolve-Path '.local/jadx-complete.jar').Path
 node .local/rea-runtime/node_modules/rea-agents/scripts/rea.mjs inspect-android-package 'D:/targets/example.apk' --format json
 ```
 
-APK 路径为示例。后续依次追踪 `FrsPageRequestMessage`、`PbPageRequestMessage`、序列化和网络发送边界，确认 URL、HTTP 方法、公共参数、签名输入、请求体及响应 Protobuf。再以少量读取请求验证分页和错误行为，并实现 SDK。
+APK 路径为示例。现已通过实际请求确认本次最小匿名 Protobuf multipart 构造可用于 5 类读取能力，见 [验证报告](validation.md)。后续可据此整理 SDK；登录行为、写接口及 App 原始发送器仍需单独分析。
 
 ## 验证边界
 
 已对真实 APK 完成路径和字段提取。提取器通过重复源位置、路径误匹配、截断 DEX 和未知 DEX 版本测试。
 
-REA/JADX 已成功检查包名 `com.baidu.tieba`、版本 `22.13.1.1`、52,181 个类和 10,941 个资源，摘要及父 Evidence ID 见 [APK 摘要](../evidence/apk-summary.json)。已成功读取 `FrsPageRequestMessage` 的成员及构造函数；构造函数引用 cmd `301001`，包含 Titan 热修复拦截分支，不能将静态逻辑等同于当前运行路径。尚未完成完整调用链、APK 签名验证、线上接口请求、登录或设备测试。没有运行目标 App，也没有发送发帖、回复、关注或私信操作。
+REA/JADX 已成功检查包名 `com.baidu.tieba`、版本 `22.13.1.1`、52,181 个类和 10,941 个资源，摘要及父 Evidence ID 见 [APK 摘要](../evidence/apk-summary.json)。已成功读取 `FrsPageRequestMessage` 的成员及构造函数；构造函数引用 cmd `301001`，包含 Titan 热修复拦截分支，不能将静态逻辑等同于当前运行路径。现已完成 5 类匿名读取的线上验证，仍未完成 App 传输逐字节对照、APK 签名验证、登录或设备测试。没有运行目标 App，也没有发送发帖、回复、关注或私信操作。
 
 ## 实际参考资料
 

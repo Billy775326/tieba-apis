@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "method": "Selected DEX field_ids and Wire annotation metadata used by verify-app-reads.mjs",
+  "models": [
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 2972,
+      "descriptor": "Ltbclient/Error;",
+      "fields": [
+        {
+          "owner": "Ltbclient/Error;",
+          "type": "Ljava/lang/String;",
+          "name": "errmsg",
+          "field_index": 12483,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 2,
+                  "byte_width": 1
+                },
+                "type": {
+                  "owner": "Lcom/squareup/wire/Message$Datatype;",
+                  "type": "Lcom/squareup/wire/Message$Datatype;",
+                  "name": "STRING",
+                  "field_index": 150
+                }
+              }
+            }
+          ]
+        },
+        {
+          "owner": "Ltbclient/Error;",
+          "type": "Ljava/lang/Integer;",
+          "name": "errorno",
+          "field_index": 12484,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 1,
+                  "byte_width": 1
+                },
+                "type": {
+                  "owner": "Lcom/squareup/wire/Message$Datatype;",
+                  "type": "Lcom/squareup/wire/Message$Datatype;",
+                  "name": "INT32",
+                  "field_index": 148
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 3668,
+      "descriptor": "Ltbclient/FrsPage/DataRes;",
+      "fields": [
+        {
+          "owner": "Ltbclient/FrsPage/DataRes;",
+          "type": "Ltbclient/FrsPage/ForumInfo;",
+          "name": "forum",
+          "field_index": 16309,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 2,
+                  "byte_width": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "owner": "Ltbclient/FrsPage/DataRes;",
+          "type": "Ltbclient/Page;",
+          "name": "page",
+          "field_index": 16361,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 4,
+                  "byte_width": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "owner": "Ltbclient/FrsPage/DataRes;",
+          "type": "Ljava/util/List;",
+          "name": "thread_list",
+          "field_index": 16398,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "label": {
+                  "owner": "Lcom/squareup/wire/Message$Label;",
+                  "type": "Lcom/squareup/wire/Message$Label;",
+                  "name": "REPEATED",
+                  "field_index": 153
+                },
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 7,
+                  "byte_width": 1
+                }
+              }
+            },
+            {
+              "visibility": 2,
+              "type": "Ldalvik/annotation/Signature;",
+              "elements": {
+                "value": ["Ljava/util/List<", "Ltbclient/ThreadInfo;", ">;"]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 3701,
+      "descriptor": "Ltbclient/FrsPage/ForumInfo;",
+      "fields": [
+        {
+          "owner": "Ltbclient/FrsPage/ForumInfo;",
+          "type": "Ljava/lang/String;",
+          "name": "name",
+          "field_index": 16771,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 2,
+                  "byte_width": 1
+                },
+                "type": {
+                  "owner": "Lcom/squareup/wire/Message$Datatype;",
+                  "type": "Lcom/squareup/wire/Message$Datatype;",
+                  "name": "STRING",
+                  "field_index": 150
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 5750,
+      "descriptor": "Ltbclient/Page;",
+      "fields": [
+        {
+          "owner": "Ltbclient/Page;",
+          "type": "Ljava/lang/Integer;",
+          "name": "current_page",
+          "field_index": 26497,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 3,
+                  "byte_width": 1
+                },
+                "type": {
+                  "owner": "Lcom/squareup/wire/Message$Datatype;",
+                  "type": "Lcom/squareup/wire/Message$Datatype;",
+                  "name": "INT32",
+                  "field_index": 148
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 5780,
+      "descriptor": "Ltbclient/PbFloor/DataRes;",
+      "fields": [
+        {
+          "owner": "Ltbclient/PbFloor/DataRes;",
+          "type": "Ltbclient/Post;",
+          "name": "post",
+          "field_index": 26838,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 3,
+                  "byte_width": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 5879,
+      "descriptor": "Ltbclient/PbPage/DataRes;",
+      "fields": [
+        {
+          "owner": "Ltbclient/PbPage/DataRes;",
+          "type": "Ljava/util/List;",
+          "name": "post_list",
+          "field_index": 28097,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "label": {
+                  "owner": "Lcom/squareup/wire/Message$Label;",
+                  "type": "Lcom/squareup/wire/Message$Label;",
+                  "name": "REPEATED",
+                  "field_index": 153
+                },
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 6,
+                  "byte_width": 1
+                }
+              }
+            },
+            {
+              "visibility": 2,
+              "type": "Ldalvik/annotation/Signature;",
+              "elements": {
+                "value": ["Ljava/util/List<", "Ltbclient/Post;", ">;"]
+              }
+            }
+          ]
+        },
+        {
+          "owner": "Ltbclient/PbPage/DataRes;",
+          "type": "Ltbclient/ThreadInfo;",
+          "name": "thread",
+          "field_index": 28122,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 8,
+                  "byte_width": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 6131,
+      "descriptor": "Ltbclient/Post;",
+      "fields": [
+        {
+          "owner": "Ltbclient/Post;",
+          "type": "Ljava/lang/Long;",
+          "name": "author_id",
+          "field_index": 29805,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 19,
+                  "byte_width": 1
+                },
+                "type": {
+                  "owner": "Lcom/squareup/wire/Message$Datatype;",
+                  "type": "Lcom/squareup/wire/Message$Datatype;",
+                  "name": "INT64",
+                  "field_index": 149
+                }
+              }
+            }
+          ]
+        },
+        {
+          "owner": "Ltbclient/Post;",
+          "type": "Ljava/lang/Long;",
+          "name": "id",
+          "field_index": 29836,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 1,
+                  "byte_width": 1
+                },
+                "type": {
+                  "owner": "Lcom/squareup/wire/Message$Datatype;",
+                  "type": "Lcom/squareup/wire/Message$Datatype;",
+                  "name": "UINT64",
+                  "field_index": 152
+                }
+              }
+            }
+          ]
+        },
+        {
+          "owner": "Ltbclient/Post;",
+          "type": "Ljava/lang/Integer;",
+          "name": "sub_post_number",
+          "field_index": 29883,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 13,
+                  "byte_width": 1
+                },
+                "type": {
+                  "owner": "Lcom/squareup/wire/Message$Datatype;",
+                  "type": "Lcom/squareup/wire/Message$Datatype;",
+                  "name": "UINT32",
+                  "field_index": 151
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 6203,
+      "descriptor": "Ltbclient/Profile/DataRes;",
+      "fields": [
+        {
+          "owner": "Ltbclient/Profile/DataRes;",
+          "type": "Ltbclient/User;",
+          "name": "user",
+          "field_index": 30621,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 1,
+                  "byte_width": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 6611,
+      "descriptor": "Ltbclient/SearchPostForum/DataRes;",
+      "fields": [
+        {
+          "owner": "Ltbclient/SearchPostForum/DataRes;",
+          "type": "Ltbclient/SearchPostForum/SearchForum;",
+          "name": "exact_match",
+          "field_index": 32541,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 1,
+                  "byte_width": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 6614,
+      "descriptor": "Ltbclient/SearchPostForum/SearchForum;",
+      "fields": [
+        {
+          "owner": "Ltbclient/SearchPostForum/SearchForum;",
+          "type": "Ljava/lang/String;",
+          "name": "forum_name",
+          "field_index": 32564,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 2,
+                  "byte_width": 1
+                },
+                "type": {
+                  "owner": "Lcom/squareup/wire/Message$Datatype;",
+                  "type": "Lcom/squareup/wire/Message$Datatype;",
+                  "name": "STRING",
+                  "field_index": 150
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 7049,
+      "descriptor": "Ltbclient/ThreadInfo;",
+      "fields": [
+        {
+          "owner": "Ltbclient/ThreadInfo;",
+          "type": "Ljava/lang/Long;",
+          "name": "id",
+          "field_index": 35107,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 1,
+                  "byte_width": 1
+                },
+                "type": {
+                  "owner": "Lcom/squareup/wire/Message$Datatype;",
+                  "type": "Lcom/squareup/wire/Message$Datatype;",
+                  "name": "INT64",
+                  "field_index": 149
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dex": "classes5.dex",
+      "class_def_index": 7223,
+      "descriptor": "Ltbclient/User;",
+      "fields": [
+        {
+          "owner": "Ltbclient/User;",
+          "type": "Ljava/lang/Long;",
+          "name": "id",
+          "field_index": 36606,
+          "annotations": [
+            {
+              "visibility": 1,
+              "type": "Lcom/squareup/wire/ProtoField;",
+              "elements": {
+                "tag": {
+                  "encoded_type": 4,
+                  "raw_unsigned": 2,
+                  "byte_width": 1
+                },
+                "type": {
+                  "owner": "Lcom/squareup/wire/Message$Datatype;",
+                  "type": "Lcom/squareup/wire/Message$Datatype;",
+                  "name": "INT64",
+                  "field_index": 149
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
