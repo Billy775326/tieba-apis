@@ -1,0 +1,5549 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "scope": "Source-reviewed supplemental business tests plus explicitly separate anonymous boundaries. Negative controls are not valid business requests or proof of endpoint usability.",
+  "started_at_utc": "2026-11-14T06:54:33.442Z",
+  "finished_at_utc": "2026-11-14T07:33:06.871Z",
+  "total_requests": 249,
+  "original_pending_diagnostic_cases": 202,
+  "anonymous_negative_controls": 203,
+  "cycles": [
+    {
+      "name": "parameter-control",
+      "baseline_restored": true,
+      "created_verified": false,
+      "updated_verified": false,
+      "enabled_verified": false,
+      "disabled_verified": false,
+      "delete_acknowledged": false,
+      "created_absent": null
+    },
+    {
+      "name": "create-edit-delete",
+      "baseline_restored": true,
+      "created_verified": true,
+      "updated_verified": true,
+      "enabled_verified": false,
+      "disabled_verified": false,
+      "delete_acknowledged": true,
+      "created_absent": true
+    },
+    {
+      "name": "create-edit-enable-disable-delete",
+      "baseline_restored": true,
+      "created_verified": true,
+      "updated_verified": true,
+      "enabled_verified": false,
+      "disabled_verified": false,
+      "delete_acknowledged": true,
+      "created_absent": true
+    },
+    {
+      "name": "follow-list-switch",
+      "changed_verified": true,
+      "baseline_restored": true
+    }
+  ],
+  "phases": [
+    {
+      "name": "anonymous-boundaries",
+      "source_file_sha256": "12340d636421296ba2e9d0f7f57216c89741c4471e460dd7be00f24504094b24",
+      "results": [
+        {
+          "path": "/c/c/video/share",
+          "command": null,
+          "candidate_ids": [
+            "7a0ff6472e94adde"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:54.427Z",
+          "http_status": 200,
+          "response_sha256": "3801388b086461ea057a7706710c5767c72b6d612a92df6b0c32a76b85686238",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/b/ad/adBid",
+          "command": "309757",
+          "candidate_ids": [
+            "9862ce83035ea5d0"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:55.017Z",
+          "http_status": 200,
+          "response_sha256": "b384afc444ec304ebf3c663451d1f5b7bf1be8b4f35810e053a5109480d1cb88",
+          "response_bytes": 34,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "210009"
+        },
+        {
+          "path": "/c/b/commit/addMsgRecord",
+          "command": null,
+          "candidate_ids": [
+            "ffb0e153428885ce"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:56.328Z",
+          "http_status": 200,
+          "response_sha256": "a01e6be2255d737007b9fa36eecc47b6bb4a0ded2a0962fdf328047b69dd19a4",
+          "response_bytes": 139,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/game/html",
+          "command": null,
+          "candidate_ids": [
+            "cb79e8b1b3c58337"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:56.541Z",
+          "http_status": 302,
+          "response_sha256": "093452239d0e2e43b06b9d5cd8ac735c26449e340e001f87904765bb30e2293e",
+          "response_bytes": 8,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": null
+        },
+        {
+          "path": "/c/c/agree/agreeVirtualImage",
+          "command": null,
+          "candidate_ids": [
+            "22770bcc5d31061b"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:57.000Z",
+          "http_status": 200,
+          "response_sha256": "b9e941e778c76e2d38f04791ace91ae87e81ecda28e5fdf332674af84a466747",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/b/commit/pushThread",
+          "command": null,
+          "candidate_ids": [
+            "9ea3c6a51c313250"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:58.221Z",
+          "http_status": 200,
+          "response_sha256": "b73cb9f3f7181f67af6725188bc168bf840c696321434d11477389a954c2d688",
+          "response_bytes": 138,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/agree/opAgree",
+          "command": null,
+          "candidate_ids": [
+            "a3e5ae9e339e84a2"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:58.675Z",
+          "http_status": 200,
+          "response_sha256": "70cdcc744ededbd799c8183c4be5d6343fecea6c110b145e3e2b7b395dad71fc",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/agree/delAgreeMeRecord",
+          "command": null,
+          "candidate_ids": [
+            "35509306d6c2551d"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:58.695Z",
+          "http_status": 200,
+          "response_sha256": "aac5f32d2c2181ad63ab9a0b810bf33230220c98a490275b63a2af264455a1bc",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/aiapps/opAgree",
+          "command": null,
+          "candidate_ids": [
+            "3810a35d4977b7b1"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:59.319Z",
+          "http_status": 200,
+          "response_sha256": "74719401fd7a3f75225a0fc7e73588ea0c8fca21b86c29988a2a38e726cb40d6",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/aigc/applyWhitelist",
+          "command": null,
+          "candidate_ids": [
+            "9fb46fefc0fe211c"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:59.429Z",
+          "http_status": 200,
+          "response_sha256": "b668fbe3fbc39591d631a75c078454948c2ef6f6cbfea902ceb7cabc074631fa",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/chatroom/callRobotRouter",
+          "command": null,
+          "candidate_ids": [
+            "037d9e3dbbdd8670"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:59.819Z",
+          "http_status": 200,
+          "response_sha256": "e929cbf076a3e2b7a3f520881394ac5561641f2f6b473c7775f65fb26a2cf394",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/chatroom/controlSpeak",
+          "command": null,
+          "candidate_ids": [
+            "eaae743e56718058"
+          ],
+          "observed_at_utc": "2026-11-14T07:03:59.935Z",
+          "http_status": 200,
+          "response_sha256": "e35128e7b3c86b20193b35364fe6b2f1cc47846ada63b6811afd650864856e01",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/chatroom/opExcellentMsg",
+          "command": null,
+          "candidate_ids": [
+            "42f7c721788d8bcb"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:00.362Z",
+          "http_status": 200,
+          "response_sha256": "040fb7c676a70dca161a4c019250b223fdc03f7034effb9f050f742460974d90",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/chatroom/opSubscribeChatroom",
+          "command": null,
+          "candidate_ids": [
+            "0f48c989eb157729"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:00.822Z",
+          "http_status": 200,
+          "response_sha256": "c2458cd8e5a7f96dabc2a5c0e3ee583fe58a4574dc63db8d252feb445fcbe1ab",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/chatroom/createMeme",
+          "command": null,
+          "candidate_ids": [
+            "45ea39a41beefd89"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:00.823Z",
+          "http_status": 200,
+          "response_sha256": "7417d817acc3efa698e0cd53e18bb203dddf09c1d32601d77429d578f42e2cee",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/chatroom/shareCard",
+          "command": null,
+          "candidate_ids": [
+            "47b2bd1ac1702c94"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:01.260Z",
+          "http_status": 200,
+          "response_sha256": "da89127f53f31be4ce4e9bc562c2189ca53544b640ff068b5f24113057dd7b6c",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/chatroom/withdrawMsg",
+          "command": null,
+          "candidate_ids": [
+            "caf3ae394c073250"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:01.263Z",
+          "http_status": 200,
+          "response_sha256": "be88a8cbe2e826f729cea334f993fe5f9c5666668ae819f8c2d43f003aeddf13",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/encourage/consume/payOpenGoods",
+          "command": null,
+          "candidate_ids": [
+            "f6895ef08be6f25d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:01.691Z",
+          "http_status": 200,
+          "response_sha256": "4618fc246eff2c5960e4244a4a9cea4c90d7e7b6c8397fd524ded2ac44ae277a",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/encourage/member/closeAd",
+          "command": null,
+          "candidate_ids": [
+            "f721b2ae7e21f06c"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:02.154Z",
+          "http_status": 200,
+          "response_sha256": "3fdc0f308ba821c5189d150bf21aa515d9dc5aa3184fefde3bc74515fdec55ae",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/encourage/consume/getVcode",
+          "command": null,
+          "candidate_ids": [
+            "2c769c7c8405b369"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:02.353Z",
+          "http_status": 200,
+          "response_sha256": "b49b074654ad450065fb46711566dd12723e03e597f2ecd7b44a76cfbcf624a5",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/encourage/member/doDailyTask",
+          "command": null,
+          "candidate_ids": [
+            "14a0bc8bfd0be15f"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:02.661Z",
+          "http_status": 200,
+          "response_sha256": "8a0dee5c29b359895604563c8186c686dfdb9659c3b3bc572fcbb7680e91b8ac",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/encourage/point/finishmembertask",
+          "command": null,
+          "candidate_ids": [
+            "df98fd2d2e428ed4"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:02.909Z",
+          "http_status": 200,
+          "response_sha256": "5cf9714d48b281ab3a9ccf819e7fdb0a2393ab2102d6f49a7e9ccf6fe9ab34b2",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/encourage/present/placeOrder",
+          "command": null,
+          "candidate_ids": [
+            "ebaa16675f2575d4"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:03.215Z",
+          "http_status": 200,
+          "response_sha256": "4dc21dd01d4a7792e43c41cbf80e74b87ef53c803d5b0bf5fa928ea60cb66eb5",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/encourage/present/sendFreeGift",
+          "command": null,
+          "candidate_ids": [
+            "2e05f6521cc08115"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:03.884Z",
+          "http_status": 200,
+          "response_sha256": "f59ec452af99e7d20a805ad4b10db904ad9b5a2179e2baa65336ccc7925a413c",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/encourage/theme/setCard",
+          "command": null,
+          "candidate_ids": [
+            "a57999996c028d2c"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:04.138Z",
+          "http_status": 200,
+          "response_sha256": "f96b4d28411aac001549ebee9fa9a7f3731a4c78afb0a58a8453bfd9f3c3acac",
+          "response_bytes": 254,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "1",
+          "error_message": "用户未登录或登录失败，请更换账号或重试",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/excellent/submitCancelDislike",
+          "command": null,
+          "candidate_ids": [
+            "12489a5190f26180"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:04.556Z",
+          "http_status": 200,
+          "response_sha256": "44a4d422880af703d7529dc7ac02c9f91e14318c0d020e032f3cd88c912153b2",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/encourage/theme/setPendant",
+          "command": null,
+          "candidate_ids": [
+            "9940645f33075bd1"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:04.610Z",
+          "http_status": 200,
+          "response_sha256": "dd3b006753f405e7acf7340b7db76fc9fb81bd5a11ba60e57c36988d56dc947b",
+          "response_bytes": 254,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "1",
+          "error_message": "用户未登录或登录失败，请更换账号或重试",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/excellent/submitConcernDislike",
+          "command": null,
+          "candidate_ids": [
+            "ad33dfd53832f973"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:05.014Z",
+          "http_status": 200,
+          "response_sha256": "ec8b297a73bc5084e64a50681ad44453a5b1c9890dae2d2cffd78d29191894fd",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/excellent/submitDislike",
+          "command": null,
+          "candidate_ids": [
+            "5e54b58cee94ef87"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:05.192Z",
+          "http_status": 200,
+          "response_sha256": "fd1e1501653452abb3cbafd4affb11428f7b0c0bb6d5a38e068b2dfdfbcb4ecb",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/forum/delMyForum",
+          "command": null,
+          "candidate_ids": [
+            "1ead94ffb770e33b"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:05.872Z",
+          "http_status": 200,
+          "response_sha256": "5bf26da380ebd486e4d4835781651cf24b0e45fefd0f0d8baeecf6e07f4fa62b",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/forum/create",
+          "command": null,
+          "candidate_ids": [
+            "fc819243d4357025"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:06.200Z",
+          "http_status": 200,
+          "response_sha256": "96e590dbbbb372d9987d84cea084bde40ba01387cc76e1ad700fcd9609103ef1",
+          "response_bytes": 138,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/forum/incrForumAccessCount",
+          "command": null,
+          "candidate_ids": [
+            "bcae21ae4ead2fa5"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:06.292Z",
+          "http_status": 200,
+          "response_sha256": "17710caaf76e305f788a5e3f50b834672da9f2d9c6e1ab2a8c732f3ea56cc3f5",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/forum/msign",
+          "command": null,
+          "candidate_ids": [
+            "e0c7937491d633ba"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:06.665Z",
+          "http_status": 200,
+          "response_sha256": "df0f1a541d98ebd56bc249e979445fa9ccadacc90671a98e924afdcef757ba7f",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/forum/share",
+          "command": null,
+          "candidate_ids": [
+            "def7d7e4e3c0810d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:07.094Z",
+          "http_status": 200,
+          "response_sha256": "c8e2dccc58a375801a75134d765b804931cccc42e290a8a5676f7a8c7132b5df",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/forum/statClientStartTimes",
+          "command": null,
+          "candidate_ids": [
+            "da4e0758198cd4c9"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:07.536Z",
+          "http_status": 200,
+          "response_sha256": "3970c53d26d6fb06386bcbca6ff2cb733246e8f9e961c0bc78bc2b5b494ee225",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/forum/setCommonForumState",
+          "command": null,
+          "candidate_ids": [
+            "09b6d3cff6e38c70"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:07.548Z",
+          "http_status": 200,
+          "response_sha256": "98839136a78f94344c75e9598c2e0bd39a9533f35c620ef2824627957ec29c24",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/img/getShareImg",
+          "command": null,
+          "candidate_ids": [
+            "2378ae3d0232f639"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:07.979Z",
+          "http_status": 200,
+          "response_sha256": "129aab8daf93fab9644fe6f9906d17276b2e505b6ba528ac6307b3cef37f70f2",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/img/changeportrait",
+          "command": null,
+          "candidate_ids": [
+            "af06b78b1e6e9828"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:07.984Z",
+          "http_status": 200,
+          "response_sha256": "78c00cd31abbbe436a28b7f023a0cf68e452767e087bbb277f9dfd0d115121d4",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/img/portrait",
+          "command": null,
+          "candidate_ids": [
+            "e74a08ca3d2754c0"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:08.395Z",
+          "http_status": 200,
+          "response_sha256": "a3ee23f94542612d4f4dd0f7a7f752161437b0e26ad662bd21a9de501af2cdc4",
+          "response_bytes": 253,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "1",
+          "error_message": "用户未登录或登录失败，请更换账号或重试",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/img/setuserpic",
+          "command": null,
+          "candidate_ids": [
+            "3d19974a2b6ec2a8"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:08.441Z",
+          "http_status": 200,
+          "response_sha256": "015bb504124af47ea9e5c0f0c032274d2046a36d4a1e4f556a27eb63338265e6",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/item/cancelSubscribeItem",
+          "command": null,
+          "candidate_ids": [
+            "68f0adc0a77fedd3"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:08.856Z",
+          "http_status": 200,
+          "response_sha256": "37ff538d46004a4a533145885723e1987957c9999594a3c4e0bd9db0ad1279c8",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/item/giveOutGameCode",
+          "command": null,
+          "candidate_ids": [
+            "cd06925b078f653c"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:08.943Z",
+          "http_status": 200,
+          "response_sha256": "f0e1c0468b7798c1fbabb192ce5ac66d7c133c9efa68639f6c6218a531fbaeb2",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/item/subscribeitem",
+          "command": null,
+          "candidate_ids": [
+            "353029d1490c80bd"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:09.274Z",
+          "http_status": 200,
+          "response_sha256": "8e538df33b56553c084c553729f0467efb602a373e9387bc9920f5857e67fd17",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/livegroup/applycopythread",
+          "command": null,
+          "candidate_ids": [
+            "7e3f0c3ff3b86f9a"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:09.375Z",
+          "http_status": 200,
+          "response_sha256": "c520869379f265aca2436a855182d1ccc9ec67dd232286935b4bfd64260e5be9",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/post/addPollPost",
+          "command": null,
+          "candidate_ids": [
+            "02cdfc0ad11281a8"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:09.833Z",
+          "http_status": 200,
+          "response_sha256": "cfceb0870668c137fe423f73fee16038d61160ef8e1ff0ac9167313f7a99268b",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/matchActivity/applyMatchGuessing",
+          "command": null,
+          "candidate_ids": [
+            "f018223f69c583a5"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:09.874Z",
+          "http_status": 200,
+          "response_sha256": "d81ffef0ef9791164bb51f613ecff0fb590d395334f7e400beb8176c7961b083",
+          "response_bytes": 348,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [
+            "errno",
+            "errmsg",
+            "data",
+            "toast"
+          ],
+          "scalar_field_names": [
+            "errno",
+            "errmsg"
+          ]
+        },
+        {
+          "path": "/c/c/post/addScore",
+          "command": null,
+          "candidate_ids": [
+            "577377c8ce549722"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:10.299Z",
+          "http_status": 200,
+          "response_sha256": "71305024fbca73919f66b26c56f5176844c557dd325b559e6e3fd5a1a795a7c0",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/post/delmsg",
+          "command": null,
+          "candidate_ids": [
+            "945e9e621512fc88"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:10.354Z",
+          "http_status": 200,
+          "response_sha256": "c49e33a03bfcf6a6833ce7f091a5f5b60bf95b94217dbd94ce62eec7bddb2991",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/question/adoptAnswer",
+          "command": null,
+          "candidate_ids": [
+            "d7be3f6ca9669339"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:10.713Z",
+          "http_status": 200,
+          "response_sha256": "4bcbb0b0344d4d28c1b285df5cafb11d27895b69fd12a2a444312ff33a3193f5",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data",
+            "toast"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/smartapp/delView",
+          "command": null,
+          "candidate_ids": [
+            "13866a7077daac66"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:10.775Z",
+          "http_status": 200,
+          "response_sha256": "d59bb774885be7ff1fcaa9fd867f518983d9c5dd5bc3623732719216f0a721e2",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/smartapp/view",
+          "command": null,
+          "candidate_ids": [
+            "7eda70091066c5cd"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:11.141Z",
+          "http_status": 200,
+          "response_sha256": "87cbdc6c54c17f42c0e4e7edce2bbd6079ba67db446d1a518e3c902a753bd492",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/swap/complete",
+          "command": null,
+          "candidate_ids": [
+            "317dd0585b636d18"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:11.294Z",
+          "http_status": 200,
+          "response_sha256": "067c7de3b65d1ba67c27ebf7960893740b759e23f9bf2cf5597e49ad166ca542",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/thread/commitPushFeedBack",
+          "command": null,
+          "candidate_ids": [
+            "4b1d58baeec26a1c"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:11.714Z",
+          "http_status": 200,
+          "response_sha256": "ef604bb47e3f5040bb76cdab013b2c1824f11b02721a934d537a749aee922fe2",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/tag/addContentTag",
+          "command": null,
+          "candidate_ids": [
+            "b1b70009601eace7"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:11.782Z",
+          "http_status": 200,
+          "response_sha256": "4e8c3cd36673fff325817f5e0bdd97157a7e652d712f43441895054752c14161",
+          "response_bytes": 150,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [
+            "errno",
+            "errmsg",
+            "tag_info"
+          ],
+          "scalar_field_names": [
+            "errno",
+            "errmsg"
+          ]
+        },
+        {
+          "path": "/c/c/thread/setPrivacy",
+          "command": null,
+          "candidate_ids": [
+            "6e5fdfcc75e4d3b5"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:12.187Z",
+          "http_status": 200,
+          "response_sha256": "36d85ccaeffda79d90bdb19f95855869ce4ef8949ac0b6e5b74494794054de1d",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/thread/sdkshare",
+          "command": null,
+          "candidate_ids": [
+            "00016e8ca34be701"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:12.254Z",
+          "http_status": 200,
+          "response_sha256": "c78415dd19245e0ae3dc2b5d7c73a7adabe02fbeb0e4e67b9e3d7ad4b9eb673e",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/thread/share",
+          "command": null,
+          "candidate_ids": [
+            "9fceaeef39408339"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:12.636Z",
+          "http_status": 200,
+          "response_sha256": "2f20c419576e21b4cbcda783fc4e403ba6266cd18ca74d6fea8d719ab5f51b79",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/backUser",
+          "command": null,
+          "candidate_ids": [
+            "81f9b214a5c63366"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:12.696Z",
+          "http_status": 200,
+          "response_sha256": "2bc1f99c915831ee6b1ddf1391e170e980e15fe3c8a2eed1ae5a729b38902fa6",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/commitUGTaskInfo",
+          "command": null,
+          "candidate_ids": [
+            "0f046f6592fd2b84"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:13.057Z",
+          "http_status": 200,
+          "response_sha256": "81c9fe83e2ff1121e589945080433497ecd9421f1152d07090ac654d453a0ba0",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/complaint",
+          "command": null,
+          "candidate_ids": [
+            "c464fe2dec737a04"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:13.244Z",
+          "http_status": 200,
+          "response_sha256": "88291b83df813b4f94a1fff374eb8845f6348c345b77cfa7c7559e72ede6e26b",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/correctFollowError",
+          "command": null,
+          "candidate_ids": [
+            "c615d19410db3c26"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:13.579Z",
+          "http_status": 200,
+          "response_sha256": "6d7442cf025bbd9faebbd83803b670123461d0b81a7f94306619afcc7932fd05",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/delAllUserData",
+          "command": null,
+          "candidate_ids": [
+            "85d8d6608835fde1"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:13.665Z",
+          "http_status": 200,
+          "response_sha256": "914b4b529942bf81507897239dc2169c5337b5736ff3964132d268de44eb3c2d",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/multiRemoveFans",
+          "command": null,
+          "candidate_ids": [
+            "682e1d87e5d339e2"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:14.150Z",
+          "http_status": 200,
+          "response_sha256": "967b083aceee0f63fc96ff881290f17c909516ba36863e427799bca781bd1a28",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/passAuthidVerify",
+          "command": null,
+          "candidate_ids": [
+            "e180b7d5a0756ace"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:14.238Z",
+          "http_status": 200,
+          "response_sha256": "e05656abaad9fa1cb4ec94973e7f87b0afd4fce2cdb8f8764afc4a7a9ac371dd",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/removeFans",
+          "command": null,
+          "candidate_ids": [
+            "30c06490807d5c43"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:14.582Z",
+          "http_status": 200,
+          "response_sha256": "4e7ff445f3164cf45de70bdb0b3d11e19ec47eebf405111cb5df7fcc470d8f24",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/report",
+          "command": null,
+          "candidate_ids": [
+            "6dd6463a9567c68b"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:14.679Z",
+          "http_status": 200,
+          "response_sha256": "9c7e87c21c4abe3aada5a25502f4ba22f67014664712896b7b5802108328ce5f",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/setCommercialPushUser",
+          "command": null,
+          "candidate_ids": [
+            "eeb674a950c9ef64"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:15.272Z",
+          "http_status": 200,
+          "response_sha256": "29870f0a9916cdc61704ace2cbf95ad8f6123bb39f78d915a85162ad4eb1a628",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/setSignMask",
+          "command": null,
+          "candidate_ids": [
+            "4fb8a72efbcbedf8"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:15.694Z",
+          "http_status": 200,
+          "response_sha256": "9b5b7c579c9eeb20efbd682f23c9f55167badb660d6457bfa907084688594977",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/setFollowListSwitch",
+          "command": null,
+          "candidate_ids": [
+            "b98589f0a6097d75"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:15.936Z",
+          "http_status": 200,
+          "response_sha256": "2d904bba98ba70dfdc17abbe5e7ecf3e52f6b757be3455561b8c19ba4a929079",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/updateOfflinePackTask",
+          "command": null,
+          "candidate_ids": [
+            "ddd4259e61203c40"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:16.214Z",
+          "http_status": 200,
+          "response_sha256": "f979be4b56cb59b38f5cfe43c97017b47e927570a69f9715e56ef37634752a87",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/user/uploadOfflinePack",
+          "command": null,
+          "candidate_ids": [
+            "7ad34d7fc4e70586"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:16.440Z",
+          "http_status": 200,
+          "response_sha256": "d4dc948c379f11145cd68ad1bee1cc1744205f13eceae539c509980da6910773",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/markRedIcon",
+          "command": null,
+          "candidate_ids": [
+            "dab5d5df35b38789"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:16.838Z",
+          "http_status": 200,
+          "response_sha256": "a8c02000e4bda8454a43ea4e7bc9a782e7cb9df1f3d3c6082c92da9c8e25f047",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/playDura",
+          "command": null,
+          "candidate_ids": [
+            "42ed09455972ffa8"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:16.860Z",
+          "http_status": 200,
+          "response_sha256": "e4d606d384bf21f370deae330fa013156b5f23d5474eeb84a62c46f3035cd81c",
+          "response_bytes": 141,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/playStat",
+          "command": null,
+          "candidate_ids": [
+            "58f6809c1b3a41e5"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:17.259Z",
+          "http_status": 200,
+          "response_sha256": "295f20a5e1d7f5551afa43c5d194be5fd1f42c0d90bc53989413dc5d960be12c",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/reportSlowStart",
+          "command": null,
+          "candidate_ids": [
+            "03bb40a03abc20f4"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:17.299Z",
+          "http_status": 200,
+          "response_sha256": "9be070c3632480647b856a490c43c833667203657585bf6d701b5b805e9e21a2",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/upGradeVideoUp",
+          "command": null,
+          "candidate_ids": [
+            "7dd46cffd85f787d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:17.701Z",
+          "http_status": 200,
+          "response_sha256": "5479f2d80fb1b94f3dd66b66a07fd0a7d4df6d8769f96a141c39bda8404c2595",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/uploadBlock",
+          "command": null,
+          "candidate_ids": [
+            "4cd94bda0b1e9202"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:17.923Z",
+          "http_status": 200,
+          "response_sha256": "4eb583d7465e1566e4adea2518217c7dce813bb2e5719f1784e7139920db4d54",
+          "response_bytes": 234,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": null,
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/uploadChunk",
+          "command": null,
+          "candidate_ids": [
+            "4a172bb40d0cf843"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:18.300Z",
+          "http_status": 200,
+          "response_sha256": "16801aba228fed0a8f7ca8bd3f24c11293d923b7da71405c69b7fb40507c2064",
+          "response_bytes": 234,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": null,
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/uploadVideoData",
+          "command": null,
+          "candidate_ids": [
+            "9e81831bd4789d0e"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:18.742Z",
+          "http_status": 200,
+          "response_sha256": "e414fce8281b45c3435992fe4ce15b69f416d1c196957eebefb30a5fa3dcb3b6",
+          "response_bytes": 141,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/uploadFile",
+          "command": null,
+          "candidate_ids": [
+            "df1220c08242768b"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:18.781Z",
+          "http_status": 200,
+          "response_sha256": "da8be06193918dcdc58a78882b392906510cfced93d0b993b1da25b3cb08eff7",
+          "response_bytes": 234,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": null,
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/uploadVideoStatus",
+          "command": null,
+          "candidate_ids": [
+            "1e2228789d8fb9a1"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:19.192Z",
+          "http_status": 200,
+          "response_sha256": "32bf9e8a9588f4d14387cd2725bad2fede1701214d54edd7bdfdcdb31bee21a0",
+          "response_bytes": 141,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/video/vlog",
+          "command": null,
+          "candidate_ids": [
+            "ac5b1a564db73e1d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:19.213Z",
+          "http_status": 200,
+          "response_sha256": "7d5e0879e970353b6c66b1924b007791b237a400119637987787d04fbee07242",
+          "response_bytes": 181,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/voice/chunkupload",
+          "command": null,
+          "candidate_ids": [
+            "25fc5ecc8a31e8e7"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:19.679Z",
+          "http_status": 200,
+          "response_sha256": "fee7ea4a87d2b61434ab13f149e97f6bd0bfb0b6038d1d831f5515e85fe2a4c6",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/voice/voice_fin_chunk_upload",
+          "command": null,
+          "candidate_ids": [
+            "e4873c56c1f777e8"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:19.699Z",
+          "http_status": 200,
+          "response_sha256": "5863c796424976099e5b51be166c4727e49eb703ec63d7003c3eee93babc0e0e",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/zan/like",
+          "command": null,
+          "candidate_ids": [
+            "a5a0f85ac69b716f"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:20.171Z",
+          "http_status": 200,
+          "response_sha256": "975fb3a4c23e8ac662a4f449e6609737eb1434674b059728124ea277e1a753ef",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/c/voiceroom/delUserTab",
+          "command": null,
+          "candidate_ids": [
+            "760a4cf48f384f29"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:20.466Z",
+          "http_status": 200,
+          "response_sha256": "86d54df1509f0ff1601ffaec3722abb62e14ad5803f07e69e07e8d80c8a5283c",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/alipay/alipayGetUserInfo",
+          "command": null,
+          "candidate_ids": [
+            "b007141df7efba60"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:21.020Z",
+          "http_status": 200,
+          "response_sha256": "f9a84abfd516351a93abdceb4ae4bc77f50dffa4eafd858b06f0eaa097e2b23f",
+          "response_bytes": 254,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "1",
+          "error_message": "用户未登录或登录失败，请更换账号或重试",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/brand/markBookPopup",
+          "command": null,
+          "candidate_ids": [
+            "90cae62060ed0d0e"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:21.438Z",
+          "http_status": 200,
+          "response_sha256": "06cf17a7c80227e36d3e745d3d2240e75e5e7c225df4bd28920a3cc6b3f696ea",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/alipay/alipayApplyUserInfo",
+          "command": null,
+          "candidate_ids": [
+            "989486f54174e0e2"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:21.694Z",
+          "http_status": 200,
+          "response_sha256": "56069b88a0c36c2bb0d23db23cebe956317aa1e0dc3b3c729afe6aa71a41260f",
+          "response_bytes": 254,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "1",
+          "error_message": "用户未登录或登录失败，请更换账号或重试",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/bu/setbubble",
+          "command": null,
+          "candidate_ids": [
+            "e7b30ecf84690612"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:21.864Z",
+          "http_status": 200,
+          "response_sha256": "106459db6b5fb95f6f32a700d258f200f3eab6955dc98e75c9df59426ee9bb87",
+          "response_bytes": 254,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "1",
+          "error_message": "用户未登录或登录失败，请更换账号或重试",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/consume/getBuyForm",
+          "command": null,
+          "candidate_ids": [
+            "05d7cbed35f704b8"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:22.837Z",
+          "http_status": 200,
+          "response_sha256": "2ea2b228b553b8081e7e20e7fd53531600363fa832244e82cd40d04058b6ce44",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/businessPromot/counter",
+          "command": null,
+          "candidate_ids": [
+            "9f1b640d118313ab"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:22.893Z",
+          "http_status": 200,
+          "response_sha256": "0ba256d13b9cdfd14d051bf758c7d5dde975cc5cb0d3e913a2c9500ab2453293",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/faces/buyfacepack",
+          "command": null,
+          "candidate_ids": [
+            "b16e8fbfa3507006"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:23.282Z",
+          "http_status": 200,
+          "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "response_bytes": 0,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": null
+        },
+        {
+          "path": "/c/e/faces/dpack",
+          "command": null,
+          "candidate_ids": [
+            "b1eb5bbef1eb134d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:23.351Z",
+          "http_status": 200,
+          "response_sha256": "376ae1ac900fb1332cf56dd3cbc260646d465ed89709a1598e1ca2e9338ead9f",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/faces/querybuyresult",
+          "command": null,
+          "candidate_ids": [
+            "00d646cdda3dfb42"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:24.219Z",
+          "http_status": 200,
+          "response_sha256": "4feacdf5fb81166b072e00aa9ad573561e8adeba9ef04aa805bce5025174d4be",
+          "response_bytes": 138,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/mema/buyLiveProps",
+          "command": null,
+          "candidate_ids": [
+            "77bb9494352232fa"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:24.616Z",
+          "http_status": 200,
+          "response_sha256": "01f29a1fbf301eaaa99aa8855d6bd91518fde33351256143a369d5efd38f7a40",
+          "response_bytes": 139,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/mema/getOrder",
+          "command": null,
+          "candidate_ids": [
+            "98408e0076149793"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:24.653Z",
+          "http_status": 200,
+          "response_sha256": "a578ce87b12e8821c51174ec3f179aa1ef52def090e07293a2481b87f0b6c30f",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/mema/getpayinfo",
+          "command": null,
+          "candidate_ids": [
+            "e24898ebe8fb9110"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:25.041Z",
+          "http_status": 200,
+          "response_sha256": "ee536eb00b67408b41182ab2aad26b49c7d60d0616c3cdfd6df3051127fee957",
+          "response_bytes": 253,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "1",
+          "error_message": "用户未登录或登录失败，请更换账号或重试",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/meme/addPackage",
+          "command": null,
+          "candidate_ids": [
+            "5c0d573b87ff3e3d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:25.230Z",
+          "http_status": 200,
+          "response_sha256": "fbfd885d93dc72e62f76761b3e8f22116810d5731bb6f992d9a414590b445873",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/meme/collect",
+          "command": null,
+          "candidate_ids": [
+            "bf7204afa408f36f"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:25.511Z",
+          "http_status": 200,
+          "response_sha256": "e5e68de52d28bc0114643a02a7d99c3c5f7b31672ae7f1ce726138fc7d287f26",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/meme/commitVote",
+          "command": null,
+          "candidate_ids": [
+            "c625256c5687374c"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:26.177Z",
+          "http_status": 200,
+          "response_sha256": "db84a7ca862d46f16a31ac411025b56f14774bc4347b6a09ee7d8f845cb825ce",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/meme/delPackage",
+          "command": null,
+          "candidate_ids": [
+            "1e45e44c7fc3232d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:26.260Z",
+          "http_status": 200,
+          "response_sha256": "af3c7342e55214b95c44a037fc78cb7c28d8020b026cd2237f6ca12aad091f23",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/meme/download",
+          "command": null,
+          "candidate_ids": [
+            "fd8fcd0e61482889"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:26.694Z",
+          "http_status": 200,
+          "response_sha256": "4ce24f09e8ee0d8817cbd0060995a3af6eef1be5ed655de0d85bfc50e12d872c",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/meme/dice",
+          "command": null,
+          "candidate_ids": [
+            "cc12f531a6118aa0"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:26.702Z",
+          "http_status": 200,
+          "response_sha256": "e874d1b2710fff38ac8995b2d2023da0e462a87a54b8c6464f062025e6e40b3a",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/meme/pic2id",
+          "command": null,
+          "candidate_ids": [
+            "b5725b3d0bd448d4"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:27.150Z",
+          "http_status": 200,
+          "response_sha256": "78f88da724416e2b344910db76f92b51fbf10f8372b6e694e51ff4aabfd5c777",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/meme/pic2idJson",
+          "command": null,
+          "candidate_ids": [
+            "fe681fb843ff9074"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:27.176Z",
+          "http_status": 200,
+          "response_sha256": "f2a9a19ddc2a999c76a2613ab3117d25f780987c0d7e82ee5f5bf50568668fc2",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/meme/uploadPackage",
+          "command": null,
+          "candidate_ids": [
+            "1e22e95d8c5777a9"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:27.635Z",
+          "http_status": 200,
+          "response_sha256": "ece1fcedefe2202e7a253c1517a73eeab82d85b2246655d9a23212b8b042d36f",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/pay/andmember",
+          "command": null,
+          "candidate_ids": [
+            "15b2bb2627dd88f4"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:28.387Z",
+          "http_status": 200,
+          "response_sha256": "bb6cf21584db9a70bb87fc60cfcc0a0342a73ea944ed91c80b1a7c881db0fff8",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/meme/share",
+          "command": null,
+          "candidate_ids": [
+            "c7059dea0f683e06"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:28.595Z",
+          "http_status": 200,
+          "response_sha256": "cdac76462eb85a30b42734fe602dc3d9e4621276280a76bd1a7b3cd62c7c70af",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/e/theme/setBackground",
+          "command": null,
+          "candidate_ids": [
+            "9899b3dfe013cc89"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:28.950Z",
+          "http_status": 200,
+          "response_sha256": "ba788393f73907e7dc75dbb03e7687aad936d50e13b4344d9082e3af2b3bfd58",
+          "response_bytes": 254,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "1",
+          "error_message": "用户未登录或登录失败，请更换账号或重试",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/ad/getFeedAd",
+          "command": "309754",
+          "candidate_ids": [
+            "43479e1e06fc4aff"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:29.021Z",
+          "http_status": 200,
+          "response_sha256": "3ce6676c7e428a40287f145604bfc02c9ec10b82f93db66005a8f663d171d3f4",
+          "response_bytes": 10,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0"
+        },
+        {
+          "path": "/c/f/ad/getSplashAd",
+          "command": null,
+          "candidate_ids": [
+            "87950d8285c89735"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:29.412Z",
+          "http_status": 200,
+          "response_sha256": "54993cd1924ad94578c7226c0cdf2f071c1f73a82949f68e6b0c64878d539703",
+          "response_bytes": 129,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "2230209",
+          "error_message": "请歇歇吧",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/aichat/getChatDetail",
+          "command": null,
+          "candidate_ids": [
+            "7bef627bf7726816"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:29.533Z",
+          "http_status": 200,
+          "response_sha256": "76f7fbbe7a913309996474982725bef028cdcb60e250e04862708737e55bf860",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/aichat/getRandomMemeInfo",
+          "command": null,
+          "candidate_ids": [
+            "7f62b41c10d76d9e"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:30.287Z",
+          "http_status": 200,
+          "response_sha256": "e8cb93dd2aa0365b63eb5539ba3e5ed39df62f5350b54c3cfe7f9e37131f1a87",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/aichat/handleTabStatus",
+          "command": null,
+          "candidate_ids": [
+            "4b7918361797c1d8"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:30.291Z",
+          "http_status": 200,
+          "response_sha256": "b01ccd54a2a7f3e45b26acb83384d5595d56cbf768ccbe1ff315e96b680716b2",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/chat/getChatRoomInitInfo",
+          "command": null,
+          "candidate_ids": [
+            "fa69a076af5cdfd8"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:30.733Z",
+          "http_status": 200,
+          "response_sha256": "e88987cc49f04bbd87c40796e2095fedb585cf3a71e7c67e84d921fddc598205",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/anti/vcode",
+          "command": null,
+          "candidate_ids": [
+            "7ba40b13a71def2d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:30.750Z",
+          "http_status": 200,
+          "response_sha256": "743e73ea2dcbd23001f6942d6774a30aeabb86406ff5212a32792fbcd919af4c",
+          "response_bytes": 117,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "1",
+          "error_message": "用户未登录",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/excellent/exczan",
+          "command": null,
+          "candidate_ids": [
+            "7f06f89cafb14f4a"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:31.148Z",
+          "http_status": 302,
+          "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+          "response_bytes": 154,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": null
+        },
+        {
+          "path": "/c/f/forum/forumRuleDraft",
+          "command": null,
+          "candidate_ids": [
+            "0000bc894945246e"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:31.268Z",
+          "http_status": 200,
+          "response_sha256": "81db335211fceeb7586ce41d3ac419f36bc37c7db5c1c2710bd11b9a94f8862a",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/forum/itemManage",
+          "command": null,
+          "candidate_ids": [
+            "1fa3c57960f31363"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:31.588Z",
+          "http_status": 200,
+          "response_sha256": "7975f24ba0386adb4898e8e5bfd79e28e364f0284d9356d36f81ee237956dc5e",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/forum/like",
+          "command": null,
+          "candidate_ids": [
+            "84814c3630044641"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:31.689Z",
+          "http_status": 200,
+          "response_sha256": "759eff27adbbeaf047fa6395c60c4e061c00e19fe8b94a401b9314882398f501",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/forum/queryAIPic",
+          "command": null,
+          "candidate_ids": [
+            "d4b20506da06afa4"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:32.241Z",
+          "http_status": 200,
+          "response_sha256": "ed33f164b5ed0d1db7d5dc502a528c9068d95cacc5a95542c0fd62aac541cb69",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/forum/submitTextForAIPic",
+          "command": null,
+          "candidate_ids": [
+            "29afbc4d49db6461"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:32.592Z",
+          "http_status": 200,
+          "response_sha256": "7c8eb7c31f2a4dfb7149ae1ead6065e52eb064af50a710aef0bd9224ac656109",
+          "response_bytes": 138,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/liveTask/cancel",
+          "command": null,
+          "candidate_ids": [
+            "10f49a02ec21d738"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:33.282Z",
+          "http_status": 200,
+          "response_sha256": "a19a0edb87f1030b32682b2094e2122cc4c628fe72ed55a9668a63559cd80460",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/liveTask/create",
+          "command": null,
+          "candidate_ids": [
+            "7aa2af3abc62c1dd"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:33.932Z",
+          "http_status": 200,
+          "response_sha256": "b40ecc766543416400f0eaf21dfbcccee189d26ae13d630ce80d7d59ec31bc14",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/liveTask/feedback",
+          "command": null,
+          "candidate_ids": [
+            "24f78f3f9140ac71"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:34.176Z",
+          "http_status": 200,
+          "response_sha256": "ec034d20d8d5f87288b5feef1c230d52cc923ff306f57ce6583c7ce883236664",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/matchActivity/quiz",
+          "command": null,
+          "candidate_ids": [
+            "3e9b170acc83e721"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:34.409Z",
+          "http_status": 200,
+          "response_sha256": "a854b4f118907b3ba4e59d34a45bd27939850140679bd147ae494bf09d8fdeec",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/recommend/userPk",
+          "command": null,
+          "candidate_ids": [
+            "41adf14769f64cdc"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:34.634Z",
+          "http_status": 200,
+          "response_sha256": "34338fc6cbf521c181753c49ee0a897208ee97b3d17d51dc7a13468bd73c7e9e",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/shop/getUserKjsStatus",
+          "command": null,
+          "candidate_ids": [
+            "658a98752ea7287d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:34.919Z",
+          "http_status": 200,
+          "response_sha256": "b0b3912bb175b515afea4bfd3426eafdd4d38c43042ec7ef6fd7c074891990af",
+          "response_bytes": 126,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/sprite/checkMemeStatus",
+          "command": null,
+          "candidate_ids": [
+            "27ea2e8ab8cc6631"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:35.464Z",
+          "http_status": 200,
+          "response_sha256": "7bb678050d530af1a46f76786fefb1fa7f2945866ff4b13b69f1f6944afeb7e3",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/sprite/getSpriteBottomChat",
+          "command": null,
+          "candidate_ids": [
+            "56e5eb2acb453f8e"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:35.721Z",
+          "http_status": 200,
+          "response_sha256": "0b7b3780ec9d80c4a08dd5ebac32f854d2efdbe69238d37fe26c9909a2f6f15d",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/sprite/getSpriteChatDetail",
+          "command": null,
+          "candidate_ids": [
+            "d520b06b853c086a"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:36.109Z",
+          "http_status": 200,
+          "response_sha256": "b9e65ddd93f335b36574d1efb1e8e46ef6a0305452cea1c0036008b5823c6d44",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/sprite/getSpriteSpeech",
+          "command": null,
+          "candidate_ids": [
+            "6d9994801da2ccd3"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:36.539Z",
+          "http_status": 200,
+          "response_sha256": "daa731f3ceae185b2f95e48a2bd1445f69e6d1fdd8fd0ac4efe36fe8c3b7dc73",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/sprite/sendSpriteMsg",
+          "command": null,
+          "candidate_ids": [
+            "dafd0c7734e672cb"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:36.556Z",
+          "http_status": 200,
+          "response_sha256": "edcce08cbdc653ea67d9f10d530ef16334ae324691adfb6f8ce7ea6bf27af584",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/sprite/stopThinking",
+          "command": null,
+          "candidate_ids": [
+            "a83f19edcf339a89"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:36.980Z",
+          "http_status": 200,
+          "response_sha256": "2c63d7fa81fa5b636b250f80c9fb0f517b8de216f2aecdac7c3a93be0e428221",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/sprite/threadRecommend",
+          "command": null,
+          "candidate_ids": [
+            "79b0bf1eefd6c7f5"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:37.371Z",
+          "http_status": 200,
+          "response_sha256": "350ca7b347ffe384a8628415c0da19df201266b3f0035b21c1fa0183bb081060",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/f/ueg/checkjubao",
+          "command": null,
+          "candidate_ids": [
+            "8c65fde318972315"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:37.414Z",
+          "http_status": 200,
+          "response_sha256": "050aaa1b89cced1d7192d53092c2b90b0b40bbac2bfc28316b494b4ebc7fccb6",
+          "response_bytes": 151,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [
+            "errno",
+            "errmsg",
+            "data"
+          ],
+          "scalar_field_names": [
+            "errno",
+            "errmsg"
+          ]
+        },
+        {
+          "path": "/c/f/video/sendFrsStageFeedBack",
+          "command": null,
+          "candidate_ids": [
+            "582066197d15ee25"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:37.844Z",
+          "http_status": 302,
+          "response_sha256": "20c1ab602462b7fc0d5b4cbd555cacf127b69a07a737579598ebcbc0f5b21319",
+          "response_bytes": 154,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": null
+        },
+        {
+          "path": "/c/f/video/gotoLive",
+          "command": null,
+          "candidate_ids": [
+            "47e13c901b93e549"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:37.855Z",
+          "http_status": 200,
+          "response_sha256": "f2ed737c2dec487976b422a9d0f6951e8249ac8bf3a4bddd7449cd5b5fa43f52",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/activateTask",
+          "command": null,
+          "candidate_ids": [
+            "527ec5ba2dbdc4e0"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:38.276Z",
+          "http_status": 200,
+          "response_sha256": "23cfff1527f1b76558884f93866fe0897815b9fc655860c055d35eebc287c460",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/i/msgcenter/uploadPic",
+          "command": null,
+          "candidate_ids": [
+            "99336007a38cb2bf"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:38.278Z",
+          "http_status": 200,
+          "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "response_bytes": 0,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": null
+        },
+        {
+          "path": "/c/s/adNewLog",
+          "command": null,
+          "candidate_ids": [
+            "a5b4aaa353185029"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:38.731Z",
+          "http_status": 200,
+          "response_sha256": "d6e4b02a7db57475a3bc696c36203fbf033b214824ad8da3ea4271e767d97230",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/adLog",
+          "command": null,
+          "candidate_ids": [
+            "017d6d10d84a5ea2"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:38.733Z",
+          "http_status": 200,
+          "response_sha256": "2f1bcf45710c1a4003534b27aa4f99b018104ecf963cc6fbd99e3634b47fff9b",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/aiGameInteractMsgAlter",
+          "command": null,
+          "candidate_ids": [
+            "559bae873887bf4b"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:39.198Z",
+          "http_status": 200,
+          "response_sha256": "dd1d6f92cd5d8cc7fc894d0123b048b45d546759eadfb0b346be736b457c0a55",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/adNovelPay",
+          "command": null,
+          "candidate_ids": [
+            "2b3cac43e21c2824"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:39.581Z",
+          "http_status": 200,
+          "response_sha256": "0f126b5859e243d61cadce56ba0aa52e1942ca5b5e39a1a9b65d78697c5a0e23",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/appDownloadLog",
+          "command": null,
+          "candidate_ids": [
+            "aad3f7e2157ad98d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:39.775Z",
+          "http_status": 200,
+          "response_sha256": "cf0bce53a0071d20d26e9cf9be1f001415e28ef28aeba0892fb70dbe3ba6a353",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/checkAppValid",
+          "command": null,
+          "candidate_ids": [
+            "9c14eb75430e52f4"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:40.074Z",
+          "http_status": 200,
+          "response_sha256": "89cd481d2827a1388cbdc9cd9ac5c4391b2d7b8d8b607541dc24601f3ee80439",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/clientcall",
+          "command": null,
+          "candidate_ids": [
+            "187ae615b725108f"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:40.245Z",
+          "http_status": 200,
+          "response_sha256": "6fdbc20f91105252726b86e5e6498b7b9825212465c44c942d92cdde8ab42fb6",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/clientlog",
+          "command": null,
+          "candidate_ids": [
+            "05475be58e4f4b6f"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:40.532Z",
+          "http_status": 200,
+          "response_sha256": "2c0d759c0f7aa517520c3471f1667108638ea9a9a009fbc01c0546c56ca6c5cd",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/commitFestivalTask",
+          "command": null,
+          "candidate_ids": [
+            "691115e379aef0ff"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:40.858Z",
+          "http_status": 200,
+          "response_sha256": "ae450b4db4ef52691ec085012fc94d41d33d2f26026138971b4890b2d151b436",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/completeTask",
+          "command": null,
+          "candidate_ids": [
+            "8aa0711e0bbdeef5"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:41.506Z",
+          "http_status": 200,
+          "response_sha256": "1ea3ac4d00de66b1db1cd33ac4aaf338ff50495314cd3d1f5b00907077aa3b80",
+          "response_bytes": 138,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/decryptCode",
+          "command": null,
+          "candidate_ids": [
+            "478466ef8cb86f82"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:41.956Z",
+          "http_status": 200,
+          "response_sha256": "4adda7c630d2bfd24e24ed24d06345eca9a4481f3ccde620f0a490a42e851cbc",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/delTokenInfo",
+          "command": null,
+          "candidate_ids": [
+            "8ab736992ec930b0"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:42.439Z",
+          "http_status": 200,
+          "response_sha256": "2b526cf5141fed23a5e052fb16ad24fbee59405d64cd756045580d1dc6ee2ad3",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/game",
+          "command": null,
+          "candidate_ids": [
+            "ea12c1b467c996f6"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:42.991Z",
+          "http_status": 200,
+          "response_sha256": "0bcd4b6e27fe89dc39ce53cd2507fe743060e730ac0c6619a42fa1db96c3b904",
+          "response_bytes": 118,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "210009",
+          "error_message": "missing game_id",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/getMercatorByLocation",
+          "command": null,
+          "candidate_ids": [
+            "3a9fad7ff076e994"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:43.539Z",
+          "http_status": 200,
+          "response_sha256": "6fe84fd3587b2ad10969c5c03dc9f233c6ea53d7e5544c891019805906b994fb",
+          "response_bytes": 124,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "300000",
+          "error_message": "param invalid",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/getPidByPicUrl",
+          "command": null,
+          "candidate_ids": [
+            "702c65e2d82826d0"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:44.005Z",
+          "http_status": 200,
+          "response_sha256": "256d2ecd66dc32c1d90ebc5d970c0e9219d5956455a83ce753dd6b846fe9130b",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/getUserInitInfo",
+          "command": null,
+          "candidate_ids": [
+            "04c702c9cf8f4f33"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:44.576Z",
+          "http_status": 200,
+          "response_sha256": "b1d5cd5491d496b6d4a2be4d68a6799aabbc2d5a415d8eb25fc06581dd88f35e",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/holycard",
+          "command": null,
+          "candidate_ids": [
+            "d4cbb579550e4b2d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:44.989Z",
+          "http_status": 200,
+          "response_sha256": "c729c41ad914da620dddcec37513c0a7449c74c10bc16967c5f08d419b209990",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/debugupload",
+          "command": null,
+          "candidate_ids": [
+            "e78911a03782cc8f"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:45.096Z",
+          "http_status": 200,
+          "response_sha256": "a1034cde0bafa8914f700d4dc08a5e320944db72d08637c84ad578ff6b1fdc29",
+          "response_bytes": 138,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "210011",
+          "error_message": "参数错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/hotLoading",
+          "command": null,
+          "candidate_ids": [
+            "86ba66a2fb993ed5"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:45.413Z",
+          "http_status": 200,
+          "response_sha256": "c8cf5350f9b92bcf9f54b239a68412d6a0325b0c365d81751d71b372dc280dc3",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/initNickname",
+          "command": null,
+          "candidate_ids": [
+            "b8c3c94aaa1e7e2e"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:45.541Z",
+          "http_status": 200,
+          "response_sha256": "4eba24fd8b26631569dc896f2f72d8e483664a865bdab4aa4e3bf5565e5902a6",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/inpv",
+          "command": null,
+          "candidate_ids": [
+            "5665437938ebf152"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:45.828Z",
+          "http_status": 200,
+          "response_sha256": "4a4ec72ea0d1c4f39e48a59dc17400fdd1a567fe020c5592d2565c0b0826c7df",
+          "response_bytes": 82,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/interactMsgAlter",
+          "command": null,
+          "candidate_ids": [
+            "5b787ce055540202"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:45.982Z",
+          "http_status": 200,
+          "response_sha256": "3526852f84db233d4deb7073bb7d7dd370fd72538764ad6628780545f1b32719",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/login",
+          "command": null,
+          "candidate_ids": [
+            "81f622d9aac6c897"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:46.413Z",
+          "http_status": 200,
+          "response_sha256": "59b077358dc69104e68a07034312ad3a6789e265745f38b2c43bfac895ef6ce0",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/lcslog",
+          "command": null,
+          "candidate_ids": [
+            "151f728529c48a06"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:46.493Z",
+          "http_status": 200,
+          "response_sha256": "a5b7385eb722e2cbef19dc11cba749c033aaa3277e0c2084aabeac17f436d788",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/logtogether",
+          "command": null,
+          "candidate_ids": [
+            "2a2f0b195695696e"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:47.371Z",
+          "http_status": 200,
+          "response_sha256": "893d268e3cc73262bb1532d45dfa74341a226382f161bb02768b627e1ef7ba18",
+          "response_bytes": 85,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/logout",
+          "command": null,
+          "candidate_ids": [
+            "4029f73c2cef451e"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:47.456Z",
+          "http_status": 200,
+          "response_sha256": "aa13b0e8f770935caaae27a0988b779f80309d1cd4b3cb322ddbda8fafcc1220",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/logupload",
+          "command": null,
+          "candidate_ids": [
+            "eca310459f4d67b4"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:47.829Z",
+          "http_status": 200,
+          "response_sha256": "76b3713dab6a5f542510c38d262d6579285dccf8e6072d037de22454624b1f75",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "300000",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/loop",
+          "command": null,
+          "candidate_ids": [
+            "2c0b5ae7da7b77bc"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:47.894Z",
+          "http_status": 200,
+          "response_sha256": "f8690003ccacf278560abf38904dc053620980a342c1a95a0510e88545c534a0",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/msg",
+          "command": null,
+          "candidate_ids": [
+            "356b5cc75d3da14e"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:48.261Z",
+          "http_status": 200,
+          "response_sha256": "1a5ca87daa28c390dc9081c70604b03f5ac4b1a1a9893ccd11f065e53b1ea938",
+          "response_bytes": 128,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "message"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/newlog",
+          "command": null,
+          "candidate_ids": [
+            "4d6998993392d671"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:48.337Z",
+          "http_status": 200,
+          "response_sha256": "456e52df914a0594f01b52a12cad5656c4b974953babaff1adbf453c00b4408e",
+          "response_bytes": 155,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "104",
+          "error_message": "发送失败，请重新再试试",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/newUserInterestSave",
+          "command": null,
+          "candidate_ids": [
+            "a23f60d387d92034"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:48.718Z",
+          "http_status": 200,
+          "response_sha256": "0763f29404dfe7e312632254269f4a28ff02b589daf76a46dc64998b37484f7b",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/nps/global",
+          "command": null,
+          "candidate_ids": [
+            "e8d4d0017368eab7"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:48.771Z",
+          "http_status": 200,
+          "response_sha256": "3901b644c5ceeaa64ba350e5edf2f51a91d9eb242b4b2b70c08dd35241547ce4",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/officialRecruitAlter",
+          "command": null,
+          "candidate_ids": [
+            "c44f40ffbaea8d8c"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:49.225Z",
+          "http_status": 200,
+          "response_sha256": "820194e5fd71acebcc845fe7015ee89e452b4f6470d015ff967b5e4aa7f54fb2",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/nps/submit",
+          "command": null,
+          "candidate_ids": [
+            "5b660ec9c4b89d34"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:49.239Z",
+          "http_status": 200,
+          "response_sha256": "af84e53393e67d683d7e615cb03463df70cce2877bb362182527eed5f333c8c6",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/popupAlready",
+          "command": null,
+          "candidate_ids": [
+            "0bc7b70ff0a270c3"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:49.631Z",
+          "http_status": 200,
+          "response_sha256": "19ac3405582e03c2f9cd5a42ac983399a1d225484e8182c037137d491b122e16",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/pv",
+          "command": null,
+          "candidate_ids": [
+            "407a578a1c04880b"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:49.670Z",
+          "http_status": 200,
+          "response_sha256": "29add700b976d24142091c0ab4ce70823d7d3f3f2425229e2d1903e4c8d8aa85",
+          "response_bytes": 100,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [
+            "use_duration"
+          ],
+          "scalar_field_names": [
+            "use_duration"
+          ]
+        },
+        {
+          "path": "/c/s/reserveOnline",
+          "command": null,
+          "candidate_ids": [
+            "9eeb21e8bf0256b4"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:50.507Z",
+          "http_status": 200,
+          "response_sha256": "7fd591568b3e64874542fce7490b7b3818e73f3a632ac7d86eb1331294d57f7f",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/realtimeSync",
+          "command": null,
+          "candidate_ids": [
+            "bf05efb2f9947d50"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:50.616Z",
+          "http_status": 200,
+          "response_sha256": "e74d37461d80edd5135fc27859be1456691f1ecab77b79354998053566b7f305",
+          "response_bytes": 175825,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [
+            "client_ip",
+            "client",
+            "wl_config",
+            "h5_pop_ups",
+            "h5_pop_ups_config",
+            "new_abtest_entra",
+            "new_abtest_config",
+            "ubs_abtest_config",
+            "reverse_ubs_abtest_config",
+            "banner_material",
+            "floating_icon"
+          ],
+          "scalar_field_names": [
+            "client_ip"
+          ]
+        },
+        {
+          "path": "/c/s/schemastat",
+          "command": null,
+          "candidate_ids": [
+            "24a5a88993c99646"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:50.942Z",
+          "http_status": 200,
+          "response_sha256": "ab329a35ebdd097b0bfa0709ab519df550930a90af95a0543ec837219490f7cc",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/schemeToken",
+          "command": null,
+          "candidate_ids": [
+            "6ca24c61726df7f8"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:51.069Z",
+          "http_status": 200,
+          "response_sha256": "3bb2e391f5ea4a2830b4700cd7c2a01d56116ec73caba5979ad432770e9f75ee",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/setUserView",
+          "command": null,
+          "candidate_ids": [
+            "ceb06576ef66a013"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:51.376Z",
+          "http_status": 200,
+          "response_sha256": "591843d9f1c3dbcc9793b05f6ef24f23a63b3d26420fe5d77175a72e3acf04da",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/shop/getKjsIMList",
+          "command": null,
+          "candidate_ids": [
+            "15799488f3bf9dcb"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:51.608Z",
+          "http_status": 200,
+          "response_sha256": "ec136a8ea28f0171da03f95386bb5e63fcb5882163d9a681520bdcda0839538f",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/switch",
+          "command": null,
+          "candidate_ids": [
+            "dab36bdbe5105c8d"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:52.104Z",
+          "http_status": 200,
+          "response_sha256": "3e442e4ae43f13a76e5afde638c37386745349e2a4fb6c620f34ea9336f89624",
+          "response_bytes": 1249,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [
+            "config"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/shop/getKjsPopup",
+          "command": null,
+          "candidate_ids": [
+            "3b808438e9cd0f53"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:52.259Z",
+          "http_status": 200,
+          "response_sha256": "0fd06536c8338bd3882103a5da6990255bfd9b6bd6bd1a26588fb13e6a560926",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/trackConfig",
+          "command": null,
+          "candidate_ids": [
+            "a6976da8a1809cc7"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:52.694Z",
+          "http_status": 200,
+          "response_sha256": "af9ea96ff2da799abc27d2fe6048b3e284bd8141e751696a6b613038c1d5e4f7",
+          "response_bytes": 102,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [
+            "is_open_track"
+          ],
+          "scalar_field_names": [
+            "is_open_track"
+          ]
+        },
+        {
+          "path": "/c/s/trackLog",
+          "command": null,
+          "candidate_ids": [
+            "a1f7b12a17d83d25"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:53.110Z",
+          "http_status": 200,
+          "response_sha256": "cf76a5bf85648b10c9221c4b1307f31c30ae3290c3ebd86142635be851675a2c",
+          "response_bytes": 185,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "320021",
+          "error_message": "发送失败，请重新再试试！",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/sync",
+          "command": null,
+          "candidate_ids": [
+            "0e1363ddb9074a96"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:53.541Z",
+          "http_status": 200,
+          "response_sha256": "55e092cb37ba5a34a7717eda98eecb0b13db8c897d8a87678e8e83112e4496ea",
+          "response_bytes": 211599,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "0",
+          "business_field_names": [
+            "client_ip",
+            "client",
+            "is_yy_user",
+            "portrait",
+            "config",
+            "videoup_guide_pop",
+            "index_tab_info",
+            "top_level_navi",
+            "new_index_tab_info",
+            "new_top_level_navi",
+            "whitelist",
+            "mainbar",
+            "recmd_face",
+            "faceshop_version",
+            "recommend_pic",
+            "combine_download",
+            "version",
+            "lcs_strategy",
+            "ad_config",
+            "config_version",
+            "next_start",
+            "wl_config",
+            "h5_pop_ups",
+            "h5_pop_ups_config",
+            "banner_material",
+            "support_cache_url_list",
+            "cache_url_list",
+            "abtest_config",
+            "new_abtest_entra",
+            "new_abtest_config",
+            "ubs_abtest_config",
+            "reverse_ubs_abtest_config",
+            "ad_adsense",
+            "agree_material",
+            "app_entrance",
+            "activity_switch",
+            "consume_path",
+            "is_uninterest",
+            "first_time_motivate",
+            "new_idfa",
+            "isNewWebview",
+            "android_keepalive",
+            "video_report_config",
+            "profile_icon",
+            "recommend_userstatus",
+            "scheme_whitelist",
+            "ad_scheme_blacklist",
+            "complete_apk_url",
+            "ala_channel_white",
+            "windowStrategyList",
+            "alaTabColor",
+            "duxiaoman_url",
+            "needNewUserLead",
+            "new_god_data",
+            "channel_icon_config",
+            "https_switch_strategy_info",
+            "offpack",
+            "ad_sdk_priority",
+            "ad_origin_config_switch",
+            "screen_fill_data_result",
+            "home_screen_ad",
+            "bear_sid_type",
+            "bear_sid_config",
+            "ad_stlog_switch",
+            "floating_icon",
+            "advertisement_config",
+            "bottom_bubble_config",
+            "afSearch_tab",
+            "token_info",
+            "yy_live_config",
+            "is_need_remind_live_rooms",
+            "live_new_user_guide_day",
+            "yy_live_tab",
+            "maintab_strategy",
+            "homepage_interest_config",
+            "extra",
+            "voice_room_config",
+            "video_activity",
+            "personalized_rec_switch",
+            "resource_version_list",
+            "low_version_pop_config",
+            "icon_task_flag",
+            "voice_room",
+            "recent_client_info",
+            "is_new_user",
+            "user_activity",
+            "search_guide",
+            "push_strategy",
+            "push_strategy_new",
+            "live_activity_guide",
+            "homepage_guide",
+            "thread_recommend_info",
+            "common_scheme",
+            "vip_no_ad_info",
+            "adload_config",
+            "cloud_control_data_info",
+            "namoaixud_url"
+          ],
+          "scalar_field_names": [
+            "client_ip",
+            "is_yy_user",
+            "portrait",
+            "videoup_guide_pop",
+            "faceshop_version",
+            "config_version",
+            "is_uninterest",
+            "first_time_motivate",
+            "isNewWebview",
+            "android_keepalive",
+            "recommend_userstatus",
+            "ala_channel_white",
+            "needNewUserLead",
+            "ad_sdk_priority",
+            "ad_origin_config_switch",
+            "bear_sid_type",
+            "ad_stlog_switch",
+            "afSearch_tab",
+            "is_need_remind_live_rooms",
+            "live_new_user_guide_day",
+            "voice_room_config",
+            "personalized_rec_switch",
+            "icon_task_flag",
+            "is_new_user",
+            "user_activity"
+          ]
+        },
+        {
+          "path": "/c/s/upClientMonitorLog",
+          "command": null,
+          "candidate_ids": [
+            "66a1798c92687bf4"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:54.061Z",
+          "http_status": 200,
+          "response_sha256": "05d71ab8e5507e3610db53003ed6db897a63ee6d96cbe76316ff18eabe53375f",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/uploadGameHistory",
+          "command": null,
+          "candidate_ids": [
+            "962dd5ab7e75f2ff"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:54.545Z",
+          "http_status": 200,
+          "response_sha256": "ebdc79a984f99e66607202769225e78a0b6855006c9d4b129fa7219f8e07536a",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/uploadPicture",
+          "command": null,
+          "candidate_ids": [
+            "fd252dac2f1ab68a"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:55.017Z",
+          "http_status": 200,
+          "response_sha256": "82eb480b8e01c440cca001dd01fc4c938838653bad2832dce5081ef225b9ace6",
+          "response_bytes": 254,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "1",
+          "error_message": "用户未登录或登录失败，请更换账号或重试",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/upClientErrLog",
+          "command": null,
+          "candidate_ids": [
+            "89b13b527e18adda"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:55.096Z",
+          "http_status": 200,
+          "response_sha256": "d3f9acf752218336d8c5fba62db7c7d2d5075141864f8ecca87e4cf12cd65762",
+          "response_bytes": 115,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/voiceroomOnline",
+          "command": null,
+          "candidate_ids": [
+            "8f8e87a9cb0664b6"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:55.541Z",
+          "http_status": 200,
+          "response_sha256": "4c225f1650db5f101db7b41b18c05f17f382dfd0618368466657e34439b52de8",
+          "response_bytes": 126,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/s/yyConvert",
+          "command": null,
+          "candidate_ids": [
+            "0bea688a434ed261"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:55.616Z",
+          "http_status": 200,
+          "response_sha256": "70cbbcddb08f154b3fda17dfa359cf270e147f63d4db72080685b20ffbe1871d",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/u/follow/getFoldedMessageUserInfo",
+          "command": null,
+          "candidate_ids": [
+            "04585465646f78d3"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:56.033Z",
+          "http_status": 200,
+          "response_sha256": "5ff17322ef3961e6c032d254086e590f6a04501c5a08ef1b657e19f960a6b762",
+          "response_bytes": 138,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/u/tail/addTail",
+          "command": null,
+          "candidate_ids": [
+            "a79976bbc5e411a7"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:56.094Z",
+          "http_status": 200,
+          "response_sha256": "84cdb8948d69cd49f659f6fcb464ce94db37fae498f71050bbfd05d8ab6e2e88",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/u/tail/deleteTail",
+          "command": null,
+          "candidate_ids": [
+            "29df5d9b069da8d5"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:56.548Z",
+          "http_status": 200,
+          "response_sha256": "179c67d0e9987724b43357d59bc29e3964f850106f3a07f118c2c61e4d0ef382",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/u/tail/setTail",
+          "command": null,
+          "candidate_ids": [
+            "662d128f2cc7e8fe"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:56.573Z",
+          "http_status": 200,
+          "response_sha256": "7bb8187a6b58aee4692ad7d3b08d161d0538263903e456b3786d7372faa8690e",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/u/user/updateUserSwitch",
+          "command": null,
+          "candidate_ids": [
+            "62639a7b5f750379"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:56.994Z",
+          "http_status": 200,
+          "response_sha256": "67fed7006513ad1e63a2f14f2db09a005c2c669391a38277bd5bf4fd6334f37e",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/u/tail/updateTail",
+          "command": null,
+          "candidate_ids": [
+            "832f7a2c397074b6"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:57.020Z",
+          "http_status": 200,
+          "response_sha256": "1773d9ce21dc9e217f5ba0f12297717c5c9ae4f58f8c97ecf58ed2e163d79e6a",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/u/user/updateUserSwitchByScene",
+          "command": null,
+          "candidate_ids": [
+            "3449457c30d14dd3"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:57.410Z",
+          "http_status": 200,
+          "response_sha256": "a0f67e6bb44d98291e013bc56781110318f9090f7ed07cac3ce0a3f42e31f20f",
+          "response_bytes": 136,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "path": "/c/x/aigc/getBdtAigcAnswerStatus",
+          "command": null,
+          "candidate_ids": [
+            "55f51f80a52601fe"
+          ],
+          "observed_at_utc": "2026-11-14T07:04:57.432Z",
+          "http_status": 200,
+          "response_sha256": "8a2aa15376959d651c87b4d6f96a119053fc207266f4c92387686f3e4e29dac9",
+          "response_bytes": 125,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001",
+          "error_message": "未知错误",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": []
+        }
+      ]
+    },
+    {
+      "name": "reviewed-protobuf-and-account-reads",
+      "source_file_sha256": "a6e84d7cb899f78fd4ff26ab589a7a5d00b7a8f1f013a1b299a7892ec5973128",
+      "results": [
+        {
+          "name": "own-orders",
+          "path": "/c/e/consume/getUserOrder",
+          "command": null,
+          "candidate_ids": [
+            "de369de9b318a1e8"
+          ],
+          "observed_at_utc": "2026-11-14T06:54:33.442Z",
+          "http_status": 200,
+          "response_sha256": "2f392e216e8a46967e6117a582bed926be2cdf540b60a45abc9f7cd2dd4b3254",
+          "response_bytes": 146,
+          "authenticated": true,
+          "input_fields": [
+            "order_type",
+            "pn",
+            "rn",
+            "show_member"
+          ],
+          "missing_fixture": null,
+          "status": "business-error",
+          "error_code": "110003",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": []
+        },
+        {
+          "name": "ad-free-state-control",
+          "path": "/c/s/getAdFreeTime",
+          "command": null,
+          "candidate_ids": [
+            "920a6b17703d9354"
+          ],
+          "observed_at_utc": "2026-11-14T06:54:34.097Z",
+          "http_status": 200,
+          "response_sha256": "890dd16432c8b07272dbb8ab05bf2b7c0e2a16bdc6074d7c82d7dc4a84d021a1",
+          "response_bytes": 160,
+          "authenticated": true,
+          "input_fields": [
+            "request_key"
+          ],
+          "missing_fixture": "request_key was not issued by a video-ad session",
+          "status": "json-data-returned",
+          "error_code": "0",
+          "business_field_names": [
+            "errno",
+            "errmsg",
+            "data"
+          ],
+          "scalar_field_names": [
+            "errno",
+            "errmsg"
+          ],
+          "secondary_error_codes": {
+            "errno": "0"
+          },
+          "checks": {
+            "numeric_zero_durations": true
+          }
+        },
+        {
+          "name": "location-suggestion",
+          "path": "/c/s/getSuggestionByAddrName",
+          "command": "303018",
+          "candidate_ids": [
+            "b6d5a65affc1bccb"
+          ],
+          "observed_at_utc": "2026-11-14T06:54:35.115Z",
+          "http_status": 200,
+          "response_sha256": "bce698c40cecdbf259c3d97612fca2f515660625fd3eca5ba83ecffc40f39f4f",
+          "response_bytes": 792,
+          "authenticated": false,
+          "input_fields": [
+            "addr_name",
+            "common"
+          ],
+          "missing_fixture": null,
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "response_data_tags": [
+            1
+          ],
+          "data_field_count": 10,
+          "namespace": "GetSuggestionByAddrName",
+          "checks": {
+            "declared_response_tags_match": true
+          }
+        },
+        {
+          "name": "own-agree-notifications",
+          "path": "/c/u/feed/agreeme",
+          "command": "309593",
+          "candidate_ids": [
+            "8e1c35f991bd580b"
+          ],
+          "observed_at_utc": "2026-11-14T06:54:35.342Z",
+          "http_status": 200,
+          "response_sha256": "335692ee9b6739d0f794d0e7ff8f9a08cde1f2def795779aabfffcc9cb50fcb0",
+          "response_bytes": 2246,
+          "authenticated": true,
+          "input_fields": [
+            "common",
+            "id",
+            "rn",
+            "scr_w",
+            "scr_h",
+            "scr_dip",
+            "q_type"
+          ],
+          "missing_fixture": null,
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "response_data_tags": [
+            1,
+            2
+          ],
+          "data_field_count": 3,
+          "namespace": "AgreeMe",
+          "checks": {
+            "declared_response_tags_match": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "reviewed-json-reads",
+      "source_file_sha256": "2e757f115953fd9ea0b717c5f8d20c0beb42ecb0ff02cf3d86bd244c9c20324a",
+      "results": [
+        {
+          "name": "folded-user-info",
+          "path": "/c/u/follow/getFoldedMessageUserInfo",
+          "candidate_ids": [
+            "04585465646f78d3"
+          ],
+          "observed_at_utc": "2026-11-14T07:05:12.555Z",
+          "http_status": 200,
+          "response_sha256": "3b035261f28e30fafad88d81f3024504dd3a5a931e925575bd6774e463b914cb",
+          "response_bytes": 2560,
+          "authenticated": true,
+          "input_fields": [
+            "user_list"
+          ],
+          "status": "verified-read",
+          "error_code": "0",
+          "business_field_names": [
+            "user_list",
+            "user_info",
+            "url_map",
+            "rich_remind_text",
+            "rich_remind_text_type"
+          ],
+          "scalar_field_names": [
+            "rich_remind_text_type"
+          ],
+          "data_keys": [],
+          "source_class": "com.baidu.tieba.im.model.IMUserListHttpReqMessage",
+          "checks": {
+            "exact_controlled_user_set": true
+          }
+        },
+        {
+          "name": "followed-forums",
+          "path": "/c/f/forum/like",
+          "candidate_ids": [
+            "84814c3630044641"
+          ],
+          "observed_at_utc": "2026-11-14T07:05:13.262Z",
+          "http_status": 200,
+          "response_sha256": "78f8bb175bc3b0fb04a9dc7a8187a820955ffee799f97b452ecf323e903d2297",
+          "response_bytes": 1073,
+          "authenticated": true,
+          "input_fields": [
+            "uid",
+            "page_size",
+            "page_no"
+          ],
+          "status": "json-data-returned",
+          "error_code": "0",
+          "business_field_names": [
+            "forum_list",
+            "has_more"
+          ],
+          "scalar_field_names": [
+            "has_more"
+          ],
+          "data_keys": [],
+          "source_class": "com.baidu.tieba.personExtra.PersonBarModel"
+        },
+        {
+          "name": "meme-picture-id",
+          "path": "/c/e/meme/pic2id",
+          "candidate_ids": [
+            "b5725b3d0bd448d4"
+          ],
+          "observed_at_utc": "2026-11-14T07:05:15.178Z",
+          "http_status": 200,
+          "response_sha256": "caa16c7983341ec3a016fa5dbbd662b0f51f9b3abc4502da708b68e3c3ca87e8",
+          "response_bytes": 544,
+          "authenticated": true,
+          "input_fields": [
+            "pic_url"
+          ],
+          "status": "verified-read",
+          "error_code": "0",
+          "error_message": "成功",
+          "business_field_names": [
+            "info",
+            "pic_id",
+            "width",
+            "height",
+            "pic_url",
+            "thumbnail"
+          ],
+          "scalar_field_names": [
+            "pic_id",
+            "width",
+            "height",
+            "pic_url",
+            "thumbnail"
+          ],
+          "data_keys": [],
+          "source_class": "com.baidu.tbadk.img.GetEmotionPidModel",
+          "checks": {
+            "input_and_output_image_identical": true,
+            "independent_mapping_ids_agree": true,
+            "width_matches_fixture": true,
+            "height_matches_fixture": true
+          },
+          "observations": {
+            "stored_picture_id_preserved": false,
+            "scope": "The returned IDs differ from the saved collection record; both query APIs agree and the actual input/output image bodies are identical."
+          }
+        },
+        {
+          "name": "meme-picture-info",
+          "path": "/c/e/meme/pic2idJson",
+          "candidate_ids": [
+            "fe681fb843ff9074"
+          ],
+          "observed_at_utc": "2026-11-14T07:05:16.215Z",
+          "http_status": 200,
+          "response_sha256": "01fbc7081620ac02566c2dd0350377f27bd4eb40020f2a6d429c9ddaa0591f2e",
+          "response_bytes": 716,
+          "authenticated": true,
+          "input_fields": [
+            "pic_urls"
+          ],
+          "status": "verified-read",
+          "error_code": "0",
+          "error_message": "成功",
+          "business_field_names": [
+            "info",
+            "pics"
+          ],
+          "scalar_field_names": [],
+          "data_keys": [],
+          "source_class": "com.baidu.tbadk.img.GetEmotionInfosModel",
+          "checks": {
+            "one_requested_picture": true,
+            "input_and_output_image_identical": true,
+            "independent_mapping_ids_agree": true,
+            "input_url_reflected": true
+          },
+          "observations": {
+            "stored_picture_id_preserved": false,
+            "scope": "The returned IDs differ from the saved collection record; both query APIs agree and the actual input/output image bodies are identical."
+          }
+        },
+        {
+          "name": "meme-random-dice",
+          "path": "/c/e/meme/dice",
+          "candidate_ids": [
+            "cc12f531a6118aa0"
+          ],
+          "observed_at_utc": "2026-11-14T07:05:16.775Z",
+          "http_status": 200,
+          "response_sha256": "208705b7a2d4703814cb79a91c2d3014320a97feb72c930b075759f13d7e55f7",
+          "response_bytes": 12943,
+          "authenticated": true,
+          "input_fields": [],
+          "status": "json-data-returned",
+          "error_code": "0",
+          "error_message": "成功",
+          "business_field_names": [
+            "info",
+            "data"
+          ],
+          "scalar_field_names": [],
+          "data_keys": [
+            "package_list"
+          ],
+          "source_class": "com.baidu.tieba.faceshop.emotioncenter.model.EmotionChangeModel"
+        },
+        {
+          "name": "own-startup-info",
+          "path": "/c/s/getUserInitInfo",
+          "candidate_ids": [
+            "04c702c9cf8f4f33"
+          ],
+          "observed_at_utc": "2026-11-14T07:05:17.234Z",
+          "http_status": 200,
+          "response_sha256": "a16904f3661e8ec7e70157d00997cd54a9e1acd083a33ab6497db0449f37bb31",
+          "response_bytes": 115,
+          "authenticated": true,
+          "input_fields": [
+            "new_board"
+          ],
+          "status": "business-error",
+          "error_code": "210009",
+          "error_message": "系统错误",
+          "business_field_names": [],
+          "scalar_field_names": [],
+          "data_keys": [],
+          "source_class": "com.baidu.searchbox.task.sync.appcreate.NewBoardTask"
+        },
+        {
+          "name": "nps-form-read",
+          "path": "/c/s/nps/global",
+          "candidate_ids": [
+            "e8d4d0017368eab7"
+          ],
+          "observed_at_utc": "2026-11-14T07:05:17.675Z",
+          "http_status": 200,
+          "response_sha256": "bd26801ec90160c2a28ef7692ab9930293a7dafd48346f69e9ebb128f064f959",
+          "response_bytes": 98,
+          "authenticated": true,
+          "input_fields": [],
+          "status": "accepted-empty-response",
+          "error_code": "0",
+          "business_field_names": [],
+          "scalar_field_names": [],
+          "data_keys": [],
+          "source_class": "com.baidu.tieba.ppc"
+        },
+        {
+          "name": "public-url-scheme-token",
+          "path": "/c/s/schemeToken",
+          "candidate_ids": [
+            "6ca24c61726df7f8"
+          ],
+          "observed_at_utc": "2026-11-14T07:05:18.170Z",
+          "http_status": 200,
+          "response_sha256": "ff0935ec5c674fe9a549aa0b077e848ef4a5fb6fd554bb5edd571ec036fc0ce0",
+          "response_bytes": 200,
+          "authenticated": true,
+          "input_fields": [
+            "scheme",
+            "scheme_encode"
+          ],
+          "status": "json-data-returned",
+          "error_code": "0",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": [],
+          "data_keys": [
+            "token",
+            "update_token"
+          ],
+          "source_class": "com.baidu.tieba.zjc"
+        },
+        {
+          "name": "own-message-reminder",
+          "path": "/c/s/msg",
+          "candidate_ids": [
+            "356b5cc75d3da14e"
+          ],
+          "observed_at_utc": "2026-11-14T07:05:18.632Z",
+          "http_status": 200,
+          "response_sha256": "f8a6d534dbbb5ba0ffba68d5931719d89f82fa5d06f5f0c6132a8f26f1a38833",
+          "response_bytes": 186,
+          "authenticated": true,
+          "input_fields": [],
+          "status": "json-data-returned",
+          "error_code": "0",
+          "business_field_names": [
+            "message"
+          ],
+          "scalar_field_names": [],
+          "data_keys": [],
+          "source_class": "com.baidu.tieba.fyb"
+        }
+      ]
+    },
+    {
+      "name": "known-resource-and-config-reads",
+      "source_file_sha256": "a69f34e2e328d8c9ae8fa2dadc1de8e2981d2bfd1693262ac4242e1fc655c688",
+      "results": [
+        {
+          "name": "known-meme-package-download",
+          "path": "/c/e/meme/download",
+          "candidate_ids": [
+            "fd8fcd0e61482889"
+          ],
+          "observed_at_utc": "2026-11-14T07:28:12.718Z",
+          "http_status": 200,
+          "response_sha256": "1d27d511168545ab768089aa81f04c4552c0dcb4afa6f414274daa33179b8ab3",
+          "response_bytes": 8338,
+          "authenticated": true,
+          "input_fields": [
+            "id"
+          ],
+          "status": "verified-read",
+          "error_code": "0",
+          "error_message": "成功",
+          "business_field_names": [
+            "info",
+            "id",
+            "name",
+            "type",
+            "owner",
+            "author",
+            "covername",
+            "url",
+            "timestamp",
+            "status",
+            "download",
+            "share",
+            "cover",
+            "num",
+            "forum_id",
+            "vote_num",
+            "up_status",
+            "pics"
+          ],
+          "scalar_field_names": [
+            "id",
+            "name",
+            "type",
+            "owner",
+            "author",
+            "covername",
+            "url",
+            "timestamp",
+            "status",
+            "download",
+            "share",
+            "cover",
+            "num",
+            "forum_id",
+            "vote_num",
+            "up_status"
+          ],
+          "source_class": "com.baidu.tieba.newfaceshop.NewFaceGroupDownloadModel",
+          "fixture_id_match_count": 1,
+          "checks": {
+            "requested_package_id_returned": true
+          }
+        },
+        {
+          "name": "known-meme-package-detail",
+          "path": "/c/e/meme/detail",
+          "candidate_ids": [
+            "e3cbfba08389cb80"
+          ],
+          "observed_at_utc": "2026-11-14T07:28:13.074Z",
+          "http_status": 200,
+          "response_sha256": "be962bf7893c4cbac5097b6eea051c0e197145a3150c1cd71a8546feec48878c",
+          "response_bytes": 87,
+          "authenticated": true,
+          "input_fields": [
+            "id"
+          ],
+          "status": "accepted-empty-response",
+          "error_code": "0",
+          "business_field_names": [],
+          "scalar_field_names": [],
+          "source_class": "com.baidu.tieba.faceshop.EmotionPackageDetailModel",
+          "fixture_id_match_count": 0
+        },
+        {
+          "name": "realtime-config",
+          "path": "/c/s/realtimeSync",
+          "candidate_ids": [
+            "bf05efb2f9947d50"
+          ],
+          "observed_at_utc": "2026-11-14T07:28:13.724Z",
+          "http_status": 200,
+          "response_sha256": "3db4af479fc57dc6830f370abc18367ae877db2d6d76580d2a764944a63a8460",
+          "response_bytes": 190051,
+          "authenticated": true,
+          "input_fields": [],
+          "status": "json-data-returned",
+          "error_code": "0",
+          "business_field_names": [
+            "ad_num_competition_frs",
+            "ad_num_competition_personalize",
+            "client_ip",
+            "client",
+            "wl_config",
+            "h5_pop_ups",
+            "h5_pop_ups_config",
+            "new_abtest_entra",
+            "new_abtest_config",
+            "ubs_abtest_config",
+            "banner_material",
+            "floating_icon"
+          ],
+          "scalar_field_names": [
+            "ad_num_competition_frs",
+            "ad_num_competition_personalize",
+            "client_ip"
+          ],
+          "source_class": "com.baidu.tieba.o4f"
+        },
+        {
+          "name": "hotloading-config",
+          "path": "/c/s/hotLoading",
+          "candidate_ids": [
+            "86ba66a2fb993ed5"
+          ],
+          "observed_at_utc": "2026-11-14T07:28:13.815Z",
+          "http_status": 200,
+          "response_sha256": "02c7584b78ee5a1b22f133506bdefafdc52a3b2005d0a876c7a927b971b88526",
+          "response_bytes": 93,
+          "authenticated": true,
+          "input_fields": [],
+          "status": "accepted-empty-response",
+          "error_code": "0",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": [],
+          "source_class": "com.baidu.tieba.pcf"
+        }
+      ]
+    },
+    {
+      "name": "anonymous-tool-smoke",
+      "source_file_sha256": "bc1083f9de7124a96e72a226ca6575364a392b6d088d538b0224ec85dcf7bc42",
+      "results": [
+        {
+          "path": "/c/c/video/share",
+          "command": null,
+          "candidate_ids": [
+            "7a0ff6472e94adde"
+          ],
+          "observed_at_utc": "2026-11-14T07:33:06.871Z",
+          "http_status": 200,
+          "response_sha256": "44a208106880a26402baf7b6e69f5ff43ded770136e854f4d91b2d0978ef0c3a",
+          "response_bytes": 137,
+          "authenticated": false,
+          "negative_control": true,
+          "input_fields": [],
+          "status": "negative-control-response",
+          "error_code": "110001"
+        }
+      ]
+    },
+    {
+      "name": "image-content-control",
+      "results": [
+        {
+          "name": "input",
+          "observed_at_utc": "2026-11-14T07:20:13.191Z",
+          "http_status": 200,
+          "content_type": "image/jpeg",
+          "response_bytes": 45572,
+          "response_sha256": "9b624d1f0ddea53ee2ae94e03f572f0f480a775d7d981c02654813b89964be2f",
+          "transport_upgraded_from_http": true
+        },
+        {
+          "name": "output",
+          "observed_at_utc": "2026-11-14T07:20:13.387Z",
+          "http_status": 200,
+          "content_type": "image/jpeg",
+          "response_bytes": 45572,
+          "response_sha256": "9b624d1f0ddea53ee2ae94e03f572f0f480a775d7d981c02654813b89964be2f",
+          "transport_upgraded_from_http": true
+        }
+      ]
+    },
+    {
+      "name": "owned-tail-parameter-control",
+      "source_file_sha256": "fd06d0d4ea4978ce0bdf5802b065fac9eec75cb14d8250818f47edd344b83257",
+      "results": [
+        {
+          "name": "baseline",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:06:58.384Z",
+          "http_status": 200,
+          "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+          "status": "business-success",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "create",
+          "namespace": "AddTail",
+          "path": "/c/u/tail/addTail",
+          "command": "305101",
+          "observed_at_utc": "2026-11-14T07:06:58.893Z",
+          "http_status": 200,
+          "response_sha256": "52b8afd6f2f3bac216f2167c2d87b4b4bf77d5cafb1a3c9b639288c3253814f1",
+          "status": "business-error",
+          "input_fields": [
+            "tailContent",
+            "fontColor",
+            "fontKeyName"
+          ],
+          "error_code": "300000",
+          "error_message": "参数错误",
+          "authenticated": true,
+          "negative_control": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-restored",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:06:59.024Z",
+          "http_status": 200,
+          "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+          "status": "business-success",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "owned-tail-create-edit-delete",
+      "source_file_sha256": "b9c36ad678f8ed2bf53956930ee44d90cfa91878b6d9c00d5423b22dd37ac4e6",
+      "results": [
+        {
+          "name": "baseline",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:13:54.508Z",
+          "http_status": 200,
+          "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+          "status": "verified-read",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "create",
+          "namespace": "AddTail",
+          "path": "/c/u/tail/addTail",
+          "command": "305101",
+          "observed_at_utc": "2026-11-14T07:13:54.788Z",
+          "http_status": 200,
+          "response_sha256": "72f81ff19b7d99fb409bf822e3d0cc2aea08035864eb145d87ab8a34fe8efa99",
+          "status": "verified-state-change",
+          "input_fields": [
+            "tailContent",
+            "fontColor",
+            "fontKeyName"
+          ],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-created",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:13:55.019Z",
+          "http_status": 200,
+          "response_sha256": "0f9f072e69a69245ec741ffb1292d65c53ea52132c0218d62aa0b06c7760d925",
+          "status": "verified-read",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "update",
+          "namespace": "UpdateTail",
+          "path": "/c/u/tail/updateTail",
+          "command": "305102",
+          "observed_at_utc": "2026-11-14T07:13:55.411Z",
+          "http_status": 200,
+          "response_sha256": "72f81ff19b7d99fb409bf822e3d0cc2aea08035864eb145d87ab8a34fe8efa99",
+          "status": "verified-state-change",
+          "input_fields": [
+            "tailId",
+            "tailContent",
+            "fontColor",
+            "fontKeyName"
+          ],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-updated",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:13:55.612Z",
+          "http_status": 200,
+          "response_sha256": "abf3da36f8b7a9379e9a426666b405b67419037d185b59bb230428bbeddf6375",
+          "status": "verified-read",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "delete",
+          "namespace": "DeleteTail",
+          "path": "/c/u/tail/deleteTail",
+          "command": "305103",
+          "observed_at_utc": "2026-11-14T07:13:56.178Z",
+          "http_status": 200,
+          "response_sha256": "72f81ff19b7d99fb409bf822e3d0cc2aea08035864eb145d87ab8a34fe8efa99",
+          "status": "verified-state-change",
+          "input_fields": [
+            "tailId"
+          ],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-restored",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:13:56.431Z",
+          "http_status": 200,
+          "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+          "status": "verified-read",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "owned-tail-create-edit-enable-disable-delete",
+      "source_file_sha256": "6210e525ed68535e059b657a947c3401bb6ea7333a02b6ca1500b01c5ea9fad5",
+      "results": [
+        {
+          "name": "baseline",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:14:55.746Z",
+          "http_status": 200,
+          "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+          "status": "verified-read",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "create",
+          "namespace": "AddTail",
+          "path": "/c/u/tail/addTail",
+          "command": "305101",
+          "observed_at_utc": "2026-11-14T07:14:56.060Z",
+          "http_status": 200,
+          "response_sha256": "4492e240c7c8fb2c64942c4d4b45d023de96d92e2675032fc8c92ca7c3edac71",
+          "status": "verified-state-change",
+          "input_fields": [
+            "tailContent",
+            "fontColor",
+            "fontKeyName"
+          ],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-created",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:14:56.320Z",
+          "http_status": 200,
+          "response_sha256": "6366430ee498cedea1c35c0f26e088335bbc66eaae06ddc05b7ceddae73a5174",
+          "status": "verified-read",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "update",
+          "namespace": "UpdateTail",
+          "path": "/c/u/tail/updateTail",
+          "command": "305102",
+          "observed_at_utc": "2026-11-14T07:14:56.634Z",
+          "http_status": 200,
+          "response_sha256": "4492e240c7c8fb2c64942c4d4b45d023de96d92e2675032fc8c92ca7c3edac71",
+          "status": "verified-state-change",
+          "input_fields": [
+            "tailId",
+            "tailContent",
+            "fontColor",
+            "fontKeyName"
+          ],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-updated",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:14:56.970Z",
+          "http_status": 200,
+          "response_sha256": "84eecc42c3e9f8a5ecb4547a2eca3021d781701286e87b892851e90bf477a13f",
+          "status": "verified-read",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "enable",
+          "namespace": "SetTail",
+          "path": "/c/u/tail/setTail",
+          "command": "305104",
+          "observed_at_utc": "2026-11-14T07:14:57.137Z",
+          "http_status": 200,
+          "response_sha256": "e74d5d7073147a53f068b4fbeaf95f848204d2bfff939c07ff557eb437540215",
+          "status": "business-error",
+          "input_fields": [
+            "tailId",
+            "type"
+          ],
+          "error_code": "3110002",
+          "error_message": "对不起，您不是贴吧会员！",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-enabled",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:14:57.295Z",
+          "http_status": 200,
+          "response_sha256": "84eecc42c3e9f8a5ecb4547a2eca3021d781701286e87b892851e90bf477a13f",
+          "status": "verified-read",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "disable",
+          "namespace": "SetTail",
+          "path": "/c/u/tail/setTail",
+          "command": "305104",
+          "observed_at_utc": "2026-11-14T07:14:57.427Z",
+          "http_status": 200,
+          "response_sha256": "e74d5d7073147a53f068b4fbeaf95f848204d2bfff939c07ff557eb437540215",
+          "status": "business-error",
+          "input_fields": [
+            "tailId",
+            "type"
+          ],
+          "error_code": "3110002",
+          "error_message": "对不起，您不是贴吧会员！",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-disabled",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:14:57.581Z",
+          "http_status": 200,
+          "response_sha256": "84eecc42c3e9f8a5ecb4547a2eca3021d781701286e87b892851e90bf477a13f",
+          "status": "verified-read",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "delete",
+          "namespace": "DeleteTail",
+          "path": "/c/u/tail/deleteTail",
+          "command": "305103",
+          "observed_at_utc": "2026-11-14T07:14:57.880Z",
+          "http_status": 200,
+          "response_sha256": "4492e240c7c8fb2c64942c4d4b45d023de96d92e2675032fc8c92ca7c3edac71",
+          "status": "verified-state-change",
+          "input_fields": [
+            "tailId"
+          ],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-restored",
+          "namespace": "GetTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T07:14:58.108Z",
+          "http_status": 200,
+          "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+          "status": "verified-read",
+          "input_fields": [],
+          "error_code": "0",
+          "error_message": "success",
+          "authenticated": true,
+          "checks": {
+            "baseline_restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "follow-list-switch-preflight",
+      "results": [
+        {
+          "name": "baseline",
+          "path": "/c/u/follow/followList",
+          "observed_at_utc": "2026-11-14T07:25:55.858Z",
+          "http_status": 200,
+          "response_sha256": "0176cb24929fab0db8ac19e1d70a1285d5aabf7d87663d6b557d8df7c65635ae",
+          "response_bytes": 9879,
+          "input_fields": [
+            "pn",
+            "rn",
+            "tab"
+          ],
+          "status": "json-data-returned",
+          "error_code": "0",
+          "business_field_names": [
+            "follow_list_switch",
+            "has_more",
+            "total_follow_num",
+            "tips_text",
+            "follow_list",
+            "pn",
+            "priv_sets"
+          ],
+          "scalar_field_names": [
+            "follow_list_switch",
+            "has_more",
+            "total_follow_num",
+            "tips_text",
+            "pn"
+          ],
+          "authenticated": true
+        }
+      ]
+    },
+    {
+      "name": "follow-list-switch-cycle",
+      "results": [
+        {
+          "name": "baseline",
+          "path": "/c/u/follow/followList",
+          "observed_at_utc": "2026-11-14T07:26:38.093Z",
+          "http_status": 200,
+          "response_sha256": "20684580aa41399cb6dd62b095aeeec5107523ac122fb8427c28276899840cf2",
+          "response_bytes": 9879,
+          "input_fields": [
+            "pn",
+            "rn",
+            "tab"
+          ],
+          "status": "verified-read",
+          "error_code": "0",
+          "business_field_names": [
+            "has_more",
+            "tips_text",
+            "priv_sets",
+            "follow_list",
+            "total_follow_num",
+            "follow_list_switch",
+            "pn"
+          ],
+          "scalar_field_names": [
+            "has_more",
+            "tips_text",
+            "total_follow_num",
+            "follow_list_switch",
+            "pn"
+          ],
+          "authenticated": true,
+          "checks": {
+            "changed_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "change",
+          "path": "/c/c/user/setFollowListSwitch",
+          "observed_at_utc": "2026-11-14T07:26:38.304Z",
+          "http_status": 200,
+          "response_sha256": "a16013930588de518664788d523df52d3ad6705281f5682a5ab7007b8a9ecafc",
+          "response_bytes": 88,
+          "input_fields": [
+            "follow_list_switch"
+          ],
+          "status": "verified-state-change",
+          "error_code": "0",
+          "business_field_names": [],
+          "scalar_field_names": [],
+          "authenticated": true,
+          "checks": {
+            "changed_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-changed",
+          "path": "/c/u/follow/followList",
+          "observed_at_utc": "2026-11-14T07:26:38.588Z",
+          "http_status": 200,
+          "response_sha256": "5833eaa63c80b4bd591f6455ad36407ffbf9bf310ce782eee10649da88b532fa",
+          "response_bytes": 9879,
+          "input_fields": [
+            "pn",
+            "rn",
+            "tab"
+          ],
+          "status": "verified-read",
+          "error_code": "0",
+          "business_field_names": [
+            "total_follow_num",
+            "priv_sets",
+            "pn",
+            "has_more",
+            "tips_text",
+            "follow_list_switch",
+            "follow_list"
+          ],
+          "scalar_field_names": [
+            "total_follow_num",
+            "pn",
+            "has_more",
+            "tips_text",
+            "follow_list_switch"
+          ],
+          "authenticated": true,
+          "checks": {
+            "changed_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "restore",
+          "path": "/c/c/user/setFollowListSwitch",
+          "observed_at_utc": "2026-11-14T07:26:38.821Z",
+          "http_status": 200,
+          "response_sha256": "1807c2b5a257afcb2ad91fc8137d9bce3868d6473864ccc9219bab87962e7781",
+          "response_bytes": 88,
+          "input_fields": [
+            "follow_list_switch"
+          ],
+          "status": "verified-state-change",
+          "error_code": "0",
+          "business_field_names": [],
+          "scalar_field_names": [],
+          "authenticated": true,
+          "checks": {
+            "changed_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "verify-restored",
+          "path": "/c/u/follow/followList",
+          "observed_at_utc": "2026-11-14T07:26:39.056Z",
+          "http_status": 200,
+          "response_sha256": "580538b2ecff824cc98b7c95b16463d74bc6a32320482959987a2a7cf909c416",
+          "response_bytes": 9879,
+          "input_fields": [
+            "pn",
+            "rn",
+            "tab"
+          ],
+          "status": "verified-read",
+          "error_code": "0",
+          "business_field_names": [
+            "priv_sets",
+            "follow_list_switch",
+            "pn",
+            "has_more",
+            "total_follow_num",
+            "tips_text",
+            "follow_list"
+          ],
+          "scalar_field_names": [
+            "follow_list_switch",
+            "pn",
+            "has_more",
+            "total_follow_num",
+            "tips_text"
+          ],
+          "authenticated": true,
+          "checks": {
+            "changed_verified": true,
+            "baseline_restored": true
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The 202 empty POSTs contain neither credentials nor target IDs; their errors cannot establish restrictions on the two logged-in accounts.",
+    "A full business cycle remains unverified for candidates with only negative controls. Moderation excluded by the user and other origins are retained separately.",
+    "Tail enable/disable was rejected with explicit membership error 3110002. Created test tails were deleted and exact list baselines restored.",
+    "The initial image object-ID assertion failed: stored IDs differ, while cross-API mappings and identical image bytes were subsequently confirmed. No ID-preservation guarantee is asserted.",
+    "The initial tail retry changed both font and content; the parameter error cannot be attributed to the font alone.",
+    "Historical local captures are ignored; rebuilding this sanitized report requires the original captures and static-analysis files."
+  ]
+}
