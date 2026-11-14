@@ -59,6 +59,9 @@ for(const phase of supplemental.phases) for(const o of phase.results) if(o.path)
 const expanded=read('evidence/expanded-api-validation.json');
 if(expanded.artifact.sha256!==base.artifact.sha256)throw Error('Expanded API artifact mismatch');
 for(const phase of expanded.phases)for(const o of phase.results)if(o.path)add({...o,phase:phase.name},'evidence/expanded-api-validation.json');
+const deepDiscovery=read('evidence/deep-discovery-validation.json');
+if(deepDiscovery.artifact.sha256!==base.artifact.sha256)throw Error('Deep discovery artifact mismatch');
+for(const o of deepDiscovery.results)if(o.origin!=='https://pim.baidu.com')add(o,'evidence/deep-discovery-validation.json');
 const references=read('evidence/endpoint-reference-summary.json');
 observations.sort((a,b)=>(a.observed_at_utc??'').localeCompare(b.observed_at_utc??''));
 for (const report of [thread, write, two, gap, comprehensive, references]) {
@@ -114,6 +117,10 @@ const doc=`# 当前验证范围与未完成原因
 ## 新增请求契约与 SDK 方法
 
 客户端从 5 个方法扩展到 12 个。本阶段另记录 **${expanded.total_requests} 次请求**，其中移除一个受控粉丝、帖子点赞与取消均经独立读取核对并恢复原状态；轮询只完成首页订阅返回结构核对，商城 IM 列表为空。初次 GetTails 的响应标签解析失败也保留在报告内，修正后已复测。见 [新增接口实测](expanded-api-validation.md) 和 [脱敏证据](../evidence/expanded-api-validation.json)。这些请求不计入下方冻结的历史阶段总数。
+
+## 全 APK 静态扫描与新增读取
+
+完整网络面、Socket 请求与所有 Wire 声明单列在 [APK 接口清单](network-inventory.md)，不把 URL/资源候选和原有 603 条覆盖行直接相加。本阶段另有 ${deepDiscovery.total_requests} 次读取：两个受控账号的 IM 身份与此前 IM 登录结果一致，公开查询函数复测通过；本人回复通知只完成非空结构核对。见 [脱敏记录](../evidence/deep-discovery-validation.json)。这些结果不表示全部候选均已可调用。
 
 ## 后续逐项补测
 

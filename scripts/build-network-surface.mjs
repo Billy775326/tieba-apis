@@ -1,0 +1,20 @@
+﻿import fs from 'node:fs';import path from 'node:path';import readline from 'node:readline';
+import{digest,dexStrings,extractNetworkLiterals}from'../src/network-surface.mjs';
+const [evidenceFile,dexDir,archiveScan,output,privateMap]=process.argv.slice(2);
+if(!privateMap)throw Error('Usage: node scripts/build-network-surface.mjs ENDPOINT_EVIDENCE DEX_DIR PRIVATE_ARCHIVE_SCAN OUTPUT PRIVATE_LITERAL_MAP');
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8').replace(/^\uFEFF/,''));const base=read(evidenceFile),byKey=new Map(),literalMap=new Map();let manifest,archiveIdentity;
+function add(value,location){for(const hit of extractNetworkLiterals(value)){
+  const {literal,offset,offset_basis,...surface}=hit,key=JSON.stringify([surface.kind,surface.scheme,surface.host,surface.port,surface.path,surface.query_keys]);
+  const id='surface-'+digest(key).slice(0,16);let row=byKey.get(key);if(!row){row={id,...surface,status:'static-candidate',locations:[],literal_sha256:[]};byKey.set(key,row);}
+  const sha=digest(value);if(!row.literal_sha256.includes(sha))row.literal_sha256.push(sha);row.locations.push({...location,literal_offset:offset,literal_offset_basis:offset_basis});
+  if(location.kind==='dex-string'){let entry=literalMap.get(value);if(!entry){entry=new Set();literalMap.set(value,entry);}entry.add(id);}
+}}
+const dexFiles=fs.readdirSync(dexDir).filter(f=>/^classes\d*\.dex$/.test(f)).sort();
+if(dexFiles.length!==base.dex_files.length)throw Error('DEX set mismatch');
+for(const name of dexFiles){const bytes=fs.readFileSync(path.join(dexDir,name));if(digest(bytes)!==base.dex_files.find(x=>x.name===name)?.sha256)throw Error('DEX provenance mismatch');for(const item of dexStrings(bytes,name))add(item.value,{kind:'dex-string',dex:name,string_index:item.string_index,string_data_offset:item.string_data_offset});}
+for await(const line of readline.createInterface({input:fs.createReadStream(archiveScan,{encoding:'utf8'})})){if(!line.trim())continue;const item=JSON.parse(line);if(item.type==='artifact')archiveIdentity=item.artifact;else if(item.type==='manifest')manifest=item;else if(item.type==='literal')add(item.value,{kind:'archive-string',entry:item.entry,entry_sha256:item.entry_sha256,byte_offset:item.offset,encoding:item.encoding});}
+if(archiveIdentity?.sha256!==base.artifact.sha256||!manifest?.complete_within_limits)throw Error('Incomplete or mismatched archive scan');
+for(const d of base.dex_files)if(!manifest.entries.some(e=>e.entry===d.name&&e.sha256===d.sha256))throw Error('Archive and extracted DEX mismatch');
+const candidates=[...byKey.values()].sort((a,b)=>a.id.localeCompare(b.id));const count=key=>Object.fromEntries([...new Set(candidates.map(r=>r[key]))].sort().map(k=>[k,candidates.filter(r=>r[key]===k).length]));
+const report={schema_version:1,artifact:base.artifact,method:'Complete pinned DEX string tables plus ASCII and UTF-16 ASCII URL runs from every APK ZIP entry; no code executed or requests sent',summary:{dex_files:dexFiles.length,archive_entries:manifest.entry_count,archive_uncompressed_bytes:manifest.total_uncompressed_bytes,candidate_shapes:candidates.length,scopes:count('scope'),families:count('family'),kinds:count('kind')},limitations:['Static strings include resources, examples, certificates and SDKs; they are not all callable APIs.','Relative paths and same-method references do not establish a host, HTTP verb or argument semantics.','Query values, URL userinfo, fragments and long opaque/numeric path segments are omitted from this public report.','Runtime downloads, hotfixes, encryption, Unicode URL components and arbitrary string composition may produce additional routes.','The historical 603-row business coverage is unchanged; this broader inventory has a different unit and overlaps it.'],archive_manifest:manifest.entries,candidates};
+fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');fs.writeFileSync(privateMap,JSON.stringify({artifact:base.artifact,literals:[...literalMap].map(([value,ids])=>({value,candidate_ids:[...ids]}))})+'\n');console.log(JSON.stringify(report.summary));

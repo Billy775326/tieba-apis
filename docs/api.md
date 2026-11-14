@@ -142,3 +142,36 @@ HTTP 200 不足以成为成功结果；业务码缺失不会补为 0。业务错
 `ImLcpClient` 也从主入口导出，属于低层连接能力，负责 TLS、帧、有界等待、心跳和 `close()`；IM 业务服务号、方法号与实测边界见 [IM 协议说明](im-validation.md)。`TiebaApi` 尚未提供通用发信、群管理、发帖或删除方法。
 
 当前仓库未发布正式版本。以所用提交中的实现与本页约定为准；原有验证脚本入口继续保留，真实账号文件格式没有迁移要求。
+
+## IM 用户身份查询
+
+`getImUserIdentities` 是独立导出的 IM 读取函数，和 12 个 TiebaApi 方法分开；不通过 tiebac 请求，也不发送聊天消息。
+
+```javascript
+import fs from 'node:fs';
+import { getImUserIdentities } from './src/index.mjs';
+
+// 两个文件均由调用者准备，保存在忽略目录；im-device.json 保存自己的逻辑设备标识。
+const account = JSON.parse(fs.readFileSync('.local/account.json', 'utf8').replace(/^\uFEFF/, ''));
+const device = JSON.parse(fs.readFileSync('.local/im-device.json', 'utf8').replace(/^\uFEFF/, ''));
+const result = await getImUserIdentities({
+  BDUSS: account.BDUSS,
+  cuid: device.cuid,
+  userIds: [account.uid]
+});
+// result.user_list 含用户资料，按需要保存在本机；避免写入公开日志。
+```
+
+| 输入 | 条件 |
+| --- | --- |
+| BDUSS | 已有本地 BDUSS，不接受空值、换行或分号 |
+| cuid | 显式提供逻辑 IM 设备标识，1–256 字符；不会读取系统硬件标识 |
+| userIds | 1–20 个不重复的正 int64 编号，字符串/bigint/安全整数；20 是客户端限制 |
+| timeoutMs / maxResponseBytes | 默认 12000 毫秒 / 1048576 字节，范围与 TiebaApi 一致 |
+| signal | 可选 AbortSignal，实际传递到 HTTP |
+
+固定 POST 到 `https://pim.baidu.com/rest/3.0/im/get_user_info`，签名为 APK 该方法规定的 MD5(BDUSS + Unix 秒)。bd_uids 以精确 JSON 数字发送；解析返回数字时使用 Node.js 24 的 JSON 源值上下文，bd_uid/uk 始终为十进制字符串。每次调用只发一个请求，不重试、不跟随重定向。
+
+成功输出 `{user_list, meta}`，每项选取 `bd_uid, uk` 和可选 `display_name, avatar`。全部请求编号必须恰好返回一次，且 uk 为正 int64；缺少对象、部分成功或未知身份不会默认为可用。错误采用 TiebaApiError 的 transport/http/business/protocol/object-mismatch 分层，不回显凭据和原始响应。
+
+原始请求与函数调用均核对过两个受控账号的 native UID / IM UK。最小请求未发送 account_type/client_id，不承诺其他 SDK 登录类型或任意用户都能查询。该读取结果本身也不替代完整登录态验证。来源与本轮 3 次读取见 [APK 接口清单](network-inventory.md)。

@@ -5,7 +5,7 @@
     "size": 87847605,
     "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
   },
-  "evidence_cutoff_utc": "2026-11-14T10:47:04.600Z",
+  "evidence_cutoff_utc": "2026-11-14T11:33:24.150Z",
   "scope": "All static candidates plus explicitly matched supplemental observations; reasons distinguish observations from pending analysis",
   "summary": {
     "candidates": 603,
@@ -19,7 +19,7 @@
       "excluded-origin": 2,
       "html-page-response": 107,
       "https-variant-verified": 1,
-      "json-data-returned": 74,
+      "json-data-returned": 73,
       "json-response-unverified": 3,
       "needs-request-construction": 1,
       "negative-control-response": 181,
@@ -27,7 +27,7 @@
       "not-executed-stateful": 17,
       "redirect-response": 31,
       "response-fields-recognized": 2,
-      "response-schema-validated": 39,
+      "response-schema-validated": 40,
       "unrecognized-business-status": 1,
       "verified-read": 24,
       "verified-state-change": 20
@@ -45358,25 +45358,41 @@
         }
       ],
       "historical_status": "json-data-returned",
-      "best_status": "json-data-returned",
+      "best_status": "response-schema-validated",
       "latest_observation": {
         "path": "/c/u/feed/replyme",
-        "command": null,
-        "observed_at_utc": "2026-11-14T04:03:18.185Z",
-        "status": "json-data-returned",
+        "command": "303007",
+        "observed_at_utc": "2026-11-14T11:33:24.150Z",
+        "status": "response-schema-validated",
         "error_code": "0",
+        "checks": {
+          "page_present": true,
+          "reply_list_nonempty": true,
+          "post_and_thread_ids_present": true
+        },
         "http_status": 200,
-        "response_sha256": "bb8e26cf83d218831b816365a626fa3b0766bb1fa59139d9bf539f933509b721",
-        "phase": "legacy-reads-account2",
+        "response_sha256": "07645cbecf7342e082e4e72eaf24dbd0230622ed0ae52b70539dbc615cbb1d4d",
+        "phase": null,
         "condition": null,
         "negative_control": false,
-        "authenticated": null,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": null,
+        "input_fields": [
+          "pn",
+          "common",
+          "scr_w",
+          "scr_h",
+          "scr_dip",
+          "q_type",
+          "is_first",
+          "call_from",
+          "time",
+          "tid"
+        ],
         "omitted_fields": null,
-        "source": "evidence/comprehensive-validation.json"
+        "source": "evidence/deep-discovery-validation.json"
       },
       "supplemental_observations": [
         {
@@ -45416,6 +45432,41 @@
           "input_fields": null,
           "omitted_fields": null,
           "source": "evidence/comprehensive-validation.json"
+        },
+        {
+          "path": "/c/u/feed/replyme",
+          "command": "303007",
+          "observed_at_utc": "2026-11-14T11:33:24.150Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "checks": {
+            "page_present": true,
+            "reply_list_nonempty": true,
+            "post_and_thread_ids_present": true
+          },
+          "http_status": 200,
+          "response_sha256": "07645cbecf7342e082e4e72eaf24dbd0230622ed0ae52b70539dbc615cbb1d4d",
+          "phase": null,
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "pn",
+            "common",
+            "scr_w",
+            "scr_h",
+            "scr_dip",
+            "q_type",
+            "is_first",
+            "call_from",
+            "time",
+            "tid"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/deep-discovery-validation.json"
         }
       ],
       "limitation": {

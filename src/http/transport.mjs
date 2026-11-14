@@ -13,16 +13,20 @@ export function post(
     onBody,
     profile = "empty-post-diagnostic",
     authenticated = false,
+    credentialPolicy = "body-only",
     signal,
   } = {},
 ) {
   if(!Number.isSafeInteger(timeoutMs)||timeoutMs<1||timeoutMs>60000)throw Error('Invalid HTTP timeout');
   if(!Number.isSafeInteger(maxBytes)||maxBytes<1||maxBytes>8*1048576)throw Error('Invalid HTTP response limit');
   if(signal && (typeof signal.addEventListener!=='function'||typeof signal.removeEventListener!=='function'))throw Error('Invalid AbortSignal');
+  const target = new URL(url);
+  const imCookie = credentialPolicy === "pim-identity-cookie" && authenticated === true && target.origin === "https://pim.baidu.com" && target.pathname === "/rest/3.0/im/get_user_info" && !target.search && !target.hash && !target.username && !target.password;
+  if(credentialPolicy !== "body-only" && !imCookie)throw Error("Invalid credential policy or IM target");
   return new Promise((resolve) => {
     if (
       Object.keys(headers).some((name) =>
-        /^(cookie|authorization|proxy-authorization)$/i.test(name),
+        /^(authorization|proxy-authorization)$/i.test(name) || /^cookie$/i.test(name) && !imCookie,
       )
     )
       throw Error("Anonymous validator does not accept credentials");

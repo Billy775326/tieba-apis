@@ -13,8 +13,10 @@
 | 发帖选吧搜索 | `TiebaApi.searchForums()` | 搜索目标吧，不是全站帖子搜索 |
 | 地点建议、小尾巴、本人隐私、获赞通知、首页轮询 | [客户端 API](docs/api.md) | 新增 5 个读取方法；空样本和结构核对范围单独记录 |
 | 帖子点赞/取消、移除单个粉丝 | `TiebaApi.setThreadLike()` / `removeFollower()` | 两账号或指定帖验证状态变化并恢复；方法返回服务端确认 |
+| IM 用户编号转换 | `getImUserIdentities()` | 新增 bd_uid → IM UK 查询，两个受控账号已核对 |
 | 私信与 SDK 普通群聊 | [IM 实测与协议](docs/im-validation.md) | 双账号核心收发、回读、撤回和清理已测；统一客户端暂未封装这些业务操作 |
 | 发帖、回复、设置等写入 | [状态操作报告](docs/stateful-test-plan.md) | 部分流程有受控实测，使用各自专题说明 |
+| 全 APK 网络面与消息声明 | [接口清单](docs/network-inventory.md) | 3690 个字符串形态候选、126 个请求封装与 1746 个 Wire 消息类型，静态扫描不等于业务通过 |
 | 全部静态候选 | [逐项覆盖表](docs/current-api-coverage.csv) | 603 条候选含 H5、媒体、遥测和命令变体；尚未完成全部业务验收 |
 
 当前覆盖清单有 44 条候选（40 个不同路径）完成对象或状态核对，180 条仅有匿名诊断。本轮新增 7 个 SDK 方法并记录 38 次请求，详见 [新增接口实测](docs/expanded-api-validation.md)。未排除的 549 条生产候选均有请求记录；这些数字不等于可用 SDK 方法数。完整边界见 [当前验证范围](docs/remaining-validation.md)。
@@ -105,6 +107,7 @@ evidence/                 脱敏字段及观测证据
 | 阅读私信与群聊细节 | [IM 实测](docs/im-validation.md) · [双账号报告](docs/two-account-validation.md) |
 | 阅读帖子及设置操作 | [指定帖报告](docs/thread-validation.md) · [状态操作](docs/stateful-test-plan.md) |
 | 区分匿名诊断与业务验证 | [后续逐项验证](docs/supplemental-validation.md) · [历史扩展验证](docs/full-coverage.md) |
+| 查完整网络面、Socket 命令与 Wire 类型 | [APK 接口清单](docs/network-inventory.md) |
 | 查字段与来源 | [请求字段](docs/request-fields.md) · [协议契约](evidence/protocol-contracts.json) · [分析记录](docs/investigation.md) |
 | 查看本次变化 | [CHANGELOG](CHANGELOG.md) |
 

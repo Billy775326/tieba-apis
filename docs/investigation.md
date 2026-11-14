@@ -28,6 +28,10 @@ REA/JADX 对实际 APK 的构造函数和 `encode(boolean)` 反编译确认：�
 
 这将 FrsPage 请求构造类与请求模型联系起来。已有 POST、Protobuf multipart 和真实响应证据，并恢复了部分遗留 JSON 签名逻辑，见 [请求链路](../evidence/http-request-chain.json) 与 [签名来源](../evidence/legacy-signature-chain.json)；App 发送器的部分实现和可选 sig 分支仍未完全恢复。静态代码包含 Titan 拦截分支，运行时可能替换这些逻辑。
 
+## 全归档与协议扫描
+
+后续已完成同一 APK 的 10,941 个文件条目、13 个 DEX、105,903 个类和 626,979 个方法扫描，导出 1,746 个 Wire 消息类型、10,791 个字段及 126 个请求封装声明。新清单有 3,690 个 URL/路径形态候选，不与先前 603 条覆盖行相加。新增受控 IM 身份查询和本人回复通知读取记录，详见 [APK 接口清单](network-inventory.md)。静态扫描完成不表示全部运行时端点和业务验收完成。
+
 ## 工具与待完成工作
 
 Windows 本机 Node.js 24.16.0、npm 11.13.0、完整 JDK 25.0.1 可用。REA 6.4.0 已安装在忽略目录 `.local/rea-runtime`，`--version` 和 Android 命令帮助已成功执行。REA 源码归档位于同级 `../rea`；Git 智能传输失败，因此该目录是源码快照，不包含克隆历史。
