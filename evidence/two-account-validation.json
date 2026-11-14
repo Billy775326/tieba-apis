@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3",
+  "scope": "Only two user-controlled accounts; account IDs, portraits, credentials and setting values omitted",
+  "initial_relationship": {
+    "account1_follows_account2": false,
+    "account2_follows_account1": false
+  },
+  "result": {
+    "follow_account1_to_account2_verified": true,
+    "follow_account2_to_account1_verified": true,
+    "mutual_follow_verified": true,
+    "unfollow_both_directions_verified": true,
+    "initial_relationship_restored": true,
+    "own_privacy_reads_verified": 2,
+    "message_mask_responses": 2,
+    "message_mask_semantics_verified": false,
+    "private_messages_sent": 0,
+    "private_message_delivery_verified": false
+  },
+  "construction": {
+    "profile": "APK Profile protobuf cmd 303012; User.id tag 2, has_concerned 35, is_fans 91",
+    "follow_unfollow": "APK path literals plus recovered legacy-form signing; sent BDUSS/_client_type/_client_version/_timestamp/tbs/uid/portrait with portrait obtained from the matched native profile",
+    "privacy": "APK GetPrivateInfo cmd 303016; response data tag 1, error tag 2; SimpleUser.user_id tag 1"
+  },
+  "operations": [
+    {
+      "name": "baseline-0",
+      "actor": 1,
+      "observed_at_utc": "2026-11-14T02:12:17.714Z",
+      "path": "c/u/user/profile",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 9560,
+      "response_sha256": "e406b55f6c588dc2bece8e0844c052129583ee660e603181ab97a062f2097ff9",
+      "checks": {
+        "target_matches": true
+      },
+      "relationship": {
+        "has_concerned": "0",
+        "is_fans": "0"
+      }
+    },
+    {
+      "name": "baseline-1",
+      "actor": 2,
+      "observed_at_utc": "2026-11-14T02:12:18.475Z",
+      "path": "c/u/user/profile",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 77779,
+      "response_sha256": "3a5dfb680bfc9945eaaa3f694a2a88b9d2b3fe9ae381319d1548b7c4c8558cb3",
+      "checks": {
+        "target_matches": true
+      },
+      "relationship": {
+        "has_concerned": "0",
+        "is_fans": "0"
+      }
+    },
+    {
+      "name": "follow-0-2",
+      "actor": 1,
+      "observed_at_utc": "2026-11-14T02:12:51.781Z",
+      "path": "c/c/user/follow",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 1292,
+      "response_sha256": "c4b5a48ea693f08e2c8c49c5bc1457c05fe0a91834139d1d78873365aaea29d6"
+    },
+    {
+      "name": "check-0-3",
+      "actor": 1,
+      "observed_at_utc": "2026-11-14T02:12:53.164Z",
+      "path": "c/u/user/profile",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 9560,
+      "response_sha256": "72702540d1077066373355c94020e516aa4212258f6c2d6b2a0dae8c62d07d93",
+      "checks": {
+        "target_matches": true
+      },
+      "relationship": {
+        "has_concerned": "1",
+        "is_fans": "0"
+      }
+    },
+    {
+      "name": "check-1-4",
+      "actor": 2,
+      "observed_at_utc": "2026-11-14T02:12:53.703Z",
+      "path": "c/u/user/profile",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 77779,
+      "response_sha256": "9df2e71450b5470bd363e6c4670d15cb2f71455f48cb1a31a49f1ba3106e2599",
+      "checks": {
+        "target_matches": true
+      },
+      "relationship": {
+        "has_concerned": "0",
+        "is_fans": "1"
+      }
+    },
+    {
+      "name": "follow-1-5",
+      "actor": 2,
+      "observed_at_utc": "2026-11-14T02:13:30.434Z",
+      "path": "c/c/user/follow",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 1292,
+      "response_sha256": "99bd73d5c33233c5fa9e7da378c6f57f9b1edbde4ede99fdf0130e83131347b1"
+    },
+    {
+      "name": "check-0-6",
+      "actor": 1,
+      "observed_at_utc": "2026-11-14T02:13:31.279Z",
+      "path": "c/u/user/profile",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 9560,
+      "response_sha256": "f111fa2f274c823a79d5238133508965a07b39d034e34996a350278fc117143b",
+      "checks": {
+        "target_matches": true
+      },
+      "relationship": {
+        "has_concerned": "1",
+        "is_fans": "1"
+      }
+    },
+    {
+      "name": "check-1-7",
+      "actor": 2,
+      "observed_at_utc": "2026-11-14T02:13:31.940Z",
+      "path": "c/u/user/profile",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 77779,
+      "response_sha256": "4ef6ce496a5cca95c48294fc401687fd5b422222807d0fa9d094b02d252dcf2d",
+      "checks": {
+        "target_matches": true
+      },
+      "relationship": {
+        "has_concerned": "1",
+        "is_fans": "1"
+      }
+    },
+    {
+      "name": "unfollow-0-8",
+      "actor": 1,
+      "observed_at_utc": "2026-11-14T02:16:58.619Z",
+      "path": "c/c/user/unfollow",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 88,
+      "response_sha256": "b03fcd4f9c3aa59840f66c471a26ecb7bc5ce7ae8f0869c196f9423688492135"
+    },
+    {
+      "name": "unfollow-1-9",
+      "actor": 2,
+      "observed_at_utc": "2026-11-14T02:17:00.234Z",
+      "path": "c/c/user/unfollow",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 88,
+      "response_sha256": "2fa5a3d5c33bd83ba2e21ad5ac8cd53ecd006937b5e9cca643a9c54d143779af"
+    },
+    {
+      "name": "check-0-10",
+      "actor": 1,
+      "observed_at_utc": "2026-11-14T02:17:01.107Z",
+      "path": "c/u/user/profile",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 9560,
+      "response_sha256": "f9ccfcc2518edf33bde952e44004c3bf21d221069428c484fd1bf7f41a6d9421",
+      "checks": {
+        "target_matches": true
+      },
+      "relationship": {
+        "has_concerned": "0",
+        "is_fans": "0"
+      }
+    },
+    {
+      "name": "check-1-11",
+      "actor": 2,
+      "observed_at_utc": "2026-11-14T02:17:01.643Z",
+      "path": "c/u/user/profile",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 77779,
+      "response_sha256": "0f46076cc731928d08607365894a3aaafb88087682a5a2e19cc5d779424df2be",
+      "checks": {
+        "target_matches": true
+      },
+      "relationship": {
+        "has_concerned": "0",
+        "is_fans": "0"
+      }
+    },
+    {
+      "name": "privacy-0",
+      "actor": 1,
+      "observed_at_utc": "2026-11-14T02:21:42.598Z",
+      "path": "c/u/user/getPrivateInfo",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 162,
+      "response_sha256": "6573fd87b26cafdb1f3f0e029f5467c99aef10aa37d22bf7c3c7955facf0661c",
+      "checks": {
+        "own_user_matches": true
+      },
+      "status": "verified-own-settings-read",
+      "returned_field_names": [
+        "bazhu_show_inside",
+        "bazhu_show_outside",
+        "follow",
+        "group",
+        "like",
+        "live",
+        "location",
+        "post",
+        "reply",
+        "user"
+      ]
+    },
+    {
+      "name": "message-mask-0",
+      "actor": 1,
+      "observed_at_utc": "2026-11-14T02:21:42.693Z",
+      "path": "c/u/user/getMsgMask",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 136,
+      "response_sha256": "5f4233323eea4e1bc6df6de6ccfed06877877f2e08bcfebe95ac872e58c3542e",
+      "status": "business-success-unconfirmed-settings",
+      "returned_top_level_keys": [
+        "error_code",
+        "error_msg",
+        "data",
+        "need_push",
+        "server_time",
+        "time",
+        "ctime",
+        "logid"
+      ],
+      "response_data_type": "string",
+      "response_data_length": 1
+    },
+    {
+      "name": "privacy-1",
+      "actor": 2,
+      "observed_at_utc": "2026-11-14T02:21:43.316Z",
+      "path": "c/u/user/getPrivateInfo",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 150,
+      "response_sha256": "7344fb28d0f842a8211ed966d748418ff0a7aff50f23910c4f6508eb4f48cd92",
+      "checks": {
+        "own_user_matches": true
+      },
+      "status": "verified-own-settings-read",
+      "returned_field_names": [
+        "bazhu_show_inside",
+        "bazhu_show_outside",
+        "follow",
+        "group",
+        "like",
+        "live",
+        "location",
+        "post",
+        "reply",
+        "user"
+      ]
+    },
+    {
+      "name": "message-mask-1",
+      "actor": 2,
+      "observed_at_utc": "2026-11-14T02:21:43.461Z",
+      "path": "c/u/user/getMsgMask",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 136,
+      "response_sha256": "023287a2d7b78d0ade4e75d83ad0d914771b6e2fc53206ef066d639de7d6120d",
+      "status": "business-success-unconfirmed-settings",
+      "returned_top_level_keys": [
+        "error_code",
+        "error_msg",
+        "data",
+        "need_push",
+        "server_time",
+        "time",
+        "ctime",
+        "logid"
+      ],
+      "response_data_type": "string",
+      "response_data_length": 1
+    }
+  ],
+  "private_message_analysis": {
+    "status": "request-and-session-construction-incomplete",
+    "ordinary_single_chat": "IMSendMsg.OriginRequestMsgConstructor emits method 55 with to_user, appid, uk, client_identifier, account_type, sdk_version and message fields",
+    "media_transport": "IMMediaSendMsgHttpRequest emits rest/3.0/im/send_msg; existence does not prove it is ordinary Tieba private chat",
+    "excluded_multicast": "IMSendMsgRequest targets imsapi/1.0/send_mcast_msg/liveshowhost or liveshowuser; not used for private-chat testing",
+    "unresolved": [
+      "IM session authentication and UK mapping",
+      "request framing and transport for ordinary private chat",
+      "receive/history retrieval and delivery confirmation"
+    ],
+    "environment": "Only APK and web sessions supplied; no connected Android device observed; this is not proof that a device is inherently required",
+    "static_evidence": [
+      {
+        "evidence_id": "ev_7194c0a58cb17291c1c62be9904b933e02c39cdf48dee8ffa4e98ee9958a8e86",
+        "class_name": "com.baidu.android.imsdk.chatmessage.request.IMSendMsg.OriginRequestMsgConstructor",
+        "method_name": "getRequestParamJsonObj",
+        "body_status": "available",
+        "source_sha256": "9bee100d180f811321951c7bedd5ab33cbff8adcee7260e9afb4cb4d7562ef09"
+      },
+      {
+        "evidence_id": "ev_de5812c1b0e3a4739ac5a33da783c6ffee9c80b3a00f10f43f0184feef8f5965",
+        "class_name": "com.baidu.android.imsdk.chatmessage.request.IMSendMsg.MediaRequestMsgConstructor",
+        "method_name": "getRequestParamJsonObj",
+        "body_status": "available",
+        "source_sha256": "13b029fa4c55308e388765904335cb2aafcc0792f3f31a4df19bef3dbb43f1e0"
+      },
+      {
+        "evidence_id": "ev_f1a631bb7047c7ae51713a6ac48058cfe18b1b7ed74258bbe5666ee210724c18",
+        "class_name": "com.baidu.android.imsdk.chatmessage.request.IMMediaSendMsgHttpRequest",
+        "method_name": "getHost",
+        "body_status": "available",
+        "source_sha256": "1630787af71202cb4ee0c59388b50dee2624d3238d9d34a1f9165b060d8b3262"
+      },
+      {
+        "evidence_id": "ev_6f609c6e2f44a5a025cb156ff4182ab791eb0d4c77800c840ee51f5567f30861",
+        "class_name": "com.baidu.android.imsdk.chatmessage.request.IMMediaSendMsgHttpRequest",
+        "method_name": "getRequestParameter",
+        "body_status": "available",
+        "source_sha256": "682f1cb9196d01590a839efb3d1830fd51fd645ae8d5949150ec5d79f8fe8356"
+      },
+      {
+        "evidence_id": "ev_06772a20450d6c67426ae02806daecc1ae1eabd5209c244274250d111803f3e2",
+        "class_name": "com.baidu.android.imsdk.chatmessage.request.IMMediaBaseHttpRequest",
+        "method_name": "putCommonParams",
+        "body_status": "available",
+        "source_sha256": "b87a6a4ac913b924d10b0a5a7b0643fe8d1413a1e40276a628aab2a1227242ee"
+      },
+      {
+        "evidence_id": "ev_61d2f72766fe6bfd45d7a43b3e51b77345d275af3ce9fc0c0c26b539864ef20f",
+        "class_name": "com.baidu.android.imsdk.utils.BaseHttpRequest",
+        "method_name": "generateSign",
+        "body_status": "available",
+        "source_sha256": "8e1692cef483229e9678f74f8d7526bc52aa8377c689c9711bfcd36a16bb0f3e"
+      },
+      {
+        "evidence_id": "ev_13aa5abfdb9f9711befef439a14dcbce80c0e7d1ac32c6b73f31737ed4a19536",
+        "class_name": "com.baidu.android.imsdk.utils.BaseHttpRequest",
+        "method_name": "getMd5",
+        "body_status": "available",
+        "source_sha256": "f963469e8d3b503eb3a9f1324b2bf3ac6b01a8444188573e9dbe1d359ecad2b9"
+      },
+      {
+        "evidence_id": "ev_4244bc555f7aadc6499565283d2f6bc0274dc19eb0644ba476947fd42699aae9",
+        "class_name": "com.baidu.android.imsdk.chatmessage.request.IMSendMsgRequest",
+        "method_name": "getHost",
+        "body_status": "available",
+        "source_sha256": "53b6dd5e7a6b1c536601e9317115b7b3cd57eefe8b88150ddd57082ccf4d5597"
+      }
+    ]
+  },
+  "limitations": [
+    "Live results apply to these two accounts at the recorded times only.",
+    "No interpretation of message-mask flag values was established.",
+    "No private message was sent; private-message support remains unverified.",
+    "Historical 603-candidate coverage counts were not regenerated."
+  ]
+}
