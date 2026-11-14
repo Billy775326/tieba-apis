@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-14T00:54:55.884Z",
+  "thread_url": "https://tieba.baidu.com/p/[redacted-thread-id]",
+  "thread_id": "[redacted-thread-id]",
+  "authentication": "anonymous",
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "results": [
+    {
+      "name": "page1",
+      "path": "c/f/pb/page",
+      "command": "302001",
+      "http_status": 200,
+      "response_bytes": 116645,
+      "response_sha256": "9a1ce3e017eab2b375135d6df75ce630c67daf34c0eaf8394eff640679e02db0",
+      "status": "verified-read",
+      "checks": {
+        "thread_matches": true,
+        "posts_present": true
+      },
+      "error_code": "0",
+      "post_count": 20
+    },
+    {
+      "name": "page2",
+      "path": "c/f/pb/page",
+      "command": "302001",
+      "http_status": 200,
+      "response_bytes": 39296,
+      "response_sha256": "fd6600b75cb49a6619e0fd69d669b80d2a26deb1501ed225700590ff842091d7",
+      "status": "verified-read",
+      "checks": {
+        "thread_matches": true,
+        "page_matches": true
+      },
+      "error_code": "0"
+    },
+    {
+      "name": "post-list",
+      "path": "c/f/pb/getPostList",
+      "command": "309446",
+      "http_status": 200,
+      "response_bytes": 2200,
+      "response_sha256": "05ab3ec2a7ee0db4fd18d0ee0559ecb368ac2f3fb675a4ce7d5c7cc3e9d48f0a",
+      "status": "verified-read",
+      "checks": {
+        "posts_present": true,
+        "requested_posts_present": true
+      },
+      "error_code": "0",
+      "post_count": 3
+    },
+    {
+      "name": "first-page",
+      "path": "c/f/pb/firstPage",
+      "command": "309751",
+      "http_status": 200,
+      "response_bytes": 133158,
+      "response_sha256": "01290c4eace1c03c0abebdf7908f560d158a68a3e4eae4ee07665cfb5a94e176",
+      "status": "verified-read",
+      "checks": {
+        "thread_matches": true
+      },
+      "error_code": "0"
+    },
+    {
+      "name": "subreplies",
+      "path": "c/f/pb/floor",
+      "command": "302002",
+      "http_status": 200,
+      "response_bytes": 18030,
+      "response_sha256": "3318b46a366ad382c470b25813a174cf580bdb3dc8c2a642a65e545273ccafbe",
+      "status": "verified-read",
+      "checks": {
+        "thread_matches": true,
+        "parent_matches": true,
+        "subreplies_present": true
+      },
+      "error_code": "0",
+      "subreply_count": 4
+    }
+  ],
+  "fixture_summary": {
+    "first_page_posts": 20,
+    "total_pages": "8",
+    "sampled_posts_with_subreplies": 7
+  },
+  "limitations": [
+    "Only the supplied thread and bounded reply samples are exercised.",
+    "No publishing, deletion, reactions, following or private messages are performed.",
+    "Raw content and account identifiers remain in ignored local response files."
+  ]
+}
