@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "summary": {
+    "socket_inheritance_classes": 32,
+    "distinct_constructor_integer_candidates": 24,
+    "reviewed_bindings": 10
+  },
+  "constructor_integer_candidates": [
+    1001,
+    1003,
+    104001,
+    104101,
+    104102,
+    104103,
+    104104,
+    104106,
+    107129,
+    202001,
+    202003,
+    202004,
+    202101,
+    205001,
+    205003,
+    205006,
+    208001,
+    208002,
+    208003,
+    303005,
+    303006,
+    303017,
+    304101,
+    304102
+  ],
+  "limitations": [
+    "This covers Socket inheritance classes in the existing complete method index, not every dynamically dispatched command.",
+    "Base classes, push/receive classes and constructor integers must not be counted as independently callable request APIs.",
+    "The reviewed subset has actual request/response evidence; other classes retain their individual analysis or fixture gaps."
+  ],
+  "classes": [
+    {
+      "class_name": "com.baidu.adp.framework.message.SocketMessage",
+      "network_class_root": "com.baidu.adp.framework.message.SocketMessage",
+      "constructor_sites": [],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Base/inheritance class; no concrete constructor command is established."
+    },
+    {
+      "class_name": "com.baidu.tbadk.core.message.RequestCheckUserMaskMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 104104
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": 104104,
+      "validation_record": "evidence/continued-discovery-validation.json",
+      "status": "constructed-and-response-recorded",
+      "pending_reason": null
+    },
+    {
+      "class_name": "com.baidu.tbadk.core.message.RequestGetMaskInfoMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 104103
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": 104103,
+      "validation_record": "evidence/continued-discovery-validation.json",
+      "status": "constructed-and-response-recorded",
+      "pending_reason": null
+    },
+    {
+      "class_name": "com.baidu.tbadk.core.message.RequestUpdateForumMask",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 104106
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Global/category mask flags and full baseline/restore semantics remain to be reviewed; do not assume a single-user or single-forum operation."
+    },
+    {
+      "class_name": "com.baidu.tbadk.core.message.RequestUpdateMaskInfoMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 104102
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": 104102,
+      "validation_record": "evidence/continued-discovery-validation.json",
+      "status": "constructed-and-response-recorded",
+      "pending_reason": null
+    },
+    {
+      "class_name": "com.baidu.tbadk.core.message.RequestUpdateMaskMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 104101
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Global/category mask flags and full baseline/restore semantics remain to be reviewed; do not assume a single-user or single-forum operation."
+    },
+    {
+      "class_name": "com.baidu.tbadk.coreExtra.message.PingMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 1003
+            }
+          ],
+          "instruction_code_unit_offset": 6
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Transport heartbeat; not counted as a business API, no dedicated command-response validation in this run."
+    },
+    {
+      "class_name": "com.baidu.tbadk.coreExtra.message.UpdateClientInfoMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 1001
+            }
+          ],
+          "instruction_code_unit_offset": 6
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": 1001,
+      "validation_record": "evidence/continued-discovery-validation.json",
+      "status": "constructed-and-response-recorded",
+      "pending_reason": null
+    },
+    {
+      "class_name": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Base/inheritance class; no concrete constructor command is established."
+    },
+    {
+      "class_name": "com.baidu.tbadk.mvc.message.MvcSocketMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Base/inheritance class; no concrete constructor command is established."
+    },
+    {
+      "class_name": "com.baidu.tbadk.newFriends.RequestDeleteFriendMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 304102
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [
+        "tbclient.DeleteFriend.DeleteFriendReqIdl$Builder",
+        "tbclient.DeleteFriend.ReqData$Builder"
+      ],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Requires a controlled pending App-friend request or an existing reversible App-friend relationship; SDK IM peers alone do not establish these objects."
+    },
+    {
+      "class_name": "com.baidu.tbadk.newFriends.RequestPassFriendMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 304101
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [
+        "tbclient.PassFriend.PassFriendReqIdl$Builder",
+        "tbclient.PassFriend.ReqData$Builder"
+      ],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Requires a controlled pending App-friend request or an existing reversible App-friend relationship; SDK IM peers alone do not establish these objects."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.chat.officialBar.RequestHistoryMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 208002
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Requires a nonempty official-forum conversation/menu and its exact message/cursor semantics; ordinary posts are not equivalent fixtures."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.chat.officialBar.RequestOfficialBarInfoMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 208001
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": 208001,
+      "validation_record": "evidence/continued-discovery-validation.json",
+      "status": "constructed-and-response-recorded",
+      "pending_reason": null
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.chat.ChatMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Base/inheritance class; no concrete constructor command is established."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.chat.CommonGroupChatMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tieba.im.message.chat.ChatMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 202001
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Direction, complete request/receive schema, controlled business objects or cleanup semantics remain unreviewed; constructor integers alone do not prove outbound APIs."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.chat.NotifyChatMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tieba.im.message.chat.CommonGroupChatMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 202001
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Direction, complete request/receive schema, controlled business objects or cleanup semantics remain unreviewed; constructor integers alone do not prove outbound APIs."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.chat.OfficialChatMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tieba.im.message.chat.ChatMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 205001
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Direction, complete request/receive schema, controlled business objects or cleanup semantics remain unreviewed; constructor integers alone do not prove outbound APIs."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.chat.PersonalChatMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tieba.im.message.chat.ChatMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 205001
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Direction, complete request/receive schema, controlled business objects or cleanup semantics remain unreviewed; constructor integers alone do not prove outbound APIs."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.chat.SystemMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tieba.im.message.chat.CommonGroupChatMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 202001
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Direction, complete request/receive schema, controlled business objects or cleanup semantics remain unreviewed; constructor integers alone do not prove outbound APIs."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.chat.YYMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tieba.im.message.chat.CommonGroupChatMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 202001
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Direction, complete request/receive schema, controlled business objects or cleanup semantics remain unreviewed; constructor integers alone do not prove outbound APIs."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.MessageSyncMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 202003
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Direction, complete request/receive schema, controlled business objects or cleanup semantics remain unreviewed; constructor integers alone do not prove outbound APIs."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.PushCountMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 202101
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Direction, complete request/receive schema, controlled business objects or cleanup semantics remain unreviewed; constructor integers alone do not prove outbound APIs."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.RequestDelSystemMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 202004
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Requires controlled native App message IDs and confirmed delete/read semantics; existing unrelated inbox contents are not test objects."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.RequestGetLivableForumList",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 107129
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": 107129,
+      "validation_record": "evidence/continued-discovery-validation.json",
+      "status": "constructed-and-response-recorded",
+      "pending_reason": null
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.RequestOfficialBarMenuMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 303006
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [
+        "tbclient.ForumMenu.DataReq$Builder",
+        "tbclient.ForumMenu.ForumMenuReqIdl$Builder"
+      ],
+      "reviewed_command": 303006,
+      "validation_record": "evidence/continued-discovery-validation.json",
+      "status": "constructed-and-response-recorded",
+      "pending_reason": null
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.RequestPersonalMsgReadMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 205006
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Requires controlled native App message IDs and confirmed delete/read semantics; existing unrelated inbox contents are not test objects."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.RequestSendOfficialBarMenuMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 208003
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Requires a nonempty official-forum conversation/menu and its exact message/cursor semantics; ordinary posts are not equivalent fixtures."
+    },
+    {
+      "class_name": "com.baidu.tieba.im.message.RequestSendPVTJMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 104001
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": null,
+      "validation_record": null,
+      "status": "static-class-only",
+      "pending_reason": "Direction, complete request/receive schema, controlled business objects or cleanup semantics remain unreviewed; constructor integers alone do not prove outbound APIs."
+    },
+    {
+      "class_name": "com.baidu.tieba.immessagecenter.RequestQueryUserInfoMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 205003
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [],
+      "reviewed_command": 205003,
+      "validation_record": "evidence/continued-discovery-validation.json",
+      "status": "constructed-and-response-recorded",
+      "pending_reason": null
+    },
+    {
+      "class_name": "com.baidu.tieba.myCollection.message.RequestQueryCollectUpdateNumMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 303005
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [
+        "tbclient.QueryCollectUpdateNum.DataReq$Builder",
+        "tbclient.QueryCollectUpdateNum.QueryCollectUpdateNumReqIdl$Builder"
+      ],
+      "reviewed_command": 303005,
+      "validation_record": "evidence/continued-discovery-validation.json",
+      "status": "constructed-and-response-recorded",
+      "pending_reason": null
+    },
+    {
+      "class_name": "com.baidu.tieba.tbadkcore.location.LocationSocketRequestMessage",
+      "network_class_root": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 303017
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_model_builders": [
+        "tbclient.GetPoisByLocation.DataReq$Builder",
+        "tbclient.GetPoisByLocation.GetPoisByLocationReqIdl$Builder"
+      ],
+      "reviewed_command": 303017,
+      "validation_record": "evidence/continued-discovery-validation.json",
+      "status": "constructed-and-response-recorded",
+      "pending_reason": null
+    }
+  ]
+}

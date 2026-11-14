@@ -175,3 +175,7 @@ const result = await getImUserIdentities({
 成功输出 `{user_list, meta}`，每项选取 `bd_uid, uk` 和可选 `display_name, avatar`。全部请求编号必须恰好返回一次，且 uk 为正 int64；缺少对象、部分成功或未知身份不会默认为可用。错误采用 TiebaApiError 的 transport/http/business/protocol/object-mismatch 分层，不回显凭据和原始响应。
 
 原始请求与函数调用均核对过两个受控账号的 native UID / IM UK。最小请求未发送 account_type/client_id，不承诺其他 SDK 登录类型或任意用户都能查询。该读取结果本身也不替代完整登录态验证。来源与本轮 3 次读取见 [APK 接口清单](network-inventory.md)。
+
+## 原生 App Socket 帧
+
+另提供 `deriveAppSocketKey`、`encodeAppSocketFrame`、`decodeAppSocketFrame`、`APP_SOCKET_FLAGS` 和 `APP_SOCKET_HEADER_BYTES`，用于已恢复的 WebSocket 内层二进制帧。它们不负责联网、认证或状态恢复，也不自动增加 `TiebaApi` 的业务方法。输入、输出、限制和可复现示例见 [Socket 协议](app-socket-validation.md#帧模块用法)。
