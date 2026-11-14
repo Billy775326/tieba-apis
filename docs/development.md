@@ -77,6 +77,17 @@ APK 路径为示例。输出是静态证据，不等于请求已构造或线上�
 node scripts/request-models.mjs .local/dex .local/all-protocol-models.json evidence/endpoint-candidates.json --all-models
 ```
 
+上述 `--all-models` 保留原有 `tbclient` 范围。扫描整份 APK 的 Wire 类型并重建审核后的命令契约：
+
+```powershell
+node scripts/request-models.mjs .local/dex .local/all-apk-wire-models.json evidence/endpoint-candidates.json --all-wire-models
+node scripts/build-wire-inventory.mjs .local/all-apk-wire-models.json evidence/endpoint-candidates.json evidence/wire-messages.json evidence/wire-request-inventory.json
+node scripts/build-app-socket-contracts.mjs
+node scripts/catalog.mjs --socket 104102
+```
+
+新克隆可以直接执行最后两条命令，不需要 APK、账号或联网。新的完整模式只保留 ProtoField 字段及其类型签名，不导出静态默认值；缺少任一基线 DEX 时拒绝完整扫描。
+
 不要混用不同 APK 的 DEX、字段、命令索引或实测报告。完整 APK、引擎、反编译全文和原始用户响应留在忽略目录。
 
 REA 入口需要固定运行包和完整引擎 JAR：

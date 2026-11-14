@@ -12,11 +12,13 @@ const source = JSON.parse(
   fs.readFileSync(provenance, "utf8").replace(/^\uFEFF/, ""),
 );
 const includeAll = process.argv.includes("--all-models");
+const includeAllWire = process.argv.includes("--all-wire-models");
+if (includeAll && includeAllWire) throw Error('Choose one model scope');
+const dexFiles = fs.readdirSync(directory).filter(f => /^classes\d*\.dex$/.test(f)).sort();
+if (includeAllWire && JSON.stringify(dexFiles) !== JSON.stringify(source.dex_files.map(d => d.name).sort()))
+  throw Error('Complete Wire inventory requires every provenance DEX file');
 const models = [];
-for (const file of fs
-  .readdirSync(directory)
-  .filter((f) => /^classes\d*\.dex$/.test(f))
-  .sort()) {
+for (const file of dexFiles) {
   const b = fs.readFileSync(path.join(directory, file));
   const expected = source.dex_files.find((d) => d.name === file);
   if (
@@ -102,14 +104,14 @@ for (const file of fs
     const p = u32(100) + i * 32,
       name = types[u32(p)];
     if (
-      !includeAll &&
+      !includeAll && !includeAllWire &&
       !/^Ltbclient\/(?:FrsPage|PbPage|PbFloor|SearchPostForum|Profile|UserProfile)\/(?:DataReq|[A-Za-z]+ReqIdl);$/.test(
         name,
       ) &&
       name !== "Ltbclient/CommonReq;"
     )
       continue;
-    if (includeAll && !/^Ltbclient\//.test(name)) continue;
+    if (includeAll && !includeAllWire && !/^Ltbclient\//.test(name)) continue;
     const directoryOffset = u32(p + 20),
       byIndex = new Map();
     if (directoryOffset) {
@@ -119,13 +121,14 @@ for (const file of fs
         byIndex.set(u32(a), annotations(u32(a + 4)));
       }
     }
+    if (includeAllWire && !(fieldsByOwner.get(name) ?? []).some(f => (byIndex.get(f.field_index) ?? []).some(a => a.type === "Lcom/squareup/wire/ProtoField;"))) continue;
     models.push({
       dex: file,
       class_def_index: i,
       descriptor: name,
-      fields: (fieldsByOwner.get(name) ?? []).map((f) => ({
+      fields: (fieldsByOwner.get(name) ?? []).filter(f => !includeAllWire || (byIndex.get(f.field_index) ?? []).some(a => a.type === "Lcom/squareup/wire/ProtoField;")).map((f) => ({
         ...f,
-        annotations: byIndex.get(f.field_index) ?? [],
+        annotations: (byIndex.get(f.field_index) ?? []).filter(a => !includeAllWire || ["Lcom/squareup/wire/ProtoField;", "Ldalvik/annotation/Signature;"].includes(a.type)),
       })),
     });
   }
@@ -141,7 +144,7 @@ fs.writeFileSync(
         "DEX class_defs, field_ids and encoded field annotations; no decompilation or execution",
       limitations: [
         "Boxed Java field types alone do not specify protobuf wire types.",
-        "Only selected class descriptors are inventoried; request construction and required fields remain unverified.",
+        includeAllWire ? "All classes with Wire ProtoField annotations are included; unannotated SDK/native schemas remain outside this extraction." : "Only selected class descriptors are inventoried; request construction and required fields remain unverified.",
       ],
       models,
     },
@@ -151,7 +154,7 @@ fs.writeFileSync(
 );
 console.log(
   JSON.stringify(
-    models.map((m) => ({
+    includeAllWire ? {wire_message_classes:models.length, annotated_fields:models.reduce((n,m)=>n+m.fields.length,0)} : models.map((m) => ({
       dex: m.dex,
       name: m.descriptor,
       fields: m.fields.length,

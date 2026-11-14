@@ -16,10 +16,11 @@
 | IM 用户编号转换 | `getImUserIdentities()` | 新增 bd_uid → IM UK 查询，两个受控账号已核对 |
 | 私信与 SDK 普通群聊 | [IM 实测与协议](docs/im-validation.md) | 双账号核心收发、回读、撤回和清理已测；统一客户端暂未封装这些业务操作 |
 | 发帖、回复、设置等写入 | [状态操作报告](docs/stateful-test-plan.md) | 部分流程有受控实测，使用各自专题说明 |
-| 全 APK 网络面与消息声明 | [接口清单](docs/network-inventory.md) | 3690 个字符串形态候选、126 个请求封装与 1746 个 Wire 消息类型，静态扫描不等于业务通过 |
+| 原生 App Socket | [协议与实测](docs/app-socket-validation.md) | 10 个命令已请求；新增黑名单和私信提醒状态恢复验证，提供帧编解码模块 |
+| 全 APK 网络面与消息声明 | [接口清单](docs/network-inventory.md) | 3690 个字符串形态候选、145 个请求封装与 1974 个 Wire 消息类型，静态扫描不等于业务通过 |
 | 全部静态候选 | [逐项覆盖表](docs/current-api-coverage.csv) | 603 条候选含 H5、媒体、遥测和命令变体；尚未完成全部业务验收 |
 
-当前覆盖清单有 44 条候选（40 个不同路径）完成对象或状态核对，180 条仅有匿名诊断。本轮新增 7 个 SDK 方法并记录 38 次请求，详见 [新增接口实测](docs/expanded-api-validation.md)。未排除的 549 条生产候选均有请求记录；这些数字不等于可用 SDK 方法数。完整边界见 [当前验证范围](docs/remaining-validation.md)。
+当前覆盖清单有 45 条候选（41 个不同路径）完成对象或状态核对，176 条仅有匿名诊断。本轮新增 7 个 SDK 方法并记录 38 次请求，详见 [新增接口实测](docs/expanded-api-validation.md)。未排除的 549 条生产候选均有请求记录；这些数字不等于可用 SDK 方法数。继续验证另记录 63 次业务/媒体请求及 8 次握手探测，见 [Socket 与继续验证](docs/app-socket-validation.md)。完整边界见 [当前验证范围](docs/remaining-validation.md)。
 
 ## 快速开始
 
@@ -85,6 +86,7 @@ src/
   config.mjs              协议常量、配置与运行上限
   http/                   有界 HTTP 传输与取消
   im-*.mjs                IM 帧、签名与 TLS 连接
+  app-socket-protocol.mjs  旧 App WebSocket 内层帧、派生密钥和有界解码
   *.mjs                   Protobuf、签名、媒体和验证基础模块
 examples/                 可导入的调用示例
 scripts/                  兼容保留的提取、验证与证据构建工具
@@ -108,6 +110,7 @@ evidence/                 脱敏字段及观测证据
 | 阅读帖子及设置操作 | [指定帖报告](docs/thread-validation.md) · [状态操作](docs/stateful-test-plan.md) |
 | 区分匿名诊断与业务验证 | [后续逐项验证](docs/supplemental-validation.md) · [历史扩展验证](docs/full-coverage.md) |
 | 查完整网络面、Socket 命令与 Wire 类型 | [APK 接口清单](docs/network-inventory.md) |
+| 查原生 Socket 命令、字段及状态恢复 | [Socket 实测](docs/app-socket-validation.md) · [契约](evidence/app-socket-contracts.json) |
 | 查字段与来源 | [请求字段](docs/request-fields.md) · [协议契约](evidence/protocol-contracts.json) · [分析记录](docs/investigation.md) |
 | 查看本次变化 | [CHANGELOG](CHANGELOG.md) |
 

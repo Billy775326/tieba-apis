@@ -1,0 +1,1283 @@
+{
+  "schema_version": 1,
+  "summary": {
+    "commands": 10,
+    "error_only_responses": 1
+  },
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "transport": {
+    "endpoint": "ws://im.tieba.baidu.com:8000/",
+    "source": "AndroidManifest LCS_SERVER_ADDR",
+    "websocket_protocol": "chat",
+    "native_headers": [
+      "cuid",
+      "Content-Type: application/octet-stream",
+      "Sec-WebSocket-Extensions: im_version=2.3"
+    ],
+    "initial_sequence_header": "Seq-Id",
+    "header_bytes": 9,
+    "header_fields": [
+      {
+        "name": "flags",
+        "offset": 0,
+        "bytes": 1
+      },
+      {
+        "name": "command",
+        "offset": 1,
+        "bytes": 4,
+        "type": "int32 big-endian"
+      },
+      {
+        "name": "sequence",
+        "offset": 5,
+        "bytes": 4,
+        "type": "int32 big-endian"
+      }
+    ],
+    "flag_bits": {
+      "encrypted": 128,
+      "gzip": 64,
+      "protobuf": 8,
+      "extra": 4
+    },
+    "body_transforms": "encode: length-prefixed extra + protobuf, gzip, AES; decode in reverse order",
+    "encryption": {
+      "secret": "fresh 32 lowercase alphanumeric ASCII characters per connection",
+      "key_exchange": "RSA-2048 / PKCS1Padding, pinned TiebaIMConfig public key in UpdateClientInfo.secretKey",
+      "key_derivation": "PBKDF2-HMAC-SHA1, 5 iterations, 256 bits",
+      "salt_hex": "a40bc834d695f313",
+      "payload_cipher": "AES-256-ECB / PKCS7Padding"
+    },
+    "reviewed_source_classes": [
+      "com.baidu.tbadk.TiebaIMConfig",
+      "com.baidu.tieba.ya",
+      "com.baidu.tieba.c3",
+      "com.baidu.tieba.a3",
+      "com.baidu.tieba.w2"
+    ],
+    "runtime_notes": [
+      "Responses in this run omitted the protobuf bit while carrying protobuf bodies.",
+      "Anonymous key initialization preceded encrypted account initialization; account UID was checked before subsequent reads.",
+      "Account credentials were never sent in plaintext. Socket-only identity was cleared before connection close.",
+      "This App transport is distinct from the IM SDK TLS/LCP transport."
+    ]
+  },
+  "contracts": [
+    {
+      "command": 1001,
+      "class_name": "com.baidu.tbadk.coreExtra.message.UpdateClientInfoMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 1001
+            }
+          ],
+          "instruction_code_unit_offset": 6
+        }
+      ],
+      "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "cuid",
+          "tag": 1,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6220
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UpdateClientInfo/DataReq;",
+          "repeated": false,
+          "field_index": 6221
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/UpdateClientInfo/DataReq;",
+      "request_fields": [
+        {
+          "name": "bduss",
+          "tag": 1,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6188
+        },
+        {
+          "name": "device",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6189
+        },
+        {
+          "name": "secretKey",
+          "tag": 3,
+          "datatype": "BYTES",
+          "descriptor": "Lcom/squareup/wire/ByteString;",
+          "repeated": false,
+          "field_index": 6196
+        },
+        {
+          "name": "lat",
+          "tag": 4,
+          "datatype": "DOUBLE",
+          "descriptor": "Ljava/lang/Double;",
+          "repeated": false,
+          "field_index": 6192
+        },
+        {
+          "name": "lng",
+          "tag": 5,
+          "datatype": "DOUBLE",
+          "descriptor": "Ljava/lang/Double;",
+          "repeated": false,
+          "field_index": 6193
+        },
+        {
+          "name": "width",
+          "tag": 6,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6199
+        },
+        {
+          "name": "height",
+          "tag": 7,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6191
+        },
+        {
+          "name": "unread_msg",
+          "tag": 8,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6198
+        },
+        {
+          "name": "pub_env",
+          "tag": 9,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6195
+        },
+        {
+          "name": "project",
+          "tag": 10,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6194
+        },
+        {
+          "name": "groupId",
+          "tag": 11,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 6190
+        },
+        {
+          "name": "stoken",
+          "tag": 12,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6197
+        }
+      ],
+      "response_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 6225
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UpdateClientInfo/DataRes;",
+          "repeated": false,
+          "field_index": 6224
+        }
+      ],
+      "response_data_descriptor": "Lprotobuf/UpdateClientInfo/DataRes;",
+      "response_fields": [
+        {
+          "name": "groupInfo",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Ljava/util/List;",
+          "repeated": true,
+          "signature": [
+            "Ljava/util/List<",
+            "Lprotobuf/GroupInfo;",
+            ">;"
+          ],
+          "field_index": 6212
+        },
+        {
+          "name": "userInfo",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UserInfo;",
+          "repeated": false,
+          "field_index": 6216
+        },
+        {
+          "name": "maskInfo",
+          "tag": 3,
+          "datatype": null,
+          "descriptor": "Lprotobuf/MaskInfo;",
+          "repeated": false,
+          "field_index": 6215
+        },
+        {
+          "name": "heartbeatInterval",
+          "tag": 4,
+          "datatype": "INT32",
+          "descriptor": "Ljava/util/List;",
+          "repeated": true,
+          "signature": [
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;"
+          ],
+          "field_index": 6213
+        },
+        {
+          "name": "configVersion",
+          "tag": 5,
+          "datatype": null,
+          "descriptor": "Lprotobuf/ConfigVersion;",
+          "repeated": false,
+          "field_index": 6211
+        },
+        {
+          "name": "isUserAvailable",
+          "tag": 6,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 6214
+        },
+        {
+          "name": "clientConfig",
+          "tag": 7,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UpdateClientInfo/ClientConfig;",
+          "repeated": false,
+          "field_index": 6210
+        }
+      ],
+      "http_path": null,
+      "mapping_basis": "reviewed encodeSocketRequestData plus direct constructor command; names are not HTTP path guesses"
+    },
+    {
+      "command": 104102,
+      "class_name": "com.baidu.tbadk.core.message.RequestUpdateMaskInfoMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 104102
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_descriptor": "Lprotobuf/UpdateMaskInfo/UpdateMaskInfoReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UpdateMaskInfo/DataReq;",
+          "repeated": false,
+          "field_index": 6270
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/UpdateMaskInfo/DataReq;",
+      "request_fields": [
+        {
+          "name": "type",
+          "tag": 1,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6268
+        },
+        {
+          "name": "isMask",
+          "tag": 2,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6265
+        },
+        {
+          "name": "list",
+          "tag": 3,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6267
+        },
+        {
+          "name": "g_id",
+          "tag": 4,
+          "datatype": "UINT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 6264
+        },
+        {
+          "name": "call_from",
+          "tag": 5,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6263
+        },
+        {
+          "name": "is_mute_notifications",
+          "tag": 6,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6266
+        }
+      ],
+      "response_descriptor": "Lprotobuf/UpdateMaskInfo/UpdateMaskInfoResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 6272
+        }
+      ],
+      "response_data_descriptor": null,
+      "response_fields": [],
+      "http_path": null,
+      "mapping_basis": "reviewed encodeSocketRequestData plus direct constructor command; names are not HTTP path guesses"
+    },
+    {
+      "command": 104103,
+      "class_name": "com.baidu.tbadk.core.message.RequestGetMaskInfoMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 104103
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/GetMaskInfo/DataReq;",
+          "repeated": false,
+          "field_index": 4159
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/GetMaskInfo/DataReq;",
+      "request_fields": [
+        {
+          "name": "type",
+          "tag": 1,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4148
+        }
+      ],
+      "response_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 4163
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/GetMaskInfo/DataRes;",
+          "repeated": false,
+          "field_index": 4162
+        }
+      ],
+      "response_data_descriptor": "Lprotobuf/GetMaskInfo/DataRes;",
+      "response_fields": [
+        {
+          "name": "isMask",
+          "tag": 1,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4155
+        },
+        {
+          "name": "list",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4156
+        },
+        {
+          "name": "users",
+          "tag": 3,
+          "datatype": null,
+          "descriptor": "Ljava/util/List;",
+          "repeated": true,
+          "signature": [
+            "Ljava/util/List<",
+            "Lprotobuf/GetMaskInfo/UserInfo;",
+            ">;"
+          ],
+          "field_index": 4157
+        }
+      ],
+      "http_path": null,
+      "mapping_basis": "reviewed encodeSocketRequestData plus direct constructor command; names are not HTTP path guesses"
+    },
+    {
+      "command": 104104,
+      "class_name": "com.baidu.tbadk.core.message.RequestCheckUserMaskMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 104104
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CheckMaskUser/DataReq;",
+          "repeated": false,
+          "field_index": 3681
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/CheckMaskUser/DataReq;",
+      "request_fields": [
+        {
+          "name": "uid",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3688
+        }
+      ],
+      "response_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 3685
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CheckMaskUser/DataRes;",
+          "repeated": false,
+          "field_index": 3684
+        }
+      ],
+      "response_data_descriptor": "Lprotobuf/CheckMaskUser/DataRes;",
+      "response_fields": [
+        {
+          "name": "isMask",
+          "tag": 1,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 3691
+        }
+      ],
+      "http_path": null,
+      "mapping_basis": "reviewed encodeSocketRequestData plus direct constructor command; names are not HTTP path guesses"
+    },
+    {
+      "command": 107129,
+      "class_name": "com.baidu.tieba.im.message.RequestGetLivableForumList",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 107129
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_descriptor": "Lprotobuf/GetLivableForumList/GetLivableForumListReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/GetLivableForumList/DataReq;",
+          "repeated": false,
+          "field_index": 4141
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/GetLivableForumList/DataReq;",
+      "request_fields": [
+        {
+          "name": "userId",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 4124
+        },
+        {
+          "name": "filterFlag",
+          "tag": 2,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4119
+        },
+        {
+          "name": "minLevel",
+          "tag": 3,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4121
+        },
+        {
+          "name": "likeForumFlag",
+          "tag": 4,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4120
+        },
+        {
+          "name": "pageSize",
+          "tag": 5,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4123
+        },
+        {
+          "name": "pageNo",
+          "tag": 6,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4122
+        }
+      ],
+      "response_descriptor": "Lprotobuf/GetLivableForumList/GetLivableForumListResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 4145
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/GetLivableForumList/DataRes;",
+          "repeated": false,
+          "field_index": 4144
+        }
+      ],
+      "response_data_descriptor": "Lprotobuf/GetLivableForumList/DataRes;",
+      "response_fields": [
+        {
+          "name": "available",
+          "tag": 1,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4135
+        },
+        {
+          "name": "minLevel",
+          "tag": 2,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4138
+        },
+        {
+          "name": "tips",
+          "tag": 3,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4139
+        },
+        {
+          "name": "likeList",
+          "tag": 4,
+          "datatype": null,
+          "descriptor": "Ljava/util/List;",
+          "repeated": true,
+          "signature": [
+            "Ljava/util/List<",
+            "Lprotobuf/ForumRalatedInfo;",
+            ">;"
+          ],
+          "field_index": 4137
+        },
+        {
+          "name": "hasMore",
+          "tag": 5,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4136
+        }
+      ],
+      "http_path": null,
+      "mapping_basis": "reviewed encodeSocketRequestData plus direct constructor command; names are not HTTP path guesses"
+    },
+    {
+      "command": 205003,
+      "class_name": "com.baidu.tieba.immessagecenter.RequestQueryUserInfoMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 205003
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/QueryUserInfos/DataReq;",
+          "repeated": false,
+          "field_index": 5829
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/QueryUserInfos/DataReq;",
+      "request_fields": [
+        {
+          "name": "reqUserId",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 5770
+        }
+      ],
+      "response_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 5833
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/QueryUserInfos/DataRes;",
+          "repeated": false,
+          "field_index": 5832
+        }
+      ],
+      "response_data_descriptor": "Lprotobuf/QueryUserInfos/DataRes;",
+      "response_fields": [
+        {
+          "name": "id",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 5805
+        },
+        {
+          "name": "name",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 5811
+        },
+        {
+          "name": "nameShow",
+          "tag": 3,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 5812
+        },
+        {
+          "name": "portrait",
+          "tag": 4,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 5813
+        },
+        {
+          "name": "portraith",
+          "tag": 5,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 5814
+        },
+        {
+          "name": "intro",
+          "tag": 6,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 5806
+        },
+        {
+          "name": "sex",
+          "tag": 7,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5816
+        },
+        {
+          "name": "hasConcerned",
+          "tag": 8,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5803
+        },
+        {
+          "name": "isBlacklist",
+          "tag": 9,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5807
+        },
+        {
+          "name": "meizhiLevel",
+          "tag": 10,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5810
+        },
+        {
+          "name": "userType",
+          "tag": 11,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5818
+        },
+        {
+          "name": "isCoreuser",
+          "tag": 12,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5808
+        },
+        {
+          "name": "superboy",
+          "tag": 13,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5817
+        },
+        {
+          "name": "isInterestman",
+          "tag": 14,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5809
+        },
+        {
+          "name": "iconInfo",
+          "tag": 15,
+          "datatype": null,
+          "descriptor": "Ljava/util/List;",
+          "repeated": true,
+          "signature": [
+            "Ljava/util/List<",
+            "Lprotobuf/QueryUserInfos/IconInfo;",
+            ">;"
+          ],
+          "field_index": 5804
+        },
+        {
+          "name": "remindMask",
+          "tag": 16,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5815
+        }
+      ],
+      "http_path": null,
+      "mapping_basis": "reviewed encodeSocketRequestData plus direct constructor command; names are not HTTP path guesses"
+    },
+    {
+      "command": 208001,
+      "class_name": "com.baidu.tieba.im.chat.officialBar.RequestOfficialBarInfoMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 208001
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_descriptor": "Lprotobuf/QueryForumDetail/QueryForumDetailReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/QueryForumDetail/DataReq;",
+          "repeated": false,
+          "field_index": 5673
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/QueryForumDetail/DataReq;",
+      "request_fields": [
+        {
+          "name": "forumId",
+          "tag": 1,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5664
+        },
+        {
+          "name": "forumName",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 5665
+        }
+      ],
+      "response_descriptor": "Lprotobuf/QueryForumDetail/QueryForumDetailResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 5677
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/QueryForumDetail/DataRes;",
+          "repeated": false,
+          "field_index": 5676
+        }
+      ],
+      "response_data_descriptor": "Lprotobuf/QueryForumDetail/DataRes;",
+      "response_fields": [
+        {
+          "name": "portrait",
+          "tag": 1,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 5671
+        },
+        {
+          "name": "authen",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 5670
+        }
+      ],
+      "http_path": null,
+      "mapping_basis": "reviewed encodeSocketRequestData plus direct constructor command; names are not HTTP path guesses"
+    },
+    {
+      "command": 303005,
+      "class_name": "com.baidu.tieba.myCollection.message.RequestQueryCollectUpdateNumMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 303005
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_descriptor": "Ltbclient/QueryCollectUpdateNum/QueryCollectUpdateNumReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Ltbclient/QueryCollectUpdateNum/DataReq;",
+          "repeated": false,
+          "field_index": 31341
+        }
+      ],
+      "request_data_descriptor": "Ltbclient/QueryCollectUpdateNum/DataReq;",
+      "request_fields": [
+        {
+          "name": "collect_mark",
+          "tag": 1,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 31335
+        },
+        {
+          "name": "common",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Ltbclient/CommonReq;",
+          "repeated": false,
+          "field_index": 31336
+        }
+      ],
+      "response_descriptor": "Ltbclient/QueryCollectUpdateNum/QueryCollectUpdateNumResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Ltbclient/Error;",
+          "repeated": false,
+          "field_index": 31345
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Ltbclient/QueryCollectUpdateNum/DataRes;",
+          "repeated": false,
+          "field_index": 31344
+        }
+      ],
+      "response_data_descriptor": "Ltbclient/QueryCollectUpdateNum/DataRes;",
+      "response_fields": [
+        {
+          "name": "collect_update_num",
+          "tag": 1,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 31339
+        }
+      ],
+      "http_path": null,
+      "mapping_basis": "reviewed encodeSocketRequestData plus direct constructor command; names are not HTTP path guesses"
+    },
+    {
+      "command": 303006,
+      "class_name": "com.baidu.tieba.im.message.RequestOfficialBarMenuMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 303006
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_descriptor": "Ltbclient/ForumMenu/ForumMenuReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Ltbclient/ForumMenu/DataReq;",
+          "repeated": false,
+          "field_index": 14632
+        }
+      ],
+      "request_data_descriptor": "Ltbclient/ForumMenu/DataReq;",
+      "request_fields": [
+        {
+          "name": "update_time",
+          "tag": 1,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 14621
+        },
+        {
+          "name": "forum_id",
+          "tag": 2,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 14619
+        },
+        {
+          "name": "st_param",
+          "tag": 3,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 14620
+        },
+        {
+          "name": "cookie",
+          "tag": 4,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 14618
+        },
+        {
+          "name": "common",
+          "tag": 5,
+          "datatype": null,
+          "descriptor": "Ltbclient/CommonReq;",
+          "repeated": false,
+          "field_index": 14617
+        }
+      ],
+      "response_descriptor": "Ltbclient/ForumMenu/ForumMenuResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Ltbclient/Error;",
+          "repeated": false,
+          "field_index": 14636
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Ltbclient/ForumMenu/DataRes;",
+          "repeated": false,
+          "field_index": 14635
+        }
+      ],
+      "response_data_descriptor": "Ltbclient/ForumMenu/DataRes;",
+      "response_fields": [
+        {
+          "name": "parent_menu",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Ljava/util/List;",
+          "repeated": true,
+          "signature": [
+            "Ljava/util/List<",
+            "Ltbclient/ForumMenu/Menu;",
+            ">;"
+          ],
+          "field_index": 14629
+        },
+        {
+          "name": "update_time",
+          "tag": 2,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 14630
+        },
+        {
+          "name": "has_menu",
+          "tag": 3,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 14628
+        }
+      ],
+      "http_path": null,
+      "mapping_basis": "reviewed encodeSocketRequestData plus direct constructor command; names are not HTTP path guesses"
+    },
+    {
+      "command": 303017,
+      "class_name": "com.baidu.tieba.tbadkcore.location.LocationSocketRequestMessage",
+      "constructor_sites": [
+        {
+          "owner": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+          "arguments": [
+            {
+              "argument_index": 1,
+              "literal": 303017
+            }
+          ],
+          "instruction_code_unit_offset": 7
+        }
+      ],
+      "request_descriptor": "Ltbclient/GetPoisByLocation/GetPoisByLocationReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Ltbclient/GetPoisByLocation/DataReq;",
+          "repeated": false,
+          "field_index": 21171
+        }
+      ],
+      "request_data_descriptor": "Ltbclient/GetPoisByLocation/DataReq;",
+      "request_fields": [
+        {
+          "name": "lat",
+          "tag": 1,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 21162
+        },
+        {
+          "name": "lng",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 21163
+        },
+        {
+          "name": "common",
+          "tag": 3,
+          "datatype": null,
+          "descriptor": "Ltbclient/CommonReq;",
+          "repeated": false,
+          "field_index": 21161
+        }
+      ],
+      "response_descriptor": "Ltbclient/GetPoisByLocation/GetPoisByLocationResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Ltbclient/Error;",
+          "repeated": false,
+          "field_index": 21175
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Ltbclient/GetPoisByLocation/DataRes;",
+          "repeated": false,
+          "field_index": 21174
+        }
+      ],
+      "response_data_descriptor": "Ltbclient/GetPoisByLocation/DataRes;",
+      "response_fields": [
+        {
+          "name": "formatted_address",
+          "tag": 1,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 21168
+        },
+        {
+          "name": "poi_info",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Ljava/util/List;",
+          "repeated": true,
+          "signature": [
+            "Ljava/util/List<",
+            "Ltbclient/GetPoisByLocation/PoiInfo;",
+            ">;"
+          ],
+          "field_index": 21169
+        }
+      ],
+      "http_path": null,
+      "mapping_basis": "reviewed encodeSocketRequestData plus direct constructor command; names are not HTTP path guesses"
+    }
+  ],
+  "limitations": [
+    "These ten mappings are reviewed bindings, not every Socket command in the APK.",
+    "Wire declarations alone do not establish required business fixtures or a functional server response.",
+    "The frame codec is exported; a reusable authenticated App Socket client is not yet part of the public SDK."
+  ]
+}

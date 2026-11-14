@@ -62,6 +62,10 @@ for(const phase of expanded.phases)for(const o of phase.results)if(o.path)add({.
 const deepDiscovery=read('evidence/deep-discovery-validation.json');
 if(deepDiscovery.artifact.sha256!==base.artifact.sha256)throw Error('Deep discovery artifact mismatch');
 for(const o of deepDiscovery.results)if(o.origin!=='https://pim.baidu.com')add(o,'evidence/deep-discovery-validation.json');
+const continued=read('evidence/continued-discovery-validation.json');
+if(continued.artifact.sha256!==base.artifact.sha256)throw Error('Continued discovery artifact mismatch');
+for(const phase of continued.phases)if(phase.transport==='https')for(const o of phase.results)
+  if(o.path&&!o.origin)add({...o,phase:phase.name},'evidence/continued-discovery-validation.json');
 const references=read('evidence/endpoint-reference-summary.json');
 observations.sort((a,b)=>(a.observed_at_utc??'').localeCompare(b.observed_at_utc??''));
 for (const report of [thread, write, two, gap, comprehensive, references]) {
@@ -121,6 +125,10 @@ const doc=`# 当前验证范围与未完成原因
 ## 全 APK 静态扫描与新增读取
 
 完整网络面、Socket 请求与所有 Wire 声明单列在 [APK 接口清单](network-inventory.md)，不把 URL/资源候选和原有 603 条覆盖行直接相加。本阶段另有 ${deepDiscovery.total_requests} 次读取：两个受控账号的 IM 身份与此前 IM 登录结果一致，公开查询函数复测通过；本人回复通知只完成非空结构核对。见 [脱敏记录](../evidence/deep-discovery-validation.json)。这些结果不表示全部候选均已可调用。
+
+## 原生 Socket 与继续验证
+
+本阶段新增 **${continued.counts.total_requests} 次业务/媒体请求**：${continued.counts.http_business_or_media_requests} 次 HTTP 与 ${continued.counts.app_socket_requests} 次 App Socket 消息；另有 ${continued.counts.transport_handshake_attempts} 次握手探测。黑名单、单个会话提醒开关观察到变化且恢复；10 个命令逐项区分对象核对、结构确认、空样本和本地解析失败。Socket 命令没有并入 603 条 HTTP 候选，也没有猜测对应 HTTP 路径。见 [原生 Socket 实测](app-socket-validation.md) 与 [脱敏报告](../evidence/continued-discovery-validation.json)。
 
 ## 后续逐项补测
 

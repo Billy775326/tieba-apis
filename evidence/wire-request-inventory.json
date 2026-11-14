@@ -5,7 +5,7 @@
     "size": 87847605,
     "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
   },
-  "source_model_sha256": "62622d968cb9809a5ae2b086b0ed4ea242a611b985e4cf49e83e6a4d93cc918b",
+  "source_model_sha256": "e13ab4c197b2f08e3d1449bd9af9d4307aa8779531269b74b58b6d3d7c5d438c",
   "method": "All ProtoField annotations in the pinned DEX model extraction; fields only, no static credential defaults or target execution",
   "limitations": [
     "A schema declaration does not establish an active endpoint or command.",
@@ -13,10 +13,1534 @@
     "Non-Wire JSON, SDK RPC and native schemas are not described by these annotations."
   ],
   "summary": {
-    "requests": 126,
-    "paired_responses": 125
+    "requests": 145,
+    "paired_responses": 144
   },
   "requests": [
+    {
+      "request_descriptor": "Lalaim/AlaMgetLiveStatus/AlaMgetLiveStatusReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lalaim/AlaMgetLiveStatus/DataReq;",
+          "repeated": false,
+          "field_index": 9
+        }
+      ],
+      "request_data_descriptor": "Lalaim/AlaMgetLiveStatus/DataReq;",
+      "request_fields": [
+        {
+          "name": "common",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Ltbclient/CommonReq;",
+          "repeated": false,
+          "field_index": 32
+        },
+        {
+          "name": "live_ids",
+          "tag": 2,
+          "datatype": "INT64",
+          "descriptor": "Ljava/util/List;",
+          "repeated": true,
+          "signature": [
+            "Ljava/util/List<",
+            "Ljava/lang/Long;",
+            ">;"
+          ],
+          "field_index": 33
+        },
+        {
+          "name": "audience_count",
+          "tag": 3,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 31
+        }
+      ],
+      "response_descriptor": "Lalaim/AlaMgetLiveStatus/AlaMgetLiveStatusResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lalaim/Error;",
+          "repeated": false,
+          "field_index": 19
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lalaim/AlaMgetLiveStatus/DataRes;",
+          "repeated": false,
+          "field_index": 18
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CheckMaskUser/DataReq;",
+          "repeated": false,
+          "field_index": 3681
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/CheckMaskUser/DataReq;",
+      "request_fields": [
+        {
+          "name": "uid",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3688
+        }
+      ],
+      "response_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 3685
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CheckMaskUser/DataRes;",
+          "repeated": false,
+          "field_index": 3684
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/CommitGroupMsg/CommitGroupMsgReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CommitGroupMsg/DataReq;",
+          "repeated": false,
+          "field_index": 3693
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/CommitGroupMsg/DataReq;",
+      "request_fields": [
+        {
+          "name": "groupId",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3710
+        },
+        {
+          "name": "msgType",
+          "tag": 2,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 3711
+        },
+        {
+          "name": "content",
+          "tag": 3,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 3708
+        },
+        {
+          "name": "duration",
+          "tag": 4,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 3709
+        },
+        {
+          "name": "recordId",
+          "tag": 5,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3712
+        }
+      ],
+      "response_descriptor": "Lprotobuf/CommitGroupMsg/CommitGroupMsgResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 3697
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CommitGroupMsg/DataRes;",
+          "repeated": false,
+          "field_index": 3696
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/CommitPersonalMsg/CommitPersonalMsgReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CommitPersonalMsg/DataReq;",
+          "repeated": false,
+          "field_index": 3723
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/CommitPersonalMsg/DataReq;",
+      "request_fields": [
+        {
+          "name": "groupId",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3752
+        },
+        {
+          "name": "toUid",
+          "tag": 2,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3759
+        },
+        {
+          "name": "msgType",
+          "tag": 3,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 3756
+        },
+        {
+          "name": "content",
+          "tag": 4,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 3750
+        },
+        {
+          "name": "duration",
+          "tag": 5,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 3751
+        },
+        {
+          "name": "recordId",
+          "tag": 6,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3757
+        },
+        {
+          "name": "toUserType",
+          "tag": 7,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 3760
+        },
+        {
+          "name": "st_type",
+          "tag": 8,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 3758
+        },
+        {
+          "name": "hm_acuid",
+          "tag": 9,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 3753
+        },
+        {
+          "name": "hm_oid",
+          "tag": 10,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 3755
+        },
+        {
+          "name": "hm_needmp",
+          "tag": 11,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 3754
+        }
+      ],
+      "response_descriptor": "Lprotobuf/CommitPersonalMsg/CommitPersonalMsgResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 3727
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CommitPersonalMsg/DataRes;",
+          "repeated": false,
+          "field_index": 3726
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/CommitPusherCount/CommitPusherCountReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CommitPusherCount/DataReq;",
+          "repeated": false,
+          "field_index": 3779
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/CommitPusherCount/DataReq;",
+      "request_fields": [
+        {
+          "name": "pusherCount",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3794
+        },
+        {
+          "name": "upFlowSize",
+          "tag": 2,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3795
+        },
+        {
+          "name": "downFlowSize",
+          "tag": 3,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3792
+        },
+        {
+          "name": "enterForeCount",
+          "tag": 4,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3793
+        }
+      ],
+      "response_descriptor": "Lprotobuf/CommitPusherCount/CommitPusherCountResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 3783
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CommitPusherCount/DataRes;",
+          "repeated": false,
+          "field_index": 3782
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/CommitReceivedPmsg/CommitReceivedPmsgReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CommitReceivedPmsg/DataReq;",
+          "repeated": false,
+          "field_index": 3797
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/CommitReceivedPmsg/DataReq;",
+      "request_fields": [
+        {
+          "name": "groupId",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3818
+        },
+        {
+          "name": "toUid",
+          "tag": 2,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3824
+        },
+        {
+          "name": "msgType",
+          "tag": 3,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 3823
+        },
+        {
+          "name": "msgId",
+          "tag": 4,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3822
+        },
+        {
+          "name": "toUserType",
+          "tag": 5,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 3825
+        },
+        {
+          "name": "hm_acuid",
+          "tag": 6,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 3819
+        },
+        {
+          "name": "hm_oid",
+          "tag": 7,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 3821
+        },
+        {
+          "name": "hm_needmp",
+          "tag": 8,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 3820
+        }
+      ],
+      "response_descriptor": "Lprotobuf/CommitReceivedPmsg/CommitReceivedPmsgResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 3801
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/CommitReceivedPmsg/DataRes;",
+          "repeated": false,
+          "field_index": 3800
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/DelGroupMsgs/DelGroupMsgsReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/DelGroupMsgs/DataReq;",
+          "repeated": false,
+          "field_index": 3887
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/DelGroupMsgs/DataReq;",
+      "request_fields": [
+        {
+          "name": "groupId",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 3881
+        },
+        {
+          "name": "msgIds",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 3882
+        }
+      ],
+      "response_descriptor": "Lprotobuf/DelGroupMsgs/DelGroupMsgsResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 3891
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/DelGroupMsgs/DataRes;",
+          "repeated": false,
+          "field_index": 3890
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/GetGroupMsg/GetGroupMsgReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "cuid",
+          "tag": 1,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4090
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/GetGroupMsg/DataReq;",
+          "repeated": false,
+          "field_index": 4091
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/GetGroupMsg/DataReq;",
+      "request_fields": [
+        {
+          "name": "width",
+          "tag": 1,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4075
+        },
+        {
+          "name": "height",
+          "tag": 2,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4062
+        },
+        {
+          "name": "smallWidth",
+          "tag": 3,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4074
+        },
+        {
+          "name": "smallHeight",
+          "tag": 4,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4073
+        },
+        {
+          "name": "pushTimes",
+          "tag": 5,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4071
+        },
+        {
+          "name": "groupMids",
+          "tag": 6,
+          "datatype": null,
+          "descriptor": "Ljava/util/List;",
+          "repeated": true,
+          "signature": [
+            "Ljava/util/List<",
+            "Lprotobuf/GroupLastId;",
+            ">;"
+          ],
+          "field_index": 4061
+        },
+        {
+          "name": "gettype",
+          "tag": 7,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4060
+        },
+        {
+          "name": "min_time",
+          "tag": 8,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4067
+        },
+        {
+          "name": "max_time",
+          "tag": 9,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4066
+        },
+        {
+          "name": "process_type",
+          "tag": 10,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4070
+        },
+        {
+          "name": "newpushRepire",
+          "tag": 11,
+          "datatype": null,
+          "descriptor": "Lprotobuf/NewpushRepair;",
+          "repeated": false,
+          "field_index": 4068
+        },
+        {
+          "name": "notify_msg_id",
+          "tag": 12,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 4069
+        },
+        {
+          "name": "fan_count",
+          "tag": 13,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4059
+        },
+        {
+          "name": "atme_count",
+          "tag": 14,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4057
+        },
+        {
+          "name": "replyme_count",
+          "tag": 15,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4072
+        },
+        {
+          "name": "agree_count",
+          "tag": 16,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4056
+        },
+        {
+          "name": "data_type",
+          "tag": 17,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4058
+        },
+        {
+          "name": "hm_acuid",
+          "tag": 18,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4063
+        },
+        {
+          "name": "hm_oid",
+          "tag": 19,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4065
+        },
+        {
+          "name": "hm_needmp",
+          "tag": 20,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4064
+        }
+      ],
+      "response_descriptor": "Lprotobuf/GetGroupMsg/GetGroupMsgResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 4095
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/GetGroupMsg/DataRes;",
+          "repeated": false,
+          "field_index": 4094
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/GetLivableForumList/GetLivableForumListReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/GetLivableForumList/DataReq;",
+          "repeated": false,
+          "field_index": 4141
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/GetLivableForumList/DataReq;",
+      "request_fields": [
+        {
+          "name": "userId",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 4124
+        },
+        {
+          "name": "filterFlag",
+          "tag": 2,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4119
+        },
+        {
+          "name": "minLevel",
+          "tag": 3,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4121
+        },
+        {
+          "name": "likeForumFlag",
+          "tag": 4,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4120
+        },
+        {
+          "name": "pageSize",
+          "tag": 5,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4123
+        },
+        {
+          "name": "pageNo",
+          "tag": 6,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4122
+        }
+      ],
+      "response_descriptor": "Lprotobuf/GetLivableForumList/GetLivableForumListResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 4145
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/GetLivableForumList/DataRes;",
+          "repeated": false,
+          "field_index": 4144
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/GetMaskInfo/DataReq;",
+          "repeated": false,
+          "field_index": 4159
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/GetMaskInfo/DataReq;",
+      "request_fields": [
+        {
+          "name": "type",
+          "tag": 1,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 4148
+        }
+      ],
+      "response_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 4163
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/GetMaskInfo/DataRes;",
+          "repeated": false,
+          "field_index": 4162
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/LogStat/LogStatReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/LogStat/DataReq;",
+          "repeated": false,
+          "field_index": 4704
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/LogStat/DataReq;",
+      "request_fields": [
+        {
+          "name": "stType",
+          "tag": 1,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4702
+        },
+        {
+          "name": "stExt",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 4701
+        }
+      ],
+      "response_descriptor": "Lprotobuf/LogStat/LogStatResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 4708
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/LogStat/DataRes;",
+          "repeated": false,
+          "field_index": 4707
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/QueryForumDetail/QueryForumDetailReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/QueryForumDetail/DataReq;",
+          "repeated": false,
+          "field_index": 5673
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/QueryForumDetail/DataReq;",
+      "request_fields": [
+        {
+          "name": "forumId",
+          "tag": 1,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5664
+        },
+        {
+          "name": "forumName",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 5665
+        }
+      ],
+      "response_descriptor": "Lprotobuf/QueryForumDetail/QueryForumDetailResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 5677
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/QueryForumDetail/DataRes;",
+          "repeated": false,
+          "field_index": 5676
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/QueryHistoryMsg/QueryHistoryMsgReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/QueryHistoryMsg/DataReq;",
+          "repeated": false,
+          "field_index": 5724
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/QueryHistoryMsg/DataReq;",
+      "request_fields": [
+        {
+          "name": "forumId",
+          "tag": 1,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5698
+        },
+        {
+          "name": "userId",
+          "tag": 2,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 5703
+        },
+        {
+          "name": "id",
+          "tag": 3,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5700
+        },
+        {
+          "name": "width",
+          "tag": 4,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5704
+        },
+        {
+          "name": "height",
+          "tag": 5,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5699
+        },
+        {
+          "name": "smallWidth",
+          "tag": 6,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5702
+        },
+        {
+          "name": "smallHeight",
+          "tag": 7,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5701
+        }
+      ],
+      "response_descriptor": "Lprotobuf/QueryHistoryMsg/QueryHistoryMsgResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 5728
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/QueryHistoryMsg/DataRes;",
+          "repeated": false,
+          "field_index": 5727
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/QueryUserInfos/DataReq;",
+          "repeated": false,
+          "field_index": 5829
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/QueryUserInfos/DataReq;",
+      "request_fields": [
+        {
+          "name": "reqUserId",
+          "tag": 1,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 5770
+        }
+      ],
+      "response_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 5833
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/QueryUserInfos/DataRes;",
+          "repeated": false,
+          "field_index": 5832
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/SendMenuMsg/SendMenuMsgReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/SendMenuMsg/DataReq;",
+          "repeated": false,
+          "field_index": 5850
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/SendMenuMsg/DataReq;",
+      "request_fields": [
+        {
+          "name": "rid",
+          "tag": 1,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 5847
+        },
+        {
+          "name": "user_id",
+          "tag": 2,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 5848
+        },
+        {
+          "name": "forum_id",
+          "tag": 3,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 5846
+        }
+      ],
+      "response_descriptor": "Lprotobuf/SendMenuMsg/SendMenuMsgResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 5854
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/SendMenuMsg/DataRes;",
+          "repeated": false,
+          "field_index": 5853
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "cuid",
+          "tag": 1,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6220
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UpdateClientInfo/DataReq;",
+          "repeated": false,
+          "field_index": 6221
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/UpdateClientInfo/DataReq;",
+      "request_fields": [
+        {
+          "name": "bduss",
+          "tag": 1,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6188
+        },
+        {
+          "name": "device",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6189
+        },
+        {
+          "name": "secretKey",
+          "tag": 3,
+          "datatype": "BYTES",
+          "descriptor": "Lcom/squareup/wire/ByteString;",
+          "repeated": false,
+          "field_index": 6196
+        },
+        {
+          "name": "lat",
+          "tag": 4,
+          "datatype": "DOUBLE",
+          "descriptor": "Ljava/lang/Double;",
+          "repeated": false,
+          "field_index": 6192
+        },
+        {
+          "name": "lng",
+          "tag": 5,
+          "datatype": "DOUBLE",
+          "descriptor": "Ljava/lang/Double;",
+          "repeated": false,
+          "field_index": 6193
+        },
+        {
+          "name": "width",
+          "tag": 6,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6199
+        },
+        {
+          "name": "height",
+          "tag": 7,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6191
+        },
+        {
+          "name": "unread_msg",
+          "tag": 8,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6198
+        },
+        {
+          "name": "pub_env",
+          "tag": 9,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6195
+        },
+        {
+          "name": "project",
+          "tag": 10,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6194
+        },
+        {
+          "name": "groupId",
+          "tag": 11,
+          "datatype": "INT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 6190
+        },
+        {
+          "name": "stoken",
+          "tag": 12,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6197
+        }
+      ],
+      "response_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 6225
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UpdateClientInfo/DataRes;",
+          "repeated": false,
+          "field_index": 6224
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/UpdateForumMask/UpdateForumMaskReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UpdateForumMask/DataReq;",
+          "repeated": false,
+          "field_index": 6233
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/UpdateForumMask/DataReq;",
+      "request_fields": [
+        {
+          "name": "type",
+          "tag": 1,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6231
+        },
+        {
+          "name": "flag",
+          "tag": 2,
+          "datatype": "BOOL",
+          "descriptor": "Ljava/lang/Boolean;",
+          "repeated": false,
+          "field_index": 6230
+        }
+      ],
+      "response_descriptor": "Lprotobuf/UpdateForumMask/UpdateForumMaskResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 6237
+        },
+        {
+          "name": "data",
+          "tag": 2,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UpdateForumMask/DataRes;",
+          "repeated": false,
+          "field_index": 6236
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/UpdateMask/UpdateMaskReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UpdateMask/DataReq;",
+          "repeated": false,
+          "field_index": 6248
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/UpdateMask/DataReq;",
+      "request_fields": [
+        {
+          "name": "maskRemind",
+          "tag": 1,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6246
+        },
+        {
+          "name": "gids",
+          "tag": 2,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6244
+        },
+        {
+          "name": "isAdd",
+          "tag": 3,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6245
+        }
+      ],
+      "response_descriptor": "Lprotobuf/UpdateMask/UpdateMaskResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 6250
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
+    {
+      "request_descriptor": "Lprotobuf/UpdateMaskInfo/UpdateMaskInfoReqIdl;",
+      "request_wrapper": [
+        {
+          "name": "data",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/UpdateMaskInfo/DataReq;",
+          "repeated": false,
+          "field_index": 6270
+        }
+      ],
+      "request_data_descriptor": "Lprotobuf/UpdateMaskInfo/DataReq;",
+      "request_fields": [
+        {
+          "name": "type",
+          "tag": 1,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6268
+        },
+        {
+          "name": "isMask",
+          "tag": 2,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6265
+        },
+        {
+          "name": "list",
+          "tag": 3,
+          "datatype": "STRING",
+          "descriptor": "Ljava/lang/String;",
+          "repeated": false,
+          "field_index": 6267
+        },
+        {
+          "name": "g_id",
+          "tag": 4,
+          "datatype": "UINT64",
+          "descriptor": "Ljava/lang/Long;",
+          "repeated": false,
+          "field_index": 6264
+        },
+        {
+          "name": "call_from",
+          "tag": 5,
+          "datatype": "INT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6263
+        },
+        {
+          "name": "is_mute_notifications",
+          "tag": 6,
+          "datatype": "UINT32",
+          "descriptor": "Ljava/lang/Integer;",
+          "repeated": false,
+          "field_index": 6266
+        }
+      ],
+      "response_descriptor": "Lprotobuf/UpdateMaskInfo/UpdateMaskInfoResIdl;",
+      "response_wrapper": [
+        {
+          "name": "error",
+          "tag": 1,
+          "datatype": null,
+          "descriptor": "Lprotobuf/Error;",
+          "repeated": false,
+          "field_index": 6272
+        }
+      ],
+      "mapping_status": "schema-name-pair-only",
+      "endpoint": null,
+      "command": null
+    },
     {
       "request_descriptor": "Ltbclient/ActiveConfig/ActiveConfigReqIdl;",
       "request_wrapper": [

@@ -5,31 +5,31 @@
     "size": 87847605,
     "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
   },
-  "evidence_cutoff_utc": "2026-11-14T11:33:24.150Z",
+  "evidence_cutoff_utc": "2026-11-14T13:39:58.144Z",
   "scope": "All static candidates plus explicitly matched supplemental observations; reasons distinguish observations from pending analysis",
   "summary": {
     "candidates": 603,
     "unique_paths": 568,
-    "functionally_verified_candidates": 44,
-    "other_candidates": 559,
+    "functionally_verified_candidates": 45,
+    "other_candidates": 558,
     "best_statuses": {
       "accepted-empty-response": 30,
-      "business-error": 51,
+      "business-error": 53,
       "empty-response": 18,
       "excluded-origin": 2,
       "html-page-response": 107,
       "https-variant-verified": 1,
-      "json-data-returned": 73,
+      "json-data-returned": 72,
       "json-response-unverified": 3,
       "needs-request-construction": 1,
-      "negative-control-response": 181,
+      "negative-control-response": 177,
       "non-media-response": 1,
       "not-executed-stateful": 17,
       "redirect-response": 31,
       "response-fields-recognized": 2,
-      "response-schema-validated": 40,
+      "response-schema-validated": 42,
       "unrecognized-business-status": 1,
-      "verified-read": 24,
+      "verified-read": 25,
       "verified-state-change": 20
     },
     "execution_statuses": {
@@ -37,10 +37,10 @@
       "not-requested": 19
     },
     "validation_tiers": {
-      "anonymous-diagnostic-only": 180,
-      "business-validation-incomplete": 204,
+      "anonymous-diagnostic-only": 176,
+      "business-validation-incomplete": 207,
       "excluded-by-user": 52,
-      "functionally-verified": 44,
+      "functionally-verified": 45,
       "other-origin": 2,
       "web-route-response-recorded": 121
     },
@@ -51,15 +51,15 @@
     },
     "limitations": {
       "already-completed": 1,
-      "anonymous-negative-control-only": 180,
+      "anonymous-negative-control-only": 176,
       "deleted-thread-first-post-cleanup-rejected": 1,
       "empty-http-response": 13,
-      "functional-assertions-incomplete": 111,
+      "functional-assertions-incomplete": 112,
       "html-page-confirmed": 85,
       "http-source-https-variant-tested": 2,
       "media-fixture-missing-after-negative-control": 1,
       "membership-required": 2,
-      "nonempty-fixture-needed": 30,
+      "nonempty-fixture-needed": 29,
       "not-in-requested-scope": 52,
       "operation-and-restore-plan-needed": 1,
       "origin-not-selected": 2,
@@ -67,20 +67,20 @@
       "partial-deletion-semantics": 2,
       "redirect-observed": 19,
       "request-or-response-construction-needed": 11,
-      "server-error-unresolved": 48,
-      "verified-in-recorded-scope": 39
+      "server-error-unresolved": 51,
+      "verified-in-recorded-scope": 40
     },
     "business_tests_pending": {
       "collection-replacement-and-restore": 1,
       "controlled-phone-target": 1,
       "dedicated-account-fixture": 1,
       "domain-object-and-cleanup": 13,
-      "event-contract-and-observation": 17,
+      "event-contract-and-observation": 15,
       "order-or-payment-fixture": 13,
       "owned-object-and-rollback": 26,
-      "request-and-rollback-construction": 59,
+      "request-and-rollback-construction": 58,
       "request-construction-needed": 26,
-      "specific-conversation-or-ai-fixture": 23
+      "specific-conversation-or-ai-fixture": 22
     }
   },
   "rows": [
@@ -6886,29 +6886,28 @@
       "verified_url": null,
       "attempts": [],
       "historical_status": "not-executed-stateful",
-      "best_status": "negative-control-response",
+      "best_status": "response-schema-validated",
       "latest_observation": {
         "path": "/c/c/img/getShareImg",
         "command": null,
-        "observed_at_utc": "2026-11-14T07:04:07.979Z",
-        "status": "negative-control-response",
-        "error_code": "110001",
-        "error_message": "未知错误",
-        "candidate_ids": [
-          "2378ae3d0232f639"
-        ],
+        "observed_at_utc": "2026-11-14T12:52:09.061Z",
+        "status": "response-schema-validated",
+        "error_code": "0",
         "http_status": 200,
-        "response_sha256": "129aab8daf93fab9644fe6f9906d17276b2e505b6ba528ac6307b3cef37f70f2",
-        "phase": "anonymous-boundaries",
-        "condition": null,
-        "negative_control": true,
-        "authenticated": false,
+        "response_sha256": "95003472f3b347aea6c0d8f2ff7016ac5063d913c9554866249ee47316c3cfeb",
+        "phase": "source-derived-http-reads",
+        "condition": "img_url returned; same-host HTTPS download succeeded; target image identity is not established",
+        "negative_control": false,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [],
+        "input_fields": [
+          "forum_id",
+          "type"
+        ],
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/continued-discovery-validation.json"
       },
       "supplemental_observations": [
         {
@@ -6933,12 +6932,56 @@
           "input_fields": [],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/c/img/getShareImg",
+          "command": null,
+          "observed_at_utc": "2026-11-14T12:52:08.368Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "840ccd97e196de702113c75664ad030806bcf89c3f5f6c516bd1fc9f1829f2c8",
+          "phase": "source-derived-http-reads",
+          "condition": "img_url returned; same-host HTTPS download succeeded; target image identity is not established",
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "thread_id",
+            "type"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
+        },
+        {
+          "path": "/c/c/img/getShareImg",
+          "command": null,
+          "observed_at_utc": "2026-11-14T12:52:09.061Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "95003472f3b347aea6c0d8f2ff7016ac5063d913c9554866249ee47316c3cfeb",
+          "phase": "source-derived-http-reads",
+          "condition": "img_url returned; same-host HTTPS download succeeded; target image identity is not established",
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "forum_id",
+            "type"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
         }
       ],
       "limitation": {
-        "kind": "anonymous-negative-control-only",
+        "kind": "functional-assertions-incomplete",
         "basis": "observed",
-        "reason": "仅完成匿名、无目标参数的请求诊断；已记录 HTTP 与业务状态，但未验证有效登录态下的业务能力，不能把该返回当作两个测试账号的权限限制。"
+        "reason": "已有业务返回或结构核对，尚未完成该能力的对象、边界或完整流程验收。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -6949,13 +6992,8 @@
       },
       "execution_status": "http-response-recorded",
       "disposition": "tested-with-recorded-result",
-      "validation_tier": "anonymous-diagnostic-only",
-      "next_business_test": {
-        "kind": "request-and-rollback-construction",
-        "basis": "analysis",
-        "request_fields_seen": [],
-        "reason": "业务写入的完整参数、受控对象、基线或恢复步骤仍需逐项建立；现有匿名返回不证明该账号无法使用。"
-      }
+      "validation_tier": "business-validation-incomplete",
+      "next_business_test": null
     },
     {
       "id": "e74a08ca3d2754c0",
@@ -25301,32 +25339,29 @@
       "verified_url": null,
       "attempts": [],
       "historical_status": "needs-request-construction",
-      "best_status": "json-data-returned",
+      "best_status": "verified-read",
       "latest_observation": {
         "path": "/c/f/forum/like",
         "command": null,
-        "observed_at_utc": "2026-11-14T07:05:13.262Z",
-        "status": "json-data-returned",
+        "observed_at_utc": "2026-11-14T13:39:58.144Z",
+        "status": "verified-read",
         "error_code": "0",
-        "candidate_ids": [
-          "84814c3630044641"
-        ],
+        "checks": {
+          "nonempty_owned_forum_list": true,
+          "all_socket_page_forums_present": true
+        },
         "http_status": 200,
-        "response_sha256": "78f8bb175bc3b0fb04a9dc7a8187a820955ffee799f97b452ecf323e903d2297",
-        "phase": "reviewed-json-reads",
+        "response_sha256": "cad0e9aed69960a61fc5544ab7c4e282ae944a71ee33bee57193f37d5626edec",
+        "phase": "share-image-media-and-forum-cross-check",
         "condition": null,
         "negative_control": false,
         "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [
-          "uid",
-          "page_size",
-          "page_no"
-        ],
+        "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/continued-discovery-validation.json"
       },
       "supplemental_observations": [
         {
@@ -25377,12 +25412,35 @@
           ],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/f/forum/like",
+          "command": null,
+          "observed_at_utc": "2026-11-14T13:39:58.144Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "nonempty_owned_forum_list": true,
+            "all_socket_page_forums_present": true
+          },
+          "http_status": 200,
+          "response_sha256": "cad0e9aed69960a61fc5544ab7c4e282ae944a71ee33bee57193f37d5626edec",
+          "phase": "share-image-media-and-forum-cross-check",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
         }
       ],
       "limitation": {
-        "kind": "functional-assertions-incomplete",
+        "kind": "verified-in-recorded-scope",
         "basis": "observed",
-        "reason": "已有业务返回或结构核对，尚未完成该能力的对象、边界或完整流程验收。"
+        "reason": "已有对象或状态变化核对；仅覆盖报告记录的账号、样本和时间。"
       },
       "construction_review": {
         "direct_reference_count": 2,
@@ -25402,7 +25460,7 @@
       },
       "execution_status": "http-response-recorded",
       "disposition": "tested-with-recorded-result",
-      "validation_tier": "business-validation-incomplete",
+      "validation_tier": "functionally-verified",
       "next_business_test": null
     },
     {
@@ -29611,25 +29669,21 @@
       "latest_observation": {
         "path": "/c/f/pb/page",
         "command": "302001",
-        "observed_at_utc": "2026-11-14T10:47:04.600Z",
+        "observed_at_utc": "2026-11-14T13:38:13.778Z",
         "status": "verified-read",
         "error_code": "0",
-        "checks": {
-          "bounded_cycle_verified": true,
-          "baseline_restored": true
-        },
         "http_status": 200,
-        "response_sha256": "8892b2b78e64711f30c53387337df7f159472ccca4a27da6bbe9c39ea126905a",
-        "phase": "client-controlled-cycles",
+        "response_sha256": "5e9a9b8cd32f8b70d394c27f20120f08564d58c7922651e2bebbf7b9b3e74cd0",
+        "phase": "share-image-media-and-forum-cross-check",
         "condition": null,
         "negative_control": false,
-        "authenticated": true,
+        "authenticated": null,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
         "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/expanded-api-validation.json"
+        "source": "evidence/continued-discovery-validation.json"
       },
       "supplemental_observations": [
         {
@@ -30047,6 +30101,47 @@
           "input_fields": null,
           "omitted_fields": null,
           "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": 302001,
+          "observed_at_utc": "2026-11-14T12:52:07.438Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "requested_thread_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "1c14def0cef07613dac4ab04b9a1989ec8e2ea0aeaaf5c6ae87b8b7f0000b791",
+          "phase": "source-derived-http-reads",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T13:38:13.778Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "5e9a9b8cd32f8b70d394c27f20120f08564d58c7922651e2bebbf7b9b3e74cd0",
+          "phase": "share-image-media-and-forum-cross-check",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": null,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
         }
       ],
       "limitation": {
@@ -30202,25 +30297,21 @@
       "latest_observation": {
         "path": "/c/f/pb/page",
         "command": "302001",
-        "observed_at_utc": "2026-11-14T10:47:04.600Z",
+        "observed_at_utc": "2026-11-14T13:38:13.778Z",
         "status": "verified-read",
         "error_code": "0",
-        "checks": {
-          "bounded_cycle_verified": true,
-          "baseline_restored": true
-        },
         "http_status": 200,
-        "response_sha256": "8892b2b78e64711f30c53387337df7f159472ccca4a27da6bbe9c39ea126905a",
-        "phase": "client-controlled-cycles",
+        "response_sha256": "5e9a9b8cd32f8b70d394c27f20120f08564d58c7922651e2bebbf7b9b3e74cd0",
+        "phase": "share-image-media-and-forum-cross-check",
         "condition": null,
         "negative_control": false,
-        "authenticated": true,
+        "authenticated": null,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
         "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/expanded-api-validation.json"
+        "source": "evidence/continued-discovery-validation.json"
       },
       "supplemental_observations": [
         {
@@ -30638,6 +30729,47 @@
           "input_fields": null,
           "omitted_fields": null,
           "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": 302001,
+          "observed_at_utc": "2026-11-14T12:52:07.438Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "requested_thread_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "1c14def0cef07613dac4ab04b9a1989ec8e2ea0aeaaf5c6ae87b8b7f0000b791",
+          "phase": "source-derived-http-reads",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T13:38:13.778Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "5e9a9b8cd32f8b70d394c27f20120f08564d58c7922651e2bebbf7b9b3e74cd0",
+          "phase": "share-image-media-and-forum-cross-check",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": null,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
         }
       ],
       "limitation": {
@@ -33153,29 +33285,26 @@
       "verified_url": null,
       "attempts": [],
       "historical_status": "needs-telemetry-test-environment",
-      "best_status": "negative-control-response",
+      "best_status": "business-error",
       "latest_observation": {
         "path": "/c/f/shop/getUserKjsStatus",
         "command": null,
-        "observed_at_utc": "2026-11-14T07:04:34.919Z",
-        "status": "negative-control-response",
-        "error_code": "110001",
-        "error_message": "未知错误",
-        "candidate_ids": [
-          "658a98752ea7287d"
-        ],
+        "observed_at_utc": "2026-11-14T12:52:07.645Z",
+        "status": "business-error",
+        "error_code": "210009",
+        "error_message": "系统错误",
         "http_status": 200,
-        "response_sha256": "b0b3912bb175b515afea4bfd3426eafdd4d38c43042ec7ef6fd7c074891990af",
-        "phase": "anonymous-boundaries",
+        "response_sha256": "9686cfd708a6f7c2a78d796a020028a3de91fe0ac060741db0354b86a1847701",
+        "phase": "source-derived-http-reads",
         "condition": null,
-        "negative_control": true,
-        "authenticated": false,
+        "negative_control": false,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
         "input_fields": [],
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/continued-discovery-validation.json"
       },
       "supplemental_observations": [
         {
@@ -33200,12 +33329,32 @@
           "input_fields": [],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/f/shop/getUserKjsStatus",
+          "command": null,
+          "observed_at_utc": "2026-11-14T12:52:07.645Z",
+          "status": "business-error",
+          "error_code": "210009",
+          "error_message": "系统错误",
+          "http_status": 200,
+          "response_sha256": "9686cfd708a6f7c2a78d796a020028a3de91fe0ac060741db0354b86a1847701",
+          "phase": "source-derived-http-reads",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [],
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
         }
       ],
       "limitation": {
-        "kind": "anonymous-negative-control-only",
+        "kind": "server-error-unresolved",
         "basis": "observed",
-        "reason": "仅完成匿名、无目标参数的请求诊断；已记录 HTTP 与业务状态，但未验证有效登录态下的业务能力，不能把该返回当作两个测试账号的权限限制。"
+        "reason": "当前请求返回业务码 210009；参数、权限、场景或服务端原因尚未区分，不能据此认定登录失效。"
       },
       "construction_review": {
         "direct_reference_count": 2,
@@ -33216,13 +33365,8 @@
       },
       "execution_status": "http-response-recorded",
       "disposition": "tested-with-recorded-result",
-      "validation_tier": "anonymous-diagnostic-only",
-      "next_business_test": {
-        "kind": "event-contract-and-observation",
-        "basis": "analysis",
-        "request_fields_seen": [],
-        "reason": "仅验证匿名空事件的返回；尚未恢复真实事件语义、字段与服务端可观测验收条件。"
-      }
+      "validation_tier": "business-validation-incomplete",
+      "next_business_test": null
     },
     {
       "id": "d24fa0d9687851aa",
@@ -33526,29 +33670,29 @@
       "verified_url": null,
       "attempts": [],
       "historical_status": "needs-request-construction",
-      "best_status": "negative-control-response",
+      "best_status": "response-schema-validated",
       "latest_observation": {
         "path": "/c/f/sprite/getSpriteChatDetail",
         "command": null,
-        "observed_at_utc": "2026-11-14T07:04:36.109Z",
-        "status": "negative-control-response",
-        "error_code": "110001",
-        "error_message": "未知错误",
-        "candidate_ids": [
-          "d520b06b853c086a"
-        ],
+        "observed_at_utc": "2026-11-14T12:52:10.264Z",
+        "status": "response-schema-validated",
+        "error_code": "0",
         "http_status": 200,
-        "response_sha256": "b9e65ddd93f335b36574d1efb1e8e46ef6a0305452cea1c0036008b5823c6d44",
-        "phase": "anonymous-boundaries",
-        "condition": null,
-        "negative_control": true,
-        "authenticated": false,
+        "response_sha256": "d8a2512339e169cf523eb0e697a8a38ceec60d0fe0477f014bae8b42b1181442",
+        "phase": "source-derived-http-reads",
+        "condition": "guide_info.need_loading only; no conversation sent or verified",
+        "negative_control": false,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [],
+        "input_fields": [
+          "from",
+          "scene",
+          "query"
+        ],
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/continued-discovery-validation.json"
       },
       "supplemental_observations": [
         {
@@ -33573,12 +33717,35 @@
           "input_fields": [],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/f/sprite/getSpriteChatDetail",
+          "command": null,
+          "observed_at_utc": "2026-11-14T12:52:10.264Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "d8a2512339e169cf523eb0e697a8a38ceec60d0fe0477f014bae8b42b1181442",
+          "phase": "source-derived-http-reads",
+          "condition": "guide_info.need_loading only; no conversation sent or verified",
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "from",
+            "scene",
+            "query"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
         }
       ],
       "limitation": {
-        "kind": "anonymous-negative-control-only",
+        "kind": "functional-assertions-incomplete",
         "basis": "observed",
-        "reason": "仅完成匿名、无目标参数的请求诊断；已记录 HTTP 与业务状态，但未验证有效登录态下的业务能力，不能把该返回当作两个测试账号的权限限制。"
+        "reason": "已有业务返回或结构核对，尚未完成该能力的对象、边界或完整流程验收。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -33589,13 +33756,8 @@
       },
       "execution_status": "http-response-recorded",
       "disposition": "tested-with-recorded-result",
-      "validation_tier": "anonymous-diagnostic-only",
-      "next_business_test": {
-        "kind": "specific-conversation-or-ai-fixture",
-        "basis": "analysis",
-        "request_fields_seen": [],
-        "reason": "需恢复该 HTTP 业务的会话、聊天室、机器人或消息对象和清理步骤；现有普通 IM 与 SDK 群的成功不能自动验证此路径。"
-      }
+      "validation_tier": "business-validation-incomplete",
+      "next_business_test": null
     },
     {
       "id": "6d9994801da2ccd3",
@@ -51360,29 +51522,28 @@
       "verified_url": null,
       "attempts": [],
       "historical_status": "needs-telemetry-test-environment",
-      "best_status": "negative-control-response",
+      "best_status": "business-error",
       "latest_observation": {
         "path": "/c/x/aigc/getBdtAigcAnswerStatus",
         "command": null,
-        "observed_at_utc": "2026-11-14T07:04:57.432Z",
-        "status": "negative-control-response",
-        "error_code": "110001",
-        "error_message": "未知错误",
-        "candidate_ids": [
-          "55f51f80a52601fe"
-        ],
+        "observed_at_utc": "2026-11-14T12:52:09.145Z",
+        "status": "business-error",
+        "error_code": "210009",
+        "error_message": "系统错误",
         "http_status": 200,
-        "response_sha256": "8a2aa15376959d651c87b4d6f96a119053fc207266f4c92387686f3e4e29dac9",
-        "phase": "anonymous-boundaries",
+        "response_sha256": "44453d61abc16413d62ebf6af8014c3215a9ca6b7c5e63eb8198980b95d611a3",
+        "phase": "source-derived-http-reads",
         "condition": null,
-        "negative_control": true,
+        "negative_control": false,
         "authenticated": false,
-        "missing_fixture": null,
+        "missing_fixture": "AI-answer thread",
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [],
+        "input_fields": [
+          "tid"
+        ],
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/continued-discovery-validation.json"
       },
       "supplemental_observations": [
         {
@@ -51407,12 +51568,34 @@
           "input_fields": [],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/x/aigc/getBdtAigcAnswerStatus",
+          "command": null,
+          "observed_at_utc": "2026-11-14T12:52:09.145Z",
+          "status": "business-error",
+          "error_code": "210009",
+          "error_message": "系统错误",
+          "http_status": 200,
+          "response_sha256": "44453d61abc16413d62ebf6af8014c3215a9ca6b7c5e63eb8198980b95d611a3",
+          "phase": "source-derived-http-reads",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": false,
+          "missing_fixture": "AI-answer thread",
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "tid"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
         }
       ],
       "limitation": {
-        "kind": "anonymous-negative-control-only",
+        "kind": "server-error-unresolved",
         "basis": "observed",
-        "reason": "仅完成匿名、无目标参数的请求诊断；已记录 HTTP 与业务状态，但未验证有效登录态下的业务能力，不能把该返回当作两个测试账号的权限限制。"
+        "reason": "当前请求返回业务码 210009；参数、权限、场景或服务端原因尚未区分，不能据此认定登录失效。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -51423,13 +51606,8 @@
       },
       "execution_status": "http-response-recorded",
       "disposition": "tested-with-recorded-result",
-      "validation_tier": "anonymous-diagnostic-only",
-      "next_business_test": {
-        "kind": "event-contract-and-observation",
-        "basis": "analysis",
-        "request_fields_seen": [],
-        "reason": "仅验证匿名空事件的返回；尚未恢复真实事件语义、字段与服务端可观测验收条件。"
-      }
+      "validation_tier": "business-validation-incomplete",
+      "next_business_test": null
     },
     {
       "id": "cc4bf21acf76c66d",
@@ -51469,21 +51647,26 @@
       "latest_observation": {
         "path": "/c/x/sprite/getGuideInfo",
         "command": null,
-        "observed_at_utc": "2026-11-14T04:03:18.185Z",
-        "status": "accepted-empty-response",
-        "error_code": "0",
+        "observed_at_utc": "2026-11-14T12:52:10.345Z",
+        "status": "business-error",
+        "error_code": "210009",
+        "error_message": "系统错误",
         "http_status": 200,
-        "response_sha256": "f615a6c6d9773dedfd2ea0e69b80414900836a5f3d9b80acfe7adc3b96995036",
-        "phase": "legacy-reads-account2",
+        "response_sha256": "293f6037792be25a92bc3f93ac6cd98b938eb25d0a1e002b9635302ec54d27e2",
+        "phase": "source-derived-http-reads",
         "condition": null,
         "negative_control": false,
-        "authenticated": null,
+        "authenticated": false,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": null,
+        "input_fields": [
+          "from",
+          "scene",
+          "query"
+        ],
         "omitted_fields": null,
-        "source": "evidence/comprehensive-validation.json"
+        "source": "evidence/continued-discovery-validation.json"
       },
       "supplemental_observations": [
         {
@@ -51504,12 +51687,36 @@
           "input_fields": null,
           "omitted_fields": null,
           "source": "evidence/comprehensive-validation.json"
+        },
+        {
+          "path": "/c/x/sprite/getGuideInfo",
+          "command": null,
+          "observed_at_utc": "2026-11-14T12:52:10.345Z",
+          "status": "business-error",
+          "error_code": "210009",
+          "error_message": "系统错误",
+          "http_status": 200,
+          "response_sha256": "293f6037792be25a92bc3f93ac6cd98b938eb25d0a1e002b9635302ec54d27e2",
+          "phase": "source-derived-http-reads",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": false,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "from",
+            "scene",
+            "query"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/continued-discovery-validation.json"
         }
       ],
       "limitation": {
-        "kind": "nonempty-fixture-needed",
+        "kind": "server-error-unresolved",
         "basis": "observed",
-        "reason": "当前样本返回成功但为空，缺少可核对的非空业务对象。"
+        "reason": "当前请求返回业务码 210009；参数、权限、场景或服务端原因尚未区分，不能据此认定登录失效。"
       },
       "construction_review": {
         "direct_reference_count": 1,
