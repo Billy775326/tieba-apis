@@ -1,4 +1,5 @@
-﻿import {
+import { summarizeLegacyJson } from "../src/response-classification.mjs";
+import {
   ALL_LEGACY_READ_PATHS as LEGACY_READ_PATHS,
   ADDITIONAL_READ_PATHS,
   SELF_READ_PATHS,
@@ -46,11 +47,13 @@ const values = {
   tid: first(thread, 1),
   kz: first(thread, 1),
   pid: first(post, 1),
-  uid: first(post, 19),
-  user_id: first(post, 19),
+  uid: account?.uid ?? first(post, 19),
+  user_id: account?.uid ?? first(post, 19),
   pn: "1",
   rn: "2",
   ...(account?.BDUSS ? { BDUSS: account.BDUSS } : {}),
+  ...(account?.tbs ? { tbs: account.tbs } : {}),
+  _timestamp: String(Date.now()),
 };
 const defaultBody = process.argv.includes("--signed")
   ? legacyForm(values)
@@ -65,17 +68,6 @@ const report = {
   signature_mode: process.argv.includes("--signed") ? "APK-legacy-MD5" : "none",
   results: [],
 };
-const controlKeys = new Set([
-  "error_code",
-  "error_msg",
-  "error",
-  "msg",
-  "code",
-  "server_time",
-  "time",
-  "logid",
-  "ctime",
-]);
 for (const path of cases) {
   let raw;
   const selfValues = Object.fromEntries(
@@ -95,11 +87,14 @@ for (const path of cases) {
   });
   const row = {
     path,
+    observed_at_utc: new Date().toISOString(),
     http_status: r.http_status ?? null,
     response_sha256: r.response_sha256 ?? null,
     response_bytes: r.response_bytes ?? null,
     credentials_supplied: !!account?.BDUSS,
     status: "transport-incomplete",
+    transport_error: r.error ?? null,
+    ...(r.redirect_origin ? { redirect_origin: r.redirect_origin } : {}),
   };
   if (raw) {
     fs.writeFileSync(
@@ -110,29 +105,9 @@ for (const path of cases) {
     );
     try {
       const data = JSON.parse(raw.toString("utf8"));
-      row.error_code =
-        data.error_code !== undefined ? String(data.error_code) : null;
-      row.business_field_names = Object.keys(data).filter(
-        (k) => !controlKeys.has(k),
-      );
-      const payload = row.business_field_names.some((k) => {
-        const v = data[k];
-        return Array.isArray(v)
-          ? v.length > 0
-          : v && typeof v === "object"
-            ? Object.keys(v).length > 0
-            : false;
-      });
-      row.status =
-        row.error_code === "0"
-          ? payload
-            ? "json-data-returned"
-            : "accepted-empty-response"
-          : row.error_code
-            ? "business-error"
-            : "unrecognized-business-status";
+      Object.assign(row, summarizeLegacyJson(data));
     } catch {
-      row.status = "non-json-response";
+      row.status = r.http_status >= 300 && r.http_status < 400 ? "redirect-response" : "non-json-response";
     }
   }
   report.results.push(row);

@@ -67,3 +67,14 @@ test("local response processing errors are reported separately from transport", 
   assert.equal(r.classification, "response-processing-failure");
   assert.equal(r.business_success, null);
 });
+
+test("redirect diagnostics omit query secrets and never follow the target", async (t) => {
+  let requests=0;
+  const url=await fixture(t,(req,res)=>{requests++;res.writeHead(302,{Location:"https://passport.baidu.com/login?token=fixture-secret"});res.end("moved");});
+  const r=await probe(url);
+  assert.equal(r.http_status,302);
+  assert.equal(r.redirect_origin,"https://passport.baidu.com");
+  assert.equal(r.redirect_protocol,"https:");
+  assert(!JSON.stringify(r).includes("fixture-secret"));
+  assert.equal(requests,1);
+});
