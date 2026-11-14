@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "thread_id": "11185790604",
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "scope": {
+    "thread_owned_by_test_account": false,
+    "authorized_actions": [
+      "create-one-test-reply",
+      "create-one-subreply-on-test-reply",
+      "delete-only-these-created-items"
+    ],
+    "other_users_content_modified": false
+  },
+  "authentication": {
+    "official_web_login_confirmed": true,
+    "native_pbpage_user_id_matches_web_logged_in_user_id": true,
+    "tbs_source": "PbPage.DataRes.anti.tbs",
+    "native_pbpage_business_error_code": "0",
+    "secrets_and_user_identifiers": "omitted"
+  },
+  "request_sources": {
+    "addpost": {
+      "path": "c/c/post/add",
+      "cmd": 309731,
+      "format": "protobuf-multipart",
+      "apk_methods": [
+        "com.baidu.tieba.write.message.AddPostRequest.<init>",
+        "com.baidu.tieba.write.message.AddPostRequest.encode"
+      ],
+      "evidence_ids": [
+        "ev_4d8a9e5ab1200a7bfea54154d27699f1d08ca6091d38a028cb1d25e1ba6cda24",
+        "ev_b8cd98ad2ece8a7c6a6d4a80deea35d78a19dee14ca674d330bad32d19d97ceb"
+      ]
+    },
+    "delete": {
+      "path": "c/c/bawu/delpost",
+      "format": "legacy-signed-form",
+      "path_source": "APK static literal",
+      "signature_source": "APK NetWork.addSign",
+      "parameters_source": "minimal legacy form; pid/fid/z/word/owner_uid also cross-checked against official PC delete handler",
+      "apk_delete_task_body_recovered": false,
+      "web_references": [
+        "https://tb3.bdstatic.com/tb/pc/pc-main-core/static/js/pb.160c8c07.js",
+        "https://tb3.bdstatic.com/tb/pc/pc-main-core/static/js/index.513973fe.js"
+      ]
+    }
+  },
+  "result": {
+    "reply_creation_verified": true,
+    "subreply_creation_verified": true,
+    "parent_child_relation_verified": true,
+    "delete_acknowledgements": 2,
+    "created_items_absent_after_delete": true,
+    "original_thread_readable_after_cleanup": true,
+    "created_items": 2,
+    "remaining_test_items": 0
+  },
+  "operations": [
+    {
+      "name": "create-parent",
+      "observed_at_utc": "2026-11-14T01:42:37.115Z",
+      "path": "c/c/post/add",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 550,
+      "response_sha256": "e50291e206fd4191f9d6470a6ff9cee579e6e6225ffe05ca27e66baf8a68b5d4",
+      "status": "business-success",
+      "checks": {
+        "created_id_returned": true,
+        "thread_matches": true
+      }
+    },
+    {
+      "name": "verify-parent",
+      "observed_at_utc": "2026-11-14T01:43:19.864Z",
+      "path": "c/f/pb/getPostList",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 275,
+      "response_sha256": "564010c0d2f9ab468fc92c67b015af53953e9f46aad5a5d6c958017815bb7a7d",
+      "checks": {
+        "requested_id_matches": true,
+        "test_marker_matches": true,
+        "author_matches": false
+      },
+      "status": "parser-needed-nested-author"
+    },
+    {
+      "name": "verify-parent",
+      "observed_at_utc": "2026-11-14T01:43:50.932Z",
+      "path": "c/f/pb/getPostList",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 275,
+      "response_sha256": "564010c0d2f9ab468fc92c67b015af53953e9f46aad5a5d6c958017815bb7a7d",
+      "checks": {
+        "requested_id_matches": true,
+        "test_marker_matches": true,
+        "author_matches": true
+      },
+      "status": "verified-read"
+    },
+    {
+      "name": "create-child",
+      "observed_at_utc": "2026-11-14T01:43:52.650Z",
+      "path": "c/c/post/add",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 550,
+      "response_sha256": "380b76ad8487b11b4829d8cf187edbbbe4d1cb30143f7dab58326f8d6a122546",
+      "status": "business-success",
+      "checks": {
+        "created_id_returned": true,
+        "thread_matches": true
+      }
+    },
+    {
+      "name": "verify-child",
+      "observed_at_utc": "2026-11-14T01:44:06.836Z",
+      "path": "c/f/pb/getPostList",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 278,
+      "response_sha256": "c269e378988e1ef13d3ef2a9b7c393a0c6734cd3a7f319c42ebe65066e37e418",
+      "status": "business-success",
+      "checks": {
+        "requested_id_matches": true,
+        "author_matches": true,
+        "test_marker_matches": true
+      }
+    },
+    {
+      "name": "verify-floor",
+      "observed_at_utc": "2026-11-14T01:44:31.345Z",
+      "path": "c/f/pb/floor",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 9359,
+      "response_sha256": "3f340c32c3d6ff6dacdab6fa5821d28053324dc52923bab6338b4a100e04a4bb",
+      "status": "business-success",
+      "checks": {
+        "parent_matches": true,
+        "child_present_in_parent": true
+      }
+    },
+    {
+      "name": "delete-child",
+      "observed_at_utc": "2026-11-14T01:44:31.958Z",
+      "path": "c/c/bawu/delpost",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 88,
+      "response_sha256": "56caf4971e9b5ddd62576b388d19b4016a13568d131b542a8ce06ce1a3682c62",
+      "status": "business-success"
+    },
+    {
+      "name": "delete-parent",
+      "observed_at_utc": "2026-11-14T01:44:49.149Z",
+      "path": "c/c/bawu/delpost",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 88,
+      "response_sha256": "d7aec047d8b553cf3fe8fa1ed84d408f629f296d7bb24b26d4561b69ef522fa5",
+      "status": "business-success"
+    },
+    {
+      "name": "verify-cleaned",
+      "observed_at_utc": "2026-11-14T01:45:21.372Z",
+      "path": "c/f/pb/getPostList",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 10,
+      "response_sha256": "3ce6676c7e428a40287f145604bfc02c9ec10b82f93db66005a8f663d171d3f4",
+      "status": "business-success",
+      "checks": {
+        "created_ids_absent": true,
+        "empty_post_list": true
+      }
+    },
+    {
+      "name": "original-thread-after-cleanup",
+      "observed_at_utc": "2026-11-14T01:45:22.192Z",
+      "path": "c/f/pb/page",
+      "http_status": 200,
+      "error_code": "0",
+      "response_bytes": 33402,
+      "response_sha256": "45d050f49b08ab1d12b16165b547674f779094a75a5358c122262330091f3934",
+      "status": "business-success",
+      "checks": {
+        "thread_matches": true
+      }
+    }
+  ],
+  "limitations": [
+    "Results cover this account and this supplied thread only.",
+    "First parent-author check used absent Post.author_id; subsequent check used APK Post.author.id and matched.",
+    "Deletion success requires acknowledgement plus absence on a subsequent ID-targeted read.",
+    "No main-thread creation/deletion, follow, private message, moderation or payment was tested.",
+    "Historical full-candidate counts were not regenerated."
+  ]
+}

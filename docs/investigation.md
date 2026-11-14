@@ -41,13 +41,13 @@ $env:REA_JADX_MCP_JAR = (Resolve-Path '.local/jadx-complete.jar').Path
 node .local/rea-runtime/node_modules/rea-agents/scripts/rea.mjs inspect-android-package 'D:/targets/example.apk' --format json
 ```
 
-APK 路径为示例。现已通过实际请求确认本次最小匿名 Protobuf multipart 构造可用于 5 类读取能力，见 [验证报告](validation.md)。扩展请求已覆盖 195 个不同路径，其中 105 个返回过非空数据，见 [全量覆盖报告](full-coverage.md)。后续可据此整理 SDK；App 身份匹配、写接口及完整发送链路仍需单独分析。
+APK 路径为示例。现已通过实际请求确认本次最小匿名 Protobuf multipart 构造可用于 5 类读取能力，见 [验证报告](validation.md)。扩展请求已覆盖 195 个不同路径，其中 105 个返回过非空数据，见 [全量覆盖报告](full-coverage.md)。后续可据此整理 SDK；指定帖已补测 App 身份匹配、回复、楼中楼及自身测试内容删除，见 [定向验证](thread-validation.md)。其余写接口及完整发送链路仍需单独分析。
 
 ## 验证边界
 
 已对真实 APK 完成路径和字段提取。提取器通过重复源位置、路径误匹配、截断 DEX 和未知 DEX 版本测试。
 
-REA/JADX 已成功检查包名 `com.baidu.tieba`、版本 `22.13.1.1`、52,181 个类和 10,941 个资源，摘要及父 Evidence ID 见 [APK 摘要](../evidence/apk-summary.json)。已成功读取 `FrsPageRequestMessage` 的成员及构造函数；构造函数引用 cmd `301001`，包含 Titan 热修复拦截分支，不能将静态逻辑等同于当前运行路径。现已完成五类匿名读取的对象核对及扩展读取尝试，并确认官方网页登录成功；这不等于所有 App 接口接受该身份。尚未完成全量功能验收、App 传输逐字节对照、APK 签名验证或设备测试。没有运行目标 App，也没有发送发帖、回复、关注或私信操作。
+REA/JADX 已成功检查包名 `com.baidu.tieba`、版本 `22.13.1.1`、52,181 个类和 10,941 个资源，摘要及父 Evidence ID 见 [APK 摘要](../evidence/apk-summary.json)。已成功读取 `FrsPageRequestMessage` 的成员及构造函数；构造函数引用 cmd `301001`，包含 Titan 热修复拦截分支，不能将静态逻辑等同于当前运行路径。现已完成五类匿名读取的对象核对及扩展读取尝试，并确认官方网页登录成功；这不等于所有 App 接口接受该身份。尚未完成全量功能验收、App 传输逐字节对照、APK 签名验证或设备测试。没有运行目标 App；后续在用户明确授权的指定帖发送并清理了两条测试回复，尚未执行主帖发布、关注或私信操作。
 
 ## 实际参考资料
 
