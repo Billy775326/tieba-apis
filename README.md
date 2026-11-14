@@ -1,97 +1,113 @@
 ﻿# Tieba APIs
 
-基于百度贴吧 Android 22.13.1.1 APK 的接口研究与验证仓库，提供静态证据、协议字段、验证脚本和脱敏实测报告。适合继续研究请求构造与接口客户端；目前尚未提供完整 SDK，也没有完成所有候选的功能验收。
+百度贴吧 Android 22.13.1.1 的接口客户端与逆向验证项目，使用 Node.js 24+。提供可直接调用的读取接口、命令行入口、IM 协议模块，以及按 APK 和真实响应整理的字段、实测结果与未完成清单。
 
-## 当前结果与证据范围
+## 功能与当前状态
 
-下表的全量计数来自保存的 **2026-11-13 线上观测**；2026-11-14 的后续读取、写入和 IM 补测独立记录，不混入历史计数。
+| 能力 | 使用入口 | 当前范围 |
+| --- | --- | --- |
+| 贴吧帖子列表、分页 | `TiebaApi.getForumThreads()` | 已封装并实测 |
+| 帖子详情、回复列表 | `TiebaApi.getThread()` | 支持帖子编号及官方帖子 URL |
+| 楼中楼 | `TiebaApi.getPostReplies()` | 支持空首页返回分页 0/0 |
+| 用户资料 | `TiebaApi.getUserProfile()` | 返回选定资料字段，支持复用本地账号 |
+| 发帖选吧搜索 | `TiebaApi.searchForums()` | 搜索目标吧，不是全站帖子搜索 |
+| 私信与 SDK 普通群聊 | [IM 实测与协议](docs/im-validation.md) | 双账号核心收发、回读、撤回和清理已测；统一客户端暂未封装这些业务操作 |
+| 发帖、回复、设置等写入 | [状态操作报告](docs/stateful-test-plan.md) | 部分流程有受控实测，使用各自专题说明 |
+| 全部静态候选 | [逐项覆盖表](docs/current-api-coverage.csv) | 603 条候选含 H5、媒体、遥测和命令变体；尚未完成全部业务验收 |
 
-| 范围         | 已保存结果                                                          | 如何理解                                           |
-| ------------ | ------------------------------------------------------------------- | -------------------------------------------------- |
-| 静态路径提取 | 603 条候选、568 个不同路径                                          | 包含 API、H5、媒体和遥测；存在字符串不代表接口可用 |
-| 线上请求覆盖 | 195 个不同路径                                                      | 包含成功、空结果、业务错误和未确认响应             |
-| 非空业务数据 | 105 个路径至少一次返回数据                                          | 包含结构或载荷检查，不能全部等同于功能验收通过     |
-| 首批功能验证 | 5 类匿名读取能力                                                    | 已核对业务码及吧名、页码、帖子或用户编号的一致性   |
-| 协议元数据   | 首批 11 个请求类、345 个 Wire 注解字段；扩展形成 116 个命名空间契约 | 字段和命令线索与实际请求结果分开记录               |
-
-最新合并清单中，603 条候选有 584 条保存了 HTTP 返回；未排除的 549 条生产候选均有请求记录。42 条已有对象或状态变化核对，184 条仍只有匿名诊断；其余包含业务错误、空结果、结构待验和网页路由，不能统称功能通过。52 条吧务按用户要求排除，2 条为非生产来源，详见当前报告。
-
-首批五类能力为帖子列表与分页、帖子详情、楼中楼、公开用户资料、发帖选吧搜索。后者是选择发帖目标吧的搜索，不是全站帖子搜索。
-
-已完成官方网页扫码登录，并核对本轮 App 当前用户编号。指定帖已实测创建回复、创建楼中楼及删除本次内容，回查两条内容均已消失、原帖仍可读取；详见定向验证文档。双账号关注与取消关注也已实测并恢复原关系，各自隐私读取已核对身份；私信和 SDK 普通群聊的双向收发、回读、本人撤回及私信精确删除已补测，详见 IM 报告。本轮已补测收藏、水印、消息开关、吧关注和本人主帖；主帖详情删除后首楼编号查询仍有返回，清理限制见当前报告。后续还完成小尾巴新增、编辑、删除及关注列表开关恢复；小尾巴启用被明确要求会员。支付和清空账号数据仅有无凭据诊断，没有执行真实扣款或清空数据。
-
-## 文档导航
-
-- [后续逐项验证与业务验收边界](docs/supplemental-validation.md) · [脱敏记录](evidence/supplemental-validation.json)：249 次追加请求、业务对象核对、匿名诊断和未完成分析分别记录。
-
-- [私信与 SDK 群聊实测](docs/im-validation.md) · [脱敏记录](evidence/im-validation.json)：双账号登录、收发、撤回、退出及实际清理边界。
-
-- [本轮完整计划与删除限制](evidence/comprehensive-validation.json)：402 次请求、设置恢复与测试主帖首楼残留的实际证据。
-- [当前未完成项与限制原因](docs/remaining-validation.md) · [逐项 CSV](docs/current-api-coverage.csv)：合并全部补测，区分实测拒绝、空样本与尚待分析。
-- [全量覆盖、状态解释与扩展验证](docs/full-coverage.md)：查看总体结果、登录边界和复现条件。
-- [逐项覆盖 CSV](docs/api-coverage.csv) · [覆盖 JSON](evidence/api-coverage.json)：按路径、命令变体和状态查找证据。
-- [指定帖子接口验证](docs/thread-validation.md)：帖子 11185790604 的读取、回复、楼中楼及清理实测，以及其他测试对象要求。
-- [双账号接口验证](docs/two-account-validation.md)：关注、取消关注、隐私设置读取及私信协议的已验证范围。
-- [首批五类功能验证](docs/validation.md)：具体核对条件、命令号与匿名复现方法。
-- [首批请求字段表](docs/request-fields.md) · [扩展协议契约](evidence/protocol-contracts.json)：分别查看静态字段和更大范围的协议线索。
-- [分析进展与来源](docs/investigation.md) · [状态操作测试计划](docs/stateful-test-plan.md)。
-- [CHANGELOG](CHANGELOG.md)：面向使用者的待发布变化。
+当前覆盖清单有 42 项完成对象或状态核对，184 项仅有匿名诊断。未排除的 549 条生产候选均有请求记录；这些数字不等于可用 SDK 方法数。完整边界见 [当前验证范围](docs/remaining-validation.md)。
 
 ## 快速开始
 
-需要 Node.js 24+。以下命令在仓库根目录运行，无需安装项目依赖：
+在当前分支的仓库根目录执行，需要 Node.js 24+，无需安装第三方运行依赖：
 
 ```powershell
-node scripts/catalog.mjs pb/floor
-node --test tests/*.test.mjs
+node main.mjs --help
+node main.mjs status
+npm test
 ```
 
-`catalog.mjs` 查询的是静态候选，不会发送网络请求；可用性需要再查覆盖报告。
-
-复测首批五类匿名读取：
+以上为离线操作。读取真实帖子：
 
 ```powershell
-node scripts/verify-app-reads.mjs --live
+node main.mjs thread https://tieba.baidu.com/p/11185790604 --live --rn 2
 ```
 
-该命令向真实服务发送 7 次读取或负对照请求，默认每次总超时 12 秒、响应上限 1 MiB。业务码和返回对象检查均通过才判为成功；结果写入 `.local/verified-reads.json`，原始响应也留在忽略目录。它同时产生扩展脚本依赖的公开帖子样本。
+命令将结果保存到 `.local/output/` 的独立 JSON 文件，终端只打印业务码、响应摘要和文件路径。已有文件不会被覆盖。更多命令、配置及认证见 [使用指南](docs/getting-started.md)。
 
-扩展协议与遗留 JSON 读取另需准备协议模型、公开样本，使用本机登录态时还需本地配置，见 [扩展复测步骤](docs/full-coverage.md#重建与复测)。不要把登录态、Cookie 或账号数据写进命令行、文档或 Git。
+作为模块调用：
 
-## 分析对象与重新提取
+```javascript
+import { TiebaApi } from './src/index.mjs';
 
-- 文件：`baidutieba_AndroidPhone_1015363f.apk`，87,847,605 字节，13 个 DEX。
-- 包名：`com.baidu.tieba`，版本：`22.13.1.1`。
-- SHA-256：`06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3`。
+const api = new TiebaApi();
+const result = await api.getThread('11185790604', { pn: 1, rn: 2 });
+console.log(result.thread.title);
+```
 
-从同一份 APK 重建首批证据：
+库方法被显式调用时才发送请求；导入模块和构造客户端不会联网。编号以十进制字符串返回，避免 64 位整数精度丢失。参数、输出字段与错误处理见 [客户端 API](docs/api.md)。
+
+## 配置与账号
+
+首次配置可将 [config.example.json](config.example.json) 另存为 `.local/config.json`；已有配置直接编辑。默认匿名读取，不需要账号文件。
+
+```json
+{
+  "timeoutMs": 12000,
+  "maxResponseBytes": 1048576,
+  "accountPath": null,
+  "outputDir": "output"
+}
+```
+
+`accountPath` 和 `outputDir` 相对于配置文件目录解析。复用已确认的登录态时，将 `accountPath` 改为本地账号 JSON 的路径，例如同目录的 `account.json`：
 
 ```powershell
-.\scripts\discover.ps1 -Apk 'D:\targets\example.apk'
-node scripts/request-models.mjs .local/dex evidence/request-models.json evidence/endpoint-candidates.json
-node scripts/document-models.mjs
+node main.mjs thread https://tieba.baidu.com/p/11185790604 --live --config .local/config.json
 ```
 
-APK 路径为示例。提取器只读取原 APK，DEX 临时文件保存在 `.local/dex`。不同 APK 应使用独立的 DEX 目录与证据，不要混用历史模型、命令索引或线上报告。PowerShell 如限制脚本执行，应先检查 `scripts/discover.ps1`，再在允许脚本的终端运行；不需要修改全局执行策略。
+账号格式见 [空白样例](examples/account.example.json)，真实文件留在 `.local/`。当前入口读取已有 `BDUSS`、`tbs` 与可选 `uid`，不会代替浏览器完成扫码登录。IM 登录仍使用 [专用入口](docs/im-validation.md#复现本人-im-登录)。
 
-完整 APK、DEX、引擎、反编译全文和用户原始响应均不进入提交。协议元数据、摘要和来源位置见 [路径证据](evidence/endpoint-candidates.json)、[首批模型](evidence/request-models.json) 与 [APK 检查摘要](evidence/apk-summary.json)。
+## 项目结构
 
-## REA 分析入口
-
-本次使用 REA 6.4.0、JADX 0.7.1 和完整 JDK 25.0.1。命令入口仅向子进程传入引擎路径，不修改全局 Agent 配置：
-
-```powershell
-node scripts/rea.mjs inspect-android-package 'D:/targets/example.apk' --format json
+```text
+main.mjs                  命令行入口
+config.example.json       运行配置样例
+src/
+  index.mjs               可导入的客户端入口
+  cli.mjs                 命令分发与结果落盘
+  api/                    读取接口、请求构造与响应字段投影
+  auth.mjs                本地认证对象
+  config.mjs              协议常量、配置与运行上限
+  http/                   有界 HTTP 传输与取消
+  im-*.mjs                IM 帧、签名与 TLS 连接
+  *.mjs                   Protobuf、签名、媒体和验证基础模块
+examples/                 可导入的调用示例
+scripts/                  兼容保留的提取、验证与证据构建工具
+tests/                    离线测试
+docs/                     使用、开发、协议与实测说明
+evidence/                 脱敏字段及观测证据
+.local/                   忽略的登录态、原始响应和运行输出
 ```
 
-新环境需安装固定运行包，并按 [REA Android 指南](https://github.com/Billy775326/rea/blob/main/docs/android-analysis.md) 准备同一 JAR，保存为 `.local/jadx-complete.jar`：
+分层职责、参考项目与兼容性说明见 [项目架构](docs/architecture.md)。
 
-```powershell
-npm.cmd install --prefix .local/rea-runtime --omit=optional --ignore-scripts rea-agents@6.4.0
-```
+## 文档导航
 
-入口会检查 JAR SHA-256，不接受不完整或不匹配的下载。上述安装不是登录态配置，也不意味着 REA 已注册到当前 Agent。
+| 目标 | 文档 |
+| --- | --- |
+| 配置、CLI、模块调用 | [使用指南](docs/getting-started.md) · [API 文档](docs/api.md) |
+| 扩展代码、检查与 APK 提取 | [开发指南](docs/development.md) · [项目架构](docs/architecture.md) |
+| 查找特定接口是否已测 | [当前覆盖](docs/remaining-validation.md) · [CSV](docs/current-api-coverage.csv) · [JSON](evidence/current-api-coverage.json) |
+| 查看本客户端实测 | [客户端验证摘要](evidence/client-validation.json) |
+| 阅读私信与群聊细节 | [IM 实测](docs/im-validation.md) · [双账号报告](docs/two-account-validation.md) |
+| 阅读帖子及设置操作 | [指定帖报告](docs/thread-validation.md) · [状态操作](docs/stateful-test-plan.md) |
+| 区分匿名诊断与业务验证 | [后续逐项验证](docs/supplemental-validation.md) · [历史扩展验证](docs/full-coverage.md) |
+| 查字段与来源 | [请求字段](docs/request-fields.md) · [协议契约](evidence/protocol-contracts.json) · [分析记录](docs/investigation.md) |
+| 查看本次变化 | [CHANGELOG](CHANGELOG.md) |
 
-## 参考
+## 分析对象与参考
 
-参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的接口、认证、参数构造和示例组织方式；贴吧协议结论来自本仓库记录的 APK 和实际响应，不从其他平台类推。静态分析使用 [REA](https://github.com/Billy775326/rea) 和直接 JADX 索引，两类证据的范围见对应报告。
+对象为 `com.baidu.tieba` 22.13.1.1，APK 共 13 个 DEX、87,847,605 字节，SHA-256 为 `06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3`。静态提取、请求构造和真实响应分别记录，不从路径名称推断可用性。
+
+项目分层与文档组织参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider/tree/d151f9c2980abc304c1ae4918c2272675cd9e4c2)，具体采用方式见 [架构说明](docs/architecture.md#参考来源)。贴吧参数和能力结论来自本项目记录的 APK 与实测。仓库当前未设置 `LICENSE` 文件。
