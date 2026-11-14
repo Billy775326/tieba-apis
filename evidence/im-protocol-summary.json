@@ -1,0 +1,1048 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "field_tag_extraction": "Direct DEX encoded static FIELD_NUMBER values, with every DEX checked against the artifact inventory; distinct from REA decompilation",
+  "lcp_field_tags": [
+    {
+      "class": "Lcom/baidu/lcp/sdk/pb/RpcMetaPb$RpcMeta;",
+      "dex": "classes6.dex",
+      "fields": [
+        {
+          "name": "ACCEPT_COMPRESS_TYPE_FIELD_NUMBER",
+          "tag": 9
+        },
+        {
+          "name": "ATTACHMENT_SIZE_FIELD_NUMBER",
+          "tag": 5
+        },
+        {
+          "name": "AUTHENTICATION_DATA_FIELD_NUMBER",
+          "tag": 7
+        },
+        {
+          "name": "CHUNK_INFO_FIELD_NUMBER",
+          "tag": 6
+        },
+        {
+          "name": "COMPRESS_TYPE_FIELD_NUMBER",
+          "tag": 3
+        },
+        {
+          "name": "CORRELATION_ID_FIELD_NUMBER",
+          "tag": 4
+        },
+        {
+          "name": "NOTIFY_FIELD_NUMBER",
+          "tag": 8
+        },
+        {
+          "name": "REQUEST_FIELD_NUMBER",
+          "tag": 1
+        },
+        {
+          "name": "RESPONSE_FIELD_NUMBER",
+          "tag": 2
+        }
+      ]
+    },
+    {
+      "class": "Lcom/baidu/lcp/sdk/pb/RpcMetaPb$RpcRequestMeta;",
+      "dex": "classes6.dex",
+      "fields": [
+        {
+          "name": "EVENT_LIST_FIELD_NUMBER",
+          "tag": 5
+        },
+        {
+          "name": "LOG_ID_FIELD_NUMBER",
+          "tag": 3
+        },
+        {
+          "name": "METHOD_ID_FIELD_NUMBER",
+          "tag": 2
+        },
+        {
+          "name": "NEED_COMMON_FIELD_NUMBER",
+          "tag": 4
+        },
+        {
+          "name": "SERVICE_ID_FIELD_NUMBER",
+          "tag": 1
+        }
+      ]
+    },
+    {
+      "class": "Lcom/baidu/lcp/sdk/pb/RpcMetaPb$RpcResponseMeta;",
+      "dex": "classes6.dex",
+      "fields": [
+        {
+          "name": "ERROR_CODE_FIELD_NUMBER",
+          "tag": 4
+        },
+        {
+          "name": "ERROR_TEXT_FIELD_NUMBER",
+          "tag": 5
+        },
+        {
+          "name": "EVENT_LIST_FIELD_NUMBER",
+          "tag": 6
+        },
+        {
+          "name": "LOG_ID_FIELD_NUMBER",
+          "tag": 3
+        },
+        {
+          "name": "METHOD_ID_FIELD_NUMBER",
+          "tag": 2
+        },
+        {
+          "name": "SERVICE_ID_FIELD_NUMBER",
+          "tag": 1
+        }
+      ]
+    },
+    {
+      "class": "Lcom/baidu/lcp/sdk/pb/RpcMetaPb$RpcNotifyMeta;",
+      "dex": "classes6.dex",
+      "fields": [
+        {
+          "name": "EVENT_LIST_FIELD_NUMBER",
+          "tag": 4
+        },
+        {
+          "name": "LOG_ID_FIELD_NUMBER",
+          "tag": 3
+        },
+        {
+          "name": "METHOD_ID_FIELD_NUMBER",
+          "tag": 2
+        },
+        {
+          "name": "SERVICE_ID_FIELD_NUMBER",
+          "tag": 1
+        }
+      ]
+    },
+    {
+      "class": "Lcom/baidu/lcp/sdk/pb/RpcMetaPb$event_timestamp;",
+      "dex": "classes6.dex",
+      "fields": [
+        {
+          "name": "EVENT_FIELD_NUMBER",
+          "tag": 1
+        },
+        {
+          "name": "TIMESTAMP_MS_FIELD_NUMBER",
+          "tag": 2
+        }
+      ]
+    },
+    {
+      "class": "Lcom/baidu/lcp/sdk/pb/LcmPb$Common;",
+      "dex": "classes6.dex",
+      "fields": [
+        {
+          "name": "APP_ID_FIELD_NUMBER",
+          "tag": 6
+        },
+        {
+          "name": "APP_VERSION_FIELD_NUMBER",
+          "tag": 7
+        },
+        {
+          "name": "CUID_FIELD_NUMBER",
+          "tag": 1
+        },
+        {
+          "name": "DEVICE_TYPE_FIELD_NUMBER",
+          "tag": 2
+        },
+        {
+          "name": "MANUFACTURE_FIELD_NUMBER",
+          "tag": 4
+        },
+        {
+          "name": "MODEL_TYPE_FIELD_NUMBER",
+          "tag": 5
+        },
+        {
+          "name": "NETWORK_FIELD_NUMBER",
+          "tag": 9
+        },
+        {
+          "name": "OS_VERSION_FIELD_NUMBER",
+          "tag": 3
+        },
+        {
+          "name": "ROM_VERSION_FIELD_NUMBER",
+          "tag": 10
+        },
+        {
+          "name": "SDK_VERSION_FIELD_NUMBER",
+          "tag": 8
+        },
+        {
+          "name": "USER_KEY_FIELD_NUMBER",
+          "tag": 11
+        }
+      ]
+    },
+    {
+      "class": "Lcom/baidu/lcp/sdk/pb/LcmPb$LcmRequest;",
+      "dex": "classes6.dex",
+      "fields": [
+        {
+          "name": "ACTION_FIELD_NUMBER",
+          "tag": 5
+        },
+        {
+          "name": "COMMON_FIELD_NUMBER",
+          "tag": 3
+        },
+        {
+          "name": "CONN_TYPE_FIELD_NUMBER",
+          "tag": 7
+        },
+        {
+          "name": "LOG_ID_FIELD_NUMBER",
+          "tag": 1
+        },
+        {
+          "name": "START_TYPE_FIELD_NUMBER",
+          "tag": 6
+        },
+        {
+          "name": "TIMESTAMP_FIELD_NUMBER",
+          "tag": 4
+        },
+        {
+          "name": "TOKEN_FIELD_NUMBER",
+          "tag": 2
+        }
+      ]
+    },
+    {
+      "class": "Lcom/baidu/lcp/sdk/pb/LcmPb$LcmResponse;",
+      "dex": "classes6.dex",
+      "fields": [
+        {
+          "name": "ERROR_CODE_FIELD_NUMBER",
+          "tag": 2
+        },
+        {
+          "name": "ERROR_MSG_FIELD_NUMBER",
+          "tag": 3
+        },
+        {
+          "name": "LOG_ID_FIELD_NUMBER",
+          "tag": 1
+        },
+        {
+          "name": "NEXT_INTERVAL_MS_FIELD_NUMBER",
+          "tag": 4
+        },
+        {
+          "name": "SERVER_INFO_FIELD_NUMBER",
+          "tag": 5
+        }
+      ]
+    },
+    {
+      "class": "Lcom/baidu/lcp/sdk/pb/LcmPb$RpcData;",
+      "dex": "classes6.dex",
+      "fields": [
+        {
+          "name": "LCM_NOTIFY_FIELD_NUMBER",
+          "tag": 3
+        },
+        {
+          "name": "LCM_REQUEST_FIELD_NUMBER",
+          "tag": 1
+        },
+        {
+          "name": "LCM_RESPONSE_FIELD_NUMBER",
+          "tag": 2
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "evidence_id": "ev_e904da4795675c793641ec58da0171c29adfdf39a7cd96985759313623053e9c",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.tieba.cdc",
+      "method": {
+        "name": "d",
+        "reported_signature": "d(android.content.Context): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "80d2851f97fd5304c8eff9742b7969c7e7dd1ee911a252abf208d40eb2557078",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_834038e1ff691b3a2003f4ad90723899c0c2399569d0b1686608e2c1f4771427",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.tieba.cdc",
+      "method": {
+        "name": "g",
+        "reported_signature": "g(com.baidu.tieba.cdc$c): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "888beae9228fb8de995212e7ee9b26c162a933598f1e4bf032b9ce1ea5ff9b04",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_4405cec1cfca06ea53661b3f8af67d0c105e1a12d77617fcdf11bf936860b5de",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.utils.Utility",
+      "method": {
+        "name": "creatMethodIntent",
+        "reported_signature": "creatMethodIntent(android.content.Context, int): android.content.Intent",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "23d576dfc54399482c585262a4879bc7c1eea854f52cec0a16bf6d3d1d312989",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_25bb065a824f457d0016a3c46714043cc28e6b3c7593ff35893817bd96c6814b",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.internal.IMConfigInternal",
+      "method": {
+        "name": "getSDKVersionValue",
+        "reported_signature": "getSDKVersionValue(android.content.Context): int",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "d2eac919b503f33ed0c7feba614dddf5d92d44e43f1a0c1331f03d096e2e3144",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_0b9e740087a3ad87aac4c8e21f3b2af42ff190db51888352d28af1020f2d790e",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.tieba.a70",
+      "method": {
+        "name": "getHost",
+        "reported_signature": "getHost(): java.lang.String",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "4455b74bf6879b49d187d454f1d45571c5d802ff4b62f9154d174b6046044950",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_fc2940304a35d8bfbb30f833adc93bfd716cc7278cdabb8f3c7103f2150e32c9",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.tieba.e70",
+      "method": {
+        "name": "b",
+        "reported_signature": "b(android.content.Context, boolean): java.lang.Object",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "64a36b12e574c5c0a1419b94b65755b7e708983195646a5a6877bb9146868e4f",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_863eb6aa42c6f0d01722da439b30ba373bf17ec3c5f11b09a9dc999568188e2b",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.tieba.e70",
+      "method": {
+        "name": "d",
+        "reported_signature": "d(java.lang.String, java.lang.String, java.lang.String, long): java.lang.String",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "ffb0e68b4608b26682269b6ae8935629ddecf97eb7420fcd86c87cbc20de8801",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_691f9fbffa843aaa83ced2f7199081ea49816a8e4686b5e05f4cf828728a6ca9",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.tieba.e70",
+      "method": {
+        "name": "c",
+        "reported_signature": "c(java.lang.String): java.lang.String",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "775a61c89041fbb3a04e2c91275a79a4f60c00fa528c607f13f2651a42ce5c6b",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_99a7bf4e8ebbdb37830c12d41c01c37954bfecf8175f5dea9a8e55eb6cef3586",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.tieba.v60",
+      "method": {
+        "name": "h",
+        "reported_signature": "h(com.baidu.tieba.l60, byte[], byte[]): com.baidu.tieba.l60",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "5816cbdc96a6eefefdd7ea5827aff251bef7d23f96a811745b6c867640dba9b1",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_d3d68a3b4d2a4fa4cfaa033a1c331a10468d2561255b5be1a1c3cc17fdc782c3",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.tieba.v60",
+      "method": {
+        "name": "f",
+        "reported_signature": "f(long, long, long, int): byte[]",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "035181dfbf9c7ef23eff4277bcc5826e1e30eac6fb1183b41559b01713e07df0",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_17c342e4acce97cac55ef7188bb3e9cb0ecd675528ae299a54c619688d4e8fbd",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.tieba.v60",
+      "method": {
+        "name": "e",
+        "reported_signature": "e(android.content.Context, long, long): byte[]",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "64b14264a1f164650a777a554b7567ad0cb1b67142b1457d33325366b7b3984c",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_c0c87b7c32f1742ebc0e133409394636e5c1080b4b35f134571ea981efeefda9",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.tieba.w60",
+      "method": {
+        "name": "c",
+        "reported_signature": "c(com.baidu.tieba.l60, byte[], byte[]): com.baidu.tieba.l60",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "669526759d0abe06336c324e195a2b4d3d7ffc6cb0c6126204aead1bb2ae6b36",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_135f52b2479c5cebf6b94dbffbcdd4fc89799c0263f3b92e9ae091e9ddc3d2cc",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.account.request.IMUserLoginByTokenMsg",
+      "method": {
+        "name": "buildBody",
+        "reported_signature": "buildBody(): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "400dd671b521673299cff9c5a3ba862237cb0f86c1f7146285eff342d818c400",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_26e42a9d568f099faecbf4ce04163835ed2a4f1808358a36b8905c6b20d1112b",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.account.request.IMUserLoginByTokenMsg",
+      "method": {
+        "name": "handleMessageResult",
+        "reported_signature": "handleMessageResult(android.content.Context, org.json.JSONObject, int, java.lang.String): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "09d64913b1a9cbb10c1a4fd20b514730d7125088e9f814d72076419518e35340",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_7194c0a58cb17291c1c62be9904b933e02c39cdf48dee8ffa4e98ee9958a8e86",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.chatmessage.request.IMSendMsg.OriginRequestMsgConstructor",
+      "method": {
+        "name": "getRequestParamJsonObj",
+        "reported_signature": "getRequestParamJsonObj(android.content.Context, com.baidu.android.imsdk.chatmessage.request.IMSendMsg): org.json.JSONObject",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "9bee100d180f811321951c7bedd5ab33cbff8adcee7260e9afb4cb4d7562ef09",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_24d4e2e7c7bca1118d257495e0af2a1acc7e4229c4d4d29927705bd01106e575",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.chatmessage.messages.TextMsg",
+      "method": {
+        "name": "<init>",
+        "reported_signature": "<init>(java.lang.String): void",
+        "overload_index": 3,
+        "is_constructor": true,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "9aa7b02fd1cadc4ff5b10a2dddb50b4d3e06a7a4bea14afb47ed57c280dea0ea",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_d442b4d3eb50f2b8515960e66aebd3f6a80d3ab6e9cce4492da2280587571f70",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.chatmessage.messages.TextMsg",
+      "method": {
+        "name": "getTextJson",
+        "reported_signature": "getTextJson(java.lang.String, com.baidu.android.imsdk.chatmessage.messages.MsgRepliedData): java.lang.String",
+        "overload_index": 1,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "83521572927312fc80c345518e51e4946d14f78ec4d2e0b1ebe140f45a541449",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_9dca0b8b5a0ff024295bc3d5e949062f51960d568df0e2da053b4675283871f0",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.chatmessage.messages.ChatMsg",
+      "method": {
+        "name": "createMsgKey",
+        "reported_signature": "createMsgKey(android.content.Context): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "10227938854be43ef39f21bf4eba14a0f7fad83758b04928dff110ad06bb400b",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_c294d65da13e253139eee060668516b10728cfd43f8e29947d4cda2fbb337d2c",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.chatmessage.messages.ChatMsg",
+      "method": {
+        "name": "long2bytes",
+        "reported_signature": "long2bytes(long, int): byte[]",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "19344c4dd8d2bd4cc9c1a988dfa394386c0ce350a71f9fc88f502c5a2c69fa7c",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_a2666eee2f8e59d23892e32d6c88777d65ae6faccf8fad586bece836064c566b",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.chatmessage.request.IMFetchMsgByIdMsg",
+      "method": {
+        "name": "buildBody",
+        "reported_signature": "buildBody(): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "ae19ea25736be63a49a795a9113e9dc5b2509b6c5491db9b6908aba681524563",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_97be6df833bf0487d7e3f99c2ca662371606119ed1d57b7a8addf8e3eba10e81",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.chatmessage.request.IMDelMsg",
+      "method": {
+        "name": "buildBody",
+        "reported_signature": "buildBody(): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "afd98b85c73945821503404687561b16c383552cb20d79baf93071a26974ca45",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_b47f53cf372a8cb72fdd0a61dbb9adaa8f6edaa3d87d0808652c406b3a17d9ee",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.chatmessage.request.IMRecallMsg",
+      "method": {
+        "name": "buildBody",
+        "reported_signature": "buildBody(): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "c6ad12ed3b51f08902ee2d85f8bc0edf15d6972879b56d19eab14866059198b0",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_6f9387343bc7ccf08a98dfca58506c795a65fb09697affaf251f133aac695b83",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.chatmessage.request.params.RecallMsgParam",
+      "method": {
+        "name": "newInstance",
+        "reported_signature": "newInstance(android.content.Context, int, long, long, long, long, long, int, long, long, long, long, com.baidu.android.imsdk.chatmessage.messages.ChatMsg, com.baidu.android.imsdk.group.BIMValueCallBack<org.json.JSONObject>): com.baidu.android.imsdk.chatmessage.request.params.RecallMsgParam",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "9f835e9985fefb5950d0601d06ffd737199b33efac713976258032e49ad4ad73",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_fa8b1f1c82a5c6bb575635a5642c4fae3d5f54bc3e150926f90164984a257a56",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.group.request.IMCreateGroupRequest",
+      "method": {
+        "name": "getRequestParameter",
+        "reported_signature": "getRequestParameter(): byte[]",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "b51f444137bd973a9d897b03cc0f5e9d32378467dcce9f296ae143c737832a98",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_d002098048b1810132949c0be5a9fc9ed3dc784d0aaa6985c60d0eb9394b74f3",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.group.request.GroupBaseHttpRequest",
+      "method": {
+        "name": "getHost",
+        "reported_signature": "getHost(): java.lang.String",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "fdf890638cb085b70bbf10e804fa2e8214ce9352e8f4bbdace5a80ee5fbc1dd1",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_5720359c7daa5f111f34e25c1c5905034d26e0cf1065f6bba2063e93b96150b6",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.group.request.GroupBaseHttpRequest",
+      "method": {
+        "name": "getHeaders",
+        "reported_signature": "getHeaders(): java.util.Map<java.lang.String, java.lang.String>",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "9dd2ffb8a1bd9260438f14b4e5f970eaa9853bcd7bcdb5aca3cfe86749a44101",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_19656d4fe87f7b3272e0d1e575e5c0a8131b22d77ea7d3eb9c99256837e1bc98",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.group.request.IMQueryGroupRequest",
+      "method": {
+        "name": "getRequestParameter",
+        "reported_signature": "getRequestParameter(): byte[]",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "f2e5d9066987cbba5108c25c7439c9b7c1df4e5b4f9c2c114c3914e5717077a2",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_22f5cf96776c16443a49d816bae5385084c03019d860bde8daf88d3997c2aeb3",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.group.request.IMQueryMemberRequest",
+      "method": {
+        "name": "getRequestParameter",
+        "reported_signature": "getRequestParameter(): byte[]",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "2c69b8101bccc09a0bf9b0219e2712c3677e2c4c84e1a8cb391fd7e95f8704e9",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_eb211cce7b367f93e08fe56296bcdba99bf489c162deaf1522b629b9eec1e754",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.group.request.IMQuitGroupRequest",
+      "method": {
+        "name": "getRequestParameter",
+        "reported_signature": "getRequestParameter(): byte[]",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "2767954e65e676b292288064241cf4a293aaffe239882207bbc9f44937b59bd4",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_cc13454d7c048cd6fbb828445d93f065ad1ec78065af9899e6181729787dfdb9",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.group.request.IMJoinGroupRequest",
+      "method": {
+        "name": "getNormalGroupRequestParam",
+        "reported_signature": "getNormalGroupRequestParam(): java.lang.String",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "2cde370c6b62bff095eaea7cbdad89eebe025f40e51cfea04fd51cc2a3f4770f",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_40da3f823a7f1d6205491ec067fcd13d67cf0f19c63cd7cce17e76ef953c9e31",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.account.request.IMGetUidByUkRequest",
+      "method": {
+        "name": "getHost",
+        "reported_signature": "getHost(): java.lang.String",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "cdf1609017ab76f5b75ea3857b88f419c4cfc71bac1e69bd568028e7d1651942",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_dc1abbd44298f2d0a9a6f020dc62b5e879467e7b91b208cad6ec8b00e51dd1bf",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.account.request.IMGetUidByUkRequest",
+      "method": {
+        "name": "getRequestParameter",
+        "reported_signature": "getRequestParameter(): byte[]",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "cb11f9d54df375af04d1c4e3fd779f690a1dc146633cc0722974db1364638be8",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_129e4ad7d78e5a9b6df18ac3d3969a88a4310d2d4a6767519cdc303ac4b5f8ce",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.account.request.IMGetUidByUkRequest",
+      "method": {
+        "name": "getMethod",
+        "reported_signature": "getMethod(): java.lang.String",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "98c8910a0c16c87890fa88ca06b5158ff603c9d8dc29c5156bc1486a6027d4b6",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "evidence_id": "ev_e71114561a32b605a1c6aef35a7abba392164c388481bc134f3f3bc93b0cba15",
+      "operation": "inspect_android_method",
+      "class_name": "com.baidu.android.imsdk.account.request.IMGetUidByUkRequest",
+      "method": {
+        "name": "getHeaders",
+        "reported_signature": "getHeaders(): java.util.Map<java.lang.String, java.lang.String>",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "94d80981723941aed0a6f396522f06091dd9caf6db085b8f49419d2097801dbf",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    }
+  ],
+  "framing": {
+    "magic_hex": "6c637001",
+    "prefix_bytes": 12,
+    "byte_order": "big-endian",
+    "size_fields": "total meta+body bytes at offset 4; meta bytes at offset 8",
+    "max_frame_bytes": 1048576
+  },
+  "app_id": 10773430,
+  "im_sdk_version": 11250036,
+  "lcp_sdk_version": "3460016",
+  "lcp_methods": [
+    {
+      "service": 1,
+      "method": 1,
+      "operation": "LCP authentication"
+    },
+    {
+      "service": 1,
+      "method": 3,
+      "operation": "LCP heartbeat"
+    },
+    {
+      "service": 2,
+      "method": 50,
+      "operation": "IM account login"
+    },
+    {
+      "service": 2,
+      "method": 55,
+      "operation": "Private send"
+    },
+    {
+      "service": 2,
+      "method": 65,
+      "operation": "SDK group send"
+    },
+    {
+      "service": 2,
+      "method": 93,
+      "operation": "Read messages by ID interval"
+    },
+    {
+      "service": 2,
+      "method": 249,
+      "operation": "Recall exact own message"
+    },
+    {
+      "service": 2,
+      "method": 57,
+      "operation": "Delete exact message IDs in own history"
+    }
+  ],
+  "critical_fields": {
+    "status": "IM JSON err_code is independent from the LCP RPC error_code",
+    "range": "msgid_begin and msgid_end (values of APK constants), not begin_msgid/end_msgid",
+    "recall": "recall_mode=1 passed; mode=0 returned params error",
+    "identity": "Use IM login uk for to_user and validate bd_uid against the confirmed account. Profile UK hypotheses were not promoted to identity verification"
+  },
+  "evidence_boundary": "APK extraction and decompiled code describe construction; functionality is accepted only in the linked im-validation.json observations"
+}
