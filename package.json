@@ -1,12 +1,20 @@
-﻿{
+{
   "name": "tieba-apis",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "models": "node scripts/request-models.mjs .local/dex evidence/request-models.json evidence/endpoint-candidates.json"
+    "models": "node scripts/request-models.mjs .local/dex evidence/request-models.json evidence/endpoint-candidates.json",
+    "start": "node main.mjs",
+    "catalog": "node scripts/catalog.mjs",
+    "status": "node main.mjs status",
+    "verify:reads": "node scripts/verify-app-reads.mjs --live",
+    "evidence:build": "node scripts/build-current-coverage.mjs"
   },
   "engines": {
     "node": ">=24"
+  },
+  "exports": {
+    ".": "./src/index.mjs"
   }
 }

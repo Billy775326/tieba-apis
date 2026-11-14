@@ -78,3 +78,28 @@ test("redirect diagnostics omit query secrets and never follow the target", asyn
   assert(!JSON.stringify(r).includes("fixture-secret"));
   assert.equal(requests,1);
 });
+
+test('an already canceled request never reaches the server',async t=>{
+ let received=false;
+ const url=await fixture(t,(req,res)=>{received=true;res.end('unexpected');});
+ const controller=new AbortController();controller.abort();
+ const result=await probe(url,{signal:controller.signal});
+ assert.equal(result.error,'ABORT_ERR');assert.equal(result.http_response_received,false);assert.equal(received,false);
+});
+
+test('canceling an in-flight request closes its connection',async t=>{
+ const controller=new AbortController();let closed;
+ const connectionClosed=new Promise(resolve=>{closed=resolve;});
+ const url=await fixture(t,(req,res)=>{req.on('close',closed);controller.abort();});
+ const result=await probe(url,{signal:controller.signal});
+ assert.equal(result.error,'ABORT_ERR');assert.equal(result.business_success,null);
+ await connectionClosed;
+});
+
+test('canceling a partially received response still reports cancellation explicitly',async t=>{
+ const controller=new AbortController();let cancelTimer;
+ t.after(()=>clearTimeout(cancelTimer));
+ const url=await fixture(t,(req,res)=>{res.write('partial');cancelTimer=setTimeout(()=>controller.abort(),20);});
+ const result=await probe(url,{signal:controller.signal});
+ assert.equal(result.http_response_received,true);assert.equal(result.classification,'incomplete-response');assert.equal(result.error,'ABORT_ERR');assert.equal(result.business_success,null);
+});

@@ -1,0 +1,6 @@
+﻿{
+  "timeoutMs": 12000,
+  "maxResponseBytes": 1048576,
+  "accountPath": null,
+  "outputDir": "output"
+}
