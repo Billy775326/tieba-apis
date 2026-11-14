@@ -1,42 +1,60 @@
 ﻿# Tieba APIs
 
-基于指定百度贴吧 Android APK 的接口研究仓库，目标是实现有证据支持、可验证的接口客户端。
+基于百度贴吧 Android 22.13.1.1 APK 的接口研究与验证仓库，提供静态证据、协议字段、验证脚本和脱敏实测报告。适合继续研究请求构造与接口客户端；目前尚未提供完整 SDK，也没有完成所有候选的功能验收。
 
-已完成 APK 静态分析，并实际验证帖子列表及分页、帖子详情、楼中楼、公开用户资料和发帖选吧搜索这 5 类匿名读取接口。仓库提供可复现的线上验证脚本，尚未提供完整接口 SDK；登录和写入接口仍未验证。
+## 当前结果与证据范围
 
-## 当前结果
+以下数字来自仓库中保存的 **2026-11-13 线上观测**，本次文档更新没有重新发送接口请求。
 
-- APK：`baidutieba_AndroidPhone_1015363f.apk`，87,847,605 字节，13 个 DEX。
-- SHA-256：`06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3`。
-- 603 条静态路径候选（568 个不同路径），包含客户端路径和 H5 页面；路径存在不代表当前可调用。
-- 11 个请求类、345 个带 Wire 注解的字段，保留字段编号、类型及位置。
+| 范围         | 已保存结果                                                          | 如何理解                                           |
+| ------------ | ------------------------------------------------------------------- | -------------------------------------------------- |
+| 静态路径提取 | 603 条候选、568 个不同路径                                          | 包含 API、H5、媒体和遥测；存在字符串不代表接口可用 |
+| 线上请求覆盖 | 195 个不同路径                                                      | 包含成功、空结果、业务错误和未确认响应             |
+| 非空业务数据 | 105 个路径至少一次返回数据                                          | 包含结构或载荷检查，不能全部等同于功能验收通过     |
+| 首批功能验证 | 5 类匿名读取能力                                                    | 已核对业务码及吧名、页码、帖子或用户编号的一致性   |
+| 协议元数据   | 首批 11 个请求类、345 个 Wire 注解字段；扩展形成 116 个命名空间契约 | 字段和命令线索与实际请求结果分开记录               |
 
-[路径证据](evidence/endpoint-candidates.json) · [模型证据](evidence/request-models.json) · [请求字段表](docs/request-fields.md) · [分析进展](docs/investigation.md)
+首批五类能力为帖子列表与分页、帖子详情、楼中楼、公开用户资料、发帖选吧搜索。后者是选择发帖目标吧的搜索，不是全站帖子搜索。
 
-## 全量候选覆盖
+已完成官方网页扫码登录，并以本机登录态进行了扩展读取尝试；这不证明所有 App 接口都接受该身份。写入、支付和账号安全操作没有在真实账号上试执行，部分读取也仍缺少参数、权限或有效场景样本。
 
-已为全部 603 条候选建立逐项清单，累计请求 195 个路径，105 个路径至少一次返回非空数据；这不代表全部接口已通过功能验收。见 [扩展验证范围与未完成项](docs/full-coverage.md) 和 [完整 CSV](docs/api-coverage.csv)。
+## 文档导航
 
-## 线上验证
+- [全量覆盖、状态解释与扩展验证](docs/full-coverage.md)：查看总体结果、登录边界和复现条件。
+- [逐项覆盖 CSV](docs/api-coverage.csv) · [覆盖 JSON](evidence/api-coverage.json)：按路径、命令变体和状态查找证据。
+- [首批五类功能验证](docs/validation.md)：具体核对条件、命令号与匿名复现方法。
+- [首批请求字段表](docs/request-fields.md) · [扩展协议契约](evidence/protocol-contracts.json)：分别查看静态字段和更大范围的协议线索。
+- [分析进展与来源](docs/investigation.md) · [状态操作测试计划](docs/stateful-test-plan.md)。
+- [CHANGELOG](CHANGELOG.md)：面向使用者的待发布变化。
 
-参见 [验证范围、结果与复现步骤](docs/validation.md) 和 [脱敏结果](evidence/live-read-validation.json)。在仓库根目录运行：
+## 快速开始
 
-```powershell
-node scripts/verify-app-reads.mjs --live
-```
-
-该命令发送 7 次匿名读取或负对照请求，结果写入忽略目录 .local/。业务码和返回对象检查均通过才判为成功。
-
-## 本地使用
-
-需要 Node.js 24 或更新版本。以下命令在仓库根目录运行，无需安装项目依赖。
+需要 Node.js 24+。以下命令在仓库根目录运行，无需安装项目依赖：
 
 ```powershell
 node scripts/catalog.mjs pb/floor
 node --test tests/*.test.mjs
 ```
 
-从自己的同一份 APK 重建证据：
+`catalog.mjs` 查询的是静态候选，不会发送网络请求；可用性需要再查覆盖报告。
+
+复测首批五类匿名读取：
+
+```powershell
+node scripts/verify-app-reads.mjs --live
+```
+
+该命令向真实服务发送 7 次读取或负对照请求，默认每次总超时 12 秒、响应上限 1 MiB。业务码和返回对象检查均通过才判为成功；结果写入 `.local/verified-reads.json`，原始响应也留在忽略目录。它同时产生扩展脚本依赖的公开帖子样本。
+
+扩展协议与遗留 JSON 读取另需准备协议模型、公开样本，使用本机登录态时还需本地配置，见 [扩展复测步骤](docs/full-coverage.md#重建与复测)。不要把登录态、Cookie 或账号数据写进命令行、文档或 Git。
+
+## 分析对象与重新提取
+
+- 文件：`baidutieba_AndroidPhone_1015363f.apk`，87,847,605 字节，13 个 DEX。
+- 包名：`com.baidu.tieba`，版本：`22.13.1.1`。
+- SHA-256：`06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3`。
+
+从同一份 APK 重建首批证据：
 
 ```powershell
 .\scripts\discover.ps1 -Apk 'D:\targets\example.apk'
@@ -44,28 +62,26 @@ node scripts/request-models.mjs .local/dex evidence/request-models.json evidence
 node scripts/document-models.mjs
 ```
 
-APK 路径为示例。PowerShell 若禁止执行脚本，可检查 `scripts/discover.ps1` 后在允许脚本的终端执行；不需要修改全局执行策略。
+APK 路径为示例。提取器只读取原 APK，DEX 临时文件保存在 `.local/dex`。不同 APK 应使用独立的 DEX 目录与证据，不要混用历史模型、命令索引或线上报告。PowerShell 如限制脚本执行，应先检查 `scripts/discover.ps1`，再在允许脚本的终端运行；不需要修改全局执行策略。
 
-提取过程只读取原 APK；DEX 临时文件保存在忽略目录 `.local/dex`。不要将 APK、反编译全文、登录 Cookie、Token、账号数据提交到仓库。不同 APK 的提取应使用新的 `.local/dex` 目录，避免混入上一版本的 DEX。
+完整 APK、DEX、引擎、反编译全文和用户原始响应均不进入提交。协议元数据、摘要和来源位置见 [路径证据](evidence/endpoint-candidates.json)、[首批模型](evidence/request-models.json) 与 [APK 检查摘要](evidence/apk-summary.json)。
 
 ## REA 分析入口
 
-本机已准备 REA 6.4.0 和通过固定 SHA-256 校验的 JADX 0.7.1。入口仅向子进程传入引擎路径，不修改全局 Agent 配置：
+本次使用 REA 6.4.0、JADX 0.7.1 和完整 JDK 25.0.1。命令入口仅向子进程传入引擎路径，不修改全局 Agent 配置：
 
 ```powershell
 node scripts/rea.mjs inspect-android-package 'D:/targets/example.apk' --format json
 ```
 
-在其他机器使用前，安装固定运行包并按 [REA 官方指南](https://github.com/Billy775326/rea/blob/main/docs/android-analysis.md) 准备同一 JAR，保存为 `.local/jadx-complete.jar`：
+新环境需安装固定运行包，并按 [REA Android 指南](https://github.com/Billy775326/rea/blob/main/docs/android-analysis.md) 准备同一 JAR，保存为 `.local/jadx-complete.jar`：
 
 ```powershell
 npm.cmd install --prefix .local/rea-runtime --omit=optional --ignore-scripts rea-agents@6.4.0
 ```
 
-APK 路径为示例；启动入口会核对 JAR 哈希，不接受不完整或不匹配的下载。
+入口会检查 JAR SHA-256，不接受不完整或不匹配的下载。上述安装不是登录态配置，也不意味着 REA 已注册到当前 Agent。
 
 ## 参考
 
-参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的接口、认证、参数构造和使用示例分层方式；贴吧协议结论来自本仓库记录的 APK，不从其他平台接口类推。
-
-分析工具使用 [REA](https://github.com/Billy775326/rea)。路径和字段证据由本仓库脚本提取；REA/JADX 的实际检查摘要见 [APK 摘要](evidence/apk-summary.json)。线上验证独立记录在 [验证报告](docs/validation.md)；仅覆盖其中列明的 5 类读取能力。
+参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的接口、认证、参数构造和示例组织方式；贴吧协议结论来自本仓库记录的 APK 和实际响应，不从其他平台类推。静态分析使用 [REA](https://github.com/Billy775326/rea) 和直接 JADX 索引，两类证据的范围见对应报告。
