@@ -7,7 +7,7 @@ const lines = [
   "",
   `APK SHA-256：\`${report.artifact.sha256}\`。`,
   "",
-  "以下字段直接来自 DEX 的 `com.squareup.wire.ProtoField` 注解。tag 和显式类型是静态观察；类型注解省略时保留 Java 描述符，不推断默认值。接口与模型的对应关系仍需反编译调用点验证，必填参数、默认值、签名及响应尚未确认。",
+  "本表覆盖首批 11 个请求模型、345 个带 Wire 注解的字段，不是全量接口参数手册。字段直接来自 DEX 的 `com.squareup.wire.ProtoField` 注解；tag 和显式类型属于静态观察，省略类型时保留 Java 描述符，不推断默认值或必填性。已完成的请求链路和线上核对见 [首批功能验证](validation.md)，更大范围的协议线索与未完成项见 [全量覆盖报告](full-coverage.md) 和 [扩展协议契约](../evidence/protocol-contracts.json)。已恢复部分遗留 JSON 签名，不能因此推断所有接口的签名要求。",
   "",
 ];
 for (const model of report.models) {
