@@ -1,0 +1,818 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "started_at_utc": "2026-11-14T02:31:07.854Z",
+  "finished_at_utc": "2026-11-14T02:32:28.768Z",
+  "scope": "Targeted reads with confirmed accounts and supplied thread; controlled peer permission changes with restore",
+  "results": [
+    {
+      "path": "/c/e/member/getVipInfo",
+      "namespace": "GetVipInfo",
+      "command": "309062",
+      "observed_at_utc": "2026-11-14T02:31:08.709Z",
+      "input_fields": [
+        "common",
+        "is_jail_broken"
+      ],
+      "omitted_fields": [],
+      "http_status": 200,
+      "response_bytes": 324,
+      "response_sha256": "ceeb8fe98f12c4cceee0bc31ac3ec3c7035db7aaa4f6a9887f19906cfccafd42",
+      "status": "business-error",
+      "error_code": "110003",
+      "error_message": "内部错误",
+      "returned_fields": [
+        "user"
+      ],
+      "recognized_response_fields": 1
+    },
+    {
+      "path": "/c/u/user/getShoubaiThreadList",
+      "namespace": "GetShoubaiThreadList",
+      "command": "309647",
+      "observed_at_utc": "2026-11-14T02:31:09.182Z",
+      "input_fields": [
+        "common",
+        "page_size",
+        "uid"
+      ],
+      "omitted_fields": [
+        "cursor"
+      ],
+      "http_status": 200,
+      "response_bytes": 18,
+      "response_sha256": "da84902fc7cbdde5fda4e7db9a2bde720247ad5a066f4b2ae6cc398e61b7a960",
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [
+        "page"
+      ],
+      "recognized_response_fields": 1
+    },
+    {
+      "path": "/c/u/user/getUserBlackInfo",
+      "namespace": "GetUserBlackInfo",
+      "command": "309698",
+      "observed_at_utc": "2026-11-14T02:31:09.635Z",
+      "input_fields": [
+        "black_uid",
+        "common"
+      ],
+      "omitted_fields": [],
+      "http_status": 200,
+      "response_bytes": 20,
+      "response_sha256": "f11277be1697f0f98e65c2a8338f45ca02459044a808629928d42bec328057ad",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [
+        "is_black_white",
+        "perm_list"
+      ],
+      "recognized_response_fields": 2
+    },
+    {
+      "path": "/c/u/user/userMuteCheck",
+      "namespace": "UserMuteCheck",
+      "command": "303040",
+      "observed_at_utc": "2026-11-14T02:31:10.046Z",
+      "input_fields": [
+        "common",
+        "mute_type",
+        "user_id_f",
+        "user_id_t"
+      ],
+      "omitted_fields": [],
+      "http_status": 200,
+      "response_bytes": 100,
+      "response_sha256": "072eb7a78f81dee2245c55fa05627003c7e1bd6fa5644450fbea859f4d6e2a3b",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "success",
+      "returned_fields": [
+        "is_mute",
+        "mute_confirm"
+      ],
+      "recognized_response_fields": 2
+    },
+    {
+      "path": "/c/u/user/userMuteQuery",
+      "namespace": "UserMuteQuery",
+      "command": "303028",
+      "observed_at_utc": "2026-11-14T02:31:10.506Z",
+      "input_fields": [
+        "common",
+        "mute_type",
+        "pn",
+        "rn",
+        "user_id"
+      ],
+      "omitted_fields": [],
+      "http_status": 200,
+      "response_bytes": 229,
+      "response_sha256": "ae87f0c0f1f759fbed13068eae82e4ff894e87d3347dad1aea35b702dd375a49",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "success",
+      "returned_fields": [
+        "mute_user",
+        "page"
+      ],
+      "recognized_response_fields": 3
+    },
+    {
+      "path": "/c/u/feed/userpost",
+      "namespace": "UserPost",
+      "command": "303002",
+      "observed_at_utc": "2026-11-14T02:31:11.492Z",
+      "input_fields": [
+        "common",
+        "is_thread",
+        "need_content",
+        "pn",
+        "rn",
+        "uid",
+        "user_id"
+      ],
+      "omitted_fields": [
+        "begin_thread_id",
+        "begin_time",
+        "check_login",
+        "cookie",
+        "email",
+        "end_time",
+        "forum_id",
+        "from_type",
+        "ip_int",
+        "ip_str",
+        "is_twzhibo",
+        "is_view_card",
+        "last_thread_time",
+        "login",
+        "mobile",
+        "module_name",
+        "no_un",
+        "offset",
+        "page_source",
+        "portrait",
+        "q_type",
+        "request_times",
+        "scr_dip",
+        "scr_h",
+        "scr_w",
+        "smile_grade",
+        "st_param",
+        "st_type",
+        "subtype",
+        "support_noun",
+        "type",
+        "user_name",
+        "work_tab_id"
+      ],
+      "http_status": 200,
+      "response_bytes": 55828,
+      "response_sha256": "b54f6ad2fce376e29d466e23408ddb2a70bd212c05a20043dac32650e66fa240",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [
+        "author",
+        "ctime",
+        "hide_post",
+        "log_param",
+        "logid",
+        "mask_type",
+        "post_list",
+        "reddot_deleted_thread",
+        "time",
+        "view_card_num"
+      ],
+      "recognized_response_fields": 30,
+      "notes": [
+        "Response author was present without a user ID; identity match was not inferred."
+      ]
+    },
+    {
+      "path": "/c/u/user/getuserlike",
+      "namespace": "Userlike",
+      "command": "309474",
+      "observed_at_utc": "2026-11-14T02:31:11.928Z",
+      "input_fields": [
+        "common"
+      ],
+      "omitted_fields": [
+        "ad_ext_params",
+        "follow_type",
+        "is_newfeed",
+        "last_req_unix",
+        "load_type",
+        "page_tag",
+        "request_times"
+      ],
+      "http_status": 200,
+      "response_bytes": 10,
+      "response_sha256": "3ce6676c7e428a40287f145604bfc02c9ec10b82f93db66005a8f663d171d3f4",
+      "status": "accepted-empty-response",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [],
+      "recognized_response_fields": 0
+    },
+    {
+      "path": "/c/e/present/getMyGift",
+      "namespace": "GetMyGift",
+      "command": "309052",
+      "observed_at_utc": "2026-11-14T02:31:13.255Z",
+      "input_fields": [
+        "common",
+        "pn",
+        "uid"
+      ],
+      "omitted_fields": [
+        "account_type",
+        "st_type"
+      ],
+      "http_status": 200,
+      "response_bytes": 109,
+      "response_sha256": "9607c45721e00d47ede416b37c45ec3bafa72a2109c63d37176d1b31df7d14fe",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "success",
+      "returned_fields": [
+        "blue_diamond",
+        "blue_diamond_txt",
+        "currency",
+        "money",
+        "money_txt",
+        "page",
+        "total_num"
+      ],
+      "recognized_response_fields": 7
+    },
+    {
+      "path": "/c/u/tail/getTails",
+      "namespace": "GetTails",
+      "command": "305001",
+      "observed_at_utc": "2026-11-14T02:31:13.789Z",
+      "input_fields": [
+        "common"
+      ],
+      "omitted_fields": [
+        "st_type"
+      ],
+      "http_status": 200,
+      "response_bytes": 122,
+      "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "success",
+      "returned_fields": [
+        "colorList",
+        "default_color"
+      ],
+      "recognized_response_fields": 10
+    },
+    {
+      "path": "/c/f/forum/getMemberInfo",
+      "namespace": "GetMemberInfo",
+      "command": "301004",
+      "observed_at_utc": "2026-11-14T02:31:14.301Z",
+      "input_fields": [
+        "common",
+        "forum_id"
+      ],
+      "omitted_fields": [],
+      "http_status": 200,
+      "response_bytes": 1984,
+      "response_sha256": "63a8a68665ba0dd1a21150e2a11085fa9e0302bca8b6ab5c630fbe42c1489920",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [
+        "forum_member_info",
+        "is_bawuapply_show",
+        "is_private_forum",
+        "manager_apply_info",
+        "manager_complain_info",
+        "member_god_info",
+        "member_group_info"
+      ],
+      "recognized_response_fields": 7
+    },
+    {
+      "path": "/c/f/forum/getLevelInfo",
+      "namespace": "GetLevelInfo",
+      "command": "301005",
+      "observed_at_utc": "2026-11-14T02:31:14.729Z",
+      "input_fields": [
+        "common",
+        "forum_id"
+      ],
+      "omitted_fields": [],
+      "http_status": 200,
+      "response_bytes": 406,
+      "response_sha256": "38cc639d0a8f02540540168f63e82eff29551b05033e5a9c2299158fef5287fe",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [
+        "is_like",
+        "level_info",
+        "level_name",
+        "user_level"
+      ],
+      "recognized_response_fields": 21
+    },
+    {
+      "path": "/c/f/frs/threadlist",
+      "namespace": "ThreadList",
+      "command": "301002",
+      "observed_at_utc": "2026-11-14T02:31:15.463Z",
+      "input_fields": [
+        "common",
+        "forum_id",
+        "forum_name",
+        "need_abstract",
+        "pn",
+        "thread_ids",
+        "user_id"
+      ],
+      "omitted_fields": [
+        "ad_bear_context",
+        "ad_bear_sid",
+        "ad_bear_sid_price",
+        "ad_context_list",
+        "ad_ext_params",
+        "ad_external_info",
+        "ad_param",
+        "app_pos",
+        "app_transmit_data",
+        "current_load_pn",
+        "da_idfa",
+        "frs_common_info",
+        "has_ad_bear",
+        "is_goodtab",
+        "is_newfeed",
+        "is_newfrs",
+        "last_click_tid",
+        "log_param",
+        "nid_src",
+        "platform",
+        "q_type",
+        "request_times",
+        "scr_dip",
+        "scr_h",
+        "scr_w",
+        "simplify_field",
+        "sort_type",
+        "st_type",
+        "tid_src"
+      ],
+      "http_status": 200,
+      "response_bytes": 21312,
+      "response_sha256": "0effac2becc8b15a29fec44e094eab75fe4041696759c431cbc4f7bc33c8e1f3",
+      "status": "verified-read",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [
+        "ad_sample_map_key",
+        "ad_show_select",
+        "asp_shown_info",
+        "banner_list",
+        "is_query_global_nps_card",
+        "log_param",
+        "page_data",
+        "partial_visible_toast",
+        "thread_list",
+        "user_list"
+      ],
+      "recognized_response_fields": 17,
+      "checks": {
+        "requested_thread_matches": true
+      }
+    },
+    {
+      "path": "/c/f/forum/getInfluenceRank",
+      "namespace": "GetInfluenceRank",
+      "command": "309652",
+      "observed_at_utc": "2026-11-14T02:31:16.154Z",
+      "input_fields": [
+        "common",
+        "tieba_name"
+      ],
+      "omitted_fields": [
+        "forum_id",
+        "pn",
+        "rn"
+      ],
+      "http_status": 200,
+      "response_bytes": 273,
+      "response_sha256": "350c820ec9388c5601359f674105d4f77c5d12841ac538bd98da41e7446701ea",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [
+        "current_user",
+        "field_info",
+        "has_more",
+        "rank_description",
+        "timestamp"
+      ],
+      "recognized_response_fields": 5
+    },
+    {
+      "path": "/c/f/forum/getForumMangerRights",
+      "observed_at_utc": "2026-11-14T02:31:16.980Z",
+      "http_status": 200,
+      "response_bytes": 145,
+      "response_sha256": "5ddcb1e8de6841a2dba6e421bc28f725850bdbff663bfbac3416dc2052723d7f",
+      "status": "business-error",
+      "error_code": "2121024",
+      "error_message": "the checkuser not a manager",
+      "returned_fields": [
+        "data"
+      ]
+    },
+    {
+      "path": "/c/f/forum/getUserSign",
+      "observed_at_utc": "2026-11-14T02:31:17.400Z",
+      "http_status": 200,
+      "response_bytes": 125,
+      "response_sha256": "a7f7a01ccf0ba6718e114e4cefc1d4d89b168650e3e8febeac70d3e5f70fa45a",
+      "status": "business-error",
+      "error_code": "210009",
+      "error_message": "系统错误",
+      "returned_fields": [
+        "data"
+      ]
+    },
+    {
+      "path": "/c/f/widget/getUserTaskInfo",
+      "observed_at_utc": "2026-11-14T02:31:17.913Z",
+      "http_status": 200,
+      "response_bytes": 127,
+      "response_sha256": "c8b999708d6c0a60c453f41abca8570edfaa5347773c8f9825c020c46451d407",
+      "status": "business-error",
+      "error_code": "110003",
+      "error_message": "内部错误",
+      "returned_fields": [
+        "data"
+      ]
+    },
+    {
+      "path": "/c/u/user/bigvip",
+      "observed_at_utc": "2026-11-14T02:31:18.325Z",
+      "http_status": 200,
+      "response_bytes": 119,
+      "response_sha256": "27743bf12a33baa1c4835f4fdb137ebcc9c590a29b2e3fd08f481d5627640a6e",
+      "status": "business-error",
+      "error_code": "110001",
+      "error_message": null,
+      "returned_fields": [
+        "info"
+      ]
+    },
+    {
+      "path": "/c/u/feed/replyme",
+      "observed_at_utc": "2026-11-14T02:31:19.322Z",
+      "http_status": 200,
+      "response_bytes": 68089,
+      "response_sha256": "96d50e86ee1b9013c37c8509469562f88b0ea3cc6166c799a36f9a8b7c2c072b",
+      "status": "json-data-returned",
+      "error_code": "0",
+      "error_message": null,
+      "returned_fields": [
+        "reply_list",
+        "page",
+        "message"
+      ]
+    },
+    {
+      "path": "/c/u/feed/atme",
+      "observed_at_utc": "2026-11-14T02:31:19.919Z",
+      "http_status": 200,
+      "response_bytes": 5570,
+      "response_sha256": "65e2bf58f7799e92c61e813f4e7b1073cbafab5977f938573ca154a4582d5b46",
+      "status": "json-data-returned",
+      "error_code": "0",
+      "error_message": null,
+      "returned_fields": [
+        "at_list",
+        "page",
+        "message",
+        "vip_guide_info"
+      ]
+    },
+    {
+      "path": "/c/u/follow/followList",
+      "observed_at_utc": "2026-11-14T02:31:20.575Z",
+      "http_status": 200,
+      "response_bytes": 9879,
+      "response_sha256": "e1e2317ce56b67a650ba76c8736f89bcfd8b6200e77f7853b70694c8f9677e77",
+      "status": "json-data-returned",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [
+        "has_more",
+        "total_follow_num",
+        "follow_list_switch",
+        "priv_sets",
+        "follow_list",
+        "pn",
+        "tips_text"
+      ]
+    },
+    {
+      "path": "/c/u/fans/page",
+      "observed_at_utc": "2026-11-14T02:31:21.713Z",
+      "http_status": 200,
+      "response_bytes": 36698,
+      "response_sha256": "54597c97ef95ce6e683c0d00790ec7cf279a5262f874f624d4fd7c733c7b391f",
+      "status": "json-data-returned",
+      "error_code": "0",
+      "error_message": null,
+      "returned_fields": [
+        "page",
+        "user_list",
+        "tips_text",
+        "follow_list_switch",
+        "priv_sets"
+      ]
+    },
+    {
+      "path": "/c/r/friend/listFriend",
+      "observed_at_utc": "2026-11-14T02:31:23.724Z",
+      "http_status": 200,
+      "response_bytes": 3350,
+      "response_sha256": "53579a7cf151f5b8a549043591b91cc918ffab205cf37ea8c88d15aee36f789b",
+      "status": "json-data-returned",
+      "error_code": "0",
+      "error_message": null,
+      "returned_fields": [
+        "user_list",
+        "page"
+      ]
+    },
+    {
+      "path": "/c/u/user/getUserSwitchList",
+      "observed_at_utc": "2026-11-14T02:31:24.335Z",
+      "http_status": 200,
+      "response_bytes": 3787,
+      "response_sha256": "45c9b0f1159cafa3acd07779cf714194319043d291c95a3a089269883fbb88ff",
+      "status": "json-data-returned",
+      "error_code": "0",
+      "error_message": null,
+      "returned_fields": [
+        "switch_list"
+      ]
+    },
+    {
+      "path": "/c/e/point/getmembertasklist",
+      "namespace": "GetMemberTaskList",
+      "command": "309427",
+      "observed_at_utc": "2026-11-14T02:32:28.363Z",
+      "input_fields": [
+        "common"
+      ],
+      "omitted_fields": [],
+      "http_status": 200,
+      "response_bytes": 159,
+      "response_sha256": "483dc07d14e96eaf0a2429b523706af9085376dbe70f7972fd63949d2ab6eb4a",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [
+        "img_list",
+        "user_point_info"
+      ],
+      "recognized_response_fields": 2
+    },
+    {
+      "path": "/c/f/livegroup/getStoreRemindTime",
+      "namespace": "GetStoreRemindTime",
+      "command": "309117",
+      "observed_at_utc": "2026-11-14T02:32:28.768Z",
+      "input_fields": [
+        "common"
+      ],
+      "omitted_fields": [],
+      "http_status": 200,
+      "response_bytes": 30,
+      "response_sha256": "490cdf59e6893df6777e0cb635b80d75ab065ed11b2f71bb2e2342b6d2e2ab01",
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "error_message": "",
+      "returned_fields": [
+        "remind_time"
+      ],
+      "recognized_response_fields": 2
+    }
+  ],
+  "diagnostics": [
+    {
+      "path": "/c/e/member/getMemberTaskList",
+      "namespace": "GetMemberTaskList",
+      "command": "309427",
+      "observed_at_utc": "2026-11-14T02:31:12.349Z",
+      "input_fields": [
+        "common"
+      ],
+      "omitted_fields": [],
+      "http_status": 200,
+      "response_bytes": 0,
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "incorrect-unlisted-route",
+      "error_code": null,
+      "error_message": null,
+      "returned_fields": [],
+      "reason": "Local route construction error; not an APK endpoint failure"
+    },
+    {
+      "path": "/c/f/post/getStoreRemindTime",
+      "namespace": "GetStoreRemindTime",
+      "command": "309117",
+      "observed_at_utc": "2026-11-14T02:31:16.569Z",
+      "input_fields": [
+        "common"
+      ],
+      "omitted_fields": [],
+      "http_status": 200,
+      "response_bytes": 0,
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "incorrect-unlisted-route",
+      "error_code": null,
+      "error_message": null,
+      "returned_fields": [],
+      "reason": "Local route construction error; not an APK endpoint failure"
+    }
+  ],
+  "permission_cycle": {
+    "changed_verified": true,
+    "restored": true,
+    "operations": [
+      {
+        "name": "baseline",
+        "namespace": "GetUserBlackInfo",
+        "path": "/c/u/user/getUserBlackInfo",
+        "command": "309698",
+        "observed_at_utc": "2026-11-14T02:34:16.068Z",
+        "http_status": 200,
+        "response_bytes": 20,
+        "response_sha256": "f11277be1697f0f98e65c2a8338f45ca02459044a808629928d42bec328057ad",
+        "error_code": "0",
+        "feature_flag": "1",
+        "permissions": {
+          "follow": "0",
+          "interact": "0",
+          "chat": "0"
+        }
+      },
+      {
+        "name": "set-test-state",
+        "namespace": "SetUserBlack",
+        "path": "/c/c/user/setUserBlack",
+        "command": "309697",
+        "observed_at_utc": "2026-11-14T02:34:16.485Z",
+        "http_status": 200,
+        "response_bytes": 34,
+        "response_sha256": "4cf2aa382e9551a772f727ff28a065f6b043fda102b7640d6035de71aacaa331",
+        "error_code": "0"
+      },
+      {
+        "name": "verify-test-state",
+        "namespace": "GetUserBlackInfo",
+        "path": "/c/u/user/getUserBlackInfo",
+        "command": "309698",
+        "observed_at_utc": "2026-11-14T02:34:16.649Z",
+        "http_status": 200,
+        "response_bytes": 20,
+        "response_sha256": "15b16467917e9e16296a9add549b4966d2c11faedbc46b16e6928071278b2ef8",
+        "error_code": "0",
+        "feature_flag": "1",
+        "permissions": {
+          "follow": "1",
+          "interact": "1",
+          "chat": "1"
+        }
+      },
+      {
+        "name": "restore",
+        "namespace": "SetUserBlack",
+        "path": "/c/c/user/setUserBlack",
+        "command": "309697",
+        "observed_at_utc": "2026-11-14T02:34:17.094Z",
+        "http_status": 200,
+        "response_bytes": 34,
+        "response_sha256": "4cf2aa382e9551a772f727ff28a065f6b043fda102b7640d6035de71aacaa331",
+        "error_code": "0"
+      },
+      {
+        "name": "verify-restored",
+        "namespace": "GetUserBlackInfo",
+        "path": "/c/u/user/getUserBlackInfo",
+        "command": "309698",
+        "observed_at_utc": "2026-11-14T02:34:17.246Z",
+        "http_status": 200,
+        "response_bytes": 20,
+        "response_sha256": "f11277be1697f0f98e65c2a8338f45ca02459044a808629928d42bec328057ad",
+        "error_code": "0",
+        "feature_flag": "1",
+        "permissions": {
+          "follow": "0",
+          "interact": "0",
+          "chat": "0"
+        }
+      }
+    ]
+  },
+  "same_value_control": {
+    "changed_verified": false,
+    "restored": true,
+    "operations": [
+      {
+        "name": "baseline",
+        "namespace": "GetUserBlackInfo",
+        "path": "/c/u/user/getUserBlackInfo",
+        "command": "309698",
+        "observed_at_utc": "2026-11-14T02:33:40.644Z",
+        "http_status": 200,
+        "response_bytes": 20,
+        "response_sha256": "f11277be1697f0f98e65c2a8338f45ca02459044a808629928d42bec328057ad",
+        "error_code": "0",
+        "permissions": {
+          "follow": "0",
+          "interact": "0",
+          "chat": "0"
+        },
+        "feature_flag": "1"
+      },
+      {
+        "name": "set-test-state",
+        "namespace": "SetUserBlack",
+        "path": "/c/c/user/setUserBlack",
+        "command": "309697",
+        "observed_at_utc": "2026-11-14T02:33:41.010Z",
+        "http_status": 200,
+        "response_bytes": 34,
+        "response_sha256": "4cf2aa382e9551a772f727ff28a065f6b043fda102b7640d6035de71aacaa331",
+        "error_code": "0"
+      },
+      {
+        "name": "verify-test-state",
+        "namespace": "GetUserBlackInfo",
+        "path": "/c/u/user/getUserBlackInfo",
+        "command": "309698",
+        "observed_at_utc": "2026-11-14T02:33:41.143Z",
+        "http_status": 200,
+        "response_bytes": 20,
+        "response_sha256": "f11277be1697f0f98e65c2a8338f45ca02459044a808629928d42bec328057ad",
+        "error_code": "0",
+        "permissions": {
+          "follow": "0",
+          "interact": "0",
+          "chat": "0"
+        },
+        "feature_flag": "1"
+      },
+      {
+        "name": "restore",
+        "namespace": "SetUserBlack",
+        "path": "/c/c/user/setUserBlack",
+        "command": "309697",
+        "observed_at_utc": "2026-11-14T02:33:41.613Z",
+        "http_status": 200,
+        "response_bytes": 34,
+        "response_sha256": "4cf2aa382e9551a772f727ff28a065f6b043fda102b7640d6035de71aacaa331",
+        "error_code": "0"
+      },
+      {
+        "name": "verify-restored",
+        "namespace": "GetUserBlackInfo",
+        "path": "/c/u/user/getUserBlackInfo",
+        "command": "309698",
+        "observed_at_utc": "2026-11-14T02:33:41.839Z",
+        "http_status": 200,
+        "response_bytes": 20,
+        "response_sha256": "f11277be1697f0f98e65c2a8338f45ca02459044a808629928d42bec328057ad",
+        "error_code": "0",
+        "permissions": {
+          "follow": "0",
+          "interact": "0",
+          "chat": "0"
+        },
+        "feature_flag": "1"
+      }
+    ]
+  },
+  "limitations": [
+    "No private messages sent; IM session and receive transport unresolved.",
+    "Unknown server errors do not establish authentication failure or entitlement requirements.",
+    "Flags changed and restored; downstream blocking effects on messages/follows were not exercised.",
+    "The two incorrect unlisted routes are preserved as diagnostics and excluded from candidate counts."
+  ]
+}
