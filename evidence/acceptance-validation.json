@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "baseline_commit": "170ced225cd0ae679846d1c127ba72a878c24caf",
+  "code_changes_under_acceptance": [
+    ".gitattributes: generated files use LF"
+  ],
+  "observed_at_utc": "2026-11-14T14:41:38.609Z",
+  "offline": {
+    "snapshot_has_local_data": false,
+    "checks": [
+      {
+        "name": "node-tests",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "python-tests",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "java-vectors",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "rebuild-socket-contracts",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "rebuild-coverage",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "catalog-surface",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "catalog-bindings",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "catalog-calls",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "catalog-requests",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "catalog-wire",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "catalog-socket",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "cli-help",
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "name": "cli-status",
+        "exit_code": 0,
+        "passed": true
+      }
+    ],
+    "node_tests": 91,
+    "python_tests": 4,
+    "public_rebuild_files": 5,
+    "byte_identical_public_rebuild": true
+  },
+  "initial_finding": {
+    "kind": "generated-file-line-endings",
+    "first_snapshot_business_data_unchanged": true,
+    "initial_raw_byte_check_passed": false,
+    "root_cause": "core.autocrlf=true converted archived generated files to CRLF; rebuild emitted LF",
+    "corrected_snapshot_raw_byte_check_passed": true
+  },
+  "live": {
+    "requests": 11,
+    "writes_executed": false,
+    "results": [
+      {
+        "name": "thread",
+        "observed_at_utc": "2026-11-14T14:41:32.646Z",
+        "endpoint": "/c/f/pb/page",
+        "command": 302001,
+        "http_status": 200,
+        "response_sha256": "fdd7ad2b7f04634afbddcffb6b8976418cc3070c26c4bcb37082a6bf2028797e",
+        "response_bytes": 33224,
+        "error_code": "0",
+        "status": "verified-read",
+        "checks": {
+          "exact_thread_id": true
+        }
+      },
+      {
+        "name": "forum",
+        "observed_at_utc": "2026-11-14T14:41:33.548Z",
+        "endpoint": "/c/f/frs/page",
+        "command": 301001,
+        "http_status": 200,
+        "response_sha256": "a85bf72d752236a9aa4b828f7b2b7313f1e5a1c794228da0d4b9babfa6250648",
+        "response_bytes": 236469,
+        "error_code": "0",
+        "status": "verified-read",
+        "checks": {
+          "exact_forum_id": true,
+          "first_page": true
+        }
+      },
+      {
+        "name": "replies",
+        "observed_at_utc": "2026-11-14T14:41:34.716Z",
+        "endpoint": "/c/f/pb/floor",
+        "command": 302002,
+        "http_status": 200,
+        "response_sha256": "47b6b847286ca16078f10fc9b7fa9265ec410a0f7906c71cbb256ced8ca25ce4",
+        "response_bytes": 8898,
+        "error_code": "0",
+        "status": "verified-read",
+        "checks": {
+          "exact_parent_id": true,
+          "list_present": true
+        }
+      },
+      {
+        "name": "profile",
+        "observed_at_utc": "2026-11-14T14:41:35.094Z",
+        "endpoint": "/c/u/user/profile",
+        "command": 303012,
+        "http_status": 200,
+        "response_sha256": "91e814584332c8e230ef4b7d6a8ce96f3fe8d0f056042250e01520a4c77ca597",
+        "response_bytes": 9497,
+        "error_code": "0",
+        "status": "verified-read",
+        "checks": {
+          "controlled_user_id_matches": true
+        }
+      },
+      {
+        "name": "search-forum",
+        "observed_at_utc": "2026-11-14T14:41:35.478Z",
+        "endpoint": "/c/f/forum/searchPostForum",
+        "command": 309466,
+        "http_status": 200,
+        "response_sha256": "c0412f40a657f79bc8e93f2572a96199608b6967b71a36adc7e8e6cfe55f5c6c",
+        "response_bytes": 1664,
+        "error_code": "0",
+        "status": "verified-read",
+        "checks": {
+          "exact_requested_forum_name_matches": true
+        }
+      },
+      {
+        "name": "location-suggestions",
+        "observed_at_utc": "2026-11-14T14:41:36.126Z",
+        "endpoint": "/c/s/getSuggestionByAddrName",
+        "command": 303018,
+        "http_status": 200,
+        "response_sha256": "117a9c59c364c09c69329aa110f2c32455afdc462092353cae21931878e0f27e",
+        "response_bytes": 761,
+        "error_code": "0",
+        "status": "response-schema-validated",
+        "checks": {
+          "nonempty_poi_list": true,
+          "coordinate_strings_are_numeric": true,
+          "names_present": true
+        }
+      },
+      {
+        "name": "own-tails",
+        "observed_at_utc": "2026-11-14T14:41:36.925Z",
+        "endpoint": "/c/u/tail/getTails",
+        "command": 305001,
+        "http_status": 200,
+        "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+        "response_bytes": 122,
+        "error_code": "0",
+        "status": "response-schema-validated",
+        "checks": {
+          "empty_own_tail_list": true,
+          "nonempty_color_list": true,
+          "default_color_present": true
+        }
+      },
+      {
+        "name": "own-privacy",
+        "observed_at_utc": "2026-11-14T14:41:37.159Z",
+        "endpoint": "/c/u/user/getPrivateInfo",
+        "command": 303016,
+        "http_status": 200,
+        "response_sha256": "6573fd87b26cafdb1f3f0e029f5467c99aef10aa37d22bf7c3c7955facf0661c",
+        "response_bytes": 162,
+        "error_code": "0",
+        "status": "verified-read",
+        "checks": {
+          "own_uid_matches": true
+        }
+      },
+      {
+        "name": "agree-notifications",
+        "observed_at_utc": "2026-11-14T14:41:37.797Z",
+        "endpoint": "/c/u/feed/agreeme",
+        "command": 309593,
+        "http_status": 200,
+        "response_sha256": "86190096e8129474e1fcc1837020ee06d70e8e4bc99e8965604194417715ba93",
+        "response_bytes": 2277,
+        "error_code": "0",
+        "status": "response-schema-validated",
+        "checks": {
+          "nonempty_notification_list": true,
+          "controlled_new_notification_generated": false
+        }
+      },
+      {
+        "name": "polling",
+        "observed_at_utc": "2026-11-14T14:41:38.068Z",
+        "endpoint": "/c/s/loop",
+        "command": 309732,
+        "http_status": 200,
+        "response_sha256": "a17af312ad4d564b50a3391156764ad18d77b66e7e6a55e9bcad172d56b5b0ec",
+        "response_bytes": 612,
+        "error_code": "0",
+        "status": "response-schema-validated",
+        "checks": {
+          "homepage_live_config_present": true,
+          "normal_config_or_list_present": true
+        }
+      },
+      {
+        "name": "im-identities",
+        "observed_at_utc": "2026-11-14T14:41:38.202Z",
+        "endpoint": "/rest/3.0/im/get_user_info",
+        "origin": "https://pim.baidu.com",
+        "command": null,
+        "http_status": 200,
+        "response_sha256": "339fe143ba9d050cdf06b3a579b070b926202e6c354d0fbc0f8940ca825de889",
+        "response_bytes": 1318,
+        "error_code": "0",
+        "status": "verified-read",
+        "checks": {
+          "two_controlled_ids_returned": true
+        }
+      }
+    ]
+  },
+  "overall": "partial-business-acceptance",
+  "limitations": [
+    "Current live acceptance covers ten HTTP SDK read methods and the separate IM identity read, not every discovered API.",
+    "Writes were not repeated in this acceptance run; prior controlled transition/restoration evidence remains historical.",
+    "Empty own tails, ungenerated notification objects and homepage configuration do not establish complete business flows.",
+    "The Android resource request is pending; protocol-construction gaps remain engineering work."
+  ]
+}
