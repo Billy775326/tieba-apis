@@ -22,6 +22,7 @@
 
 - [全量覆盖、状态解释与扩展验证](docs/full-coverage.md)：查看总体结果、登录边界和复现条件。
 - [逐项覆盖 CSV](docs/api-coverage.csv) · [覆盖 JSON](evidence/api-coverage.json)：按路径、命令变体和状态查找证据。
+- [指定帖子读取验证](docs/thread-validation.md)：帖子 11185790604 的详情、分页、回复与楼中楼定向补测，以及后续测试对象要求。
 - [首批五类功能验证](docs/validation.md)：具体核对条件、命令号与匿名复现方法。
 - [首批请求字段表](docs/request-fields.md) · [扩展协议契约](evidence/protocol-contracts.json)：分别查看静态字段和更大范围的协议线索。
 - [分析进展与来源](docs/investigation.md) · [状态操作测试计划](docs/stateful-test-plan.md)。
