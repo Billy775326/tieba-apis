@@ -56,6 +56,9 @@ for (const phase of comprehensive.phases) {
 const supplemental=read('evidence/supplemental-validation.json');
 if(supplemental.artifact.sha256!==base.artifact.sha256)throw Error('Supplemental artifact mismatch');
 for(const phase of supplemental.phases) for(const o of phase.results) if(o.path) add({...o,phase:phase.name},'evidence/supplemental-validation.json');
+const expanded=read('evidence/expanded-api-validation.json');
+if(expanded.artifact.sha256!==base.artifact.sha256)throw Error('Expanded API artifact mismatch');
+for(const phase of expanded.phases)for(const o of phase.results)if(o.path)add({...o,phase:phase.name},'evidence/expanded-api-validation.json');
 const references=read('evidence/endpoint-reference-summary.json');
 observations.sort((a,b)=>(a.observed_at_utc??'').localeCompare(b.observed_at_utc??''));
 for (const report of [thread, write, two, gap, comprehensive, references]) {
@@ -107,6 +110,10 @@ const doc=`# 当前验证范围与未完成原因
 本页合并全部已保存观测，覆盖 **${summary.candidates} 条静态候选、${summary.unique_paths} 个不同路径**。${summary.functionally_verified_candidates} 条候选已有对象或状态变化核对；其余候选不能一概当作失败。已有 HTTP 返回、尚未发出请求、按用户要求不再测的项目分别列出，状态登记不等于实测完成。
 
 逐项结果见 [CSV](current-api-coverage.csv) 和 [JSON](../evidence/current-api-coverage.json)。CSV 同时列出 execution_status、disposition、历史最强证据及最新限制；未执行项目明确保留 not-requested。
+
+## 新增请求契约与 SDK 方法
+
+客户端从 5 个方法扩展到 12 个。本阶段另记录 **${expanded.total_requests} 次请求**，其中移除一个受控粉丝、帖子点赞与取消均经独立读取核对并恢复原状态；轮询只完成首页订阅返回结构核对，商城 IM 列表为空。初次 GetTails 的响应标签解析失败也保留在报告内，修正后已复测。见 [新增接口实测](expanded-api-validation.md) 和 [脱敏证据](../evidence/expanded-api-validation.json)。这些请求不计入下方冻结的历史阶段总数。
 
 ## 后续逐项补测
 

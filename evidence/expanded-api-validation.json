@@ -1,0 +1,1155 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "started_at_utc": "2026-11-14T10:42:05.763Z",
+  "finished_at_utc": "2026-11-14T10:47:04.601Z",
+  "total_requests": 38,
+  "sdk_method_count": 12,
+  "new_sdk_methods": [
+    "getLocationSuggestions",
+    "getOwnTails",
+    "getOwnPrivacySettings",
+    "getAgreeNotifications",
+    "getPollingStatus",
+    "setThreadLike",
+    "removeFollower"
+  ],
+  "sources": [
+    {
+      "class_name": "com.baidu.tbadk.core.util.RemoveFansController",
+      "source_sha256": "338c0ed5b259e7b340bec184c68e6611cb16939550e12e515dbfce541296f84d",
+      "method": "JADX source from the pinned local APK; full source retained privately"
+    },
+    {
+      "class_name": "com.baidu.tieba.v2a",
+      "source_sha256": "9bf5131080dd12cd69a45717876ab65f75fc6d35f5b8b542dd6c6003ee6c0f01",
+      "method": "JADX source from the pinned local APK; full source retained privately"
+    },
+    {
+      "class_name": "com.baidu.tieba.hod",
+      "source_sha256": "37e272ce4e95ea14df14f6d138420b19d3b17618a580772d0ca90ef7349380e9",
+      "method": "JADX source from the pinned local APK; full source retained privately"
+    },
+    {
+      "class_name": "com.baidu.tieba.nj6",
+      "source_sha256": "e83bf7f6a9a64011897a15988008a16b00b696912cd7a56361bc010911ca9e38",
+      "method": "JADX source from the pinned local APK; full source retained privately"
+    },
+    {
+      "class_name": "com.baidu.tieba.c0c",
+      "source_sha256": "873d6c7fa6531251ab5f8faf0a10112b7775cfec95096b97bea1360a60c8044d",
+      "method": "JADX source from the pinned local APK; full source retained privately"
+    },
+    {
+      "class_name": "com.baidu.tbadk.core.leveiconlivepolling.PollingReqMessage",
+      "source_sha256": "b7430cf291807aa7781f66b3fce4dd9f18728534d7cc3c6eaf6dde784e2d6187",
+      "method": "JADX source from the pinned local APK; full source retained privately"
+    },
+    {
+      "class_name": "com.baidu.tbadk.core.leveiconlivepolling.PollingModel",
+      "source_sha256": "47e07bc349de6e00a05bd152818027482b721800d199221da3db1b9cd1f0a975",
+      "method": "JADX source from the pinned local APK; full source retained privately"
+    }
+  ],
+  "recovered_contracts": [
+    {
+      "path": "/c/c/user/removeFans",
+      "source_class": "com.baidu.tbadk.core.util.RemoveFansController",
+      "method": "removeFans(long)",
+      "fields": [
+        "fans_uid",
+        "BDUSS",
+        "tbs"
+      ],
+      "meaning": "Remove one follower of the authenticated account",
+      "verified": true
+    },
+    {
+      "path": "/c/c/agree/opAgree",
+      "source_class": "com.baidu.tieba.hod",
+      "method": "b(AgreeData)",
+      "fields": [
+        "thread_id",
+        "forum_id",
+        "op_type",
+        "obj_type",
+        "agree_type",
+        "is_long_press_agree",
+        "z_id",
+        "BDUSS",
+        "tbs"
+      ],
+      "enums": {
+        "op_type": {
+          "0": "like",
+          "1": "cancel"
+        },
+        "obj_type": {
+          "3": "thread"
+        },
+        "agree_type": {
+          "2": "like"
+        }
+      },
+      "scope": "Thread likes only; post and other object types not validated",
+      "verified": true
+    },
+    {
+      "path": "/c/s/loop",
+      "source_class": "com.baidu.tbadk.core.leveiconlivepolling.PollingReqMessage",
+      "method": "encode(boolean)",
+      "fields": [
+        "common",
+        "data_type"
+      ],
+      "data_type": "live,level,icon,festival_info",
+      "meaning": "Homepage subscription request; no chatroom acknowledgement fields",
+      "verified": false,
+      "result": "response-schema-validated"
+    },
+    {
+      "path": "/c/s/shop/getKjsIMList",
+      "source_class": "com.baidu.tieba.c0c",
+      "method": "b()",
+      "fields": [
+        "BDUSS"
+      ],
+      "meaning": "Authenticated commerce IM list; no extra business arguments in this APK method",
+      "verified": false,
+      "result": "accepted-empty-response"
+    },
+    {
+      "path": "/c/c/user/multiRemoveFans",
+      "source_class": "com.baidu.tieba.v2a",
+      "method": "d()",
+      "fields": [],
+      "meaning": "CMD_REMOVE_ALL_FORBIDDEN_FANS; removes all forbidden followers, not a selected normal-user batch",
+      "executed": false,
+      "reason": "No isolated forbidden-follower fixture; do not apply this broad operation to the real account"
+    }
+  ],
+  "phases": [
+    {
+      "name": "recovered-contract-cycles",
+      "results": [
+        {
+          "name": "kjs-im-list",
+          "path": "/c/s/shop/getKjsIMList",
+          "actor": 1,
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:42:06.223Z",
+          "authenticated": true,
+          "input_fields": [],
+          "http_status": 200,
+          "response_sha256": "29dba7ad5c181347333f5c86ab7b1a9b7fb602cda9f3061ac4b063a91d0d7b22",
+          "response_bytes": 93,
+          "status": "accepted-empty-response",
+          "error_code": "0",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": [],
+          "top_level_keys": [
+            "ctime",
+            "data",
+            "error_code",
+            "logid",
+            "server_time",
+            "time"
+          ],
+          "data_keys": []
+        },
+        {
+          "name": "loop-home",
+          "path": "/c/s/loop",
+          "actor": 1,
+          "command": "309732",
+          "observed_at_utc": "2026-11-14T10:42:06.346Z",
+          "authenticated": true,
+          "input_fields": [
+            "common",
+            "data_type"
+          ],
+          "http_status": 200,
+          "response_sha256": "a17af312ad4d564b50a3391156764ad18d77b66e7e6a55e9bcad172d56b5b0ec",
+          "response_bytes": 612,
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "fans-baseline",
+          "path": "/c/u/user/profile",
+          "actor": 1,
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:06.959Z",
+          "authenticated": true,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "http_status": 200,
+          "response_sha256": "36c33ee79ee53b8c5b24b1f0febfe2bc9cd001d0efc692b9be3aca9c68f0e403",
+          "response_bytes": 9560,
+          "status": "verified-read",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            6,
+            11,
+            14,
+            16,
+            17,
+            20,
+            24,
+            26,
+            29,
+            34,
+            36,
+            37,
+            38,
+            39,
+            47,
+            48
+          ],
+          "checks": {
+            "target_matches": true
+          }
+        },
+        {
+          "name": "fans-follow-3",
+          "path": "/c/c/user/follow",
+          "actor": 1,
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:42:07.537Z",
+          "authenticated": true,
+          "input_fields": [
+            "uid",
+            "portrait"
+          ],
+          "http_status": 200,
+          "response_sha256": "5fc9f6171ed8a248705a46aea0b8b73bcc5e7d6f75a0f47e52638901d7699072",
+          "response_bytes": 1293,
+          "status": "verified-state-change",
+          "error_code": "0",
+          "business_field_names": [
+            "pushmask",
+            "status",
+            "info",
+            "toast",
+            "cloud_control_data_info"
+          ],
+          "scalar_field_names": [
+            "status"
+          ],
+          "top_level_keys": [
+            "pushmask",
+            "status",
+            "info",
+            "toast",
+            "server_time",
+            "cloud_control_data_info",
+            "time",
+            "ctime",
+            "logid",
+            "error_code"
+          ],
+          "data_keys": []
+        },
+        {
+          "name": "fans-before-remove",
+          "path": "/c/u/user/profile",
+          "actor": 1,
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:07.891Z",
+          "authenticated": true,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "http_status": 200,
+          "response_sha256": "2dce2ef307956cf839d9ee5d2a788b43bd2ad9ee991a582086394a61f38cccb8",
+          "response_bytes": 9560,
+          "status": "verified-read",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            6,
+            11,
+            14,
+            16,
+            17,
+            20,
+            24,
+            26,
+            29,
+            34,
+            36,
+            37,
+            38,
+            39,
+            47,
+            48
+          ],
+          "checks": {
+            "target_matches": true
+          }
+        },
+        {
+          "name": "remove-controlled-fan",
+          "path": "/c/c/user/removeFans",
+          "actor": 2,
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:42:08.111Z",
+          "authenticated": true,
+          "input_fields": [
+            "fans_uid"
+          ],
+          "http_status": 200,
+          "response_sha256": "eb43ad0bc4733061c35216fa129c23e14c6e02541731b76e64208c74168157f6",
+          "response_bytes": 125,
+          "status": "verified-state-change",
+          "error_code": "0",
+          "business_field_names": [
+            "info"
+          ],
+          "scalar_field_names": [],
+          "top_level_keys": [
+            "error_code",
+            "error_msg",
+            "info",
+            "server_time",
+            "time",
+            "ctime",
+            "logid"
+          ],
+          "data_keys": []
+        },
+        {
+          "name": "fans-after-remove-0",
+          "path": "/c/u/user/profile",
+          "actor": 1,
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:08.453Z",
+          "authenticated": true,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "http_status": 200,
+          "response_sha256": "286639f277c32803867366e75572bdd1bdc4ffb4edcbef7455ce694c67927b85",
+          "response_bytes": 9560,
+          "status": "verified-read",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            6,
+            11,
+            14,
+            16,
+            17,
+            20,
+            24,
+            26,
+            29,
+            34,
+            36,
+            37,
+            38,
+            39,
+            47,
+            48
+          ],
+          "checks": {
+            "target_matches": true
+          }
+        },
+        {
+          "name": "fans-before-restore",
+          "path": "/c/u/user/profile",
+          "actor": 1,
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:09.012Z",
+          "authenticated": true,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "http_status": 200,
+          "response_sha256": "0e29b33031359b31a8af9a9a7efebd0b56fc9782b1af0f3dca643cbca02abd56",
+          "response_bytes": 9560,
+          "status": "verified-read",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            6,
+            11,
+            14,
+            16,
+            17,
+            20,
+            24,
+            26,
+            29,
+            34,
+            36,
+            37,
+            38,
+            39,
+            47,
+            48
+          ],
+          "checks": {
+            "target_matches": true
+          }
+        },
+        {
+          "name": "fans-restored-0",
+          "path": "/c/u/user/profile",
+          "actor": 1,
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:09.462Z",
+          "authenticated": true,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "http_status": 200,
+          "response_sha256": "c92ea286832b5f669f8de4cb4671680a26e3ceb38b4df2dce02cb5fc64786310",
+          "response_bytes": 9560,
+          "status": "verified-read",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            6,
+            11,
+            14,
+            16,
+            17,
+            20,
+            24,
+            26,
+            29,
+            34,
+            36,
+            37,
+            38,
+            39,
+            47,
+            48
+          ],
+          "checks": {
+            "target_matches": true
+          }
+        },
+        {
+          "name": "agree-baseline",
+          "path": "/c/f/pb/page",
+          "actor": 1,
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:42:09.969Z",
+          "authenticated": true,
+          "input_fields": [
+            "common",
+            "kz",
+            "pn",
+            "rn"
+          ],
+          "http_status": 200,
+          "response_sha256": "1b64fc6ecfab56e9587b3e36b5d0db8dc54b5bbad442dffda048cc5ad5c5b0a5",
+          "response_bytes": 33404,
+          "status": "verified-read",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            10,
+            12,
+            13,
+            14,
+            32,
+            37,
+            39,
+            41,
+            44,
+            49,
+            50,
+            53,
+            60,
+            62,
+            68,
+            81,
+            88,
+            92,
+            105,
+            110,
+            112,
+            117,
+            126
+          ],
+          "checks": {
+            "thread_matches": true
+          }
+        },
+        {
+          "name": "agree-change",
+          "path": "/c/c/agree/opAgree",
+          "actor": 1,
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:42:11.171Z",
+          "authenticated": true,
+          "input_fields": [
+            "thread_id",
+            "forum_id",
+            "op_type",
+            "obj_type",
+            "agree_type",
+            "is_long_press_agree",
+            "z_id"
+          ],
+          "http_status": 200,
+          "response_sha256": "5c745ee307ac4f09008c6259b8c080f9a548b8f2960483ed634bcca3239418e8",
+          "response_bytes": 272,
+          "status": "verified-state-change",
+          "error_code": "0",
+          "business_field_names": [
+            "info",
+            "data",
+            "toast"
+          ],
+          "scalar_field_names": [],
+          "top_level_keys": [
+            "error_code",
+            "error_msg",
+            "info",
+            "error",
+            "data",
+            "toast",
+            "server_time",
+            "time",
+            "ctime",
+            "logid"
+          ],
+          "data_keys": [
+            "agree",
+            "toast",
+            "contri_info"
+          ]
+        },
+        {
+          "name": "agree-after-change",
+          "path": "/c/f/pb/page",
+          "actor": 1,
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:42:12.071Z",
+          "authenticated": true,
+          "input_fields": [
+            "common",
+            "kz",
+            "pn",
+            "rn"
+          ],
+          "http_status": 200,
+          "response_sha256": "f1044b29c152e5302ef02c92dac9001b0d2413dbae91de3d54bfc051d01433f9",
+          "response_bytes": 33402,
+          "status": "verified-read",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            10,
+            12,
+            13,
+            14,
+            32,
+            37,
+            39,
+            41,
+            44,
+            49,
+            50,
+            53,
+            60,
+            62,
+            68,
+            81,
+            88,
+            92,
+            105,
+            110,
+            112,
+            117,
+            126
+          ],
+          "checks": {
+            "thread_matches": true
+          }
+        },
+        {
+          "name": "agree-restore",
+          "path": "/c/c/agree/opAgree",
+          "actor": 1,
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:42:12.740Z",
+          "authenticated": true,
+          "input_fields": [
+            "thread_id",
+            "forum_id",
+            "op_type",
+            "obj_type",
+            "agree_type",
+            "is_long_press_agree",
+            "z_id"
+          ],
+          "http_status": 200,
+          "response_sha256": "e2537258ace1ee744d8f2b96bf5668e9d8dc4ac07e675e7d0c607b360a5d8c1e",
+          "response_bytes": 218,
+          "status": "verified-state-change",
+          "error_code": "0",
+          "business_field_names": [
+            "info",
+            "data",
+            "toast"
+          ],
+          "scalar_field_names": [],
+          "top_level_keys": [
+            "error_code",
+            "error_msg",
+            "info",
+            "error",
+            "data",
+            "toast",
+            "server_time",
+            "time",
+            "ctime",
+            "logid"
+          ],
+          "data_keys": [
+            "contri_info"
+          ]
+        },
+        {
+          "name": "agree-restored",
+          "path": "/c/f/pb/page",
+          "actor": 1,
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:42:13.221Z",
+          "authenticated": true,
+          "input_fields": [
+            "common",
+            "kz",
+            "pn",
+            "rn"
+          ],
+          "http_status": 200,
+          "response_sha256": "ffd21a39388a4169d286b645c05248f72ce3bbd6a87d477ef6f936b6ad7142e3",
+          "response_bytes": 33402,
+          "status": "verified-read",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            10,
+            12,
+            13,
+            14,
+            32,
+            37,
+            39,
+            41,
+            44,
+            49,
+            50,
+            53,
+            60,
+            62,
+            68,
+            81,
+            88,
+            92,
+            105,
+            110,
+            112,
+            117,
+            126
+          ],
+          "checks": {
+            "thread_matches": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "client-first-pass",
+      "note": "Includes the observed GetTails envelope decoding failure; metadata retained from the initial tool output.",
+      "results": [
+        {
+          "name": "getLocationSuggestions",
+          "path": "/c/s/getSuggestionByAddrName",
+          "command": "303018",
+          "observed_at_utc": "2026-11-14T10:45:38.204Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "6123bc15dff81d318addd09726c7cdc066838b11790c2f34d92bce8530242a64",
+          "response_bytes": 768,
+          "error_code": "0",
+          "checks": {
+            "poi_nonempty": true,
+            "poi_names_present": true,
+            "coordinate_strings": true
+          },
+          "status": "response-schema-validated"
+        },
+        {
+          "name": "getOwnTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T10:45:39.999Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+          "response_bytes": 122,
+          "status": "response-decode-failed",
+          "client_error_kind": "protocol",
+          "client_error_code": "INVALID_ERROR_ENVELOPE"
+        },
+        {
+          "name": "getOwnPrivacySettings",
+          "path": "/c/u/user/getPrivateInfo",
+          "command": "303016",
+          "observed_at_utc": "2026-11-14T10:45:40.259Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "6573fd87b26cafdb1f3f0e029f5467c99aef10aa37d22bf7c3c7955facf0661c",
+          "response_bytes": 162,
+          "error_code": "0",
+          "checks": {
+            "own_id_matches": true,
+            "settings_present": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "getAgreeNotifications",
+          "path": "/c/u/feed/agreeme",
+          "command": "309593",
+          "observed_at_utc": "2026-11-14T10:45:40.846Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "86190096e8129474e1fcc1837020ee06d70e8e4bc99e8965604194417715ba93",
+          "response_bytes": 2277,
+          "error_code": "0",
+          "checks": {
+            "notification_array": true,
+            "has_more_present": true,
+            "notification_nonempty": true
+          },
+          "status": "response-schema-validated"
+        },
+        {
+          "name": "getPollingStatus",
+          "path": "/c/s/loop",
+          "command": "309732",
+          "observed_at_utc": "2026-11-14T10:45:41.177Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "a17af312ad4d564b50a3391156764ad18d77b66e7e6a55e9bcad172d56b5b0ec",
+          "response_bytes": 612,
+          "error_code": "0",
+          "checks": {
+            "live_returned": true,
+            "normal_config_nonempty": true,
+            "level_returned": true,
+            "icon_returned": true
+          },
+          "status": "response-schema-validated"
+        },
+        {
+          "name": "getThreadAgreement",
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:45:41.303Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "06a42efcf4b17b90610cf04a3d5418807484cbe0038c989be1462e2c1a60b62a",
+          "response_bytes": 41090,
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true,
+            "has_agree_explicit": true
+          },
+          "status": "verified-read"
+        }
+      ]
+    },
+    {
+      "name": "client-corrected-pass",
+      "results": [
+        {
+          "name": "getLocationSuggestions",
+          "path": "/c/s/getSuggestionByAddrName",
+          "command": "303018",
+          "observed_at_utc": "2026-11-14T10:46:08.765Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "6123bc15dff81d318addd09726c7cdc066838b11790c2f34d92bce8530242a64",
+          "response_bytes": 768,
+          "error_code": "0",
+          "checks": {
+            "poi_nonempty": true,
+            "poi_names_present": true,
+            "coordinate_strings": true
+          },
+          "status": "response-schema-validated"
+        },
+        {
+          "name": "getOwnTails",
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T10:46:09.635Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+          "response_bytes": 122,
+          "error_code": "0",
+          "checks": {
+            "tail_array": true,
+            "color_array": true,
+            "default_color_present": true
+          },
+          "status": "response-schema-validated"
+        },
+        {
+          "name": "getOwnPrivacySettings",
+          "path": "/c/u/user/getPrivateInfo",
+          "command": "303016",
+          "observed_at_utc": "2026-11-14T10:46:09.843Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "6573fd87b26cafdb1f3f0e029f5467c99aef10aa37d22bf7c3c7955facf0661c",
+          "response_bytes": 162,
+          "error_code": "0",
+          "checks": {
+            "own_id_matches": true,
+            "settings_present": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "getAgreeNotifications",
+          "path": "/c/u/feed/agreeme",
+          "command": "309593",
+          "observed_at_utc": "2026-11-14T10:46:10.418Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "86190096e8129474e1fcc1837020ee06d70e8e4bc99e8965604194417715ba93",
+          "response_bytes": 2277,
+          "error_code": "0",
+          "checks": {
+            "notification_array": true,
+            "has_more_present": true,
+            "notification_nonempty": true
+          },
+          "status": "response-schema-validated"
+        },
+        {
+          "name": "getPollingStatus",
+          "path": "/c/s/loop",
+          "command": "309732",
+          "observed_at_utc": "2026-11-14T10:46:10.627Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "a17af312ad4d564b50a3391156764ad18d77b66e7e6a55e9bcad172d56b5b0ec",
+          "response_bytes": 612,
+          "error_code": "0",
+          "checks": {
+            "live_returned": true,
+            "normal_config_nonempty": true,
+            "level_returned": true,
+            "icon_returned": true
+          },
+          "status": "response-schema-validated"
+        },
+        {
+          "name": "getThreadAgreement",
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:46:10.732Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "1eaefefe1f2b7c511b3bb5bbe0505cc064398f3c0840e8fc9422d40dcba714b2",
+          "response_bytes": 33404,
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true,
+            "has_agree_explicit": true
+          },
+          "status": "verified-read"
+        }
+      ]
+    },
+    {
+      "name": "client-controlled-cycles",
+      "results": [
+        {
+          "name": "fans-baseline",
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:46:58.708Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "5431c1ce6de4a2426f5a90eb56706292d3bbac6abd173fcfad54d06efb2f2b47",
+          "response_bytes": 9560,
+          "error_code": "0",
+          "status": "verified-read",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "fans-follow",
+          "path": "/c/c/user/follow",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:46:59.544Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "78c09007625966f11d1049109fd7cbd29d68a4f2223db6b694ebf29a1b194a77",
+          "response_bytes": 1293,
+          "error_code": "0",
+          "status": "verified-state-change",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "fans-before-remove",
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:46:59.976Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "f25d1df1be372730be921922bb4683502cd4b6bd3a1e306923ba8d033c946487",
+          "response_bytes": 9560,
+          "error_code": "0",
+          "status": "verified-read",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "fans-remove",
+          "path": "/c/c/user/removeFans",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:47:00.168Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "45817f09ace7f421db850b74421fc7c14a13699817a5735e52183a74b0f310a1",
+          "response_bytes": 125,
+          "error_code": "0",
+          "status": "verified-state-change",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "fans-after-remove",
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:47:00.508Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "643aa450158afccfe73328e038dbc87ebac41f213c942cb953cb60b30f054d61",
+          "response_bytes": 9560,
+          "error_code": "0",
+          "status": "verified-read",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "fans-before-restore",
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:47:00.891Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "0d8c05718dd493689606a528eca37565249bbed8ab6c69cc7e98ee4bb8c3d7eb",
+          "response_bytes": 9560,
+          "error_code": "0",
+          "status": "verified-read",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "fans-restored",
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:47:01.312Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "6c4e68ad527ecbd699c8dcbb43348de2fd9b258997354d13f52d77e26cdad297",
+          "response_bytes": 9560,
+          "error_code": "0",
+          "status": "verified-read",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "like-baseline",
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:47:01.807Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "68de3b4efa73f316592a17503a1eaa88d6471ab28818b2f8ddfe0d81d612aec6",
+          "response_bytes": 33404,
+          "error_code": "0",
+          "status": "verified-read",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "like-change",
+          "path": "/c/c/agree/opAgree",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:47:02.851Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "80d82d904f41e94bb10425c7efcd72345b1f6df4606219290f554d296df27ff1",
+          "response_bytes": 272,
+          "error_code": "0",
+          "status": "verified-state-change",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "like-after-change",
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:47:03.434Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "df23079623ec57844f108dfc09e444aabd29f9e456efe3ae51339438e405fdb4",
+          "response_bytes": 33404,
+          "error_code": "0",
+          "status": "verified-read",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "like-restore",
+          "path": "/c/c/agree/opAgree",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:47:04.083Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "457052beb1acc1e461cac7d5a3030b9fe57dceacf4e78affdb4eed2010f1a19f",
+          "response_bytes": 218,
+          "error_code": "0",
+          "status": "verified-state-change",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "like-restored",
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:47:04.600Z",
+          "authenticated": true,
+          "http_status": 200,
+          "response_sha256": "8892b2b78e64711f30c53387337df7f159472ccca4a27da6bbe9c39ea126905a",
+          "response_bytes": 40993,
+          "error_code": "0",
+          "status": "verified-read",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          }
+        }
+      ]
+    }
+  ],
+  "result": {
+    "raw_cycles": {
+      "remove_fan_verified": true,
+      "fans_baseline_restored": true,
+      "agree_changed_verified": true,
+      "agree_baseline_restored": true
+    },
+    "sdk_cycles": {
+      "remove_follower_verified": true,
+      "fans_baseline_restored": true,
+      "thread_like_verified": true,
+      "like_baseline_restored": true
+    },
+    "created_public_content": false,
+    "bulk_follower_removal_executed": false,
+    "limits": [
+      "Kjs list was empty; no commerce conversation object was validated",
+      "Polling response schema validated for homepage subscriptions only",
+      "GetTails had no nonempty tail fixture in this run; default color and list structures decoded",
+      "Initial GetTails client envelope failed; corrected to error=2/data=1 and retested",
+      "No conclusion about moderation, payment or account deletion changed"
+    ]
+  }
+}

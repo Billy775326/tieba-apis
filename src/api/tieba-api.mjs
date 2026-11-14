@@ -35,7 +35,7 @@ function paging({pn=1,rn=20}={},allowRn=true) {
 }
 function assertObject(condition,meta) {if(!condition)throw new TiebaApiError('object-mismatch','REQUESTED_OBJECT_NOT_RETURNED',meta);}
 
-/** A reusable client for the five verified public read families; no request on construction. */
+/** Selected verified read and controlled write contracts; no request on construction. */
 export class TiebaApi {
   #auth; #transport; #limits;
   /** @param {{auth?:TiebaAuth|null,timeoutMs?:number,maxResponseBytes?:number,transport?:Function}} options */
@@ -60,12 +60,12 @@ export class TiebaApi {
     if(response.http_status!==200)throw new TiebaApiError('http',String(response.http_status),meta);
     let root,code;
     try {
-      root=fields(raw);const error=one(root,1,{required:true});if(error.wire!==2)throw Error('Error envelope wire mismatch');
+      root=fields(raw);const error=one(root,spec.errorTag??1,{required:true});if(error.wire!==2)throw Error('Error envelope wire mismatch');
       const codeField=one(fields(error.value),1,{required:true});if(codeField.wire!==0)throw Error('Status wire mismatch');code=codeField.value;
     }catch{throw new TiebaApiError('protocol','INVALID_ERROR_ENVELOPE',meta);}
     if(code!=='0')throw new TiebaApiError('business',code,meta);
     let data;
-    try {const payload=one(root,2,{required:true});if(payload.wire!==2)throw Error('Data envelope wire mismatch');data=decodeSelected(payload.value,spec.schema);}
+    try {const payload=one(root,spec.dataTag??2,{required:true});if(payload.wire!==2)throw Error('Data envelope wire mismatch');data=decodeSelected(payload.value,spec.schema);}
     catch{throw new TiebaApiError('protocol','INVALID_DATA_ENVELOPE',meta);}
     return {...data,meta:{...meta,error_code:code}};
   }
@@ -94,6 +94,66 @@ export class TiebaApi {
     const uid=identifier(userId,'userId'),{pn,rn}=paging({rn:1,...options});
     const data=await this.#call('getUserProfile',[i(1,uid),i(6,pn),i(7,rn)],options);
     assertObject(data.user?.id===uid,data.meta);return data;
+  }
+  #requireAuth({uid=false}={}) {
+    if(!this.#auth)throw Error('Explicit local authentication required');
+    if(uid&&!this.#auth.uid)throw Error('Confirmed own uid required in the local account');
+    return this.#auth;
+  }
+  /** @param {string} address @param {{signal?:AbortSignal}} options */
+  async getLocationSuggestions(address,options={}) {
+    return this.#call('getLocationSuggestions',[b(1,text(address,'address'))],options);
+  }
+  /** @param {{signal?:AbortSignal}} options */
+  async getOwnTails(options={}) {this.#requireAuth();return this.#call('getOwnTails',[],options);}
+  /** @param {{signal?:AbortSignal}} options */
+  async getOwnPrivacySettings(options={}) {
+    const auth=this.#requireAuth({uid:true});
+    const data=await this.#call('getOwnPrivacySettings',[i(1,auth.uid)],options);
+    assertObject(data.user?.user_id===auth.uid,data.meta);return data;
+  }
+  /** @param {{cursor?:string|bigint|number,rn?:number,signal?:AbortSignal}} options */
+  async getAgreeNotifications(options={}) {
+    if(!options||typeof options!=='object'||Array.isArray(options))throw Error('Read options object required');
+    const {cursor='0',rn=20,signal}=options;
+    this.#requireAuth();paging({rn});
+    if(typeof cursor==='number'&&!Number.isSafeInteger(cursor)||!['string','number','bigint'].includes(typeof cursor)||!/^\d+$/.test(String(cursor))||BigInt(cursor)>0xffffffffffffffffn)throw Error('cursor must be an exact uint64');
+    return this.#call('getAgreeNotifications',[i(2,BigInt(cursor)),i(3,rn),i(4,1080),i(5,1920),i(6,3),i(7,0)],{signal});
+  }
+  /** Homepage subscriptions only; no chatroom read or acknowledgement parameters. */
+  /** @param {{signal?:AbortSignal}} options */
+  async getPollingStatus(options={}) {
+    this.#requireAuth();return this.#call('getPollingStatus',[b(2,'live,level,icon,festival_info')],options);
+  }
+  async #write(path,params,options={}) {
+    const auth=this.#requireAuth();
+    if(!options||typeof options!=='object'||Array.isArray(options))throw Error('Write options object required');
+    const {signal}=options;
+    if(signal!=null&&(typeof signal.aborted!=='boolean'||typeof signal.addEventListener!=='function'||typeof signal.removeEventListener!=='function'))throw Error('AbortSignal required');
+    const body=auth.formBody({_client_type:APP.clientType,_client_version:APP.version,_timestamp:Date.now(),...params},{requireTbs:true});
+    const meta={endpoint:path,command:null};let raw,response;
+    try {response=await this.#transport(APP.origin+path,{body,headers:{'Content-Type':'application/x-www-form-urlencoded',...(path==='/c/c/agree/opAgree'?{needSig:'1'}:{})},timeoutMs:this.#limits.timeoutMs,maxBytes:this.#limits.maxResponseBytes,authenticated:true,profile:'api-client-controlled-write',signal,onBody:b=>{raw=b;}});}
+    catch{throw new TiebaApiError('transport','TRANSPORT_ERROR',meta);}
+    Object.assign(meta,{http_status:response.http_status??null,response_sha256:response.response_sha256??null,response_bytes:response.response_bytes??null});
+    if(response.classification!=='response-received-unverified'||!Buffer.isBuffer(raw))throw new TiebaApiError('transport',response.error??'INCOMPLETE_RESPONSE',meta);
+    if(response.http_status!==200)throw new TiebaApiError('http',String(response.http_status),meta);
+    let data;try{data=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(raw));}catch{throw new TiebaApiError('protocol','INVALID_JSON_RESPONSE',meta);}
+    const code=data?.error_code;
+    if(!(typeof code==='string'&&/^-?\d+$/.test(code)||typeof code==='number'&&Number.isSafeInteger(code)))throw new TiebaApiError('protocol','INVALID_ERROR_ENVELOPE',meta);
+    if(String(code)!=='0')throw new TiebaApiError('business',String(code),meta);
+    return {acknowledged:true,meta:{...meta,error_code:'0'}};
+  }
+  /** Server acknowledgement only. Read getThread().thread.agree to verify state. */
+  /** @param {string|bigint|number} target @param {string|bigint|number} forumId @param {boolean} liked @param {{signal?:AbortSignal}} options */
+  async setThreadLike(target,forumId,liked,options={}) {
+    const tid=threadIdentifier(target),fid=identifier(forumId,'forumId');
+    if(typeof liked!=='boolean')throw Error('liked must be boolean');
+    return this.#write('/c/c/agree/opAgree',{thread_id:tid,forum_id:fid,op_type:liked?0:1,obj_type:3,agree_type:2,is_long_press_agree:0,z_id:''},options);
+  }
+  /** Remove one follower of the authenticated account; never invokes multiRemoveFans. */
+  /** @param {string|bigint|number} userId @param {{signal?:AbortSignal}} options */
+  async removeFollower(userId,options={}) {
+    return this.#write('/c/c/user/removeFans',{fans_uid:identifier(userId,'userId')},options);
   }
   /** Search posting-target forums, not a site-wide thread search. */
   async searchForums(word,options={}) {return this.#call('searchForums',[b(2,text(word,'search word'))],options);}

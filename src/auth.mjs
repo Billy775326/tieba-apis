@@ -1,5 +1,6 @@
 ﻿import fs from 'node:fs';
 import {bytesField} from './protobuf.mjs';
+import {legacyForm} from './legacy-signature.mjs';
 
 export class TiebaAuth {
   #bduss; #tbs; #uid;
@@ -17,6 +18,11 @@ export class TiebaAuth {
     return new TiebaAuth(input);
   }
   get uid(){return this.#uid;}
+  /** Encode credentials only at the request boundary; never include the body in logs. */
+  formBody(params,{requireTbs=false}={}) {
+    if(requireTbs&&!this.#tbs)throw Error('A local TBS is required for this write');
+    return legacyForm({...params,BDUSS:this.#bduss,...(this.#tbs?{tbs:this.#tbs}:{})});
+  }
   commonFields(){return [bytesField(10,this.#bduss),...(this.#tbs?[bytesField(11,this.#tbs)]:[])];}
   toJSON(){return {type:'TiebaAuth',credentialsProvided:true};}
   [Symbol.for('nodejs.util.inspect.custom')](){return this.toJSON();}

@@ -1,6 +1,6 @@
 ﻿# Tieba APIs
 
-百度贴吧 Android 22.13.1.1 的接口客户端与逆向验证项目，使用 Node.js 24+。提供可直接调用的读取接口、命令行入口、IM 协议模块，以及按 APK 和真实响应整理的字段、实测结果与未完成清单。
+百度贴吧 Android 22.13.1.1 的接口客户端与逆向验证项目，使用 Node.js 24+。提供 10 个读取与 2 个受控写入方法、命令行入口、IM 协议模块，以及按 APK 和真实响应整理的字段、实测结果与未完成清单。
 
 ## 功能与当前状态
 
@@ -11,11 +11,13 @@
 | 楼中楼 | `TiebaApi.getPostReplies()` | 支持空首页返回分页 0/0 |
 | 用户资料 | `TiebaApi.getUserProfile()` | 返回选定资料字段，支持复用本地账号 |
 | 发帖选吧搜索 | `TiebaApi.searchForums()` | 搜索目标吧，不是全站帖子搜索 |
+| 地点建议、小尾巴、本人隐私、获赞通知、首页轮询 | [客户端 API](docs/api.md) | 新增 5 个读取方法；空样本和结构核对范围单独记录 |
+| 帖子点赞/取消、移除单个粉丝 | `TiebaApi.setThreadLike()` / `removeFollower()` | 两账号或指定帖验证状态变化并恢复；方法返回服务端确认 |
 | 私信与 SDK 普通群聊 | [IM 实测与协议](docs/im-validation.md) | 双账号核心收发、回读、撤回和清理已测；统一客户端暂未封装这些业务操作 |
 | 发帖、回复、设置等写入 | [状态操作报告](docs/stateful-test-plan.md) | 部分流程有受控实测，使用各自专题说明 |
 | 全部静态候选 | [逐项覆盖表](docs/current-api-coverage.csv) | 603 条候选含 H5、媒体、遥测和命令变体；尚未完成全部业务验收 |
 
-当前覆盖清单有 42 项完成对象或状态核对，184 项仅有匿名诊断。未排除的 549 条生产候选均有请求记录；这些数字不等于可用 SDK 方法数。完整边界见 [当前验证范围](docs/remaining-validation.md)。
+当前覆盖清单有 44 条候选（40 个不同路径）完成对象或状态核对，180 条仅有匿名诊断。本轮新增 7 个 SDK 方法并记录 38 次请求，详见 [新增接口实测](docs/expanded-api-validation.md)。未排除的 549 条生产候选均有请求记录；这些数字不等于可用 SDK 方法数。完整边界见 [当前验证范围](docs/remaining-validation.md)。
 
 ## 快速开始
 
@@ -76,7 +78,7 @@ config.example.json       运行配置样例
 src/
   index.mjs               可导入的客户端入口
   cli.mjs                 命令分发与结果落盘
-  api/                    读取接口、请求构造与响应字段投影
+  api/                    业务接口、请求构造与响应字段投影
   auth.mjs                本地认证对象
   config.mjs              协议常量、配置与运行上限
   http/                   有界 HTTP 传输与取消
@@ -99,7 +101,7 @@ evidence/                 脱敏字段及观测证据
 | 配置、CLI、模块调用 | [使用指南](docs/getting-started.md) · [API 文档](docs/api.md) |
 | 扩展代码、检查与 APK 提取 | [开发指南](docs/development.md) · [项目架构](docs/architecture.md) |
 | 查找特定接口是否已测 | [当前覆盖](docs/remaining-validation.md) · [CSV](docs/current-api-coverage.csv) · [JSON](evidence/current-api-coverage.json) |
-| 查看本客户端实测 | [客户端验证摘要](evidence/client-validation.json) |
+| 查看本客户端实测 | [首批客户端摘要](evidence/client-validation.json) · [新增接口实测](docs/expanded-api-validation.md) |
 | 阅读私信与群聊细节 | [IM 实测](docs/im-validation.md) · [双账号报告](docs/two-account-validation.md) |
 | 阅读帖子及设置操作 | [指定帖报告](docs/thread-validation.md) · [状态操作](docs/stateful-test-plan.md) |
 | 区分匿名诊断与业务验证 | [后续逐项验证](docs/supplemental-validation.md) · [历史扩展验证](docs/full-coverage.md) |

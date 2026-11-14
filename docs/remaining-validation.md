@@ -1,8 +1,12 @@
 # 当前验证范围与未完成原因
 
-本页合并全部已保存观测，覆盖 **603 条静态候选、568 个不同路径**。42 条候选已有对象或状态变化核对；其余候选不能一概当作失败。已有 HTTP 返回、尚未发出请求、按用户要求不再测的项目分别列出，状态登记不等于实测完成。
+本页合并全部已保存观测，覆盖 **603 条静态候选、568 个不同路径**。44 条候选已有对象或状态变化核对；其余候选不能一概当作失败。已有 HTTP 返回、尚未发出请求、按用户要求不再测的项目分别列出，状态登记不等于实测完成。
 
 逐项结果见 [CSV](current-api-coverage.csv) 和 [JSON](../evidence/current-api-coverage.json)。CSV 同时列出 execution_status、disposition、历史最强证据及最新限制；未执行项目明确保留 not-requested。
+
+## 新增请求契约与 SDK 方法
+
+客户端从 5 个方法扩展到 12 个。本阶段另记录 **38 次请求**，其中移除一个受控粉丝、帖子点赞与取消均经独立读取核对并恢复原状态；轮询只完成首页订阅返回结构核对，商城 IM 列表为空。初次 GetTails 的响应标签解析失败也保留在报告内，修正后已复测。见 [新增接口实测](expanded-api-validation.md) 和 [脱敏证据](../evidence/expanded-api-validation.json)。这些请求不计入下方冻结的历史阶段总数。
 
 ## 后续逐项补测
 
@@ -10,10 +14,10 @@
 
 | validation_tier | 候选数 |
 | --- | --- |
-| anonymous-diagnostic-only | 184 |
-| business-validation-incomplete | 202 |
+| anonymous-diagnostic-only | 180 |
+| business-validation-incomplete | 204 |
 | excluded-by-user | 52 |
-| functionally-verified | 42 |
+| functionally-verified | 44 |
 | other-origin | 2 |
 | web-route-response-recorded | 121 |
 
@@ -67,15 +71,15 @@
 | 限制分类 | 候选数 | 证据性质 |
 | --- | --- | --- |
 | already-completed | 1 | observed |
-| anonymous-negative-control-only | 184 | observed |
+| anonymous-negative-control-only | 180 | observed |
 | deleted-thread-first-post-cleanup-rejected | 1 | observed |
 | empty-http-response | 13 | observed |
-| functional-assertions-incomplete | 110 | observed |
+| functional-assertions-incomplete | 111 | observed |
 | html-page-confirmed | 85 | observed |
 | http-source-https-variant-tested | 2 | observed |
 | media-fixture-missing-after-negative-control | 1 | observed |
 | membership-required | 2 | observed |
-| nonempty-fixture-needed | 29 | observed |
+| nonempty-fixture-needed | 30 | observed |
 | not-in-requested-scope | 52 | user-request |
 | operation-and-restore-plan-needed | 1 | analysis |
 | origin-not-selected | 2 | scope |
@@ -84,7 +88,7 @@
 | redirect-observed | 19 | observed |
 | request-or-response-construction-needed | 11 | analysis |
 | server-error-unresolved | 48 | observed |
-| verified-in-recorded-scope | 37 | observed |
+| verified-in-recorded-scope | 39 | observed |
 
 observed 表示实际观测，analysis 表示协议、参数、样本或恢复条件仍待建立；user-request 表示用户排除范围，scope 表示未选择的来源。已经具备测试授权，未执行不会写成“未获授权”。具体原因逐项见 CSV。
 
