@@ -1,4 +1,4 @@
-﻿# 贴吧 APK 分析进展
+# 贴吧 APK 分析进展
 
 ## 已观察事实
 
@@ -41,13 +41,21 @@ $env:REA_JADX_MCP_JAR = (Resolve-Path '.local/jadx-complete.jar').Path
 node .local/rea-runtime/node_modules/rea-agents/scripts/rea.mjs inspect-android-package 'D:/targets/example.apk' --format json
 ```
 
-APK 路径为示例。现已通过实际请求确认本次最小匿名 Protobuf multipart 构造可用于 5 类读取能力，见 [验证报告](validation.md)。扩展请求已覆盖 195 个不同路径，其中 105 个返回过非空数据，见 [全量覆盖报告](full-coverage.md)。后续可据此整理 SDK；指定帖已补测 App 身份匹配、回复、楼中楼及自身测试内容删除，见 [定向验证](thread-validation.md)。其余写接口及完整发送链路仍需单独分析。
+APK 路径为示例。现已通过实际请求确认本次最小匿名 Protobuf multipart 构造可用于 5 类读取能力，见 [验证报告](validation.md)。扩展请求已覆盖 195 个不同路径，其中 105 个返回过非空数据，见 [全量覆盖报告](full-coverage.md)。上述路径计数属于历史快照。后续指定帖及双账号补测、402 次请求和新的 APK 引用索引见 [当前验证范围](remaining-validation.md)；主帖首楼清理限制也在其中单独记录。完整 SDK 和发送链路仍未完成。
+
+独立 JADX 方法引用索引可在同一环境重新生成；APK 路径为示例，输出先保存在忽略目录，字段线索不等于线上验证：
+
+```powershell
+java --class-path .local/jadx-complete.jar scripts/IndexEndpointReferences.java 'D:/targets/example.apk' evidence/endpoint-candidates.json .local/endpoint-references.json
+node scripts/build-endpoint-reference-summary.mjs
+node scripts/build-current-coverage.mjs
+```
 
 ## 验证边界
 
 已对真实 APK 完成路径和字段提取。提取器通过重复源位置、路径误匹配、截断 DEX 和未知 DEX 版本测试。
 
-REA/JADX 已成功检查包名 `com.baidu.tieba`、版本 `22.13.1.1`、52,181 个类和 10,941 个资源，摘要及父 Evidence ID 见 [APK 摘要](../evidence/apk-summary.json)。已成功读取 `FrsPageRequestMessage` 的成员及构造函数；构造函数引用 cmd `301001`，包含 Titan 热修复拦截分支，不能将静态逻辑等同于当前运行路径。现已完成五类匿名读取的对象核对及扩展读取尝试，并确认官方网页登录成功；这不等于所有 App 接口接受该身份。尚未完成全量功能验收、App 传输逐字节对照、APK 签名验证或设备测试。没有运行目标 App；后续在用户明确授权的指定帖发送并清理了两条测试回复，尚未执行主帖发布、关注或私信操作。
+REA/JADX 已成功检查包名 `com.baidu.tieba`、版本 `22.13.1.1`、52,181 个类和 10,941 个资源，摘要及父 Evidence ID 见 [APK 摘要](../evidence/apk-summary.json)。已成功读取 `FrsPageRequestMessage` 的成员及构造函数；构造函数引用 cmd `301001`，包含 Titan 热修复拦截分支，不能将静态逻辑等同于当前运行路径。现已完成五类匿名读取的对象核对及扩展读取尝试，并确认官方网页登录成功；这不等于所有 App 接口接受该身份。尚未完成全量功能验收、App 传输逐字节对照、APK 签名验证或设备测试。没有运行目标 App。后续已按授权完成两条回复清理、关注关系和设置恢复；本人新主帖创建及详情删除已验证，但首楼按编号仍可读取，完整清理未通过。私信未发送；吧务按用户要求排除。
 
 ## 实际参考资料
 

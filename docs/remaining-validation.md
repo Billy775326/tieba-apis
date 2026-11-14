@@ -1,54 +1,84 @@
 # 当前验证范围与未完成原因
 
-本页合并历史覆盖及 2026-11-14 的指定帖、双账号和缺口补测，覆盖全部 **603 条静态候选、568 个不同路径**。按候选计，18 条已有对象或状态变化核对，另外 585 条尚未完成该层级验收。后者包括已有数据或结构返回的接口，不能直接称为不可用。
+本页合并全部已保存观测，覆盖 **603 条静态候选、568 个不同路径**。32 条候选已有对象或状态变化核对；其余候选不能一概当作失败。已有 HTTP 返回、尚未发出请求、按用户要求不再测的项目分别列出，状态登记不等于实测完成。
 
-逐项列表见 [CSV](current-api-coverage.csv)，包括历史状态、最强证据、最近业务码和限制原因；完整尝试来源见 [JSON](../evidence/current-api-coverage.json)。同一路径不同 cmd 不串用验证结果。历史成功和后续失败分别保留，不能用“曾经成功”掩盖最近失败。
+逐项结果见 [CSV](current-api-coverage.csv) 和 [JSON](../evidence/current-api-coverage.json)。CSV 同时列出 execution_status、disposition、历史最强证据及最新限制；未执行项目明确保留 not-requested。
 
-## 本轮线上补测
+## 本轮完整读取计划与新增写入测试
 
-本轮共 37 次请求：25 次面向 APK 候选的读取、10 次受控账号权限设置/回查，以及 2 次错误路径构造诊断。原始响应仅在本机；脱敏观测见 [补测报告](../evidence/gap-validation.json)。
+本轮共记录 **402 次请求**，见 [完整报告](../evidence/comprehensive-validation.json)。151 条网页候选去重后 147 次匿名 GET，全部现有协议读取计划 70 项、遗留读取计划 123 项也已执行；另有 7 项检查和有界重试、媒体对照、受控状态闭环及用户新提供测试吧的主帖测试。这里的“计划已执行”不表示每项都使用了完整参数或业务验收通过。
 
-读取结果为：11 项响应结构核对、6 项返回非空 JSON、1 项按编号主题读取功能核对、2 项成功但为空、5 项业务错误。修正本人/测试账号编号、补入 thread_ids 或使用实际吧名后，部分旧错误得以消除。这些是本轮具体请求的结果，不等于所有参数组合均受支持。
+收藏/取消收藏、图片水印和消息屏蔽标志、关注/取消关注贴吧均观察到状态变化并恢复原值。取消关注的即时回查仍为已关注，约 46 秒后的回查恢复；原因未定位，不强称为缓存。隐私 opt=post 的有效请求 val=2 返回读取值 3，状态随后恢复原值；已验证变化/恢复，完整枚举映射仍未完成。最初 val=0 的拒绝作为参数诊断保留。
 
-账号 1 对账号 2 的 PermissionList.follow/interact/chat 从原值写为测试值，回查确认三个值变化，再全部恢复原值并回查确认；因此验证的是权限写入及恢复。is_black_white 在该过程中保持不变，不能把它直接理解为当前目标是否被屏蔽。没有通过实际私信或关注验证每个权限开关的下游效果。首次同值写入只作为未发生变化的对照保留，未计为状态变化通过。
+图片代理的响应包含 app:tiebaclient;type:0; 前缀。解析后得到 406×406 JPEG，并与同一官方缩略图源的当前响应摘要一致；这验证了本次代理传输，不证明原视频或原始分辨率可用。语音仅做了无 voice_md5 的负对照，仍没有有效语音样本。
 
-UserPost 返回了帖子列表，但 author 对象缺少用户编号，本轮不将其升级为身份匹配的功能通过。动态列表只返回分页信息且没有帖子，保留空结果。会员任务和收藏提醒的两次早期同名路径假设不在 APK 路径表内，分别按 /c/e/point/getmembertasklist 和 /c/f/livegroup/getStoreRemindTime 修正后得到响应；错误路径单独保留，不归咎于真实接口。
+## 测试主帖的删除限制
 
-## 本轮实际被拒绝的请求
+按用户链接，在“[redacted-forum-name]”创建一条明确标记的测试主帖，作者、首楼编号、标题和正文标记均匹配。本人删除接口返回 0，随后账号内和匿名的主帖详情均返回 4。
 
-| 路径 | 业务码 | 服务端说明 | 已知限制 |
-| --- | --- | --- | --- |
-| /c/e/member/getVipInfo | 110003 | 内部错误 | 原因未定位；不能把内部/系统错误直接解释为登录失效或会员不足。 |
-| /c/f/forum/getForumMangerRights | 2121024 | the checkuser not a manager | 当前账号不是吧务，服务端明确说明。 |
-| /c/f/forum/getUserSign | 210009 | 系统错误 | 原因未定位；不能把内部/系统错误直接解释为登录失效或会员不足。 |
-| /c/f/widget/getUserTaskInfo | 110003 | 内部错误 | 原因未定位；不能把内部/系统错误直接解释为登录失效或会员不足。 |
-| /c/u/user/bigvip | 110001 | 未给出明确原因 | 原因未定位；不能把内部/系统错误直接解释为登录失效或会员不足。 |
+**首楼按编号查询仍返回数据，进一步删除该首楼返回 230890。未通过“所有内容均不可读取”的清理验收，不能声称彻底清除。** 是否为缓存、软删除保留或其他机制尚未确定；没有继续发布新测试内容。具体编号、标记和原始响应保留在本机忽略目录，未提交。
 
-本轮没有取得能证明验证码、限流或账号封禁的返回；不能将其他错误归类为风控。表中的“内部错误”“系统错误”只支持服务端未接受当前请求，根因仍待分析。
+删除本人新帖使用 bawu 命名路径及 delete_my_thread=1，不属于管理员删他人帖测试。用户已明确不测吧务，其他吧务候选列为 excluded-by-user，保留旧观测，不再要求提供吧务账号。
 
-## 所有候选的剩余限制
+## 已确认的限制与尚未确认的原因
 
-下表按候选计数，包含已验证项的适用范围。basis=observed 表示实际响应或核对结果，analysis 表示尚待解决的分析/资源条件，scope 表示本轮没有选择该来源；analysis 不是服务端拒绝的证据。测试授权已经具备，未执行不会笼统归因为未授权。
+| 场景 | 实际返回或条件 | 结论 |
+| --- | --- | --- |
+| 用户屏蔽 userMuteAdd | 1990043，明确提示高级会员权限 | 当前账号权限不足；原屏蔽状态未变化 |
+| 指定测试吧签到 | 160002，提示此前已签到 | 本轮没有新增签到成功，不是登录失效 |
+| 主帖删除后的首楼清理 | 230890，删除贴子失败 | 主帖详情不可访问，但首楼编号查询仍有返回 |
+| 文字名称“[redacted-alternate-forum-name]”的读取 | 340001，服务端限制读取 | 未向该吧发帖；实际使用链接对应的“[redacted-forum-name]” |
+| 部分会员、活动或配置查询 | 内部/系统/未知错误 | 仅保留业务码，不推断登录失效、封禁或限流 |
+| 私信及群聊 | IM 登录、封装与接收链路未完成；没有受控群 | 未发送私信，未宣称收发可用 |
+| 订单、支付、账号数据清空 | 无隔离订单或账号环境 | 未用真实扣款或清空账号来探测 |
 
-| 限制分类 | 候选数 | 证据性质 | 原因与范围 |
-| --- | --- | --- | --- |
-| functional-assertions-incomplete | 99 | observed | 已有业务返回或结构核对，尚未完成该能力的对象、边界或完整流程验收。 |
-| im-session-or-target-needed | 22 | analysis | 单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。 |
-| isolated-account-or-order-fixture-needed | 15 | analysis | 涉及订单、支付或账号数据操作；没有相应测试订单或隔离账号环境，未用真实扣款或清空数据探测。 |
-| media-request-fixture-needed | 4 | analysis | 尚未恢复该媒体地址所需的有效资源标识、请求格式及返回判据。 |
-| moderator-fixture-or-protocol-needed | 18 | analysis | 需恢复具体吧务请求，并提供具备相应权限的测试吧和可回收对象；未执行该候选，非服务端拒绝的实测结论。 |
-| moderator-role-required | 1 | observed | 服务端明确返回当前查询账号不是吧务；本次账号无法完成该请求。 |
-| nonempty-fixture-needed | 36 | observed | 当前样本返回成功但为空，缺少可核对的非空业务对象。 |
-| operation-and-restore-plan-needed | 110 | analysis | 已获测试授权；该操作的请求、有效目标或恢复流程尚未建立，不能仅凭路径名执行。 |
-| origin-not-selected | 2 | scope | 来源并非已选择的贴吧生产域名，未向其发送本轮请求。 |
-| page-api-distinction-pending | 151 | analysis | 仅提取到网页路由，尚未确认是否为业务 API 及其请求。 |
-| request-or-response-construction-needed | 65 | analysis | 尚未恢复足够请求信息、有效参数样本或响应判据；尚无证据判定接口失效。 |
-| server-error-unresolved | 42 | observed | 当前请求返回业务码 210009；参数、权限、场景或服务端原因尚未区分，不能据此认定登录失效。 |
-| telemetry-environment-needed | 20 | analysis | 日志或遥测行为未恢复，缺少独立测试环境，未向生产遥测批量发送数据。 |
-| verified-in-recorded-scope | 18 | observed | 已有对象或状态变化核对；仅覆盖报告记录的账号、样本和时间。 |
+本轮没有足够证据证明验证码或风控限制。匿名网页的 HTML、重定向和空正文也不作为客户端 API 功能通过。
 
-私信仍需恢复 IM 登录及 uk 映射、普通单聊封装和接收/历史查询；网页扫码不等于已恢复这套协议。当前未向两个账号发送私信。主帖、吧务、媒体/群聊/活动和支付或账号数据相关项目还需各自有效样本、权限或隔离环境，逐项原因在 CSV 中列出，不能把一个帖子替代所有场景。
+## 全部候选的执行状态
 
-## 离线重建
+| execution_status | 候选数 |
+| --- | --- |
+| http-response-recorded | 378 |
+| not-requested | 225 |
 
-在仓库根目录执行 node scripts/build-current-coverage.mjs，读取已保存的脱敏证据，重新生成本页、CSV 和当前覆盖 JSON；该命令不联网，不读取账号文件，不发送真实操作。它保留 [历史全量报告](full-coverage.md) 的计数和原始快照。私信 IM 方法等未落在 603 个静态候选中的新线索，仍单独见 [双账号验证](two-account-validation.md)。
+| disposition | 候选数 |
+| --- | --- |
+| blocked-not-executed | 208 |
+| excluded-by-user | 51 |
+| tested-with-recorded-result | 344 |
+
+尚未发出有效请求的候选均有单独原因及 [APK 构造线索](../evidence/endpoint-reference-summary.json)。索引扫描了独立 JADX 节点枚举中的 626979 个方法，其中 38584 个没有代码；553 条候选有直接字面量引用，50 条未找到。静态引用和字段线索不算线上测试，也不是完整参数语义。
+
+## 限制分类
+
+| 限制分类 | 候选数 | 证据性质 |
+| --- | --- | --- |
+| already-completed | 1 | observed |
+| deleted-thread-first-post-cleanup-rejected | 1 | observed |
+| empty-http-response | 13 | observed |
+| functional-assertions-incomplete | 104 | observed |
+| html-page-confirmed | 85 | observed |
+| http-source-https-variant-tested | 2 | observed |
+| im-session-or-target-needed | 19 | analysis |
+| isolated-account-or-order-fixture-needed | 15 | analysis |
+| media-fixture-missing-after-negative-control | 1 | observed |
+| membership-required | 1 | observed |
+| nonempty-fixture-needed | 27 | observed |
+| not-in-requested-scope | 51 | user-request |
+| operation-and-restore-plan-needed | 102 | analysis |
+| origin-not-selected | 2 | scope |
+| page-api-distinction-pending | 3 | analysis |
+| partial-deletion-semantics | 2 | observed |
+| redirect-observed | 19 | observed |
+| request-or-response-construction-needed | 62 | analysis |
+| server-error-unresolved | 46 | observed |
+| telemetry-environment-needed | 20 | analysis |
+| verified-in-recorded-scope | 27 | observed |
+
+observed 表示实际观测，analysis 表示协议、参数、样本或恢复条件仍待建立；user-request 表示用户排除范围，scope 表示未选择的来源。已经具备测试授权，未执行不会写成“未获授权”。具体原因逐项见 CSV。
+
+## 离线重建与复测入口
+
+在仓库根目录执行 node scripts/build-current-coverage.mjs 可从已保存的脱敏报告重建本页、CSV 和当前覆盖 JSON，不联网、不读取账号文件。node scripts/verify-web-routes.mjs --live 执行匿名网页路由分类；协议和遗留读取复测条件见 [历史全量文档](full-coverage.md)，新结果先保存在忽略目录再审核。
+
+本页保留 [前轮缺口补测](../evidence/gap-validation.json)、[指定帖子](thread-validation.md) 和 [双账号测试](two-account-validation.md) 的历史记录，不静默覆盖旧观测。

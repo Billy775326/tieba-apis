@@ -65,6 +65,10 @@ export function probe(
           result.tls_established = response.socket.authorized;
         result.http_status = response.statusCode;
         result.content_type = response.headers["content-type"] ?? null;
+        if(response.headers.location) {
+          try { const redirect=new URL(response.headers.location,target); result.redirect_origin=redirect.origin; result.redirect_protocol=redirect.protocol; }
+          catch { result.redirect_invalid=true; }
+        }
         const hash = crypto.createHash("sha256");
         let total = 0;
         const chunks = [];

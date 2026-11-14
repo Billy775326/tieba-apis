@@ -95,6 +95,7 @@ function packet(contract) {
     integer(8, Date.now()),
     bytes(24, "1.0.3"),
     ...(account?.BDUSS ? [bytes(10, account.BDUSS)] : []),
+    ...(account?.tbs ? [bytes(11, account.tbs)] : []),
   ]);
   const parts = [],
     inputs = [],
@@ -249,13 +250,18 @@ for (const row of cases) {
         onBody: (b) => (raw = b),
       },
     );
+    result.observed_at_utc = new Date().toISOString();
     result.http_status = transport.http_status ?? null;
+    if (transport.redirect_origin) result.redirect_origin = transport.redirect_origin;
     result.response_bytes = transport.response_bytes ?? null;
     result.response_sha256 = transport.response_sha256 ?? null;
     result.elapsed_ms = transport.elapsed_ms;
     if (!raw) {
       result.status = "transport-incomplete";
       result.reason = transport.error ?? transport.classification;
+    } else if (transport.http_status >= 300 && transport.http_status < 400) {
+      result.status = "redirect-response";
+      result.reason = "HTTP redirect instead of expected protobuf; no automatic redirect";
     } else {
       fs.writeFileSync(".local/coverage-" + row.id + "-response.bin", raw);
       const parsed = decode(raw, contract);
