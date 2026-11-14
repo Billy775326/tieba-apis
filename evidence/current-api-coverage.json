@@ -5,15 +5,15 @@
     "size": 87847605,
     "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
   },
-  "evidence_cutoff_utc": "2026-11-14T07:33:06.871Z",
+  "evidence_cutoff_utc": "2026-11-14T10:47:04.600Z",
   "scope": "All static candidates plus explicitly matched supplemental observations; reasons distinguish observations from pending analysis",
   "summary": {
     "candidates": 603,
     "unique_paths": 568,
-    "functionally_verified_candidates": 42,
-    "other_candidates": 561,
+    "functionally_verified_candidates": 44,
+    "other_candidates": 559,
     "best_statuses": {
-      "accepted-empty-response": 29,
+      "accepted-empty-response": 30,
       "business-error": 51,
       "empty-response": 18,
       "excluded-origin": 2,
@@ -22,25 +22,25 @@
       "json-data-returned": 74,
       "json-response-unverified": 3,
       "needs-request-construction": 1,
-      "negative-control-response": 185,
+      "negative-control-response": 181,
       "non-media-response": 1,
       "not-executed-stateful": 17,
       "redirect-response": 31,
       "response-fields-recognized": 2,
-      "response-schema-validated": 38,
+      "response-schema-validated": 39,
       "unrecognized-business-status": 1,
       "verified-read": 24,
-      "verified-state-change": 18
+      "verified-state-change": 20
     },
     "execution_statuses": {
       "http-response-recorded": 584,
       "not-requested": 19
     },
     "validation_tiers": {
-      "anonymous-diagnostic-only": 184,
-      "business-validation-incomplete": 202,
+      "anonymous-diagnostic-only": 180,
+      "business-validation-incomplete": 204,
       "excluded-by-user": 52,
-      "functionally-verified": 42,
+      "functionally-verified": 44,
       "other-origin": 2,
       "web-route-response-recorded": 121
     },
@@ -51,15 +51,15 @@
     },
     "limitations": {
       "already-completed": 1,
-      "anonymous-negative-control-only": 184,
+      "anonymous-negative-control-only": 180,
       "deleted-thread-first-post-cleanup-rejected": 1,
       "empty-http-response": 13,
-      "functional-assertions-incomplete": 110,
+      "functional-assertions-incomplete": 111,
       "html-page-confirmed": 85,
       "http-source-https-variant-tested": 2,
       "media-fixture-missing-after-negative-control": 1,
       "membership-required": 2,
-      "nonempty-fixture-needed": 29,
+      "nonempty-fixture-needed": 30,
       "not-in-requested-scope": 52,
       "operation-and-restore-plan-needed": 1,
       "origin-not-selected": 2,
@@ -68,7 +68,7 @@
       "redirect-observed": 19,
       "request-or-response-construction-needed": 11,
       "server-error-unresolved": 48,
-      "verified-in-recorded-scope": 37
+      "verified-in-recorded-scope": 39
     },
     "business_tests_pending": {
       "collection-replacement-and-restore": 1,
@@ -77,9 +77,9 @@
       "domain-object-and-cleanup": 13,
       "event-contract-and-observation": 17,
       "order-or-payment-fixture": 13,
-      "owned-object-and-rollback": 27,
-      "request-and-rollback-construction": 60,
-      "request-construction-needed": 28,
+      "owned-object-and-rollback": 26,
+      "request-and-rollback-construction": 59,
+      "request-construction-needed": 26,
       "specific-conversation-or-ai-fixture": 23
     }
   },
@@ -2225,29 +2225,29 @@
       "verified_url": null,
       "attempts": [],
       "historical_status": "not-executed-stateful",
-      "best_status": "negative-control-response",
+      "best_status": "verified-state-change",
       "latest_observation": {
         "path": "/c/c/agree/opAgree",
         "command": null,
-        "observed_at_utc": "2026-11-14T07:03:58.675Z",
-        "status": "negative-control-response",
-        "error_code": "110001",
-        "error_message": "未知错误",
-        "candidate_ids": [
-          "a3e5ae9e339e84a2"
-        ],
+        "observed_at_utc": "2026-11-14T10:47:04.083Z",
+        "status": "verified-state-change",
+        "error_code": "0",
+        "checks": {
+          "bounded_cycle_verified": true,
+          "baseline_restored": true
+        },
         "http_status": 200,
-        "response_sha256": "70cdcc744ededbd799c8183c4be5d6343fecea6c110b145e3e2b7b395dad71fc",
-        "phase": "anonymous-boundaries",
+        "response_sha256": "457052beb1acc1e461cac7d5a3030b9fe57dceacf4e78affdb4eed2010f1a19f",
+        "phase": "client-controlled-cycles",
         "condition": null,
-        "negative_control": true,
-        "authenticated": false,
+        "negative_control": false,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [],
+        "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -2272,12 +2272,112 @@
           "input_fields": [],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/c/agree/opAgree",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:42:11.171Z",
+          "status": "verified-state-change",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "5c745ee307ac4f09008c6259b8c080f9a548b8f2960483ed634bcca3239418e8",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "thread_id",
+            "forum_id",
+            "op_type",
+            "obj_type",
+            "agree_type",
+            "is_long_press_agree",
+            "z_id"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/c/agree/opAgree",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:42:12.740Z",
+          "status": "verified-state-change",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "e2537258ace1ee744d8f2b96bf5668e9d8dc4ac07e675e7d0c607b360a5d8c1e",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "thread_id",
+            "forum_id",
+            "op_type",
+            "obj_type",
+            "agree_type",
+            "is_long_press_agree",
+            "z_id"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/c/agree/opAgree",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:47:02.851Z",
+          "status": "verified-state-change",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "80d82d904f41e94bb10425c7efcd72345b1f6df4606219290f554d296df27ff1",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/c/agree/opAgree",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:47:04.083Z",
+          "status": "verified-state-change",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "457052beb1acc1e461cac7d5a3030b9fe57dceacf4e78affdb4eed2010f1a19f",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
-        "kind": "anonymous-negative-control-only",
+        "kind": "verified-in-recorded-scope",
         "basis": "observed",
-        "reason": "仅完成匿名、无目标参数的请求诊断；已记录 HTTP 与业务状态，但未验证有效登录态下的业务能力，不能把该返回当作两个测试账号的权限限制。"
+        "reason": "已有对象或状态变化核对；仅覆盖报告记录的账号、样本和时间。"
       },
       "construction_review": {
         "direct_reference_count": 3,
@@ -2308,31 +2408,8 @@
       },
       "execution_status": "http-response-recorded",
       "disposition": "tested-with-recorded-result",
-      "validation_tier": "anonymous-diagnostic-only",
-      "next_business_test": {
-        "kind": "owned-object-and-rollback",
-        "basis": "analysis",
-        "request_fields_seen": [
-          "thread_id",
-          "op_type",
-          "obj_type",
-          "agree_type",
-          "forum_id",
-          "obj_source",
-          "post_id",
-          "ori_ugc_tid",
-          "ori_ugc_nid",
-          "ori_ugc_vid",
-          "ori_ugc_type",
-          "tbs",
-          "tid",
-          "uid",
-          "obj_locate",
-          "fid",
-          "obj_param1"
-        ],
-        "reason": "业务写入的完整参数、受控对象、基线或恢复步骤仍需逐项建立；现有匿名返回不证明该账号无法使用。"
-      }
+      "validation_tier": "functionally-verified",
+      "next_business_test": null
     },
     {
       "id": "3810a35d4977b7b1",
@@ -9708,23 +9785,27 @@
       "historical_status": "not-executed-stateful",
       "best_status": "verified-state-change",
       "latest_observation": {
-        "path": "c/c/user/follow",
+        "path": "/c/c/user/follow",
         "command": null,
-        "observed_at_utc": "2026-11-14T02:13:30.434Z",
+        "observed_at_utc": "2026-11-14T10:46:59.544Z",
         "status": "verified-state-change",
         "error_code": "0",
+        "checks": {
+          "bounded_cycle_verified": true,
+          "baseline_restored": true
+        },
         "http_status": 200,
-        "response_sha256": "99bd73d5c33233c5fa9e7da378c6f57f9b1edbde4ede99fdf0130e83131347b1",
-        "phase": null,
+        "response_sha256": "78c09007625966f11d1049109fd7cbd29d68a4f2223db6b694ebf29a1b194a77",
+        "phase": "client-controlled-cycles",
         "condition": null,
         "negative_control": false,
-        "authenticated": null,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
         "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/two-account-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -9764,6 +9845,51 @@
           "input_fields": null,
           "omitted_fields": null,
           "source": "evidence/two-account-validation.json"
+        },
+        {
+          "path": "/c/c/user/follow",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:42:07.537Z",
+          "status": "verified-state-change",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "5fc9f6171ed8a248705a46aea0b8b73bcc5e7d6f75a0f47e52638901d7699072",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "uid",
+            "portrait"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/c/user/follow",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:46:59.544Z",
+          "status": "verified-state-change",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "78c09007625966f11d1049109fd7cbd29d68a4f2223db6b694ebf29a1b194a77",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
@@ -10010,29 +10136,29 @@
       "verified_url": null,
       "attempts": [],
       "historical_status": "not-executed-stateful",
-      "best_status": "negative-control-response",
+      "best_status": "verified-state-change",
       "latest_observation": {
         "path": "/c/c/user/removeFans",
         "command": null,
-        "observed_at_utc": "2026-11-14T07:04:14.582Z",
-        "status": "negative-control-response",
-        "error_code": "110001",
-        "error_message": "未知错误",
-        "candidate_ids": [
-          "30c06490807d5c43"
-        ],
+        "observed_at_utc": "2026-11-14T10:47:00.168Z",
+        "status": "verified-state-change",
+        "error_code": "0",
+        "checks": {
+          "bounded_cycle_verified": true,
+          "baseline_restored": true
+        },
         "http_status": 200,
-        "response_sha256": "4e7ff445f3164cf45de70bdb0b3d11e19ec47eebf405111cb5df7fcc470d8f24",
-        "phase": "anonymous-boundaries",
+        "response_sha256": "45817f09ace7f421db850b74421fc7c14a13699817a5735e52183a74b0f310a1",
+        "phase": "client-controlled-cycles",
         "condition": null,
-        "negative_control": true,
-        "authenticated": false,
+        "negative_control": false,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [],
+        "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -10057,12 +10183,56 @@
           "input_fields": [],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/c/user/removeFans",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:42:08.111Z",
+          "status": "verified-state-change",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "eb43ad0bc4733061c35216fa129c23e14c6e02541731b76e64208c74168157f6",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "fans_uid"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/c/user/removeFans",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:47:00.168Z",
+          "status": "verified-state-change",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "45817f09ace7f421db850b74421fc7c14a13699817a5735e52183a74b0f310a1",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
-        "kind": "anonymous-negative-control-only",
+        "kind": "verified-in-recorded-scope",
         "basis": "observed",
-        "reason": "仅完成匿名、无目标参数的请求诊断；已记录 HTTP 与业务状态，但未验证有效登录态下的业务能力，不能把该返回当作两个测试账号的权限限制。"
+        "reason": "已有对象或状态变化核对；仅覆盖报告记录的账号、样本和时间。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -10075,13 +10245,8 @@
       },
       "execution_status": "http-response-recorded",
       "disposition": "tested-with-recorded-result",
-      "validation_tier": "anonymous-diagnostic-only",
-      "next_business_test": {
-        "kind": "request-and-rollback-construction",
-        "basis": "analysis",
-        "request_fields_seen": [],
-        "reason": "业务写入的完整参数、受控对象、基线或恢复步骤仍需逐项建立；现有匿名返回不证明该账号无法使用。"
-      }
+      "validation_tier": "functionally-verified",
+      "next_business_test": null
     },
     {
       "id": "6dd6463a9567c68b",
@@ -29444,23 +29609,27 @@
       "historical_status": "verified-read",
       "best_status": "verified-read",
       "latest_observation": {
-        "path": "c/f/pb/page",
+        "path": "/c/f/pb/page",
         "command": "302001",
-        "observed_at_utc": "2026-11-14T03:48:55.475Z",
+        "observed_at_utc": "2026-11-14T10:47:04.600Z",
         "status": "verified-read",
         "error_code": "0",
+        "checks": {
+          "bounded_cycle_verified": true,
+          "baseline_restored": true
+        },
         "http_status": 200,
-        "response_sha256": "0dea96707ed7a61dc8ac5bed9265ae66a790d6faeb535308823b0c45366be01e",
-        "phase": "own-main-thread-cycle",
+        "response_sha256": "8892b2b78e64711f30c53387337df7f159472ccca4a27da6bbe9c39ea126905a",
+        "phase": "client-controlled-cycles",
         "condition": null,
         "negative_control": false,
-        "authenticated": null,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
         "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/comprehensive-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -29682,6 +29851,202 @@
           "input_fields": null,
           "omitted_fields": null,
           "source": "evidence/comprehensive-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:42:09.969Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "1b64fc6ecfab56e9587b3e36b5d0db8dc54b5bbad442dffda048cc5ad5c5b0a5",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "kz",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:42:12.071Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "f1044b29c152e5302ef02c92dac9001b0d2413dbae91de3d54bfc051d01433f9",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "kz",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:42:13.221Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "ffd21a39388a4169d286b645c05248f72ce3bbd6a87d477ef6f936b6ad7142e3",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "kz",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:45:41.303Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true,
+            "has_agree_explicit": true
+          },
+          "http_status": 200,
+          "response_sha256": "06a42efcf4b17b90610cf04a3d5418807484cbe0038c989be1462e2c1a60b62a",
+          "phase": "client-first-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:46:10.732Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true,
+            "has_agree_explicit": true
+          },
+          "http_status": 200,
+          "response_sha256": "1eaefefe1f2b7c511b3bb5bbe0505cc064398f3c0840e8fc9422d40dcba714b2",
+          "phase": "client-corrected-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:47:01.807Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "68de3b4efa73f316592a17503a1eaa88d6471ab28818b2f8ddfe0d81d612aec6",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:47:03.434Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "df23079623ec57844f108dfc09e444aabd29f9e456efe3ae51339438e405fdb4",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:47:04.600Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "8892b2b78e64711f30c53387337df7f159472ccca4a27da6bbe9c39ea126905a",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
@@ -29835,23 +30200,27 @@
       "historical_status": "verified-read",
       "best_status": "verified-read",
       "latest_observation": {
-        "path": "c/f/pb/page",
+        "path": "/c/f/pb/page",
         "command": "302001",
-        "observed_at_utc": "2026-11-14T03:48:55.475Z",
+        "observed_at_utc": "2026-11-14T10:47:04.600Z",
         "status": "verified-read",
         "error_code": "0",
+        "checks": {
+          "bounded_cycle_verified": true,
+          "baseline_restored": true
+        },
         "http_status": 200,
-        "response_sha256": "0dea96707ed7a61dc8ac5bed9265ae66a790d6faeb535308823b0c45366be01e",
-        "phase": "own-main-thread-cycle",
+        "response_sha256": "8892b2b78e64711f30c53387337df7f159472ccca4a27da6bbe9c39ea126905a",
+        "phase": "client-controlled-cycles",
         "condition": null,
         "negative_control": false,
-        "authenticated": null,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
         "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/comprehensive-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -30073,6 +30442,202 @@
           "input_fields": null,
           "omitted_fields": null,
           "source": "evidence/comprehensive-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:42:09.969Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "1b64fc6ecfab56e9587b3e36b5d0db8dc54b5bbad442dffda048cc5ad5c5b0a5",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "kz",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:42:12.071Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "f1044b29c152e5302ef02c92dac9001b0d2413dbae91de3d54bfc051d01433f9",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "kz",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:42:13.221Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "ffd21a39388a4169d286b645c05248f72ce3bbd6a87d477ef6f936b6ad7142e3",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "kz",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:45:41.303Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true,
+            "has_agree_explicit": true
+          },
+          "http_status": 200,
+          "response_sha256": "06a42efcf4b17b90610cf04a3d5418807484cbe0038c989be1462e2c1a60b62a",
+          "phase": "client-first-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:46:10.732Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "thread_matches": true,
+            "has_agree_explicit": true
+          },
+          "http_status": 200,
+          "response_sha256": "1eaefefe1f2b7c511b3bb5bbe0505cc064398f3c0840e8fc9422d40dcba714b2",
+          "phase": "client-corrected-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:47:01.807Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "68de3b4efa73f316592a17503a1eaa88d6471ab28818b2f8ddfe0d81d612aec6",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:47:03.434Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "df23079623ec57844f108dfc09e444aabd29f9e456efe3ae51339438e405fdb4",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T10:47:04.600Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "8892b2b78e64711f30c53387337df7f159472ccca4a27da6bbe9c39ea126905a",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
@@ -39694,30 +40259,26 @@
       "latest_observation": {
         "path": "/c/s/getSuggestionByAddrName",
         "command": "303018",
-        "observed_at_utc": "2026-11-14T06:54:35.115Z",
+        "observed_at_utc": "2026-11-14T10:46:08.765Z",
         "status": "response-schema-validated",
         "error_code": "0",
         "checks": {
-          "declared_response_tags_match": true
+          "poi_nonempty": true,
+          "poi_names_present": true,
+          "coordinate_strings": true
         },
-        "candidate_ids": [
-          "b6d5a65affc1bccb"
-        ],
         "http_status": 200,
-        "response_sha256": "bce698c40cecdbf259c3d97612fca2f515660625fd3eca5ba83ecffc40f39f4f",
-        "phase": "reviewed-protobuf-and-account-reads",
+        "response_sha256": "6123bc15dff81d318addd09726c7cdc066838b11790c2f34d92bce8530242a64",
+        "phase": "client-corrected-pass",
         "condition": null,
         "negative_control": false,
-        "authenticated": false,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [
-          "addr_name",
-          "common"
-        ],
+        "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -39747,6 +40308,54 @@
           ],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/s/getSuggestionByAddrName",
+          "command": "303018",
+          "observed_at_utc": "2026-11-14T10:45:38.204Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "checks": {
+            "poi_nonempty": true,
+            "poi_names_present": true,
+            "coordinate_strings": true
+          },
+          "http_status": 200,
+          "response_sha256": "6123bc15dff81d318addd09726c7cdc066838b11790c2f34d92bce8530242a64",
+          "phase": "client-first-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/s/getSuggestionByAddrName",
+          "command": "303018",
+          "observed_at_utc": "2026-11-14T10:46:08.765Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "checks": {
+            "poi_nonempty": true,
+            "poi_names_present": true,
+            "coordinate_strings": true
+          },
+          "http_status": 200,
+          "response_sha256": "6123bc15dff81d318addd09726c7cdc066838b11790c2f34d92bce8530242a64",
+          "phase": "client-corrected-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
@@ -41310,29 +41919,31 @@
       "verified_url": null,
       "attempts": [],
       "historical_status": "needs-request-construction",
-      "best_status": "negative-control-response",
+      "best_status": "response-schema-validated",
       "latest_observation": {
         "path": "/c/s/loop",
-        "command": null,
-        "observed_at_utc": "2026-11-14T07:04:47.894Z",
-        "status": "negative-control-response",
-        "error_code": "110001",
-        "error_message": "未知错误",
-        "candidate_ids": [
-          "2c0b5ae7da7b77bc"
-        ],
+        "command": "309732",
+        "observed_at_utc": "2026-11-14T10:46:10.627Z",
+        "status": "response-schema-validated",
+        "error_code": "0",
+        "checks": {
+          "live_returned": true,
+          "normal_config_nonempty": true,
+          "level_returned": true,
+          "icon_returned": true
+        },
         "http_status": 200,
-        "response_sha256": "f8690003ccacf278560abf38904dc053620980a342c1a95a0510e88545c534a0",
-        "phase": "anonymous-boundaries",
+        "response_sha256": "a17af312ad4d564b50a3391156764ad18d77b66e7e6a55e9bcad172d56b5b0ec",
+        "phase": "client-corrected-pass",
         "condition": null,
-        "negative_control": true,
-        "authenticated": false,
+        "negative_control": false,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [],
+        "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -41357,12 +41968,84 @@
           "input_fields": [],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/s/loop",
+          "command": "309732",
+          "observed_at_utc": "2026-11-14T10:42:06.346Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "a17af312ad4d564b50a3391156764ad18d77b66e7e6a55e9bcad172d56b5b0ec",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "data_type"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/s/loop",
+          "command": "309732",
+          "observed_at_utc": "2026-11-14T10:45:41.177Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "checks": {
+            "live_returned": true,
+            "normal_config_nonempty": true,
+            "level_returned": true,
+            "icon_returned": true
+          },
+          "http_status": 200,
+          "response_sha256": "a17af312ad4d564b50a3391156764ad18d77b66e7e6a55e9bcad172d56b5b0ec",
+          "phase": "client-first-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/s/loop",
+          "command": "309732",
+          "observed_at_utc": "2026-11-14T10:46:10.627Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "checks": {
+            "live_returned": true,
+            "normal_config_nonempty": true,
+            "level_returned": true,
+            "icon_returned": true
+          },
+          "http_status": 200,
+          "response_sha256": "a17af312ad4d564b50a3391156764ad18d77b66e7e6a55e9bcad172d56b5b0ec",
+          "phase": "client-corrected-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
-        "kind": "anonymous-negative-control-only",
+        "kind": "functional-assertions-incomplete",
         "basis": "observed",
-        "reason": "仅完成匿名、无目标参数的请求诊断；已记录 HTTP 与业务状态，但未验证有效登录态下的业务能力，不能把该返回当作两个测试账号的权限限制。"
+        "reason": "已有业务返回或结构核对，尚未完成该能力的对象、边界或完整流程验收。"
       },
       "construction_review": {
         "direct_reference_count": 2,
@@ -41384,22 +42067,8 @@
       },
       "execution_status": "http-response-recorded",
       "disposition": "tested-with-recorded-result",
-      "validation_tier": "anonymous-diagnostic-only",
-      "next_business_test": {
-        "kind": "request-construction-needed",
-        "basis": "analysis",
-        "request_fields_seen": [
-          "chatroom_id",
-          "chatroom_mask",
-          "chatroom_new_msg",
-          "common",
-          "data_type",
-          "fid",
-          "forum_name",
-          "uniq_id"
-        ],
-        "reason": "完整请求语义与业务断言尚未恢复，这是待分析工作，尚不能认定服务端限制。"
-      }
+      "validation_tier": "business-validation-incomplete",
+      "next_business_test": null
     },
     {
       "id": "356b5cc75d3da14e",
@@ -42785,29 +43454,25 @@
       "verified_url": null,
       "attempts": [],
       "historical_status": "needs-request-construction",
-      "best_status": "negative-control-response",
+      "best_status": "accepted-empty-response",
       "latest_observation": {
         "path": "/c/s/shop/getKjsIMList",
         "command": null,
-        "observed_at_utc": "2026-11-14T07:04:51.608Z",
-        "status": "negative-control-response",
-        "error_code": "110001",
-        "error_message": "未知错误",
-        "candidate_ids": [
-          "15799488f3bf9dcb"
-        ],
+        "observed_at_utc": "2026-11-14T10:42:06.223Z",
+        "status": "accepted-empty-response",
+        "error_code": "0",
         "http_status": 200,
-        "response_sha256": "ec136a8ea28f0171da03f95386bb5e63fcb5882163d9a681520bdcda0839538f",
-        "phase": "anonymous-boundaries",
+        "response_sha256": "29dba7ad5c181347333f5c86ab7b1a9b7fb602cda9f3061ac4b063a91d0d7b22",
+        "phase": "recovered-contract-cycles",
         "condition": null,
-        "negative_control": true,
-        "authenticated": false,
+        "negative_control": false,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
         "input_fields": [],
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -42832,12 +43497,31 @@
           "input_fields": [],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/s/shop/getKjsIMList",
+          "command": null,
+          "observed_at_utc": "2026-11-14T10:42:06.223Z",
+          "status": "accepted-empty-response",
+          "error_code": "0",
+          "http_status": 200,
+          "response_sha256": "29dba7ad5c181347333f5c86ab7b1a9b7fb602cda9f3061ac4b063a91d0d7b22",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
-        "kind": "anonymous-negative-control-only",
+        "kind": "nonempty-fixture-needed",
         "basis": "observed",
-        "reason": "仅完成匿名、无目标参数的请求诊断；已记录 HTTP 与业务状态，但未验证有效登录态下的业务能力，不能把该返回当作两个测试账号的权限限制。"
+        "reason": "当前样本返回成功但为空，缺少可核对的非空业务对象。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -42848,13 +43532,8 @@
       },
       "execution_status": "http-response-recorded",
       "disposition": "tested-with-recorded-result",
-      "validation_tier": "anonymous-diagnostic-only",
-      "next_business_test": {
-        "kind": "request-construction-needed",
-        "basis": "analysis",
-        "request_fields_seen": [],
-        "reason": "完整请求语义与业务断言尚未恢复，这是待分析工作，尚不能认定服务端限制。"
-      }
+      "validation_tier": "business-validation-incomplete",
+      "next_business_test": null
     },
     {
       "id": "3b808438e9cd0f53",
@@ -44328,35 +45007,26 @@
       "latest_observation": {
         "path": "/c/u/feed/agreeme",
         "command": "309593",
-        "observed_at_utc": "2026-11-14T06:54:35.342Z",
+        "observed_at_utc": "2026-11-14T10:46:10.418Z",
         "status": "response-schema-validated",
         "error_code": "0",
         "checks": {
-          "declared_response_tags_match": true
+          "notification_array": true,
+          "has_more_present": true,
+          "notification_nonempty": true
         },
-        "candidate_ids": [
-          "8e1c35f991bd580b"
-        ],
         "http_status": 200,
-        "response_sha256": "335692ee9b6739d0f794d0e7ff8f9a08cde1f2def795779aabfffcc9cb50fcb0",
-        "phase": "reviewed-protobuf-and-account-reads",
+        "response_sha256": "86190096e8129474e1fcc1837020ee06d70e8e4bc99e8965604194417715ba93",
+        "phase": "client-corrected-pass",
         "condition": null,
         "negative_control": false,
         "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [
-          "common",
-          "id",
-          "rn",
-          "scr_w",
-          "scr_h",
-          "scr_dip",
-          "q_type"
-        ],
+        "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -44391,6 +45061,54 @@
           ],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/u/feed/agreeme",
+          "command": "309593",
+          "observed_at_utc": "2026-11-14T10:45:40.846Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "checks": {
+            "notification_array": true,
+            "has_more_present": true,
+            "notification_nonempty": true
+          },
+          "http_status": 200,
+          "response_sha256": "86190096e8129474e1fcc1837020ee06d70e8e4bc99e8965604194417715ba93",
+          "phase": "client-first-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/feed/agreeme",
+          "command": "309593",
+          "observed_at_utc": "2026-11-14T10:46:10.418Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "checks": {
+            "notification_array": true,
+            "has_more_present": true,
+            "notification_nonempty": true
+          },
+          "http_status": 200,
+          "response_sha256": "86190096e8129474e1fcc1837020ee06d70e8e4bc99e8965604194417715ba93",
+          "phase": "client-corrected-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
@@ -45910,25 +46628,26 @@
       "latest_observation": {
         "path": "/c/u/tail/getTails",
         "command": "305001",
-        "observed_at_utc": "2026-11-14T07:14:58.108Z",
-        "status": "verified-read",
+        "observed_at_utc": "2026-11-14T10:46:09.635Z",
+        "status": "response-schema-validated",
         "error_code": "0",
-        "error_message": "success",
         "checks": {
-          "baseline_restored": true
+          "tail_array": true,
+          "color_array": true,
+          "default_color_present": true
         },
         "http_status": 200,
         "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
-        "phase": "owned-tail-create-edit-enable-disable-delete",
+        "phase": "client-corrected-pass",
         "condition": null,
         "negative_control": false,
         "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [],
+        "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/supplemental-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -46256,6 +46975,49 @@
           "input_fields": [],
           "omitted_fields": null,
           "source": "evidence/supplemental-validation.json"
+        },
+        {
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T10:45:39.999Z",
+          "status": "response-decode-failed",
+          "error_code": null,
+          "http_status": 200,
+          "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+          "phase": "client-first-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/tail/getTails",
+          "command": "305001",
+          "observed_at_utc": "2026-11-14T10:46:09.635Z",
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "checks": {
+            "tail_array": true,
+            "color_array": true,
+            "default_color_present": true
+          },
+          "http_status": 200,
+          "response_sha256": "5a06959e985154fb48fa90a02fe81de7adc7ef17a0f3b30b88ba9c5939e62da1",
+          "phase": "client-corrected-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
@@ -47249,27 +48011,25 @@
       "latest_observation": {
         "path": "/c/u/user/getPrivateInfo",
         "command": "303016",
-        "observed_at_utc": "2026-11-14T04:03:18.185Z",
-        "status": "response-schema-validated",
+        "observed_at_utc": "2026-11-14T10:46:09.843Z",
+        "status": "verified-read",
         "error_code": "0",
-        "candidate_ids": [
-          "ac8e64ba9a0659ba"
-        ],
+        "checks": {
+          "own_id_matches": true,
+          "settings_present": true
+        },
         "http_status": 200,
-        "response_sha256": "7344fb28d0f842a8211ed966d748418ff0a7aff50f23910c4f6508eb4f48cd92",
-        "phase": "protocol-reads-account2",
+        "response_sha256": "6573fd87b26cafdb1f3f0e029f5467c99aef10aa37d22bf7c3c7955facf0661c",
+        "phase": "client-corrected-pass",
         "condition": null,
         "negative_control": false,
         "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
-        "input_fields": [
-          "common",
-          "user_id"
-        ],
-        "omitted_fields": [],
-        "source": "evidence/comprehensive-validation.json"
+        "input_fields": null,
+        "omitted_fields": null,
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -47454,6 +48214,52 @@
           ],
           "omitted_fields": [],
           "source": "evidence/comprehensive-validation.json"
+        },
+        {
+          "path": "/c/u/user/getPrivateInfo",
+          "command": "303016",
+          "observed_at_utc": "2026-11-14T10:45:40.259Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "own_id_matches": true,
+            "settings_present": true
+          },
+          "http_status": 200,
+          "response_sha256": "6573fd87b26cafdb1f3f0e029f5467c99aef10aa37d22bf7c3c7955facf0661c",
+          "phase": "client-first-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/getPrivateInfo",
+          "command": "303016",
+          "observed_at_utc": "2026-11-14T10:46:09.843Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "own_id_matches": true,
+            "settings_present": true
+          },
+          "http_status": 200,
+          "response_sha256": "6573fd87b26cafdb1f3f0e029f5467c99aef10aa37d22bf7c3c7955facf0661c",
+          "phase": "client-corrected-pass",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
@@ -48758,26 +49564,27 @@
       "historical_status": "verified-read",
       "best_status": "verified-read",
       "latest_observation": {
-        "path": "c/u/user/profile",
+        "path": "/c/u/user/profile",
         "command": "303012",
-        "observed_at_utc": "2026-11-14T02:17:01.643Z",
+        "observed_at_utc": "2026-11-14T10:47:01.312Z",
         "status": "verified-read",
         "error_code": "0",
         "checks": {
-          "target_matches": true
+          "bounded_cycle_verified": true,
+          "baseline_restored": true
         },
         "http_status": 200,
-        "response_sha256": "0f46076cc731928d08607365894a3aaafb88087682a5a2e19cc5d779424df2be",
-        "phase": null,
+        "response_sha256": "6c4e68ad527ecbd699c8dcbb43348de2fd9b258997354d13f52d77e26cdad297",
+        "phase": "client-controlled-cycles",
         "condition": null,
         "negative_control": false,
-        "authenticated": null,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
         "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/two-account-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -48955,6 +49762,256 @@
           "input_fields": null,
           "omitted_fields": null,
           "source": "evidence/two-account-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:06.959Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "target_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "36c33ee79ee53b8c5b24b1f0febfe2bc9cd001d0efc692b9be3aca9c68f0e403",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:07.891Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "target_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "2dce2ef307956cf839d9ee5d2a788b43bd2ad9ee991a582086394a61f38cccb8",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:08.453Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "target_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "286639f277c32803867366e75572bdd1bdc4ffb4edcbef7455ce694c67927b85",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:09.012Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "target_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "0e29b33031359b31a8af9a9a7efebd0b56fc9782b1af0f3dca643cbca02abd56",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:09.462Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "target_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "c92ea286832b5f669f8de4cb4671680a26e3ceb38b4df2dce02cb5fc64786310",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:46:58.708Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "5431c1ce6de4a2426f5a90eb56706292d3bbac6abd173fcfad54d06efb2f2b47",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:46:59.976Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "f25d1df1be372730be921922bb4683502cd4b6bd3a1e306923ba8d033c946487",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:47:00.508Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "643aa450158afccfe73328e038dbc87ebac41f213c942cb953cb60b30f054d61",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:47:00.891Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "0d8c05718dd493689606a528eca37565249bbed8ab6c69cc7e98ee4bb8c3d7eb",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:47:01.312Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "6c4e68ad527ecbd699c8dcbb43348de2fd9b258997354d13f52d77e26cdad297",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
@@ -49025,26 +50082,27 @@
       "historical_status": "verified-read",
       "best_status": "verified-read",
       "latest_observation": {
-        "path": "c/u/user/profile",
+        "path": "/c/u/user/profile",
         "command": "303012",
-        "observed_at_utc": "2026-11-14T02:17:01.643Z",
+        "observed_at_utc": "2026-11-14T10:47:01.312Z",
         "status": "verified-read",
         "error_code": "0",
         "checks": {
-          "target_matches": true
+          "bounded_cycle_verified": true,
+          "baseline_restored": true
         },
         "http_status": 200,
-        "response_sha256": "0f46076cc731928d08607365894a3aaafb88087682a5a2e19cc5d779424df2be",
-        "phase": null,
+        "response_sha256": "6c4e68ad527ecbd699c8dcbb43348de2fd9b258997354d13f52d77e26cdad297",
+        "phase": "client-controlled-cycles",
         "condition": null,
         "negative_control": false,
-        "authenticated": null,
+        "authenticated": true,
         "missing_fixture": null,
         "incomplete_cleanup": false,
         "transport_upgraded_from_http": false,
         "input_fields": null,
         "omitted_fields": null,
-        "source": "evidence/two-account-validation.json"
+        "source": "evidence/expanded-api-validation.json"
       },
       "supplemental_observations": [
         {
@@ -49222,6 +50280,256 @@
           "input_fields": null,
           "omitted_fields": null,
           "source": "evidence/two-account-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:06.959Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "target_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "36c33ee79ee53b8c5b24b1f0febfe2bc9cd001d0efc692b9be3aca9c68f0e403",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:07.891Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "target_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "2dce2ef307956cf839d9ee5d2a788b43bd2ad9ee991a582086394a61f38cccb8",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:08.453Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "target_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "286639f277c32803867366e75572bdd1bdc4ffb4edcbef7455ce694c67927b85",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:09.012Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "target_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "0e29b33031359b31a8af9a9a7efebd0b56fc9782b1af0f3dca643cbca02abd56",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:42:09.462Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "target_matches": true
+          },
+          "http_status": 200,
+          "response_sha256": "c92ea286832b5f669f8de4cb4671680a26e3ceb38b4df2dce02cb5fc64786310",
+          "phase": "recovered-contract-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": [
+            "common",
+            "uid",
+            "pn",
+            "rn"
+          ],
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:46:58.708Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "5431c1ce6de4a2426f5a90eb56706292d3bbac6abd173fcfad54d06efb2f2b47",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:46:59.976Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "f25d1df1be372730be921922bb4683502cd4b6bd3a1e306923ba8d033c946487",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:47:00.508Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "643aa450158afccfe73328e038dbc87ebac41f213c942cb953cb60b30f054d61",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:47:00.891Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "0d8c05718dd493689606a528eca37565249bbed8ab6c69cc7e98ee4bb8c3d7eb",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
+        },
+        {
+          "path": "/c/u/user/profile",
+          "command": "303012",
+          "observed_at_utc": "2026-11-14T10:47:01.312Z",
+          "status": "verified-read",
+          "error_code": "0",
+          "checks": {
+            "bounded_cycle_verified": true,
+            "baseline_restored": true
+          },
+          "http_status": 200,
+          "response_sha256": "6c4e68ad527ecbd699c8dcbb43348de2fd9b258997354d13f52d77e26cdad297",
+          "phase": "client-controlled-cycles",
+          "condition": null,
+          "negative_control": false,
+          "authenticated": true,
+          "missing_fixture": null,
+          "incomplete_cleanup": false,
+          "transport_upgraded_from_http": false,
+          "input_fields": null,
+          "omitted_fields": null,
+          "source": "evidence/expanded-api-validation.json"
         }
       ],
       "limitation": {
