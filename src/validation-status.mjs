@@ -40,7 +40,7 @@ export function restriction(row, best, latest) {
   if (row.category === 'media-resource') return { kind: 'media-request-fixture-needed', basis: 'analysis', reason: '尚未恢复该媒体地址所需的有效资源标识、请求格式及返回判据。' };
   if (/consume|alipay|buy|pay|order|delall|clear.*user|cancelaccount|closeaccount/i.test(row.path)) return { kind: 'isolated-account-or-order-fixture-needed', basis: 'analysis', reason: '涉及订单、支付或账号数据操作；没有相应测试订单或隔离账号环境，未用真实扣款或清空数据探测。' };
   if (/bawu|manager|banid|setgood|settop/i.test(row.path)) return { kind: 'moderator-fixture-or-protocol-needed', basis: 'analysis', reason: '需恢复具体吧务请求，并提供具备相应权限的测试吧和可回收对象；未执行该候选，非服务端拒绝的实测结论。' };
-  if (/chat|friend|msg/i.test(row.path) && !latest) return { kind: 'im-session-or-target-needed', basis: 'analysis', reason: '单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。' };
+  if (/chat|friend|msg/i.test(row.path) && !latest) return { kind: 'message-http-request-or-fixture-needed', basis: 'analysis', reason: '普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。' };
   if (row.category === 'stateful-or-auth-action') return { kind: 'operation-and-restore-plan-needed', basis: 'analysis', reason: '已获测试授权；该操作的请求、有效目标或恢复流程尚未建立，不能仅凭路径名执行。' };
   return { kind: 'request-or-response-construction-needed', basis: 'analysis', reason: '尚未恢复足够请求信息、有效参数样本或响应判据；尚无证据判定接口失效。' };
 }

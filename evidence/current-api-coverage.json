@@ -48,10 +48,10 @@
       "functional-assertions-incomplete": 104,
       "html-page-confirmed": 85,
       "http-source-https-variant-tested": 2,
-      "im-session-or-target-needed": 19,
       "isolated-account-or-order-fixture-needed": 15,
       "media-fixture-missing-after-negative-control": 1,
       "membership-required": 1,
+      "message-http-request-or-fixture-needed": 19,
       "nonempty-fixture-needed": 27,
       "not-in-requested-scope": 51,
       "operation-and-restore-plan-needed": 102,
@@ -1527,9 +1527,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -2825,9 +2825,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 2,
@@ -2865,9 +2865,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -2910,9 +2910,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -2950,9 +2950,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -2990,9 +2990,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -3035,9 +3035,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -3075,9 +3075,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -5232,9 +5232,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -12222,9 +12222,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -12267,9 +12267,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -12924,9 +12924,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 2,
@@ -24827,9 +24827,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 0,
@@ -24872,9 +24872,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -25047,9 +25047,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -27744,9 +27744,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -28445,9 +28445,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 2,
@@ -30620,9 +30620,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 1,
@@ -30950,9 +30950,9 @@
       "latest_observation": null,
       "supplemental_observations": [],
       "limitation": {
-        "kind": "im-session-or-target-needed",
+        "kind": "message-http-request-or-fixture-needed",
         "basis": "analysis",
-        "reason": "单聊、群聊或消息请求尚未逐项恢复；两个网页登录态不等于已恢复 IM 会话及送达核对。"
+        "reason": "普通 IM 单聊和 SDK 群已另有核心流程实测；该 HTTP 候选仍需逐项恢复自己的参数、有效对象或回收步骤，不能将 LCP 方法的成功迁移到此路径。"
       },
       "construction_review": {
         "direct_reference_count": 2,

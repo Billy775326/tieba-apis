@@ -112,7 +112,7 @@ const doc=`# 当前验证范围与未完成原因
 | 主帖删除后的首楼清理 | 230890，删除贴子失败 | 主帖详情不可访问，但首楼编号查询仍有返回 |
 | 文字名称“雷神加速器”的读取 | 340001，服务端限制读取 | 未向该吧发帖；实际使用链接对应的“雷神加速” |
 | 部分会员、活动或配置查询 | 内部/系统/未知错误 | 仅保留业务码，不推断登录失效、封禁或限流 |
-| 私信及群聊 | IM 登录、封装与接收链路未完成；没有受控群 | 未发送私信，未宣称收发可用 |
+| 私信与 SDK 群聊 | 已完成双账号 IM 登录、双向发送和收件历史回读、本人撤回及清理 | 见 [IM 实测](im-validation.md)；不自动验证 HTTP 聊天室和直播群发 |
 | 订单、支付、账号数据清空 | 无隔离订单或账号环境 | 未用真实扣款或清空账号来探测 |
 
 本轮没有足够证据证明验证码或风控限制。匿名网页的 HTML、重定向和空正文也不作为客户端 API 功能通过。
@@ -140,6 +140,8 @@ observed 表示实际观测，analysis 表示协议、参数、样本或恢复�
 ## 离线重建与复测入口
 
 在仓库根目录执行 node scripts/build-current-coverage.mjs 可从已保存的脱敏报告重建本页、CSV 和当前覆盖 JSON，不联网、不读取账号文件。node scripts/verify-web-routes.mjs --live 执行匿名网页路由分类；协议和遗留读取复测条件见 [历史全量文档](full-coverage.md)，新结果先保存在忽略目录再审核。
+
+后续 [IM 实测](im-validation.md) 和 [脱敏记录](../evidence/im-validation.json) 已补齐普通私信及 SDK 群聊核心流程；相关 REST 路径和 LCP 方法独立于原 603 条字面量计数，未将成功结果迁移给相似命名的 HTTP 路径。
 
 本页保留 [前轮缺口补测](../evidence/gap-validation.json)、[指定帖子](thread-validation.md) 和 [双账号测试](two-account-validation.md) 的历史记录，不静默覆盖旧观测。`;
 fs.writeFileSync('docs/remaining-validation.md',doc);
