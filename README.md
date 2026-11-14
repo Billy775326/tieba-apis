@@ -20,6 +20,7 @@
 
 ## 文档导航
 
+- [当前未完成项与限制原因](docs/remaining-validation.md) · [逐项 CSV](docs/current-api-coverage.csv)：合并全部补测，区分实测拒绝、空样本与尚待分析。
 - [全量覆盖、状态解释与扩展验证](docs/full-coverage.md)：查看总体结果、登录边界和复现条件。
 - [逐项覆盖 CSV](docs/api-coverage.csv) · [覆盖 JSON](evidence/api-coverage.json)：按路径、命令变体和状态查找证据。
 - [指定帖子接口验证](docs/thread-validation.md)：帖子 [redacted-thread-id] 的读取、回复、楼中楼及清理实测，以及其他测试对象要求。
