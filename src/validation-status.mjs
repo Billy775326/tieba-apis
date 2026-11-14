@@ -1,4 +1,4 @@
-const levels = { 'verified-read': 100, 'verified-state-change': 100, 'response-schema-validated': 60, 'https-variant-verified': 60, 'json-data-returned': 50, 'html-page-response': 40, 'accepted-empty-response': 35, 'business-error': 30, 'redirect-response': 20, 'empty-response': 15, 'non-media-response': 15, 'json-response-unverified': 15, 'response-fields-recognized': 15, 'response-decode-failed': 10, 'unrecognized-business-status': 10, 'non-json-response': 10, 'transport-incomplete': 5, 'transport-error': 5 };
+const levels = { 'negative-control-response': 12, 'verified-read': 100, 'verified-state-change': 100, 'response-schema-validated': 60, 'https-variant-verified': 60, 'json-data-returned': 50, 'html-page-response': 40, 'accepted-empty-response': 35, 'business-error': 30, 'redirect-response': 20, 'empty-response': 15, 'non-media-response': 15, 'json-response-unverified': 15, 'response-fields-recognized': 15, 'response-decode-failed': 10, 'unrecognized-business-status': 10, 'non-json-response': 10, 'transport-incomplete': 5, 'transport-error': 5 };
 export function matchesObservation(row, observation) {
   if (row.category === 'nonproduction-or-other-origin') return false;
   if (Array.isArray(observation.candidate_ids) && !observation.candidate_ids.includes(row.id)) return false;
@@ -10,12 +10,19 @@ export function isFunctional(status) { return ['verified-read', 'verified-state-
 export function consolidate(row, observations) {
   const matches = observations.filter(o => matchesObservation(row, o));
   let best = row.status;
-  for (const o of matches) if ((levels[o.status] ?? 0) > (levels[best] ?? 0)) best = o.status;
-  const latest = matches.filter(o=>!o.negative_control).at(-1) ?? matches.at(-1) ?? row.attempts?.at(-1) ?? null;
+  for (const o of matches) {
+    if (o.negative_control) { if ((levels[best] ?? 0) < levels['negative-control-response']) best = 'negative-control-response'; continue; }
+    if ((levels[o.status] ?? 0) > (levels[best] ?? 0)) best = o.status;
+  }
+  const historicalResponse = row.attempts?.filter(o=>!o.negative_control&&(o.response_sha256||Number.isInteger(o.http_status))).at(-1);
+  const latest = matches.filter(o=>!o.negative_control).at(-1) ?? historicalResponse ?? matches.at(-1) ?? row.attempts?.at(-1) ?? null;
   return { ...row, historical_status: row.status, best_status: best, latest_observation: latest, supplemental_observations: matches, limitation: restriction(row, best, latest) };
 }
 export function restriction(row, best, latest) {
   if (row.execution_scope === 'moderation-excluded-by-user') return {kind:'not-in-requested-scope',basis:'user-request',reason:'用户已明确不测吧务；保留先前观测，不将其作为本轮待取得授权的任务。'};
+  if (latest?.negative_control && !isFunctional(best) && latest.authenticated!==true) return {kind:'anonymous-negative-control-only',basis:'observed',reason:'仅完成匿名、无目标参数的请求诊断；已记录 HTTP 与业务状态，但未验证有效登录态下的业务能力，不能把该返回当作两个测试账号的权限限制。'};
+  if (latest?.negative_control && !isFunctional(best)) return {kind:'parameter-negative-control-only',basis:'observed',reason:'仅完成登录态下的参数对照，尚未验证有效业务请求；不能把参数错误当作已确认的账号权限限制。'};
+  if (latest?.error_code === '3110002' && /会员/.test(latest.error_message ?? '')) return {kind:'membership-required',basis:'observed',reason:'小尾巴启用与停用均被服务端以 3110002 明确拒绝，提示当前账号不是贴吧会员；创建、编辑和删除本人样本已另行验证并恢复。'};
   if (latest?.error_code != null && String(latest.error_code) !== '0') {
     if (String(latest.error_code)==='1990043' && /会员/.test(latest.error_message??'')) return {kind:'membership-required',basis:'observed',reason:'服务端明确返回该功能需要高级会员；当前账号未通过该权限检查。'};
     if (String(latest.error_code)==='160002') return {kind:'already-completed',basis:'observed',reason:'服务端返回此前已签到；不能将重复请求当作本轮新增签到成功。'};

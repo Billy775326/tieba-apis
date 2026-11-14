@@ -1,12 +1,25 @@
 # 当前验证范围与未完成原因
 
-本页合并全部已保存观测，覆盖 **603 条静态候选、568 个不同路径**。32 条候选已有对象或状态变化核对；其余候选不能一概当作失败。已有 HTTP 返回、尚未发出请求、按用户要求不再测的项目分别列出，状态登记不等于实测完成。
+本页合并全部已保存观测，覆盖 **603 条静态候选、568 个不同路径**。42 条候选已有对象或状态变化核对；其余候选不能一概当作失败。已有 HTTP 返回、尚未发出请求、按用户要求不再测的项目分别列出，状态登记不等于实测完成。
 
 逐项结果见 [CSV](current-api-coverage.csv) 和 [JSON](../evidence/current-api-coverage.json)。CSV 同时列出 execution_status、disposition、历史最强证据及最新限制；未执行项目明确保留 not-requested。
 
-## 本轮完整读取计划与新增写入测试
+## 后续逐项补测
 
-本轮共记录 **402 次请求**，见 [完整报告](../evidence/comprehensive-validation.json)。151 条网页候选去重后 147 次匿名 GET，全部现有协议读取计划 70 项、遗留读取计划 123 项也已执行；另有 7 项检查和有界重试、媒体对照、受控状态闭环及用户新提供测试吧的主帖测试。这里的“计划已执行”不表示每项都使用了完整参数或业务验收通过。
+新增 **249 次请求**，其中 203 次为匿名空请求诊断（含 1 次公开入口检查），其余为登录态或明确参数的业务读取、受控小尾巴流程及图片内容对照。详见 [补测记录](supplemental-validation.md) 与 [脱敏证据](../evidence/supplemental-validation.json)。**匿名诊断不能当作业务通过，也不能证明当前账号权限不足。**
+
+| validation_tier | 候选数 |
+| --- | --- |
+| anonymous-diagnostic-only | 184 |
+| business-validation-incomplete | 202 |
+| excluded-by-user | 52 |
+| functionally-verified | 42 |
+| other-origin | 2 |
+| web-route-response-recorded | 121 |
+
+## 先前读取计划与状态验证
+
+此前阶段共记录 **402 次请求**，见 [完整报告](../evidence/comprehensive-validation.json)。151 条网页候选去重后 147 次匿名 GET，全部现有协议读取计划 70 项、遗留读取计划 123 项也已执行；另有 7 项检查和有界重试、媒体对照、受控状态闭环及用户新提供测试吧的主帖测试。这里的“计划已执行”不表示每项都使用了完整参数或业务验收通过。
 
 收藏/取消收藏、图片水印和消息屏蔽标志、关注/取消关注贴吧均观察到状态变化并恢复原值。取消关注的即时回查仍为已关注，约 46 秒后的回查恢复；原因未定位，不强称为缓存。隐私 opt=post 的有效请求 val=2 返回读取值 3，状态随后恢复原值；已验证变化/恢复，完整枚举映射仍未完成。最初 val=0 的拒绝作为参数诊断保留。
 
@@ -38,14 +51,14 @@
 
 | execution_status | 候选数 |
 | --- | --- |
-| http-response-recorded | 378 |
-| not-requested | 225 |
+| http-response-recorded | 584 |
+| not-requested | 19 |
 
 | disposition | 候选数 |
 | --- | --- |
-| blocked-not-executed | 208 |
-| excluded-by-user | 51 |
-| tested-with-recorded-result | 344 |
+| excluded-by-user | 52 |
+| outside-production-scope | 2 |
+| tested-with-recorded-result | 549 |
 
 尚未发出有效请求的候选均有单独原因及 [APK 构造线索](../evidence/endpoint-reference-summary.json)。索引扫描了独立 JADX 节点枚举中的 626979 个方法，其中 38584 个没有代码；553 条候选有直接字面量引用，50 条未找到。静态引用和字段线索不算线上测试，也不是完整参数语义。
 
@@ -54,26 +67,24 @@
 | 限制分类 | 候选数 | 证据性质 |
 | --- | --- | --- |
 | already-completed | 1 | observed |
+| anonymous-negative-control-only | 184 | observed |
 | deleted-thread-first-post-cleanup-rejected | 1 | observed |
 | empty-http-response | 13 | observed |
-| functional-assertions-incomplete | 104 | observed |
+| functional-assertions-incomplete | 110 | observed |
 | html-page-confirmed | 85 | observed |
 | http-source-https-variant-tested | 2 | observed |
-| isolated-account-or-order-fixture-needed | 15 | analysis |
 | media-fixture-missing-after-negative-control | 1 | observed |
-| membership-required | 1 | observed |
-| message-http-request-or-fixture-needed | 19 | analysis |
-| nonempty-fixture-needed | 27 | observed |
-| not-in-requested-scope | 51 | user-request |
-| operation-and-restore-plan-needed | 102 | analysis |
+| membership-required | 2 | observed |
+| nonempty-fixture-needed | 29 | observed |
+| not-in-requested-scope | 52 | user-request |
+| operation-and-restore-plan-needed | 1 | analysis |
 | origin-not-selected | 2 | scope |
 | page-api-distinction-pending | 3 | analysis |
 | partial-deletion-semantics | 2 | observed |
 | redirect-observed | 19 | observed |
-| request-or-response-construction-needed | 62 | analysis |
-| server-error-unresolved | 46 | observed |
-| telemetry-environment-needed | 20 | analysis |
-| verified-in-recorded-scope | 27 | observed |
+| request-or-response-construction-needed | 11 | analysis |
+| server-error-unresolved | 48 | observed |
+| verified-in-recorded-scope | 37 | observed |
 
 observed 表示实际观测，analysis 表示协议、参数、样本或恢复条件仍待建立；user-request 表示用户排除范围，scope 表示未选择的来源。已经具备测试授权，未执行不会写成“未获授权”。具体原因逐项见 CSV。
 

@@ -4,7 +4,7 @@ const read = p => JSON.parse(fs.readFileSync(p, 'utf8').replace(/^\uFEFF/, ''));
 const base = read('evidence/api-coverage.json');
 const observations = [];
 function add(o, source, status, command, fallbackTime) {
-  observations.push({ path: o.path, command: command ?? o.command ?? null, observed_at_utc: o.observed_at_utc ?? fallbackTime ?? null, status: status ?? o.status ?? 'unconfirmed', error_code: o.error_code ?? null, ...(o.error_message ? {error_message:o.error_message} : {}), ...(o.checks ? {checks:o.checks} : {}), ...(o.candidate_ids?{candidate_ids:o.candidate_ids}:{}), http_status:o.http_status??null, response_sha256:o.response_sha256??null, phase:o.phase??null, condition:o.condition??null, negative_control:o.negative_control??false, missing_fixture:o.missing_fixture??null, incomplete_cleanup:o.incomplete_cleanup??false, transport_upgraded_from_http:o.transport_upgraded_from_http??false, input_fields:o.input_fields??null, omitted_fields:o.omitted_fields??null, source });
+  observations.push({ path: o.path, command: command ?? o.command ?? null, observed_at_utc: o.observed_at_utc ?? fallbackTime ?? null, status: status ?? o.status ?? 'unconfirmed', error_code: o.error_code ?? null, ...(o.error_message ? {error_message:o.error_message} : {}), ...(o.checks ? {checks:o.checks} : {}), ...(o.candidate_ids?{candidate_ids:o.candidate_ids}:{}), http_status:o.http_status??null, response_sha256:o.response_sha256??null, phase:o.phase??null, condition:o.condition??null, negative_control:o.negative_control??false, authenticated:o.authenticated??null, missing_fixture:o.missing_fixture??null, incomplete_cleanup:o.incomplete_cleanup??false, transport_upgraded_from_http:o.transport_upgraded_from_http??false, input_fields:o.input_fields??null, omitted_fields:o.omitted_fields??null, source });
 }
 const thread = read('evidence/thread-fixture-read-validation.json');
 for (const o of thread.results) add(o, 'evidence/thread-fixture-read-validation.json', o.status, null, thread.observed_at_utc);
@@ -53,31 +53,52 @@ for (const phase of comprehensive.phases) {
     add(o,'evidence/comprehensive-validation.json',status,command,comprehensive.phases.at(-1)?.results?.[0]?.observed_at_utc);
   }
 }
+const supplemental=read('evidence/supplemental-validation.json');
+if(supplemental.artifact.sha256!==base.artifact.sha256)throw Error('Supplemental artifact mismatch');
+for(const phase of supplemental.phases) for(const o of phase.results) if(o.path) add({...o,phase:phase.name},'evidence/supplemental-validation.json');
 const references=read('evidence/endpoint-reference-summary.json');
 observations.sort((a,b)=>(a.observed_at_utc??'').localeCompare(b.observed_at_utc??''));
 for (const report of [thread, write, two, gap, comprehensive, references]) {
   if ((report.artifact?.sha256 ?? report.artifact_sha256) !== base.artifact.sha256) throw Error('Supplemental artifact mismatch');
 }
+function nextBusinessTest(row) {
+  if(row.validation_tier!=='anonymous-diagnostic-only')return null;
+  const fields=[...new Set([...row.construction_review.declared_request_field_names,...row.construction_review.field_name_clues])];
+  let kind='request-construction-needed',reason='完整请求语义与业务断言尚未恢复，这是待分析工作，尚不能认定服务端限制。';
+  if(/delall|clear.*user|cancelaccount|closeaccount/i.test(row.path)){kind='dedicated-account-fixture';reason='完整操作会清空或关闭账号；当前两份网页登录态不代表可销毁数据的专用账号。仅做了无凭据诊断。';}
+  else if(/consume|alipay|buy|pay|order/i.test(row.path)){kind='order-or-payment-fixture';reason='尚无隔离订单、支付沙箱或明确金额与标的；普通网页登录态不能替代完整交易对象。业务测试待完成。';}
+  else if(row.path==='/c/s/clientcall'){kind='controlled-phone-target';reason='APK 构造包含 tid、phonenum、optype；尚无该流程的受控电话号码与操作约定。';}
+  else if(row.path==='/c/e/meme/collect'){kind='collection-replacement-and-restore';reason='APK 将完整序列化收藏列表上传，空列表传 all_delete；需确认完整对象格式与精确恢复，不能把参数缺失当作无害读取。';}
+  else if(/chat|msg|sprite|aigame/i.test(row.path)){kind='specific-conversation-or-ai-fixture';reason='需恢复该 HTTP 业务的会话、聊天室、机器人或消息对象和清理步骤；现有普通 IM 与 SDK 群的成功不能自动验证此路径。';}
+  else if(/voice|live|activity|quiz|poll|adoptAnswer/i.test(row.path)){kind='domain-object-and-cleanup';reason='尚缺该路径的有效语音/视频、房间、活动、投票或问答对象及完整请求/清理核对。现有普通帖子不是这些专用对象。';}
+  else if(row.category==='telemetry-or-state'){kind='event-contract-and-observation';reason='仅验证匿名空事件的返回；尚未恢复真实事件语义、字段与服务端可观测验收条件。';}
+  else if(row.category==='stateful-or-auth-action'||/exczan|userPk/.test(row.path)){kind=fields.length?'owned-object-and-rollback':'request-and-rollback-construction';reason='业务写入的完整参数、受控对象、基线或恢复步骤仍需逐项建立；现有匿名返回不证明该账号无法使用。';}
+  return {kind,basis:'analysis',request_fields_seen:fields,reason};
+}
 const selfDeletePaths=new Set(['/c/c/bawu/delthread','/c/c/bawu/delpost']);
 const rows = base.rows.map(r=>{
   const scoped={...r};
-  if(/bawu|manger|manager|election|banid|setgood|settop/i.test(r.path)&&!selfDeletePaths.has(r.path))scoped.execution_scope='moderation-excluded-by-user';
+  if((/bawu|manger|manager|election|banid|setgood|settop/i.test(r.path)||r.path==='/c/f/forum/forumRuleDraft')&&!selfDeletePaths.has(r.path))scoped.execution_scope='moderation-excluded-by-user';
   const row=consolidate(scoped, observations);
   const ref=references.rows.find(x=>x.id===row.id);
   row.construction_review={direct_reference_count:ref.direct_reference_count,http_command_hypotheses:ref.http_command_hypotheses,declared_request_field_names:ref.declared_request_field_names,field_name_clues:[...new Set(ref.http_request_sites.flatMap(x=>x.field_name_clues))],source:'evidence/endpoint-reference-summary.json'};
   const all=[...(row.attempts??[]),...row.supplemental_observations];
   row.execution_status=row.verified_url||all.some(o=>o.response_sha256||Number.isInteger(o.http_status))?'http-response-recorded':all.some(o=>['transport-error','transport-incomplete'].includes(o.status))?'network-attempt-incomplete':'not-requested';
-  row.disposition=row.execution_scope==='moderation-excluded-by-user'?'excluded-by-user':row.execution_status==='not-requested'?'blocked-not-executed':'tested-with-recorded-result';
+  row.disposition=row.category==='nonproduction-or-other-origin'?'outside-production-scope':row.execution_scope==='moderation-excluded-by-user'?'excluded-by-user':row.execution_status==='not-requested'?'blocked-not-executed':'tested-with-recorded-result';
+  row.validation_tier=row.disposition==='excluded-by-user'?'excluded-by-user':row.category==='nonproduction-or-other-origin'?'other-origin':isFunctional(row.best_status)?'functionally-verified':row.category==='web-route'&&row.execution_status==='http-response-recorded'?'web-route-response-recorded':row.latest_observation?.negative_control?(row.latest_observation.authenticated===true?'parameter-diagnostic-only':'anonymous-diagnostic-only'):row.execution_status==='http-response-recorded'?'business-validation-incomplete':'not-requested';
+  row.next_business_test=nextBusinessTest(row);
   return row;
 });
 const count = key => Object.fromEntries([...new Set(rows.map(r=>r[key]))].sort().map(v=>[v,rows.filter(r=>r[key]===v).length]));
 const reasons = Object.fromEntries([...new Set(rows.map(r=>r.limitation.kind))].sort().map(v=>[v,rows.filter(r=>r.limitation.kind===v).length]));
-const summary = {candidates:rows.length,unique_paths:new Set(rows.map(r=>r.path)).size,functionally_verified_candidates:rows.filter(r=>isFunctional(r.best_status)).length,other_candidates:rows.filter(r=>!isFunctional(r.best_status)).length,best_statuses:count('best_status'),execution_statuses:count('execution_status'),dispositions:count('disposition'),limitations:reasons};
+const summary = {candidates:rows.length,unique_paths:new Set(rows.map(r=>r.path)).size,functionally_verified_candidates:rows.filter(r=>isFunctional(r.best_status)).length,other_candidates:rows.filter(r=>!isFunctional(r.best_status)).length,best_statuses:count('best_status'),execution_statuses:count('execution_status'),validation_tiers:count('validation_tier'),dispositions:count('disposition'),limitations:reasons};
+const pendingKinds=Object.fromEntries([...new Set(rows.flatMap(r=>r.next_business_test?[r.next_business_test.kind]:[]))].sort().map(k=>[k,rows.filter(r=>r.next_business_test?.kind===k).length]));
+summary.business_tests_pending=pendingKinds;
 const report = {schema_version:1,artifact:base.artifact,evidence_cutoff_utc:observations.at(-1).observed_at_utc,scope:'All static candidates plus explicitly matched supplemental observations; reasons distinguish observations from pending analysis',summary,rows};
 fs.writeFileSync('evidence/current-api-coverage.json',JSON.stringify(report,null,2)+'\n');
 const quote = v => '"'+String(v??'').replaceAll('"','""')+'"';
-const columns=['id','path','command_variant','historical_status','best_status','execution_status','disposition','latest_error_code','limitation_kind','limitation_basis','limitation_reason'];
-const csv=[columns.join(','),...rows.map(r=>[r.id,r.path,r.command_variant,r.historical_status,r.best_status,r.execution_status,r.disposition,r.latest_observation?.error_code,r.limitation.kind,r.limitation.basis,r.limitation.reason].map(quote).join(','))].join('\n')+'\n';
+const columns=['id','path','command_variant','historical_status','best_status','validation_tier','execution_status','disposition','latest_error_code','limitation_kind','limitation_basis','limitation_reason','next_business_test_kind','next_business_test_reason','request_field_clues'];
+const csv=[columns.join(','),...rows.map(r=>[r.id,r.path,r.command_variant,r.historical_status,r.best_status,r.validation_tier,r.execution_status,r.disposition,r.latest_observation?.error_code,r.limitation.kind,r.limitation.basis,r.limitation.reason,r.next_business_test?.kind,r.next_business_test?.reason,r.next_business_test?.request_fields_seen.join('|')].map(quote).join(','))].join('\n')+'\n';
 fs.writeFileSync('docs/current-api-coverage.csv',csv);
 const reasonRows=Object.entries(reasons).map(([kind,n])=>{const r=rows.find(r=>r.limitation.kind===kind);return '| '+kind+' | '+n+' | '+r.limitation.basis+' | '+r.limitation.reason+' |'}).join('\n');
 const failures=gap.results.filter(r=>r.status==='business-error').map(r=>'| '+r.path+' | '+r.error_code+' | '+(r.error_message||'未给出明确原因')+' | '+(r.error_code==='2121024'?'当前账号不是吧务，服务端明确说明。':'原因未定位；不能把内部/系统错误直接解释为登录失效或会员不足。')+' |').join('\n');
@@ -87,9 +108,17 @@ const doc=`# 当前验证范围与未完成原因
 
 逐项结果见 [CSV](current-api-coverage.csv) 和 [JSON](../evidence/current-api-coverage.json)。CSV 同时列出 execution_status、disposition、历史最强证据及最新限制；未执行项目明确保留 not-requested。
 
-## 本轮完整读取计划与新增写入测试
+## 后续逐项补测
 
-本轮共记录 **${comprehensive.total_requests} 次请求**，见 [完整报告](../evidence/comprehensive-validation.json)。151 条网页候选去重后 147 次匿名 GET，全部现有协议读取计划 70 项、遗留读取计划 123 项也已执行；另有 7 项检查和有界重试、媒体对照、受控状态闭环及用户新提供测试吧的主帖测试。这里的“计划已执行”不表示每项都使用了完整参数或业务验收通过。
+新增 **${supplemental.total_requests} 次请求**，其中 203 次为匿名空请求诊断（含 1 次公开入口检查），其余为登录态或明确参数的业务读取、受控小尾巴流程及图片内容对照。详见 [补测记录](supplemental-validation.md) 与 [脱敏证据](../evidence/supplemental-validation.json)。**匿名诊断不能当作业务通过，也不能证明当前账号权限不足。**
+
+| validation_tier | 候选数 |
+| --- | --- |
+${Object.entries(summary.validation_tiers).map(([s,n])=>'| '+s+' | '+n+' |').join('\n')}
+
+## 先前读取计划与状态验证
+
+此前阶段共记录 **${comprehensive.total_requests} 次请求**，见 [完整报告](../evidence/comprehensive-validation.json)。151 条网页候选去重后 147 次匿名 GET，全部现有协议读取计划 70 项、遗留读取计划 123 项也已执行；另有 7 项检查和有界重试、媒体对照、受控状态闭环及用户新提供测试吧的主帖测试。这里的“计划已执行”不表示每项都使用了完整参数或业务验收通过。
 
 收藏/取消收藏、图片水印和消息屏蔽标志、关注/取消关注贴吧均观察到状态变化并恢复原值。取消关注的即时回查仍为已关注，约 46 秒后的回查恢复；原因未定位，不强称为缓存。隐私 opt=post 的有效请求 val=2 返回读取值 3，状态随后恢复原值；已验证变化/恢复，完整枚举映射仍未完成。最初 val=0 的拒绝作为参数诊断保留。
 

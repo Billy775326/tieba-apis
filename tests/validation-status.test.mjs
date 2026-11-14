@@ -13,3 +13,37 @@ test('negative controls remain recorded without replacing the latest ordinary ob
 test('explicit entitlement and duplicate completion responses do not become generic auth failures',()=>{assert.equal(restriction(base,'business-error',{error_code:'1990043',error_message:'高级会员权限'}).kind,'membership-required');assert.equal(restriction(base,'business-error',{error_code:'160002'}).kind,'already-completed');assert.equal(restriction({...base,execution_scope:'moderation-excluded-by-user'},'business-error',{error_code:'2121024'}).kind,'not-in-requested-scope');});
 
 test('partial deletion and HTTP-to-HTTPS probes retain their actual limitations',()=>{assert.equal(restriction(base,'verified-state-change',{error_code:'0',incomplete_cleanup:true}).kind,'partial-deletion-semantics');assert.equal(restriction({...base,explicit_origin:'http://c.tieba.baidu.com'},'https-variant-verified',{error_code:'0',transport_upgraded_from_http:true}).kind,'http-source-https-variant-tested');});
+
+test('an anonymous rejection is not evidence of restrictions on logged-in accounts',()=>{
+ const row={...base,id:'sample',status:'not-executed-stateful'};
+ const result=consolidate(row,[{path:base.path,candidate_ids:['sample'],status:'business-error',negative_control:true,error_code:'110001',http_status:200}]);
+ assert.equal(result.best_status,'negative-control-response');
+ assert.equal(result.limitation.kind,'anonymous-negative-control-only');
+ assert.equal(result.latest_observation.error_code,'110001');
+});
+
+test('a mislabeled negative control cannot manufacture functional evidence',()=>{
+ const result=consolidate({...base,status:'needs-request-construction'},[{path:base.path,status:'verified-read',negative_control:true,error_code:'0'}]);
+ assert.equal(result.best_status,'negative-control-response');
+ assert.equal(result.limitation.kind,'anonymous-negative-control-only');
+});
+
+test('tail membership rejection preserves its explicit cause',()=>{
+ const result=restriction({path:'/c/u/tail/setTail'},'business-error',{error_code:'3110002',error_message:'对不起，您不是贴吧会员！'});
+ assert.equal(result.kind,'membership-required');
+ assert.equal(result.basis,'observed');
+});
+
+test('authenticated parameter controls preserve their distinct scope',()=>{
+ const result=consolidate({...base,status:'needs-request-construction'},[{path:base.path,status:'business-error',negative_control:true,authenticated:true,error_code:'300000'}]);
+ assert.equal(result.limitation.kind,'parameter-negative-control-only');
+ assert.equal(result.best_status,'negative-control-response');
+});
+
+test('a new negative control does not erase historical business responses',()=>{
+ const row={...base,status:'json-data-returned',attempts:[{error_code:'0',http_status:200,status:'json-data-returned'}]};
+ const result=consolidate(row,[{path:base.path,status:'business-error',negative_control:true,authenticated:false,error_code:'110001'}]);
+ assert.equal(result.best_status,'json-data-returned');
+ assert.equal(result.latest_observation.error_code,'0');
+ assert.equal(result.limitation.kind,'functional-assertions-incomplete');
+});

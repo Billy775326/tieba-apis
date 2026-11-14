@@ -1,0 +1,3239 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "scope": "Static reference inspection for 206 initially scheduled candidates, including the subsequently excluded forum-rule draft; omitted bodies are analysis limitations, not server restrictions.",
+  "candidate_count": 206,
+  "resource_parameters": [
+    {
+      "resource_id": "0x7f0f184a",
+      "name": "fontKeyName",
+      "value": "Helvetica Neue",
+      "source": "JADX-decoded res/values/strings.xml from the same APK; exact resource referenced by zic.r"
+    }
+  ],
+  "behavior_corrections": [
+    {
+      "path": "/c/e/meme/collect",
+      "behavior": "replaces serialized collection state; empty list uses all_delete",
+      "source_class": "com.baidu.tieba.faceshop.UserCollectModel"
+    },
+    {
+      "path": "/c/e/meme/addPackage",
+      "behavior": "creates a package from name, cover, memes and forum_id; not installation of an existing package",
+      "source_class": "com.baidu.tieba.newfaceshop.facemake.UploadFaceGroupModel"
+    },
+    {
+      "path": "/c/f/excellent/exczan",
+      "behavior": "praise mutation despite c/f prefix",
+      "source_class": "com.baidu.tieba.usc"
+    },
+    {
+      "path": "/c/f/recommend/userPk",
+      "behavior": "topic blessing/voting request; not generic user ranking retrieval",
+      "source_class": "com.baidu.tieba.homepage.topic.TopicStatic"
+    }
+  ],
+  "rows": [
+    {
+      "id": "7a0ff6472e94adde",
+      "path": "/c/c/video/share",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.coreExtra.model.ShareSuccessReplyToServerModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_dd208d8b34c1b553dc36a6b5655ac5f9f19cf5a39bd2dfa0fac3d191f36eac6f",
+          "source_sha256": "2536af27e74394ec2f13f538fc69c548ce40e918a776a6071b6e1680135a859c"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "cb79e8b1b3c58337",
+      "path": "/c/s/game/html",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.browser.BrowserHelper",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_19e7b34c9995e8afaf1e6202e718e2bfe685a9b762432dcad6fe613455c853b2",
+          "source_sha256": "7fbd36848ddb4031c6941c033296a90c0e081d7290931540b6e40fa15865d274"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "9862ce83035ea5d0",
+      "path": "/c/b/ad/adBid",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.asd",
+          "method_name": "e",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9551b8f7d622cc7c200f7cf624d2dc9c6b9a83bc30d886d8a136a2d15d859673",
+          "source_sha256": "820f8d1f72a47adab877007314d77fbe0a678a5b24d44e3257e7c2cf01a0f334"
+        },
+        {
+          "class_name": "com.baidu.tieba.sgd",
+          "method_name": "h",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4dfd7549951e252a240af8229c32453a622c7177113a544f68c87c70da4ae284",
+          "source_sha256": "a8a3df033e9bf22aad74daa08dbaf7dc151d25b1294465222a7b4b65a2457eb3"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "ffb0e153428885ce",
+      "path": "/c/b/commit/addMsgRecord",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "9ea3c6a51c313250",
+      "path": "/c/b/commit/pushThread",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.pbextra.PushThreadActivityStatic",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_38be363a3a87a5677bca23fe669d58fbe6677cbe58907d0d5f23f4e097dc9cfb",
+          "source_sha256": "e0d2018c0af71259dbc45f07ebcdf3af28b861e55563dd55c8e892b3a1221ff2"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "22770bcc5d31061b",
+      "path": "/c/c/agree/agreeVirtualImage",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.view.headViewPendant.LightInteractiveManager",
+          "method_name": "show",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_d1f27f07c4bcb005692c0aa033a3f9f07f4cd150185fd092c6f08736e7f13c3b",
+          "source_sha256": "54447d2704275a5d045ad10874cfea6dffa6f0d57ab08506b1be3d589414b800"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "35509306d6c2551d",
+      "path": "/c/c/agree/delAgreeMeRecord",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.zxb",
+          "method_name": "g",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_3697ab538d579a836c4be929c7d36697ad374f2e2d7bcd868a961f768212fc48",
+          "source_sha256": "63b9980a0c975be568a74b777cbad96fa5bb8aa1c2427dcb61a10ddd5e119073"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "a3e5ae9e339e84a2",
+      "path": "/c/c/agree/opAgree",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.feed.dispatcher.AgreeDispatcher",
+          "method_name": "requestData",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_37ca950003c18a638a13ab93b1e1effed294ac6eba017d48ccdd05e714099cba",
+          "source_sha256": "9efa870d043f9622adb9eb6b335f9061b8c854e2474e4c8c05065480767104cb"
+        },
+        {
+          "class_name": "com.baidu.tieba.nj6",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_a81e8946e2755ea684d6bb925ea358dd8515b908729d5daa6f3d7ebdece4d096",
+          "source_sha256": "b6d87d9f10cfbcee1b491644cea35d73789389bc21c4641790962d6633779c62"
+        },
+        {
+          "class_name": "com.baidu.tieba.pb.pb.main.PbActivityStatic",
+          "method_name": "m",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0a84121287c9f4dd81327fae0f173f802589598ddc52fd11b803edabfea42112",
+          "source_sha256": "e74317f0dabb5617d78010cd17f4cb5dbe74c484a291d1ff1583987fbb8ca82f"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "3810a35d4977b7b1",
+      "path": "/c/c/aiapps/opAgree",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.n26",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_69a0987f32ddb147bd25d15fad5c531b81d0738472cf2c221189f3ab48d6e758",
+          "source_sha256": "c6ab34d620857f93728dacecf7d3755dd93c9b1a9e55c29da62f0d973250e146"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "9fb46fefc0fe211c",
+      "path": "/c/c/aigc/applyWhitelist",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.im.biz.aibot.inputslice.InputSlice",
+          "method_name": "p8",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_cdeec3ff60c7fca1bdc2ee3496bb997c6435eb47e00e944c57482fb75e98d7ac",
+          "source_sha256": "04770d06a1a75153489c30356e5aae9316031d1365c76ef9deed8cddf500334d"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "037d9e3dbbdd8670",
+      "path": "/c/c/chatroom/callRobotRouter",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.immessagecenter.chatgroup.grouppage.chatpage.ability.RequestRouterHandler",
+          "method_name": "g",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_5b8fb79bbaa48927eb6670f48b85e0c7845c2fdb7db58dc7b2578199a9c908ff",
+          "source_sha256": "6be72a225abff04f1e55a5c4ea7ccdd574ac81dab4b70b153727e3356e079816"
+        },
+        {
+          "class_name": "com.baidu.tieba.pb.bot.RequestBotSkillHelper$request$2",
+          "method_name": "invoke",
+          "analysis_status": "analysis-input-unresolved",
+          "representation": null,
+          "evidence_id": null,
+          "source_sha256": null
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "eaae743e56718058",
+      "path": "/c/c/chatroom/controlSpeak",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.pub",
+          "method_name": "n",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_de185069ad90927070da3f84e5c0c5fd163150d11052ba1af75e3e9e2b248eab",
+          "source_sha256": "6a3600541a090a60e1845b334613ca11492ba3a5cf3ca0e88d7397c3f398f846"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "45ea39a41beefd89",
+      "path": "/c/c/chatroom/createMeme",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.wvb",
+          "method_name": "h",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b9be1eecbf8092ffe1ba87b5a25d46fd90d6a0f84c42b9897d038add12cd1af8",
+          "source_sha256": "ce90c1a0d6e3768b80c991422446d1fe6033128db8975bdcb3d72ee4cfbdc35d"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "42f7c721788d8bcb",
+      "path": "/c/c/chatroom/opExcellentMsg",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.pub",
+          "method_name": "m",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_136374124ce7ad88206b171cdbeab3ed6de6f8511d311fe6beeafadec1545975",
+          "source_sha256": "8e7e87d0568340414c36ef7f982bb9c6028ff1d7962737bf8001b2daa71ca5ea"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "0f48c989eb157729",
+      "path": "/c/c/chatroom/opSubscribeChatroom",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.immessagecenter.chatgroup.grouppage.navigationbar.NavigationBarSlice",
+          "method_name": "r0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_05ce750a4a41867b1af88dad1abe1f5558d1e5b296ae8fc94cea58c2f5198465",
+          "source_sha256": "ac4e176f5ae732d41a4a7332f1df742d5d0733a09b2fd9d515f8305def62e1e9"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "47b2bd1ac1702c94",
+      "path": "/c/c/chatroom/shareCard",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.immessagecenter.im.chat.PersonalChatActivityStatic",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_f4ef815bfa3e1707fbd59fccfd68118f03b91ea9a9494d699d9643b92d2e0368",
+          "source_sha256": "50fe6be2f8092026a80cc06d124f8698f7517f55224f3694f76f6123a1ffa87f"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "caf3ae394c073250",
+      "path": "/c/c/chatroom/withdrawMsg",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.pub",
+          "method_name": "p",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_d3dd0ff8a2c9945fdbf662650bd39ef5d058da203ea230826c15adb976163808",
+          "source_sha256": "a75e8361e5acacdf57721586c1256c995c3433a409dfa664bfb92d61521d3d24"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "2c769c7c8405b369",
+      "path": "/c/c/encourage/consume/getVcode",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.payment.PayVcodeModel",
+          "method_name": "M0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_e12b16d4d94af24dd0020be3350816e16b9fcc08808b28e04dd33fdbad809eb7",
+          "source_sha256": "a065c712ae99e05dd85feb9d4dc6b713070776067089bcae9b84bcfb69510ed3"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "f6895ef08be6f25d",
+      "path": "/c/c/encourage/consume/payOpenGoods",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.payment.PaymentConfirmModel",
+          "method_name": "N0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_af0a6d310efedb1da9bc8142b511c9853f1dc5f4562dbcb4ac12c2de8cfe3bc9",
+          "source_sha256": "7d9a6f44ac79cd610e551ca7d56cd9ecf965fff9da721ac101b060dfc26aaa4a"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "f721b2ae7e21f06c",
+      "path": "/c/c/encourage/member/closeAd",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.ose",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_78e535d3cd4a904e3d3937c3f58f8b2c3ce4ce325831c1a6cada5c1bcd33a1e6",
+          "source_sha256": "149941239c10db4776cf3a82a163d6b2eb064939faebe0774f3568d4cafb3737"
+        },
+        {
+          "class_name": "com.baidu.tieba.setting.more.AdSettingActivity",
+          "method_name": "n0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_f05911bdfbb0c4dbc9dc663a04fcf140cd643278caa3290c1d079e1c3f96a5bd",
+          "source_sha256": "bd9ab1440e17e21050a2695df983ad765c828d74f97b9a4dfa23a0e33f95e9bd"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "14a0bc8bfd0be15f",
+      "path": "/c/c/encourage/member/doDailyTask",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "df98fd2d2e428ed4",
+      "path": "/c/c/encourage/point/finishmembertask",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.dic",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_c773d9e96ce34bde486a5aa41740e94b48d02e6fc04a9f3bfa6cbd40f5e99e36",
+          "source_sha256": "3bf7e186822e118445882cef484e981f9fb3378bf24a577b532dc48951532aca"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "ebaa16675f2575d4",
+      "path": "/c/c/encourage/present/placeOrder",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.gift.send.SendGiftModel",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b031c6e33ce5465809d0257172f4559efa57533457d6ed8cfac7d5db0c334c41",
+          "source_sha256": "f6bec25328fb90d16da08f2570d64ba675e6768a7ea951b389578dab5a5332aa"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "2e05f6521cc08115",
+      "path": "/c/c/encourage/present/sendFreeGift",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.gift.send.SendGiftModel",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b031c6e33ce5465809d0257172f4559efa57533457d6ed8cfac7d5db0c334c41",
+          "source_sha256": "f6bec25328fb90d16da08f2570d64ba675e6768a7ea951b389578dab5a5332aa"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "a57999996c028d2c",
+      "path": "/c/c/encourage/theme/setCard",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.themeCenter.card.setCard.SetPersonalCardModel",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0a5d9ad53fa6082189aa5a4d0e37c3dbec06c4523833d91c6d2075e61a946a0d",
+          "source_sha256": "37b10c678455b8764e00a073dfb0cf906bc5528fcb01ffc0aca1766a3101e246"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "9940645f33075bd1",
+      "path": "/c/c/encourage/theme/setPendant",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.themeCenter.avatarPendant.SetAvatarPendantModel",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_daff0c1a88e09dbaec76460f6e263752b492c9e72e63895f6646b5b2687f7e26",
+          "source_sha256": "3f855e04949eaa463e32addfa0c3d1552bf23cabb162cb905ecfb7349d72a5bd"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "12489a5190f26180",
+      "path": "/c/c/excellent/submitCancelDislike",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.kue",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_28feacdd220a23599cb3aa50e3a20b23d84de4badd0a772de671cec66798277c",
+          "source_sha256": "737516840ae338ae29b4e3e92bd32ec605314ddbce89883b6b88d875914dd3bd"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "ad33dfd53832f973",
+      "path": "/c/c/excellent/submitConcernDislike",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.nya.b",
+          "method_name": "doInBackground",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_f466ba5416c7b6dc32ff629f4768234481b5b4d92ccfeb8e3421d22ae2b8ecf7",
+          "source_sha256": "f0144958ddf79b16f330eb42d2d92b5539064b4f1f439381b0eb2ad146257c77"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "5e54b58cee94ef87",
+      "path": "/c/c/excellent/submitDislike",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.homepage.framework.RecommendFrsStatic",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_67780c98be7925d7563281f1a4ffaf5ca4d4c3a52bbf29901255f2a2b971080b",
+          "source_sha256": "1e226b3c4e0401f06b2ec4f63504a3e33100cab7e99a7d22409935db01585783"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "fc819243d4357025",
+      "path": "/c/c/forum/create",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.home.CreateBarActivity.d",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_75b8cac12a9526e4cf53f9a9383c35550b69a1d2af4f4b25b62a7ba62a6f387a",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        },
+        {
+          "class_name": "com.baidu.tieba.home.CreateForumActivity.c",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_32f8c8f8fc3fab1eeac6858fc068a9e58211898bb494b19d358f0241ff15192a",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "1ead94ffb770e33b",
+      "path": "/c/c/forum/delMyForum",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.bxa",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_046896ffcd82c0df0d2ec6365cb1455074b9dac4ce0515353fb833ff25d05524",
+          "source_sha256": "2ecc54218836097df281660947a68c39ce3f29bdf368a37e66983e19201d938f"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "bcae21ae4ead2fa5",
+      "path": "/c/c/forum/incrForumAccessCount",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "e0c7937491d633ba",
+      "path": "/c/c/forum/msign",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.iye",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_682d741a5ab7469d1d462b12b48f07d77657b34e5977eef4ba5da9bba05cf19c",
+          "source_sha256": "9c1c7e01cddb51d146175aeda5903c60eda6ba30ae5ea1508150879bbc3361a5"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "09b6d3cff6e38c70",
+      "path": "/c/c/forum/setCommonForumState",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "def7d7e4e3c0810d",
+      "path": "/c/c/forum/share",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.share.AddExperiencedModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_c592756672d8efcae683e5cfb1ca74bb004de240a0a0e7f5b1ade16f124f2e33",
+          "source_sha256": "75f0d8f972a263374cd6777cffca4441d1f99d6182ee839fdbf1fdc5886821ed"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "da4e0758198cd4c9",
+      "path": "/c/c/forum/statClientStartTimes",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.httpNet.ComplianceParmasHelper",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1326c7c51b9659b0674202e763e86ce3d93b3c18e48e5a8d51f40825a46db171",
+          "source_sha256": "db828de109658cb6470c0ab111a4aa685f61e40e2eab502462e2b3cc77c9bb02"
+        },
+        {
+          "class_name": "com.baidu.tieba.tblauncher.ClientStartStatic.c",
+          "method_name": "doInBackground",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_a2bb9be027580f0f0a9def5a110aeab426acd9077975a618bb437ada07600f6a",
+          "source_sha256": "f4653f22dd42aaef7f52b76862e6cda41f1875a75026a83258433a1b76ff5ec9"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "af06b78b1e6e9828",
+      "path": "/c/c/img/changeportrait",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "2378ae3d0232f639",
+      "path": "/c/c/img/getShareImg",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.zr6.a",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_eeaa5c31240e0b5416e756d276dc0d38b8d611ca212ed13dc4567f7e70ae75ad",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "e74a08ca3d2754c0",
+      "path": "/c/c/img/portrait",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.system.portrait.ChangeSystemPhotoActivity.h",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_3a15a4dd7fa09dd8f9a47168095c37947bbe46ea2b209815de8adb844b09a4e0",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        },
+        {
+          "class_name": "com.baidu.tieba.personExtra.EditHeadActivity.r",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_06da1b5966dfbd95e30bb1547ab63c332ed7acfcd4e9d6305e95c820a02feace",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "3d19974a2b6ec2a8",
+      "path": "/c/c/img/setuserpic",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "68f0adc0a77fedd3",
+      "path": "/c/c/item/cancelSubscribeItem",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.cu",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_73d1cafd531afaed58dfd58d5678c86b34ae49129d7d5e279c52647226ab3d58",
+          "source_sha256": "ddc2ec5d6f008438dc910fc5dfae3ad426c13e62b8177454963f2ad436c1c572"
+        },
+        {
+          "class_name": "com.baidu.tieba.gx8",
+          "method_name": "e",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_27e8bd6dc3af5a5774db65a3c97de863eba71855229c1dfa6818527cc859bca7",
+          "source_sha256": "e27306ef8a6eb7d2c09f5ecaf77ea7e7dc5f9cefb76ccf24564e30a8f58f522a"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "cd06925b078f653c",
+      "path": "/c/c/item/giveOutGameCode",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "353029d1490c80bd",
+      "path": "/c/c/item/subscribeitem",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.view.itemcard.ItemCardHelper",
+          "method_name": "j",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_f09d5c1456724d4d375639ee55a6be11c895d3d31959cbf200a6c80bdd44e735",
+          "source_sha256": "1d45dc7d5e820b00a4db77648981430888f13c75ab20bd7fa7b2bdafbb62cf5f"
+        },
+        {
+          "class_name": "com.baidu.tbadk.util.TiePlusHelper",
+          "method_name": "l",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0baead9946e2e45947d6765cc7090ac8acd61b31ad9c649ff2e5e42c40869245",
+          "source_sha256": "bd007fec6fda582a0d6ceda33de0dd5aa5de7361e81e48cb9edd026cf0267665"
+        },
+        {
+          "class_name": "com.baidu.tieba.cu",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_000488265daef943c2b198abb058374f05b5d9cb0e8b515e7fd57ffcbb583388",
+          "source_sha256": "605e8ced9f50b89433950034c91d5a72c9507451a51b18db914f7186f9063d99"
+        },
+        {
+          "class_name": "com.baidu.tieba.cu",
+          "method_name": "e",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_362f6ae522129fcdc48b67d03d04242c70cdb44c26abdf18577e2211a5e11085",
+          "source_sha256": "94874aca318ab7e3fda30ecdc6d9c8e02d6919b5b35f59892b94d832638f8291"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "7e3f0c3ff3b86f9a",
+      "path": "/c/c/livegroup/applycopythread",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.pb.pb.main.PbActivityStatic",
+          "method_name": "h",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_5532246780157c5b348fd5967116300adc5b4951687cbb51a16c4cabf3c5edcd",
+          "source_sha256": "e5b37640bc8b8c9bcc0cf77cd3ae61f7b8e9d21316aa63fb0c270a0fccf53108"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "f018223f69c583a5",
+      "path": "/c/c/matchActivity/applyMatchGuessing",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.qpf",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_226eac5d6d83e1de39cdb35831f112763ffde769af1a64ad6a73e2362dfc7a66",
+          "source_sha256": "1fb9ed7adbe43ddee484df28b51ce6fad3dcb2c7dcdf7d62e66493290a78076f"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "02cdfc0ad11281a8",
+      "path": "/c/c/post/addPollPost",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "577377c8ce549722",
+      "path": "/c/c/post/addScore",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.xsd",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_31718e76d0a0cad2724cc62c53ce922652ac7228bfdd74720c21b42421f66fff",
+          "source_sha256": "5e8edadd030ee243ef5029c792c2d993a0bc1f109a38767b14e8e9f15e04c0ca"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "945e9e621512fc88",
+      "path": "/c/c/post/delmsg",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.zxb",
+          "method_name": "g",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_3697ab538d579a836c4be929c7d36697ad374f2e2d7bcd868a961f768212fc48",
+          "source_sha256": "63b9980a0c975be568a74b777cbad96fa5bb8aa1c2427dcb61a10ddd5e119073"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "d7be3f6ca9669339",
+      "path": "/c/c/question/adoptAnswer",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.n8e",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_395862856545784c4079d0fc1ff3be3318ca533aa5983514e810156a0641cbae",
+          "source_sha256": "05013c6b949dce77a3d35473ab6f42ecd64d92d010dd8187b1b09d088b10ebac"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "13866a7077daac66",
+      "path": "/c/c/smartapp/delView",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.nbe",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_064e75f4df15eccea15a1967b97a028d21f560c7e5dcbe8565a128ce155e9938",
+          "source_sha256": "37d617c419c5e906b2265c4011863e5ffaa28e459cd972e7ef9020104d441de8"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "7eda70091066c5cd",
+      "path": "/c/c/smartapp/view",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.aiapps.apps.abtest.SwanAppAbTestStatic",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_e62a91c5a3d2f94be7338a55d55a793f3536770e855fa55c73ea19d540b546ad",
+          "source_sha256": "15afeba80f969bdeda0e5664ac1dba9d4e75531e4659395e0ad7612b338859c5"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "317dd0585b636d18",
+      "path": "/c/c/swap/complete",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.v6b",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_360017a8c89a8d3101ab0e3a93a5544b1efa9dd4ae477850b360eb34e3e640e7",
+          "source_sha256": "78765f1f76642c6195819f82e3090beca658b83dede639dd4d647e5566fc8007"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "b1b70009601eace7",
+      "path": "/c/c/tag/addContentTag",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.k3g",
+          "method_name": "d",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4b74daa5d9de6d9a01557fec4f4a26e3b720f79d29009cfe4cc35316b8deefa4",
+          "source_sha256": "35ccf5c328067d6b5d0346f9dbc9eddb58fd499afa4e4f6e3b0fff91389c4c9a"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "4b1d58baeec26a1c",
+      "path": "/c/c/thread/commitPushFeedBack",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.pb.pb.main.PushFeedBackController",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_c602d4269892b1b1e4425cb82366e690edc113ba30eba3d9b4af16681fc66713",
+          "source_sha256": "4c7075bf16862f2c8718f803e1277bc8fc7b2436da067f84b22bc4f90a5fe78b"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "00016e8ca34be701",
+      "path": "/c/c/thread/sdkshare",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.p6f",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_c339c09738f16c576c41b4ac99275bd52346701a2cd95c0748a6997401da1e56",
+          "source_sha256": "b01fbaf2dfe9375df16ac02d3706d1ae9eee384e662296e6120c58698a75febf"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "6e5fdfcc75e4d3b5",
+      "path": "/c/c/thread/setPrivacy",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.model.SetPrivacyModel",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_ace02f70b8b2b8294c83452b0d69684adbf3003a92bff47e6d8a3cc643b399f8",
+          "source_sha256": "ffab4e526db15b907786487984ac085979f88f06d4abb1a60df21d4b8d62c352"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "9fceaeef39408339",
+      "path": "/c/c/thread/share",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.model.ShareReportModel",
+          "method_name": "M0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9c48816044bec5f154e2a7f83acf870ef2ff51a86742ffe6be3efc73e7cf016e",
+          "source_sha256": "071daed0106fb204eca319a711b21b8365d8fcc62f928d68a013ff8d35c84b83"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "81f9b214a5c63366",
+      "path": "/c/c/user/backUser",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.gz5",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_91a6d1a97081584ebf80bcb0466c489c5673c019bb16d83b2c6d935828f650c2",
+          "source_sha256": "634ee0250c395a8020564b708d6b1fcd3fdad30e4ec10a022d8c6822e38b22e9"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "0f046f6592fd2b84",
+      "path": "/c/c/user/commitUGTaskInfo",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.fta",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9f888606a32a1ae3f5839c03956ae2b1228998bb945d878426440251f26ab3c7",
+          "source_sha256": "8f169f4bb5018f6d06515868a77ec1bd5f3231e787d7ff00a10167d94956d220"
+        },
+        {
+          "class_name": "com.baidu.tieba.personExtra.PersonExtraStatic",
+          "method_name": "s",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_57d55e7ffffaa9332808729e891672eb2b8a03bed272889841fb40575d753b1d",
+          "source_sha256": "d344a8ec0418268d0ad799c62ee0743a3e48c1f48f6b985d8dcbc1dea370485e"
+        },
+        {
+          "class_name": "com.baidu.tieba.sharesdk.container.ShareStatic",
+          "method_name": "q",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_2a6050b31ce85c62fe0085cd99847a0376d5a917467c1a221c0c41e926cec1f4",
+          "source_sha256": "228fad9518671a8f5695475e2051a64bbff6bbd9580c5bb90cd6970097183363"
+        },
+        {
+          "class_name": "com.baidu.tieba.t3b.a",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_f40bf30b3d225e2582d2dbaa655ecc3ddb61221deb4884f79bf3c4a7890396d5",
+          "source_sha256": "2e837ae7857d145cd7f9590ca91529aec04f261e7f8b57fc70ed198bee3e6924"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "c464fe2dec737a04",
+      "path": "/c/c/user/complaint",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.personExtra.PersonExtraStatic",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_5f87ea58d2ea3cf012a856198e422316ef78dd5cfea4c0c10e3480048a65b61f",
+          "source_sha256": "4500501c191e18d871e9c0f4cf21b1e6a3be3a797877b89954e09b511cbd9b4d"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "c615d19410db3c26",
+      "path": "/c/c/user/correctFollowError",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.myAttentionAndFans.PersonListModel.e",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_124726e2352e9cfea678a96d1e8eea4ba19664d38224de2d94f6d84856742684",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "85d8d6608835fde1",
+      "path": "/c/c/user/delAllUserData",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.setting.more.SettingStatic",
+          "method_name": "n",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0fe8e690a514310be49c090b581929bef99e1b965c1b61fac9cb9dbb3b8158dc",
+          "source_sha256": "d2cb7a27450505e2aac8a32446406dbca99235a6f219af1fde5d793e52198bd5"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "682e1d87e5d339e2",
+      "path": "/c/c/user/multiRemoveFans",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.v2a",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_15ca65c16099818312a1693b9f2b741506828de9174a9b85aac3e6af027b2022",
+          "source_sha256": "85050232e9c9f5db7f31b141db6f20fc91a934535794f441b352c78df412a1ef"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "e180b7d5a0756ace",
+      "path": "/c/c/user/passAuthidVerify",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.setting.more.SettingStatic",
+          "method_name": "p",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0f80c1308dac9ea1310eb15a36a84b8d98bbf0d8d03b374c545f03736ebd9a62",
+          "source_sha256": "e76ba2b92317381ee523e2d2e7262e0f326094fab249ca3a6ea0a13942cc4d03"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "30c06490807d5c43",
+      "path": "/c/c/user/removeFans",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.RemoveFansController",
+          "method_name": "registerRemoveFansTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4f10b4afc554b07c347b9b589cd7e3a9d640c6ec75b23048c14d73ed5de2cd05",
+          "source_sha256": "ad183c8122dcffc52e74ceb606603db2398a7786431d846889ceeddc9ffd1590"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "6dd6463a9567c68b",
+      "path": "/c/c/user/report",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.model.ReportUserInfoModel",
+          "method_name": "N0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b9eb872eb923dbbd4b49d28892a9c725b51615eb3f2c2063985a376f5e77e82a",
+          "source_sha256": "cba07751629b77833f47e63ae75ee6540665206261935601d1aa80f7cb814001"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "eeb674a950c9ef64",
+      "path": "/c/c/user/setCommercialPushUser",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.e4g",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_8df3ad1b258318bd03a1030d7934643869d26d7ef69b51fccaa9997c160c58ed",
+          "source_sha256": "7fe2e772d7cfc56a170c9ca3c31ca0ab1b40b07759ca9d734e354f043bca48e8"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "b98589f0a6097d75",
+      "path": "/c/c/user/setFollowListSwitch",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.myAttentionAndFans.PersonListModel",
+          "method_name": "Y0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_e95696e03dea3eb7167f69ee849de07b31ec01c51025f43fe70bfb9a89c3da26",
+          "source_sha256": "60d3b627e4f522ae23fc949ee4e99278928180d96c14b78e9da58426cd63394c"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "4fb8a72efbcbedf8",
+      "path": "/c/c/user/setSignMask",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.uq6",
+          "method_name": "z",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_a9dad4e2208e91c71213c9d87b2b757245af30b3611e4774af44fca55eecab77",
+          "source_sha256": "23408f7306a3e6ad04bef2ed1aadc4f1a471d8075c0cf6855b4eb0e63877e916"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "ddd4259e61203c40",
+      "path": "/c/c/user/updateOfflinePackTask",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.qg8",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9924757471a598a33d8a1f161635e87f7c76d5d3825e2c83eae4cb340ae19df1",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "7ad34d7fc4e70586",
+      "path": "/c/c/user/uploadOfflinePack",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.qg8",
+          "method_name": "d",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9fd44c7a7a646dad953b01019d6974e129bfa1f66c30f9412ca50df3a376db62",
+          "source_sha256": "62c93c2990c54cb244d5a71677fc2ab3809ded08a3449726b80b44b8f1d839fe"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "dab5d5df35b38789",
+      "path": "/c/c/video/markRedIcon",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.videoplay.VideoPlayActivityStatic",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_112619edfbea59aaa560e3baed8684f3b3c4eaaaa897586dbf520b4bbb6a0973",
+          "source_sha256": "b560b23abdd7b0d215fbfa850b79d3ca2f17459ff06b343bf8ab81a99e07843f"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "42ed09455972ffa8",
+      "path": "/c/c/video/playDura",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.httpNet.ComplianceParmasHelper",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1326c7c51b9659b0674202e763e86ce3d93b3c18e48e5a8d51f40825a46db171",
+          "source_sha256": "db828de109658cb6470c0ab111a4aa685f61e40e2eab502462e2b3cc77c9bb02"
+        },
+        {
+          "class_name": "com.baidu.tieba.wge",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_6a7de39a7d0bf8dd1317ecc7692f053349b5fba3a8a49110dec4ae90062ffbe5",
+          "source_sha256": "18d53295c78ed9b98cdec48245484dcf18952d0c37978753c85912acdc175d94"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "58f6809c1b3a41e5",
+      "path": "/c/c/video/playStat",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.httpNet.ComplianceParmasHelper",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1326c7c51b9659b0674202e763e86ce3d93b3c18e48e5a8d51f40825a46db171",
+          "source_sha256": "db828de109658cb6470c0ab111a4aa685f61e40e2eab502462e2b3cc77c9bb02"
+        },
+        {
+          "class_name": "com.baidu.tieba.wge",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_ae28b588c8d65d3b5c6d761838386cbe9fc25782c009e710830fad4e0968ac83",
+          "source_sha256": "7276a76930297d23085e992798a40c4bbed5b4ca66d57be53621222aba02e878"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "03bb40a03abc20f4",
+      "path": "/c/c/video/reportSlowStart",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.VideoPlatformStatic",
+          "method_name": "e",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_e81fbdf7a098b4ed00c5209917213d04f44f7a79f9efb1580160f71519ba41ff",
+          "source_sha256": "da84d49e5a71d82c2e5dafa641af6a07193f20c82068654f2cd52614d8db0543"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "7dd46cffd85f787d",
+      "path": "/c/c/video/upGradeVideoUp",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.write.write.work.guide.WorkVideoGuideModel",
+          "method_name": "M0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_05cbbcc0b62eabf8610b0293a47cab4ef62963f382ffa0fe7979a0267dc00b0e",
+          "source_sha256": "36a79d0f9326b4031fde9f1cfe2c8d134977ff384cf7a6bc9225b887b5cb9e38"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "4cd94bda0b1e9202",
+      "path": "/c/c/video/uploadBlock",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "4a172bb40d0cf843",
+      "path": "/c/c/video/uploadChunk",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "df1220c08242768b",
+      "path": "/c/c/video/uploadFile",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "9e81831bd4789d0e",
+      "path": "/c/c/video/uploadVideoData",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.h8f",
+          "method_name": "h",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_e849730d3cd2c69887dd22166f1d5502c2a75f340e0e19383e1ef711772fcbfe",
+          "source_sha256": "138999e0c77106e97b165ecd83f39ceb36577b8c7d617a1347956495c1cce1ad"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "1e2228789d8fb9a1",
+      "path": "/c/c/video/uploadVideoStatus",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.f8f",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b683c8ecaced91ab3f7dfc507b83c648d2fef21446b6d0051dabf3cc11b5f436",
+          "source_sha256": "bfa1b345c38ce0cc007e51f5ad8455f884e9e6f3443e28dd1b1a6c139db3873b"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "ac5b1a564db73e1d",
+      "path": "/c/c/video/vlog",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.lgf",
+          "method_name": "g",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_436d0e48afdb4fb37b480fd7474cb36ece8870c51e0cdedc7bc08104e25be7ae",
+          "source_sha256": "e4d152695678cba2310a4b7534116f2cc5d4431fef1ec14c1fefb7f2f173c6a6"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "25fc5ecc8a31e8e7",
+      "path": "/c/c/voice/chunkupload",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.browser.bridge.voice.WebVoiceHelper",
+          "method_name": "k",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_2fd38489865c60eaa539465277b683fc4de890e39495cc8287347085763ae1f3",
+          "source_sha256": "3fbaa51c626935947b4db9aa0129b1af7e53b9fc69a3f30750cc534297c02e65"
+        },
+        {
+          "class_name": "com.baidu.tieba.nnb",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_ea7867ef982428d8e1556bb55cba5b87bd965f732c1e15323733874d8774bea3",
+          "source_sha256": "72821a166ff35430634aa3c8fe6dbd6ec7b741b9a479780feda5a00f9e91a544"
+        },
+        {
+          "class_name": "com.baidu.tieba.p6f",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9163170461777b72e9bfee12fdd6ac747d893e83e2d6a2678e8f69b1c68fdb33",
+          "source_sha256": "4b15dd7941ce38fa8e111da1e856cb4f01aad802b4e3fea500bbfbba9d5ec990"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "e4873c56c1f777e8",
+      "path": "/c/c/voice/voice_fin_chunk_upload",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.browser.bridge.voice.WebVoiceHelper",
+          "method_name": "k",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_2fd38489865c60eaa539465277b683fc4de890e39495cc8287347085763ae1f3",
+          "source_sha256": "3fbaa51c626935947b4db9aa0129b1af7e53b9fc69a3f30750cc534297c02e65"
+        },
+        {
+          "class_name": "com.baidu.tieba.nnb",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_ea7867ef982428d8e1556bb55cba5b87bd965f732c1e15323733874d8774bea3",
+          "source_sha256": "72821a166ff35430634aa3c8fe6dbd6ec7b741b9a479780feda5a00f9e91a544"
+        },
+        {
+          "class_name": "com.baidu.tieba.p6f",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9163170461777b72e9bfee12fdd6ac747d893e83e2d6a2678e8f69b1c68fdb33",
+          "source_sha256": "4b15dd7941ce38fa8e111da1e856cb4f01aad802b4e3fea500bbfbba9d5ec990"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "760a4cf48f384f29",
+      "path": "/c/c/voiceroom/delUserTab",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.d0c",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1ea54f1f2ab2cb0caa83302fc15d7d67d7ab595daf4ee6f646bdabb6b57a6a7e",
+          "source_sha256": "2a00b678234d8e0f53abd0c30038e6c281a7b3a3f68eb3adcd16beb0f9405e6a"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "a5a0f85ac69b716f",
+      "path": "/c/c/zan/like",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.tbadkcore.PraiseModel",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_fecb02b70f65c72d433c417a209d1ea4cd29ac2ef14973349a919f6569f34c77",
+          "source_sha256": "990605160e217281357350127574955deeebd4c28cb373e8556762934d9f1271"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "989486f54174e0e2",
+      "path": "/c/e/alipay/alipayApplyUserInfo",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "b007141df7efba60",
+      "path": "/c/e/alipay/alipayGetUserInfo",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "90cae62060ed0d0e",
+      "path": "/c/e/brand/markBookPopup",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.yg0",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_60a123b540bde6f5804813042239d1b53b4650090aa57e5086a8e552ac7146c2",
+          "source_sha256": "ac276cce7683c98be86554654d46ccd7e22a255df998224425a60d81ad57bc66"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "e7b30ecf84690612",
+      "path": "/c/e/bu/setbubble",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.memberCenter.bubble.BubbleListModel",
+          "method_name": "U0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_c87bae13eb64fbf6458586a03ce9a0e9889def743a410a6f449422df8eae3da3",
+          "source_sha256": "e20d021508453e29e0b49627ce9ca2f0e74a11f8a55cf1f3de38a643e5c9672b"
+        },
+        {
+          "class_name": "com.baidu.tieba.themeCenter.bubble.group.BubbleGroupModel",
+          "method_name": "X0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b54e85fa40fd3312e1ee804f03fce421defeab146db12e990942ba40b73927a1",
+          "source_sha256": "3de0a93aad2e6a6485812c1b82b318af07adaf28733dddf4081b78a249d92f08"
+        },
+        {
+          "class_name": "com.baidu.tieba.themeCenter.bubble.list.BubbleListModel",
+          "method_name": "k1",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_f96b5386a5a1e4c1db15c925ed0f22f6cabf3e70cd0bb32a435d0e09a78dade9",
+          "source_sha256": "ae73b5f217c5f1ca7b5b7c1dd4db0d79a610571cec3eae1ae329462717dfbdbc"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "9f1b640d118313ab",
+      "path": "/c/e/businessPromot/counter",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.frs.ad.FrsADStatic",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_3c237ae5d41e1fe3cff8dada190c25463ba5cd2b3cd35040ebce72519ba0d3bf",
+          "source_sha256": "d2fc0512e5cdf308fa78af979f4c1f20181daaf347893ab31053fa981f8413af"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "05d7cbed35f704b8",
+      "path": "/c/e/consume/getBuyForm",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.payment.PaymentConfirmModel",
+          "method_name": "M0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1d5116bdaadef834de1c380409547753b4e58484eb000859ef07d73350542272",
+          "source_sha256": "a13cebd8671dec8917571c04024e905f83e8210b0bc5036c238572366e2072ae"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "de369de9b318a1e8",
+      "path": "/c/e/consume/getUserOrder",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.consumptionRecords.ConsumptionRecordsModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_5d0443109064350fa648e0b019aa682d1c40664e6c0597bf2b9cf7c0106c3643",
+          "source_sha256": "059151416c5d46782a7ee78a68a39d12e729017672a9e5449404ed31494b2040"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "b16e8fbfa3507006",
+      "path": "/c/e/faces/buyfacepack",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.faceshop.FaceBuyModel.c",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_8850f5970311bbcc4fc42d564aad0c9284278c2e4fe6a9ba126946d619c9b120",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "b1eb5bbef1eb134d",
+      "path": "/c/e/faces/dpack",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.faceshop.FacePackageDownloadModel.a",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1ca6c6da6803db23cbb388706db9f4151224f58649fd50d04f47eac7bf37193c",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "00d646cdda3dfb42",
+      "path": "/c/e/faces/querybuyresult",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.faceshop.FaceBuyModel.b",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_2db9625dc47393b0ff2a6f2e35ff547019a116cb57ab73c4af55d21dbe9c1394",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "77bb9494352232fa",
+      "path": "/c/e/mema/buyLiveProps",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.ala.personcenter.privilege.AlaPersonCenterPrivilegeActivityStatic",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0e212fa23e38a35f83e9484d0d5795fe0e2ae903fb8997f3078105371a8ad418",
+          "source_sha256": "0b69785f1b2c563920ceadc43fce92a67fad8ec3a1a57ceab22b7779014b8b71"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "98408e0076149793",
+      "path": "/c/e/mema/getOrder",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.wallet.WalletStatic",
+          "method_name": "registerHttpAndSocketTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_ec03cf4723b8ce04ceead2e104347c47c6928686c6b0788938c1d468e779d48a",
+          "source_sha256": "0086e9995599d850efff0aefda9224802f374a7cc5d92da4d6971b3b11a50be1"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "e24898ebe8fb9110",
+      "path": "/c/e/mema/getpayinfo",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "5c0d573b87ff3e3d",
+      "path": "/c/e/meme/addPackage",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.newfaceshop.facemake.UploadFaceGroupModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_c1fb12552d58fe8faff14f1d67e39ffd2707d895c8f2a5bea3b5cf6200abd4f0",
+          "source_sha256": "0b63f8fcd450ebef180646228972f597b486a3cacfbd39660e60e5a1198081b2"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "bf7204afa408f36f",
+      "path": "/c/e/meme/collect",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.faceshop.UserCollectModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_5165563d19f842f4e72e7177ce2e92b85554de37082645e6900928d47fd5bb4d",
+          "source_sha256": "72a92bdc686ff72273cfd781a386f644c4125083aa092c41fce91332eec1759a"
+        },
+        {
+          "class_name": "com.baidu.tieba.faceshop.UserDiyModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1ee20d80bb74497168ecad86458bb633d22b67424c7e8adff18778031b9cb106",
+          "source_sha256": "9bc9137b25e8ecd93d94ceb59302098ddb7b74549ab78c72debacd953c3fe3d3"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "c625256c5687374c",
+      "path": "/c/e/meme/commitVote",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.faceshop.EmotionPackageDetailModel",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_68688560f63461e7501f50dab662aad02d0f5dea11f7602bc759fbc268b181a9",
+          "source_sha256": "74f2c5ad2330f081855a2ee286169591a35aad91d02d2b0989fe0161bfa1ff7f"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "1e45e44c7fc3232d",
+      "path": "/c/e/meme/delPackage",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.faceshop.EmotionPackageDetailModel",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_68688560f63461e7501f50dab662aad02d0f5dea11f7602bc759fbc268b181a9",
+          "source_sha256": "74f2c5ad2330f081855a2ee286169591a35aad91d02d2b0989fe0161bfa1ff7f"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "cc12f531a6118aa0",
+      "path": "/c/e/meme/dice",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.faceshop.emotioncenter.model.EmotionChangeModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_fc897b04fec84554d132860ae67c5a70956d1190fdfaa72019f73a0b0a72b77c",
+          "source_sha256": "faab58980d83274c4d03451c8b39f6fbde6c0791cfd8347cc49427ad3f699682"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "fd8fcd0e61482889",
+      "path": "/c/e/meme/download",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.faceshop.FaceshopStatic",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4f2793505b399f406757f3419d4b1c37bd0f504ca4ba11e3d8ea35fb90f5a87c",
+          "source_sha256": "b6b3df2efc01c6690dfe5a1fcfadf0d8b4a7ef0a61843924d53b3621cf8ee55a"
+        },
+        {
+          "class_name": "com.baidu.tieba.newfaceshop.NewFaceGroupDownloadModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_a768facdeecefa6aa95bc3fa7d1e63543d6f09bbf244185c2a2865f755103cdc",
+          "source_sha256": "c61e1c6d66eccd5cbf9ee11de5e428e923525bd76f9508f4b8c931ed3fb8a085"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "b5725b3d0bd448d4",
+      "path": "/c/e/meme/pic2id",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.img.GetEmotionPidModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0f0970074e49d61b6ecbe470e14e58d5acfabf3f2c7e18080717eea84a8c4a41",
+          "source_sha256": "7cd448fcd41416ca21a94ae6dd1017bf71b71189237afc01229c34b59611e184"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "fe681fb843ff9074",
+      "path": "/c/e/meme/pic2idJson",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.img.GetEmotionInfosModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b38c0ba82b4c04a0aa1235f09b148f8e830106cfb4de09611cf6a9252fea09d7",
+          "source_sha256": "412a25c038f091ec68c30351d3fa01707c7611b7503249c2b5da6ab1f947c8a4"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "c7059dea0f683e06",
+      "path": "/c/e/meme/share",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.newfaceshop.NewFaceGroupShareModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_2c26f60f29c65be0836bc91cddd706ed46f0b3dfd9955b35f7747549c48c9fb2",
+          "source_sha256": "c494144179f5c3f5eed510c44312588fae4f5f0a1b4d79d0bc7c231ecabe767f"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "1e22e95d8c5777a9",
+      "path": "/c/e/meme/uploadPackage",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.newfaceshop.NewFaceSyncUploadModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_c2b6eab2d2ea4afff20d66b092ae9361c0c9d75220b165dccf052b7615d881d0",
+          "source_sha256": "656874b4d99add01e7eb0c28bb6a34548a601b6786f0f865411fd87dd31529b9"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "15b2bb2627dd88f4",
+      "path": "/c/e/pay/andmember",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.memberCenter.memberpay.MemberPayFragmentActivity",
+          "method_name": "E1",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_3241e439f09fdcdb2ee4c9e7d71d74092dd93eef0cfc8bafcac270aae11e0e6d",
+          "source_sha256": "08f429d637b2232f76e96389e9c86478f580a19a48f636050ca36187f5dd3a9d"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "9899b3dfe013cc89",
+      "path": "/c/e/theme/setBackground",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.themeCenter.ThemeStatic",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_ccf0744b1f429f0fac13f1f9112f0486ebdd9af9ab9829323d4fe0680410e25f",
+          "source_sha256": "d9da878cac8f15ff33d8869b79ce80aaccf93fa7361fbaac2184f32211a4114b"
+        },
+        {
+          "class_name": "com.baidu.tieba.themeCenter.background.BackgroundGroupModel",
+          "method_name": "Z0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_c12bf65a2447c76288afbc7586050b16ce5a5ce7bcd858234a4f836c73032d01",
+          "source_sha256": "720de7d97d2e74f8658dc97e7a24b9cced8021e28d216e86e59dc95c0cbcb282"
+        },
+        {
+          "class_name": "com.baidu.tieba.themeCenter.background.BackgroundListModel",
+          "method_name": "w1",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_7498ccca0ccf34cb2e4659956de58b148e7a8f369eccb073c078afb0f99c5b0f",
+          "source_sha256": "173123eab4da57a587f830780ab0d3f3778f261d018eff5da7fff3f324da37f8"
+        },
+        {
+          "class_name": "com.baidu.tieba.wdf",
+          "method_name": "i",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_5a7534bed93f84aed222f5b628a1ba49049ed7a7069af416a0d6a61fe9f0f336",
+          "source_sha256": "a6a8688ebf9d742530c5b87b7760fd5300e16c103de82ae3fce67737e454cab9"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "43479e1e06fc4aff",
+      "path": "/c/f/ad/getFeedAd",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.fz8",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_3633aa3759ca536d82e3212ef99e074e0de9472797a249697ee845a198e92930",
+          "source_sha256": "20f4f6f59ce42db1c59bc94018c6b4bfa0d81b0435637f5d5abbc8ae97797102"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "87950d8285c89735",
+      "path": "/c/f/ad/getSplashAd",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.gz8",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_95b8bfd2c19c255d5ccf9cd2bb7fe95e8a64dfa3354577788257940ad9145590",
+          "source_sha256": "6b37ac4b47d2defbc3734ca231f15816f43c0436c76c0467af8e0572eb473d31"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "7bef627bf7726816",
+      "path": "/c/f/aichat/getChatDetail",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.im.biz.aibot.AibotChatRepo",
+          "method_name": "f0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_203018a938876f862f58aab0331a5511445d47049fad7d80aefa45bf5fd2a13b",
+          "source_sha256": "6bf3ff2c181376c39d39e6a37238744652763c4f6a34b3a5172cecf649154502"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "7f62b41c10d76d9e",
+      "path": "/c/f/aichat/getRandomMemeInfo",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.immessagecenter.chatgroup.grouppage.repo.GroupChatRepo",
+          "method_name": "f0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9748212fd4c5777e66c952360f4e3712cd3c5e5bff6d1c596d92407dd3758f1d",
+          "source_sha256": "9dddb201eaae881c2c586646f9d572dd910463bc82f4a5d6364f8c5350b29fc1"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "4b7918361797c1d8",
+      "path": "/c/f/aichat/handleTabStatus",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.IMConfig",
+          "method_name": "<clinit>",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "7ba40b13a71def2d",
+      "path": "/c/f/anti/vcode",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.home.CreateBarActivity.e",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_c127d9edb625b15aedbabb82e768f8c0c052903153107e05ea473638ac976411",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        },
+        {
+          "class_name": "com.baidu.tieba.home.CreateForumActivity.d",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9ed138288e029b923ac3964c2883480725982e8b27b4b4c3892e9a223e7de286",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        },
+        {
+          "class_name": "com.baidu.tieba.write.vcode.oldVcode.VcodeActivity.e",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_dec4d90fb7080a6e976a8b28f1d4eaae1526199c0b34cd576af2bab1b7c4efaf",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "fa69a076af5cdfd8",
+      "path": "/c/f/chat/getChatRoomInitInfo",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.kwb.a",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0780a1c89dc9e991d271a46bd2c8ebc7cb4d92ae69212d6eda4aee608643e5cc",
+          "source_sha256": "577003231e86a23b0bb5c5db3ec5c14ecabbe242c29fc12a374947435f72af7c"
+        },
+        {
+          "class_name": "com.baidu.tieba.twb",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0e82af5304e22ce14d61ca1ad36ab34640ff12503dfbb74a22b6ed17665d6b1c",
+          "source_sha256": "255c2add84313bcf49e83b1567ce867a03a328f029fb88dbe928faffd55bca21"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "7f06f89cafb14f4a",
+      "path": "/c/f/excellent/exczan",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.usc",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_f3935e8da59c6c44119c73f86b8bb2d8255afbe7f038d085ea030b7190620d2c",
+          "source_sha256": "a5ea659ebe56eb9b1ab2d9d4b793384178825f406c0367a120757034b23748ba"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "0000bc894945246e",
+      "path": "/c/f/forum/forumRuleDraft",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.frs.forumRule.model.ForumRuleEditModel",
+          "method_name": "N0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4dc3b0d6ce2c729c1ca788ecaea8589079a7bc023ce9dbac923ed49362694c6d",
+          "source_sha256": "410f491e9e1cbf9c9d1102346ca810c437e8090e3e99f500039cf945d0b34fba"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "1fa3c57960f31363",
+      "path": "/c/f/forum/itemManage",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.downloadmanager.net.DownloadManagerNetModel",
+          "method_name": "f1",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_c3e62cc1622f07244b05537d2386d3054ab2bd63f3e0f2acdb2ba7ddb594f0ee",
+          "source_sha256": "e5836eb80b66d798b30857f25e1946e3cafcdbb60d6a982508c5818b118a3c63"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "84814c3630044641",
+      "path": "/c/f/forum/like",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.SelectForumStatic",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b330db18bac0039467809cd1bc272b05021d50e0ac978c872c7faf6ae208e3e8",
+          "source_sha256": "8931d40db93036e65741aaaaa3a8e0a586ae0b2a8a5653559daaa4972703e9f3"
+        },
+        {
+          "class_name": "com.baidu.tieba.personExtra.PersonBarModel",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4ae63d54f4dbcdb902257fe2860a5395970bb118ad26ac30507cf1401ccc91e9",
+          "source_sha256": "b7e093b8acbc6e8bb2e283c9854a224643c2ecdc4ad313e4ac0fd9409de9171a"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "d4b20506da06afa4",
+      "path": "/c/f/forum/queryAIPic",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.frs.model.AiCreateForumBgLoopModel",
+          "method_name": "f",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_aa440778347056ac23592f7fdda436de6d0ce8ec4310e0352c5f7d5b2357854a",
+          "source_sha256": "b6cc386734b07cfcc0472f0db36b7b0f4d4f06b93af08f310b9503d8d7ca863c"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "29afbc4d49db6461",
+      "path": "/c/f/forum/submitTextForAIPic",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.frs.model.AiCreateForumBgQueryIdModel",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9f5a4cded315019566ad39d482e5ab5ca286bda58b402920f4291f4ac42d0ca5",
+          "source_sha256": "7765fdc2f39a12d9b564413b00012f9c47cc7791e6464ab7267f58ba0aa6dad0"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "10f49a02ec21d738",
+      "path": "/c/f/liveTask/cancel",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.wba",
+          "method_name": "f",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_befb7581f830b070e4a95ee30abf35bd0c693fab151e935530cd95978684c3af",
+          "source_sha256": "43cb0b1657ba461cdc7060e24af9d4f0f614fea22e40633a285b64121131539a"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "7aa2af3abc62c1dd",
+      "path": "/c/f/liveTask/create",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.uca",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_86eda2d017d9d5d07bee535da4d32ea1df3b5bd3a7caa2997574aed7f2a077e0",
+          "source_sha256": "3028dcef8f30a0e70fe6b71fa7228b98445b3b28bbd580da0943df6ec4fd301f"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "24f78f3f9140ac71",
+      "path": "/c/f/liveTask/feedback",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "3e9b170acc83e721",
+      "path": "/c/f/matchActivity/quiz",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.rpf",
+          "method_name": "e",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_2ba148ba483b91737f81400c39f2040c7ba5c4eef7e9b327349a3b19012874ad",
+          "source_sha256": "50d596faeedc446083a9e95c1ffdbe4a242cff1ef2b6ecaa5666c5fa8a006e85"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "41adf14769f64cdc",
+      "path": "/c/f/recommend/userPk",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.homepage.topic.TopicStatic",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_73098e841b3cf4b32c894b27317a7d354f67b267408286aab8d3d36a9ecbf67f",
+          "source_sha256": "cc9b1398a274346fe864226f51e8d609001199aefb48f3ae444c8d8833b40e28"
+        },
+        {
+          "class_name": "com.baidu.tieba.hottopic.controller.HotTopicStatic",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0c6f33696f8eef53fde02081c08554eac452a822e66501af02f64630ac17e1b7",
+          "source_sha256": "d1bf7d20c4037e0dba59f8d1dd96e6bae9b9c51d21e2ae35c785e3ae22d14571"
+        },
+        {
+          "class_name": "com.baidu.tieba.newdetail.NewDetailTopicStatic",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_734edb4a30d30a87a9aea11ce9fbc2f82c411dced3373df22fa948bcabe5d41c",
+          "source_sha256": "5f392588e154d43f701c6827d1c466d3781afc6b1bfa8977a32d8dd200eb5713"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "658a98752ea7287d",
+      "path": "/c/f/shop/getUserKjsStatus",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.l3e",
+          "method_name": "f",
+          "analysis_status": "not-captured"
+        },
+        {
+          "class_name": "com.baidu.tieba.pb.pb.main.underlayer.PbShopBuyBottomViewManager",
+          "method_name": "l",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "27ea2e8ab8cc6631",
+      "path": "/c/f/sprite/checkMemeStatus",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.editortools.meme.model.SpriteMemeLoopModel",
+          "method_name": "f",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "56e5eb2acb453f8e",
+      "path": "/c/f/sprite/getSpriteBottomChat",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "d520b06b853c086a",
+      "path": "/c/f/sprite/getSpriteChatDetail",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.t7c",
+          "method_name": "e",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_7ec8ad336fd69027dc9456d2eb511001cce0a583a3f51919040d975517c45c5a",
+          "source_sha256": "1b0e19efdb263732e0c9672497b260785a59849369281d8be313e0a84b7a89c5"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "6d9994801da2ccd3",
+      "path": "/c/f/sprite/getSpriteSpeech",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "dafd0c7734e672cb",
+      "path": "/c/f/sprite/sendSpriteMsg",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.z37.a",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_5f769cdcf5295c7d7891c8efd2a25fca7cb029dc0f38a8bdb9f7f13b6e586657",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "a83f19edcf339a89",
+      "path": "/c/f/sprite/stopThinking",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.e9c",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_d268056244d6800a55dc23ea633bc9a2e2f845e3ac5d43e19cbe1807d0e9dd8e",
+          "source_sha256": "f2f839b359ecd59fc2a3aca49f7ebb98c2a51a89e34c2e4d82c98d90f9ee3bbb"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "79b0bf1eefd6c7f5",
+      "path": "/c/f/sprite/threadRecommend",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.b9c",
+          "method_name": "q",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b5cd313ff2248d53f90ca7981030bda09fb443395fbe12cd0304162b27d8de13",
+          "source_sha256": "c05183eb43840cd70475598bed04768fdd635a42de96815f1e649911e2c945c4"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "8c65fde318972315",
+      "path": "/c/f/ueg/checkjubao",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.im.chat.MsgrightView.c",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9270817f4b513b4b36c3e6389a612804cd4ce59518c3e2df42fa76166d3286a1",
+          "source_sha256": "b18d696ec59f770252e4f2166e0588ef9d7a716d0c56742b222ad672e1794332"
+        },
+        {
+          "class_name": "com.baidu.tieba.oyd",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_2acc9c684934feb8ebf7c6ca00dafc24618dc3c33a39cfc558d7d7f9aa73f19b",
+          "source_sha256": "045ae4cb80ee906f0a0145cacd3c9b151462bcc9f582dead6a189a407a77a5ae"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "47e13c901b93e549",
+      "path": "/c/f/video/gotoLive",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.videoplay.fragment.VideoVerticalPageFragment",
+          "method_name": "V8",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_3bda139f938262962c5221af64dbe8d7d2fa18c06f06d3b9fd132267b02c49f4",
+          "source_sha256": "89572f3b5134b99af41b2b178970ee4e7414db8ed9b75fb9a9955706e0d220de"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "582066197d15ee25",
+      "path": "/c/f/video/sendFrsStageFeedBack",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.ala.livecard.Static",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_78d70b728e54069276950f2d1673fcd0c15481f025d2dc81e94ddbe2ccb9042b",
+          "source_sha256": "45144ed269502d3ce885b80c6d70b8fa2670b82b81b46229ec07516c727e170b"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "99336007a38cb2bf",
+      "path": "/c/i/msgcenter/uploadPic",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.TiebaIMConfig",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_cf66f48c955e4dacba7826b3e2bb2fa6d77cd34e34ea2ecfffe92b8df1e72320",
+          "source_sha256": "df3c91d70f5bbd25698cdeb1c229796fb5b36e51fd26e7f65310d9c61763749e"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "527ec5ba2dbdc4e0",
+      "path": "/c/s/activateTask",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.ad.incentivevideo.net.GetIncentiveVideoTaskModel",
+          "method_name": "N0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_214ef8ebf9114cdf384f30b60f9663d0cb61242f8096ab64fff7f4359646ac72",
+          "source_sha256": "bada4efbd76c786c5f67bdd30c0e13a1a3fd8fd4e636a78dd56c46922f83eba0"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "017d6d10d84a5ea2",
+      "path": "/c/s/adLog",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.httpNet.ComplianceParmasHelper",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1326c7c51b9659b0674202e763e86ce3d93b3c18e48e5a8d51f40825a46db171",
+          "source_sha256": "db828de109658cb6470c0ab111a4aa685f61e40e2eab502462e2b3cc77c9bb02"
+        },
+        {
+          "class_name": "com.baidu.tieba.funad.FunAdStatic",
+          "method_name": "<clinit>",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "a5b4aaa353185029",
+      "path": "/c/s/adNewLog",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.p06",
+          "method_name": "<clinit>",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "2b3cac43e21c2824",
+      "path": "/c/s/adNovelPay",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "559bae873887bf4b",
+      "path": "/c/s/aiGameInteractMsgAlter",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.im.model.AiGameInteractMsgRequestTrigger",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_496ab2e100b0e469130be2d8cf807879ed6bb7c47aff60a65fa395868642368f",
+          "source_sha256": "400a82696413c21e565e1993399f878901ec28478e551da8b029df26388e0a18"
+        },
+        {
+          "class_name": "com.baidu.tieba.im.model.AiGameInteractMsgRequestTrigger",
+          "method_name": "isCanShowToast",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_14d09dc021602815ef7f7597bfc195c298bc26c880f76b13eb86a6e09533ac92",
+          "source_sha256": "5e43407f10959d2f77245bc380492b99ad26b0f58dde69f470d4f0c44314f9b6"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "aad3f7e2157ad98d",
+      "path": "/c/s/appDownloadLog",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.downloadmanager.DownloadManagerStatic",
+          "method_name": "c",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "9c14eb75430e52f4",
+      "path": "/c/s/checkAppValid",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "187ae615b725108f",
+      "path": "/c/s/clientcall",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.o6e",
+          "method_name": "run",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_ffc00a28b008fbfb8995d97939409dc6c218a9b9807d2d1eb9f109d60555fc71",
+          "source_sha256": "a4d8aede172bb7829bb63febf09b53dc7a8d9b0ed7370405269beea8273eac09"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "05475be58e4f4b6f",
+      "path": "/c/s/clientlog",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.service.FatalErrorService.a",
+          "method_name": "e",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "691115e379aef0ff",
+      "path": "/c/s/commitFestivalTask",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.sharesdk.container.ShareStatic",
+          "method_name": "l",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1bc3bd6a360c31bb082223c3c4fcc2aa584a1fe340b9dd48a64cdcef4e42fdda",
+          "source_sha256": "f87b23c4a76105fbdff2c3fef59fa86b201da24e650144c85fe4acc25f8ee8a0"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "8aa0711e0bbdeef5",
+      "path": "/c/s/completeTask",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.kz5",
+          "method_name": "p",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_84dd4b9b071e51c7e32b490a9e74da6d67fbf7f2ddc62f27a8babb689ddf3b33",
+          "source_sha256": "ffaf8eaf11cedc4c12804b5b8464c455d6ce2872606f9d0354000cacea92e9cc"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "e78911a03782cc8f",
+      "path": "/c/s/debugupload",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "478466ef8cb86f82",
+      "path": "/c/s/decryptCode",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.BdToken.BdTokenController",
+          "method_name": "V",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_e8c0c3a06ed1075350148545e2c4418c24fbd137e52b4897b0ebe2255270ba1c",
+          "source_sha256": "a2aa702159444a3469d8c31c70c731f8f9e8906f22287a83e5a4369d9c108f2b"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "8ab736992ec930b0",
+      "path": "/c/s/delTokenInfo",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.BdToken.BdTokenController",
+          "method_name": "t",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_ea67d76e88cc1b896b843982d040008234f4b4ab963e33c88d688edbaca69c10",
+          "source_sha256": "98a8e3597aef0db505264b83bdfaeea4d98d289f9c63e3bd73848def03707f3c"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "ea12c1b467c996f6",
+      "path": "/c/s/game",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.m26",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0ebeda54c5136d90338fe2b826c80924ec0b3a55584ffc488f88ce51643c6b2f",
+          "source_sha256": "0217ee6cefed9923f29d855abe9eb871a05cd29b7ce38d0e5dc30a5b72c5939b"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "920a6b17703d9354",
+      "path": "/c/s/getAdFreeTime",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.ad.incentivevideo.net.GetAdFreeTimeModel",
+          "method_name": "M0",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b26f02f075b2fdb6a5329da3b796397030a477b209a9cabc3d0c840dbd2f6acc",
+          "source_sha256": "1b97678c39f3831033b5784bd6f5de56b6da212238fa0232ca20c7dc2a4a66df"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "3a9fad7ff076e994",
+      "path": "/c/s/getMercatorByLocation",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.tbadkcore.util.MercatorModel",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4f3bf754cfdd98629e32eb8f5f6ad3478912163fc2dce25b7d9241c6034e50b4",
+          "source_sha256": "d5971c8c4a51d74ace61d57336598e21e050b8d9120514e605f6e6f9d60f273e"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "702c65e2d82826d0",
+      "path": "/c/s/getPidByPicUrl",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "b6d5a65affc1bccb",
+      "path": "/c/s/getSuggestionByAddrName",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.location.SearchLocationActivityStatic",
+          "method_name": "registerSearchLocationTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4990d2c711e4620598fa374c48728e2c6e2b0a4f9a6fa0e2ebf24e3bd4601c33",
+          "source_sha256": "27dcbeb08db9f98822319bf8b5717d8c0c5e3c5ade42cf5e651f0127463b6e2d"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "04c702c9cf8f4f33",
+      "path": "/c/s/getUserInitInfo",
+      "methods": [
+        {
+          "class_name": "com.baidu.searchbox.task.sync.appcreate.NewBoardTask",
+          "method_name": "requestNewBoardInfo",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_64e4ee2412558786d8f87b17492dab5b41d5b24ac7e99f1061f8f4230b1ad952",
+          "source_sha256": "aee67e3d215dbd6ed1a1c338901dadbc1ff38608ab05f6ae28d44ce3556d1946"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "d4cbb579550e4b2d",
+      "path": "/c/s/holycard",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.f16",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_622ee2645790ba5ae27e5e985fc003bca7ebbf762ba2fe2b0c44555d1e9ace9e",
+          "source_sha256": "aee1188f42abd70366a23b95eb642bc717c65440e46b45b661974cf7bc9fe2c0"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "86ba66a2fb993ed5",
+      "path": "/c/s/hotLoading",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.pcf",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_2fa1897c7f1418c38a55c2b2aa4ed0705c628caeca71c7a64d5a41c9807ef6c5",
+          "source_sha256": "64da78c27344c19f7104d69d377591b6c4b4035f9ff7f4b7141b389491e78935"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "b8c3c94aaa1e7e2e",
+      "path": "/c/s/initNickname",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.bkc.b",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_83f5a9f0a49fa724f08d616653e80e2c004b21bee7d5b10aa3886cec67956df9",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "5665437938ebf152",
+      "path": "/c/s/inpv",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.EnterForePvRunnable",
+          "method_name": "run",
+          "analysis_status": "not-captured"
+        },
+        {
+          "class_name": "com.baidu.tbadk.core.util.PvThread",
+          "method_name": "run",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "5b787ce055540202",
+      "path": "/c/s/interactMsgAlter",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.im.model.InteractMsgRequestTrigger",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_2c148ca286159b7a0e91247ab5b4ed0c6fd1ff53f271e35400ab2fb5c49bae43",
+          "source_sha256": "8cb42f33d1a0038993dc662e4fa024f6edaf28195a9f1d98365c6030b6ce2fed"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "151f728529c48a06",
+      "path": "/c/s/lcslog",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.k37",
+          "method_name": "a",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "81f622d9aac6c897",
+      "path": "/c/s/login",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "4029f73c2cef451e",
+      "path": "/c/s/logout",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.account.AccountActivity.j",
+          "method_name": "run",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_f9f2f5a88e2607cbfb12a2298928a0304be8a389ddab95793b6e739d92643327",
+          "source_sha256": "db2da23b3c50fc740044d2628f4e6e7a38344063e78cf05515d013d18955458e"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "2a2f0b195695696e",
+      "path": "/c/s/logtogether",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.su6",
+          "method_name": "i",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "eca310459f4d67b4",
+      "path": "/c/s/logupload",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.service.FatalErrorService.a",
+          "method_name": "e",
+          "analysis_status": "not-captured"
+        },
+        {
+          "class_name": "com.baidu.tieba.service.FatalErrorService.a",
+          "method_name": "e",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "2c0b5ae7da7b77bc",
+      "path": "/c/s/loop",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.leveiconlivepolling.PollingModel",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4717c983ff2cbda5ff3494349c83eb4826198a529cc842981afed3963543e968",
+          "source_sha256": "1e6f68de8ae0b8de2df142ca2f58be99e8c02ab399cbdfd069ea46380825e3ef"
+        },
+        {
+          "class_name": "com.baidu.tieba.inb",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b64b0702093640bb4e7999ac561221b8e1533ee4d28eb9664150fce06ee8dd9d",
+          "source_sha256": "6f233178f2753af40b302a2c0216c362b38f70047d99c345cd1383ac854af412"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "356b5cc75d3da14e",
+      "path": "/c/s/msg",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.httpNet.ComplianceParmasHelper",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1326c7c51b9659b0674202e763e86ce3d93b3c18e48e5a8d51f40825a46db171",
+          "source_sha256": "db828de109658cb6470c0ab111a4aa685f61e40e2eab502462e2b3cc77c9bb02"
+        },
+        {
+          "class_name": "com.baidu.tieba.fyb",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_a667ed1284e72ebf245da30dc63b4e8bb03a37a962e57beb4a58c57caedf8c2e",
+          "source_sha256": "0edd06fa95ba4d5bc0a8310161e0687fdae4a19d7c6405c80cdfdc1c1ec0e0b4"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "4d6998993392d671",
+      "path": "/c/s/newlog",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.TiebaStatic",
+          "method_name": "init",
+          "analysis_status": "not-captured"
+        },
+        {
+          "class_name": "com.baidu.tbadk.core.util.httpNet.ComplianceParmasHelper",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1326c7c51b9659b0674202e763e86ce3d93b3c18e48e5a8d51f40825a46db171",
+          "source_sha256": "db828de109658cb6470c0ab111a4aa685f61e40e2eab502462e2b3cc77c9bb02"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "a23f60d387d92034",
+      "path": "/c/s/newUserInterestSave",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.newinterest.model.InterestedForumModel",
+          "method_name": "r",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_ac68ecf9939aae6781d9671131071443851f532e5523f7a4c439fffaf5167d93",
+          "source_sha256": "e8138b72f94b943e7ac87de15a083de16e93f5a74a848096d26aac18614632c1"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "e8d4d0017368eab7",
+      "path": "/c/s/nps/global",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.ppc",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_3bc3a395a350be8de1acef4465b11b9b802194f7739eb538f729051ccd59f015",
+          "source_sha256": "fc167fb278b653e16007cc130e3003919ef64f9d86b4865c2f6286ba40d5c855"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "5b660ec9c4b89d34",
+      "path": "/c/s/nps/submit",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.nps.model.AgileCardSingleViewModel",
+          "method_name": "l",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_e3eb8290381e557bfcfaf1d20d6d553109b77bd3ee5e7210fa2611b7c6d1c9ac",
+          "source_sha256": "1ff42db79d6cf19a45275970cd755cc7b2d8a21d79fdd017b0da262fade451b0"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "c44f40ffbaea8d8c",
+      "path": "/c/s/officialRecruitAlter",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.im.model.OfficialRecruitMsgRequestTrigger",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_9a2dcc1b0efe786b4528e7b25ab56aed57ed8ae7303e95d25c676d3307e759e6",
+          "source_sha256": "a75b64e79f7dd1d8ac1347bb95c71767f7246964bc4b21973df622bcfa3e752f"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "0bc7b70ff0a270c3",
+      "path": "/c/s/popupAlready",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.faa.a",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_43c90a5a1e8067a3d9407395e2382dec4b3e21421ff02cc4d2ffe9b5d4a95d4f",
+          "source_sha256": "54bb8d7fdd842a9fea157fc09978f1477f7d4019fb3614122184a4d1160bfd7d"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "407a578a1c04880b",
+      "path": "/c/s/pv",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.PvThread",
+          "method_name": "run",
+          "analysis_status": "not-captured"
+        },
+        {
+          "class_name": "com.baidu.tbadk.core.util.httpNet.ComplianceParmasHelper",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1326c7c51b9659b0674202e763e86ce3d93b3c18e48e5a8d51f40825a46db171",
+          "source_sha256": "db828de109658cb6470c0ab111a4aa685f61e40e2eab502462e2b3cc77c9bb02"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "bf05efb2f9947d50",
+      "path": "/c/s/realtimeSync",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.o4f",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_d49a8991a090cfe9ca227085425514164b2d3eea48e0c6a521311a98de7df731",
+          "source_sha256": "dd351773d3d9654261c18dcfa52d9f0a99a40d77c169416b1e08e598abfccf27"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "9eeb21e8bf0256b4",
+      "path": "/c/s/reserveOnline",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.im.model.YYLiveReservationRequestTrigger",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_84d46f3acd9442d5472d291979009dc9c73fd7c4326d35f92a5b2fc65524931b",
+          "source_sha256": "e63c64dd6697a0dd7874e79179d150c1724b95cb4400ca5db3aac19e0031a738"
+        },
+        {
+          "class_name": "com.baidu.tieba.im.model.YYLiveReservationRequestTrigger",
+          "method_name": "isCanShowToast",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_f8be9a13c4a76993e638bbe782c6b2034fc2d2dc3712798ea5e8936c52fcc26c",
+          "source_sha256": "b56ec375970a342a58854b7944533d1d676327c0d91548906f004b1218816d53"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "24a5a88993c99646",
+      "path": "/c/s/schemastat",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.tblauncher.MainTabActivityStatic",
+          "method_name": "h",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "6ca24c61726df7f8",
+      "path": "/c/s/schemeToken",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.zjc",
+          "method_name": "d",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_aef9ee3f71dd3f44acf2b8a4d3e136246bf327eed86dfd0c94a8ed426c43087e",
+          "source_sha256": "d00d3fd5b226405e92719f13f7c20438da95af83076ac544964901689d7fcc9e"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "ceb06576ef66a013",
+      "path": "/c/s/setUserView",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.lse",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_cf650f6d2fb3471ef0a654e5f94dac787359de0fb77d4e15188ef3f92a965993",
+          "source_sha256": "69aa575b9c5562e8d379173c8b296fcf6701a4c13541e589dfd627ae01670cfd"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "15799488f3bf9dcb",
+      "path": "/c/s/shop/getKjsIMList",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.c0c",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_b10722569664f87fa2d1376aadffd0e158202c58cca90f5fc27b2857c69957af",
+          "source_sha256": "f56c252b3fe66d483b1199c278a3926f4b0554a60afc93505e4bbac2bb45cc58"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "3b808438e9cd0f53",
+      "path": "/c/s/shop/getKjsPopup",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.im.model.KjsInteractRequestTrigger",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_f5115166f9dee094a5137f60937da8025dee10e74a6e8d884ca87a4bf53c590c",
+          "source_sha256": "55362e97bb80cd048bf2d09154ab8d72d95f9013961453c7355edf0bf2ef04e3"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "dab36bdbe5105c8d",
+      "path": "/c/s/switch",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.service.SyncLoginService.b",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_05de1a385684bb6fb166f2b44b9b97905108347c31897d9e5982d40c1b638f34",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "0e1363ddb9074a96",
+      "path": "/c/s/sync",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.httpNet.ComplianceParmasHelper",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_1326c7c51b9659b0674202e763e86ce3d93b3c18e48e5a8d51f40825a46db171",
+          "source_sha256": "db828de109658cb6470c0ab111a4aa685f61e40e2eab502462e2b3cc77c9bb02"
+        },
+        {
+          "class_name": "com.baidu.tieba.service.TiebaSyncService.c",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_2d74de65a03ff08091d94fb8fd8371fdf4f5d55e4e5aa80c6048f81fb3609fdb",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        },
+        {
+          "class_name": "com.baidu.tieba.setting.model.AboutModel.b",
+          "method_name": "b",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_ba31c82fd40575b17e3dfe45503afe64045dd2c9db263eab0eb16e103b27dc07",
+          "source_sha256": "b0ecf94d5c076e5859635541efb266166fa68b82b84e9d9334c6ebf17043e908"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "a6976da8a1809cc7",
+      "path": "/c/s/trackConfig",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.if7",
+          "method_name": "<init>",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "a1f7b12a17d83d25",
+      "path": "/c/s/trackLog",
+      "methods": [
+        {
+          "class_name": "com.baidu.tbadk.core.util.TiebaStatic",
+          "method_name": "init",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "89b13b527e18adda",
+      "path": "/c/s/upClientErrLog",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "66a1798c92687bf4",
+      "path": "/c/s/upClientMonitorLog",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "962dd5ab7e75f2ff",
+      "path": "/c/s/uploadGameHistory",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.l38",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_385772ee56f4745d1455a8dc795ed8787c6ac17dd7de4a982594902ed55ed609",
+          "source_sha256": "ec2417a5dcaaa14a28d037a0662d118fd95e0485c36724965d57805790b6da1a"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "fd252dac2f1ab68a",
+      "path": "/c/s/uploadPicture",
+      "methods": [],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "8f8e87a9cb0664b6",
+      "path": "/c/s/voiceroomOnline",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.im.model.VoiceRoomRequestTrigger",
+          "method_name": "<init>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_0b381e93872567ac3fc5f54b0ca05698ceb400c498f34f92e9857d66bda7b797",
+          "source_sha256": "30198b45fde29867d7717cbcf7cf1f9fe4d30ecf85daf8a27de240a1e3541908"
+        },
+        {
+          "class_name": "com.baidu.tieba.im.model.VoiceRoomRequestTrigger",
+          "method_name": "isCanShowToast$lambda-1$lambda-0",
+          "analysis_status": "analysis-input-unresolved",
+          "representation": null,
+          "evidence_id": null,
+          "source_sha256": null
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "0bea688a434ed261",
+      "path": "/c/s/yyConvert",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.wallet.CurrencySwitchModel",
+          "method_name": "registerPostCurrencySwitchTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4a1d24f1aca270bf85b10841997ebe2ec416b77c29d7f5d7491a383bbd151fd3",
+          "source_sha256": "5354ba8d5a0833391905c1d5e4dec7b3ec17067e4ab298b5403a3d8fc06dad0e"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "8e1c35f991bd580b",
+      "path": "/c/u/feed/agreeme",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.myb",
+          "method_name": "<clinit>",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_a88f6b102ea52899112cfe568607a4ed65c0b0318fcadd6e276b0962433e0cef",
+          "source_sha256": "47460ad24ddf6b4b9c07513a807453d390bcdded57bfe0a6575e6fceb86b40c6"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "04585465646f78d3",
+      "path": "/c/u/follow/getFoldedMessageUserInfo",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.im.model.IMUserListModel",
+          "method_name": "registerTask",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_4f5eea6979658c3d4236bd9026454faf7667f6c4d7172a19b0280d61592f2181",
+          "source_sha256": "a24864f7db4696440fba4cb5c3b1022fc81bd5d95a4c6c58a79abdc22f0b292c"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "a79976bbc5e411a7",
+      "path": "/c/u/tail/addTail",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.memberCenter.memberprivilege.MemberCenterStatic",
+          "method_name": "e",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_bdcbad64c03505818f87cf0fbd7618b5360cdb71d3a7790e28fb9fdfe085e627",
+          "source_sha256": "539d508c4a286dc388b5770b235d98dd4d3ad63994c383b16cd6fd801566163c"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "29df5d9b069da8d5",
+      "path": "/c/u/tail/deleteTail",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.memberCenter.memberprivilege.MemberCenterStatic",
+          "method_name": "e",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_bdcbad64c03505818f87cf0fbd7618b5360cdb71d3a7790e28fb9fdfe085e627",
+          "source_sha256": "539d508c4a286dc388b5770b235d98dd4d3ad63994c383b16cd6fd801566163c"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "662d128f2cc7e8fe",
+      "path": "/c/u/tail/setTail",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.memberCenter.memberprivilege.MemberCenterStatic",
+          "method_name": "e",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_bdcbad64c03505818f87cf0fbd7618b5360cdb71d3a7790e28fb9fdfe085e627",
+          "source_sha256": "539d508c4a286dc388b5770b235d98dd4d3ad63994c383b16cd6fd801566163c"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "832f7a2c397074b6",
+      "path": "/c/u/tail/updateTail",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.memberCenter.memberprivilege.MemberCenterStatic",
+          "method_name": "e",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_bdcbad64c03505818f87cf0fbd7618b5360cdb71d3a7790e28fb9fdfe085e627",
+          "source_sha256": "539d508c4a286dc388b5770b235d98dd4d3ad63994c383b16cd6fd801566163c"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "62639a7b5f750379",
+      "path": "/c/u/user/updateUserSwitch",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.krf",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_7d95103df8bd3a5651b3e43af7745d3ef8a0b3583f7b35bafa7db9e3c0b80dc4",
+          "source_sha256": "10364b0bbbde7a7dad117c95684cc35be80964a15ba75bbc22d4dcc535ce1b47"
+        },
+        {
+          "class_name": "com.baidu.tieba.sxb",
+          "method_name": "c",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_33493a3ccd6146bffc64b38517c97f73c90eabf401c3f286454dd68bf0cc876b",
+          "source_sha256": "951ffadfaca01da5ac28757dd11fe411ff98df0420405dba1abd130b6f20ab66"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "3449457c30d14dd3",
+      "path": "/c/u/user/updateUserSwitchByScene",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.a4g",
+          "method_name": "a",
+          "analysis_status": "complete",
+          "representation": "java",
+          "evidence_id": "ev_073c8c8d25d54749bd7d81d6887c6e1445a480cf9ea5277812ca486ddec91e78",
+          "source_sha256": "6cb3e87b0d66a67deca705ef629fa2d0980d1f1607a32ee34809b356e0eb152a"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    },
+    {
+      "id": "55f51f80a52601fe",
+      "path": "/c/x/aigc/getBdtAigcAnswerStatus",
+      "methods": [
+        {
+          "class_name": "com.baidu.tieba.a9f",
+          "method_name": "b",
+          "analysis_status": "not-captured"
+        }
+      ],
+      "limitation": "Direct literal references can be task registration or client logic; their availability is not proof of a complete request contract or live business verification."
+    }
+  ]
+}
