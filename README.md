@@ -112,6 +112,7 @@ evidence/                 脱敏字段及观测证据
 | 查完整网络面、Socket 命令与 Wire 类型 | [APK 接口清单](docs/network-inventory.md) |
 | 查原生 Socket 命令、字段及状态恢复 | [Socket 实测](docs/app-socket-validation.md) · [契约](evidence/app-socket-contracts.json) |
 | 查字段与来源 | [请求字段](docs/request-fields.md) · [协议契约](evidence/protocol-contracts.json) · [分析记录](docs/investigation.md) |
+| 验收结果与后续资源 | [验收记录](docs/acceptance.md) |
 | 查看本次变化 | [CHANGELOG](CHANGELOG.md) |
 
 ## 分析对象与参考

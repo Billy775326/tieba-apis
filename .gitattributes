@@ -1,0 +1,4 @@
+# Keep generated evidence reproducible when core.autocrlf is enabled.
+evidence/*.json text eol=lf
+docs/*coverage.csv text eol=lf
+docs/remaining-validation.md text eol=lf
