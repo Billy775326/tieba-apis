@@ -49,6 +49,12 @@ node scripts/build-current-coverage.mjs
 
 `build-im-validation.mjs` 与 `build-supplemental-validation.mjs` 使用本机冻结的原始文件；新克隆只有公开摘要，不能重造私人历史响应。更新时先审查新的观察，再显式纳入汇总。原始报告、后续观察和当前最强证据应保留区分。
 
+## 全 APK 清单与 IM 身份读取
+
+完整网络面扫描、请求继承与全部消息字段的复现步骤见 [APK 接口清单](network-inventory.md)。新增扫描工具需要 Python 3.11+（仅标准库）；默认 npm test 仍只需要 Node.js，Python 的 ZIP/CRC 测试通过 `python -m unittest discover -s tests -p test_apk_strings.py` 单独运行。归档原始字符串与完整方法字符串索引只写入 `.local/`。
+
+`getImUserIdentities` 复用有界 HTTP 传输，但明确指定 `pim-identity-cookie` 策略；只有已标记 authenticated、无查询/片段/URL 凭据的固定 `https://pim.baidu.com/rest/3.0/im/get_user_info` 才允许 Cookie，其他地址和默认策略继续拒绝认证头。重定向不跟随，取消、大小和超时规则与现有 HTTP 一致。
+
 ## APK 静态分析环境
 
 本项目的基线 APK 为 `com.baidu.tieba` 22.13.1.1，SHA-256：
