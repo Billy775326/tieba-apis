@@ -15,6 +15,7 @@
 | [基础功能](pc-web-basic-functions.md) | 点赞/取消、普通回复、楼中楼、删除本人内容、收藏/取消的取值与清理 |
 | [签到、搜索与主帖](pc-web-sign-search-publish.md) | 新签到、各类搜索、唯一测试主帖与删除后双入口回查 |
 | [扩展验收与限制](pc-web-complete-acceptance.md) | 249 条新增响应、恢复结果、2 项预约及招募取消限制 |
+| [HTTP 直连与刷新](pc-web-direct-http.md) | 独立请求、刷新选项、40 条响应与历史执行方式区分 |
 | [网页验收指南](pc-web-validation.md) | 来源、统计、失败原因、参数、输出和复测条件 |
 | [架构](architecture.md) | PC CDP、网页请求、结果分级和证据流；历史 App 分层 |
 | [开发指南](development.md) | 检查、扩展契约、生成器、脱敏与历史提取工具 |
@@ -27,7 +28,8 @@
 | 文件 | 统计对象与作用 |
 | --- | --- |
 | [源码清单](../evidence/pc-web-api-catalog.json) | 四个固定官方脚本的 URL、大小、SHA-256 和字面量位置；84 路径、86 路径/方法候选 |
-| [累计验收报告](../evidence/pc-web-validation.json) | 390 条业务调用；身份准备、页面外壳读取和运行时方法变体单列 |
+| [累计验收报告](../evidence/pc-web-validation.json) | 430 条业务调用；直接 HTTP 与历史方式分列，身份与刷新另计 |
+| [HTTP 直连报告](../evidence/pc-web-direct-http-validation.json) | 40 条业务响应、6 次认证准备及刷新对照 |
 | [扩展验收报告](../evidence/pc-web-complete-acceptance.json) | 249 条新增响应、3 次未捕获目标响应的本地尝试和未恢复状态 |
 | [基础功能报告](../evidence/pc-web-basic-functions-validation.json) | 累计记录中的 26 次历史基础操作，不重复相加 |
 | [签到/搜索/主帖证据](../evidence/pc-web-sign-search-publish-validation.json) | 累计中的 45 条业务响应及另列 3 次本地尝试；初始问题与修正保留 |

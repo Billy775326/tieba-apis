@@ -49,7 +49,7 @@ node scripts/verify-pc-web.mjs --live --port 9222 --thread $env:TIEBA_TEST_THREA
 | 签到 | `node scripts/catalog.mjs --pc-status sign_pc` | [关注条件、新签到与重复签到](pc-web-sign-search-publish.md#签到与关注条件) |
 | 发主帖和本人删除 | `node scripts/catalog.mjs --pc-status thread/add_pc`、`node scripts/catalog.mjs --pc-status delthread_pc` | [官方编辑器、first_floor 与删除后回查](pc-web-sign-search-publish.md#发主帖及本人删除) |
 
-写入专题给出本轮有效组合和判据，目前没有可直接照搬的通用 PC 发帖、签到或互动 CLI。发主帖只通过官方编辑器完成过定向验收，完整线级表单未导出；不能把 App 的 TiebaApi 示例替换路径后当作 PC 客户端。
+写入专题给出本轮有效组合和判据，目前没有可直接照搬的通用 PC 发帖、签到或互动 CLI。发主帖已补充独立 HTTP 构造、回读与清理，字段见 [直连专题](pc-web-direct-http.md)；不能把 App 的 TiebaApi 示例替换路径后当作 PC 客户端。
 
 ## 在 Node.js 中读取公开验收记录
 
@@ -77,6 +77,6 @@ console.log(result.best_status, result.latest_error_code);
 ## 判断结果而不误报
 
 - verified-read / verified-state-change 表示已有相应对象或状态核对，不等于所有参数和边界都通过。
-- response-schema-validated 仅证明已检查结构；accepted-empty-response 保留空样本分支。
+- response-schema-validated 仅证明已检查结构；accepted-empty-response 保留空样本分支；freshness-unconfirmed 表示收到预取或有缓存年龄的响应，不能作当前状态证明。
 - best_status 是最强已保存证据，latest_error_code 是最近观察。比如删除测试帖后的已知读取入口返回 4，是预期的对象不可读回查；不得据此抹掉之前的读取证明。
 - 未确认原因的业务错误和本机调试问题分别记录。逐项结果见 [PC 覆盖 CSV](pc-web-api-coverage.csv)，全部功能状态见 [README](../README.md#功能)。

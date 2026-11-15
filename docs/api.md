@@ -10,7 +10,7 @@
 | `node scripts/catalog.mjs --pc-status [关键词]` | 已保存的候选状态与限制 | 离线查询，不触发复测 |
 | `node scripts/verify-pc-web.mjs --live --port PORT` | 本机 Chrome 端口，输出脱敏验收元数据 | 只读白名单；参数、退出码及输出保护见 [网页指南](pc-web-validation.md#参数与输出) |
 
-当前没有返回完整业务对象的通用 PC SDK，也没有公开的 PC 写入 CLI。`src/index.mjs` 导出的 `TiebaApi` 仍使用 App 协议；不能把它的点赞方法当作 PC 方法调用。PC 请求使用浏览器内现有登录态及官方前端封装，Cookie、TBS、jt 和防护令牌不导出。
+当前没有返回完整业务对象的通用 PC SDK，也没有公开的 PC 写入 CLI。`src/index.mjs` 导出的 `TiebaApi` 仍使用 App 协议；不能把它的点赞方法当作 PC 方法调用。当前读取入口使用浏览器内登录态、独立 PC 签名与 fetch，Cookie、TBS、jt 和防护令牌不导出。历史前端封装及 UI 驱动记录单列，新直连结果见 [专题](pc-web-direct-http.md)。
 
 按功能运行查询及读取验收的示例见 [调用示例](pc-web-examples.md)。本页中的参数组合描述实测输入；返回和错误语义统一见下表。
 
@@ -83,7 +83,7 @@
 | POST | `/c/c/post/addstore_pc` | `data` 为含 `tid,pid,status=1` 的 JSON 数组字符串；未收藏基线 |
 | GET | `/c/c/post/rmstore_pc` | `tid,fid`；仅取消本次新主帖收藏，回读 collect_status 恢复为 0 |
 | POST | `/c/c/post/rmstore_pc` | `fid,tid,uid`，uid 为帖子作者；收藏恢复 |
-| POST | `/c/c/thread/add_pc` | 官方编辑器中的目标吧、标题和正文；未导出完整线级表单，也未提供独立发帖 SDK |
+| POST | `/c/c/thread/add_pc` | 已独立 HTTP 构造 kw,fid,title,content,is_hide,is_pictxt,ext,post_prefix,jt 等 multipart 字段及 PC 签名、Acs 请求头；取值见直连专题，未提供通用写入 CLI |
 | POST | `/c/c/user/follow_pc` | `portrait`；受控用户关注后回查 |
 | POST | `/c/c/user/unfollow_pc` | `portrait`；取消后恢复关系基线 |
 

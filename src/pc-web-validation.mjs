@@ -1,4 +1,5 @@
 export function classifyPcWebResult(row) {
+  if(row.freshness_confirmed===false)return 'freshness-unconfirmed';
   if(row.capture_attribution_valid===false)return 'local-capture-unconfirmed';
   if(row.conflicting_business_status===true)return 'business-status-conflict';
   if(row.http_status!==200)return row.http_status==null?'transport-incomplete':'http-error';
@@ -11,5 +12,5 @@ export function classifyPcWebResult(row) {
 }
 
 export function pcReadFailed(row) {
-  return ['business-error','http-error','transport-incomplete','business-status-unconfirmed','business-status-conflict'].includes(row.status)||Object.values(row.checks??{}).some(value=>value===false);
+  return ['freshness-unconfirmed','business-error','http-error','transport-incomplete','business-status-unconfirmed','business-status-conflict'].includes(row.status)||Object.values(row.checks??{}).some(value=>value===false);
 }
