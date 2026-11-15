@@ -68,8 +68,8 @@ PC 入口通过本机 Chrome 复用网页登录态。按 [浏览器准备步骤]
 | --- | --- | --- |
 | 调试端口 | 9222 | 实际 Chrome 端口，通过 --port 传入 |
 | 浏览器配置目录 | .local/pc-web-browser | 启动 Chrome 时指定，保留扫码会话 |
-| 帖子目标 | [redacted-thread-id] | --thread 接受编号或官方帖子 URL |
-| 测试吧 | [redacted-forum-name] | --forum 可选；与指定帖子是独立读取目标 |
+| 帖子目标 | 无默认值 | 联网必填 --thread，接受编号或官方帖子 URL |
+| 测试吧 | 无默认值 | --forum 可选；与指定帖子是独立读取目标 |
 | 验收输出 | .local 下的新文件 | 默认自动生成唯一文件名；--output 可指定新路径 |
 
 PC 工具不读取 .env、config.example.json 或账号 JSON。Cookie、TBS 和防护令牌由网页管理，不需要粘贴到配置；旧 App 配置的适用范围见 [使用指南](docs/getting-started.md#配置文件)。
@@ -86,7 +86,7 @@ node scripts/verify-pc-web.mjs --help
 
 ## 复跑网页读取验收
 
-Chrome 已按上面的示例在 9222 端口登录后：
+Chrome 已按上面的示例在 9222 端口登录后，在本机设置 `TIEBA_TEST_THREAD` 和可选的 `TIEBA_TEST_FORUM` 环境变量。它们由以下 PowerShell 命令展开为参数，工具不会自动读取环境变量；没有测试吧时省略 `--forum`。实际目标不写入项目文件：
 
 ```powershell
 node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
@@ -156,6 +156,7 @@ tieba-apis/
 | [HTTP 直连与刷新](docs/pc-web-direct-http.md) | 40 条独立响应、接口直接发帖及清理、缓存与会话刷新 |
 | [扩展验收及限制](docs/pc-web-complete-acceptance.md) | 249 条新增响应、资料/隐私/通知/媒体、预约及招募恢复限制 |
 | [资源说明](docs/acceptance.md) | 当前需要哪些资源及历史基础验收 |
+| [提交隐私规范](docs/privacy.md) | 提交范围、合成样本和暂存区检查 |
 | [开发指南](docs/development.md) | 环境、检查与历史提取流程 |
 | [CHANGELOG](CHANGELOG.md) | 待发布变化 |
 

@@ -41,13 +41,13 @@ node scripts/verify-pc-web.mjs --help
 
 1. 按 [浏览器准备步骤](pc-web-validation.md#准备浏览器会话) 启动专用 Chrome，使用可见窗口扫码登录。
 2. 保持官方首页或论坛页打开。确认实际调试端口；以下示例使用 9222。
-3. 在仓库根目录运行：
+3. 在本机设置 `TIEBA_TEST_THREAD`（帖子编号或官方帖子 URL）和可选的 `TIEBA_TEST_FORUM` 环境变量，再在仓库根目录运行。命令由 PowerShell 展开变量，无测试吧时省略 `--forum`：
 
 ```powershell
 node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
 ```
 
-现有项目扫码窗口可以继续使用，端口按对应配置目录的 DevToolsActivePort 第一行读取；无需重复登录。指定帖子和[redacted-forum-name]吧是两个独立读取对象。提供 --forum 时执行 11 项业务读取，另做 2 次身份/会话准备请求；未提供时为 10 项。省略 --live 只显示帮助。接口现在独立 fetch，不调用前端 HTTP 封装；需要重载专用上下文时追加 --refresh-session，见 [直连与刷新](pc-web-direct-http.md)。
+现有项目扫码窗口可以继续使用，端口按对应配置目录的 DevToolsActivePort 第一行读取；无需重复登录。指定帖子和测试吧是两个独立读取对象。提供 --forum 时执行 11 项业务读取，另做 2 次身份/会话准备请求；未提供时为 10 项。省略 --live 只显示帮助。接口现在独立 fetch，不调用前端 HTTP 封装；需要重载专用上下文时追加 --refresh-session，见 [直连与刷新](pc-web-direct-http.md)。
 
 ## 查看运行结果
 
@@ -101,11 +101,11 @@ node scripts/catalog.mjs pb/floor
 
 ## 运行读取命令
 
-联网命令必须显式带 `--live`。以下公开帖子是本阶段实测样本，结果取决于运行时该帖是否仍可访问。
+联网命令必须显式带 `--live`。先在本机设置 `TIEBA_TEST_THREAD` 和 `TIEBA_TEST_FORUM`，实际目标不提交；结果取决于运行时目标是否可访问。
 
 ```powershell
 node main.mjs forum "$env:TIEBA_TEST_FORUM" --live --pn 1 --rn 2
-node main.mjs thread $env:TIEBA_TEST_THREAD --live --pn 1 --rn 2
+node main.mjs thread "$env:TIEBA_TEST_THREAD" --live --pn 1 --rn 2
 node main.mjs search-forum "$env:TIEBA_TEST_FORUM" --live
 ```
 
@@ -115,7 +115,7 @@ node main.mjs search-forum "$env:TIEBA_TEST_FORUM" --live
 # 将示意值替换为实际读取到的编号。
 $postId = '实际回复编号'
 $userId = '实际用户编号'
-node main.mjs replies [redacted-thread-id] $postId --live --pn 1
+node main.mjs replies "$env:TIEBA_TEST_THREAD" $postId --live --pn 1
 node main.mjs profile $userId --live
 ```
 
@@ -164,7 +164,7 @@ node main.mjs profile $userId --live
 随后：
 
 ```powershell
-node main.mjs thread [redacted-thread-id] --live --config .local/config.json
+node main.mjs thread "$env:TIEBA_TEST_THREAD" --live --config .local/config.json
 ```
 
 ## 复用登录态
@@ -209,7 +209,7 @@ await pending; // 以 transport / ABORT_ERR 错误结束。
 
 ```powershell
 node scripts/verify-app-reads.mjs --live
-node scripts/verify-thread.mjs --live --thread $env:TIEBA_TEST_THREAD
+node scripts/verify-thread.mjs --live --thread "$env:TIEBA_TEST_THREAD"
 node scripts/verify-im-login.mjs --live --account .local/account.json
 node scripts/verify-anonymous-boundaries.mjs --live --limit 1
 ```

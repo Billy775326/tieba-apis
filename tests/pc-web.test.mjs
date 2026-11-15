@@ -11,7 +11,7 @@ test('PC status requires HTTP, explicit business status and actual object checks
  assert.equal(classifyPcWebResult({http_status:200,error_code:'0',checks:{exact_thread_id:true},capture_attribution_valid:false}),'local-capture-unconfirmed');
 });
 test('PC read CLI defaults offline and validates the debugger port and official thread target',()=>{
- assert.equal(parsePcReadArgs([]).live,false);assert.equal(parsePcReadArgs(['--live','--port','9222','--thread','123456789']).port,9222);
+ assert.equal(parsePcReadArgs([]).live,false);assert.equal(parsePcReadArgs([]).thread,undefined);assert.throws(()=>parsePcReadArgs(['--live','--port','9222']),/Explicit --thread/);assert.equal(parsePcReadArgs(['--live','--port','9222','--thread','123456789']).port,9222);
  for(const args of[['--port','0'],['--port','65536'],['--port','https://example.invalid'],['--thread','https://example.invalid/p/42'],['--cookie','synthetic']])assert.throws(()=>parsePcReadArgs(args));
 });
 test('PC read CLI preserves existing output before any browser access',t=>{

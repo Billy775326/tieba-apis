@@ -38,8 +38,8 @@
 
 ## 已核对的关键行为
 
-- `POST /c/f/pb/page_pc` 使用 `kz=[redacted-thread-id]`，返回精确帖子编号；最初误传 `tid` 的失败记录保留。
-- `POST /c/f/frs/page_pc` 使用 `kw` 和网页源码的分页/新版标志，返回“[redacted-forum-name]”吧。
+- `POST /c/f/pb/page_pc` 使用 `kz` 传入测试帖编号，返回编号与输入一致；最初误传 `tid` 的失败记录保留。
+- `POST /c/f/frs/page_pc` 使用 `kw` 和网页源码的分页/新版标志，返回吧名与输入一致。
 - `GET /c/u/user/getPrivateInfo_pc` 在现有网页登录会话内返回本人 UID，已与既有受控账号核对。
 - `GET /c/u/pc/userCard` 按 portrait 查询两个受控账号；返回 portrait 带查询后缀，去除查询部分后的键一致。没有把 PC tieba_uid 当成 App UID。
 - `GET /c/f/pc/forumCard` 返回的吧 ID 与请求匹配。

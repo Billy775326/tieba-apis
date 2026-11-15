@@ -13,7 +13,7 @@ test("rejects other hosts, credentials, non-thread paths and invalid identifier 
   for (const input of [
     "https://tieba.baidu.com.evil.test/p/123456789",
     "https://user:pass@tieba.baidu.com/p/123456789",
-    "https://tieba.baidu.com/f?kw=python",
+    "https://tieba.baidu.com/f?kw=synthetic-forum",
     "0",
     "9223372036854775808",
   ])

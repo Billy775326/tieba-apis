@@ -60,9 +60,9 @@ node scripts/build-pc-web-coverage.mjs
 ## 明确执行真实读取
 
 ```powershell
-node main.mjs thread $env:TIEBA_TEST_THREAD --live --rn 2
+node main.mjs thread "$env:TIEBA_TEST_THREAD" --live --rn 2
 node scripts/verify-app-reads.mjs --live
-node scripts/verify-thread.mjs --live --thread $env:TIEBA_TEST_THREAD
+node scripts/verify-thread.mjs --live --thread "$env:TIEBA_TEST_THREAD"
 ```
 
 这些命令会请求真实服务。CLI 输出在本地指定目录，验证工具则按原有约定保存响应和报告。账号与内容不要写进提交、测试夹具或报错文本。新的客户端冒烟结果见 [client-validation.json](../evidence/client-validation.json)，不改变历史阶段的请求总数。
@@ -137,3 +137,7 @@ node scripts/rea.mjs inspect-android-package 'D:/targets/example.apk' --format j
 | `.local/` | 账号、原始响应、输出、APK、DEX、分析引擎和临时结果；不进入提交 |
 
 HTTP 每次有总超时、响应上限，完成后移除取消监听；没有隐式重试、分页循环或持久后台任务。IM 长连接在使用结束时调用 `close()`，取消和错误不能只改界面状态。新测试临时目录应独立创建，并在确认路径归属后清理。
+
+## 提交隐私检查
+
+提交前运行 `npm.cmd run check:privacy`；暂存后运行 `node scripts/check-privacy.mjs --staged`，检查实际 index 内容。真实目标通过本机参数或环境变量传入，原始响应、登录态和恢复清单留在被忽略的 `.local/`。完整规则和历史边界见 [提交隐私规范](privacy.md)。历史匿名读取脚本也要求本机设置 `TIEBA_TEST_FORUM`，不再提供真实吧名默认值。

@@ -30,7 +30,7 @@ node scripts/catalog.mjs --pc-status sign_pc
 先按 [浏览器准备步骤](pc-web-validation.md#准备浏览器会话) 启动专用 Chrome 并扫码，保持官方首页或论坛页打开。以下端口与准备示例一致：
 
 ```powershell
-node scripts/verify-pc-web.mjs --live --port 9222 --thread $env:TIEBA_TEST_THREAD --forum "$env:TIEBA_TEST_FORUM"
+node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
 ```
 
 该命令执行固定白名单，包括目标帖子和独立指定的吧，同时读取本人信息、通知与配置。它不是仅发送一次 page_pc 请求的通用业务 SDK。终端最后的 output 指向新的本地报告；字段和退出码见 [运行结果](getting-started.md#查看运行结果)。

@@ -18,6 +18,7 @@
 | [HTTP 直连与刷新](pc-web-direct-http.md) | 独立请求、刷新选项、40 条响应与历史执行方式区分 |
 | [网页验收指南](pc-web-validation.md) | 来源、统计、失败原因、参数、输出和复测条件 |
 | [架构](architecture.md) | PC CDP、网页请求、结果分级和证据流；历史 App 分层 |
+| [提交隐私规范](privacy.md) | 禁止提交真实对象、凭据及个人信息，检查暂存区 |
 | [开发指南](development.md) | 检查、扩展契约、生成器、脱敏与历史提取工具 |
 | [验收与资源](acceptance.md) | 已有会话及样本、确需补充的 PC 对象、历史快照验收 |
 | [状态操作范围](stateful-test-plan.md) | 当前 PC 恢复/清理判据与历史 App 限制 |

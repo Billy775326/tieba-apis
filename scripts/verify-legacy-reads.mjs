@@ -10,9 +10,9 @@ import { fields, first } from "../src/protobuf.mjs";
 import { legacyForm } from "../src/legacy-signature.mjs";
 const read = (p) =>
   JSON.parse(fs.readFileSync(p, "utf8").replace(/^\uFEFF/, ""));
+if (!process.argv.includes("--live")) throw Error("Explicit --live required");
 const testForum = process.env.TIEBA_TEST_FORUM?.trim();
 if (!testForum || testForum.length > 256) throw Error("Explicit TIEBA_TEST_FORUM is required");
-if (!process.argv.includes("--live")) throw Error("Explicit --live required");
 const accountIndex = process.argv.indexOf("--account"),
   account = accountIndex >= 0 ? read(process.argv[accountIndex + 1]) : null;
 const frs = fields(
@@ -24,6 +24,7 @@ const pb = fields(
   ),
   thread = fields(first(pb, 8)),
   post = fields(first(pb, 6));
+if (first(forum, 2)?.toString("utf8") !== testForum) throw Error("Local forum fixture does not match TIEBA_TEST_FORUM");
 // Each path is explicitly reviewed as retrieval. Generic path prefixes do not authorize requests.
 const paths = LEGACY_READ_PATHS;
 const coverage = read("evidence/api-coverage.json"),
