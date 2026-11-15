@@ -93,5 +93,10 @@
     "Only the supplied thread and bounded reply samples are exercised.",
     "No publishing, deletion, reactions, following or private messages are performed.",
     "Raw content and account identifiers remain in ignored local response files."
-  ]
+  ],
+  "redactions": {
+    "live_target_identifiers_removed": true,
+    "synthetic_observations_invented": false,
+    "reason": "Project policy prohibits real test-object identifiers in committed content"
+  }
 }

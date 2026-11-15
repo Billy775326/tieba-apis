@@ -2,3 +2,4 @@
 evidence/*.json text eol=lf
 docs/*coverage.csv text eol=lf
 docs/remaining-validation.md text eol=lf
+docs/request-fields.md text eol=lf

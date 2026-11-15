@@ -12,7 +12,8 @@
     "evidence:build": "node scripts/build-current-coverage.mjs",
     "catalog:pc": "node scripts/catalog.mjs --pc-web",
     "status:pc": "node scripts/catalog.mjs --pc-status",
-    "verify:pc": "node scripts/verify-pc-web.mjs"
+    "verify:pc": "node scripts/verify-pc-web.mjs",
+    "check:privacy": "node scripts/check-privacy.mjs"
   },
   "engines": {
     "node": ">=24"

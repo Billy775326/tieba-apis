@@ -11,6 +11,7 @@
 | 复跑网页读取 | `node scripts/verify-pc-web.mjs --live --port 端口` | 固定白名单的脱敏验收报告；联网 |
 | 了解点赞、回复或收藏 | [基础功能](pc-web-basic-functions.md) | 已验证取值、前置状态、回查与清理 |
 | 了解签到、搜索或发主帖 | [专题说明](pc-web-sign-search-publish.md) | 已验证组合与限制；当前没有一键写入命令 |
+| 了解资料、隐私、媒体、预约与招募 | [扩展验收](pc-web-complete-acceptance.md) | 有效参数、实际错误和未恢复状态；保留 2 项预约及招募报名/资格 |
 
 ## 环境与 PC 配置
 
@@ -40,13 +41,13 @@ node scripts/verify-pc-web.mjs --help
 
 1. 按 [浏览器准备步骤](pc-web-validation.md#准备浏览器会话) 启动专用 Chrome，使用可见窗口扫码登录。
 2. 保持官方首页或论坛页打开。确认实际调试端口；以下示例使用 9222。
-3. 在仓库根目录运行：
+3. 在本机设置 `TIEBA_TEST_THREAD`（帖子编号或官方帖子 URL）和可选的 `TIEBA_TEST_FORUM` 环境变量，再在仓库根目录运行。命令由 PowerShell 展开变量，无测试吧时省略 `--forum`：
 
 ```powershell
 node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
 ```
 
-现有项目扫码窗口可以继续使用，端口按对应配置目录的 DevToolsActivePort 第一行读取；无需重复登录。指定帖子和[redacted-forum-name]吧是两个独立读取对象。提供 --forum 时执行 11 项业务读取，另做一次网页登录状态检查；未提供时为 10 项。省略 --live 只显示帮助。
+现有项目扫码窗口可以继续使用，端口按对应配置目录的 DevToolsActivePort 第一行读取；无需重复登录。指定帖子和测试吧是两个独立读取对象。提供 --forum 时执行 11 项业务读取，另做 2 次身份/会话准备请求；未提供时为 10 项。省略 --live 只显示帮助。接口现在独立 fetch，不调用前端 HTTP 封装；需要重载专用上下文时追加 --refresh-session，见 [直连与刷新](pc-web-direct-http.md)。
 
 ## 查看运行结果
 
@@ -54,13 +55,15 @@ node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THRE
 
 | 字段 | 内容 |
 | --- | --- |
-| session | 本次网页登录状态和身份读取 HTTP 状态 |
+| schema_version | 当前为 2；历史 XHR 记录仍保留原版本 |
+| session | 登录与 CSRF 可用性、两次身份/会话准备的脱敏元数据 |
+| session_refresh_requested / session_refresh_completed | 是否请求重载专用测试页，以及是否已等待到新的上下文 |
 | writes_executed | false；入口不发帖、不签到、不关注、不删除 |
 | results | 每项的路径、方法、HTTP/业务状态、字段名、计数、摘要与对象断言 |
 | summary | 本次读取条数、身份读取数及各结果状态计数 |
 | failure | 执行失败时的原因摘要 |
 
-业务、HTTP 或对象断言失败退出 1；空结果与仅结构核对单列，不自动解释成权限不足。参数、连接或输出创建失败也会非零退出。缺少明确业务码不会补为 0。
+业务、HTTP、新鲜度或对象断言失败退出 1；空结果与仅结构核对单列，不自动解释成权限不足。参数、连接或输出创建失败也会非零退出。缺少明确业务码不会补为 0。
 
 默认文件名唯一；需要固定新路径时可以追加 `--output .local/pc-read-acceptance.json`。该路径已有文件时在连接前拒绝覆盖，应换用新路径或让工具自动命名。Cookie、TBS、防护令牌及原始用户正文不写入报告。完整参数和生命周期约定见 [网页验收指南](pc-web-validation.md#参数与输出)。
 
@@ -98,11 +101,11 @@ node scripts/catalog.mjs pb/floor
 
 ## 运行读取命令
 
-联网命令必须显式带 `--live`。以下公开帖子是本阶段实测样本，结果取决于运行时该帖是否仍可访问。
+联网命令必须显式带 `--live`。先在本机设置 `TIEBA_TEST_THREAD` 和 `TIEBA_TEST_FORUM`，实际目标不提交；结果取决于运行时目标是否可访问。
 
 ```powershell
 node main.mjs forum "$env:TIEBA_TEST_FORUM" --live --pn 1 --rn 2
-node main.mjs thread $env:TIEBA_TEST_THREAD --live --pn 1 --rn 2
+node main.mjs thread "$env:TIEBA_TEST_THREAD" --live --pn 1 --rn 2
 node main.mjs search-forum "$env:TIEBA_TEST_FORUM" --live
 ```
 
@@ -112,7 +115,7 @@ node main.mjs search-forum "$env:TIEBA_TEST_FORUM" --live
 # 将示意值替换为实际读取到的编号。
 $postId = '实际回复编号'
 $userId = '实际用户编号'
-node main.mjs replies [redacted-thread-id] $postId --live --pn 1
+node main.mjs replies "$env:TIEBA_TEST_THREAD" $postId --live --pn 1
 node main.mjs profile $userId --live
 ```
 
@@ -161,7 +164,7 @@ node main.mjs profile $userId --live
 随后：
 
 ```powershell
-node main.mjs thread [redacted-thread-id] --live --config .local/config.json
+node main.mjs thread "$env:TIEBA_TEST_THREAD" --live --config .local/config.json
 ```
 
 ## 复用登录态
@@ -206,7 +209,7 @@ await pending; // 以 transport / ABORT_ERR 错误结束。
 
 ```powershell
 node scripts/verify-app-reads.mjs --live
-node scripts/verify-thread.mjs --live --thread $env:TIEBA_TEST_THREAD
+node scripts/verify-thread.mjs --live --thread "$env:TIEBA_TEST_THREAD"
 node scripts/verify-im-login.mjs --live --account .local/account.json
 node scripts/verify-anonymous-boundaries.mjs --live --limit 1
 ```

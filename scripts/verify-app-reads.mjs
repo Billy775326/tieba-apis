@@ -6,12 +6,12 @@ import {
   fields,
   first,
 } from "../src/protobuf.mjs";
-const testForum = process.env.TIEBA_TEST_FORUM?.trim();
-if (!testForum || testForum.length > 256) throw Error("Explicit TIEBA_TEST_FORUM is required");
 if (!process.argv.includes("--live"))
   throw Error(
     "Explicit --live is required for seven anonymous read/negative-control requests.",
   );
+const testForum = process.env.TIEBA_TEST_FORUM?.trim();
+if (!testForum || testForum.length > 256) throw Error("Explicit TIEBA_TEST_FORUM is required");
 fs.mkdirSync(".local", { recursive: true });
 const results = [];
 function request(commonTag, parts) {

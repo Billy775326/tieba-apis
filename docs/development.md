@@ -23,12 +23,14 @@ node scripts/build-pc-web-coverage.mjs
 ## 扩展 PC 网页能力
 
 1. 固定实际页面加载的官方脚本 URL、字节大小、SHA-256 和源码位置，恢复方法、参数、读写含义与调用条件。不能只看路径名或 HTTP 方法。
-2. 在现有浏览器会话中调用官方封装；凭据和响应正文留在浏览器，只收集必要摘要、字段名及断言。不能用 App 同名接口结果补齐 PC 状态。
-3. 读取核对目标、分页和边界；写入先登记明确基线与受控对象，核对新编号、本人作者和唯一内容，按依赖顺序清理并回查。不自动重试创建操作。
-4. 先将新记录保存在忽略目录，脱敏审核后再纳入公开报告；失败参数、空分支和本机调试问题分别记录。没有事实依据时不写成会员、风控或设备限制。
-5. 同步基础功能文档、网页报告行状态、覆盖 CSV 与 README 功能表。修改发现/验收逻辑时运行离线回归；文档修改按风险核对链接、编码和生成结果。
+2. 独立构造请求，浏览器只承载会话和必要的官方安全 SDK；不通过 UI 或前端 HTTP 封装代替接口测试。凭据和正文留在浏览器，摘要和断言来自同一份新响应。
+3. 每次读状态禁用缓存并增加独立请求参数；有界等待、重新读取，必要时刷新专用会话，记录预取或 Age；不把旧页面数据作当前状态。
+4. 读取核对目标、分页和边界；写入先登记明确基线与受控对象，核对新编号、本人作者和唯一内容，按依赖顺序清理并回查。不自动重试创建操作。
+5. 先将新记录保存在忽略目录，脱敏审核后再纳入公开报告；失败参数、空分支和本机调试问题分别记录。没有事实依据时不写成会员、风控或设备限制。
+6. 招募等即时发放资格的业务，空状态取消成功不保证发放后可撤回；明确记录最终报名、资格与恢复失败，不能仅凭预检承诺可恢复。
+7. 同步基础功能文档、网页报告行状态、覆盖 CSV 与 README 功能表。修改发现/验收逻辑时运行离线回归；文档修改按风险核对链接、编码和生成结果。
 
-只读白名单的扩大需要审查请求语义。当前没有 PC 通用写入 SDK，不能为补文档而把定向操作描述成公开可调用方法。具体请求契约见 [PC API](api.md#pc-已验收请求契约)、[基础功能](pc-web-basic-functions.md) 和 [签到/搜索/主帖](pc-web-sign-search-publish.md)。
+只读白名单的扩大需要审查请求语义。当前没有 PC 通用写入 SDK，不能为补文档而把定向操作描述成公开可调用方法。扩展验收的 249 条响应与恢复限制见 [专题](pc-web-complete-acceptance.md)。具体请求契约见 [PC API](api.md#pc-已验收请求契约)、[基础功能](pc-web-basic-functions.md) 和 [签到/搜索/主帖](pc-web-sign-search-publish.md)。
 
 ## PC 证据与生成文件
 
@@ -58,9 +60,9 @@ node scripts/build-pc-web-coverage.mjs
 ## 明确执行真实读取
 
 ```powershell
-node main.mjs thread $env:TIEBA_TEST_THREAD --live --rn 2
+node main.mjs thread "$env:TIEBA_TEST_THREAD" --live --rn 2
 node scripts/verify-app-reads.mjs --live
-node scripts/verify-thread.mjs --live --thread $env:TIEBA_TEST_THREAD
+node scripts/verify-thread.mjs --live --thread "$env:TIEBA_TEST_THREAD"
 ```
 
 这些命令会请求真实服务。CLI 输出在本地指定目录，验证工具则按原有约定保存响应和报告。账号与内容不要写进提交、测试夹具或报错文本。新的客户端冒烟结果见 [client-validation.json](../evidence/client-validation.json)，不改变历史阶段的请求总数。
@@ -135,3 +137,7 @@ node scripts/rea.mjs inspect-android-package 'D:/targets/example.apk' --format j
 | `.local/` | 账号、原始响应、输出、APK、DEX、分析引擎和临时结果；不进入提交 |
 
 HTTP 每次有总超时、响应上限，完成后移除取消监听；没有隐式重试、分页循环或持久后台任务。IM 长连接在使用结束时调用 `close()`，取消和错误不能只改界面状态。新测试临时目录应独立创建，并在确认路径归属后清理。
+
+## 提交隐私检查
+
+提交前运行 `npm.cmd run check:privacy`；暂存后运行 `node scripts/check-privacy.mjs --staged`，检查实际 index 内容。真实目标通过本机参数或环境变量传入，原始响应、登录态和恢复清单留在被忽略的 `.local/`。完整规则和历史边界见 [提交隐私规范](privacy.md)。历史匿名读取脚本也要求本机设置 `TIEBA_TEST_FORUM`，不再提供真实吧名默认值。

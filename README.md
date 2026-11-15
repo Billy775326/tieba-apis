@@ -11,28 +11,32 @@
 | 功能 | PC 接口 | 当前状态 |
 | --- | --- | --- |
 | 复用网页登录态、本人信息 | `/f/user/json_userinfo`、`/c/u/user/getPrivateInfo_pc` | 两个现有网页会话已核对；不导出 Cookie |
-| 帖子详情、吧详情和列表 | `/c/f/pb/page_pc`、`/c/f/frs/page_pc` | 已核对目标；专用 threadlist/tab 接口仍有 300000 待定位 |
+| 帖子详情、吧详情和列表 | page_pc、threadlist_pc、generalTabList_pc | 详情和批量列表对象已核对；通用 tab 返回空 page_data，非空分支未通过 |
 | 普通回复读取与定位 | `/c/f/pb/getmypost_pc` | 已以新建本人回复核对编号、作者和内容 |
 | 楼中楼列表 | `/c/f/pb/nestedFloor` | 已核对父回复中的新楼中楼，删除后回查为空 |
 | 点赞、取消点赞 | `/c/c/agree/opAgree_pc` | 帖子和普通回复均已验证并恢复；楼中楼点赞未单独测试 |
 | 发表普通回复 | `/c/c/post/add_pc` | 已创建、回读并删除本次测试回复 |
 | 回复楼中楼 | `/c/c/post/add_pc`，补 quote_id/repostid | 已验证创建、父子归属、本人作者及清理 |
 | 删除本人回复、楼中楼 | `/c/c/bawu/delpost_pc` | 已验证，仅删除本次创建的本人内容 |
-| 收藏、取消收藏 | `/c/c/post/addstore_pc`、POST `rmstore_pc` | 已观察变化并恢复未收藏基线；GET 变体未测试 |
+| 收藏、取消收藏 | addstore_pc、GET/POST rmstore_pc | 两种取消方式均有状态回查，未收藏基线已恢复 |
 | 关注用户、取消关注 | `/c/c/user/follow_pc`、`unfollow_pc` | 两账号已验证变化并恢复 |
 | 关注贴吧、取消关注贴吧 | POST `/c/c/forum/like_pc`、`unfavolike_pc` | 已验证临时关注、回查并恢复；GET 变体未测 |
-| 发表主帖、删除本人主帖 | `/c/c/thread/add_pc`、`/c/c/bawu/delthread_pc` | 官方编辑器创建一条主帖，核对作者、标题与首楼正文后删除；详情与首楼定位均回到 4 |
+| 发表主帖、删除本人主帖 | `/c/c/thread/add_pc`、`/c/c/bawu/delthread_pc` | 已独立构造 HTTP 发帖与删除，回读作者、标题、正文，删除后详情与首楼均返回 4；历史编辑器记录另列 |
 | 搜索建议、帖子/吧/用户及综合搜索 | `/c/s/searchSug_pc`、`/mo/q/search/*` | 已核对精确吧、指定帖子、吧内搜索与受控用户；未覆盖全部排序和分页 |
 | 签到 | `/c/c/forum/sign_pc` | 已核对未签到 → 已签到及重复签到分支；临时关注已恢复，签到日记录保留 |
 | 用户卡片、吧卡片 | `/c/u/pc/userCard`、`/c/f/pc/forumCard` | 已核对请求对象 |
-| 关注、粉丝、点赞与收藏列表 | followList_pc、fans/page_pc、userAgree_pc、threadStoreList | 已做结构核对；本人主帖列表 myThread 仍有 210009 |
-| 获赞、提及和回复通知 | agreeme_pc、atme_pc、replyme_pc | 非空结构已核对，未验证完整新通知送达 |
-| 隐私修改、黑名单、资料编辑 | setprivate_pc、setUserBlack_pc、modify_pc | 源码已定位，PC 修改流程待验收 |
-| 图片/头像上传、视频等媒体 | uploadPicture_pc、portrait_pc 等 | 未完成 PC 媒体写入验收 |
+| 关注、粉丝、主帖与收藏列表 | followList_pc、fans/page_pc、myThread、threadStoreList | 已核对有效对象；myThread 参数已修正。点赞列表 userAgree_pc 仍需区分线程与回复点赞语义 |
+| 获赞、提及和回复通知 | agreeme_pc、atme_pc、replyme_pc | 双账号已制造并匹配三类新事件；提及、回复的源码 POST 也已匹配，获赞 POST 保留结构级结果 |
+| 隐私、黑名单、个人简介 | setprivate_pc、setUserBlack_pc、modify_pc | 均已修改、回读并恢复；未改昵称或测试昵称冷却 |
+| 主页隐藏、移除粉丝、徽章 | setPrivacy_pc、removeFans_pc、setIcon/cancelIconSlot | 自有主帖隐藏恢复、受控粉丝移除与关系恢复、原徽章摘下恢复均已核对 |
+| 图片上传与智能标题 | uploadPicture_pc、generateTitle | 专用 PNG 上传返回引用，图片回复回读并清理；标题返回 5 条非空结果 |
+| 头像、图片列表、视频等 | portrait_pc、picture/list 等 | 同原头像提交返回 300003；图片列表用有效图片回复仍返回 4444；不推断为账号权限不足 |
+| 游戏预约与招募 | subscribeitempc、recruit/register | 预约 GET/POST 首次成功，保留 2 项预约；招募报名及即时资格成功，取消两次返回 990000，报名未恢复 |
+| 社区提示、版本切换与推荐反馈 | communityNoticeReport、updateSwitch、submitDislike_pc | 实际提示已关闭；旧版切回新版已恢复；推荐反馈仅确认接收，未验证撤回 |
 | 私信、群聊 | 当前前端为 App 引导；未建立 PC 原生收发入口 | 不以 App IM 成功代替网页通过 |
-| 吧务 | 管理员置顶、加精、删他人内容等 | 按原要求不测；不影响上面的删除本人回复验收 |
+| 吧务 | 管理员置顶、加精、禁言等 | 账号无实际吧务角色，3 项管理写入未执行；分类、原因读取另有实际响应 |
 
-点赞、回复、楼中楼、删除和收藏的参数及判据见 [PC 基础功能](docs/pc-web-basic-functions.md)。
+点赞、回复、楼中楼、删除和收藏的参数及判据见 [PC 基础功能](docs/pc-web-basic-functions.md)。新增写入、逐项限制及未恢复状态见 [扩展验收](docs/pc-web-complete-acceptance.md)。**本轮保留 2 项游戏预约及 1 项已获即时资格的招募报名，不能声称全部状态已恢复。**
 
 ## 快速开始
 
@@ -64,8 +68,8 @@ PC 入口通过本机 Chrome 复用网页登录态。按 [浏览器准备步骤]
 | --- | --- | --- |
 | 调试端口 | 9222 | 实际 Chrome 端口，通过 --port 传入 |
 | 浏览器配置目录 | .local/pc-web-browser | 启动 Chrome 时指定，保留扫码会话 |
-| 帖子目标 | [redacted-thread-id] | --thread 接受编号或官方帖子 URL |
-| 测试吧 | [redacted-forum-name] | --forum 可选；与指定帖子是独立读取目标 |
+| 帖子目标 | 无默认值 | 联网必填 --thread，接受编号或官方帖子 URL |
+| 测试吧 | 无默认值 | --forum 可选；与指定帖子是独立读取目标 |
 | 验收输出 | .local 下的新文件 | 默认自动生成唯一文件名；--output 可指定新路径 |
 
 PC 工具不读取 .env、config.example.json 或账号 JSON。Cookie、TBS 和防护令牌由网页管理，不需要粘贴到配置；旧 App 配置的适用范围见 [使用指南](docs/getting-started.md#配置文件)。
@@ -82,13 +86,15 @@ node scripts/verify-pc-web.mjs --help
 
 ## 复跑网页读取验收
 
-Chrome 已按上面的示例在 9222 端口登录后：
+Chrome 已按上面的示例在 9222 端口登录后，在本机设置 `TIEBA_TEST_THREAD` 和可选的 `TIEBA_TEST_FORUM` 环境变量。它们由以下 PowerShell 命令展开为参数，工具不会自动读取环境变量；没有测试吧时省略 `--forum`。实际目标不写入项目文件：
 
 ```powershell
 node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
 ```
 
 等价 npm 入口为 `npm.cmd run verify:pc -- --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"`。省略 --live 时只显示帮助；入口检查帖子/吧、本人信息、通知及配置等固定读取项。它不会执行功能表里的点赞、签到或发帖操作。
+
+该入口现使用独立 fetch、PC 签名和禁缓存参数，不经过前端请求封装。需要刷新专用会话时追加 --refresh-session，见 [刷新与数据新鲜度](docs/pc-web-direct-http.md)。
 
 终端显示每项状态及最终输出文件；文件只含 HTTP/业务码、结构计数、摘要和对象断言，完整字段与退出码见 [使用指南](docs/getting-started.md#查看运行结果)。凭据和用户响应正文留在浏览器。结果默认使用新文件，已有输出不会被覆盖。
 
@@ -102,6 +108,7 @@ tieba-apis/
 │  ├─ build-pc-web-catalog.mjs     # 从固定脚本提取请求清单
 │  └─ build-pc-web-coverage.mjs    # 从公开报告生成覆盖 CSV
 ├─ src/pc-web-browser.mjs         # 本机 CDP 连接
+├─ src/pc-web-direct.mjs          # 独立 PC 签名、HTTP 与缓存判定
 ├─ src/pc-web-validation.mjs      # 结果分级
 ├─ evidence/                     # 脱敏来源与验收证据
 ├─ docs/                         # 使用、接口、示例、开发和历史报告
@@ -122,14 +129,15 @@ tieba-apis/
 
 | 项目 | 当前记录 |
 | --- | --- |
-| 前端源码 | 当前页面加载的 4 个官方脚本，记录 URL、大小、SHA-256 和引用位置 |
+| 前端源码 | 4 个清单基线脚本；补充 4 个官方脚本确认参数和流程，不扩增冻结候选数量 |
 | 静态请求候选 | 84 个路径、86 个路径/方法组合；不是全部已可用接口 |
-| PC 累计实测 | 141 条业务调用记录（70 条初始记录、26 条基础功能、45 条签到/搜索/主帖验收）；公开验收入口另有 2 次身份读取，本次验收准备另有 2 次，页面资源与后台令牌请求不计入 |
-| 已请求候选 | 42 个路径/方法组合，其中 24 个完成对象或状态核对 |
-| 其他结果 | 13 个仅结构核对、2 个空结果、3 个业务错误；44 个尚未验证，包含 6 个按原要求排除的吧务候选 |
+| PC 累计实测 | 430 条业务记录：原 390 条加本轮 40 条独立 HTTP 响应；身份准备、刷新与资源请求另计 |
+| 独立 HTTP 复测 | 17 个路径/方法组合；与历史 UI 驱动或前端封装观测分列，不能将 62 个状态证据都算作直连复测 |
+| 已请求候选 | 82 / 86 个路径/方法组合；62 个有对象或状态证据，其中招募等存在恢复限制 |
+| 其他结果 | 13 个结构核对、1 个空分支、6 个业务错误；4 个未发出有效请求（3 项吧务写入、1 项真实广告事件） |
 | 可复跑入口 | 连接已登录的本机 Chrome，只验证网页读取接口 |
 
-帖子详情 `page_pc` 使用 `kz`，已核对指定帖子；论坛页、本人隐私、用户卡片和吧卡片完成对象核对。PC `follow_pc / unfollow_pc` 已完成关注、回查、取消关注与恢复原关系。通知与本人列表等读取仍按实际样本区分结构核对和完整业务验收。
+帖子详情 `page_pc` 使用 `kz`，已核对指定帖子；论坛页、本人隐私、用户卡片和吧卡片完成对象核对。PC `follow_pc / unfollow_pc` 已完成关注、回查、取消关注与恢复原关系。通知与列表按方法分别记录，获赞 GET 的新事件匹配不自动提升同路径 POST。所有候选都有状态与限制，仍不能宣称全部接口通过。
 
 逐项结果见 [PC 接口覆盖 CSV](docs/pc-web-api-coverage.csv)、[验收说明](docs/pc-web-validation.md) 和 [脱敏证据](evidence/pc-web-validation.json)。
 
@@ -144,8 +152,11 @@ tieba-apis/
 | [PC 验收指南](docs/pc-web-validation.md) | 参数、当前结果、失败原因、样本和浏览器准备 |
 | [PC 覆盖 CSV](docs/pc-web-api-coverage.csv) | 86 个候选逐项状态 |
 | [PC 源码清单](evidence/pc-web-api-catalog.json) | 当前官方脚本、请求方法和源码位置 |
-| [PC 脱敏记录](evidence/pc-web-validation.json) | 累计 141 条调用、受控状态恢复和最初验证器问题 |
+| [PC 脱敏记录](evidence/pc-web-validation.json) | 累计 430 条调用、逐项结果与历史阶段 |
+| [HTTP 直连与刷新](docs/pc-web-direct-http.md) | 40 条独立响应、接口直接发帖及清理、缓存与会话刷新 |
+| [扩展验收及限制](docs/pc-web-complete-acceptance.md) | 249 条新增响应、资料/隐私/通知/媒体、预约及招募恢复限制 |
 | [资源说明](docs/acceptance.md) | 当前需要哪些资源及历史基础验收 |
+| [提交隐私规范](docs/privacy.md) | 提交范围、合成样本和暂存区检查 |
 | [开发指南](docs/development.md) | 环境、检查与历史提取流程 |
 | [CHANGELOG](CHANGELOG.md) | 待发布变化 |
 

@@ -40,7 +40,7 @@
 
 | 路径 | 请求语义 | 观察结果 |
 | --- | --- | --- |
-| `/c/f/pb/page` | 用户指定帖子 `[redacted-thread-id]` | 两次读取用于当前对象和图片核对；精确帖子编号匹配 |
+| `/c/f/pb/page` | 用户指定帖子 `（测试帖编号已移除）` | 两次读取用于当前对象和图片核对；精确帖子编号匹配 |
 | `/c/c/img/getShareImg` | 线程 `type=3,thread_id`；吧 `type=2,forum_id` | 两次返回 0 和 img_url；各用同主机 HTTPS 变体下载到 JPEG。未建立图片与指定对象的精确对应，不按整项功能通过计数 |
 | `/c/f/shop/getUserKjsStatus` | APK 明确采用的空参数表，带本人登录态 | `210009 系统错误`；原因未定位，不能认定为会员不足或登录失效 |
 | `/c/x/aigc/getBdtAigcAnswerStatus` | 普通帖 tid | `210009 系统错误`；普通帖不是有效 AI 答案样本 |

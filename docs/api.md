@@ -10,7 +10,7 @@
 | `node scripts/catalog.mjs --pc-status [关键词]` | 已保存的候选状态与限制 | 离线查询，不触发复测 |
 | `node scripts/verify-pc-web.mjs --live --port PORT` | 本机 Chrome 端口，输出脱敏验收元数据 | 只读白名单；参数、退出码及输出保护见 [网页指南](pc-web-validation.md#参数与输出) |
 
-当前没有返回完整业务对象的通用 PC SDK，也没有公开的 PC 写入 CLI。`src/index.mjs` 导出的 `TiebaApi` 仍使用 App 协议；不能把它的点赞方法当作 PC 方法调用。PC 请求使用浏览器内现有登录态及官方前端封装，Cookie、TBS、jt 和防护令牌不导出。
+当前没有返回完整业务对象的通用 PC SDK，也没有公开的 PC 写入 CLI。`src/index.mjs` 导出的 `TiebaApi` 仍使用 App 协议；不能把它的点赞方法当作 PC 方法调用。当前读取入口使用浏览器内登录态、独立 PC 签名与 fetch，Cookie、TBS、jt 和防护令牌不导出。历史前端封装及 UI 驱动记录单列，新直连结果见 [专题](pc-web-direct-http.md)。
 
 按功能运行查询及读取验收的示例见 [调用示例](pc-web-examples.md)。本页中的参数组合描述实测输入；返回和错误语义统一见下表。
 
@@ -23,55 +23,101 @@
 
 ## PC 已验收请求契约
 
-下表按路径/方法组合列出已完成对象或状态核对的 24 个候选。完整常用功能及待验收项见 [功能表](../README.md#功能)；逐项状态以 [PC CSV](pc-web-api-coverage.csv) 为准。
+下表列出 62 个已取得对象或状态证据的路径/方法组合。招募和预约的写入确已发生，但存在恢复限制，不能将此表理解为 62 个完整业务闭环全部通过。完整常用功能见 [功能表](../README.md#功能)，其他候选及逐项状态见 [PC CSV](pc-web-api-coverage.csv)。
 
-### 读取与用户资料
+### 读取与列表
 
 | 方法 | 路径 | 有效输入与验收边界 |
 | --- | --- | --- |
-| POST | `/c/f/pb/page_pc` | `kz,pn,rn`；精确帖子编号匹配 |
+| POST | `/c/f/forum/gethistoryforum_pc` | `history` 为网页已访问吧列表的 JSON 字符串，使用 FORM_DATA；包含已知访问的测试吧 |
+| POST | `/c/f/frs/frsBottom_pc` | `kw`；返回与请求测试吧对应的底部信息 |
 | POST | `/c/f/frs/page_pc` | `kw,pn,is_newfrs,is_newfeed,rn,rn_need`；吧名匹配 |
-| GET | `/c/u/user/getPrivateInfo_pc` | 本轮空业务参数；本人 UID 匹配 |
-| GET | `/c/u/pc/userCard` | `portrait,forum_id`；受控 portrait 主体匹配，PC tieba_uid 不等同 App UID |
-| GET | `/c/f/pc/forumCard` | `forum_id`；返回同一吧编号 |
+| POST | `/c/f/frs/threadlist_pc` | `forum_id,forum_name,frs_common_info,thread_ids,sort_type`；thread_ids 为有效编号的逗号分隔字符串，返回请求中的帖子 |
 | GET | `/c/f/pb/getmypost_pc` | `last_pid,mark_type=2,kz`；定位本轮新建本人回复 |
 | POST | `/c/f/pb/nestedFloor` | `post_id,thread_id,offset=0`；核对父子关系及删除后列表 |
+| POST | `/c/f/pb/page_pc` | `kz,pn,rn`；精确帖子编号匹配 |
+| GET | `/c/f/pc/forumCard` | `forum_id`；返回同一吧编号 |
+| GET | `/c/f/pc/frsSidebarRight` | `forum_name`；本轮测试吧中返回本人会员 portrait，与已知身份一致 |
+| GET | `/c/f/pc/gameCenterHover` | 空业务参数；封装结果可含 data 层，预约候选变化与相应已预约错误分支关联核对 |
+| GET | `/c/f/pc/homeSidebarLeft` | 空业务参数；recent_forum_list 包含已知访问的测试吧 |
+| GET | `/c/f/pc/iconCard` | `name` 为本账号有效自有徽章名；返回对应徽章信息 |
+| GET | `/c/f/pc/myForumList` | `portrait,pn,rn`；本人关注吧中匹配已知测试吧 |
+| GET | `/c/f/pc/pbSidebarRight` | `tid`；返回 forum_brief.id 与已读取帖所属吧匹配 |
+| GET | `/c/s/pc/sync` | 空业务参数；返回本人 user_id 和 portrait，均已核对 |
+| POST | `/c/u/fans/page_pc` | `portrait,pn,rn`；受控第二账号临时关注后可匹配，移除后不再返回 |
+| POST | `/c/u/feed/atme_pc` | `_client_type=20,pn,rn`；受控第二账号提及事件与测试帖、身份匹配；GET 变体另记 |
+| GET | `/c/u/feed/myThread` | `portrait,pn,rn,type=1/2,un`；主帖与回复分开读取，使用新主帖核对 private 状态；索引有延迟 |
+| POST | `/c/u/feed/replyme_pc` | `_client_type=20,pn,rn`；受控普通回复事件与测试帖、身份匹配；GET 变体另记 |
+| GET | `/c/u/feed/threadStoreList` | `pn,rn`；thread_list 中的收藏目标经帖子页回查 collect_status 匹配 |
+| POST | `/c/u/follow/followList_pc` | `portrait,pn,rn`；实际容器为 follow_list，所列用户经 userCard 交叉核对 |
+| GET | `/c/u/pc/homeSidebarRight` | `portrait`；返回本人原生 id、portrait 与自有徽章信息 |
+| GET | `/c/u/pc/userCard` | `portrait,forum_id`；受控 portrait 主体匹配，PC tieba_uid 不等同 App UID |
+| GET | `/c/u/user/getPrivateInfo_pc` | 本轮空业务参数；本人 UID 匹配 |
+| GET | `/c/u/user/getUserBlackInfo` | `portrait`；显式读取 perm_list.follow/interact，和受控切换、恢复关联核对 |
+| GET | `/mo/q/newmoindex` | 官方封装加入 `need_user=1`；返回直接用户对象，portrait 与本人匹配 |
+| GET | `/mo/q/work/user` | 空业务参数；创作者信息 portrait 与本人匹配 |
 
-### 搜索
+### 搜索与建议
 
 | 方法 | 路径 | 有效输入与验收边界 |
 | --- | --- | --- |
+| GET | `/c/f/recommend/getSugTopic_pc` | `is_video_topic=0,prefix`；先取热门话题，再以已知话题前缀匹配对象 |
 | GET | `/c/s/searchSug_pc` | `word`；精确吧名与编号匹配 |
+| GET | `/c/u/follow/atSearchUserList_pc` | `word,rn=100`；以受控账号显示名检索，返回 portrait 匹配 |
 | GET | `/mo/q/search/forum` | `word,needbrand=1,godrn=3`；精确吧对象匹配 |
+| GET | `/mo/q/search/multsearch` | `word,rn=20,st=1,needbrand=1,sug_type=2,pn=1,come_from=search`；综合结果含目标吧 |
 | GET | `/mo/q/search/thread` | `word,pn=1,rn=20,st=1,come_from=search`；指定帖匹配；另验收 `fname,st=5,tt=1` 的吧内查询 |
 | GET | `/mo/q/search/user` | `word` 为受控账号用户名；返回身份匹配 |
-| GET | `/mo/q/search/multsearch` | `word,rn=20,st=1,needbrand=1,sug_type=2,pn=1,come_from=search`；综合结果含目标吧 |
 
-### 点赞、回复、收藏与用户关系
+### 互动、关注、签到和发帖
 
 | 方法 | 路径 | 有效输入与验收边界 |
 | --- | --- | --- |
+| GET | `/c/c/agree/opAgree_pc` | `thread_id,post_id,op_type,obj_type,forum_id,agree_type,obj_source`；帖子和普通回复分别验证并恢复 |
+| GET | `/c/c/bawu/delpost_pc` | `fid,z,pid,owner_uid=0,word`；仅删除本轮本人回复和楼中楼 |
+| POST | `/c/c/bawu/delthread_pc` | `word,z,fid,delete_my_thread=1`；只删除本轮已确认作者的新主帖 |
+| POST | `/c/c/forum/like_pc` | `kw,fid,st_type,pagefrom,user_name,user_id,has_head`；临时关注后回查 |
+| POST | `/c/c/forum/sign_pc` | `kw,fid,sign_from=frs`，`sample_id` 为空字符串；核对新签到状态 |
+| POST | `/c/c/forum/unfavolike_pc` | `kw,fid`；恢复未关注基线 |
+| POST | `/c/c/post/add_pc` | `tid,fid,kw,name_show,content,quote_id,repostid`；普通回复及楼中楼创建后核对本人作者和内容 |
+| POST | `/c/c/post/addstore_pc` | `data` 为含 `tid,pid,status=1` 的 JSON 数组字符串；未收藏基线 |
+| GET | `/c/c/post/rmstore_pc` | `tid,fid`；仅取消本次新主帖收藏，回读 collect_status 恢复为 0 |
+| POST | `/c/c/post/rmstore_pc` | `fid,tid,uid`，uid 为帖子作者；收藏恢复 |
+| POST | `/c/c/thread/add_pc` | 已独立 HTTP 构造 kw,fid,title,content,is_hide,is_pictxt,ext,post_prefix,jt 等 multipart 字段及 PC 签名、Acs 请求头；取值见直连专题，未提供通用写入 CLI |
 | POST | `/c/c/user/follow_pc` | `portrait`；受控用户关注后回查 |
 | POST | `/c/c/user/unfollow_pc` | `portrait`；取消后恢复关系基线 |
-| GET | `/c/c/agree/opAgree_pc` | `thread_id,post_id,op_type,obj_type,forum_id,agree_type,obj_source`；帖子和普通回复分别验证并恢复 |
-| POST | `/c/c/post/add_pc` | `tid,fid,kw,name_show,content,quote_id,repostid`；普通回复及楼中楼创建后核对本人作者和内容 |
-| GET | `/c/c/bawu/delpost_pc` | `fid,z,pid,owner_uid=0,word`；仅删除本轮本人回复和楼中楼 |
-| POST | `/c/c/post/addstore_pc` | `data` 为含 `tid,pid,status=1` 的 JSON 数组字符串；未收藏基线 |
-| POST | `/c/c/post/rmstore_pc` | `fid,tid,uid`，uid 为帖子作者；收藏恢复，GET 变体未测 |
 
-### 贴吧关注、签到与主帖
+### 资料、隐私与账号设置
 
 | 方法 | 路径 | 有效输入与验收边界 |
 | --- | --- | --- |
-| POST | `/c/c/forum/like_pc` | `kw,fid,st_type,pagefrom,user_name,user_id,has_head`；临时关注后回查 |
-| POST | `/c/c/forum/unfavolike_pc` | `kw,fid`；恢复未关注基线 |
-| POST | `/c/c/forum/sign_pc` | `kw,fid,sign_from=frs`，`sample_id` 为空字符串；核对新签到状态 |
-| POST | `/c/c/thread/add_pc` | 官方编辑器中的目标吧、标题和正文；未导出完整线级表单，也未提供独立发帖 SDK |
-| POST | `/c/c/bawu/delthread_pc` | `word,z,fid,delete_my_thread=1`；只删除本轮已确认作者的唯一新主帖 |
+| POST | `/c/c/friend/setprivate_pc` | `opt=like,val`；本轮使用明确的原隐私枚举值，切换后回读并恢复 |
+| POST | `/c/c/profile/modify_pc` | `sex,nick_name,intro,need_keep_nickname_flag=1`；仅改简介并恢复，保留原昵称和性别 |
+| GET | `/c/c/thread/setPrivacy_pc` | `forum_id,thread_id,post_id,is_hide`；主页展示隐藏/恢复，回查 myThread.list[].private；不代表限制帖子访问 |
+| GET | `/c/c/user/removeFans_pc` | `fans_uid` 为受控粉丝原生 UID；粉丝列表 id 与第二账号核对后移除，双端回读原关系恢复 |
+| POST | `/c/c/user/setUserBlack_pc` | `portrait,perm_list`；perm_list 为 follow/interact 对象的 JSON 字符串，仅切换 interact 后恢复两个原值 |
+| GET | `/c/s/pc/updateSwitch` | `status=0/1,_client_type=20`；旧版与新版页面外壳变化已回读，恢复原新版 |
+| GET | `/mo/q/icon/cancelIconSlot` | `icon_name,slot_no`；摘下当前未过期自有徽章，再读取确认 |
+| GET | `/mo/q/icon/setIcon` | `icon_name,slot_no`；将同一有效徽章恢复原槽，原佩戴集合一致 |
 
-签到、搜索与主帖的具体取值、重复签到分支、正文所在 first_floor 及清理判据见 [专题契约](pc-web-sign-search-publish.md)。
+### 媒体与标题
 
-字段是本轮有效组合，不宣称均为必填或可省略；默认值未验证时不自动补值。写入的取值、执行顺序、回查和清理判据见 [基础功能契约](pc-web-basic-functions.md)。HTTP 200、业务码 0、非空结构、对象匹配和状态恢复是不同证据层级；剩余 300000/210009 等错误的原因边界见 [PC 验收结果](pc-web-validation.md#结构核对空结果与错误)。
+| 方法 | 路径 | 有效输入与验收边界 |
+| --- | --- | --- |
+| POST | `/c/s/uploadPicture_pc` | `resourceId,isFinish,saveOrigin,size,width,height,chunkNo,pic_water_type,chunk` 文件；专用 PNG 返回 picId/picInfo，图片回复回读后清理 |
+| POST | `/c/x/aigc/generateTitle` | `article_content,pipeline=test`；返回 result 中 5 个非空标题；未做质量或全部内容长度边界评测 |
+
+### 提示、预约与招募
+
+| 方法 | 路径 | 有效输入与验收边界 |
+| --- | --- | --- |
+| GET | `/c/c/item/subscribeitempc` | `game_id,item_id=0,item_name,scene=7,subscene=1,type=4`；预约及重复分支核对，测试预约未取消 |
+| POST | `/c/c/item/subscribeitempc` | `game_id` 为字符串、`item_name`；另一个官方对象首次预约及已预约 210018 核对；未发现 PC 取消实现 |
+| GET | `/c/f/pc/communityNotice` | `scene=frs,kw`；真实提示对象与关闭后结果关联验证 |
+| POST | `/c/f/pc/communityNoticeReport` | `notice_type=2,forum_id`；关闭当前实际 DOUBLE_EXP 提示，回读不再返回；不属于举报他人内容 |
+| GET | `/mo/q/recruit/register` | `act_id,op_type,scene=7,subscene=2`，0 报名、1 取消；报名及即时资格已回读，实际取消两次 990000，原状态未恢复 |
+
+字段是本轮有效组合，不宣称均为必填或可省略；默认值未验证时不自动补值。基础交互见 [基础功能](pc-web-basic-functions.md)，签到和主帖见 [专题](pc-web-sign-search-publish.md)，新增写入、业务拒绝与未恢复状态见 [扩展验收](pc-web-complete-acceptance.md)。头像、评分零值、图片列表等错误，以及未形成完整对象证明的配置/推荐/URL 解析结果，都保留在报告与 CSV，不提升为此表中的已验收契约。
 
 ## 历史 App 客户端
 

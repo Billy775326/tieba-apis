@@ -8,9 +8,9 @@ import {
 } from "../src/protobuf.mjs";
 const read = (p) =>
   JSON.parse(fs.readFileSync(p, "utf8").replace(/^\uFEFF/, ""));
+if (!process.argv.includes("--live")) throw Error("Explicit --live required");
 const testForum = process.env.TIEBA_TEST_FORUM?.trim();
 if (!testForum || testForum.length > 256) throw Error("Explicit TIEBA_TEST_FORUM is required");
-if (!process.argv.includes("--live")) throw Error("Explicit --live required");
 const coverage = read("evidence/api-coverage.json"),
   contractFile = read("evidence/protocol-contracts.json"),
   allModels = read(".local/all-protocol-models.json");
@@ -45,6 +45,7 @@ const frs = fields(
   first(fields(fs.readFileSync(".local/frs-page1-response.bin")), 2),
 );
 const forum = fields(first(frs, 2));
+if (first(forum, 2)?.toString("utf8") !== testForum) throw Error("Local forum fixture does not match TIEBA_TEST_FORUM");
 const pb = fields(
   first(fields(fs.readFileSync(".local/pb-page-response.bin")), 2),
 );

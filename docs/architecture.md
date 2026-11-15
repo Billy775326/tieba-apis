@@ -10,8 +10,9 @@ flowchart TD
   CatalogBuilder --> Catalog[evidence/pc-web-api-catalog.json]
   Catalog --> Query[scripts/catalog.mjs --pc-web]
   Verify[scripts/verify-pc-web.mjs] --> RPC[src/pc-web-browser.mjs]
-  RPC --> Chrome[本机 Chrome 中的官方网页模块]
-  Chrome --> Metadata[脱敏状态、摘要与对象断言]
+  RPC --> Chrome[本机 Chrome 登录会话]
+  Chrome --> Direct[src/pc-web-direct.mjs 独立签名与 fetch]
+  Direct --> Metadata[同一响应的摘要与断言]
   Metadata --> Classify[src/pc-web-validation.mjs]
   Classify --> Local[.local 本次只读报告]
   Reviewed[已审核定向实测与公开报告] --> Ledger[evidence/pc-web-validation.json]
@@ -26,11 +27,11 @@ flowchart TD
 | --- | --- |
 | PC 清单构建器 | 检查脚本大小和 SHA-256，提取字面量请求及紧邻 DataType，不执行源码 |
 | 本机 CDP 连接 | 仅连接明确的回环调试端口，选择官方首页/论坛页；有连接及命令时限、最多 16 个待处理命令 |
-| 网页读取入口 | 固定只读白名单，复用官方请求封装；原始响应和登录凭据留在浏览器内 |
+| 网页读取入口 | 固定只读白名单，独立 PC 签名与 fetch；原始响应和凭据留在浏览器，禁用缓存并核对新鲜度 |
 | 结果分级 | 区分缺失/冲突业务状态、业务错误、对象匹配、结构返回和空分支 |
 | 覆盖生成器 | 从已审核公开报告重建 CSV；不发请求、不把静态发现当通过 |
 
-只读入口结束时恢复本次网页观察钩子、关闭 CDP 连接并释放计时器，不关闭 Chrome 或退出账号。详细输入、退出码和输出限制见 [PC 指南](pc-web-validation.md)。点赞、回复和收藏的定向写入流程有独立 [基础功能证据](pc-web-basic-functions.md)，签到、搜索与主帖也有 [独立验收](pc-web-sign-search-publish.md)；这些新增定向流程尚未封装为上述只读入口或通用 SDK。
+只读入口结束时删除本次私有会话对象、关闭 CDP 连接；不再安装 XHR 观察钩子，不关闭 Chrome 或退出账号。详细输入、退出码和输出限制见 [PC 指南](pc-web-validation.md)。点赞、回复和收藏的定向写入流程有独立 [基础功能证据](pc-web-basic-functions.md)，签到、搜索与主帖也有 [独立验收](pc-web-sign-search-publish.md)；资料、隐私、媒体、通知、预约及招募等扩展结果见 [读写与恢复限制](pc-web-complete-acceptance.md)。这些定向流程尚未封装为上述只读入口或通用 SDK。源码清单中的吧务分类表达角色条件，授权状态和实际平台角色分别记录。
 
 ## 历史 App 客户端结构
 
