@@ -103,14 +103,15 @@ flowchart TD
 
 ## 参考来源
 
-参考基线为 [cv-cat/DouYin_Spider 的 d151f9c 提交](https://github.com/cv-cat/DouYin_Spider/tree/d151f9c2980abc304c1ae4918c2272675cd9e4c2)。已阅读其 README、主入口和配置样例，并检查 API 与认证模块的相关片段及目录：
+文档组织和分层参考基线为 [cv-cat/DouYin_Spider 的 d151f9c 提交](https://github.com/cv-cat/DouYin_Spider/tree/d151f9c2980abc304c1ae4918c2272675cd9e4c2)。已阅读其 README、主入口和配置样例，并检查 API 与认证模块的相关片段及目录：
 
 | 参考对象 | 本项目采用的组织方式 |
 | --- | --- |
-| [README](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/README.md) | 先展示能力，再给环境、配置和运行入口，专题细节由文档链接承载 |
+| [README](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/README.md) | 首页按功能、环境、配置、运行和模块说明组织；本项目将细节展开到使用指南、API 和调用示例 |
 | [dy_apis/douyin_api.py](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/dy_apis/douyin_api.py) | 提供可复用 API 类；本项目使用 `TiebaApi` 与独立契约文件 |
 | [builder/auth.py](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/builder/auth.py) | 认证集中在对象中复用；本项目按实际需求读取已有本地登录态 |
 | [main.py](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/main.py) | 运行编排与 API 类分开；本项目采用 Node CLI 与独立示例 |
-| [.env.example](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/.env.example) | 提供可审查的配置入口；本项目使用无第三方依赖的 JSON 配置 |
+| [.env.example](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/.env.example) | 集中说明配置及适用范围；本项目 PC 使用浏览器会话和 CLI 参数，历史 App JSON 配置单列 |
+| [quick_publish.py](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/quick_publish.py) | 按场景说明输入、运行位置和结果；本项目示例采用已有离线查询与只读验收命令，写入能力链接到已验证契约 |
 
-本次按分层职责编写新的 JavaScript 实现，未迁移抖音接口、签名算法或平台返回结论。贴吧字段的依据是本仓库记录的 APK、协议元数据与真实响应，详见 [开发指南](development.md) 和 [客户端验证摘要](../evidence/client-validation.json)。
+本项目的 JavaScript 实现按入口、认证、请求与传输职责分层。PC 字段依据是固定的网页脚本与真实网页响应，历史 App 字段依据是对应 APK 和协议元数据。PC 用法见 [调用示例](pc-web-examples.md)，提取和历史客户端记录详见 [开发指南](development.md) 和 [客户端验证摘要](../evidence/client-validation.json)。

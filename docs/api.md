@@ -12,9 +12,20 @@
 
 当前没有返回完整业务对象的通用 PC SDK，也没有公开的 PC 写入 CLI。`src/index.mjs` 导出的 `TiebaApi` 仍使用 App 协议；不能把它的点赞方法当作 PC 方法调用。PC 请求使用浏览器内现有登录态及官方前端封装，Cookie、TBS、jt 和防护令牌不导出。
 
+按功能运行查询及读取验收的示例见 [调用示例](pc-web-examples.md)。本页中的参数组合描述实测输入；返回和错误语义统一见下表。
+
+| 使用层 | 返回内容 | 失败判断 |
+| --- | --- | --- |
+| 源码查询 | results 中的 path、method、sites | 路径为候选，不给出业务通过承诺 |
+| 离线状态 | best_status、latest_error_code、observations、reason | 是已保存记录，不是本次在线响应 |
+| 网页只读验收 | HTTP/业务码、结构计数、摘要、checks 和 status | HTTP、明确业务状态、对象断言分别核对，失败非零退出 |
+| 定向写入契约 | 有效输入、前置状态、回查和恢复结果 | 见专题证据；没有通用 PC SDK 的返回类型或重试承诺 |
+
 ## PC 已验收请求契约
 
 下表按路径/方法组合列出已完成对象或状态核对的 24 个候选。完整常用功能及待验收项见 [功能表](../README.md#功能)；逐项状态以 [PC CSV](pc-web-api-coverage.csv) 为准。
+
+### 读取与用户资料
 
 | 方法 | 路径 | 有效输入与验收边界 |
 | --- | --- | --- |
@@ -23,20 +34,35 @@
 | GET | `/c/u/user/getPrivateInfo_pc` | 本轮空业务参数；本人 UID 匹配 |
 | GET | `/c/u/pc/userCard` | `portrait,forum_id`；受控 portrait 主体匹配，PC tieba_uid 不等同 App UID |
 | GET | `/c/f/pc/forumCard` | `forum_id`；返回同一吧编号 |
-| POST | `/c/c/user/follow_pc` | `portrait`；受控用户关注后回查 |
-| POST | `/c/c/user/unfollow_pc` | `portrait`；取消后恢复关系基线 |
-| GET | `/c/c/agree/opAgree_pc` | `thread_id,post_id,op_type,obj_type,forum_id,agree_type,obj_source`；帖子和普通回复分别验证并恢复 |
-| POST | `/c/c/post/add_pc` | `tid,fid,kw,name_show,content,quote_id,repostid`；普通回复及楼中楼创建后核对本人作者和内容 |
 | GET | `/c/f/pb/getmypost_pc` | `last_pid,mark_type=2,kz`；定位本轮新建本人回复 |
 | POST | `/c/f/pb/nestedFloor` | `post_id,thread_id,offset=0`；核对父子关系及删除后列表 |
-| GET | `/c/c/bawu/delpost_pc` | `fid,z,pid,owner_uid=0,word`；仅删除本轮本人回复和楼中楼 |
-| POST | `/c/c/post/addstore_pc` | `data` 为含 `tid,pid,status=1` 的 JSON 数组字符串；未收藏基线 |
-| POST | `/c/c/post/rmstore_pc` | `fid,tid,uid`，uid 为帖子作者；收藏恢复，GET 变体未测 |
+
+### 搜索
+
+| 方法 | 路径 | 有效输入与验收边界 |
+| --- | --- | --- |
 | GET | `/c/s/searchSug_pc` | `word`；精确吧名与编号匹配 |
 | GET | `/mo/q/search/forum` | `word,needbrand=1,godrn=3`；精确吧对象匹配 |
 | GET | `/mo/q/search/thread` | `word,pn=1,rn=20,st=1,come_from=search`；指定帖匹配；另验收 `fname,st=5,tt=1` 的吧内查询 |
 | GET | `/mo/q/search/user` | `word` 为受控账号用户名；返回身份匹配 |
 | GET | `/mo/q/search/multsearch` | `word,rn=20,st=1,needbrand=1,sug_type=2,pn=1,come_from=search`；综合结果含目标吧 |
+
+### 点赞、回复、收藏与用户关系
+
+| 方法 | 路径 | 有效输入与验收边界 |
+| --- | --- | --- |
+| POST | `/c/c/user/follow_pc` | `portrait`；受控用户关注后回查 |
+| POST | `/c/c/user/unfollow_pc` | `portrait`；取消后恢复关系基线 |
+| GET | `/c/c/agree/opAgree_pc` | `thread_id,post_id,op_type,obj_type,forum_id,agree_type,obj_source`；帖子和普通回复分别验证并恢复 |
+| POST | `/c/c/post/add_pc` | `tid,fid,kw,name_show,content,quote_id,repostid`；普通回复及楼中楼创建后核对本人作者和内容 |
+| GET | `/c/c/bawu/delpost_pc` | `fid,z,pid,owner_uid=0,word`；仅删除本轮本人回复和楼中楼 |
+| POST | `/c/c/post/addstore_pc` | `data` 为含 `tid,pid,status=1` 的 JSON 数组字符串；未收藏基线 |
+| POST | `/c/c/post/rmstore_pc` | `fid,tid,uid`，uid 为帖子作者；收藏恢复，GET 变体未测 |
+
+### 贴吧关注、签到与主帖
+
+| 方法 | 路径 | 有效输入与验收边界 |
+| --- | --- | --- |
 | POST | `/c/c/forum/like_pc` | `kw,fid,st_type,pagefrom,user_name,user_id,has_head`；临时关注后回查 |
 | POST | `/c/c/forum/unfavolike_pc` | `kw,fid`；恢复未关注基线 |
 | POST | `/c/c/forum/sign_pc` | `kw,fid,sign_from=frs`，`sample_id` 为空字符串；核对新签到状态 |
