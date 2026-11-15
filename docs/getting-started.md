@@ -1,5 +1,7 @@
 ﻿# 使用指南
 
+> 本文描述早期 App 客户端。当前 PC 网页接口及验收入口见 [PC 网页指南](pc-web-validation.md)。
+
 本指南用于当前分支中的 Node.js 客户端、CLI 和已有验证工具。SDK 已封装 10 个读取与 2 个写入方法，CLI 保留 5 组读取命令；其他能力的实测记录与业务封装状态分别见 [API](api.md) 和 [覆盖报告](remaining-validation.md)。
 
 ## 环境与首次运行

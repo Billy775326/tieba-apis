@@ -1,6 +1,8 @@
 ﻿import fs from "node:fs";
 
 const modes = {
+  "--pc-status": ["pc-web-validation.json", "rows"],
+  "--pc-web": ["pc-web-api-catalog.json", "candidates"],
   "--socket": ["app-socket-contracts.json", "contracts"],
   "--surface": ["network-surface.json", "candidates"],
   "--wire": ["wire-messages.json", "messages"],
@@ -19,8 +21,8 @@ if (modes[argument]) {
   const query = (process.argv[3] ?? "").toLowerCase();
   console.log(JSON.stringify({
     artifact: report.artifact,
-    verification: argument === "--socket" ? "Reviewed APK command mappings; live results recorded separately; no network requests" : "Static inventory only; no network requests",
-    summary: report.summary,
+    verification: argument === "--pc-status" ? "Recorded PC web validation; offline output, not a new live test" : argument === "--socket" ? "Reviewed APK command mappings; live results recorded separately; no network requests" : "Static inventory only; no network requests",
+    summary: report.summary ?? report.counts,
     query,
     results: query ? report[key].filter((row) =>
       JSON.stringify(row).toLowerCase().includes(query)) : [],

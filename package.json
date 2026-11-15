@@ -9,7 +9,10 @@
     "catalog": "node scripts/catalog.mjs",
     "status": "node main.mjs status",
     "verify:reads": "node scripts/verify-app-reads.mjs --live",
-    "evidence:build": "node scripts/build-current-coverage.mjs"
+    "evidence:build": "node scripts/build-current-coverage.mjs",
+    "catalog:pc": "node scripts/catalog.mjs --pc-web",
+    "status:pc": "node scripts/catalog.mjs --pc-status",
+    "verify:pc": "node scripts/verify-pc-web.mjs"
   },
   "engines": {
     "node": ">=24"

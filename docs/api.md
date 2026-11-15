@@ -1,5 +1,7 @@
 ﻿# 客户端 API
 
+> 本文描述早期 App 客户端。当前 PC 网页接口及验收入口见 [PC 网页指南](pc-web-validation.md)。
+
 导入入口为 `src/index.mjs`。当前 `TiebaApi` 提供 10 个读取与 2 个写入方法，返回选定的业务字段或写入确认及 HTTP 元数据；完整 APK 候选和历史写入测试见 [覆盖清单](remaining-validation.md)，不属于此客户端已实现的方法列表。
 
 ## 创建客户端
