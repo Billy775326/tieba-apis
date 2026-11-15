@@ -1,5 +1,7 @@
 # 私信与 SDK 群聊接口实测
 
+> 历史 App 研究：本文是 App/SDK IM 协议的历史实测，使用网页登录取得的身份也不使它成为 PC 网页原生私信或群聊接口。当前网页前端只定位到私信 App 引导，未建立 PC 收发入口。当前网页功能见 [README 功能表](../README.md#功能)，参数与验收见 [PC 网页指南](pc-web-validation.md)。
+
 本页记录 2026-11-14 使用两个受控账号完成的普通私信和 SDK 群聊测试。请求构造来自同一份贴吧 Android 22.13.1.1 APK；实际使用官方 IM 服务及 LCP 长连接，没有运行 Android App。网页登录取得的本机 BDUSS 可用于本轮 IM 登录，因而缺少手机或模拟器并未阻止这些流程完成。
 
 完整时间、响应摘要、对象断言和清理结果见 [脱敏实测报告](../evidence/im-validation.json)；APK 方法 Evidence ID、源码文本摘要及字段标签见 [协议来源](../evidence/im-protocol-summary.json)。这些是新增的 SDK REST 路径和 LCP 方法号，未混入原有 603 条 c/*、mo/* 字面量候选的计数。

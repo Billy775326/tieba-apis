@@ -1,5 +1,7 @@
 # 新增接口契约与客户端实测
 
+> 历史 App 研究：本文冻结 App 客户端扩展阶段的 38 次请求与 12 个 SDK 方法。App 点赞和移除粉丝方法不等于 PC 写入 SDK。当前网页功能见 [README 功能表](../README.md#功能)，参数与验收见 [PC 网页指南](pc-web-validation.md)。
+
 本轮基于同一份贴吧 Android 22.13.1.1 APK 继续恢复真实构造逻辑；SDK 方法从 5 个扩展到 12 个，其中包含 10 个读取与 2 个写入。脱敏记录见 [expanded-api-validation.json](../evidence/expanded-api-validation.json)，调用参数见 [客户端 API](api.md)。
 
 ## APK 新恢复的构造语义

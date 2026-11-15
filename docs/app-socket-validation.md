@@ -1,5 +1,7 @@
 # 原生 App Socket 协议与继续验证
 
+> 历史 App 研究：本文是旧 App Socket 的固定阶段报告，63 次业务/媒体请求与 8 次握手保持原统计；Socket 命令不计入 PC 路径/方法覆盖。当前网页功能见 [README 功能表](../README.md#功能)，参数与验收见 [PC 网页指南](pc-web-validation.md)。
+
 本文记录贴吧 Android 22.13.1.1 的旧 App WebSocket 协议恢复，以及 2026-11-14 的继续实测。适合查找命令、字段和验收边界的开发者。**本阶段有 63 次业务/媒体请求、8 次握手探测；10 个 Socket 命令已实际发送，并非全部接口均已功能验收。** 两个账号的黑名单、单个会话提醒设置均恢复原值。
 
 完整脱敏记录见 [continued-discovery-validation.json](../evidence/continued-discovery-validation.json)，字段与传输见 [app-socket-contracts.json](../evidence/app-socket-contracts.json)。这条链路与此前私信、SDK 群聊使用的 [IM TLS/LCP](im-validation.md) 不同；没有为 Socket 命令猜测 HTTP 路径。
@@ -13,7 +15,7 @@
 | 不同 Socket 命令 | 10 | 身份初始化、POI、资料、黑名单、提醒设置及吧数据 |
 | 握手探测 | 8 | 单独计数，不加到业务请求数；包含同主机 TLS 443 失败探测 |
 
-此前阶段的 38 次扩展请求和 3 次深挖读取保持原记录，没有并入本表。当前 HTTP 候选清单为 603 条 / 568 个路径，其中 45 条 / 41 个路径完成对象或状态核对，176 条仅有匿名诊断。Socket 结果独立列出，没有将它们叠加成 HTTP 接口数量。
+此前阶段的 38 次扩展请求和 3 次深挖读取保持原记录，没有并入本表。该 App 阶段汇总的 HTTP 候选清单为 603 条 / 568 个路径，其中 45 条 / 41 个路径完成对象或状态核对，176 条仅有匿名诊断。Socket 结果独立列出，没有将它们叠加成 HTTP 接口数量。
 
 完整索引中的 **32 个 Socket 继承类、24 个不同构造整数候选**均列在 [Socket 类清单](../evidence/app-socket-command-inventory.json)，其中 10 个绑定已审核并收到响应；其余逐项保留对象、请求/接收方向或恢复语义的缺项。构造整数和基类不能直接计作可调用 API。
 

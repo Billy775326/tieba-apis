@@ -81,6 +81,7 @@ node scripts/verify-pc-web.mjs --live --port $pcBrowserPort --thread "$env:TIEBA
 
 | 入口 | 用途 |
 | --- | --- |
+| [全部文档目录](docs/README.md) | 当前 PC 使用、API、架构、开发与历史研究导航 |
 | [基础功能与参数](docs/pc-web-basic-functions.md) | 点赞、回复、楼中楼、删除本人内容和收藏 |
 | [PC 验收指南](docs/pc-web-validation.md) | 参数、当前结果、失败原因、样本和浏览器准备 |
 | [PC 覆盖 CSV](docs/pc-web-api-coverage.csv) | 86 个候选逐项状态 |
@@ -94,6 +95,6 @@ PC 工具位于 `scripts/build-pc-web-catalog.mjs`、`scripts/catalog.mjs`、`sc
 
 ## 历史 App 研究
 
-仓库仍保留 12 个 App `TiebaApi` 方法及独立 IM 查询，接口约定见 [历史客户端 API](docs/api.md)，示例与架构见 [原使用指南](docs/getting-started.md) 和 [架构说明](docs/architecture.md)。这些接口不属于当前 PC 交付入口，不将 APK 模型、Socket 命令或 App 私信成功算作网页通过。
+仓库仍保留 12 个 App `TiebaApi` 方法及独立 IM 查询，接口约定见 [API 文档的历史 App 部分](docs/api.md#历史-app-客户端)，历史示例见 [使用指南](docs/getting-started.md#历史-app-客户端使用)，分层见 [架构说明](docs/architecture.md#历史-app-客户端结构)。这些接口不属于当前 PC 交付入口，不将 APK 模型、Socket 命令或 App 私信成功算作网页通过。
 
 固定 APK 为 Android 22.13.1.1，SHA-256 `06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3`；原网络面和边界见 [APK 清单](docs/network-inventory.md)。项目早期分层参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider/tree/d151f9c2980abc304c1ae4918c2272675cd9e4c2)。当前未设置 LICENSE 文件。

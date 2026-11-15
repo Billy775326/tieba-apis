@@ -1,8 +1,40 @@
 ﻿# 项目架构
 
-> 本文描述早期 App 客户端。当前 PC 网页接口及验收入口见 [PC 网页指南](pc-web-validation.md)。
+项目以 PC 网页源码清单、只读验收和脱敏证据为当前入口，保留早期 App 客户端、APK 与 IM 研究模块。网页业务已实测的能力不自动成为可调用 SDK；两条协议链路不共享可用性结论。
 
-本次将原有“独立验证脚本 + 协议基础模块”整理为可复用读取客户端，同时保留证据与研究工具的独立职责。目标是让使用者可以直接调用已实现的能力，让开发者继续按明确契约扩展接口；历史实测成功不自动变成通用方法。
+## PC 网页工具结构
+
+```mermaid
+flowchart TD
+  Sources[官方 PC 脚本与本机 summary] --> CatalogBuilder[scripts/build-pc-web-catalog.mjs]
+  CatalogBuilder --> Catalog[evidence/pc-web-api-catalog.json]
+  Catalog --> Query[scripts/catalog.mjs --pc-web]
+  Verify[scripts/verify-pc-web.mjs] --> RPC[src/pc-web-browser.mjs]
+  RPC --> Chrome[本机 Chrome 中的官方网页模块]
+  Chrome --> Metadata[脱敏状态、摘要与对象断言]
+  Metadata --> Classify[src/pc-web-validation.mjs]
+  Classify --> Local[.local 本次只读报告]
+  Reviewed[已审核定向实测与公开报告] --> Ledger[evidence/pc-web-validation.json]
+  Ledger --> Status[scripts/catalog.mjs --pc-status]
+  Ledger --> Coverage[scripts/build-pc-web-coverage.mjs]
+  Coverage --> CSV[docs/pc-web-api-coverage.csv]
+```
+
+图为代码与证据流向示意。只读报告先写入本地新文件，审核后才纳入公开汇总；不是每次运行都自动覆盖公开证据。
+
+| 模块 | 职责与边界 |
+| --- | --- |
+| PC 清单构建器 | 检查脚本大小和 SHA-256，提取字面量请求及紧邻 DataType，不执行源码 |
+| 本机 CDP 连接 | 仅连接明确的回环调试端口，选择官方首页/论坛页；有连接及命令时限、最多 16 个待处理命令 |
+| 网页读取入口 | 固定只读白名单，复用官方请求封装；原始响应和登录凭据留在浏览器内 |
+| 结果分级 | 区分缺失/冲突业务状态、业务错误、对象匹配、结构返回和空分支 |
+| 覆盖生成器 | 从已审核公开报告重建 CSV；不发请求、不把静态发现当通过 |
+
+只读入口结束时恢复本次网页观察钩子、关闭 CDP 连接并释放计时器，不关闭 Chrome 或退出账号。详细输入、退出码和输出限制见 [PC 指南](pc-web-validation.md)。点赞、回复和收藏的定向写入流程有独立 [基础功能证据](pc-web-basic-functions.md)，尚未封装为上述入口或通用 SDK。
+
+## 历史 App 客户端结构
+
+早期 App 客户端将“独立验证脚本 + 协议基础模块”整理为可复用客户端，同时保留证据与研究工具的独立职责。目标是让使用者可以直接调用已实现的能力，让开发者继续按明确契约扩展接口；历史实测成功不自动变成通用方法。
 
 ## 分层与依赖
 
@@ -25,7 +57,7 @@ flowchart TD
   Index --> IM[IM protocol and TLS modules]
 ```
 
-图为当前代码依赖示意，不是抓包或运行截图。
+图为保留的 App 客户端代码依赖示意，不是抓包或运行截图。
 
 | 层 | 文件 | 负责什么 |
 | --- | --- | --- |
@@ -65,7 +97,7 @@ flowchart TD
 
 ## 扩展接口
 
-新增业务方法前先确认 APK 来源、输入语义、格式、认证要求和真实响应。按相应模块添加契约与字段，不根据路径前缀判断读写。
+新增 App 业务方法前先确认 APK 来源、输入语义、格式、认证要求和真实响应。PC 扩展则以对应网页脚本和浏览器行为为依据，步骤见 [开发指南](development.md#扩展-pc-网页能力)。按相应模块添加契约与字段，不根据路径前缀判断读写。
 
 读取方法需要覆盖身份或对象不匹配、业务错误、空数据及字段异常；有外部状态影响的业务还需要受控对象、基线、清理和回查。实现、测试及接口文档同步进入任务分支。静态发现、收到 HTTP 返回和业务验收是不同状态，覆盖清单继续分别记录。
 

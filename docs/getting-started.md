@@ -1,8 +1,35 @@
 ﻿# 使用指南
 
-> 本文描述早期 App 客户端。当前 PC 网页接口及验收入口见 [PC 网页指南](pc-web-validation.md)。
+本指南先给出当前 PC 网页接口的最短使用路径；后半部分保留早期 App 客户端的调用说明。环境为 Node.js 24+，在仓库根目录执行，无第三方 npm 运行依赖。
 
-本指南用于当前分支中的 Node.js 客户端、CLI 和已有验证工具。SDK 已封装 10 个读取与 2 个写入方法，CLI 保留 5 组读取命令；其他能力的实测记录与业务封装状态分别见 [API](api.md) 和 [覆盖报告](remaining-validation.md)。
+## PC 离线查询
+
+```powershell
+node --version
+node scripts/catalog.mjs --pc-web
+node scripts/catalog.mjs --pc-status opAgree_pc
+node scripts/verify-pc-web.mjs --help
+```
+
+以上命令不访问贴吧，也不需要账号。静态候选和实测状态分别查询；已验收的点赞、回复、楼中楼、收藏与清理流程见 [基础功能](pc-web-basic-functions.md)，完整能力表见 [README](../README.md#功能)。
+
+## PC 网页读取验收
+
+按 [浏览器准备步骤](pc-web-validation.md#准备浏览器会话) 启动专用 Chrome 并扫码，保持官方 PC 首页或论坛页打开。使用该会话实际调试端口；以下 9222 与指南示例一致：
+
+```powershell
+node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
+```
+
+不要将普通 Chrome 窗口当作已开启调试的会话。已有项目扫码窗口时可从其专用配置目录的 DevToolsActivePort 第一行读取实际端口，无需重复登录。没有 `--live` 只显示帮助；脚本不发布、关注、点赞或删除。
+
+结果默认写入 `.local/` 的新文件，可用 `--output` 指定尚不存在的路径。终端和文件只含状态、结构计数、摘要及断言，不导出 Cookie、TBS 或用户响应正文。HTTP、业务或对象检查失败退出 1，空结果和仅结构核对单列；参数和输出契约见 [网页验收指南](pc-web-validation.md#参数与输出)。
+
+当前 PC 写入是有证据的定向实测，没有通用 PC 写入 SDK 或可复跑的公开写入命令。下列 `main.mjs`、`TiebaApi` 和账号 JSON 示例都属于历史 App 客户端，不应作为 PC 操作入口。
+
+## 历史 App 客户端使用
+
+以下说明用于仓库保留的 App Node.js 客户端、CLI 和已有验证工具。SDK 已封装 10 个读取与 2 个写入方法，CLI 保留 5 组读取命令；其他能力的实测记录与业务封装状态分别见 [API](api.md) 和 [覆盖报告](remaining-validation.md)。
 
 ## 环境与首次运行
 
