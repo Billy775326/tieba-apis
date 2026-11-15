@@ -10,6 +10,7 @@
 | [使用指南](getting-started.md) | 离线查询、浏览器准备与只读验收；后半保留 App 用法 |
 | [API 契约](api.md) | PC 入口和已核对字段；后半保留 App 模块约定 |
 | [基础功能](pc-web-basic-functions.md) | 点赞/取消、普通回复、楼中楼、删除本人内容、收藏/取消的取值与清理 |
+| [签到、搜索与主帖](pc-web-sign-search-publish.md) | 新签到、各类搜索、唯一测试主帖与删除后双入口回查 |
 | [网页验收指南](pc-web-validation.md) | 来源、统计、失败原因、参数、输出和复测条件 |
 | [架构](architecture.md) | PC CDP、网页请求、结果分级和证据流；历史 App 分层 |
 | [开发指南](development.md) | 检查、扩展契约、生成器、脱敏与历史提取工具 |
@@ -22,9 +23,10 @@
 | 文件 | 统计对象与作用 |
 | --- | --- |
 | [源码清单](../evidence/pc-web-api-catalog.json) | 四个固定官方脚本的 URL、大小、SHA-256 和字面量位置；84 路径、86 路径/方法候选 |
-| [累计验收报告](../evidence/pc-web-validation.json) | 96 条业务调用；另列 2 次身份读取与额外运行时 GET 变体 |
-| [基础功能报告](../evidence/pc-web-basic-functions-validation.json) | 上述累计记录中的 26 次操作，不额外加到 96 上 |
-| [PC 覆盖 CSV](pc-web-api-coverage.csv) | 86 个候选的状态及原因；32 个已请求、14 个对象/状态核对，余者分别列示 |
+| [累计验收报告](../evidence/pc-web-validation.json) | 141 条业务调用；公开验收与本轮准备各 2 次身份读取，额外运行时 GET 变体单列 |
+| [基础功能报告](../evidence/pc-web-basic-functions-validation.json) | 上述累计记录中的 26 次操作，不额外加到 141 上 |
+| [签到/搜索/主帖证据](../evidence/pc-web-sign-search-publish-validation.json) | 累计中的 45 条业务响应及另列 3 次本地尝试；初始问题与修正保留 |
+| [PC 覆盖 CSV](pc-web-api-coverage.csv) | 86 个候选的状态及原因；42 个已请求、24 个对象/状态核对，余者分别列示 |
 
 源码候选不等于业务方法数量；同一路径可有多个方法或多个功能。HTTP 返回、明确业务码、非空结构、对象核对、状态恢复与清理分别判断。当前公开 PC 入口只执行读取，定向写入实测不代表已有通用 PC 写入 SDK。PC 私信和群聊尚未建立原生收发入口，不能用历史 IM 结果补齐。
 

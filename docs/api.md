@@ -14,7 +14,7 @@
 
 ## PC 已验收请求契约
 
-下表按路径/方法组合列出已完成对象或状态核对的 14 个候选。完整常用功能及待验收项见 [功能表](../README.md#功能)；逐项状态以 [PC CSV](pc-web-api-coverage.csv) 为准。
+下表按路径/方法组合列出已完成对象或状态核对的 24 个候选。完整常用功能及待验收项见 [功能表](../README.md#功能)；逐项状态以 [PC CSV](pc-web-api-coverage.csv) 为准。
 
 | 方法 | 路径 | 有效输入与验收边界 |
 | --- | --- | --- |
@@ -32,6 +32,18 @@
 | GET | `/c/c/bawu/delpost_pc` | `fid,z,pid,owner_uid=0,word`；仅删除本轮本人回复和楼中楼 |
 | POST | `/c/c/post/addstore_pc` | `data` 为含 `tid,pid,status=1` 的 JSON 数组字符串；未收藏基线 |
 | POST | `/c/c/post/rmstore_pc` | `fid,tid,uid`，uid 为帖子作者；收藏恢复，GET 变体未测 |
+| GET | `/c/s/searchSug_pc` | `word`；精确吧名与编号匹配 |
+| GET | `/mo/q/search/forum` | `word,needbrand=1,godrn=3`；精确吧对象匹配 |
+| GET | `/mo/q/search/thread` | `word,pn=1,rn=20,st=1,come_from=search`；指定帖匹配；另验收 `fname,st=5,tt=1` 的吧内查询 |
+| GET | `/mo/q/search/user` | `word` 为受控账号用户名；返回身份匹配 |
+| GET | `/mo/q/search/multsearch` | `word,rn=20,st=1,needbrand=1,sug_type=2,pn=1,come_from=search`；综合结果含目标吧 |
+| POST | `/c/c/forum/like_pc` | `kw,fid,st_type,pagefrom,user_name,user_id,has_head`；临时关注后回查 |
+| POST | `/c/c/forum/unfavolike_pc` | `kw,fid`；恢复未关注基线 |
+| POST | `/c/c/forum/sign_pc` | `kw,fid,sign_from=frs`，`sample_id` 为空字符串；核对新签到状态 |
+| POST | `/c/c/thread/add_pc` | 官方编辑器中的目标吧、标题和正文；未导出完整线级表单，也未提供独立发帖 SDK |
+| POST | `/c/c/bawu/delthread_pc` | `word,z,fid,delete_my_thread=1`；只删除本轮已确认作者的唯一新主帖 |
+
+签到、搜索与主帖的具体取值、重复签到分支、正文所在 first_floor 及清理判据见 [专题契约](pc-web-sign-search-publish.md)。
 
 字段是本轮有效组合，不宣称均为必填或可省略；默认值未验证时不自动补值。写入的取值、执行顺序、回查和清理判据见 [基础功能契约](pc-web-basic-functions.md)。HTTP 200、业务码 0、非空结构、对象匹配和状态恢复是不同证据层级；剩余 300000/210009 等错误的原因边界见 [PC 验收结果](pc-web-validation.md#结构核对空结果与错误)。
 

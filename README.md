@@ -20,10 +20,10 @@
 | 删除本人回复、楼中楼 | `/c/c/bawu/delpost_pc` | 已验证，仅删除本次创建的本人内容 |
 | 收藏、取消收藏 | `/c/c/post/addstore_pc`、POST `rmstore_pc` | 已观察变化并恢复未收藏基线；GET 变体未测试 |
 | 关注用户、取消关注 | `/c/c/user/follow_pc`、`unfollow_pc` | 两账号已验证变化并恢复 |
-| 关注贴吧、取消关注贴吧 | `/c/c/forum/like_pc`、`unfavolike_pc` | 源码已定位，PC 业务待验收 |
-| 发表主帖、删除本人主帖 | `/c/c/thread/add_pc`、`/c/c/bawu/delthread_pc` | PC 待验收，早期 App 测试不计入 |
-| 搜索建议、帖子/吧/用户搜索 | `/c/s/searchSug_pc`、`/mo/q/search/*` | 源码已定位，参数和业务待验收 |
-| 签到 | `/c/c/forum/sign_pc` | PC 待验收 |
+| 关注贴吧、取消关注贴吧 | POST `/c/c/forum/like_pc`、`unfavolike_pc` | 已验证临时关注、回查并恢复；GET 变体未测 |
+| 发表主帖、删除本人主帖 | `/c/c/thread/add_pc`、`/c/c/bawu/delthread_pc` | 官方编辑器创建一条主帖，核对作者、标题与首楼正文后删除；详情与首楼定位均回到 4 |
+| 搜索建议、帖子/吧/用户及综合搜索 | `/c/s/searchSug_pc`、`/mo/q/search/*` | 已核对精确吧、指定帖子、吧内搜索与受控用户；未覆盖全部排序和分页 |
+| 签到 | `/c/c/forum/sign_pc` | 已核对未签到 → 已签到及重复签到分支；临时关注已恢复，签到日记录保留 |
 | 用户卡片、吧卡片 | `/c/u/pc/userCard`、`/c/f/pc/forumCard` | 已核对请求对象 |
 | 关注、粉丝、点赞与收藏列表 | followList_pc、fans/page_pc、userAgree_pc、threadStoreList | 已做结构核对；本人主帖列表 myThread 仍有 210009 |
 | 获赞、提及和回复通知 | agreeme_pc、atme_pc、replyme_pc | 非空结构已核对，未验证完整新通知送达 |
@@ -40,9 +40,9 @@
 | --- | --- |
 | 前端源码 | 当前页面加载的 4 个官方脚本，记录 URL、大小、SHA-256 和引用位置 |
 | 静态请求候选 | 84 个路径、86 个路径/方法组合；不是全部已可用接口 |
-| PC 累计实测 | 96 条业务调用记录（原 70 条加本次 26 条）；公开验收入口另有 2 次身份读取，页面资源与后台令牌请求不计入 |
-| 已请求候选 | 32 个路径/方法组合，其中 14 个完成对象或状态核对 |
-| 其他结果 | 13 个仅结构核对、2 个空结果、3 个业务错误；54 个尚未验证，包含 6 个按原要求排除的吧务候选 |
+| PC 累计实测 | 141 条业务调用记录（70 条初始记录、26 条基础功能、45 条签到/搜索/主帖验收）；公开验收入口另有 2 次身份读取，本次验收准备另有 2 次，页面资源与后台令牌请求不计入 |
+| 已请求候选 | 42 个路径/方法组合，其中 24 个完成对象或状态核对 |
+| 其他结果 | 13 个仅结构核对、2 个空结果、3 个业务错误；44 个尚未验证，包含 6 个按原要求排除的吧务候选 |
 | 可复跑入口 | 连接已登录的本机 Chrome，只验证网页读取接口 |
 
 帖子详情 `page_pc` 使用 `kz`，已核对指定帖子；论坛页、本人隐私、用户卡片和吧卡片完成对象核对。PC `follow_pc / unfollow_pc` 已完成关注、回查、取消关注与恢复原关系。通知与本人列表等读取仍按实际样本区分结构核对和完整业务验收。
@@ -83,10 +83,11 @@ node scripts/verify-pc-web.mjs --live --port $pcBrowserPort --thread "$env:TIEBA
 | --- | --- |
 | [全部文档目录](docs/README.md) | 当前 PC 使用、API、架构、开发与历史研究导航 |
 | [基础功能与参数](docs/pc-web-basic-functions.md) | 点赞、回复、楼中楼、删除本人内容和收藏 |
+| [签到、搜索与发主帖](docs/pc-web-sign-search-publish.md) | 三项业务的参数、状态、主帖清理与失败边界 |
 | [PC 验收指南](docs/pc-web-validation.md) | 参数、当前结果、失败原因、样本和浏览器准备 |
 | [PC 覆盖 CSV](docs/pc-web-api-coverage.csv) | 86 个候选逐项状态 |
 | [PC 源码清单](evidence/pc-web-api-catalog.json) | 当前官方脚本、请求方法和源码位置 |
-| [PC 脱敏记录](evidence/pc-web-validation.json) | 累计 96 条调用、受控状态恢复和最初验证器问题 |
+| [PC 脱敏记录](evidence/pc-web-validation.json) | 累计 141 条调用、受控状态恢复和最初验证器问题 |
 | [资源说明](docs/acceptance.md) | 当前需要哪些资源及历史基础验收 |
 | [开发指南](docs/development.md) | 环境、检查与历史提取流程 |
 | [CHANGELOG](CHANGELOG.md) | 待发布变化 |
