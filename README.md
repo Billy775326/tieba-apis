@@ -1,8 +1,8 @@
 # Tieba APIs
 
-百度贴吧 **PC 网页接口**的提取、查询与验收项目，使用 Node.js 24+。当前按官方 PC 前端脚本和真实网页会话核对接口，不需要安卓手机；网页登录态由浏览器管理，不导出 Cookie。
+百度贴吧 PC 网页接口研究与验收工具，面向需要查询接口、核对请求参数或继续开发贴吧集成的使用者。已实测帖子读取、搜索、点赞、回复、收藏、关注、签到及发主帖；可运行的公开入口目前提供离线查询和网页只读验收，写入能力以定向实测与契约文档交付。
 
-早期 Android APK、App Socket 和 IM SDK 研究保留为历史材料，不计入 PC 网页接口的可用数量。
+[快速开始](#快速开始) · [功能列表](#功能) · [接口文档](docs/api.md) · [调用示例](docs/pc-web-examples.md) · [全部文档](docs/README.md) · [更新日志](CHANGELOG.md)
 
 ## 功能
 
@@ -34,6 +34,90 @@
 
 点赞、回复、楼中楼、删除和收藏的参数及判据见 [PC 基础功能](docs/pc-web-basic-functions.md)。
 
+## 快速开始
+
+### 运行环境
+
+| 环境 | 要求 |
+| --- | --- |
+| Node.js | 24+，原生 ESM，无第三方 npm 运行依赖 |
+| Chrome | 只在联网验收时需要；使用专用配置目录和已扫码会话 |
+| 示例终端 | Windows PowerShell；npm 命令写作 npm.cmd |
+
+### 获取项目
+
+当前 PC 工具位于任务分支；首次获取时明确指定该分支：
+
+```powershell
+git clone --branch feat/expand-reversed-api-contracts https://github.com/Billy775326/tieba-apis.git
+cd tieba-apis
+node --version
+```
+
+已有工作区直接在仓库根目录执行后续命令，不需要为更新文档重新克隆。安装 Node.js 后即可运行下列工具，无需额外 npm install；APK、JDK 和安卓环境只涉及历史研究。
+
+### 配置网页登录态
+
+PC 入口通过本机 Chrome 复用网页登录态。按 [浏览器准备步骤](docs/pc-web-validation.md#准备浏览器会话) 打开专用窗口并扫码，保持官方首页或论坛页打开。
+
+| 配置项 | 本文示例 | 说明 |
+| --- | --- | --- |
+| 调试端口 | 9222 | 实际 Chrome 端口，通过 --port 传入 |
+| 浏览器配置目录 | .local/pc-web-browser | 启动 Chrome 时指定，保留扫码会话 |
+| 帖子目标 | 11185790604 | --thread 接受编号或官方帖子 URL |
+| 测试吧 | 雷神加速 | --forum 可选；与指定帖子是独立读取目标 |
+| 验收输出 | .local 下的新文件 | 默认自动生成唯一文件名；--output 可指定新路径 |
+
+PC 工具不读取 .env、config.example.json 或账号 JSON。Cookie、TBS 和防护令牌由网页管理，不需要粘贴到配置；旧 App 配置的适用范围见 [使用指南](docs/getting-started.md#配置文件)。
+
+## 离线查询
+
+```powershell
+node scripts/catalog.mjs --pc-web search
+node scripts/catalog.mjs --pc-status sign_pc
+node scripts/verify-pc-web.mjs --help
+```
+
+--pc-web 查源码请求声明，--pc-status 查保存的验收状态；不带关键词时只显示摘要，均不联网。按功能查找点赞、回复、搜索、签到和发帖的示例见 [调用示例](docs/pc-web-examples.md)。
+
+## 复跑网页读取验收
+
+Chrome 已按上面的示例在 9222 端口登录后：
+
+```powershell
+node scripts/verify-pc-web.mjs --live --port 9222 --thread 11185790604 --forum 雷神加速
+```
+
+等价 npm 入口为 `npm.cmd run verify:pc -- --live --port 9222 --thread 11185790604 --forum 雷神加速`。省略 --live 时只显示帮助；入口检查帖子/吧、本人信息、通知及配置等固定读取项。它不会执行功能表里的点赞、签到或发帖操作。
+
+终端显示每项状态及最终输出文件；文件只含 HTTP/业务码、结构计数、摘要和对象断言，完整字段与退出码见 [使用指南](docs/getting-started.md#查看运行结果)。凭据和用户响应正文留在浏览器。结果默认使用新文件，已有输出不会被覆盖。
+
+## 项目目录
+
+```text
+tieba-apis/
+├─ scripts/
+│  ├─ catalog.mjs                  # 源码清单与验收状态查询
+│  ├─ verify-pc-web.mjs            # 网页只读验收入口
+│  ├─ build-pc-web-catalog.mjs     # 从固定脚本提取请求清单
+│  └─ build-pc-web-coverage.mjs    # 从公开报告生成覆盖 CSV
+├─ src/pc-web-browser.mjs         # 本机 CDP 连接
+├─ src/pc-web-validation.mjs      # 结果分级
+├─ evidence/                     # 脱敏来源与验收证据
+├─ docs/                         # 使用、接口、示例、开发和历史报告
+├─ tests/                        # 离线测试
+├─ .local/                       # 忽略的浏览器配置、原始数据和临时输出
+└─ main.mjs                      # 保留的历史 App CLI
+```
+
+按入口、认证、请求和结果职责说明的完整结构见 [架构文档](docs/architecture.md)。
+
+## 常见问题
+
+- **为什么接口已验收，却没有对应发布命令？** 功能验收和通用封装分别记录。当前公开工具只读，写入的有效组合及回查流程见 [基础交互](docs/pc-web-basic-functions.md) 和 [签到、搜索与主帖](docs/pc-web-sign-search-publish.md)。
+- **可以直接用 TiebaApi 操作 PC 接口吗？** 该类属于保留的 App 协议客户端，具体方法见 [历史 App API](docs/api.md#历史-app-客户端)。PC 入口和配置单独维护。
+- **读取返回 HTTP 200 就算成功吗？** 仍需明确业务码和目标断言；仅结构匹配、空结果及业务错误会单独标记，见 [结果说明](docs/pc-web-validation.md#结构核对空结果与错误)。
+
 ## 当前 PC 范围
 
 | 项目 | 当前记录 |
@@ -49,38 +133,11 @@
 
 逐项结果见 [PC 接口覆盖 CSV](docs/pc-web-api-coverage.csv)、[验收说明](docs/pc-web-validation.md) 和 [脱敏证据](evidence/pc-web-validation.json)。
 
-## 离线查询
-
-在仓库根目录执行，无需第三方 npm 依赖、浏览器或账号：
-
-```powershell
-node scripts/catalog.mjs --pc-web
-node scripts/catalog.mjs --pc-web page_pc
-node scripts/catalog.mjs --pc-status follow_pc
-npm.cmd test
-```
-
-也可使用 `npm.cmd run catalog:pc`、`npm.cmd run status:pc` 和 `npm.cmd run verify:pc -- --help`。
-
-`--pc-web` 查看源码声明，`--pc-status` 查看已保存验收结果；不带关键词时只显示摘要，不联网。
-
-## 复跑网页读取验收
-
-使用已扫码登录的专用 Chrome 调试会话，并保留官方 PC 首页或论坛页。已有本项目扫码窗口时：
-
-```powershell
-$pcBrowserPort = Get-Content .local/login-browser/DevToolsActivePort -First 1
-node scripts/verify-pc-web.mjs --live --port $pcBrowserPort --thread 11185790604 --forum 雷神加速
-```
-
-没有现成会话时，按 [网页验收指南](docs/pc-web-validation.md#准备浏览器会话) 启动专用 Chrome 并扫码。脚本默认只显示帮助，必须显式提供 `--live` 与本机调试端口才请求服务；只读白名单包含帖子/吧详情、本人列表、通知和配置，不发帖、不关注、不删除。
-
-结果默认写入 `.local/` 的唯一新文件，已有文件不会被覆盖。输出仅含状态、字段名、列表长度、摘要和断言，Cookie、TBS、防护令牌及用户响应正文不离开浏览器。
-
 ## 文档与代码
 
 | 入口 | 用途 |
 | --- | --- |
+| [常见调用示例](docs/pc-web-examples.md) | 按功能定位接口、查询状态、读取报告和运行只读验收 |
 | [全部文档目录](docs/README.md) | 当前 PC 使用、API、架构、开发与历史研究导航 |
 | [基础功能与参数](docs/pc-web-basic-functions.md) | 点赞、回复、楼中楼、删除本人内容和收藏 |
 | [签到、搜索与发主帖](docs/pc-web-sign-search-publish.md) | 三项业务的参数、状态、主帖清理与失败边界 |
@@ -98,4 +155,8 @@ PC 工具位于 `scripts/build-pc-web-catalog.mjs`、`scripts/catalog.mjs`、`sc
 
 仓库仍保留 12 个 App `TiebaApi` 方法及独立 IM 查询，接口约定见 [API 文档的历史 App 部分](docs/api.md#历史-app-客户端)，历史示例见 [使用指南](docs/getting-started.md#历史-app-客户端使用)，分层见 [架构说明](docs/architecture.md#历史-app-客户端结构)。这些接口不属于当前 PC 交付入口，不将 APK 模型、Socket 命令或 App 私信成功算作网页通过。
 
-固定 APK 为 Android 22.13.1.1，SHA-256 `06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3`；原网络面和边界见 [APK 清单](docs/network-inventory.md)。项目早期分层参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider/tree/d151f9c2980abc304c1ae4918c2272675cd9e4c2)。当前未设置 LICENSE 文件。
+固定 APK 为 Android 22.13.1.1，SHA-256 `06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3`；原网络面和边界见 [APK 清单](docs/network-inventory.md)。当前未设置 LICENSE 文件。
+
+## 文档参考
+
+文档组织参考 [cv-cat/DouYin_Spider 的 README](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/README.md)：按功能、环境、配置、运行入口和模块职责引导使用，再通过接口与示例文档展开。采用本项目真实的 Node.js、浏览器会话和验收边界，参考版本与对应关系见 [架构文档](docs/architecture.md#参考来源)。

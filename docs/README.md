@@ -2,12 +2,15 @@
 
 当前交付范围是贴吧 PC 网页接口的提取、查询、定向业务验收与只读验证工具。先按下面的 PC 文档使用；历史 App、APK、IM 和 Socket 材料独立归档，路径保留，不把其成功记录算作网页支持。
 
+文档按 [cv-cat/DouYin_Spider README](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/README.md) 的功能、配置和运行入口组织。首次使用从使用指南进入，已有具体操作目标时查调用示例，再阅读对应接口与证据。
+
 ## PC 使用与开发
 
 | 文档 | 内容 |
 | --- | --- |
 | [项目 README](../README.md) | 完整常用功能表、状态、范围与最短命令 |
 | [使用指南](getting-started.md) | 离线查询、浏览器准备与只读验收；后半保留 App 用法 |
+| [调用示例](pc-web-examples.md) | 按场景查询接口、执行网页读取、读取公开记录并判断结果 |
 | [API 契约](api.md) | PC 入口和已核对字段；后半保留 App 模块约定 |
 | [基础功能](pc-web-basic-functions.md) | 点赞/取消、普通回复、楼中楼、删除本人内容、收藏/取消的取值与清理 |
 | [签到、搜索与主帖](pc-web-sign-search-publish.md) | 新签到、各类搜索、唯一测试主帖与删除后双入口回查 |
