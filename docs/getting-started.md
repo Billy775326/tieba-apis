@@ -11,7 +11,7 @@ node scripts/catalog.mjs --pc-status opAgree_pc
 node scripts/verify-pc-web.mjs --help
 ```
 
-以上命令不访问贴吧，也不需要账号。静态候选和实测状态分别查询；已验收的点赞、回复、楼中楼、收藏与清理流程见 [基础功能](pc-web-basic-functions.md)，完整能力表见 [README](../README.md#功能)。
+以上命令不访问贴吧，也不需要账号。静态候选和实测状态分别查询；已验收的点赞、回复、楼中楼、收藏与清理流程见 [基础功能](pc-web-basic-functions.md)，签到、搜索与发主帖的定向验收见 [专题说明](pc-web-sign-search-publish.md)，完整能力表见 [README](../README.md#功能)。
 
 ## PC 网页读取验收
 
