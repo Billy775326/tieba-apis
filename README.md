@@ -46,10 +46,10 @@
 
 ### 获取项目
 
-当前 PC 工具位于任务分支；首次获取时明确指定该分支：
+从仓库默认分支获取项目：
 
 ```powershell
-git clone --branch feat/expand-reversed-api-contracts https://github.com/Billy775326/tieba-apis.git
+git clone https://github.com/Billy775326/tieba-apis.git
 cd tieba-apis
 node --version
 ```
