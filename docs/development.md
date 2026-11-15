@@ -1,25 +1,49 @@
 ﻿# 开发与验证指南
 
-当前 PC 网页工具使用 Node.js 24+，不依赖 APK 或安卓设备。入口与复现条件见 [PC 网页指南](pc-web-validation.md)；node scripts/build-pc-web-coverage.mjs 仅从公开报告重建网页 CSV。下方 APK/JDK 流程作为历史研究保留。
+当前 PC 网页工具使用 Node.js 24+ 与原生 ESM，无第三方运行依赖，不依赖 APK、JDK 或安卓设备。浏览器仅用于显式线上验收；新克隆可离线查询清单、运行测试和重建公开覆盖 CSV。下方 App/APK 流程作为历史研究保留。
 
-当前主线代码使用 Node.js 24+ 与原生 ESM，无第三方运行依赖。普通客户端、离线测试不需要 JDK、APK 或浏览器；只有静态 APK 分析需要额外工具。
+用途、功能状态和文档导航见 [README](../README.md) 及 [文档目录](README.md)。这里只记录开发命令与证据维护方式。
 
 ## 代码入口与检查
 
 在仓库根目录执行：
 
 ```powershell
-npm test
-node main.mjs --help
-node main.mjs status
-node scripts/catalog.mjs pb/floor
+npm.cmd test
+node scripts/catalog.mjs --pc-web
+node scripts/catalog.mjs --pc-status
+node scripts/verify-pc-web.mjs --help
+node scripts/build-pc-web-coverage.mjs
 ```
 
 测试包括请求和响应解析、业务码分级、64 位编号、认证投影、CLI 覆盖保护，以及基于本地临时 HTTP 服务的超时、大小上限和取消行为。测试不访问真实贴吧。当前没有额外配置的 linter、打包构建或自动发布流水线。
 
 新功能在独立任务分支实现，保持旧脚本兼容。提交前核对差异、敏感信息与相关测试，英文提交采用 `type(scope): description`。普通推送不提升版本、不创建标签；正式发版另行确认，详见根目录 [AGENTS.md](../AGENTS.md)。
 
+## 扩展 PC 网页能力
+
+1. 固定实际页面加载的官方脚本 URL、字节大小、SHA-256 和源码位置，恢复方法、参数、读写含义与调用条件。不能只看路径名或 HTTP 方法。
+2. 在现有浏览器会话中调用官方封装；凭据和响应正文留在浏览器，只收集必要摘要、字段名及断言。不能用 App 同名接口结果补齐 PC 状态。
+3. 读取核对目标、分页和边界；写入先登记明确基线与受控对象，核对新编号、本人作者和唯一内容，按依赖顺序清理并回查。不自动重试创建操作。
+4. 先将新记录保存在忽略目录，脱敏审核后再纳入公开报告；失败参数、空分支和本机调试问题分别记录。没有事实依据时不写成会员、风控或设备限制。
+5. 同步基础功能文档、网页报告行状态、覆盖 CSV 与 README 功能表。修改发现/验收逻辑时运行离线回归；文档修改按风险核对链接、编码和生成结果。
+
+只读白名单的扩大需要审查请求语义。当前没有 PC 通用写入 SDK，不能为补文档而把定向操作描述成公开可调用方法。具体请求契约见 [PC API](api.md#pc-已验收请求契约) 和 [基础功能](pc-web-basic-functions.md)。
+
+## PC 证据与生成文件
+
+| 输入 | 生成命令 | 输出与前提 |
+| --- | --- | --- |
+| 本机固定脚本及 summary.json | `node scripts/build-pc-web-catalog.mjs .local/pc-web-sources evidence/pc-web-api-catalog.json` | PC 静态清单；需对应脚本及哈希，不联网 |
+| 已审核 PC 公开报告 | `node scripts/build-pc-web-coverage.mjs` | PC 覆盖 CSV；新克隆可直接重建 |
+| 已提交 App 脱敏报告 | `node scripts/build-current-coverage.mjs` | 历史 App 汇总 JSON、CSV 及 remaining-validation.md；不纳入 PC 计数 |
+| 首批 App 模型证据 | `node scripts/document-models.mjs` | request-fields.md；不是 PC 字段表 |
+
+不要手改生成文件后遗漏生成器。重建时核对未预期差异和字节一致性；没有新观察时不要刷新历史计数或把历史实测写成本次复测。PC 私信/群聊尚未建立原生收发入口，不为它们要求 Android 资源。
+
 ## 实现新的读取方法
+
+本节与下列 App 读取命令适用于历史 `TiebaApi`，不用于 PC 网页请求。
 
 1. 从 APK 或已有契约确认地址、命令、字段类型与认证条件。
 2. 在 `src/api/read-contracts.mjs` 增加明确的请求常量与选定响应字段；编号使用字符串返回。
@@ -53,7 +77,7 @@ node scripts/build-current-coverage.mjs
 
 ## 全 APK 清单与 IM 身份读取
 
-完整网络面扫描、请求继承与全部消息字段的复现步骤见 [APK 接口清单](network-inventory.md)。新增扫描工具需要 Python 3.11+（仅标准库）；默认 npm test 仍只需要 Node.js，Python 的 ZIP/CRC 测试通过 `python -m unittest discover -s tests -p test_apk_strings.py` 单独运行。归档原始字符串与完整方法字符串索引只写入 `.local/`。
+完整网络面扫描、请求继承与全部消息字段的复现步骤见 [APK 接口清单](network-inventory.md)。新增扫描工具需要 Python 3.11+（仅标准库）；默认 npm.cmd test 仍只需要 Node.js，Python 的 ZIP/CRC 测试通过 `python -m unittest discover -s tests -p test_apk_strings.py` 单独运行。归档原始字符串与完整方法字符串索引只写入 `.local/`。
 
 `getImUserIdentities` 复用有界 HTTP 传输，但明确指定 `pim-identity-cookie` 策略；只有已标记 authenticated、无查询/片段/URL 凭据的固定 `https://pim.baidu.com/rest/3.0/im/get_user_info` 才允许 Cookie，其他地址和默认策略继续拒绝认证头。重定向不跟随，取消、大小和超时规则与现有 HTTP 一致。
 

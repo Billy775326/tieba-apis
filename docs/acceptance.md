@@ -14,6 +14,6 @@
 
 此前针对提交 `170ced2` 及生成文件 LF 修复，从不含 .local、APK、账号和 Git 目录的独立源码快照运行：91 项 Node 测试、4 项 Python 测试、独立 Java 向量、6 种离线查询和 CLI 检查通过；5 个公开生成产物重建一致。原始验收记录见 [acceptance-validation.json](../evidence/acceptance-validation.json)，其中 Android 资源待提供的描述属于变更范围前的历史状态，现已取消。
 
-该次 11 次只读复测针对早期 App HTTP SDK 和 IM 身份查询，不计入当前 PC 接口数量。写入未在那一轮重复执行；本次 PC 关注恢复有独立网页记录。
+该次 11 次只读复测针对早期 App HTTP SDK 和 IM 身份查询，不计入当前 PC 接口数量。写入未在那一轮重复执行；后续 PC 用户关注、点赞和收藏恢复、本人回复及楼中楼清理均有独立网页记录，见 [基础功能](pc-web-basic-functions.md)。
 
 首次快照字节不一致来自 core.autocrlf=true 的 CRLF 转换，数据内容一致；固定生成文件 LF 后通过。修复不改变账号、配置或接口行为。

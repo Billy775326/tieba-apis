@@ -62,6 +62,10 @@
 
 `POST /c/c/post/rmstore_pc` 对应 `core:1302.d`，本轮传 `fid`、`tid` 和帖子作者 `uid`。取消后回查 collect_status 恢复原值。GET 版本的 rmstore_pc 虽也有源码声明，本轮没有调用；其他收藏状态枚举和覆盖已有收藏定位信息的行为也没有据此判为通过。
 
+## 文档与复测入口
+
+本页描述有效业务组合；现有只读入口、错误分级与输出约定见 [PC 验收指南](pc-web-validation.md)。首次使用见 [使用指南](getting-started.md)，PC 与历史 App 的模块边界见 [架构](architecture.md)，全部常用功能状态见 [README 功能表](../README.md#功能)。
+
 ## 本轮边界
 
 - 点赞、普通回复点赞和收藏均已恢复原状态；两个测试内容均按上述 PC 回读范围完成清理。

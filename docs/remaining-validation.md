@@ -1,6 +1,8 @@
 # 当前验证范围与未完成原因
 
-本页合并全部已保存观测，覆盖 **603 条静态候选、568 个不同路径**。45 条候选已有对象或状态变化核对；其余候选不能一概当作失败。已有 HTTP 返回、尚未发出请求、按用户要求不再测的项目分别列出，状态登记不等于实测完成。
+> 历史 App 覆盖汇总：本页只合并固定 APK 范围内的已保存 App 观测，不包含 PC 网页验收。当前网页功能见 [README 功能表](../README.md#功能)，网页结果与限制见 [PC 指南](pc-web-validation.md) 和 [PC CSV](pc-web-api-coverage.csv)。
+
+本页合并该 App 范围的已保存观测，覆盖 **603 条静态候选、568 个不同路径**。45 条候选已有对象或状态变化核对；其余候选不能一概当作失败。已有 HTTP 返回、尚未发出请求、按用户要求不再测的项目分别列出，状态登记不等于实测完成。
 
 逐项结果见 [CSV](current-api-coverage.csv) 和 [JSON](../evidence/current-api-coverage.json)。CSV 同时列出 execution_status、disposition、历史最强证据及最新限制；未执行项目明确保留 not-requested。
 

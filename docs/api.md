@@ -1,6 +1,44 @@
 ﻿# 客户端 API
 
-> 本文描述早期 App 客户端。当前 PC 网页接口及验收入口见 [PC 网页指南](pc-web-validation.md)。
+本文先说明当前 PC 网页工具与请求契约，再保留早期 App 客户端 API。两套接口的主机、参数、身份和验收记录分别维护；相近路径或同名方法不代表可以互换。
+
+## PC 网页入口
+
+| 入口 | 输入与输出 | 联网及边界 |
+| --- | --- | --- |
+| `node scripts/catalog.mjs --pc-web [关键词]` | 官方脚本中的路径、方法和源码位置 | 离线静态查询，不代表业务可用 |
+| `node scripts/catalog.mjs --pc-status [关键词]` | 已保存的候选状态与限制 | 离线查询，不触发复测 |
+| `node scripts/verify-pc-web.mjs --live --port PORT` | 本机 Chrome 端口，输出脱敏验收元数据 | 只读白名单；参数、退出码及输出保护见 [网页指南](pc-web-validation.md#参数与输出) |
+
+当前没有返回完整业务对象的通用 PC SDK，也没有公开的 PC 写入 CLI。`src/index.mjs` 导出的 `TiebaApi` 仍使用 App 协议；不能把它的点赞方法当作 PC 方法调用。PC 请求使用浏览器内现有登录态及官方前端封装，Cookie、TBS、jt 和防护令牌不导出。
+
+## PC 已验收请求契约
+
+下表按路径/方法组合列出已完成对象或状态核对的 14 个候选。完整常用功能及待验收项见 [功能表](../README.md#功能)；逐项状态以 [PC CSV](pc-web-api-coverage.csv) 为准。
+
+| 方法 | 路径 | 有效输入与验收边界 |
+| --- | --- | --- |
+| POST | `/c/f/pb/page_pc` | `kz,pn,rn`；精确帖子编号匹配 |
+| POST | `/c/f/frs/page_pc` | `kw,pn,is_newfrs,is_newfeed,rn,rn_need`；吧名匹配 |
+| GET | `/c/u/user/getPrivateInfo_pc` | 本轮空业务参数；本人 UID 匹配 |
+| GET | `/c/u/pc/userCard` | `portrait,forum_id`；受控 portrait 主体匹配，PC tieba_uid 不等同 App UID |
+| GET | `/c/f/pc/forumCard` | `forum_id`；返回同一吧编号 |
+| POST | `/c/c/user/follow_pc` | `portrait`；受控用户关注后回查 |
+| POST | `/c/c/user/unfollow_pc` | `portrait`；取消后恢复关系基线 |
+| GET | `/c/c/agree/opAgree_pc` | `thread_id,post_id,op_type,obj_type,forum_id,agree_type,obj_source`；帖子和普通回复分别验证并恢复 |
+| POST | `/c/c/post/add_pc` | `tid,fid,kw,name_show,content,quote_id,repostid`；普通回复及楼中楼创建后核对本人作者和内容 |
+| GET | `/c/f/pb/getmypost_pc` | `last_pid,mark_type=2,kz`；定位本轮新建本人回复 |
+| POST | `/c/f/pb/nestedFloor` | `post_id,thread_id,offset=0`；核对父子关系及删除后列表 |
+| GET | `/c/c/bawu/delpost_pc` | `fid,z,pid,owner_uid=0,word`；仅删除本轮本人回复和楼中楼 |
+| POST | `/c/c/post/addstore_pc` | `data` 为含 `tid,pid,status=1` 的 JSON 数组字符串；未收藏基线 |
+| POST | `/c/c/post/rmstore_pc` | `fid,tid,uid`，uid 为帖子作者；收藏恢复，GET 变体未测 |
+
+字段是本轮有效组合，不宣称均为必填或可省略；默认值未验证时不自动补值。写入的取值、执行顺序、回查和清理判据见 [基础功能契约](pc-web-basic-functions.md)。HTTP 200、业务码 0、非空结构、对象匹配和状态恢复是不同证据层级；剩余 300000/210009 等错误的原因边界见 [PC 验收结果](pc-web-validation.md#结构核对空结果与错误)。
+
+## 历史 App 客户端
+
+以下接口使用早期 APK 恢复的 App 协议，保留原有模块调用约定。历史 IM 私信与群聊结果不计入 PC 网页能力。
+
 
 导入入口为 `src/index.mjs`。当前 `TiebaApi` 提供 10 个读取与 2 个写入方法，返回选定的业务字段或写入确认及 HTTP 元数据；完整 APK 候选和历史写入测试见 [覆盖清单](remaining-validation.md)，不属于此客户端已实现的方法列表。
 
@@ -99,7 +137,7 @@ const api = new TiebaApi({
 
 `removeFollower` 从当前账号的粉丝中移除指定用户，不是取消当前账号对该用户的关注。通过受控粉丝账号读取当前账号资料的 `has_concerned` 核对；恢复时需粉丝账号重新关注。此方法不调用 `multiRemoveFans`，后者在 APK 中对应“移除全部被封禁粉丝”。
 
-本轮实测和未验证对象见 [新增接口报告](expanded-api-validation.md)。CLI 仍只暴露原有 5 组读取命令，新增 7 个方法从模块调用。
+该 App 扩展阶段的实测和未验证对象见 [新增接口报告](expanded-api-validation.md)。CLI 仍只暴露原有 5 组读取命令，新增 7 个方法从模块调用。
 
 ### 调用示例
 
@@ -176,7 +214,7 @@ const result = await getImUserIdentities({
 
 成功输出 `{user_list, meta}`，每项选取 `bd_uid, uk` 和可选 `display_name, avatar`。全部请求编号必须恰好返回一次，且 uk 为正 int64；缺少对象、部分成功或未知身份不会默认为可用。错误采用 TiebaApiError 的 transport/http/business/protocol/object-mismatch 分层，不回显凭据和原始响应。
 
-原始请求与函数调用均核对过两个受控账号的 native UID / IM UK。最小请求未发送 account_type/client_id，不承诺其他 SDK 登录类型或任意用户都能查询。该读取结果本身也不替代完整登录态验证。来源与本轮 3 次读取见 [APK 接口清单](network-inventory.md)。
+原始请求与函数调用均核对过两个受控账号的 native UID / IM UK。最小请求未发送 account_type/client_id，不承诺其他 SDK 登录类型或任意用户都能查询。该读取结果本身也不替代完整登录态验证。来源与该 App 深挖阶段的 3 次读取见 [APK 接口清单](network-inventory.md)。
 
 ## 原生 App Socket 帧
 
