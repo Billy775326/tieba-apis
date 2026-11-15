@@ -1,5 +1,7 @@
 ﻿# 开发与验证指南
 
+当前 PC 网页工具使用 Node.js 24+，不依赖 APK 或安卓设备。入口与复现条件见 [PC 网页指南](pc-web-validation.md)；node scripts/build-pc-web-coverage.mjs 仅从公开报告重建网页 CSV。下方 APK/JDK 流程作为历史研究保留。
+
 当前主线代码使用 Node.js 24+ 与原生 ESM，无第三方运行依赖。普通客户端、离线测试不需要 JDK、APK 或浏览器；只有静态 APK 分析需要额外工具。
 
 ## 代码入口与检查
