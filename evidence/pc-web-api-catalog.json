@@ -1,0 +1,1223 @@
+{
+  "schema_version": 1,
+  "scope": "Literal url properties in pinned scripts loaded by current PC frontend; declarations are not callable API assertions",
+  "sources": [
+    {
+      "name": "index",
+      "url": "https://tb3.bdstatic.com/tb/pc/pc-main-core/static/js/index.513973fe.js",
+      "bytes": 2468326,
+      "sha256": "12ca0a1eef6882caa08bf67f567b2986ddff7797fffabeef7766b5beea101d64",
+      "observed_at_utc": "2026-11-14T15:11:27.746Z"
+    },
+    {
+      "name": "common",
+      "url": "https://tb3.bdstatic.com/tb/pc/pc-main-core/static/js/core-common.32cdf0d7.js",
+      "bytes": 1535776,
+      "sha256": "bcbb4169ba676f665ef66ba7129d70ef86ac8d25fd4243ae5d6902a0a53319a4",
+      "observed_at_utc": "2026-11-14T15:11:27.958Z"
+    },
+    {
+      "name": "frs",
+      "url": "https://tb3.bdstatic.com/tb/pc/pc-main-core/static/js/frs.38cf3183.js",
+      "bytes": 2214800,
+      "sha256": "7aa54e4862345f4132c0d7b56c34ad1e23ab1abd007c40fe2fae2009cfe7d828",
+      "observed_at_utc": "2026-11-14T15:11:28.404Z"
+    },
+    {
+      "name": "home",
+      "url": "https://tb3.bdstatic.com/tb/pc/pc-main-core/static/js/home.e098101c.js",
+      "bytes": 1948879,
+      "sha256": "8f5088c3721083b89d4c31502a8e4a69130e9b663dbec19870c1f047a5309a7b",
+      "observed_at_utc": "2026-11-14T15:11:28.795Z"
+    }
+  ],
+  "summary": {
+    "source_files": 4,
+    "path_method_candidates": 86,
+    "unique_paths": 84,
+    "declared_method_candidates": 86,
+    "moderation_excluded": 6
+  },
+  "limitations": [
+    "Only literal url properties and adjacent DataType declarations are extracted; dynamically composed routes, fetch-only declarations and other PC bundles may add APIs.",
+    "GET does not imply read-only; several PC GET routes modify state.",
+    "Method bindings require adjacent source syntax; unbound methods remain null.",
+    "No App-only command or APK model is counted in this PC catalog."
+  ],
+  "candidates": [
+    {
+      "path": "/c/c/agree/opAgree_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1307596
+        }
+      ]
+    },
+    {
+      "path": "/c/c/bawu/commitgood_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "moderation-excluded-by-user",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1706864
+        }
+      ]
+    },
+    {
+      "path": "/c/c/bawu/commitprison_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "moderation-excluded-by-user",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1707570
+        }
+      ]
+    },
+    {
+      "path": "/c/c/bawu/committop_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "moderation-excluded-by-user",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1706516
+        }
+      ]
+    },
+    {
+      "path": "/c/c/bawu/delpost_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "own-test-content-only",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1718886
+        }
+      ]
+    },
+    {
+      "path": "/c/c/bawu/delthread_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "own-test-content-only",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1707220
+        }
+      ]
+    },
+    {
+      "path": "/c/c/bawu/goodlist_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "moderation-excluded-by-user",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1706691
+        }
+      ]
+    },
+    {
+      "path": "/c/c/excellent/submitDislike_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1707776
+        }
+      ]
+    },
+    {
+      "path": "/c/c/forum/like_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1308949
+        }
+      ]
+    },
+    {
+      "path": "/c/c/forum/sign_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1708551
+        }
+      ]
+    },
+    {
+      "path": "/c/c/forum/unfavolike_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1309315
+        }
+      ]
+    },
+    {
+      "path": "/c/c/friend/setprivate_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1716936
+        }
+      ]
+    },
+    {
+      "path": "/c/c/img/portrait_pc",
+      "method": "POST",
+      "declared_data_type": "FORM_DATA",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1719318
+        }
+      ]
+    },
+    {
+      "path": "/c/c/item/subscribeitempc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1708999
+        }
+      ]
+    },
+    {
+      "path": "/c/c/item/subscribeitempc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1309807
+        }
+      ]
+    },
+    {
+      "path": "/c/c/post/add_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 388098
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 264565
+        }
+      ]
+    },
+    {
+      "path": "/c/c/post/addstore_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 387134
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 263601
+        }
+      ]
+    },
+    {
+      "path": "/c/c/post/rmstore_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1719153
+        }
+      ]
+    },
+    {
+      "path": "/c/c/post/rmstore_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 387387
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 263854
+        }
+      ]
+    },
+    {
+      "path": "/c/c/profile/modify_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1719489
+        }
+      ]
+    },
+    {
+      "path": "/c/c/thread/add_pc",
+      "method": "POST",
+      "declared_data_type": "FORM_DATA",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 206751
+        }
+      ]
+    },
+    {
+      "path": "/c/c/thread/setPrivacy_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1718688
+        }
+      ]
+    },
+    {
+      "path": "/c/c/user/follow_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1308190
+        }
+      ]
+    },
+    {
+      "path": "/c/c/user/removeFans_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1719657
+        }
+      ]
+    },
+    {
+      "path": "/c/c/user/setUserBlack_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1430061
+        }
+      ]
+    },
+    {
+      "path": "/c/c/user/unfollow_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1308557
+        }
+      ]
+    },
+    {
+      "path": "/c/f/bawu/getDeleteReason_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "moderation-excluded-by-user",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1707040
+        }
+      ]
+    },
+    {
+      "path": "/c/f/excellent/personalized_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1306676
+        }
+      ]
+    },
+    {
+      "path": "/c/f/forum/gethistoryforum_pc",
+      "method": "POST",
+      "declared_data_type": "FORM_DATA",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1592662
+        }
+      ]
+    },
+    {
+      "path": "/c/f/forum/like_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 205324
+        }
+      ]
+    },
+    {
+      "path": "/c/f/frs/frsBottom_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1704120
+        }
+      ]
+    },
+    {
+      "path": "/c/f/frs/generalTabList_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1705208
+        }
+      ]
+    },
+    {
+      "path": "/c/f/frs/page_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1704322
+        }
+      ]
+    },
+    {
+      "path": "/c/f/frs/threadlist_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1704656
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pb/getmypost_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 388471
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 264938
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pb/nestedFloor",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 387615
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 264082
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pb/page_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 386728
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 263195
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/communityNotice",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 764193
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 640440
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/communityNoticeReport",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 781628
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 657875
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/forumCard",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1307209
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/frsSidebarRight",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1708040
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/gameCenterHover",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1263438
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/homeSidebarLeft",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1307034
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/homeSidebarRight",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1306858
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/iconCard",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1708215
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/myForumList",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1716585
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/pbSidebarRight",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 386908
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 263375
+        }
+      ]
+    },
+    {
+      "path": "/c/f/pc/publishConf",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 207135
+        }
+      ]
+    },
+    {
+      "path": "/c/f/recommend/getSugTopic_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 205795
+        }
+      ]
+    },
+    {
+      "path": "/c/s/adNewLog",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "telemetry-needs-event-contract",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1709160
+        }
+      ]
+    },
+    {
+      "path": "/c/s/pc/sync",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1306336
+        }
+      ]
+    },
+    {
+      "path": "/c/s/pc/updateSwitch",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1309485
+        }
+      ]
+    },
+    {
+      "path": "/c/s/searchSug_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 205515
+        },
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1592500
+        }
+      ]
+    },
+    {
+      "path": "/c/s/uploadPicture_pc",
+      "method": "POST",
+      "declared_data_type": "FORM_DATA",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 206308
+        }
+      ]
+    },
+    {
+      "path": "/c/s/urlParser_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 206145
+        }
+      ]
+    },
+    {
+      "path": "/c/u/bawu/listreason_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "moderation-excluded-by-user",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1707395
+        }
+      ]
+    },
+    {
+      "path": "/c/u/fans/page_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 653836
+        },
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1718353
+        }
+      ]
+    },
+    {
+      "path": "/c/u/feed/agreeme_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 653217
+        }
+      ]
+    },
+    {
+      "path": "/c/u/feed/atme_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 653528
+        }
+      ]
+    },
+    {
+      "path": "/c/u/feed/myThread",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1717849
+        }
+      ]
+    },
+    {
+      "path": "/c/u/feed/replyme_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 654144
+        }
+      ]
+    },
+    {
+      "path": "/c/u/feed/threadStoreList",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1718012
+        }
+      ]
+    },
+    {
+      "path": "/c/u/feed/userAgree_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1717682
+        }
+      ]
+    },
+    {
+      "path": "/c/u/follow/atSearchUserList_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 205969
+        }
+      ]
+    },
+    {
+      "path": "/c/u/follow/followList_pc",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1718182
+        }
+      ]
+    },
+    {
+      "path": "/c/u/pc/homeSidebarRight",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1716749
+        }
+      ]
+    },
+    {
+      "path": "/c/u/pc/userCard",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1708383
+        }
+      ]
+    },
+    {
+      "path": "/c/u/user/getPrivateInfo_pc",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1718516
+        }
+      ]
+    },
+    {
+      "path": "/c/u/user/getUserBlackInfo",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1429890
+        }
+      ]
+    },
+    {
+      "path": "/c/x/aigc/generateTitle",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 207307
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/forum/getRecomForumList",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 204991
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/getConfigData",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1708734
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/getUpConfigData",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1306499
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/icon/cancelIconSlot",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1717410
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/icon/setIcon",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1717117
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/newmoindex",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1593498
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/recommendpb/recomSiteTids",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 388650
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 265117
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/recruit/register",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 388987
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 265454
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/score/addScore",
+      "method": "POST",
+      "declared_data_type": "POST",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "frs",
+          "utf16_code_unit_offset": 388809
+        },
+        {
+          "source": "home",
+          "utf16_code_unit_offset": 265276
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/search/forum",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1593174
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/search/multsearch",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1592842
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/search/thread",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1593010
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/search/user",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1593337
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/tuijianindex",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1593676
+        }
+      ]
+    },
+    {
+      "path": "/mo/q/work/user",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1309656
+        }
+      ]
+    },
+    {
+      "path": "/photo/g/bw/picture/list",
+      "method": "GET",
+      "declared_data_type": "GET",
+      "execution_scope": "pc-web-candidate",
+      "status": "static-request-declaration",
+      "sites": [
+        {
+          "source": "index",
+          "utf16_code_unit_offset": 1705548
+        }
+      ]
+    }
+  ]
+}

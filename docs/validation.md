@@ -1,5 +1,7 @@
 ﻿# 贴吧 App 读取接口线上验证
 
+> 历史 App 研究：本文冻结首批 App Protobuf 读取验证，不是 PC 网页接口测试；路径、命令和计数保持当时记录。当前网页功能见 [README 功能表](../README.md#功能)，参数与验收见 [PC 网页指南](pc-web-validation.md)。
+
 本次以贴吧 Android 22.13.1.1 APK 中提取的路径、请求字段和命令号构造最小匿名 Protobuf 请求，实际访问 `https://tiebac.baidu.com`。2026-11-13 香港时间 21:52 完成 7 次请求：6 次读取检查通过，1 次空请求负对照符合预期。完整观测时间和响应摘要见 [线上验证报告](../evidence/live-read-validation.json)。
 
 ## 通过范围

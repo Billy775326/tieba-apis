@@ -1,8 +1,22 @@
 # 当前验证范围与未完成原因
 
-本页合并全部已保存观测，覆盖 **603 条静态候选、568 个不同路径**。42 条候选已有对象或状态变化核对；其余候选不能一概当作失败。已有 HTTP 返回、尚未发出请求、按用户要求不再测的项目分别列出，状态登记不等于实测完成。
+> 历史 App 覆盖汇总：本页只合并固定 APK 范围内的已保存 App 观测，不包含 PC 网页验收。当前网页功能见 [README 功能表](../README.md#功能)，网页结果与限制见 [PC 指南](pc-web-validation.md) 和 [PC CSV](pc-web-api-coverage.csv)。
+
+本页合并该 App 范围的已保存观测，覆盖 **603 条静态候选、568 个不同路径**。45 条候选已有对象或状态变化核对；其余候选不能一概当作失败。已有 HTTP 返回、尚未发出请求、按用户要求不再测的项目分别列出，状态登记不等于实测完成。
 
 逐项结果见 [CSV](current-api-coverage.csv) 和 [JSON](../evidence/current-api-coverage.json)。CSV 同时列出 execution_status、disposition、历史最强证据及最新限制；未执行项目明确保留 not-requested。
+
+## 新增请求契约与 SDK 方法
+
+客户端从 5 个方法扩展到 12 个。本阶段另记录 **38 次请求**，其中移除一个受控粉丝、帖子点赞与取消均经独立读取核对并恢复原状态；轮询只完成首页订阅返回结构核对，商城 IM 列表为空。初次 GetTails 的响应标签解析失败也保留在报告内，修正后已复测。见 [新增接口实测](expanded-api-validation.md) 和 [脱敏证据](../evidence/expanded-api-validation.json)。这些请求不计入下方冻结的历史阶段总数。
+
+## 全 APK 静态扫描与新增读取
+
+完整网络面、Socket 请求与所有 Wire 声明单列在 [APK 接口清单](network-inventory.md)，不把 URL/资源候选和原有 603 条覆盖行直接相加。本阶段另有 3 次读取：两个受控账号的 IM 身份与此前 IM 登录结果一致，公开查询函数复测通过；本人回复通知只完成非空结构核对。见 [脱敏记录](../evidence/deep-discovery-validation.json)。这些结果不表示全部候选均已可调用。
+
+## 原生 Socket 与继续验证
+
+本阶段新增 **63 次业务/媒体请求**：11 次 HTTP 与 52 次 App Socket 消息；另有 8 次握手探测。黑名单、单个会话提醒开关观察到变化且恢复；10 个命令逐项区分对象核对、结构确认、空样本和本地解析失败。Socket 命令没有并入 603 条 HTTP 候选，也没有猜测对应 HTTP 路径。见 [原生 Socket 实测](app-socket-validation.md) 与 [脱敏报告](../evidence/continued-discovery-validation.json)。
 
 ## 后续逐项补测
 
@@ -10,10 +24,10 @@
 
 | validation_tier | 候选数 |
 | --- | --- |
-| anonymous-diagnostic-only | 184 |
-| business-validation-incomplete | 202 |
+| anonymous-diagnostic-only | 176 |
+| business-validation-incomplete | 207 |
 | excluded-by-user | 52 |
-| functionally-verified | 42 |
+| functionally-verified | 45 |
 | other-origin | 2 |
 | web-route-response-recorded | 121 |
 
@@ -67,10 +81,10 @@
 | 限制分类 | 候选数 | 证据性质 |
 | --- | --- | --- |
 | already-completed | 1 | observed |
-| anonymous-negative-control-only | 184 | observed |
+| anonymous-negative-control-only | 176 | observed |
 | deleted-thread-first-post-cleanup-rejected | 1 | observed |
 | empty-http-response | 13 | observed |
-| functional-assertions-incomplete | 110 | observed |
+| functional-assertions-incomplete | 112 | observed |
 | html-page-confirmed | 85 | observed |
 | http-source-https-variant-tested | 2 | observed |
 | media-fixture-missing-after-negative-control | 1 | observed |
@@ -83,8 +97,8 @@
 | partial-deletion-semantics | 2 | observed |
 | redirect-observed | 19 | observed |
 | request-or-response-construction-needed | 11 | analysis |
-| server-error-unresolved | 48 | observed |
-| verified-in-recorded-scope | 37 | observed |
+| server-error-unresolved | 51 | observed |
+| verified-in-recorded-scope | 40 | observed |
 
 observed 表示实际观测，analysis 表示协议、参数、样本或恢复条件仍待建立；user-request 表示用户排除范围，scope 表示未选择的来源。已经具备测试授权，未执行不会写成“未获授权”。具体原因逐项见 CSV。
 

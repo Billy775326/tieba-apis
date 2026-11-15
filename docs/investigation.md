@@ -1,5 +1,11 @@
 # 贴吧 APK 分析进展
 
+> 历史 App 研究：本文按早期 APK 调查阶段记录来源、工具和已知边界，所列本机环境及历史路径统计不代表 PC 使用前提；当前无需 Android、JDK 或 APK。当前网页功能见 [README 功能表](../README.md#功能)，参数与验收见 [PC 网页指南](pc-web-validation.md)。
+
+## 当前 PC 工作入口
+
+PC 官方脚本提取、只读验收、点赞/回复/楼中楼/收藏与清理记录已独立整理；完整索引见 [文档目录](README.md)，请求契约见 [PC API](api.md#pc-已验收请求契约)。以下继续保留 APK 调查演进，不用它推断网页功能是否可用。
+
 ## 已观察事实
 
 分析对象及哈希见 [路径证据](../evidence/endpoint-candidates.json)。13 个 DEX 的初步提取覆盖 423 条字符串；补齐 c/c、c/e 等家族后，当前范围为 603 条候选、568 个不同路径，见 [全量覆盖报告](full-coverage.md)。它们包含读取、写入、遥测和 H5 页面，数量不等于可调用接口数量。
@@ -27,6 +33,10 @@
 REA/JADX 对实际 APK 的构造函数和 `encode(boolean)` 反编译确认：构造函数引用命令号 301001；编码方法把 kw、pn、rn、sort_type 等实例参数填入 DataReq.Builder，调用公共参数绑定函数，再将 DataReq 放入 FrsPageReqIdl.data 并返回请求模型。参见 [请求链路摘要](../evidence/frs-request-summary.json) 中的父 Evidence ID 与源文本哈希。完整反编译输出保存在本机忽略目录。
 
 这将 FrsPage 请求构造类与请求模型联系起来。已有 POST、Protobuf multipart 和真实响应证据，并恢复了部分遗留 JSON 签名逻辑，见 [请求链路](../evidence/http-request-chain.json) 与 [签名来源](../evidence/legacy-signature-chain.json)；App 发送器的部分实现和可选 sig 分支仍未完全恢复。静态代码包含 Titan 拦截分支，运行时可能替换这些逻辑。
+
+## 全归档与协议扫描
+
+后续已完成同一 APK 的 10,941 个文件条目、13 个 DEX、105,903 个类和 626,979 个方法扫描，最初导出 `tbclient` 下 1,746 个 Wire 消息类型、10,791 个字段及 126 个请求封装；继续覆盖整份 APK 后增至 1,974 类、12,195 个字段和 145 个请求封装。新清单有 3,690 个 URL/路径形态候选，不与先前 603 条覆盖行相加。新增受控 IM 身份查询和本人回复通知读取记录，详见 [APK 接口清单](network-inventory.md)。静态扫描完成不表示全部运行时端点和业务验收完成。
 
 ## 工具与待完成工作
 

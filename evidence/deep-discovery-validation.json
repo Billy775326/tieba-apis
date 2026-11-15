@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "started_at_utc": "2026-11-14T11:33:22.906Z",
+  "scope": "Source-recovered own notification and controlled IM identity reads; no writes or bulk empty probes",
+  "results": [
+    {
+      "name": "deep-controlled-user-identity",
+      "origin": "https://pim.baidu.com",
+      "path": "/rest/3.0/im/get_user_info",
+      "method": "POST",
+      "observed_at_utc": "2026-11-14T11:33:22.912Z",
+      "credentials_supplied": true,
+      "http_status": 200,
+      "content_type": "application/json",
+      "response_bytes": 1318,
+      "response_sha256": "8c801b8a8f9f7dd0cc21c3428c2714fff521ba446e11149178de44aeaafcf978",
+      "response_fields": [
+        "request_id",
+        "error_code",
+        "trace_location",
+        "user_list"
+      ],
+      "business_status_field": "error_code",
+      "error_code": "0",
+      "authenticated": true,
+      "input_fields": [
+        "app_version",
+        "sdk_version",
+        "cuid",
+        "device_type",
+        "appid",
+        "timestamp",
+        "sign",
+        "bd_uids"
+      ],
+      "omitted_fields": [
+        "account_type",
+        "client_id"
+      ],
+      "source_class": "com.baidu.android.imsdk.chatuser.request.IMGetUserIdentityRequest",
+      "status": "verified-read",
+      "checks": {
+        "returned_both_controlled_uids": true,
+        "im_uks_match_previous_verified_identities": true
+      }
+    },
+    {
+      "name": "own-reply-notifications",
+      "path": "/c/u/feed/replyme",
+      "command": "303007",
+      "observed_at_utc": "2026-11-14T11:33:24.150Z",
+      "authenticated": true,
+      "input_fields": [
+        "pn",
+        "common",
+        "scr_w",
+        "scr_h",
+        "scr_dip",
+        "q_type",
+        "is_first",
+        "call_from",
+        "time",
+        "tid"
+      ],
+      "source_classes": [
+        "com.baidu.tieba.iyb",
+        "com.baidu.tieba.immessagecenter.mention.ReplyMeNetModel"
+      ],
+      "http_status": 200,
+      "response_sha256": "07645cbecf7342e082e4e72eaf24dbd0230622ed0ae52b70539dbc615cbb1d4d",
+      "response_bytes": 40632,
+      "status": "response-schema-validated",
+      "error_code": "0",
+      "response_data_tags": [
+        1,
+        2
+      ],
+      "checks": {
+        "page_present": true,
+        "reply_list_nonempty": true,
+        "post_and_thread_ids_present": true
+      }
+    },
+    {
+      "name": "public-im-identity-function",
+      "endpoint": "/rest/3.0/im/get_user_info",
+      "origin": "https://pim.baidu.com",
+      "command": null,
+      "http_status": 200,
+      "response_sha256": "896a7514e84c8cdf1a3f833b217e009b4f48d7fd7f0104fd59d1baf9261a38a8",
+      "response_bytes": 1318,
+      "error_code": "0",
+      "path": "/rest/3.0/im/get_user_info",
+      "observed_at_utc": "2026-11-14T11:42:47.214Z",
+      "authenticated": true,
+      "status": "verified-read",
+      "checks": {
+        "all_controlled_identities_match": true
+      }
+    }
+  ],
+  "finished_at_utc": "2026-11-14T11:42:47.221Z",
+  "total_requests": 3,
+  "sources": [
+    {
+      "class_name": "com.baidu.tieba.im.message.RequestOfficialBarMenuMessage",
+      "source_sha256": "311490e59c05137478b697846c393f45590546a13d4ed97ef2f5379180d12829",
+      "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+    },
+    {
+      "class_name": "com.baidu.tieba.iyb",
+      "source_sha256": "e1030b4d9d1dcfde4a52fc607aedf37b127b2a9126440cde1101a70bb454a7e5",
+      "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+    },
+    {
+      "class_name": "com.baidu.tieba.myCollection.message.RequestQueryCollectUpdateNumMessage",
+      "source_sha256": "cfa2876c908635e3be6f0c67741e6e8550461d0d8d58155ea009789cca15c7b9",
+      "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+    },
+    {
+      "class_name": "com.baidu.tieba.tbadkcore.location.LocationSocketRequestMessage",
+      "source_sha256": "b2cf01adca1bc4fec474a9bdbb080592fa9b51235b48e6d5dc28db272f1b60b8",
+      "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+    },
+    {
+      "class_name": "com.baidu.tieba.tbadkcore.util.MercatorModel.a",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+    },
+    {
+      "class_name": "com.baidu.android.imsdk.chatuser.request.IMGetUserIdentityRequest",
+      "source_sha256": "0653ed8662fe0f18dd7b9afa6606c3576a9df9198b7d03af161865cc7094f02e",
+      "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+    },
+    {
+      "class_name": "com.baidu.android.imsdk.consult.request.IMConsultGetDialogueIdRequest",
+      "source_sha256": "42148cbae41340c08153e81ed8399897c1ed2d55adaf602a46327db15c70e06a",
+      "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+    },
+    {
+      "class_name": "com.baidu.android.imsdk.uiconfig.request.AggregatedRequest",
+      "source_sha256": "3e36ec27c6560ec3ae34c99524b9d3eaea2c9e1dc4792f4ad183d5f11bc684d9",
+      "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+    },
+    {
+      "class_name": "com.baidu.tbadk.message.websockt.TbSocketMessage",
+      "source_sha256": "d066de75280dc382eec87eaf5f1f0ffe6c4583e20b1064e077c12e88d9c6589c",
+      "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+    },
+    {
+      "class_name": "com.baidu.tieba.immessagecenter.mention.ReplyMeNetModel",
+      "source_sha256": "ec08157aede33233c31c9db792e8de156dd92a1f152acc81a8fd5b8f07f0043b",
+      "artifact_sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+    }
+  ],
+  "result": {
+    "im_identity_objects_verified": true,
+    "own_reply_notification_schema_validated": true,
+    "public_im_function_verified": true,
+    "writes_executed": false,
+    "limitations": [
+      "IM account_type/client_id omitted in the verified minimal BDUSS request; other account modes not verified",
+      "Own reply notifications only decoded; no test replies were published to create a new notification fixture",
+      "Socket command declarations without an HTTP path were not tested with invented URLs"
+    ]
+  }
+}

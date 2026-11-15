@@ -1,0 +1,116 @@
+# PC 网页接口验收
+
+当前范围按用户要求收敛为 **PC 网页实际使用或可调用的接口**。不需要安卓手机，不以 App 的成功替代网页验收。本文保留 2026-11-14 的前端基线，并纳入 2026-11-15（香港时间）的基础功能及签到、搜索、主帖补测；统计与原 Android 清单分别维护。
+
+文档入口见 [全部文档目录](README.md)，最短运行步骤见 [使用指南](getting-started.md)，已验收请求的字段汇总见 [PC API](api.md#pc-已验收请求契约)。
+
+## 结果与证据
+
+已固定四个当前 PC 页面加载的官方脚本：`index.513973fe.js`、`core-common.32cdf0d7.js`、`frs.38cf3183.js`、`home.e098101c.js`。源码 URL、SHA-256、字节大小和 UTF-16 代码单元位置见 [请求清单](../evidence/pc-web-api-catalog.json)。完整源码只存本机；清单提取字面量 url 与紧邻 DataType，不代表发现了所有动态地址或其他页面脚本。
+
+| 指标 | 结果 |
+| --- | --- |
+| 源码候选 | 84 个路径、86 个路径/方法组合 |
+| 业务调用记录 | 141 条，另记录公开脚本的 2 次身份读取及本轮准备阶段的 2 次身份读取；自动资源与后台令牌请求未计入 |
+| 已请求源码候选 | 42 个；另有 4 个运行时接受的 GET 方法变体单列 |
+| 对象/状态核对 | 24 个路径/方法组合；含点赞、回复、楼中楼、收藏、搜索、签到、关注吧与主帖清理 |
+| 结构核对 | 13 个；不代表已验证所有分页、边界或新通知送达 |
+| 空结果 | 2 个，缺少非空分支样本 |
+| 业务错误 | 3 个，原因尚未隔离 |
+| 未验证 | 44 个，其中 6 个吧务候选按原要求排除 |
+
+完整记录与逐项原因见 [JSON](../evidence/pc-web-validation.json) 和 [CSV](pc-web-api-coverage.csv)。统计对象是路径与方法组合，不能与早期 603 条 App 候选、1974 个 Wire 模型或 Socket 命令相加。
+
+## 基础功能补测
+
+新增 26 次 PC 业务操作，验证帖子和普通回复点赞/取消、收藏/取消、普通回复及楼中楼的创建回读、删除本人测试内容并回查。状态均恢复，本次新建两条内容已清理；不涉及管理员删他人内容。请求组合与完整功能表见 [PC 基础功能](pc-web-basic-functions.md) 和 [README 功能](../README.md#功能)，证据见 [本轮报告](../evidence/pc-web-basic-functions-validation.json)。
+
+## 签到、搜索与主帖补测
+
+新增 45 条已捕获业务响应，另保留 3 次未捕获业务响应的本地尝试，不把它们解释为服务端拒绝。已完成搜索建议、吧/帖子/吧内/用户/综合搜索的对象核对，新签到及临时关注恢复，并通过官方编辑器创建且删除唯一主帖；删除前验证的主帖与首楼定位均在删除后返回 4。请求组合、初始失败与清理边界见 [专题说明](pc-web-sign-search-publish.md) 和 [脱敏报告](../evidence/pc-web-sign-search-publish-validation.json)。
+
+覆盖 CSV 中最后业务码为 4 的帖子/首楼读取来自本轮删除后负向回查，是预期的删除对象不可读分支；它们保留既有 verified-read 证据，不列入三个尚未定位的业务错误。
+
+## 已核对的关键行为
+
+- `POST /c/f/pb/page_pc` 使用 `kz=[redacted-thread-id]`，返回精确帖子编号；最初误传 `tid` 的失败记录保留。
+- `POST /c/f/frs/page_pc` 使用 `kw` 和网页源码的分页/新版标志，返回“[redacted-forum-name]”吧。
+- `GET /c/u/user/getPrivateInfo_pc` 在现有网页登录会话内返回本人 UID，已与既有受控账号核对。
+- `GET /c/u/pc/userCard` 按 portrait 查询两个受控账号；返回 portrait 带查询后缀，去除查询部分后的键一致。没有把 PC tieba_uid 当成 App UID。
+- `GET /c/f/pc/forumCard` 返回的吧 ID 与请求匹配。
+- `POST /c/c/user/follow_pc` 与 `POST /c/c/user/unfollow_pc` 使用官方前端自己的封装，验证未关注 → 已关注 → 未关注；每步回读用户卡片，原关系已恢复。
+
+网页 `getPrivateInfo_pc`、用户卡片和关系操作的证据来自本次网页调用，不是此前 App 同名功能的复用结论。
+
+## 结构核对、空结果与错误
+
+首页左右栏、游戏卡片、发帖配置、本人关注吧、关注/粉丝列表、本人点赞/收藏列表和三类通知返回了业务数据。消息通知没有制造受控新事件，因此只按结构核对，不声称完整收发流程通过。
+
+源码的获赞、提及、回复通知采用 `POST` 并传 `_client_type=20`，历史吧采用 `FORM_DATA`。服务端还接受本轮测试的四个 GET 变体；报告把变体与源码方法分别记录，公开入口现按源码方法调用。
+
+| 路径 | 本轮状态 | 原因边界 |
+| --- | --- | --- |
+| `/c/f/pc/myForumList` | 空参数首次 210009，补入源码使用的 portrait、分页后返回非空列表 | 参数构造问题已修正，不能将首次系统错误认定为账号受限 |
+| `/c/f/frs/threadlist_pc` | 300000 | 尚需核对有效 tab/cursor 等调用语义，不推断为会员或设备限制 |
+| `/c/f/frs/generalTabList_pc` | 300000 | 同上，普通 kw 与当前参数不足以完成有效业务验收 |
+| `/c/u/feed/myThread` | 210009 | 当前构造失败，参数、对象或服务端原因未隔离 |
+| `/c/f/pb/getmypost_pc` | 初轮 210009；本轮已返回 0 并核对新回复 | 使用本次新回复的 last_pid、mark_type=2 和 kz 后，编号、本人作者及标记均匹配 |
+| `/c/f/forum/gethistoryforum_pc`、`/c/f/pc/iconCard` | 0，但无非空业务对象 | 保留空分支结果，不提升为完整功能通过 |
+
+当前前端 `MsgGuideDialog` 包含引导“打开贴吧App私信 TA”的逻辑，尚未建立 PC 网页原生私信收发入口。之前 IM SDK 的私信和群聊结果不计入本次 PC 验收，也不再为此申请安卓手机；这不等于证明所有历史网页消息入口均不存在。
+
+## 准备浏览器会话
+
+环境需要 Node.js 24+ 和 Chrome。使用专用配置目录，保留当前官方 PC 首页 `https://tieba.baidu.com/` 或论坛页 `/f`；用户在可见窗口中扫码登录。Windows 的一个示例：
+
+```powershell
+$chromePath = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+$pcProfilePath = Join-Path (Get-Location) '.local/pc-web-browser'
+& $chromePath --remote-debugging-port=9222 "--user-data-dir=$pcProfilePath" 'https://tieba.baidu.com/'
+```
+
+Chrome 路径按本机安装位置调整。示例只创建专用配置，不覆盖日常 Chrome 数据。已经有本项目扫码窗口时，直接读取其专用目录的 DevToolsActivePort 第一行，无需再次登录。
+
+```powershell
+$pcBrowserPort = Get-Content .local/login-browser/DevToolsActivePort -First 1
+node scripts/verify-pc-web.mjs --live --port $pcBrowserPort --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
+```
+
+`--port` 只接受 1–65535 的本机调试端口；调试目标必须是官方 HTTPS 贴吧首页或论坛页。原先某些帖子/个人页的调试命令超时，所以入口主动选择可响应的首页或论坛页；本地调试超时不记录为贴吧业务拒绝。
+
+## 参数与输出
+
+| 参数 | 含义 |
+| --- | --- |
+| `--live` | 显式启用只读联网；否则只显示帮助 |
+| `--port` | 已登录 Chrome 的本机调试端口，联网时必填 |
+| `--thread` | 官方帖子 URL 或精确编号，默认指定测试帖 |
+| `--forum` | 可选的测试吧名；提供后增加一次论坛读取 |
+| `--output` | 可选新文件；已有路径在连接浏览器前拒绝覆盖 |
+
+入口按固定白名单执行 10 项读取，提供 forum 时为 11 项；另读取一次当前网页登录状态。`POST` 或 `FORM_DATA` 本身不表示写入，`GET` 也不表示安全只读，白名单按实际业务审查，不允许传任意路径。
+
+输出包含 HTTP/业务状态、字段名、列表长度、对象断言和摘要。摘要基于浏览器 XHR responseText 的 UTF-8 编码，不能当作压缩传输字节的摘要。业务、HTTP 或对象断言失败时进程返回 1；空样本和仅结构核对仍在结果中单列。原始 JSON、Cookie、TBS 和防护令牌保持在网页会话内部；官方模块自己构造请求，不额外导出凭据或伪造防护参数。
+
+网页观察钩子在 finally 中恢复，连接结束会清理本次 CDP 待处理请求和超时器；不关闭浏览器窗口或退出账号。该入口只输出验收元数据，尚不是返回完整业务对象的独立 PC SDK。
+
+## 离线重建与后续资源
+
+```powershell
+node scripts/catalog.mjs --pc-web follow_pc
+node scripts/catalog.mjs --pc-status page_pc
+node scripts/build-pc-web-coverage.mjs
+npm.cmd test
+```
+
+覆盖 CSV 从已提交报告重建，不需要 APK、账号或联网。源码清单的重新提取需要本机保存的四个对应脚本及 summary.json：
+
+```powershell
+node scripts/build-pc-web-catalog.mjs .local/pc-web-sources evidence/pc-web-api-catalog.json
+```
+
+清单构建器验证脚本大小与 SHA-256，不执行脚本。未覆盖的动态 URL、其他入口和参数恢复继续作为工程工作，不伪称资源不足。
+
+现有两个网页登录态、指定帖子和测试吧足够继续普通 PC 功能验收。后续只在确实需要时申请：过期后的重新扫码、网页实际支持的图片/视频/投票等内容样本，或可管理的专用网页测试对象；不再要求安卓环境。吧务仍不测，App 专属能力不列为当前 PC 待验收项。
+
+既有工具代码通过过 97 项 Node 回归；该记录与 26 次基础功能线上补测分别保存。离线回归、生成结果一致性和线上业务验收是不同检查，不能据此将全部 PC 候选标为通过。开发与文档变更应按 [检查流程](development.md#代码入口与检查) 重新验证实际影响范围。

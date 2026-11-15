@@ -1,0 +1,982 @@
+{
+  "schema_version": 1,
+  "scope": "PC search, daily forum sign and one owner-authorized main thread via the official editor; App results excluded",
+  "started_at_utc": "2026-11-15T03:45:01.020Z",
+  "finished_at_utc": "2026-11-15T04:05:31.791Z",
+  "counts": {
+    "recorded_business_operations": 45,
+    "local_attempts_without_captured_business_response": 3,
+    "explicit_session_identity_reads": 2,
+    "main_threads_created": 1
+  },
+  "sources": {
+    "frontend_catalog": "evidence/pc-web-api-catalog.json",
+    "request_modules": [
+      "core:48",
+      "core:57",
+      "core:31",
+      "core:107",
+      "core:1302"
+    ],
+    "publisher": "Existing official PC editor, title/body Quill contexts and selected forum, not a reconstructed standalone write SDK"
+  },
+  "targets": {
+    "read_and_search": "Supplied public thread [redacted-thread-id] and its forum/title; one controlled user stays inside the browser",
+    "sign": "Forum of the supplied public thread; the unsigned controlled account temporarily followed it and restored that relationship",
+    "publish_forum": "[redacted-forum-name]"
+  },
+  "cases": [
+    {
+      "name": "shape-review",
+      "started_at_utc": "2026-11-15T03:45:01.020Z",
+      "finished_at_utc": "2026-11-15T03:45:09.527Z",
+      "phase_completed": true,
+      "phase_failure": null,
+      "operations": [
+        {
+          "name": "current-thread-preflight",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:45:01.020Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "7f936bbaa52800a0b4a7eb2104579de75f1b25705f3093e948e79ed65c00b774",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "forum-sign-preflight",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:45:03.512Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "3864b87cdc7b0a4fc21b6e08014d9a85f17d3a51c71f3d43ff403365624946f0",
+          "response_bytes": 509324,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "search-suggestion",
+          "path": "/c/s/searchSug_pc",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T03:45:05.527Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "6001d212af2a0b03abba28ef358a485bb879781ddfa9642837cd07b7c593ff78",
+          "response_bytes": 2713,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "forum-search",
+          "path": "/mo/q/search/forum",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T03:45:06.511Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "485b9d2bfabfc58e4562296d051eabb0d6baeeb97557f6dcd44e4e70a421ddc2",
+          "response_bytes": 25600,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "thread-search",
+          "path": "/mo/q/search/thread",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T03:45:07.527Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "9ba49748d72c9b63d3ab381bb41584a4ebbec5bdac938128c110e6907b1311ad",
+          "response_bytes": 68653,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "accepted-empty-response"
+        }
+      ],
+      "local_attempts_without_captured_response": [],
+      "results": {}
+    },
+    {
+      "name": "search",
+      "started_at_utc": "2026-11-15T03:46:07.446Z",
+      "finished_at_utc": "2026-11-15T03:46:19.512Z",
+      "phase_completed": true,
+      "phase_failure": null,
+      "operations": [
+        {
+          "name": "search-source-thread",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:46:07.446Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "adb9805f632b70c06550925778991ba2b73a4806ecfa0d3b3f68ed22ea87a832",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "search-suggestion-exact-forum",
+          "path": "/c/s/searchSug_pc",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T03:46:08.520Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "af0dd6a27349f3cea746dacc763f5280c7c09240733cd2b5dc91f41375c74ecf",
+          "response_bytes": 2713,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_name_and_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "search-forum-exact",
+          "path": "/mo/q/search/forum",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T03:46:09.515Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "9497d22339f38106f20c628be465d261d7051d4478aed9c167220c1005275bf6",
+          "response_bytes": 25600,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_name": true,
+            "exact_forum_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "search-thread-known-title",
+          "path": "/mo/q/search/thread",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T03:46:10.511Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "95653b39f6af1389b4883aa5f3a13be3a1c5449ea5ed70a3cbe6171805999dc0",
+          "response_bytes": 68653,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "known_thread_returned": true,
+            "known_forum_id_matches": true,
+            "first_page_matches": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "search-thread-within-forum",
+          "path": "/mo/q/search/thread",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T03:46:12.513Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "fd3def6cb66a8e691ce5caa0a2d1d20893999708ad53757efade817d41c2dd99",
+          "response_bytes": 69704,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "known_thread_returned": true,
+            "known_forum_id_matches": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "search-controlled-user",
+          "path": "/mo/q/search/user",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T03:46:14.519Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "ec8cf8212569013633a52683c8242477550ade1c6d02082acd152be892f642d1",
+          "response_bytes": 5119,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "controlled_identity_matches": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "search-combined-forum",
+          "path": "/mo/q/search/multsearch",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T03:46:15.512Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "c71b353b41a322f20f82bb5bc4c34e0b3b02940185b1e25e403a1974b3d2c912",
+          "response_bytes": 73156,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_name_and_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "sign-state-before",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:46:17.524Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "a5677b9a768ec08730db92fd9f1f789fcb09f551097e72800dde0399b586db00",
+          "response_bytes": 483463,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "accepted-empty-response"
+        }
+      ],
+      "local_attempts_without_captured_response": [],
+      "results": {
+        "suggestion_exact_forum": true,
+        "forum_exact_object": true,
+        "thread_known_object": true,
+        "thread_scoped_object": true,
+        "user_object": true,
+        "combined_exact_forum": true
+      }
+    },
+    {
+      "name": "already-signed",
+      "started_at_utc": "2026-11-15T03:48:53.268Z",
+      "finished_at_utc": "2026-11-15T03:49:00.511Z",
+      "phase_completed": true,
+      "phase_failure": null,
+      "operations": [
+        {
+          "name": "sign-identity-preflight",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:48:53.268Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "d59c87eb76e144f109476d36a9b4a2780f8af9e03a807d37272f227405fba088",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "sign-state-before",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:48:54.521Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "190c379de3bcf1ae03a038388ca9b55a3fc74094acda7a6acc68430df837899f",
+          "response_bytes": 470345,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_matches": true,
+            "own_user_matches": true
+          },
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "forum-sign",
+          "path": "/c/c/forum/sign_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:48:56.514Z",
+          "http_status": 200,
+          "error_code": "160002",
+          "response_sha256": "5a4363249a520249d982688c04fc5f613d9a79e2315bfeaa08d24d9a193ad63c",
+          "response_bytes": 606,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": false,
+          "status": "business-error"
+        },
+        {
+          "name": "sign-state-after",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:48:57.526Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "3cd1ef855bece34c1469bbd921a09700f5fced2aa1d13f160f7098e78808e050",
+          "response_bytes": 505838,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_matches": true,
+            "own_user_matches": true
+          },
+          "status": "accepted-empty-response"
+        }
+      ],
+      "local_attempts_without_captured_response": [],
+      "results": {
+        "before_signed": 1,
+        "after_signed": 1,
+        "sign_accepted": false,
+        "already_signed_branch": true,
+        "new_sign_transition_verified": false
+      }
+    },
+    {
+      "name": "unsigned-without-follow",
+      "started_at_utc": "2026-11-15T03:49:01.067Z",
+      "finished_at_utc": "2026-11-15T03:49:04.675Z",
+      "phase_completed": true,
+      "phase_failure": null,
+      "operations": [
+        {
+          "name": "sign-identity-preflight",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:49:01.067Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "485c75b633ba723efdd539ec4d13f31992e0914b62829d25bcd9c3f39c10f87b",
+          "response_bytes": 117004,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "sign-state-before",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:49:01.998Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "d0538e86eb1dc00cffd4f4f2776c8e70949c9f4970e04e7f707afbe796ed1a58",
+          "response_bytes": 519192,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_matches": true,
+            "own_user_matches": true
+          },
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "forum-sign",
+          "path": "/c/c/forum/sign_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:49:03.216Z",
+          "http_status": 200,
+          "error_code": "300004",
+          "response_sha256": "11f59a9de2cc3b1001c4675a1019a9b07c8c26c72b7f5ec6abe4447fad9ec985",
+          "response_bytes": 582,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": false,
+          "status": "business-error"
+        },
+        {
+          "name": "sign-state-after",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:49:03.627Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "03a526c8d3820f51998c6c1c4f9f203ce409c812dde1e3d68aa6ccf54ff6471c",
+          "response_bytes": 507996,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_matches": true,
+            "own_user_matches": true
+          },
+          "status": "accepted-empty-response"
+        }
+      ],
+      "local_attempts_without_captured_response": [],
+      "results": {
+        "before_signed": 0,
+        "after_signed": 0,
+        "sign_accepted": false,
+        "already_signed_branch": false,
+        "new_sign_transition_verified": false
+      }
+    },
+    {
+      "name": "early-page-follow-attempt",
+      "started_at_utc": "2026-11-15T03:52:10.163Z",
+      "finished_at_utc": null,
+      "phase_completed": false,
+      "phase_failure": null,
+      "operations": [
+        {
+          "name": "sign-follow-identity",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:52:10.163Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "cb5e6c03830451437556b8d0e831eefcd732d7aa1517082f055d5725759933bc",
+          "response_bytes": 117004,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "before-follow-sign",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T03:52:10.878Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "d9de37016d88647f8c3cef9dcc6f447e258733f9b02c44ccf43e1cc2776da6f3",
+          "response_bytes": 489285,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_matches": true,
+            "own_user_matches": true
+          },
+          "status": "accepted-empty-response"
+        }
+      ],
+      "local_attempts_without_captured_response": [
+        {
+          "name": "follow-sign-test-forum",
+          "path": "/c/c/forum/like_pc",
+          "observed_at_utc": "2026-11-15T03:52:12.388Z",
+          "status": "local-attempt-without-captured-business-response"
+        }
+      ],
+      "results": {
+        "cancelled_by_dedicated_tab_reload": true,
+        "baseline_confirmed_in_followup": true
+      }
+    },
+    {
+      "name": "early-read-one",
+      "started_at_utc": "2026-11-15T03:57:07.968Z",
+      "finished_at_utc": "2026-11-15T03:57:09.307Z",
+      "phase_completed": true,
+      "phase_failure": "after-cancel-identity rejected by PC frontend",
+      "operations": [],
+      "local_attempts_without_captured_response": [
+        {
+          "name": "after-cancel-identity",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T03:57:07.968Z",
+          "http_status": null,
+          "error_code": null,
+          "frontend_resolved": false,
+          "status": "local-attempt-without-captured-business-response"
+        }
+      ],
+      "results": {}
+    },
+    {
+      "name": "early-read-two",
+      "started_at_utc": "2026-11-15T03:58:32.414Z",
+      "finished_at_utc": "2026-11-15T03:58:33.452Z",
+      "phase_completed": true,
+      "phase_failure": "after-cancel-identity rejected by PC frontend",
+      "operations": [],
+      "local_attempts_without_captured_response": [
+        {
+          "name": "after-cancel-identity",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T03:58:32.414Z",
+          "http_status": null,
+          "error_code": null,
+          "frontend_resolved": false,
+          "status": "local-attempt-without-captured-business-response"
+        }
+      ],
+      "results": {}
+    },
+    {
+      "name": "cancelled-chain-baseline",
+      "started_at_utc": "2026-11-15T04:00:03.066Z",
+      "finished_at_utc": "2026-11-15T04:00:06.492Z",
+      "phase_completed": true,
+      "phase_failure": null,
+      "operations": [
+        {
+          "name": "after-cancel-identity",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:03.067Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "a5d47a91880f30e3af530d3ef1265a4e3b70a53b9d4ca03897b9922edff5c136",
+          "response_bytes": 117004,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "after-cancel-follow-state",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:03.769Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "546d0d5e0e26a7a97b427dac27903d6eb1874d531d3ec7750e7fc045fd39dfd0",
+          "response_bytes": 514311,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "after-cancel-baseline-confirmed",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:05.161Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "30d19d8c91e80a2cd57c79dd16dc885fc97632b642a48ab7ee7c145bf3fb75c5",
+          "response_bytes": 526430,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "accepted-empty-response"
+        }
+      ],
+      "local_attempts_without_captured_response": [],
+      "results": {
+        "pending_follow_was_applied": false,
+        "follow_baseline_restored": true
+      }
+    },
+    {
+      "name": "new-sign-with-follow-restored",
+      "started_at_utc": "2026-11-15T04:00:43.068Z",
+      "finished_at_utc": "2026-11-15T04:00:55.512Z",
+      "phase_completed": true,
+      "phase_failure": null,
+      "operations": [
+        {
+          "name": "sign-follow-identity",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:43.069Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "03047fc298160938feed0381271af5ee16212350da3801f4cac6e0e8c6639581",
+          "response_bytes": 117004,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "before-follow-sign",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:44.511Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "a2f927a77340277ac5ee2a62e665aab84dc7f0a94327b68f1479cefd4a671734",
+          "response_bytes": 490205,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_matches": true,
+            "own_user_matches": true
+          },
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "follow-sign-test-forum",
+          "path": "/c/c/forum/like_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:46.511Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "487f74b8e4872abb9e73a2d336b549a9b8f08426283f5be5b9618fdd57ee8444",
+          "response_bytes": 494,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "after-forum-follow",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:47.517Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "f586205d9a0bec2036df3676b435112b986971d73489d952b3e331de325ead93",
+          "response_bytes": 500862,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_matches": true,
+            "own_user_matches": true
+          },
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "sign-after-follow",
+          "path": "/c/c/forum/sign_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:49.516Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "72516b09c21202de8e798dc53597697cca66a69dff205c941d026d542507aafd",
+          "response_bytes": 2307,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "after-new-sign",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:50.522Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "b16fef4bcb871a347200da01305f9a496ea69e156389535c9485e3d1c66788c6",
+          "response_bytes": 502729,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_matches": true,
+            "own_user_matches": true
+          },
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "restore-forum-unfollow",
+          "path": "/c/c/forum/unfavolike_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:52.512Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "c18b3c918e2277d447c9b6110dd317f994e1aa6bbe7242b36f7b55c8d849d980",
+          "response_bytes": 85,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "restored-forum-read-0",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:00:53.523Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "252028db4235236b2ce7d4fa903e0b775e626f2231319458682e515610f48104",
+          "response_bytes": 466296,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_forum_matches": true,
+            "own_user_matches": true
+          },
+          "status": "accepted-empty-response"
+        }
+      ],
+      "local_attempts_without_captured_response": [],
+      "results": {
+        "before": {
+          "followed": 0,
+          "signed": 0
+        },
+        "after_sign": {
+          "followed": 1,
+          "signed": 1
+        },
+        "follow_transition_verified": true,
+        "new_sign_transition_verified": true,
+        "follow_baseline_restored": true,
+        "daily_sign_cannot_be_undone": true
+      }
+    },
+    {
+      "name": "publisher-target-guard",
+      "started_at_utc": "2026-11-15T04:02:11.214Z",
+      "finished_at_utc": "2026-11-15T04:02:12.511Z",
+      "phase_completed": true,
+      "phase_failure": "Test identity/forum mismatch",
+      "operations": [
+        {
+          "name": "publish-identity-preflight",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:02:11.214Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "567570428eafcfaf5756ea0442099a945f2b4d1f0fdf02051072bc3154cfc9f5",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        }
+      ],
+      "local_attempts_without_captured_response": [],
+      "results": {
+        "publish_not_attempted": true
+      }
+    },
+    {
+      "name": "publish",
+      "started_at_utc": "2026-11-15T04:03:37.462Z",
+      "finished_at_utc": "2026-11-15T04:03:43.511Z",
+      "phase_completed": true,
+      "phase_failure": "Created thread identity/content mismatch",
+      "operations": [
+        {
+          "name": "publish-identity-preflight",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:03:37.462Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "7b95288550a2e0af2e8c70c089fb193d79d16a7853177fa31143a488f4957710",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "publish-test-forum-preflight",
+          "path": "/c/f/frs/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:03:38.511Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "852271807e6df333062e1f2166a800889d613d220cd67549250334c5229e7dad",
+          "response_bytes": 383359,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "test_forum_name_matches": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "publish-one-test-thread",
+          "path": "/c/c/thread/add_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:03:40.525Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "645f34e42eb957d5eb17663a0977cedbd81fa799d56b3d810277aa9e748f3b0c",
+          "response_bytes": 447,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change",
+          "acceptance_followup": "publish-cleanup"
+        },
+        {
+          "name": "read-created-thread",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:03:42.513Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "57a4d1c78a2a9e6c0b493716c9ed91284691d06addff2bba43d196699e93f7c3",
+          "response_bytes": 17511,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "created_thread_id_matches": true,
+            "own_author_matches": true,
+            "title_matches": true,
+            "test_marker_matches": false,
+            "forum_matches": true
+          },
+          "status": "accepted-empty-response"
+        }
+      ],
+      "local_attempts_without_captured_response": [],
+      "results": {
+        "official_editor_input_verified": true,
+        "initial_body_check_used_empty_reply_list": true,
+        "creation_and_cleanup_verified_in_followup": true
+      }
+    },
+    {
+      "name": "locate-first-floor",
+      "started_at_utc": "2026-11-15T04:04:40.543Z",
+      "finished_at_utc": "2026-11-15T04:04:41.105Z",
+      "phase_completed": true,
+      "phase_failure": null,
+      "operations": [
+        {
+          "name": "locate-created-thread-content",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:04:40.543Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "b74dae24470c341d06d5a34623cf3e396dfac556baa74cead9d72a2e3acb54a5",
+          "response_bytes": 17511,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "accepted-empty-response"
+        }
+      ],
+      "local_attempts_without_captured_response": [],
+      "results": {
+        "reply_list_empty": true,
+        "first_floor_contains_marker": true
+      }
+    },
+    {
+      "name": "publish-cleanup",
+      "started_at_utc": "2026-11-15T04:05:30.307Z",
+      "finished_at_utc": "2026-11-15T04:05:31.791Z",
+      "phase_completed": true,
+      "phase_failure": null,
+      "operations": [
+        {
+          "name": "verify-created-main-first-floor",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:05:30.307Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "7832e84946e32731ef0ec7b92f7c8b5f7f806a1dd4899a38cc160346a13aa6f8",
+          "response_bytes": 17511,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "created_thread_id_matches": true,
+            "own_author_matches": true,
+            "title_matches": true,
+            "test_marker_matches": true,
+            "test_forum_matches": true
+          },
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "first-floor-locator-before-delete",
+          "path": "/c/f/pb/getmypost_pc",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T04:05:30.747Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "adbacf3f0fadf4f0c69117362b2548c8f9feff2e3ca4d3a00d9fe6716f1cdc2f",
+          "response_bytes": 14533,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "created_first_floor_marker_present": true
+          },
+          "status": "accepted-empty-response"
+        },
+        {
+          "name": "delete-owned-created-main-thread",
+          "path": "/c/c/bawu/delthread_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:05:30.999Z",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "286511708be79d461acc00135f0bf707210914d337f85e12d426e49a91f25486",
+          "response_bytes": 87,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "owned_created_thread_verified_before_delete": true
+          },
+          "status": "verified-state-change"
+        },
+        {
+          "name": "deleted-main-thread-readback",
+          "path": "/c/f/pb/page_pc",
+          "method": "POST",
+          "observed_at_utc": "2026-11-15T04:05:31.368Z",
+          "http_status": 200,
+          "error_code": "4",
+          "response_sha256": "84b0fe689e28e5f88d3097557ed2a7c545cdfa7a5f8b505e1f1c3d3e98ff1d96",
+          "response_bytes": 124,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": false,
+          "checks": {
+            "expected_deleted_object_unavailable": true
+          },
+          "status": "verified-deleted-object-unavailable",
+          "expected_business_rejection": true
+        },
+        {
+          "name": "deleted-first-floor-readback",
+          "path": "/c/f/pb/getmypost_pc",
+          "method": "GET",
+          "observed_at_utc": "2026-11-15T04:05:31.626Z",
+          "http_status": 200,
+          "error_code": "4",
+          "response_sha256": "ddb8a67298a7b1f08880b89306a14ee61b014cffe7dde272d48e7046e71e22be",
+          "response_bytes": 123,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": false,
+          "checks": {
+            "expected_deleted_object_unavailable": true
+          },
+          "status": "verified-deleted-object-unavailable",
+          "expected_business_rejection": true
+        }
+      ],
+      "local_attempts_without_captured_response": [],
+      "results": {
+        "thread_creation_and_object_verified": true,
+        "first_floor_locator_validated": true,
+        "own_thread_delete_acknowledged": true,
+        "thread_readback_code": "4",
+        "created_thread_no_longer_readable": true,
+        "first_floor_readback_code": "4",
+        "created_marker_absent_from_first_floor": true,
+        "pc_thread_and_first_floor_cleanup_verified": true,
+        "cleanup_incomplete": false
+      }
+    }
+  ],
+  "result": {
+    "search_suggestion_exact_forum_verified": true,
+    "forum_search_exact_object_verified": true,
+    "thread_search_known_object_and_scoped_search_verified": true,
+    "user_search_controlled_identity_verified": true,
+    "combined_search_exact_forum_verified": true,
+    "new_daily_sign_transition_verified": true,
+    "temporary_forum_follow_transition_and_restore_verified": true,
+    "one_main_thread_created_and_identity_content_verified": true,
+    "main_thread_delete_acknowledged": true,
+    "thread_and_prevalidated_first_floor_returned_error_4_after_delete": true,
+    "pc_cleanup_verified": true,
+    "daily_sign_not_reversible": true,
+    "cookie_exported": false,
+    "raw_user_responses_exported": false,
+    "created_ids_and_markers_public": false
+  },
+  "limitations": [
+    "Search covers the recorded known-object queries, not every relevance, pagination, media or moderation branch.",
+    "160002 was recorded with an already-signed baseline. 300004 was recorded while unsigned and unfollowed; sign succeeded after following. The precise server explanation for 300004 was not retained.",
+    "An early frontend chain did not reach a captured business response; reload cancelled it and the unfollowed baseline was independently confirmed. Other initialization failures are local diagnostics, not service restrictions.",
+    "The published thread has its main body in first_floor and an empty post_list. The initial body check was wrong; its failure remains, and a followup verified author/title/marker before deleting exactly this run's own content.",
+    "Deletion proof is confined to the recorded PC thread and prevalidated first-floor locator returning 4; it makes no claim about underlying storage, caches, all protocols or the earlier App test thread.",
+    "The main thread was submitted through the official editor; form input semantics were verified, but raw request bodies were not exported and an independently reusable PC publishing SDK was not implemented."
+  ]
+}

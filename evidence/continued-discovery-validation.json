@@ -1,0 +1,1948 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "baidutieba_AndroidPhone_1015363f.apk",
+    "size": 87847605,
+    "sha256": "06aa06e4579758e7fd33afe7d1a31a257c8ae6251965f3d8235b68cd965f2be3"
+  },
+  "evidence_start_utc": "2026-11-14T12:52:07.438Z",
+  "evidence_end_utc": "2026-11-14T13:54:41.098Z",
+  "counts": {
+    "total_requests": 63,
+    "http_business_or_media_requests": 11,
+    "app_socket_requests": 52,
+    "app_socket_responses": 51,
+    "distinct_app_socket_commands": 10,
+    "transport_handshake_attempts": 8
+  },
+  "commands": [
+    1001,
+    104102,
+    104103,
+    104104,
+    107129,
+    205003,
+    208001,
+    303005,
+    303006,
+    303017
+  ],
+  "phases": [
+    {
+      "name": "source-derived-http-reads",
+      "transport": "https",
+      "results": [
+        {
+          "name": "current-public-thread-fixture",
+          "path": "/c/f/pb/page",
+          "command": 302001,
+          "observed_at_utc": "2026-11-14T12:52:07.438Z",
+          "authenticated": true,
+          "endpoint": "/c/f/pb/page",
+          "http_status": 200,
+          "response_sha256": "1c14def0cef07613dac4ab04b9a1989ec8e2ea0aeaaf5c6ae87b8b7f0000b791",
+          "response_bytes": 38064,
+          "error_code": "0",
+          "status": "verified-read",
+          "checks": {
+            "requested_thread_matches": true
+          }
+        },
+        {
+          "name": "own-kjs-status",
+          "path": "/c/f/shop/getUserKjsStatus",
+          "observed_at_utc": "2026-11-14T12:52:07.645Z",
+          "authenticated": true,
+          "input_fields": [],
+          "source": "com.baidu.tieba.l3e.g/f: explicit empty-map default",
+          "http_status": 200,
+          "response_sha256": "9686cfd708a6f7c2a78d796a020028a3de91fe0ac060741db0354b86a1847701",
+          "response_bytes": 126,
+          "status": "business-error",
+          "error_code": "210009",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": [],
+          "top_level_keys": [
+            "ctime",
+            "data",
+            "error_code",
+            "error_msg",
+            "logid",
+            "server_time",
+            "time"
+          ],
+          "data_keys": [],
+          "payload_kinds": {},
+          "error_message": "系统错误"
+        },
+        {
+          "name": "public-thread-share-image",
+          "path": "/c/c/img/getShareImg",
+          "observed_at_utc": "2026-11-14T12:52:08.368Z",
+          "authenticated": true,
+          "input_fields": [
+            "thread_id",
+            "type"
+          ],
+          "source": "com.baidu.tieba.zr6.a.doInBackground",
+          "http_status": 200,
+          "response_sha256": "840ccd97e196de702113c75664ad030806bcf89c3f5f6c516bd1fc9f1829f2c8",
+          "response_bytes": 247,
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "business_field_names": [
+            "img_url"
+          ],
+          "scalar_field_names": [
+            "img_url"
+          ],
+          "top_level_keys": [
+            "img_url",
+            "server_time",
+            "time",
+            "ctime",
+            "logid",
+            "error_code"
+          ],
+          "data_keys": [],
+          "payload_kinds": {},
+          "condition": "img_url returned; same-host HTTPS download succeeded; target image identity is not established"
+        },
+        {
+          "name": "public-forum-share-image",
+          "path": "/c/c/img/getShareImg",
+          "observed_at_utc": "2026-11-14T12:52:09.061Z",
+          "authenticated": true,
+          "input_fields": [
+            "forum_id",
+            "type"
+          ],
+          "source": "com.baidu.tieba.zr6.a.doInBackground",
+          "http_status": 200,
+          "response_sha256": "95003472f3b347aea6c0d8f2ff7016ac5063d913c9554866249ee47316c3cfeb",
+          "response_bytes": 247,
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "business_field_names": [
+            "img_url"
+          ],
+          "scalar_field_names": [
+            "img_url"
+          ],
+          "top_level_keys": [
+            "img_url",
+            "server_time",
+            "time",
+            "ctime",
+            "logid",
+            "error_code"
+          ],
+          "data_keys": [],
+          "payload_kinds": {},
+          "condition": "img_url returned; same-host HTTPS download succeeded; target image identity is not established"
+        },
+        {
+          "name": "public-thread-aigc-status",
+          "path": "/c/x/aigc/getBdtAigcAnswerStatus",
+          "observed_at_utc": "2026-11-14T12:52:09.145Z",
+          "authenticated": false,
+          "input_fields": [
+            "tid"
+          ],
+          "source": "com.baidu.tieba.a9f.b; ordinary thread, not an AI-answer fixture",
+          "http_status": 200,
+          "response_sha256": "44453d61abc16413d62ebf6af8014c3215a9ca6b7c5e63eb8198980b95d611a3",
+          "response_bytes": 125,
+          "status": "business-error",
+          "error_code": "210009",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": [],
+          "top_level_keys": [
+            "ctime",
+            "data",
+            "error_code",
+            "error_msg",
+            "logid",
+            "server_time",
+            "time"
+          ],
+          "data_keys": [],
+          "payload_kinds": {},
+          "missing_fixture": "AI-answer thread",
+          "error_message": "系统错误"
+        },
+        {
+          "name": "own-sprite-page-detail",
+          "path": "/c/f/sprite/getSpriteChatDetail",
+          "observed_at_utc": "2026-11-14T12:52:10.264Z",
+          "authenticated": true,
+          "input_fields": [
+            "from",
+            "scene",
+            "query"
+          ],
+          "source": "com.baidu.tieba.t7c.c/e; empty query, no send operation",
+          "http_status": 200,
+          "response_sha256": "d8a2512339e169cf523eb0e697a8a38ceec60d0fe0477f014bae8b42b1181442",
+          "response_bytes": 125,
+          "status": "response-schema-validated",
+          "error_code": "0",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": [],
+          "top_level_keys": [
+            "ctime",
+            "data",
+            "error_code",
+            "logid",
+            "server_time",
+            "time"
+          ],
+          "data_keys": [
+            "guide_info"
+          ],
+          "payload_kinds": {
+            "guide_info": "object"
+          },
+          "condition": "guide_info.need_loading only; no conversation sent or verified"
+        },
+        {
+          "name": "anonymous-sprite-guide-info",
+          "path": "/c/x/sprite/getGuideInfo",
+          "observed_at_utc": "2026-11-14T12:52:10.345Z",
+          "authenticated": false,
+          "input_fields": [
+            "from",
+            "scene",
+            "query"
+          ],
+          "source": "com.baidu.tieba.g6c.b; J(false), no query text",
+          "http_status": 200,
+          "response_sha256": "293f6037792be25a92bc3f93ac6cd98b938eb25d0a1e002b9635302ec54d27e2",
+          "response_bytes": 125,
+          "status": "business-error",
+          "error_code": "210009",
+          "business_field_names": [
+            "data"
+          ],
+          "scalar_field_names": [],
+          "top_level_keys": [
+            "ctime",
+            "data",
+            "error_code",
+            "error_msg",
+            "logid",
+            "server_time",
+            "time"
+          ],
+          "data_keys": [],
+          "payload_kinds": {},
+          "error_message": "系统错误"
+        }
+      ]
+    },
+    {
+      "name": "share-image-media-and-forum-cross-check",
+      "transport": "https",
+      "results": [
+        {
+          "name": "current-thread-image-fixture",
+          "path": "/c/f/pb/page",
+          "command": "302001",
+          "observed_at_utc": "2026-11-14T13:38:13.778Z",
+          "timestamp_source": "capture-file-mtime",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "5e9a9b8cd32f8b70d394c27f20120f08564d58c7922651e2bebbf7b9b3e74cd0",
+          "response_bytes": 33404,
+          "status": "verified-read",
+          "http_status_basis": "TiebaApi had returned after validating HTTP 200"
+        },
+        {
+          "transport_upgraded_from_http": true,
+          "name": "public-thread-share-image-download",
+          "path": "/forum/pic/item/:image-id.jpg",
+          "origin": "https://tiebapic.baidu.com",
+          "observed_at_utc": "2026-11-14T13:39:56.055Z",
+          "credentials_sent": false,
+          "status": "image-content-received",
+          "http_status": 200,
+          "content_type": "image/jpeg",
+          "response_bytes": 33207,
+          "response_sha256": "e2b7a8ec856751fb58efcd180d543eca92170ce2fc45aac7105ca7c3ca53ab3a",
+          "checks": {
+            "jpeg_signature": true,
+            "input_thread_picture_matches": false
+          }
+        },
+        {
+          "transport_upgraded_from_http": true,
+          "name": "public-forum-share-image-download",
+          "path": "/forum/pic/item/:image-id.jpg",
+          "origin": "https://tiebapic.baidu.com",
+          "observed_at_utc": "2026-11-14T13:39:56.787Z",
+          "credentials_sent": false,
+          "status": "image-content-received",
+          "http_status": 200,
+          "content_type": "image/jpeg",
+          "response_bytes": 20680,
+          "response_sha256": "21602140d6f5a6acea5f2dcbceb6187f0faf793c02e0cd58ba004535c64fb927",
+          "checks": {
+            "jpeg_signature": true,
+            "input_thread_picture_matches": null
+          }
+        },
+        {
+          "name": "own-followed-forums-http-cross-check",
+          "path": "/c/f/forum/like",
+          "observed_at_utc": "2026-11-14T13:39:58.144Z",
+          "http_status": 200,
+          "response_sha256": "cad0e9aed69960a61fc5544ab7c4e282ae944a71ee33bee57193f37d5626edec",
+          "response_bytes": 24908,
+          "error_code": "0",
+          "status": "verified-read",
+          "authenticated": true,
+          "checks": {
+            "nonempty_owned_forum_list": true,
+            "all_socket_page_forums_present": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "first-native-init-without-headers",
+      "transport": "app-websocket",
+      "results": [
+        {
+          "name": "guest-initialization",
+          "command": 1001,
+          "observed_at_utc": "2026-11-14T13:16:32.025Z",
+          "encrypted": false,
+          "gzip": false,
+          "request_bytes": 517,
+          "status": "transport-or-protocol-incomplete",
+          "error": "socket-closed",
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "c78ecf82349537564458752aba33ad06e5388931747fdb0dded9aea82387f21b"
+        }
+      ]
+    },
+    {
+      "name": "native-guest-reads",
+      "transport": "app-websocket",
+      "results": [
+        {
+          "name": "guest-initialization",
+          "command": 1001,
+          "observed_at_utc": "2026-11-14T13:18:49.935Z",
+          "encrypted": false,
+          "gzip": false,
+          "request_bytes": 517,
+          "response_flags": 64,
+          "response_bytes": 321,
+          "response_sha256": "375cafce42d93f010fb337d1238df4ed3acd5b25e676fbb7b8dd2a31e06a1d95",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "status": "verified-guest-initialization",
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "68cfbb942a89afb7be0cd705aeffb195c63b7fd147659eb57d638d6e51495396",
+          "checks": {
+            "guest_identity_absent": true,
+            "heartbeat_interval_explicit": true
+          }
+        },
+        {
+          "name": "public-beijing-pois",
+          "command": 303017,
+          "observed_at_utc": "2026-11-14T13:18:50.150Z",
+          "encrypted": true,
+          "gzip": false,
+          "request_bytes": 45,
+          "response_flags": 192,
+          "response_bytes": 1333,
+          "response_sha256": "29a7ab2cb3de8d21f386c327d0d2026d04ef80b963541ea6ea2f981cb0833b75",
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2
+          ],
+          "status": "verified-read",
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "68cfbb942a89afb7be0cd705aeffb195c63b7fd147659eb57d638d6e51495396",
+          "checks": {
+            "nonempty_poi_list": true,
+            "expected_city_returned_for_public_beijing_point": true,
+            "names_addresses_and_sn_present": true
+          }
+        },
+        {
+          "name": "public-forum-menu",
+          "command": 303006,
+          "observed_at_utc": "2026-11-14T13:18:50.261Z",
+          "encrypted": true,
+          "gzip": false,
+          "request_bytes": 39,
+          "response_flags": 192,
+          "response_bytes": 14,
+          "response_sha256": "7625450f41bdec3f225da25c7476eb5977956e54467c7372ddaa32ae22b78a5d",
+          "error_code": "0",
+          "data_tags": [
+            2,
+            3
+          ],
+          "status": "accepted-empty-response",
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "68cfbb942a89afb7be0cd705aeffb195c63b7fd147659eb57d638d6e51495396",
+          "checks": {
+            "has_menu_explicitly_zero": true
+          },
+          "missing_fixture": "Official forum with a nonempty menu"
+        }
+      ]
+    },
+    {
+      "name": "encrypted-account-reads",
+      "transport": "app-websocket",
+      "results": [
+        {
+          "name": "guest-initialization",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:30:33.656Z",
+          "encrypted": false,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-guest-initialization",
+          "response_bytes": 321,
+          "response_sha256": "375cafce42d93f010fb337d1238df4ed3acd5b25e676fbb7b8dd2a31e06a1d95",
+          "response_flags": 64,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "55349d28dcf820418c655e07209a6461745614ee5958f17051262579628cf8e7",
+          "checks": {
+            "guest_identity_absent": true,
+            "heartbeat_interval_explicit": true
+          }
+        },
+        {
+          "name": "encrypted-own-initialization",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:30:33.895Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": true,
+          "status": "verified-session-initialization",
+          "response_bytes": 949,
+          "response_sha256": "089a766a78d6bfcdaa178c8d9b1965cf6ce129ff9ce6fe3b34da476346727915",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "checks": {
+            "own_user_id_matches": true,
+            "account_payload_encrypted": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "55349d28dcf820418c655e07209a6461745614ee5958f17051262579628cf8e7"
+        },
+        {
+          "name": "own-collection-update-count",
+          "command": 303005,
+          "request_descriptor": "Ltbclient/QueryCollectUpdateNum/QueryCollectUpdateNumReqIdl;",
+          "observed_at_utc": "2026-11-14T13:30:34.242Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "response-schema-validated",
+          "response_bytes": 12,
+          "response_sha256": "e1c11a9ae422b41ed82ddd959372ad1fa9837e074e97562fa4455994f4189bf4",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "55349d28dcf820418c655e07209a6461745614ee5958f17051262579628cf8e7",
+          "checks": {
+            "collection_update_count_uint32": true
+          },
+          "condition": "Count shape only; no new collection update generated"
+        },
+        {
+          "name": "controlled-second-user-info",
+          "command": 205003,
+          "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+          "observed_at_utc": "2026-11-14T13:30:34.375Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 160,
+          "response_sha256": "35c5012ddda63df1bf04940c9f3aa3c7b29c58f128ad878846a78a1f8f874708",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "55349d28dcf820418c655e07209a6461745614ee5958f17051262579628cf8e7",
+          "checks": {
+            "controlled_user_id_matches": true,
+            "blacklist_state_explicit": true,
+            "reminder_state_explicit": true
+          }
+        },
+        {
+          "name": "own-mask-info-default",
+          "command": 104103,
+          "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:30:34.634Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "accepted-empty-response",
+          "response_bytes": 12,
+          "response_sha256": "879aba0d2b8da48cca0aeea8c3efebfe8769fb95e499805519078ad227919f9d",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "55349d28dcf820418c655e07209a6461745614ee5958f17051262579628cf8e7"
+        },
+        {
+          "name": "controlled-second-mask-check",
+          "command": 104104,
+          "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+          "observed_at_utc": "2026-11-14T13:30:34.764Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "response-schema-unconfirmed",
+          "response_bytes": 16,
+          "response_sha256": "c8be88f00f9523e8baffb1248732cf8ed10512c0d3d298e31688ab43838ccbec",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "55349d28dcf820418c655e07209a6461745614ee5958f17051262579628cf8e7"
+        },
+        {
+          "name": "own-followed-livable-forums",
+          "command": 107129,
+          "request_descriptor": "Lprotobuf/GetLivableForumList/GetLivableForumListReqIdl;",
+          "observed_at_utc": "2026-11-14T13:30:34.932Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 360,
+          "response_sha256": "5ef19db65cb165fd4137e354ead6b17bbb13273ff001f889951ba4fed2f160a5",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "55349d28dcf820418c655e07209a6461745614ee5958f17051262579628cf8e7",
+          "checks": {
+            "nonempty_forum_list": true,
+            "all_returned_ids_in_current_own_followed_http_list": true
+          }
+        },
+        {
+          "name": "public-forum-official-detail",
+          "command": 208001,
+          "request_descriptor": "Lprotobuf/QueryForumDetail/QueryForumDetailReqIdl;",
+          "observed_at_utc": "2026-11-14T13:30:37.023Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "response-schema-validated",
+          "response_bytes": 42,
+          "response_sha256": "403260f10758b98f7416dc776a149d49e70ef5e2f05a048798bda1391f40c9ec",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "55349d28dcf820418c655e07209a6461745614ee5958f17051262579628cf8e7",
+          "checks": {
+            "portrait_nonempty": false,
+            "authen_string_present": true,
+            "current_forum_avatar_matches": false
+          }
+        },
+        {
+          "name": "clear-owned-socket-session",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:30:38.257Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-guest-initialization",
+          "response_bytes": 321,
+          "response_sha256": "375cafce42d93f010fb337d1238df4ed3acd5b25e676fbb7b8dd2a31e06a1d95",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "55349d28dcf820418c655e07209a6461745614ee5958f17051262579628cf8e7",
+          "checks": {
+            "guest_identity_absent": true,
+            "heartbeat_interval_explicit": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "blacklist-first-parser-attempt",
+      "transport": "app-websocket",
+      "results": [
+        {
+          "name": "guest-initialization",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:45.011Z",
+          "encrypted": false,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-guest-initialization",
+          "response_bytes": 321,
+          "response_sha256": "375cafce42d93f010fb337d1238df4ed3acd5b25e676fbb7b8dd2a31e06a1d95",
+          "response_flags": 64,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f",
+          "checks": {
+            "guest_identity_absent": true,
+            "heartbeat_interval_explicit": true
+          }
+        },
+        {
+          "name": "encrypted-own-initialization",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:45.205Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": true,
+          "status": "verified-session-initialization",
+          "response_bytes": 949,
+          "response_sha256": "1fc4a8b223402953307d5d389c6675c260e085035b3ee678ceccf1af1de0efe3",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "checks": {
+            "own_user_id_matches": true,
+            "account_payload_encrypted": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f"
+        },
+        {
+          "name": "controlled-blacklist-baseline",
+          "command": 205003,
+          "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:45.508Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 160,
+          "response_sha256": "35c5012ddda63df1bf04940c9f3aa3c7b29c58f128ad878846a78a1f8f874708",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16
+          ],
+          "checks": {
+            "controlled_user_id_matches": true,
+            "blacklist_state_explicit": true,
+            "reminder_state_explicit": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f"
+        },
+        {
+          "name": "own-blacklist-before",
+          "command": 104103,
+          "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:45.726Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 1550,
+          "response_sha256": "1e2759511faee6d931a26a9161a3f60bde7be0024affaec3abb2a69d30ced49f",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3
+          ],
+          "checks": {
+            "nonempty_user_entries": true,
+            "controlled_membership_matches_profile_state": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f"
+        },
+        {
+          "name": "controlled-mask-before",
+          "command": 104104,
+          "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:46.304Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 16,
+          "response_sha256": "c8be88f00f9523e8baffb1248732cf8ed10512c0d3d298e31688ab43838ccbec",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1
+          ],
+          "checks": {
+            "controlled_mask_state_matches_profile": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f"
+        },
+        {
+          "name": "toggle-controlled-blacklist",
+          "command": 104102,
+          "request_descriptor": "Lprotobuf/UpdateMaskInfo/UpdateMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:46.915Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "transport-incomplete",
+          "response_bytes": 12,
+          "response_sha256": "879aba0d2b8da48cca0aeea8c3efebfe8769fb95e499805519078ad227919f9d",
+          "response_flags": 192,
+          "error": "Missing envelope field",
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f",
+          "failure_stage": "local-response-envelope-parser",
+          "offline_review": {
+            "error_code": "0",
+            "response_wrapper": "error-only",
+            "transport_response_received": true
+          }
+        },
+        {
+          "name": "restore-controlled-blacklist",
+          "command": 104102,
+          "request_descriptor": "Lprotobuf/UpdateMaskInfo/UpdateMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:47.340Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "transport-incomplete",
+          "response_bytes": 12,
+          "response_sha256": "879aba0d2b8da48cca0aeea8c3efebfe8769fb95e499805519078ad227919f9d",
+          "response_flags": 192,
+          "error": "Missing envelope field",
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f",
+          "failure_stage": "local-response-envelope-parser",
+          "offline_review": {
+            "error_code": "0",
+            "response_wrapper": "error-only",
+            "transport_response_received": true
+          }
+        },
+        {
+          "name": "controlled-blacklist-after-restore",
+          "command": 205003,
+          "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:47.627Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 160,
+          "response_sha256": "35c5012ddda63df1bf04940c9f3aa3c7b29c58f128ad878846a78a1f8f874708",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16
+          ],
+          "checks": {
+            "controlled_user_id_matches": true,
+            "blacklist_state_explicit": true,
+            "reminder_state_explicit": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f"
+        },
+        {
+          "name": "own-blacklist-after-restore",
+          "command": 104103,
+          "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:47.891Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 1550,
+          "response_sha256": "1e2759511faee6d931a26a9161a3f60bde7be0024affaec3abb2a69d30ced49f",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3
+          ],
+          "checks": {
+            "nonempty_user_entries": true,
+            "controlled_membership_matches_profile_state": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f"
+        },
+        {
+          "name": "controlled-mask-after-restore",
+          "command": 104104,
+          "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:48.060Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 16,
+          "response_sha256": "c8be88f00f9523e8baffb1248732cf8ed10512c0d3d298e31688ab43838ccbec",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1
+          ],
+          "checks": {
+            "controlled_mask_state_matches_profile": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f"
+        },
+        {
+          "name": "clear-owned-socket-session",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:46:48.214Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-guest-initialization",
+          "response_bytes": 321,
+          "response_sha256": "375cafce42d93f010fb337d1238df4ed3acd5b25e676fbb7b8dd2a31e06a1d95",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "342a5efbe00fb5f64c0c6c9cfbe9f29c1b9dfcdc520d910dbb238b8dcdda586f",
+          "checks": {
+            "guest_identity_absent": true,
+            "heartbeat_interval_explicit": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "blacklist-verified-cycle",
+      "transport": "app-websocket",
+      "results": [
+        {
+          "name": "guest-initialization",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:47.860Z",
+          "encrypted": false,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-guest-initialization",
+          "response_bytes": 321,
+          "response_sha256": "375cafce42d93f010fb337d1238df4ed3acd5b25e676fbb7b8dd2a31e06a1d95",
+          "response_flags": 64,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7",
+          "checks": {
+            "guest_identity_absent": true,
+            "heartbeat_interval_explicit": true
+          }
+        },
+        {
+          "name": "encrypted-own-initialization",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:48.081Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": true,
+          "status": "verified-session-initialization",
+          "response_bytes": 949,
+          "response_sha256": "8234556ec654f3af5fa235611ecab1ba7da365eb267b145eaf70e67db8254304",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "checks": {
+            "own_user_id_matches": true,
+            "account_payload_encrypted": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7"
+        },
+        {
+          "name": "controlled-blacklist-baseline",
+          "command": 205003,
+          "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:48.424Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 160,
+          "response_sha256": "35c5012ddda63df1bf04940c9f3aa3c7b29c58f128ad878846a78a1f8f874708",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16
+          ],
+          "checks": {
+            "controlled_user_id_matches": true,
+            "blacklist_state_explicit": true,
+            "reminder_state_explicit": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7"
+        },
+        {
+          "name": "own-blacklist-before",
+          "command": 104103,
+          "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:48.676Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 1550,
+          "response_sha256": "1e2759511faee6d931a26a9161a3f60bde7be0024affaec3abb2a69d30ced49f",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3
+          ],
+          "checks": {
+            "nonempty_user_entries": true,
+            "controlled_membership_matches_profile_state": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7"
+        },
+        {
+          "name": "controlled-mask-before",
+          "command": 104104,
+          "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:48.881Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 16,
+          "response_sha256": "c8be88f00f9523e8baffb1248732cf8ed10512c0d3d298e31688ab43838ccbec",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1
+          ],
+          "checks": {
+            "controlled_mask_state_matches_profile": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7"
+        },
+        {
+          "name": "toggle-controlled-blacklist",
+          "command": 104102,
+          "request_descriptor": "Lprotobuf/UpdateMaskInfo/UpdateMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:49.374Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-state-change",
+          "response_bytes": 12,
+          "response_sha256": "879aba0d2b8da48cca0aeea8c3efebfe8769fb95e499805519078ad227919f9d",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7",
+          "checks": {
+            "transition_read_back": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "controlled-blacklist-after-toggle",
+          "command": 205003,
+          "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:49.640Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 160,
+          "response_sha256": "663723f558b12cbab92ce4c43d46d2498c81b693a85b1d5738a29b5afc5a3b79",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16
+          ],
+          "checks": {
+            "controlled_user_id_matches": true,
+            "blacklist_state_explicit": true,
+            "reminder_state_explicit": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7"
+        },
+        {
+          "name": "own-blacklist-after-toggle",
+          "command": 104103,
+          "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:50.007Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 1651,
+          "response_sha256": "4805aa17dca3b63883cc55713a65aaa5372dc7d54e320f11f5a8937b121464f8",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3
+          ],
+          "checks": {
+            "nonempty_user_entries": true,
+            "controlled_membership_matches_profile_state": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7"
+        },
+        {
+          "name": "controlled-mask-after-toggle",
+          "command": 104104,
+          "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:50.658Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 16,
+          "response_sha256": "27fc171b91b181e7541ddc2187bf8ee26e8bad1add6ea806fbef4777518b5799",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1
+          ],
+          "checks": {
+            "controlled_mask_state_matches_profile": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7"
+        },
+        {
+          "name": "restore-controlled-blacklist",
+          "command": 104102,
+          "request_descriptor": "Lprotobuf/UpdateMaskInfo/UpdateMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:50.797Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-state-change",
+          "response_bytes": 12,
+          "response_sha256": "879aba0d2b8da48cca0aeea8c3efebfe8769fb95e499805519078ad227919f9d",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7",
+          "checks": {
+            "transition_read_back": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "controlled-blacklist-after-restore",
+          "command": 205003,
+          "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:51.103Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 160,
+          "response_sha256": "35c5012ddda63df1bf04940c9f3aa3c7b29c58f128ad878846a78a1f8f874708",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16
+          ],
+          "checks": {
+            "controlled_user_id_matches": true,
+            "blacklist_state_explicit": true,
+            "reminder_state_explicit": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7"
+        },
+        {
+          "name": "own-blacklist-after-restore",
+          "command": 104103,
+          "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:51.338Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 1550,
+          "response_sha256": "1e2759511faee6d931a26a9161a3f60bde7be0024affaec3abb2a69d30ced49f",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3
+          ],
+          "checks": {
+            "nonempty_user_entries": true,
+            "controlled_membership_matches_profile_state": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7"
+        },
+        {
+          "name": "controlled-mask-after-restore",
+          "command": 104104,
+          "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:51.848Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 16,
+          "response_sha256": "c8be88f00f9523e8baffb1248732cf8ed10512c0d3d298e31688ab43838ccbec",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1
+          ],
+          "checks": {
+            "controlled_mask_state_matches_profile": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7"
+        },
+        {
+          "name": "clear-owned-socket-session",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:50:52.009Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-guest-initialization",
+          "response_bytes": 321,
+          "response_sha256": "375cafce42d93f010fb337d1238df4ed3acd5b25e676fbb7b8dd2a31e06a1d95",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "5c537d5ee0729a829458c5e30c52773784aea61f29c0c672399e9e0d713bb3e7",
+          "checks": {
+            "guest_identity_absent": true,
+            "heartbeat_interval_explicit": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "reminder-verified-cycle",
+      "transport": "app-websocket",
+      "results": [
+        {
+          "name": "guest-initialization",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:37.736Z",
+          "encrypted": false,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-guest-initialization",
+          "response_bytes": 321,
+          "response_sha256": "375cafce42d93f010fb337d1238df4ed3acd5b25e676fbb7b8dd2a31e06a1d95",
+          "response_flags": 64,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169",
+          "checks": {
+            "guest_identity_absent": true,
+            "heartbeat_interval_explicit": true
+          }
+        },
+        {
+          "name": "encrypted-own-initialization",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:37.920Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": true,
+          "status": "verified-session-initialization",
+          "response_bytes": 949,
+          "response_sha256": "305d6b0601bcc405a3242f92c55172aacc67d09068796d4b93fccc6276593338",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "checks": {
+            "own_user_id_matches": true,
+            "account_payload_encrypted": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169"
+        },
+        {
+          "name": "controlled-reminder-mask-baseline",
+          "command": 205003,
+          "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:38.209Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 160,
+          "response_sha256": "35c5012ddda63df1bf04940c9f3aa3c7b29c58f128ad878846a78a1f8f874708",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16
+          ],
+          "checks": {
+            "controlled_user_id_matches": true,
+            "blacklist_state_explicit": true,
+            "reminder_state_explicit": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169"
+        },
+        {
+          "name": "own-reminder-mask-before",
+          "command": 104103,
+          "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:38.445Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "accepted-empty-response",
+          "response_bytes": 12,
+          "response_sha256": "879aba0d2b8da48cca0aeea8c3efebfe8769fb95e499805519078ad227919f9d",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [],
+          "checks": {
+            "user_list_present": false,
+            "user_entries": 0
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169"
+        },
+        {
+          "name": "controlled-mask-before",
+          "command": 104104,
+          "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:38.762Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "response-schema-unconfirmed",
+          "response_bytes": 16,
+          "response_sha256": "c8be88f00f9523e8baffb1248732cf8ed10512c0d3d298e31688ab43838ccbec",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1
+          ],
+          "checks": {
+            "mask_state": "0"
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169"
+        },
+        {
+          "name": "toggle-controlled-reminder-mask",
+          "command": 104102,
+          "request_descriptor": "Lprotobuf/UpdateMaskInfo/UpdateMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:38.899Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-state-change",
+          "response_bytes": 12,
+          "response_sha256": "879aba0d2b8da48cca0aeea8c3efebfe8769fb95e499805519078ad227919f9d",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169",
+          "checks": {
+            "transition_read_back": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "controlled-reminder-mask-after-toggle",
+          "command": 205003,
+          "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:39.304Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 160,
+          "response_sha256": "606851cedba1b91f15d327a59cd8315a8f25c4eb4368affb4bab6b147a8ef008",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16
+          ],
+          "checks": {
+            "controlled_user_id_matches": true,
+            "blacklist_state_explicit": true,
+            "reminder_state_explicit": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169"
+        },
+        {
+          "name": "own-reminder-mask-after-toggle",
+          "command": 104103,
+          "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:39.538Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "accepted-empty-response",
+          "response_bytes": 12,
+          "response_sha256": "879aba0d2b8da48cca0aeea8c3efebfe8769fb95e499805519078ad227919f9d",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [],
+          "checks": {
+            "user_list_present": false,
+            "user_entries": 0
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169"
+        },
+        {
+          "name": "controlled-mask-after-toggle",
+          "command": 104104,
+          "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:40.026Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "response-schema-unconfirmed",
+          "response_bytes": 16,
+          "response_sha256": "c8be88f00f9523e8baffb1248732cf8ed10512c0d3d298e31688ab43838ccbec",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1
+          ],
+          "checks": {
+            "mask_state": "0"
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169"
+        },
+        {
+          "name": "restore-controlled-reminder-mask",
+          "command": 104102,
+          "request_descriptor": "Lprotobuf/UpdateMaskInfo/UpdateMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:40.142Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-state-change",
+          "response_bytes": 12,
+          "response_sha256": "879aba0d2b8da48cca0aeea8c3efebfe8769fb95e499805519078ad227919f9d",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169",
+          "checks": {
+            "transition_read_back": true,
+            "baseline_restored": true
+          }
+        },
+        {
+          "name": "controlled-reminder-mask-after-restore",
+          "command": 205003,
+          "request_descriptor": "Lprotobuf/QueryUserInfos/QueryUserInfosReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:40.516Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-read",
+          "response_bytes": 160,
+          "response_sha256": "35c5012ddda63df1bf04940c9f3aa3c7b29c58f128ad878846a78a1f8f874708",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16
+          ],
+          "checks": {
+            "controlled_user_id_matches": true,
+            "blacklist_state_explicit": true,
+            "reminder_state_explicit": true
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169"
+        },
+        {
+          "name": "own-reminder-mask-after-restore",
+          "command": 104103,
+          "request_descriptor": "Lprotobuf/GetMaskInfo/GetMaskInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:40.726Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "accepted-empty-response",
+          "response_bytes": 12,
+          "response_sha256": "879aba0d2b8da48cca0aeea8c3efebfe8769fb95e499805519078ad227919f9d",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [],
+          "checks": {
+            "user_list_present": false,
+            "user_entries": 0
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169"
+        },
+        {
+          "name": "controlled-mask-after-restore",
+          "command": 104104,
+          "request_descriptor": "Lprotobuf/CheckMaskUser/CheckMaskUserReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:40.951Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "response-schema-unconfirmed",
+          "response_bytes": 16,
+          "response_sha256": "c8be88f00f9523e8baffb1248732cf8ed10512c0d3d298e31688ab43838ccbec",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1
+          ],
+          "checks": {
+            "mask_state": "0"
+          },
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169"
+        },
+        {
+          "name": "clear-owned-socket-session",
+          "command": 1001,
+          "request_descriptor": "Lprotobuf/UpdateClientInfo/UpdateClientInfoReqIdl;",
+          "observed_at_utc": "2026-11-14T13:54:41.098Z",
+          "encrypted": true,
+          "gzip": false,
+          "credential_bearing": false,
+          "status": "verified-guest-initialization",
+          "response_bytes": 321,
+          "response_sha256": "375cafce42d93f010fb337d1238df4ed3acd5b25e676fbb7b8dd2a31e06a1d95",
+          "response_flags": 192,
+          "error_code": "0",
+          "data_tags": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "transport": "app-websocket",
+          "path": null,
+          "source_ledger_sha256": "1fa74690689c78659eff7719bb88f018ba03a3ee4d1cfe363b0cf377c38f3169",
+          "checks": {
+            "guest_identity_absent": true,
+            "heartbeat_interval_explicit": true
+          }
+        }
+      ]
+    }
+  ],
+  "transport_handshakes": [
+    {
+      "origin": "http://im.tieba.baidu.com:8000",
+      "path": "/",
+      "source": "AndroidManifest LCS_SERVER_ADDR ws://im.tieba.baidu.com:8000",
+      "observed_at_utc": "2026-11-14T13:03:48.045Z",
+      "dns_resolved": true,
+      "tcp_connected": true,
+      "tls_authorized": null,
+      "http_status": 101,
+      "upgrade_accepted": true,
+      "header_names": [
+        "upgrade",
+        "connection",
+        "sec-websocket-accept",
+        "sec-websocket-protocol",
+        "content-type",
+        "seq-id",
+        "configure",
+        "errcode",
+        "set-cookie"
+      ],
+      "head_bytes": 0
+    },
+    {
+      "origin": "https://im.tieba.baidu.com",
+      "path": "/",
+      "source": "Same-host TLS 443 variant; not the manifest transport",
+      "observed_at_utc": "2026-11-14T13:03:48.633Z",
+      "dns_resolved": true,
+      "tcp_connected": true,
+      "tls_authorized": null,
+      "http_status": null,
+      "upgrade_accepted": false,
+      "error": "ECONNRESET"
+    },
+    {
+      "phase": "first-native-init-without-headers",
+      "observed_at_utc": "2026-11-14T13:16:31.848Z",
+      "origin": "http://im.tieba.baidu.com:8000",
+      "path": "/",
+      "http_status": 101,
+      "header_names": [
+        "upgrade",
+        "connection",
+        "sec-websocket-accept",
+        "sec-websocket-protocol",
+        "content-type",
+        "seq-id",
+        "configure",
+        "errcode",
+        "set-cookie"
+      ],
+      "error_code": "0"
+    },
+    {
+      "phase": "native-guest-reads",
+      "observed_at_utc": "2026-11-14T13:18:49.674Z",
+      "origin": "http://im.tieba.baidu.com:8000",
+      "path": "/",
+      "http_status": 101,
+      "header_names": [
+        "upgrade",
+        "connection",
+        "sec-websocket-accept",
+        "sec-websocket-protocol",
+        "content-type",
+        "seq-id",
+        "configure",
+        "errcode",
+        "set-cookie"
+      ],
+      "error_code": "0"
+    },
+    {
+      "phase": "encrypted-account-reads",
+      "observed_at_utc": "2026-11-14T13:30:33.224Z",
+      "origin": "http://im.tieba.baidu.com:8000",
+      "path": "/",
+      "http_status": 101,
+      "header_names": [
+        "upgrade",
+        "connection",
+        "sec-websocket-accept",
+        "sec-websocket-protocol",
+        "content-type",
+        "seq-id",
+        "configure",
+        "errcode",
+        "set-cookie"
+      ],
+      "error_code": "0"
+    },
+    {
+      "phase": "blacklist-first-parser-attempt",
+      "observed_at_utc": "2026-11-14T13:46:44.798Z",
+      "origin": "http://im.tieba.baidu.com:8000",
+      "path": "/",
+      "http_status": 101,
+      "header_names": [
+        "upgrade",
+        "connection",
+        "sec-websocket-accept",
+        "sec-websocket-protocol",
+        "content-type",
+        "seq-id",
+        "configure",
+        "errcode",
+        "set-cookie"
+      ],
+      "error_code": "0"
+    },
+    {
+      "phase": "blacklist-verified-cycle",
+      "observed_at_utc": "2026-11-14T13:50:47.650Z",
+      "origin": "http://im.tieba.baidu.com:8000",
+      "path": "/",
+      "http_status": 101,
+      "header_names": [
+        "upgrade",
+        "connection",
+        "sec-websocket-accept",
+        "sec-websocket-protocol",
+        "content-type",
+        "seq-id",
+        "configure",
+        "errcode",
+        "set-cookie"
+      ],
+      "error_code": "0"
+    },
+    {
+      "phase": "reminder-verified-cycle",
+      "observed_at_utc": "2026-11-14T13:54:37.483Z",
+      "origin": "http://im.tieba.baidu.com:8000",
+      "path": "/",
+      "http_status": 101,
+      "header_names": [
+        "upgrade",
+        "connection",
+        "sec-websocket-accept",
+        "sec-websocket-protocol",
+        "content-type",
+        "seq-id",
+        "configure",
+        "errcode",
+        "set-cookie"
+      ],
+      "error_code": "0"
+    }
+  ],
+  "cycles": [
+    {
+      "name": "blacklist-first-parser-attempt",
+      "command": 104102,
+      "type": 10,
+      "observable_transition_verified": false,
+      "baseline_restored": true,
+      "parser_failure_preserved": true,
+      "socket_returned_to_guest": true
+    },
+    {
+      "name": "blacklist-verified-cycle",
+      "command": 104102,
+      "type": 10,
+      "observable_transition_verified": true,
+      "baseline_restored": true,
+      "parser_failure_preserved": false,
+      "socket_returned_to_guest": true
+    },
+    {
+      "name": "reminder-verified-cycle",
+      "command": 104102,
+      "type": 9,
+      "observable_transition_verified": true,
+      "baseline_restored": true,
+      "parser_failure_preserved": false,
+      "socket_returned_to_guest": true
+    }
+  ],
+  "result": {
+    "all_owned_setting_baselines_restored": true,
+    "all_authenticated_socket_sessions_cleared": true,
+    "plaintext_account_credentials_sent": false
+  },
+  "limitations": [
+    "The first Socket initialization failed before native cuid/extension headers were supplied together; this does not isolate either header as the cause.",
+    "The first blacklist write/restore responses were received but the validator rejected their error-only schema. Original records are preserved; state was restored and the corrected cycle passed.",
+    "Share-image URLs yielded JPEGs over same-host HTTPS, but requested-object image identity was not established.",
+    "Socket commands are not invented HTTP endpoints and are not added to the historical 603 candidate rows.",
+    "Generic 210009 system errors do not prove expired authentication, membership restrictions or retired APIs.",
+    "Raw account data, user identities, notification content, lists and session material remain local."
+  ]
+}
