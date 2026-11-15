@@ -32,22 +32,22 @@
     }
   ],
   "started_at_utc": "2026-11-14T15:21:38.332Z",
-  "finished_at_utc": "2026-11-14T15:51:42.513Z",
+  "finished_at_utc": "2026-11-15T02:51:15.524Z",
   "counts": {
-    "recorded_business_operations": 70,
+    "recorded_business_operations": 96,
     "explicit_identity_reads_in_public_verifier": 2,
     "extra_runtime_method_variants": 4,
     "catalog_path_method_candidates": 86,
     "catalog_unique_paths": 84,
-    "requested_path_method_candidates": 26,
-    "functionally_verified_path_method_candidates": 7,
+    "requested_path_method_candidates": 32,
+    "functionally_verified_path_method_candidates": 14,
     "statuses": {
       "accepted-empty-response": 2,
-      "business-error": 4,
-      "not-verified": 60,
+      "business-error": 3,
+      "not-verified": 54,
       "response-schema-validated": 13,
-      "verified-read": 5,
-      "verified-state-change": 2
+      "verified-read": 7,
+      "verified-state-change": 7
     }
   },
   "phases": [
@@ -3385,6 +3385,429 @@
           "status": "verified-read"
         }
       ]
+    },
+    {
+      "name": "basic-functions:thread-like",
+      "source": "evidence/pc-web-basic-functions-validation.json",
+      "results": [
+        {
+          "name": "like-baseline",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:41:24.955Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "d73314bb6d7efe48949d98d39f48633cafffa6d4e7e94161bcbadce5776e8630",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "like-toggle",
+          "path": "/c/c/agree/opAgree_pc",
+          "observed_at_utc": "2026-11-15T02:41:26.514Z",
+          "method": "GET",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "0c12c7367ec80d649a22530bedb7d5ef61666c3e1a4b7631d346480444dfa974",
+          "response_bytes": 1865,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "like-after-toggle",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:41:28.513Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "a1c3bdcab31a6714c4ab7dca23cc8943196297ca83ccfaf9249cb38dfcde9541",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "like-restore",
+          "path": "/c/c/agree/opAgree_pc",
+          "observed_at_utc": "2026-11-15T02:41:29.511Z",
+          "method": "GET",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "382835a57a29715933de17858859d6c3bb37d2c66e43ce135918b630e7290691",
+          "response_bytes": 218,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "like-after-restore",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:41:30.526Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "83474d2fb250e8a0dcf0ceef88ba40b6be3d7eb5195b7f2f47cb2d2610112bda",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        }
+      ]
+    },
+    {
+      "name": "basic-functions:preflight",
+      "source": "evidence/pc-web-basic-functions-validation.json",
+      "results": [
+        {
+          "name": "basic-write-preflight",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:42:07.578Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "928cf97899f325e60b387215b20512d3473cd03a402f79aa457baf07165ebca2",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        }
+      ]
+    },
+    {
+      "name": "basic-functions:collection",
+      "source": "evidence/pc-web-basic-functions-validation.json",
+      "results": [
+        {
+          "name": "collection-baseline",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:44:38.354Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "1d46ec98e3d7a99b1f5bb34e5a7da0780d96add01c14e40901964b990bc03f17",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "collection-add",
+          "path": "/c/c/post/addstore_pc",
+          "observed_at_utc": "2026-11-15T02:44:40.520Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "b74f1c553324a23dcff3a2ac7805310a514fbc3f7f2407802d47be297dea0810",
+          "response_bytes": 192,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "collection-after-add",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:44:41.511Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "ae19fb076f4dc6f00a692b40342621dad27c80116ad6ed13083a991becbcf81a",
+          "response_bytes": 117183,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "collection-remove",
+          "path": "/c/c/post/rmstore_pc",
+          "observed_at_utc": "2026-11-15T02:44:42.517Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "e4526e7f0464de2ed900137e07bb23da47527d81902187777108e1ea1f7eaf95",
+          "response_bytes": 153,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "collection-after-restore",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:44:43.511Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "6d4d58077580a7f584ab1ae3a5ff8454f2e5b6fc30c5fa02db4e93b1a0339329",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        }
+      ]
+    },
+    {
+      "name": "basic-functions:replies",
+      "source": "evidence/pc-web-basic-functions-validation.json",
+      "results": [
+        {
+          "name": "reply-preflight",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:48:22.294Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "2d0f78db2d43c13b4d710b6af2493906f96790b4156ffdc6544f69133ce5ff73",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "create-parent-reply",
+          "path": "/c/c/post/add_pc",
+          "observed_at_utc": "2026-11-15T02:48:23.521Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "fe8e1342f9180a064d8faa93be1e313519c4cf73f8638063ad4298d082dd626f",
+          "response_bytes": 1485,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "read-created-parent",
+          "path": "/c/f/pb/getmypost_pc",
+          "observed_at_utc": "2026-11-15T02:48:25.519Z",
+          "method": "GET",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "e5237636a1b580274055811ba395712e64a77db5701dfeb45211bf67731c0397",
+          "response_bytes": 21240,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "created_post_id_matches": true,
+            "own_author_matches": true,
+            "test_marker_matches": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "create-child-reply",
+          "path": "/c/c/post/add_pc",
+          "observed_at_utc": "2026-11-15T02:48:26.515Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "146735c673f6d47f5bc7e154e0ac901c255db5876bae0a12c9dac0e1c3f52b0f",
+          "response_bytes": 1484,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "read-created-child",
+          "path": "/c/f/pb/nestedFloor",
+          "observed_at_utc": "2026-11-15T02:48:28.511Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "fda2657ba18b3f7fd0d7b446b2c89213894aea50df94bc70c948ca10bb871668",
+          "response_bytes": 3043,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "created_post_id_matches": true,
+            "own_author_matches": true,
+            "test_marker_matches": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "delete-child",
+          "path": "/c/c/bawu/delpost_pc",
+          "observed_at_utc": "2026-11-15T02:48:29.511Z",
+          "method": "GET",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "d03a52efae68084a25d515c14314b86d4aa302ea7e493e172056b3dbe904571b",
+          "response_bytes": 88,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "delete-parent",
+          "path": "/c/c/bawu/delpost_pc",
+          "observed_at_utc": "2026-11-15T02:48:30.523Z",
+          "method": "GET",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "804b11648b04d5eeedfe7acb3edb89f073ba5d2ec1454103ad09cdd29e4ccf06",
+          "response_bytes": 88,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "after-delete-thread",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:48:31.516Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "cefe1a0c8df2dfcf8eb88e193287ad8109f333df71240508242575ffae430ade",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "after-delete-reply-page",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:48:32.523Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "574a41f92d22caa4105c2c98cde57a4ccace5fbfed9d64b7782dbbe04d5a4122",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-read",
+          "checks": {
+            "exact_thread_id": true,
+            "created_parent_absent_from_focused_page": true
+          }
+        },
+        {
+          "name": "after-delete-nested-floor",
+          "path": "/c/f/pb/nestedFloor",
+          "observed_at_utc": "2026-11-15T02:48:33.516Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "ac7c25d9a8e6d49ca9687b4ea6a5d7507c81eaebbec930530197882eadfbf3a1",
+          "response_bytes": 127,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-read",
+          "checks": {
+            "created_child_absent_from_nested_list": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "basic-functions:reply-like",
+      "source": "evidence/pc-web-basic-functions-validation.json",
+      "results": [
+        {
+          "name": "post-like-baseline",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:51:09.140Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "0920d610d3d5f88df434a958bc04ed1be62097db4dbf54de0863a5cf22603a48",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "post-like-toggle",
+          "path": "/c/c/agree/opAgree_pc",
+          "observed_at_utc": "2026-11-15T02:51:10.522Z",
+          "method": "GET",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "36716fcef198103b87dc1f8e9bec3c2de125c0586707839a4c180e1bfa8f3a4f",
+          "response_bytes": 272,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "post-like-after-toggle",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:51:12.518Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "57ff9f9d25a6ebf8e29fc8ed600faa89410e58957a3eca54016dfab6fc1d8b8b",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true,
+            "target_reply_id_matches": true
+          },
+          "status": "verified-read"
+        },
+        {
+          "name": "post-like-restore",
+          "path": "/c/c/agree/opAgree_pc",
+          "observed_at_utc": "2026-11-15T02:51:13.524Z",
+          "method": "GET",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "85ee70f0b340d323d3040ef66fbbf2f15cf812b0034b7fd734136bc408a9ec55",
+          "response_bytes": 218,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "status": "verified-state-change"
+        },
+        {
+          "name": "post-like-after-restore",
+          "path": "/c/f/pb/page_pc",
+          "observed_at_utc": "2026-11-15T02:51:14.514Z",
+          "method": "POST",
+          "http_status": 200,
+          "error_code": "0",
+          "response_sha256": "a5495a7bdd9dd71d249e53535132aca85b6d9e38f602940353c239507594c7ed",
+          "response_bytes": 117172,
+          "digest_basis": "UTF-8 encoding of browser XHR responseText",
+          "frontend_resolved": true,
+          "checks": {
+            "exact_thread_id": true,
+            "target_reply_id_matches": true
+          },
+          "status": "verified-read"
+        }
+      ]
     }
   ],
   "controlled_cycle": {
@@ -3464,10 +3887,10 @@
       "path": "/c/c/agree/opAgree_pc",
       "method": "GET",
       "execution_scope": "pc-web-candidate",
-      "best_status": "not-verified",
-      "latest_error_code": null,
-      "observations": 0,
-      "reason": "PC request construction, valid fixtures and acceptance assertions still need review"
+      "best_status": "verified-state-change",
+      "latest_error_code": "0",
+      "observations": 4,
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/c/bawu/commitgood_pc",
@@ -3500,10 +3923,10 @@
       "path": "/c/c/bawu/delpost_pc",
       "method": "GET",
       "execution_scope": "own-test-content-only",
-      "best_status": "not-verified",
-      "latest_error_code": null,
-      "observations": 0,
-      "reason": "PC request construction, valid fixtures and acceptance assertions still need review"
+      "best_status": "verified-state-change",
+      "latest_error_code": "0",
+      "observations": 2,
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/c/bawu/delthread_pc",
@@ -3599,19 +4022,19 @@
       "path": "/c/c/post/add_pc",
       "method": "POST",
       "execution_scope": "pc-web-candidate",
-      "best_status": "not-verified",
-      "latest_error_code": null,
-      "observations": 0,
-      "reason": "PC request construction, valid fixtures and acceptance assertions still need review"
+      "best_status": "verified-state-change",
+      "latest_error_code": "0",
+      "observations": 2,
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/c/post/addstore_pc",
       "method": "POST",
       "execution_scope": "pc-web-candidate",
-      "best_status": "not-verified",
-      "latest_error_code": null,
-      "observations": 0,
-      "reason": "PC request construction, valid fixtures and acceptance assertions still need review"
+      "best_status": "verified-state-change",
+      "latest_error_code": "0",
+      "observations": 1,
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/c/post/rmstore_pc",
@@ -3626,10 +4049,10 @@
       "path": "/c/c/post/rmstore_pc",
       "method": "POST",
       "execution_scope": "pc-web-candidate",
-      "best_status": "not-verified",
-      "latest_error_code": null,
-      "observations": 0,
-      "reason": "PC request construction, valid fixtures and acceptance assertions still need review"
+      "best_status": "verified-state-change",
+      "latest_error_code": "0",
+      "observations": 1,
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/c/profile/modify_pc",
@@ -3665,7 +4088,7 @@
       "best_status": "verified-state-change",
       "latest_error_code": "0",
       "observations": 1,
-      "reason": "Object or controlled state change checked in this PC run"
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/c/user/removeFans_pc",
@@ -3692,7 +4115,7 @@
       "best_status": "verified-state-change",
       "latest_error_code": "0",
       "observations": 1,
-      "reason": "Object or controlled state change checked in this PC run"
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/f/bawu/getDeleteReason_pc",
@@ -3755,7 +4178,7 @@
       "best_status": "verified-read",
       "latest_error_code": "0",
       "observations": 3,
-      "reason": "Object or controlled state change checked in this PC run"
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/f/frs/threadlist_pc",
@@ -3770,19 +4193,19 @@
       "path": "/c/f/pb/getmypost_pc",
       "method": "GET",
       "execution_scope": "pc-web-candidate",
-      "best_status": "business-error",
-      "latest_error_code": "210009",
-      "observations": 1,
-      "reason": "Recorded business rejection; request semantics, target or server reason remain to be isolated"
+      "best_status": "verified-read",
+      "latest_error_code": "0",
+      "observations": 2,
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/f/pb/nestedFloor",
       "method": "POST",
       "execution_scope": "pc-web-candidate",
-      "best_status": "not-verified",
-      "latest_error_code": null,
-      "observations": 0,
-      "reason": "PC request construction, valid fixtures and acceptance assertions still need review"
+      "best_status": "verified-read",
+      "latest_error_code": "0",
+      "observations": 2,
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/f/pb/page_pc",
@@ -3790,8 +4213,8 @@
       "execution_scope": "pc-web-candidate",
       "best_status": "verified-read",
       "latest_error_code": "0",
-      "observations": 4,
-      "reason": "Object or controlled state change checked in this PC run"
+      "observations": 17,
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/f/pc/communityNotice",
@@ -3818,7 +4241,7 @@
       "best_status": "verified-read",
       "latest_error_code": "0",
       "observations": 2,
-      "reason": "Object or controlled state change checked in this PC run"
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/f/pc/frsSidebarRight",
@@ -4061,7 +4484,7 @@
       "best_status": "verified-read",
       "latest_error_code": "0",
       "observations": 11,
-      "reason": "Object or controlled state change checked in this PC run"
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/u/user/getPrivateInfo_pc",
@@ -4070,7 +4493,7 @@
       "best_status": "verified-read",
       "latest_error_code": "0",
       "observations": 4,
-      "reason": "Object or controlled state change checked in this PC run"
+      "reason": "Object or controlled state change checked in recorded PC scope"
     },
     {
       "path": "/c/u/user/getUserBlackInfo",
@@ -4234,5 +4657,16 @@
       "observations": 0,
       "reason": "PC request construction, valid fixtures and acceptance assertions still need review"
     }
-  ]
+  ],
+  "basic_functions_result": {
+    "source": "evidence/pc-web-basic-functions-validation.json",
+    "thread_like_transition_and_restore_verified": true,
+    "reply_like_transition_and_restore_verified": true,
+    "collection_transition_and_restore_verified": true,
+    "parent_and_child_reply_identity_verified": true,
+    "created_content_absent_in_verified_pc_readbacks": true,
+    "cookie_exported": false,
+    "raw_user_responses_exported": false,
+    "created_ids_and_marker_public": false
+  }
 }
