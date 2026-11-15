@@ -68,6 +68,12 @@ console.log(result.best_status, result.latest_error_code);
 
 当前记录预期打印 `verified-state-change 0`。同样可以按 path 和 method 联合查询其他接口，避免合并 POST 与 GET 变体。后续验收状态改变时，以当前提交的数据为准。
 
+## 扩展功能与恢复限制
+
+资料、隐私、黑名单、徽章、移除粉丝、图片、智能标题及通知的定向结果见 [扩展验收](pc-web-complete-acceptance.md)。可用相同的 --pc-status 方式按 modify_pc、setUserBlack_pc、removeFans_pc、uploadPicture_pc 或 recruit/register 查询；这些查询均不执行写入。
+
+招募 best_status 可为 verified-state-change，而 latest_error_code 为取消失败的 990000；当前仍保留报名/即时资格。必须同时阅读 reason 和恢复说明，不能只筛选 verified 状态就认为整个流程完成。
+
 ## 判断结果而不误报
 
 - verified-read / verified-state-change 表示已有相应对象或状态核对，不等于所有参数和边界都通过。

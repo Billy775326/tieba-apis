@@ -11,6 +11,7 @@
 | 复跑网页读取 | `node scripts/verify-pc-web.mjs --live --port 端口` | 固定白名单的脱敏验收报告；联网 |
 | 了解点赞、回复或收藏 | [基础功能](pc-web-basic-functions.md) | 已验证取值、前置状态、回查与清理 |
 | 了解签到、搜索或发主帖 | [专题说明](pc-web-sign-search-publish.md) | 已验证组合与限制；当前没有一键写入命令 |
+| 了解资料、隐私、媒体、预约与招募 | [扩展验收](pc-web-complete-acceptance.md) | 有效参数、实际错误和未恢复状态；保留 2 项预约及招募报名/资格 |
 
 ## 环境与 PC 配置
 

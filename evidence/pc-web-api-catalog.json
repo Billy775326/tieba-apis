@@ -36,7 +36,8 @@
     "path_method_candidates": 86,
     "unique_paths": 84,
     "declared_method_candidates": 86,
-    "moderation_excluded": 6
+    "moderation_excluded": 0,
+    "moderation_role_required": 6
   },
   "limitations": [
     "Only literal url properties and adjacent DataType declarations are extracted; dynamically composed routes, fetch-only declarations and other PC bundles may add APIs.",
@@ -62,7 +63,7 @@
       "path": "/c/c/bawu/commitgood_pc",
       "method": "POST",
       "declared_data_type": "POST",
-      "execution_scope": "moderation-excluded-by-user",
+      "execution_scope": "moderation-role-required",
       "status": "static-request-declaration",
       "sites": [
         {
@@ -75,7 +76,7 @@
       "path": "/c/c/bawu/commitprison_pc",
       "method": "POST",
       "declared_data_type": "POST",
-      "execution_scope": "moderation-excluded-by-user",
+      "execution_scope": "moderation-role-required",
       "status": "static-request-declaration",
       "sites": [
         {
@@ -88,7 +89,7 @@
       "path": "/c/c/bawu/committop_pc",
       "method": "POST",
       "declared_data_type": "POST",
-      "execution_scope": "moderation-excluded-by-user",
+      "execution_scope": "moderation-role-required",
       "status": "static-request-declaration",
       "sites": [
         {
@@ -127,7 +128,7 @@
       "path": "/c/c/bawu/goodlist_pc",
       "method": "GET",
       "declared_data_type": "GET",
-      "execution_scope": "moderation-excluded-by-user",
+      "execution_scope": "moderation-role-required",
       "status": "static-request-declaration",
       "sites": [
         {
@@ -399,7 +400,7 @@
       "path": "/c/f/bawu/getDeleteReason_pc",
       "method": "GET",
       "declared_data_type": "GET",
-      "execution_scope": "moderation-excluded-by-user",
+      "execution_scope": "moderation-role-required",
       "status": "static-request-declaration",
       "sites": [
         {
@@ -804,7 +805,7 @@
       "path": "/c/u/bawu/listreason_pc",
       "method": "GET",
       "declared_data_type": "GET",
-      "execution_scope": "moderation-excluded-by-user",
+      "execution_scope": "moderation-role-required",
       "status": "static-request-declaration",
       "sites": [
         {
