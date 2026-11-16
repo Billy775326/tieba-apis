@@ -115,4 +115,16 @@ flowchart TD
 | [.env.example](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/.env.example) | 集中说明配置及适用范围；本项目 PC 使用浏览器会话和 CLI 参数，历史 App JSON 配置单列 |
 | [quick_publish.py](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/quick_publish.py) | 按场景说明输入、运行位置和结果；本项目示例采用已有离线查询与只读验收命令，写入能力链接到已验证契约 |
 
+文档对照关系也按这一固定版本维护：
+
+| 参考 README 的阅读环节 | 本项目对应入口 |
+| --- | --- |
+| 按业务分组介绍能力 | [功能表](../README.md#功能)，分列读取、互动、发布、设置及权限边界 |
+| 环境、依赖、配置和运行 | [快速开始](../README.md#快速开始)、[运行项目](../README.md#运行项目)及[使用指南](getting-started.md) |
+| 效果展示和运行反馈 | [真实离线输出节选](../README.md#输出示例)及[结果字段](getting-started.md#查看运行结果) |
+| 入口与业务模块说明 | [项目目录](../README.md#项目目录)、[PC 结构](#pc-网页工具结构)及[API](api.md) |
+| 日志与贡献入口 | [CHANGELOG](../CHANGELOG.md)及[参与开发](development.md#参与开发) |
+
+参考项目中的 Python 依赖、Cookie 配置、直播、私信与创作者入口属于其实现。参考项目的截图与功能说明用于理解其使用流程；本项目的功能、配置、输出和验证结果以本地实现及脱敏证据为准。
+
 本项目的 JavaScript 实现按入口、认证、请求与传输职责分层。PC 字段依据是固定的网页脚本与真实网页响应，历史 App 字段依据是对应 APK 和协议元数据。PC 用法见 [调用示例](pc-web-examples.md)，提取和历史客户端记录详见 [开发指南](development.md) 和 [客户端验证摘要](../evidence/client-validation.json)。

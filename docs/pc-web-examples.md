@@ -2,6 +2,14 @@
 
 按操作场景给出可在当前仓库执行的命令、输出读法和业务契约入口。需要 Node.js 24+；所有命令在仓库根目录运行。例子分别标明离线查询、只读联网和定向写入文档，完整环境及配置见 [使用指南](getting-started.md)。
 
+## 选择运行方式
+
+| 目的 | 准备什么 | 执行后得到什么 |
+| --- | --- | --- |
+| 找接口、看已存状态 | Node.js 与仓库 | 静态声明或历史验收 JSON；不联网 |
+| 复跑网页读取 | 专用 Chrome 登录态、实际端口、显式测试帖 | 新的脱敏读取报告；固定白名单 |
+| 开发点赞、回复、签到或发布 | 对应请求契约、受控对象、回查和恢复方案 | 当前按专题扩展，没有通用 PC 写入命令 |
+
 ## 查询接口和当前状态
 
 先定位方法，再查询验收结果：
@@ -27,13 +35,14 @@ node scripts/catalog.mjs --pc-status sign_pc
 
 ## 读取帖子和吧
 
-先按 [浏览器准备步骤](pc-web-validation.md#准备浏览器会话) 启动专用 Chrome 并扫码，保持官方首页或论坛页打开。以下端口与准备示例一致：
+先按 [浏览器准备步骤](pc-web-validation.md#准备浏览器会话) 启动专用 Chrome 并扫码，保持官方首页或论坛页打开。以下示例对应准备步骤中的固定端口；自动分配端口时换为读取到的 `$pcBrowserPort`：
 
 ```powershell
-node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
+$env:TIEBA_TEST_THREAD = Read-Host '输入测试帖编号或官方帖子 URL'
+node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD"
 ```
 
-该命令执行固定白名单，包括目标帖子和独立指定的吧，同时读取本人信息、通知与配置。它不是仅发送一次 page_pc 请求的通用业务 SDK。终端最后的 output 指向新的本地报告；字段和退出码见 [运行结果](getting-started.md#查看运行结果)。
+该命令执行固定白名单，读取目标帖子、本人信息、通知与配置。要读取独立指定的吧，在本机设置 `TIEBA_TEST_FORUM` 并追加 `--forum "$env:TIEBA_TEST_FORUM"`；可选参数没有值时不传。它不是仅发送一次 page_pc 请求的通用业务 SDK。终端最后的 output 指向新的本地报告；字段和退出码见 [运行结果](getting-started.md#查看运行结果)。
 
 ## 按功能查找调用契约
 

@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | `node scripts/catalog.mjs --pc-web [关键词]` | 官方脚本中的路径、方法和源码位置 | 离线静态查询，不代表业务可用 |
 | `node scripts/catalog.mjs --pc-status [关键词]` | 已保存的候选状态与限制 | 离线查询，不触发复测 |
-| `node scripts/verify-pc-web.mjs --live --port PORT` | 本机 Chrome 端口，输出脱敏验收元数据 | 只读白名单；参数、退出码及输出保护见 [网页指南](pc-web-validation.md#参数与输出) |
+| `node scripts/verify-pc-web.mjs --live --port PORT --thread ID_OR_URL` | 本机 Chrome 端口，输出脱敏验收元数据 | 只读白名单；参数、退出码及输出保护见 [网页指南](pc-web-validation.md#参数与输出) |
 
 当前没有返回完整业务对象的通用 PC SDK，也没有公开的 PC 写入 CLI。`src/index.mjs` 导出的 `TiebaApi` 仍使用 App 协议；不能把它的点赞方法当作 PC 方法调用。当前读取入口使用浏览器内登录态、独立 PC 签名与 fetch，Cookie、TBS、jt 和防护令牌不导出。历史前端封装及 UI 驱动记录单列，新直连结果见 [专题](pc-web-direct-http.md)。
 
@@ -20,6 +20,16 @@
 | 离线状态 | best_status、latest_error_code、observations、reason | 是已保存记录，不是本次在线响应 |
 | 网页只读验收 | HTTP/业务码、结构计数、摘要、checks 和 status | HTTP、明确业务状态、对象断言分别核对，失败非零退出 |
 | 定向写入契约 | 有效输入、前置状态、回查和恢复结果 | 见专题证据；没有通用 PC SDK 的返回类型或重试承诺 |
+
+## 按功能阅读
+
+| 业务 | 本页参数入口 | 操作与结果示例 |
+| --- | --- | --- |
+| 帖子、回复、列表 | [读取与列表](#读取与列表) | [网页读取示例](pc-web-examples.md#读取帖子和吧) |
+| 搜索 | [搜索与建议](#搜索与建议) | [搜索验收](pc-web-sign-search-publish.md#搜索) |
+| 点赞、回复、关注、签到与发布 | [互动、关注、签到和发帖](#互动关注签到和发帖) | [按场景查询](pc-web-examples.md#按功能查找调用契约) |
+| 资料、隐私与账号 | [设置契约](#资料隐私与账号设置) | [扩展验收](pc-web-complete-acceptance.md) |
+| 图片、标题及其他业务 | [媒体](#媒体与标题)、[预约与招募](#提示预约与招募) | [恢复限制](pc-web-examples.md#扩展功能与恢复限制) |
 
 ## PC 已验收请求契约
 

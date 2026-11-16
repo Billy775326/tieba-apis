@@ -20,6 +20,22 @@ node scripts/build-pc-web-coverage.mjs
 
 新功能在独立任务分支实现，保持旧脚本兼容。提交前核对差异、敏感信息与相关测试，英文提交采用 `type(scope): description`。普通推送不提升版本、不创建标签；正式发版另行确认，详见根目录 [AGENTS.md](../AGENTS.md)。
 
+## 参与开发
+
+先确认任务属于 PC 工具、历史 App 客户端还是纯文档修改，再从同步的集成分支创建聚焦的任务分支。README、使用指南和调用示例沿用参考项目的功能、配置、运行顺序；接口状态以本项目实现和证据为准，参考映射见 [架构中的参考来源](architecture.md#参考来源)。
+
+提交 PR 时说明具体触发条件、最终行为和实际运行的检查。接口或写入变更需给出请求语义、对象核对与恢复边界；纯文档变更检查命令、链接、锚点和示例，不声称重新执行了线上验收。未执行或失败的检查单独列出。
+
+~~~powershell
+npm.cmd run check:privacy
+# 按文件暂存后核对实际提交内容：
+node scripts/check-privacy.mjs --staged
+git diff --check
+git diff --cached --check
+~~~
+
+真实对象通过本机输入提供，问题反馈使用脱敏状态和摘要。准备新增的文件也需审核，用户可见变化写入 CHANGELOG 的 Unreleased。普通推送不提升正式版本；分支、提交和发布要求见 [AGENTS.md](../AGENTS.md)。
+
 ## 扩展 PC 网页能力
 
 1. 固定实际页面加载的官方脚本 URL、字节大小、SHA-256 和源码位置，恢复方法、参数、读写含义与调用条件。不能只看路径名或 HTTP 方法。
