@@ -4,6 +4,15 @@
 
 文档按 [cv-cat/DouYin_Spider README](https://github.com/cv-cat/DouYin_Spider/blob/d151f9c2980abc304c1ae4918c2272675cd9e4c2/README.md) 的功能、配置和运行入口组织。首次使用从使用指南进入，已有具体操作目标时查调用示例，再阅读对应接口与证据。
 
+## 按任务阅读
+
+| 当前目标 | 建议顺序 |
+| --- | --- |
+| 第一次运行 | [使用指南](getting-started.md) → [浏览器准备](pc-web-validation.md#准备浏览器会话) → [调用示例](pc-web-examples.md) |
+| 查点赞、回复、搜索、签到或发帖 | [功能表](../README.md#功能) → [按功能的 API](api.md#按功能阅读) → 对应验收专题 |
+| 理解命令输出或处理失败 | [运行结果](getting-started.md#查看运行结果) → [常见运行问题](getting-started.md#常见运行问题) → [逐项覆盖](pc-web-api-coverage.csv) |
+| 扩展接口或提交改进 | [架构](architecture.md) → [开发指南](development.md#参与开发) → [隐私检查](privacy.md) |
+
 ## PC 使用与开发
 
 | 文档 | 内容 |

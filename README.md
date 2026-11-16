@@ -2,11 +2,13 @@
 
 百度贴吧 PC 网页接口研究与验收工具，面向需要查询接口、核对请求参数或继续开发贴吧集成的使用者。已实测帖子读取、搜索、点赞、回复、收藏、关注、签到及发主帖；可运行的公开入口目前提供离线查询和网页只读验收，写入能力以定向实测与契约文档交付。
 
-[快速开始](#快速开始) · [功能列表](#功能) · [接口文档](docs/api.md) · [调用示例](docs/pc-web-examples.md) · [全部文档](docs/README.md) · [更新日志](CHANGELOG.md)
+[快速开始](#快速开始) · [功能列表](#功能) · [接口文档](docs/api.md) · [调用示例](docs/pc-web-examples.md) · [参与开发](#参与开发) · [全部文档](docs/README.md) · [更新日志](CHANGELOG.md)
 
 ## 功能
 
 下表逐项列出常用 PC 功能。**已验收**表示有网页对象或状态回查；**结构核对**表示收到数据但尚未完成整项业务验收；**待验收**不作为已支持功能宣传。当前公开工具提供读取验收，写入仍是定向实测，尚无通用 PC 写入 SDK。
+
+### 数据读取与搜索
 
 | 功能 | PC 接口 | 当前状态 |
 | --- | --- | --- |
@@ -14,6 +16,14 @@
 | 帖子详情、吧详情和列表 | page_pc、threadlist_pc、generalTabList_pc | 详情和批量列表对象已核对；通用 tab 返回空 page_data，非空分支未通过 |
 | 普通回复读取与定位 | `/c/f/pb/getmypost_pc` | 已以新建本人回复核对编号、作者和内容 |
 | 楼中楼列表 | `/c/f/pb/nestedFloor` | 已核对父回复中的新楼中楼，删除后回查为空 |
+| 搜索建议、帖子/吧/用户及综合搜索 | `/c/s/searchSug_pc`、`/mo/q/search/*` | 已核对精确吧、指定帖子、吧内搜索与受控用户；未覆盖全部排序和分页 |
+| 用户卡片、吧卡片 | `/c/u/pc/userCard`、`/c/f/pc/forumCard` | 已核对请求对象 |
+| 关注、粉丝、主帖与收藏列表 | followList_pc、fans/page_pc、myThread、threadStoreList | 已核对有效对象；myThread 参数已修正。点赞列表 userAgree_pc 仍需区分线程与回复点赞语义 |
+
+### 互动、回复与关系
+
+| 功能 | PC 接口 | 当前状态 |
+| --- | --- | --- |
 | 点赞、取消点赞 | `/c/c/agree/opAgree_pc` | 帖子和普通回复均已验证并恢复；楼中楼点赞未单独测试 |
 | 发表普通回复 | `/c/c/post/add_pc` | 已创建、回读并删除本次测试回复 |
 | 回复楼中楼 | `/c/c/post/add_pc`，补 quote_id/repostid | 已验证创建、父子归属、本人作者及清理 |
@@ -21,16 +31,28 @@
 | 收藏、取消收藏 | addstore_pc、GET/POST rmstore_pc | 两种取消方式均有状态回查，未收藏基线已恢复 |
 | 关注用户、取消关注 | `/c/c/user/follow_pc`、`unfollow_pc` | 两账号已验证变化并恢复 |
 | 关注贴吧、取消关注贴吧 | POST `/c/c/forum/like_pc`、`unfavolike_pc` | 已验证临时关注、回查并恢复；GET 变体未测 |
+
+### 签到、发布与媒体
+
+| 功能 | PC 接口 | 当前状态 |
+| --- | --- | --- |
 | 发表主帖、删除本人主帖 | `/c/c/thread/add_pc`、`/c/c/bawu/delthread_pc` | 已独立构造 HTTP 发帖与删除，回读作者、标题、正文，删除后详情与首楼均返回 4；历史编辑器记录另列 |
-| 搜索建议、帖子/吧/用户及综合搜索 | `/c/s/searchSug_pc`、`/mo/q/search/*` | 已核对精确吧、指定帖子、吧内搜索与受控用户；未覆盖全部排序和分页 |
 | 签到 | `/c/c/forum/sign_pc` | 已核对未签到 → 已签到及重复签到分支；临时关注已恢复，签到日记录保留 |
-| 用户卡片、吧卡片 | `/c/u/pc/userCard`、`/c/f/pc/forumCard` | 已核对请求对象 |
-| 关注、粉丝、主帖与收藏列表 | followList_pc、fans/page_pc、myThread、threadStoreList | 已核对有效对象；myThread 参数已修正。点赞列表 userAgree_pc 仍需区分线程与回复点赞语义 |
+| 图片上传与智能标题 | uploadPicture_pc、generateTitle | 专用 PNG 上传返回引用，图片回复回读并清理；标题返回 5 条非空结果 |
+| 头像、图片列表、视频等 | portrait_pc、picture/list 等 | 同原头像提交返回 300003；图片列表用有效图片回复仍返回 4444；不推断为账号权限不足 |
+
+### 通知、资料与设置
+
+| 功能 | PC 接口 | 当前状态 |
+| --- | --- | --- |
 | 获赞、提及和回复通知 | agreeme_pc、atme_pc、replyme_pc | 双账号已制造并匹配三类新事件；提及、回复的源码 POST 也已匹配，获赞 POST 保留结构级结果 |
 | 隐私、黑名单、个人简介 | setprivate_pc、setUserBlack_pc、modify_pc | 均已修改、回读并恢复；未改昵称或测试昵称冷却 |
 | 主页隐藏、移除粉丝、徽章 | setPrivacy_pc、removeFans_pc、setIcon/cancelIconSlot | 自有主帖隐藏恢复、受控粉丝移除与关系恢复、原徽章摘下恢复均已核对 |
-| 图片上传与智能标题 | uploadPicture_pc、generateTitle | 专用 PNG 上传返回引用，图片回复回读并清理；标题返回 5 条非空结果 |
-| 头像、图片列表、视频等 | portrait_pc、picture/list 等 | 同原头像提交返回 300003；图片列表用有效图片回复仍返回 4444；不推断为账号权限不足 |
+
+### 其他业务与权限边界
+
+| 功能 | PC 接口 | 当前状态 |
+| --- | --- | --- |
 | 游戏预约与招募 | subscribeitempc、recruit/register | 预约 GET/POST 首次成功，保留 2 项预约；招募报名及即时资格成功，取消两次返回 990000，报名未恢复 |
 | 社区提示、版本切换与推荐反馈 | communityNoticeReport、updateSwitch、submitDislike_pc | 实际提示已关闭；旧版切回新版已恢复；推荐反馈仅确认接收，未验证撤回 |
 | 私信、群聊 | 当前前端为 App 引导；未建立 PC 原生收发入口 | 不以 App IM 成功代替网页通过 |
@@ -58,7 +80,11 @@ cd tieba-apis
 node --version
 ```
 
-已有工作区直接在仓库根目录执行后续命令，不需要为更新文档重新克隆。安装 Node.js 后即可运行下列工具，无需额外 npm install；APK、JDK 和安卓环境只涉及历史研究。
+已有工作区在仓库根目录执行后续命令。经过历史清理的旧克隆应按 [隐私规范](docs/privacy.md#git-历史边界) 重新获取，避免带回已清理内容。
+
+### 安装依赖
+
+当前工具仅使用 Node.js 内置模块，无需执行 npm install。APK、JDK 和安卓环境只用于保留的历史研究；PC 入口安装 Node.js 后即可离线运行。
 
 ### 配置网页登录态
 
@@ -74,7 +100,18 @@ PC 入口通过本机 Chrome 复用网页登录态。按 [浏览器准备步骤]
 
 PC 工具不读取 .env、config.example.json 或账号 JSON。Cookie、TBS 和防护令牌由网页管理，不需要粘贴到配置；旧 App 配置的适用范围见 [使用指南](docs/getting-started.md#配置文件)。
 
-## 离线查询
+## 运行项目
+
+| 目标 | 运行入口 |
+| --- | --- |
+| 查路径、方法和字段来源 | `node scripts/catalog.mjs --pc-web 关键词` |
+| 查已有验收状态及限制 | `node scripts/catalog.mjs --pc-status 关键词` |
+| 复跑网页读取 | `node scripts/verify-pc-web.mjs --live --port PORT --thread ID_OR_URL` |
+| 查看历史 App 用法 | [使用指南的 App 部分](docs/getting-started.md#历史-app-客户端使用) |
+
+以上命令从仓库根目录执行；离线查询无需账号，联网读取需先完成专用窗口登录。
+
+### 离线查询
 
 ```powershell
 node scripts/catalog.mjs --pc-web search
@@ -84,19 +121,39 @@ node scripts/verify-pc-web.mjs --help
 
 --pc-web 查源码请求声明，--pc-status 查保存的验收状态；不带关键词时只显示摘要，均不联网。按功能查找点赞、回复、搜索、签到和发帖的示例见 [调用示例](docs/pc-web-examples.md)。
 
-## 复跑网页读取验收
+### 复跑网页读取验收
 
-Chrome 已按上面的示例在 9222 端口登录后，在本机设置 `TIEBA_TEST_THREAD` 和可选的 `TIEBA_TEST_FORUM` 环境变量。它们由以下 PowerShell 命令展开为参数，工具不会自动读取环境变量；没有测试吧时省略 `--forum`。实际目标不写入项目文件：
+在 [浏览器准备步骤](docs/pc-web-validation.md#准备浏览器会话) 中选择固定端口 9222 并完成扫码后，输入本机测试目标：
 
-```powershell
-node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
-```
+~~~powershell
+$env:TIEBA_TEST_THREAD = Read-Host '输入测试帖编号或官方帖子 URL'
+node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD"
+~~~
 
-等价 npm 入口为 `npm.cmd run verify:pc -- --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"`。省略 --live 时只显示帮助；入口检查帖子/吧、本人信息、通知及配置等固定读取项。它不会执行功能表里的点赞、签到或发帖操作。
+需要独立读取一个吧时，再在本机设置 `TIEBA_TEST_FORUM`，并追加 `--forum "$env:TIEBA_TEST_FORUM"`；未提供时省略整个参数。变量由 PowerShell 展开，PC 工具不会自动读取环境变量或 .env。
+
+等价 npm 入口为 `npm.cmd run verify:pc -- --live --port 9222 --thread "$env:TIEBA_TEST_THREAD"`。省略 --live 只显示帮助；读取计划不会执行点赞、签到或发帖操作。
 
 该入口现使用独立 fetch、PC 签名和禁缓存参数，不经过前端请求封装。需要刷新专用会话时追加 --refresh-session，见 [刷新与数据新鲜度](docs/pc-web-direct-http.md)。
 
 终端显示每项状态及最终输出文件；文件只含 HTTP/业务码、结构计数、摘要和对象断言，完整字段与退出码见 [使用指南](docs/getting-started.md#查看运行结果)。凭据和用户响应正文留在浏览器。结果默认使用新文件，已有输出不会被覆盖。
+
+## 输出示例
+
+运行 `node scripts/catalog.mjs --pc-status sign_pc` 后，可在 results 中看到以下字段节选。数据来自仓库保存的验收记录，此命令不会发起签到：
+
+~~~json
+{
+  "path": "/c/c/forum/sign_pc",
+  "method": "POST",
+  "best_status": "verified-state-change",
+  "latest_error_code": "0",
+  "observations": 3,
+  "direct_http_observations": 0
+}
+~~~
+
+observations 是历史观测数，direct_http_observations 单列独立 HTTP 复测数。联网读取另写入新的 .local 报告；返回字段、退出码和结果判断见 [使用指南](docs/getting-started.md#查看运行结果)。
 
 ## 项目目录
 
@@ -106,7 +163,8 @@ tieba-apis/
 │  ├─ catalog.mjs                  # 源码清单与验收状态查询
 │  ├─ verify-pc-web.mjs            # 网页只读验收入口
 │  ├─ build-pc-web-catalog.mjs     # 从固定脚本提取请求清单
-│  └─ build-pc-web-coverage.mjs    # 从公开报告生成覆盖 CSV
+│  ├─ build-pc-web-coverage.mjs    # 从公开报告生成覆盖 CSV
+│  └─ check-privacy.mjs            # 工作树或暂存区隐私检查
 ├─ src/pc-web-browser.mjs         # 本机 CDP 连接
 ├─ src/pc-web-direct.mjs          # 独立 PC 签名、HTTP 与缓存判定
 ├─ src/pc-web-validation.mjs      # 结果分级
@@ -161,6 +219,10 @@ tieba-apis/
 | [CHANGELOG](CHANGELOG.md) | 待发布变化 |
 
 PC 工具位于 `scripts/build-pc-web-catalog.mjs`、`scripts/catalog.mjs`、`scripts/verify-pc-web.mjs`，共用本机 CDP 连接和结果分级模块位于 `src/pc-web-*.mjs`。
+
+## 参与开发
+
+提交接口、参数或文档改进前，先查 [开发指南](docs/development.md#参与开发) 中的分支、检查和证据要求。问题反馈给出命令、错误状态和脱敏摘要；真实账号、测试对象和凭据仅留在本机忽略目录。用户可见变化同步维护 [CHANGELOG](CHANGELOG.md)，普通提交不创建正式版本。
 
 ## 历史 App 研究
 

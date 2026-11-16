@@ -1,8 +1,62 @@
 # PC 网页接口验收
 
-当前范围按用户要求收敛为 **PC 网页实际使用或可调用的接口**。不需要安卓手机，不以 App 的成功替代网页验收。本文保留 2026-11-14 的前端基线，并纳入 2026-11-15（香港时间）的基础功能、签到/搜索/主帖及扩展读写补测；统计与原 Android 清单分别维护。
+本文面向 **PC 网页实际使用或可调用接口的运行与验收**。不需要安卓手机，不以 App 的成功替代网页验收。本文保留 2026-11-14 的前端基线，并纳入 2026-11-15（香港时间）的基础功能、签到/搜索/主帖及扩展读写补测；统计与原 Android 清单分别维护。
 
 文档入口见 [全部文档目录](README.md)，最短运行步骤见 [使用指南](getting-started.md)，已验收请求的字段汇总见 [PC API](api.md#pc-已验收请求契约)。
+
+## 准备浏览器会话
+
+需要 Node.js 24+ 和 Chrome，命令在仓库根目录执行。先选一种端口方式，再在该专用窗口打开官方首页 `https://tieba.baidu.com/` 或论坛页 `/f` 并扫码登录。
+
+可执行文件路径和用户配置目录是两个配置项。专用目录拥有自己的登录态；日常 Chrome 已登录不代表本项目窗口已登录。Chrome 136 起调试开关需配合非默认用户数据目录，见 [Chrome 官方说明](https://developer.chrome.com/blog/remote-debugging-port)。登录态留在浏览器，无需复制 Cookie。
+
+~~~powershell
+$chromePath = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+$pcProfilePath = Join-Path (Get-Location) '.local/pc-web-browser'
+~~~
+
+### 固定端口
+
+以下方式固定使用 9222。若已有同一专用配置的窗口，请继续使用其原端口；重新传启动参数不会改变已运行实例的端口。
+
+~~~powershell
+& $chromePath --remote-debugging-port=9222 "--user-data-dir=$pcProfilePath" 'https://tieba.baidu.com/'
+# 在该窗口扫码后运行：
+$env:TIEBA_TEST_THREAD = Read-Host '输入测试帖编号或官方帖子 URL'
+node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD"
+~~~
+
+### 自动分配端口
+
+这是固定端口的替代方式，在该专用配置尚未运行时选择。使用 0 启动后，等待专用窗口打开并完成扫码，再从同一目录读取实际端口：
+
+~~~powershell
+& $chromePath --remote-debugging-port=0 "--user-data-dir=$pcProfilePath" 'https://tieba.baidu.com/'
+[int]$pcBrowserPort = Get-Content (Join-Path $pcProfilePath 'DevToolsActivePort') -First 1
+$env:TIEBA_TEST_THREAD = Read-Host '输入测试帖编号或官方帖子 URL'
+node scripts/verify-pc-web.mjs --live --port $pcBrowserPort --thread "$env:TIEBA_TEST_THREAD"
+~~~
+
+DevToolsActivePort 的自动发现步骤只对应自动分配端口；固定端口直接使用启动值。需要增加吧读取时，在本机设置 `TIEBA_TEST_FORUM` 并追加 `--forum "$env:TIEBA_TEST_FORUM"`；未设置时省略整个参数。
+
+`--port` 只接受 1–65535 的本机端口。工具选择官方 HTTPS 首页或论坛页；帖子、个人页或其他站点不能作为调试目标。本地连接失败与业务拒绝分开记录。
+
+## 参数与输出
+
+| 参数 | 含义 |
+| --- | --- |
+| `--live` | 显式启用只读联网；否则只显示帮助 |
+| `--refresh-session` | 重载当前专用测试页并等待新上下文，再重新取得会话；业务操作不通过 UI |
+| `--port` | 已登录 Chrome 的本机调试端口，联网时必填 |
+| `--thread` | 联网必填，无默认值；接受官方帖子 URL 或精确编号 |
+| `--forum` | 可选的测试吧名；提供后增加一次论坛读取 |
+| `--output` | 可选新文件；已有路径在连接浏览器前拒绝覆盖 |
+
+入口按固定白名单执行 10 项读取，提供 forum 时为 11 项；另做 2 次身份/会话准备读取。`POST` 或 `FORM_DATA` 本身不表示写入，`GET` 也不表示安全只读，白名单按实际业务审查，不允许传任意路径。
+
+当前输出 schema_version=2，包含 HTTP/业务状态、字段名、列表长度、同份响应的对象断言与 SHA-256。摘要基于浏览器 fetch 提供的响应体字节，不是压缩传输链路字节。业务、HTTP、新鲜度或对象断言失败时返回 1；空样本和结构级结果单列。独立构造 PC 请求及签名，Cookie、TBS 和防护令牌不导出；会话准备使用直接接口。
+
+当前实现不安装 XHR 观察钩子。finally 删除本次私有会话对象并关闭 CDP 连接；请求有超时与 1 MiB 响应上限，不关闭 Chrome 或退出账号。该入口只输出验收元数据，尚不是返回完整业务对象的独立 PC SDK。
 
 ## 结果与证据
 
@@ -59,42 +113,6 @@ threadlist_pc 和 myThread 的原 300000/210009 已通过字段修正排除；ge
 
 当前入口已改为独立签名 fetch，请求禁缓存，每次断言和摘要使用同一份响应；--refresh-session 可在测试前重载专用页面。历史 UI 驱动、前端封装与本轮直接 HTTP 的区别、发帖字段及写后回读见 [直连专题](pc-web-direct-http.md)。
 
-## 准备浏览器会话
-
-环境需要 Node.js 24+ 和 Chrome。使用专用配置目录，保留当前官方 PC 首页 `https://tieba.baidu.com/` 或论坛页 `/f`；用户在可见窗口中扫码登录。Windows 的一个示例：
-
-```powershell
-$chromePath = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
-$pcProfilePath = Join-Path (Get-Location) '.local/pc-web-browser'
-& $chromePath --remote-debugging-port=9222 "--user-data-dir=$pcProfilePath" 'https://tieba.baidu.com/'
-```
-
-Chrome 路径按本机安装位置调整。示例只创建专用配置，不覆盖日常 Chrome 数据。已经有本项目扫码窗口时，直接读取其专用目录的 DevToolsActivePort 第一行，无需再次登录。
-
-```powershell
-$pcBrowserPort = Get-Content .local/login-browser/DevToolsActivePort -First 1
-node scripts/verify-pc-web.mjs --live --port $pcBrowserPort --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
-```
-
-`--port` 只接受 1–65535 的本机调试端口；调试目标必须是官方 HTTPS 贴吧首页或论坛页。原先某些帖子/个人页的调试命令超时，所以入口主动选择可响应的首页或论坛页；本地调试超时不记录为贴吧业务拒绝。
-
-## 参数与输出
-
-| 参数 | 含义 |
-| --- | --- |
-| `--live` | 显式启用只读联网；否则只显示帮助 |
-| `--refresh-session` | 重载当前专用测试页并等待新上下文，再重新取得会话；业务操作不通过 UI |
-| `--port` | 已登录 Chrome 的本机调试端口，联网时必填 |
-| `--thread` | 官方帖子 URL 或精确编号，默认指定测试帖 |
-| `--forum` | 可选的测试吧名；提供后增加一次论坛读取 |
-| `--output` | 可选新文件；已有路径在连接浏览器前拒绝覆盖 |
-
-入口按固定白名单执行 10 项读取，提供 forum 时为 11 项；另做 2 次身份/会话准备读取。`POST` 或 `FORM_DATA` 本身不表示写入，`GET` 也不表示安全只读，白名单按实际业务审查，不允许传任意路径。
-
-当前输出 schema_version=2，包含 HTTP/业务状态、字段名、列表长度、同份响应的对象断言与 SHA-256。摘要基于浏览器 fetch 提供的响应体字节，不是压缩传输链路字节。业务、HTTP、新鲜度或对象断言失败时返回 1；空样本和结构级结果单列。独立构造 PC 请求及签名，Cookie、TBS 和防护令牌不导出；会话准备使用直接接口。
-
-当前实现不安装 XHR 观察钩子。finally 删除本次私有会话对象并关闭 CDP 连接；请求有超时与 1 MiB 响应上限，不关闭 Chrome 或退出账号。该入口只输出验收元数据，尚不是返回完整业务对象的独立 PC SDK。
-
 ## 离线重建与后续资源
 
 ```powershell
@@ -112,6 +130,6 @@ node scripts/build-pc-web-catalog.mjs .local/pc-web-sources evidence/pc-web-api-
 
 清单构建器验证脚本大小与 SHA-256，不执行脚本。未覆盖的动态 URL、其他入口和参数恢复继续作为工程工作，不伪称资源不足。
 
-现有两个网页登录态、指定帖子和测试吧足够继续普通 PC 功能验收。后续只在确实需要时申请：过期后的重新扫码、网页实际支持的图片/视频/投票等内容样本，或可管理的专用网页测试对象；不再要求安卓环境。吧务正向写入因实际角色不足未执行；App 专属能力不列为当前 PC 待验收项，预约取消的 App 引导作为 PC 限制记录。
+普通读取复测需本机已登录的专用会话、可读取的帖子及可选测试吧；新克隆不附带账号或真实目标。后续只在确实需要时申请：过期后的重新扫码、网页实际支持的图片/视频/投票等内容样本，或可管理的专用网页测试对象；不再要求安卓环境。吧务正向写入因实际角色不足未执行；App 专属能力不列为当前 PC 待验收项，预约取消的 App 引导作为 PC 限制记录。
 
-当前工具通过 101 项 Node 回归，新增直接 HTTP、签名与缓存回归；该记录与 26 次基础功能线上补测分别保存。离线回归、生成结果一致性和线上业务验收是不同检查，不能据此将全部 PC 候选标为通过。开发与文档变更应按 [检查流程](development.md#代码入口与检查) 重新验证实际影响范围。
+现有 Node 离线回归包含独立 HTTP、签名与缓存检查，与 26 次基础功能线上补测分别保存。离线回归、生成结果一致性和线上业务验收是不同检查，不能据此将全部 PC 候选标为通过。开发与文档变更应按 [检查流程](development.md#代码入口与检查) 重新验证实际影响范围。

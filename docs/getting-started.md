@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | 查找接口与源码 | `node scripts/catalog.mjs --pc-web 关键词` | 路径、方法、官方脚本位置；离线 |
 | 查看接口验收状态 | `node scripts/catalog.mjs --pc-status 关键词` | best_status、最近业务码和证据范围；离线 |
-| 复跑网页读取 | `node scripts/verify-pc-web.mjs --live --port 端口` | 固定白名单的脱敏验收报告；联网 |
+| 复跑网页读取 | `node scripts/verify-pc-web.mjs --live --port PORT --thread ID_OR_URL` | 固定白名单的脱敏验收报告；联网 |
 | 了解点赞、回复或收藏 | [基础功能](pc-web-basic-functions.md) | 已验证取值、前置状态、回查与清理 |
 | 了解签到、搜索或发主帖 | [专题说明](pc-web-sign-search-publish.md) | 已验证组合与限制；当前没有一键写入命令 |
 | 了解资料、隐私、媒体、预约与招募 | [扩展验收](pc-web-complete-acceptance.md) | 有效参数、实际错误和未恢复状态；保留 2 项预约及招募报名/资格 |
@@ -21,7 +21,7 @@
 | --- | --- | --- |
 | 登录会话 | 专用 Chrome 配置目录 | 用户在官方网页扫码；Cookie 和令牌不导出 |
 | 调试连接 | Chrome 的实际端口及 CLI --port | 仅接受 1–65535 的本机端口 |
-| 读取对象 | CLI --thread、--forum | 帖子支持官方 URL 或编号，吧名可选 |
+| 读取对象 | CLI --thread、--forum | --thread 联网必填，无默认目标；支持官方 URL 或编号；--forum 可选 |
 | 输出路径 | 默认 .local 唯一文件，或 CLI --output | 指定路径必须尚不存在 |
 
 PC 工具没有 .env 或账号 JSON 加载入口。下方的 config.example.json 和 accountPath 只属于历史 App CLI，不能控制 PC 浏览器会话。
@@ -41,13 +41,14 @@ node scripts/verify-pc-web.mjs --help
 
 1. 按 [浏览器准备步骤](pc-web-validation.md#准备浏览器会话) 启动专用 Chrome，使用可见窗口扫码登录。
 2. 保持官方首页或论坛页打开。确认实际调试端口；以下示例使用 9222。
-3. 在本机设置 `TIEBA_TEST_THREAD`（帖子编号或官方帖子 URL）和可选的 `TIEBA_TEST_FORUM` 环境变量，再在仓库根目录运行。命令由 PowerShell 展开变量，无测试吧时省略 `--forum`：
+3. 在仓库根目录输入本机目标后运行。以下示例使用固定端口 9222；自动分配端口的方式见浏览器准备步骤：
 
 ```powershell
-node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD" --forum "$env:TIEBA_TEST_FORUM"
+$env:TIEBA_TEST_THREAD = Read-Host '输入测试帖编号或官方帖子 URL'
+node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THREAD"
 ```
 
-现有项目扫码窗口可以继续使用，端口按对应配置目录的 DevToolsActivePort 第一行读取；无需重复登录。指定帖子和测试吧是两个独立读取对象。提供 --forum 时执行 11 项业务读取，另做 2 次身份/会话准备请求；未提供时为 10 项。省略 --live 只显示帮助。接口现在独立 fetch，不调用前端 HTTP 封装；需要重载专用上下文时追加 --refresh-session，见 [直连与刷新](pc-web-direct-http.md)。
+可继续使用已登录的专用窗口：固定端口直接传入原端口；以 --remote-debugging-port=0 启动时，从该配置目录的 DevToolsActivePort 第一行读取实际端口。指定帖子和测试吧是两个独立读取对象。需要额外读取吧时，在本机设置 `TIEBA_TEST_FORUM`，并追加 `--forum "$env:TIEBA_TEST_FORUM"`；变量由 PowerShell 展开，未设置时省略参数。提供 --forum 时执行 11 项业务读取，另做 2 次身份/会话准备请求；未提供时为 10 项。省略 --live 只显示帮助。接口现在独立 fetch，不调用前端 HTTP 封装；需要重载专用上下文时追加 --refresh-session，见 [直连与刷新](pc-web-direct-http.md)。
 
 ## 查看运行结果
 
@@ -71,8 +72,9 @@ node scripts/verify-pc-web.mjs --live --port 9222 --thread "$env:TIEBA_TEST_THRE
 
 | 现象 | 核对与处理 |
 | --- | --- |
+| 缺少 --thread 或 option value | 显式传入本机目标；可选 --forum 没有值时省略整个参数 |
 | 找不到浏览器目标或调试连接超时 | 核对专用 Chrome、实际端口以及官方首页/论坛页；本地连接问题不当作业务拒绝 |
-| 提示网页登录 | 在同一专用窗口重新扫码，不从其他浏览器复制凭据 |
+| 提示网页登录 | 在该专用配置的窗口扫码；同一个 chrome.exe 的不同用户配置拥有不同登录态 |
 | 输出路径已存在 | 改用新路径；不会自动覆盖或追加旧结果 |
 | 只查到静态声明 | 再用 --pc-status 查询；源码存在本身不证明可用 |
 | 想执行点赞、签到或发帖 | 查对应契约及验收范围；当前公开 CLI 没有这些写入命令 |
