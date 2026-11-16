@@ -2,6 +2,7 @@
 
 - Follow the project owner's branch, review and release requirements supplied in the conversation.
 - Work on a focused task branch. Do not publish versions or tags without explicit approval.
+- Review and verify task branches locally, then merge into the integration branch and push. Create a pull request only when the project owner explicitly requests one.
 - Keep APKs, DEX files, engines, credentials and local runtime output under ignored `.local/` paths.
 - Distinguish static strings, parsed metadata, decompiled code and observed HTTP behavior. Record artifact hashes and evidence locations.
 - Run `node --test tests/*.test.mjs` after changing discovery behavior. Regenerate dependent evidence and documentation for the same artifact.
